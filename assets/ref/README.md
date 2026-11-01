@@ -23,3 +23,14 @@ after the date issue renewals began, so it isn't used.
   voiced (PLAN.md §3), but it belongs on the site's history notes.
 - **The 1932 and 1961 texts may differ.** Phase 2 compares them, using this issue's OCR as a guide and the page
   images to settle each difference, and reports any differences for a decision on which text the film follows.
+
+## Added in Phase 2
+
+| file | what | from |
+|---|---|---|
+| `amazing_1932-08_ocr_story.txt` | archive.org's OCR of the story's pages in the August 1932 issue, from "I AM the last" to "change your belief" | the 1932 item's `_djvu.txt` |
+| `amazing_1961-03_ocr_story.txt` | the same for the March 1961 reprint, which Gutenberg transcribed | [archive.org](https://archive.org/details/Amazing_Stories_v35n03_1961-03_UnkSc-cape1736), its `_djvu.txt` |
+| `1932/` | crops of the 1932 page scans, each showing a passage where the printings differ, named by page and paragraphs | the 1932 item's page images |
+
+`tools/compare_printings.mjs` compares both OCR texts with Gutenberg's; [text/comparison_1932.md](../../text/comparison_1932.md)
+sets out what it found.

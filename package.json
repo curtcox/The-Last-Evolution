@@ -16,7 +16,9 @@
     "smoke": "node render.mjs --sheet=0,2,4,5,6,7.5 --cols=3 --out=out/check/smoke.jpg",
     "script": "node tools/build_script.mjs",
     "check": "node tools/verbatim_check.mjs",
-    "scratch": "node tools/scratch_voice.mjs"
+    "scratch": "node tools/scratch_voice.mjs",
+    "refs": "node tools/check_refs.mjs",
+    "compare": "node tools/compare_printings.mjs"
   },
   "dependencies": {
     "p5": "^2.3.3",
@@ -24,6 +26,7 @@
     "puppeteer-core": "^25.11.0"
   },
   "devDependencies": {
+    "diff": "^5.2.2",
     "yaml": "^2.9.1"
   }
 }

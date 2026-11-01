@@ -1,0 +1,50 @@
+# refs.yaml: every source the site's notes cite. The notes link to them as [text][id]; `npm run refs` checks that every id
+# used is here, that every URL answers, and writes the link definitions at the foot of each note, so the notes render
+# on GitHub too. Phase 4 adds what the film needs for its QR codes (PLAN.md §8): an r/ slug, a caption, the chapter and
+# the cue phrase.
+#   id:  {url, title, kind}     kind: primary (the thing itself), reference (an encyclopedia or index), secondary
+
+# The story and its printings
+gutenberg: {url: 'https://www.gutenberg.org/ebooks/27462', title: 'Project Gutenberg eBook #27462: The Last Evolution', kind: primary}
+archive-1932: {url: 'https://archive.org/details/Amazing_Stories_v07n05_1932-08_Missing_ibcbc_cape1736', title: 'Amazing Stories, August 1932 (scan)', kind: primary}
+archive-1961: {url: 'https://archive.org/details/Amazing_Stories_v35n03_1961-03_UnkSc-cape1736', title: 'Amazing Stories, March 1961 (scan)', kind: primary}
+penn-renewals: {url: 'https://onlinebooks.library.upenn.edu/cce/firstperiod.html', title: 'First periodical copyright renewals (Online Books Page)', kind: reference}
+
+# Campbell, Morey and the pulps
+sfe-campbell: {url: 'https://sf-encyclopedia.com/entry/campbell_john_w_jr', title: 'Campbell, John W, Jr (SFE)', kind: reference}
+sfe-morey: {url: 'https://sf-encyclopedia.com/entry/morey_leo', title: 'Morey, Leo (SFE)', kind: reference}
+wp-amazing: {url: 'https://en.wikipedia.org/wiki/Amazing_Stories', title: 'Amazing Stories (Wikipedia)', kind: reference}
+wp-sloane: {url: "https://en.wikipedia.org/wiki/T._O'Conor_Sloane", title: "T. O'Conor Sloane (Wikipedia)", kind: reference}
+wp-twilight: {url: 'https://en.wikipedia.org/wiki/Twilight_(short_story)', title: 'Twilight (short story) (Wikipedia)', kind: reference}
+wp-who-goes-there: {url: 'https://en.wikipedia.org/wiki/Who_Goes_There%3F', title: 'Who Goes There? (Wikipedia)', kind: reference}
+wp-golden-age: {url: 'https://en.wikipedia.org/wiki/Golden_Age_of_Science_Fiction', title: 'Golden Age of Science Fiction (Wikipedia)', kind: reference}
+wp-astounding-award: {url: 'https://en.wikipedia.org/wiki/Astounding_Award_for_Best_New_Writer', title: 'Astounding Award for Best New Writer (Wikipedia)', kind: reference}
+
+# The science of 1932
+wp-turing-machine: {url: 'https://en.wikipedia.org/wiki/Turing_machine', title: 'Turing machine (Wikipedia)', kind: reference}
+wp-williams-tube: {url: 'https://en.wikipedia.org/wiki/Williams_tube', title: 'Williams tube (Wikipedia)', kind: reference}
+wp-duodecimal: {url: 'https://en.wikipedia.org/wiki/Duodecimal', title: 'Duodecimal (Wikipedia)', kind: reference}
+wp-g-force: {url: 'https://en.wikipedia.org/wiki/G-force', title: 'G-force (Wikipedia)', kind: reference}
+wp-deimos: {url: 'https://en.wikipedia.org/wiki/Deimos_(moon)', title: 'Deimos (Wikipedia)', kind: reference}
+wp-mass-energy: {url: 'https://en.wikipedia.org/wiki/Mass%E2%80%93energy_equivalence', title: 'Mass–energy equivalence (Wikipedia)', kind: reference}
+arxiv-before-bethe: {url: 'https://arxiv.org/abs/2209.00072', title: "Before Bethe: early ideas of the Sun's generation of energy (arXiv)", kind: secondary}
+wp-neutron: {url: 'https://en.wikipedia.org/wiki/Discovery_of_the_neutron', title: 'Discovery of the neutron (Wikipedia)', kind: reference}
+nature-cockcroft: {url: 'https://www.nature.com/articles/129649a0', title: 'Cockcroft and Walton, "Disintegration of Lithium by Swift Protons", Nature 129, 649 (1932)', kind: primary}
+wp-positron: {url: 'https://en.wikipedia.org/wiki/Positron', title: 'Positron (Wikipedia)', kind: reference}
+wp-proton-decay: {url: 'https://en.wikipedia.org/wiki/Proton_decay', title: 'Proton decay (Wikipedia)', kind: reference}
+wp-bohr: {url: 'https://en.wikipedia.org/wiki/Bohr_model', title: 'Bohr model (Wikipedia)', kind: reference}
+wp-schrodinger: {url: 'https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation', title: 'Schrödinger equation (Wikipedia)', kind: reference}
+wp-unified: {url: 'https://en.wikipedia.org/wiki/Classical_unified_field_theories', title: 'Classical unified field theories (Wikipedia)', kind: reference}
+wp-transmutation: {url: 'https://en.wikipedia.org/wiki/Nuclear_transmutation', title: 'Nuclear transmutation (Wikipedia)', kind: reference}
+wp-northrup: {url: 'https://en.wikipedia.org/wiki/Edwin_Fitch_Northrup', title: 'Edwin Fitch Northrup (Wikipedia)', kind: reference}
+wp-great-year: {url: 'https://en.wikipedia.org/wiki/Great_year', title: 'Great year (Wikipedia)', kind: reference}
+
+# Machines as heirs
+wp-butler: {url: 'https://en.wikipedia.org/wiki/Darwin_among_the_Machines', title: 'Darwin among the Machines (Wikipedia)', kind: reference}
+wp-rur: {url: 'https://en.wikipedia.org/wiki/R.U.R.', title: 'R.U.R. (Wikipedia)', kind: reference}
+qi-turing: {url: 'https://quoteinvestigator.com/2022/01/06/outstrip/', title: 'Quote Investigator on Turing, "expect the machines to take control"', kind: secondary}
+wp-singularity: {url: 'https://en.wikipedia.org/wiki/Technological_singularity', title: 'Technological singularity (Wikipedia)', kind: reference}
+wp-mind-children: {url: 'https://en.wikipedia.org/wiki/Mind_Children', title: 'Mind Children (Wikipedia)', kind: reference}
+dwarkesh-sutton: {url: 'https://www.dwarkesh.com/p/richard-sutton', title: 'Dwarkesh Podcast: Richard Sutton (26 September 2025)', kind: primary}
+cais-statement: {url: 'https://www.safe.ai/work/statement-on-ai-risk', title: 'Statement on AI Risk (Center for AI Safety, 2023)', kind: primary}
+wp-bostrom: {url: 'https://en.wikipedia.org/wiki/Superintelligence:_Paths,_Dangers,_Strategies', title: 'Superintelligence: Paths, Dangers, Strategies (Wikipedia)', kind: reference}

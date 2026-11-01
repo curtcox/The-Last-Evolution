@@ -21,8 +21,9 @@ voiced it, Round 1's listening page is at http://localhost:8077/review/round1/. 
 | [DECISIONS.md](DECISIONS.md) | Every settled decision, with its date and who made it |
 | [text/](text/) | The Gutenberg file, unmodified, with its checksum; the story extracted from it ([story.md](text/story.md)) |
 | [script/](script/) | The script: who speaks each quotation ([speakers.yaml](script/speakers.yaml)), the cast, the chapters, the respellings, and the generated [script.yaml](script/script.yaml) with its [reports](script/reports/) |
+| [notes/](notes/) | The site's notes in draft (the 1932 science, machines as heirs, Campbell and the pulps), their sources and fact-check list |
 | [review/](review/) | Each review round's decision sheet, starting with [Round 1](review/round1.md) |
-| [assets/ref/](assets/ref/README.md) | Scans of the August 1932 printing, including Leo Morey's illustration, and their copyright status |
+| [assets/ref/](assets/ref/README.md) | Scans and OCR of the 1932 and 1961 printings, including Leo Morey's illustration, and their copyright status; the [three-way comparison](text/comparison_1932.md) |
 | [src/](src/) | The painting engine (from the Claude Animation Base) and the scenes |
 | [tools/](tools/) | Story extraction, the script builder and verbatim check, the scratch voice, the site builder, the local server, the ElevenLabs key check |
 | [render.mjs](render.mjs) | The headless renderer: contact sheets, strips, stills, video |
