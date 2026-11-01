@@ -25,9 +25,10 @@ pick on (Round 1's listening page, Round 3's casting and sound, Round 4's style 
 | [script/](script/) | The script: who speaks each quotation ([speakers.yaml](script/speakers.yaml)), the cast, the chapters, the respellings, and the generated [script.yaml](script/script.yaml) with its [reports](script/reports/) |
 | [notes/](notes/) | The site's notes in draft (the 1932 science, machines as heirs, Campbell and the pulps), their sources and fact-check list |
 | [review/](review/) | Each review round's decision sheet, starting with [Round 1](review/round1.md); the pages to listen and pick on are in [site/review/](site/review/), published at [/review/](https://curtcox.github.io/The-Last-Evolution/review/) |
+| [assets/voice/](assets/voice/) | The voice pass's masters: every line in the cast's voices, as ElevenLabs made them (`npm run voice`; checked in `script/reports/voice.md`) |
 | [assets/ref/](assets/ref/README.md) | Scans and OCR of the 1932 and 1961 printings, including Leo Morey's illustration, and their copyright status; the [three-way comparison](text/comparison_1932.md) |
 | [src/](src/) | The painting engine (from the Claude Animation Base), the film's medium ([pulp.js](src/pulp.js): paper, ink wash, halftone, lettering; [energy.js](src/energy.js): beams, lightning, auras, screens) the designs built from the text ([designs.js](src/designs.js)), and the scenes, so far the [style frames](src/scenes/lookdev.js) and the [model sheets](src/scenes/models.js) |
-| [tools/](tools/) | Story extraction, the script builder and verbatim check, the scratch voice, the casting, sound and look samplers, the cast saver and voice trial, the model sheets, the publisher for review pages, the site builder, the local server, the ElevenLabs key check |
+| [tools/](tools/) | Story extraction, the script builder and verbatim check, the scratch voice, the casting, sound and look samplers, the cast saver, voice trial and full voice pass, the model sheets, the publisher for review pages, the site builder, the local server, the ElevenLabs key check |
 | [render.mjs](render.mjs) | The headless renderer: contact sheets, strips, stills, video |
 | [ANIMATION_GUIDE.md](ANIMATION_GUIDE.md) | The kit's guide to painting and timing (without its Clawd sections) |
 

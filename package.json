@@ -24,6 +24,7 @@
     "look": "node tools/look_sampler.mjs",
     "models": "node tools/model_sheets.mjs",
     "trial": "node tools/voice_trial.mjs",
+    "voice": "node tools/voice_pass.mjs",
     "save-cast": "node tools/save_cast.mjs",
     "publish-review": "node tools/publish_review.mjs"
   },

@@ -48,3 +48,8 @@ Every settled decision, with its date and who made it. See [PLAN.md §2](PLAN.md
 | 2026-11-01 | Chapter-title page | The running head, double rule, italic title, and the opening paragraph with a drop cap, in Old Standard TT; the narrator starts reading over it | Curt, accepting Claude's Round 4 recommendation; the paragraph is Claude's call on the open point |
 | 2026-11-01 | Phase 4 order | Model sheets first, then QR layouts A and B, then the title page | Curt, accepting Claude's Round 4 recommendation |
 | 2026-11-01 | Saving the cast | All thirteen voices saved to the ElevenLabs account, after the plan was upgraded for more voice slots | Curt |
+| 2026-11-01 | Treatments | The narrator's age, thought-speech and the machines' colour kept as sketched; tuned by ear on the pilot | Curt, accepting Claude's Round 3 recommendation |
+| 2026-11-01 | The motif | A, wistful (theremin over muted strings); the title, credits and chapter heads cut from one longer theme in its manner | Curt, accepting Claude's Round 3 recommendation (made from the brief, not by ear) |
+| 2026-11-01 | The effects | All nine sketches kept; final cues and levels set in the pilot | Curt, accepting Claude's Round 3 recommendation |
+| 2026-11-01 | Voice model and pace | Eleven v4 for the full pass; v4's own pace with the old treatment (about 135 words a minute for the narrator) | Curt, accepting Claude's Round 3 recommendation |
+| 2026-11-01 | Music rights | Check the upgraded plan's terms for commercial use of generated music and effects before release | Curt, accepting Claude's Round 3 recommendation |

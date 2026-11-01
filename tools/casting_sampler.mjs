@@ -14,7 +14,7 @@ import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import YAML from 'yaml';
 import { eleven } from './eleven.mjs';
-import { PATHS, readYaml, respeller, TREAT } from './script_lib.mjs';
+import { PATHS, readYaml, respeller, TREAT, misses } from './script_lib.mjs';
 import { publishReview } from './publish_review.mjs';
 
 const OUT = 'out/review/round3', AUDIO = `${OUT}/audio`, CANDS = 'script/casting_candidates.json';
@@ -59,22 +59,6 @@ for (const [role, b] of todo) {
 }
 
 // what each candidate actually said: ElevenLabs speech-to-text, compared word by word with what it was given
-// Spelling that differs only in form isn't a miss: hyphens, digits for number words ("F-2" for "F two"), Gutenberg's
-// "reenforcements", and "Roal" heard as the one-syllable "Roll" that Round 1 chose.
-const DIGITS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-const SAME = { reenforcements: 'reinforcements', roll: 'roal', role: 'roal', rol: 'roal', mentatype: 'menta type', forcescreen: 'force screen' };
-const norm = s => s.toLowerCase().replace(/([a-z])-?(\d)/g, '$1 $2').replace(/\d/g, d => ` ${DIGITS[d]} `)
-  .replace(/[^a-z' ]+/g, ' ').split(/\s+/).filter(Boolean).flatMap(w => (SAME[w] || w).split(' '));
-function misses(want, got) {   // the words of `want` that a word-level edit alignment doesn't find in `got`
-  const a = norm(want), b = norm(got), d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
-  for (let j = 1; j <= b.length; j++) d[0][j] = j;
-  for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++)
-    d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
-  const out = []; let i = a.length, j = b.length;
-  while (i > 0) { if (j > 0 && d[i][j] === d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)) { if (a[i - 1] !== b[j - 1]) out.unshift(a[i - 1]); i--; j--; }
-    else if (d[i][j] === d[i - 1][j] + 1) { out.unshift(a[i - 1]); i--; } else j--; }
-  return { words: a.length, missed: out };
-}
 for (const [role] of Object.entries(brief)) for (const k of KEYS) {
   const c = cands[role]?.candidates[k];
   if (!c) continue;

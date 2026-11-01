@@ -1,5 +1,6 @@
 // script_lib.mjs: what the script and voice tools share: the files, the split of a
-// paragraph at its quotation marks, the words a line sends to the voice, and the treatments that colour a voice.
+// paragraph at its quotation marks, the words a line sends to the voice, the treatments that colour a voice, and the
+// check of what a voice said.
 import { readFileSync } from 'node:fs';
 import YAML from 'yaml';
 
@@ -61,3 +62,24 @@ export const TREAT = {
   thought: { label: 'as thought', af: 'chorus=0.6:0.9:45|60:0.35|0.3:0.25|0.4:1.5|1.2,aecho=0.8:0.7:110|230:0.3|0.18,highpass=f=90' },
   machine: { label: 'machine', af: 'flanger=delay=1.5:depth=1.5:regen=20:width=60:speed=0.3,highpass=f=150,lowpass=f=7500,aecho=0.8:0.4:12:0.15' },
 };
+
+// What a voice said against what it was given: ElevenLabs speech-to-text, compared word by word.
+// Spelling that differs only in form isn't a miss: hyphens, digits for number words ("F-2" for "F two"), Gutenberg's
+// "reenforcements", "Roal" heard as the one-syllable "Roll" that Round 1 chose, British spellings heard as American,
+// compounds heard whole or apart, and the single quotation marks inside a speech.
+const DIGITS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+const SAME = { reenforcements: 'reinforcements', roll: 'roal', role: 'roal', rol: 'roal', mentatype: 'menta type', forcescreen: 'force screen',
+  scoutline: 'scout line', cru: 'c r u', cr: 'c r', mx: 'm x', "roll's": "roal's", rohl: 'roal', "rohl's": "roal's", whir: 'whirr',
+  reestablished: 're established', horsepower: 'horse power', submicroscopic: 'sub microscopic', molding: 'moulding' };
+const norm = s => s.toLowerCase().replace(/([a-z])-?(\d)/g, '$1 $2').replace(/\d/g, d => ` ${DIGITS[d]} `)
+  .replace(/[^a-z' ]+/g, ' ').split(/\s+/).map(w => w.replace(/^'+|'+$/g, '')).filter(Boolean).flatMap(w => (SAME[w] || w).split(' '));
+export function misses(want, got) {   // the words of `want` that a word-level edit alignment doesn't find in `got`
+  const a = norm(want), b = norm(got), d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
+  for (let j = 1; j <= b.length; j++) d[0][j] = j;
+  for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++)
+    d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+  const out = []; let i = a.length, j = b.length;
+  while (i > 0) { if (j > 0 && d[i][j] === d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)) { if (a[i - 1] !== b[j - 1]) out.unshift(a[i - 1]); i--; j--; }
+    else if (d[i][j] === d[i - 1][j] + 1) { out.unshift(a[i - 1]); i--; } else j--; }
+  return { words: a.length, missed: out };
+}

@@ -24,6 +24,21 @@ motif:
       pipe-organ drone and a distant timpani roll, grand, solemn and ominous, ending on a sustained chord. No vocals.
     seconds: 14
 
+# The chosen direction (Round 3, 3.1) and the theme made in its manner. ElevenLabs can't repeat a melody from one
+# generation to the next, so one long piece is generated and the rest cut from it, keeping one tune through the film:
+#   credits       the whole theme, under the closing credits
+#   title         its opening, faded, under the title page
+#   head          its first phrase, faded, at each chapter's head
+chosen: A
+theme:
+  prompt: >-
+    The main theme of a 1930s science-fiction radio serial, slow and elegiac. A solo theremin sings a wistful, haunting
+    melody in a minor key over soft muted strings. The melody is stated plainly first, then again with low strings and
+    a soft harp beneath it, rising once to a fuller, aching swell, then settling back to the theremin alone, softer,
+    and fading to an unresolved close. Mysterious and melancholy, intimate. No drums, no vocals.
+  seconds: 90
+  cuts: {title: 40, head: 14}
+
 # Effects: the story's own sounds, one sketch each. `where` is the paragraph that names the sound.
 effects:
   workshop:
