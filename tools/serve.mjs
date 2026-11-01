@@ -1,7 +1,8 @@
 // serve.mjs: the local server.   npm run serve   → http://localhost:8077/
 //   /           the companion site (site/public/, built by tools/build_site.mjs)
 //   /studio/    studio.html and the repo's files beside it, for scrubbing scenes in a browser
-//   /review/    the review pages the tools write into out/review/ (Round 1's listening page is /review/round1/)
+//   /review/    the review pages: the working copies the tools write into out/review/ (Round 1's listening page is
+//               /review/round1/), else the published ones in site/public/review/, with the index of rounds
 // The review pages and their notes API (axol-f's tools/serve.mjs) arrive with the first drafts, in Phase 5.
 import { createServer } from 'node:http';
 import { createReadStream, existsSync, statSync } from 'node:fs';
@@ -24,7 +25,7 @@ createServer((req, res) => {
   const url = new URL(req.url, 'http://x');
   if (url.pathname === '/studio') { res.writeHead(302, { Location: '/studio/' }); return res.end(); }
   const [root, rel] = url.pathname.startsWith('/studio/') ? [REPO, url.pathname === '/studio/' ? 'studio.html' : url.pathname.slice(8)]
-    : url.pathname.startsWith('/review/') ? [REVIEW, url.pathname.slice(8)]
+    : url.pathname.startsWith('/review/') && file(REVIEW, url.pathname.slice(8)) ? [REVIEW, url.pathname.slice(8)]
     : [SITE, url.pathname];
   const p = file(root, rel);
   if (!p) { res.writeHead(404, { 'Content-Type': 'text/plain' }); return res.end('not found'); }

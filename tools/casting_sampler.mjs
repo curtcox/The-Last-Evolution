@@ -2,7 +2,8 @@
 // For each role in script/casting.yaml, ElevenLabs Voice Design makes three new voices (A, B, C) from the role's
 // description, each reading the role's own lines; each is heard raw and, where the role has one, with its treatment.
 //   out/review/round3/              the listening page (http://localhost:8077/review/round3/), with a pick for each role
-//                                   and the picks gathered into one line to paste back
+//                                   and the picks gathered into one line to paste back; published with the site (at
+//                                   /review/round3/) by tools/publish_review.mjs
 //   script/casting_candidates.json  each candidate's generated voice id, so a pick can be saved as a voice (they're
 //                                   previews until then), what it read, and what speech-to-text heard it say: a
 //                                   candidate that drops or garbles words is flagged on the page
@@ -14,6 +15,7 @@ import { createHash } from 'node:crypto';
 import YAML from 'yaml';
 import { eleven } from './eleven.mjs';
 import { PATHS, readYaml, respeller } from './script_lib.mjs';
+import { publishReview } from './publish_review.mjs';
 
 const OUT = 'out/review/round3', AUDIO = `${OUT}/audio`, CANDS = 'script/casting_candidates.json';
 const MODEL = 'eleven_ttv_v3', KEYS = ['A', 'B', 'C'];
@@ -101,7 +103,7 @@ for (const [role, b] of Object.entries(brief)) if (b.treatment) for (const k of 
 
 // the page
 const player = (f, label) => `<button class="play" data-src="audio/${f}">${esc(label)}</button>`;
-const roles = Object.entries(brief).map(([role, b]) => `<section class="role" data-role="${role}">
+const roles = Object.entries(brief).map(([role, b]) => `<section class="role" data-role="${role}" data-key="${cands[role]?.key || ''}">
 <h2>${esc(cast[role].name)}</h2><p class="about">${esc(b.about)}</p>
 <details><summary>What they read</summary><p class="text">${esc(cands[role]?.text || '')}</p></details>
 <div class="cands">${KEYS.map(k => { const c = cands[role]?.candidates[k] || {}, ok = c.words ? Math.round(100 * (1 - c.missed.length / c.words)) : null;
@@ -110,7 +112,7 @@ ${player(`${role}-${k}.mp3`, b.treatment === 'old' ? 'young (raw)' : 'raw')}${b.
 ${ok == null ? '' : `<span class="heard${ok < 97 ? ' bad' : ''}" title="speech-to-text heard: ${esc(c.heard)}">${ok}% of words${c.missed.length ? `; missed: ${esc(c.missed.slice(0, 6).join(', '))}${c.missed.length > 6 ? '…' : ''}` : ''}</span>`}</div>`; }).join('')}
 <label class="none"><input type="radio" name="${role}" value="none"> none of these</label></div></section>`).join('\n');
 writeFileSync(`${OUT}/index.html`, `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Round 3: casting</title><link rel="stylesheet" href="/style.css"><style>
+<title>Round 3: casting</title><link rel="stylesheet" href="../../style.css"><style>
 .play{font:inherit;font-size:.85em;padding:.25em .7em;margin:.15em .3em .15em 0;border:1px solid var(--rule);background:var(--paper2);color:var(--ink);border-radius:4px;cursor:pointer}
 .play.on{background:var(--accent);color:var(--paper)} .role{border-top:1px solid var(--rule);padding:.4em 0 .8em}
 .about{color:var(--ink2);font-size:.9em} .text{font-size:.85em;color:var(--ink2)} .cands{display:flex;flex-wrap:wrap;gap:.4em 1.6em;align-items:center}
@@ -118,7 +120,7 @@ writeFileSync(`${OUT}/index.html`, `<!doctype html><html lang="en"><head><meta c
 #picks{position:sticky;bottom:0;background:var(--paper2);border-top:3px double var(--rule);padding:.3em 0;margin-top:1em;display:flex;gap:.6em;align-items:center;font-size:.85em}
 #picks textarea{flex:1;font:inherit;font-size:.85em;background:var(--paper);color:var(--ink);border:1px solid var(--rule)}
 </style></head><body><main>
-<p class="kicker">Round 3 · casting</p><h1>Casting</h1>
+<p class="kicker"><a href="../">Review</a> · Round 3 · casting</p><h1>Casting</h1>
 <p>Three new voices for each role, designed by ElevenLabs from the description, reading that role's own lines. The
 narrator is heard young (raw: F-2 in the scenes) and old (the narrator's treatment). The machines and the beings of
 force are heard raw and treated. Pick one per role (or "none of these" and say why), then paste the line at the
@@ -131,10 +133,16 @@ document.addEventListener('click', e => { const b = e.target.closest('.play'); i
   if (b === cur && !audio.paused) { audio.pause(); b.classList.remove('on'); return; }
   cur?.classList.remove('on'); audio.src = b.dataset.src; audio.play(); (cur = b).classList.add('on'); });
 audio.onended = () => cur?.classList.remove('on');
+// picks are kept in this browser, each with its role's candidate set, so a role that's been redesigned starts unpicked
+// (picks saved before sets were recorded keep their voices, but not "none", which asked for the redesign)
 const store = (() => { try { return localStorage; } catch { return null; } })();
-function update() { const picks = [...document.querySelectorAll('.role')].map(r => { const v = r.querySelector('input:checked')?.value; return v ? r.dataset.role + ' ' + v : null; }).filter(Boolean);
-  document.getElementById('answer').value = picks.length ? 'Round 3 picks: ' + picks.join(', ') : ''; try { store?.setItem('round3', JSON.stringify(picks)); } catch {} }
-try { for (const p of JSON.parse(store?.getItem('round3') || '[]')) { const [r, v] = p.split(' '); const i = document.querySelector('input[name="' + r + '"][value="' + v + '"]'); if (i) i.checked = true; } } catch {}
+const roleEls = [...document.querySelectorAll('.role')];
+function update() { const picks = roleEls.map(r => { const v = r.querySelector('input:checked')?.value; return v ? [r.dataset.role, v, r.dataset.key] : null; }).filter(Boolean);
+  document.getElementById('answer').value = picks.length ? 'Round 3 picks: ' + picks.map(p => p[0] + ' ' + p[1]).join(', ') : ''; try { store?.setItem('round3', JSON.stringify(picks)); } catch {} }
+try { for (const p of JSON.parse(store?.getItem('round3') || '[]')) { const [r, v, key] = Array.isArray(p) ? p : [...p.split(' '), null];
+  const el = roleEls.find(e => e.dataset.role === r); if (!el || (key ? key !== el.dataset.key : v === 'none')) continue;
+  const i = el.querySelector('input[value="' + v + '"]'); if (i) i.checked = true; } } catch {}
 document.addEventListener('change', update); update();
 </script></body></html>`);
 console.log(`${OUT}/index.html: ${Object.keys(brief).length} roles × 3 candidates`);
+publishReview('round3');

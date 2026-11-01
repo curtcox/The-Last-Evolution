@@ -37,3 +37,5 @@ Every settled decision, with its date and who made it. See [PLAN.md §2](PLAN.md
 | 2026-11-01 | AI disclosure in the notes | Kept: made with Claude; Anthropic's chief executive signed the 2023 statement | Curt, accepting Claude's Round 2 recommendation |
 | 2026-11-01 | Campbell's later record | One brief, sourced paragraph, as history alongside the story | Curt, accepting Claude's Round 2 recommendation |
 | 2026-11-01 | Moskowitz's 1961 introduction | Paraphrased only | Curt, accepting Claude's Round 2 recommendation |
+| 2026-11-01 | Decision pages | Every page to listen, look and pick on is published on the site at /review/, with its audio, as well as served locally; the site's Review page lists each round's sheet and pages | Curt |
+| 2026-11-01 | The force-sphere's voice | Round 3's first three rejected; redesigned as more ethereal (airy, distant, floating, a faint shimmer) | Curt |

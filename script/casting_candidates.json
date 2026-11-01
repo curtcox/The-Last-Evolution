@@ -347,29 +347,29 @@
   }
  },
  "sphere1": {
-  "key": "b6482814fb88",
+  "key": "b05052be080a",
   "model": "eleven_ttv_v3",
   "text": "You, of matter, are inefficient, I can exist quite alone. … You, of matter, are inefficient, I can exist quite alone.",
-  "made": "2026-11-01T15:20:58.810Z",
+  "made": "2026-11-01T15:57:47.597Z",
   "candidates": {
    "A": {
-    "generated_voice_id": "DTdpfyePSFl4P1UZSjyN",
-    "seconds": 11.8,
+    "generated_voice_id": "L4d8ONN0of3Pnx8xcXPp",
+    "seconds": 18.2,
     "heard": "You of matter are inefficient. I can exist quite alone. You of matter are inefficient. I can exist quite alone",
     "words": 20,
     "missed": []
    },
    "B": {
-    "generated_voice_id": "f4yleQUGaOdIA1BymGea",
-    "seconds": 13.3,
+    "generated_voice_id": "hkd8e95LwZE5xLRrFFzF",
+    "seconds": 15,
     "heard": "You of matter are inefficient. I can exist quite alone. You of matter are inefficient. I can exist quite alone",
     "words": 20,
     "missed": []
    },
    "C": {
-    "generated_voice_id": "sbzhB6X0St7Zud38UO9q",
-    "seconds": 14,
-    "heard": "You of matter are inefficient. I can exist quite alone. You of matter are inefficient. I can exist quite alone",
+    "generated_voice_id": "TskIOqPjdPQKxaGm3cgc",
+    "seconds": 18.8,
+    "heard": "You of matter are inefficient. I can exist quite alone. You of matter are inefficient. I can exist quite alone.",
     "words": 20,
     "missed": []
    }

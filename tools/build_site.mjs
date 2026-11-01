@@ -3,10 +3,12 @@
 //   read/        the story in full, from text/story.json: a printable page with an anchor per paragraph (#p001…), each
 //                reading restored from the 1932 printing marked and listed (text/emendations.yaml)
 //   about/       sources, credits, licences
+//   review/      each review round: its decision sheet (review/roundN.md, on GitHub) and its decision pages, copied from
+//                site/review/ (put there by tools/publish_review.mjs, with their audio)
 //   img/         site/img/, copied as is (Morey's illustration, sized for the web from assets/ref/)
 // Links are relative, so the same files work at http://localhost:8077/ and at curtcox.github.io/The-Last-Evolution/.
 // Later phases add the film beside the synced text, the notes and the r/NAME/ forwarding pages (PLAN.md §7).
-import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, existsSync, readdirSync } from 'node:fs';
 import YAML from 'yaml';
 
 const OUT = 'site/public';
@@ -33,7 +35,7 @@ function page(depth, title, body, { wide = false } = {}) {
 </head>
 <body>
 <header class="mast"><a href="${up}" class="name">The Last Evolution</a>
-<nav><a href="${up}read/">Read</a><a href="${up}about/">About</a><a href="${REPO}">Source</a></nav></header>
+<nav><a href="${up}read/">Read</a><a href="${up}about/">About</a><a href="${up}review/">Review</a><a href="${REPO}">Source</a></nav></header>
 <main${wide ? ' class="wide"' : ''}>
 ${body}
 </main>
@@ -166,12 +168,33 @@ sup a { text-decoration: none; color: var(--accent); }
 footer { border-top: 3px double var(--rule); padding: .5em 16px 2em; text-align: center; }
 `;
 
+// the review rounds: each sheet, whether it's open, and the pages to listen and pick on
+const rounds = readdirSync('review').map(f => f.match(/^round(\d+)\.md$/)?.[1]).filter(Boolean).map(Number).sort((a, b) => a - b).map(n => {
+  const md = readFileSync(`review/round${n}.md`, 'utf8'), dir = `site/review/round${n}`;
+  const pages = existsSync(dir) ? readdirSync(dir).filter(f => f.endsWith('.html')).sort()
+    .map(f => ({ href: `round${n}/${f === 'index.html' ? '' : f}`, title: readFileSync(`${dir}/${f}`, 'utf8').match(/<title>(.*?)<\/title>/)[1] })) : [];
+  return { n, title: md.match(/^# (.*)$/m)[1], closed: md.match(/^\*\*Closed ([\d-]+)/m)?.[1], pages };
+});
+const review = page(1, 'Review · The Last Evolution', `
+<p class="kicker">How it's being made</p>
+<h1>Review</h1>
+<p class="lede">The film is made in rounds. Each round ends at a review gate: a decision sheet of questions, each with a
+recommendation, and where the choice is by ear or eye, a page to listen or look and pick on. Nothing goes ahead until
+both of us are satisfied (<a href="${REPO}/blob/main/PLAN.md">the plan</a>, §2); every decision is logged in
+<a href="${REPO}/blob/main/DECISIONS.md">DECISIONS.md</a>.</p>
+${rounds.slice().reverse().map(r => `<div class="round"><h2>${esc(r.title)}</h2>
+<p>${r.closed ? `Closed ${r.closed}.` : '<b>Open.</b>'} <a href="${REPO}/blob/main/review/round${r.n}.md">The decision sheet</a>.</p>
+${r.pages.length ? `<ul>${r.pages.map(p => `<li><a href="${p.href}">${esc(p.title)}</a></li>`).join('')}</ul>` : ''}</div>`).join('\n')}
+`);
+
 rmSync(OUT, { recursive: true, force: true });
-for (const d of ['', 'read', 'about']) mkdirSync(`${OUT}/${d}`, { recursive: true });
+for (const d of ['', 'read', 'about', 'review']) mkdirSync(`${OUT}/${d}`, { recursive: true });
 writeFileSync(`${OUT}/index.html`, home);
 writeFileSync(`${OUT}/read/index.html`, read);
 writeFileSync(`${OUT}/about/index.html`, about);
+if (existsSync('site/review')) cpSync('site/review', `${OUT}/review`, { recursive: true });
+writeFileSync(`${OUT}/review/index.html`, review);
 writeFileSync(`${OUT}/style.css`, css);
 writeFileSync(`${OUT}/.nojekyll`, '');
 cpSync('site/img', `${OUT}/img`, { recursive: true });
-console.log(`${OUT}: home, read (${blocks.filter(b => b.kind === 'para').length} paragraphs), about`);
+console.log(`${OUT}: home, read (${blocks.filter(b => b.kind === 'para').length} paragraphs), about, review (${rounds.length} rounds, ${rounds.reduce((a, r) => a + r.pages.length, 0)} pages)`);

@@ -52,7 +52,9 @@ Claude makes it ──▶ Curt reviews ──▶ Claude revises ──▶ Curt r
    short list of what changed since last time and **Claude's own open concerns**. Claude names what it isn't happy
    with yet; it doesn't wait to be asked.
 2. **Curt reviews** wherever suits the thing: in chat, on the review server's watch pages (notes pinned to a moment, a
-   circled spot in the frame, answers to Claude's questions), or by editing a file directly.
+   circled spot in the frame, answers to Claude's questions), or by editing a file directly. Every page to listen,
+   look and pick on is also published on the site, under [/review/](https://curtcox.github.io/The-Last-Evolution/review/)
+   (`tools/publish_review.mjs`, which the tools that make the pages run when they finish).
 3. **Claude revises**, replies to each note, and resolves only what Curt agrees is resolved.
 4. **The gate closes** only when all three of these hold:
    - Curt says the gate is approved;

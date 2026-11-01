@@ -11,8 +11,9 @@ npm start
 
 This extracts the story, builds the script and checks it word for word, builds the site, and opens it at
 http://localhost:8077/. The studio, for scrubbing scenes, is at http://localhost:8077/studio/. Once `npm run scratch` has
-voiced it, Round 1's listening page is at http://localhost:8077/review/round1/, and once `npm run casting` and
-`npm run sound` have run, Round 3's casting and sound pages are at http://localhost:8077/review/round3/. You need Node.js 20 or newer; making the film also needs Google Chrome and ffmpeg.
+voiced it, Round 1's listening page is at http://localhost:8077/review/round1/. Round 3's casting and sound pages are
+published on the site, at [/review/](https://curtcox.github.io/The-Last-Evolution/review/), and locally at
+http://localhost:8077/review/round3/. You need Node.js 20 or newer; making the film also needs Google Chrome and ffmpeg.
 
 ## What's where
 
@@ -23,7 +24,7 @@ voiced it, Round 1's listening page is at http://localhost:8077/review/round1/, 
 | [text/](text/) | The Gutenberg file, unmodified, with its checksum; the story extracted from it ([story.md](text/story.md)) |
 | [script/](script/) | The script: who speaks each quotation ([speakers.yaml](script/speakers.yaml)), the cast, the chapters, the respellings, and the generated [script.yaml](script/script.yaml) with its [reports](script/reports/) |
 | [notes/](notes/) | The site's notes in draft (the 1932 science, machines as heirs, Campbell and the pulps), their sources and fact-check list |
-| [review/](review/) | Each review round's decision sheet, starting with [Round 1](review/round1.md) |
+| [review/](review/) | Each review round's decision sheet, starting with [Round 1](review/round1.md); the pages to listen and pick on are in [site/review/](site/review/), published at [/review/](https://curtcox.github.io/The-Last-Evolution/review/) |
 | [assets/ref/](assets/ref/README.md) | Scans and OCR of the 1932 and 1961 printings, including Leo Morey's illustration, and their copyright status; the [three-way comparison](text/comparison_1932.md) |
 | [src/](src/) | The painting engine (from the Claude Animation Base) and the scenes |
 | [tools/](tools/) | Story extraction, the script builder and verbatim check, the scratch voice, the site builder, the local server, the ElevenLabs key check |

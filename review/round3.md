@@ -4,10 +4,12 @@ This round is mostly for your ears. I can't hear the candidates, so I don't reco
 check, I did: every candidate was run through speech-to-text and compared with the words it was given, and the page
 flags any that dropped or garbled words. Where something other than taste decides, there's a recommendation.
 
-**To listen:** run `npm start`, then open
-- http://localhost:8077/review/round3/ for casting: 13 roles with 3 voices each. Pick one per role, and the bar at the
-  bottom gathers your picks into one line to paste back.
-- http://localhost:8077/review/round3/sound.html for the motif (three directions) and nine effect sketches.
+**To listen:** open the pages on the site, or locally after `npm start` (http://localhost:8077/review/round3/):
+- [Casting](https://curtcox.github.io/The-Last-Evolution/review/round3/): 13 roles with 3 voices each. Pick one per
+  role, and the bar at the bottom gathers your picks into one line to paste back. Picks are kept in the browser you
+  made them in, so the site and localhost each keep their own.
+- [Sound](https://curtcox.github.io/The-Last-Evolution/review/round3/sound.html): the motif (three directions) and nine
+  effect sketches.
 
 The gate closes when every role is cast, the motif is chosen and the full voice pass is done (PLAN.md §9). The full pass
 comes after your picks.
@@ -24,6 +26,11 @@ read". Speech-to-text found three real misreadings, flagged on the page:
 
 Some marks on the page aren't really misses: "Roal" heard as "Ro" or "Roll", and *mentatype* transcribed as one word.
 "None of these" sends a role back for another three voices; tell me what to change in its description.
+**Curt:** none of these for the force-sphere: more ethereal.
+**Claude:** redesigned. The new description asks for an ethereal, airy, distant, floating voice with a faint shimmer,
+still cool and aloof. All three new candidates read their line correctly, and they take it more slowly than the first
+three (15 to 19 seconds for the two takes, against 12 to 14). The page now shows them, and a pick or "none" saved for
+the old three is cleared.
 **Curt:**
 
 **1.2 One voice for F-2.** The plan has the narrator and the F-2 of the scenes as one voice: young (raw) in the scenes,

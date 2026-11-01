@@ -20,7 +20,8 @@
     "refs": "node tools/check_refs.mjs",
     "compare": "node tools/compare_printings.mjs",
     "casting": "node tools/casting_sampler.mjs",
-    "sound": "node tools/sound_sampler.mjs"
+    "sound": "node tools/sound_sampler.mjs",
+    "publish-review": "node tools/publish_review.mjs"
   },
   "dependencies": {
     "p5": "^2.3.3",
