@@ -1,0 +1,88 @@
+# casting.yaml: Round 3's casting brief. For each role, ElevenLabs Voice Design makes three new voices from the
+# description, each reading the role's own lines from the paragraphs listed (`from`). No real person's voice is cloned or
+# imitated (PLAN.md §4). tools/casting_sampler.mjs builds the listening page; the picks are saved as voices and recorded
+# in script/cast.yaml.
+#   about      the voice description sent to Voice Design: who they are and how they sound, never a real person
+#   from       paragraphs whose lines (this role's quoted lines; the narrator's narration) the candidates read, up to 1,000
+#              characters. A role with less than 100 characters of lines reads them twice, as two takes
+#   also       for the narrator, the young F-2's scene lines, read in the same voice: one voice across both layers
+#   treatment  the processing heard beside the raw voice: old (the narrator's age and wear), thought (the shimmer of
+#              thought-speech), machine (a light electrical colour)
+
+narrator:
+  about: >-
+    An ancient machine intelligence dictating its memoir, a hundred and twenty-five thousand years after the events.
+    Male, mid-low, calm and unhurried, very precise diction, a dry understated wit, a faint weariness as if worn by
+    time. Educated mid-Atlantic accent of the 1930s. Clear recording, close microphone.
+  from: [p001, p002, p137]
+  also: [p088]
+  treatment: old
+roal:
+  about: >-
+    A very old human scientist, a hundred and fifty years old, gentle and dreaming. Soft, warm, slightly breathy male
+    voice, unhurried, with a quiet chuckle in it; speaks as if half to himself. American, educated, 1930s.
+  from: [p085, p107]
+trest:
+  about: >-
+    A human scientist in his prime, quiet, plain and realistic. Steady, low-key male voice, few words, calm in the face
+    of the end. American, 1930s.
+  from: [p043, p084, p090, p102]
+kahsh:
+  about: >-
+    A human official, one of the rulers of mankind. Crisp, formal, authoritative male voice, clipped and businesslike.
+    American, 1930s radio diction.
+  from: [p044]
+cr21:
+  about: >-
+    The chief of the ruling machines. Speaks in vibrationally correct, emotionless tones: even pitch, perfectly
+    regular rhythm, no feeling at all. Neutral, androgynous, mid-pitched, metallic precision. A 1930s idea of a machine.
+  from: [p046]
+  treatment: machine
+x5638:
+  about: >-
+    A newly built scientist-machine. Emotionless and exact, quick and light, higher-pitched than its elders, eager
+    precision. Neutral, androgynous. A 1930s idea of a machine.
+  from: [p037, p040]
+  treatment: machine
+x6349:
+  about: >-
+    A scientist-machine. Emotionless, factual, measured, mid-pitched, slightly nasal resonance. Neutral, androgynous.
+    A 1930s idea of a machine.
+  from: [p042]
+  treatment: machine
+x6621:
+  about: >-
+    The greatest of the chemist-machines. Emotionless, deliberate and thorough, a deep, smooth, slow machine voice.
+    Neutral, androgynous. A 1930s idea of a machine.
+  from: [p045]
+  treatment: machine
+f1:
+  about: >-
+    A vast new thinking machine that has just become conscious, holding all knowledge. Calm, resonant, deep, slightly
+    strange and newly awake, its words a little too even. Neutral, androgynous. A 1930s idea of a machine mind.
+  from: [p052, p054, p058]
+  treatment: machine
+cru1:
+  about: >-
+    A coordinator machine, a ruler, freshly made. Crisp, clipped, efficient and commanding, emotionless. Neutral,
+    androgynous. A 1930s idea of a machine.
+  from: [p069]
+  treatment: machine
+plant:
+  about: >-
+    The tiny brain built into a giant power plant. Small, flat, mechanical, a two-word signal. Neutral, androgynous.
+    A 1930s idea of a machine.
+  from: [p116]
+  treatment: machine
+sphere1:
+  about: >-
+    A newborn being of pure energy, restless and aloof. Cold, sharp, impatient and dismissive, with a crackling edge. Neutral,
+    androgynous, heard as thought rather than sound.
+  from: [p121]
+  treatment: thought
+golden:
+  about: >-
+    A sphere of pure force and intelligence, deep in tone, seeming of infinite power held gently in check. Vast, slow,
+    calm, resonant, deep, kind but immovable. Neutral, androgynous, heard as thought rather than sound.
+  from: [p125, p128, p135]
+  treatment: thought

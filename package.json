@@ -18,7 +18,9 @@
     "check": "node tools/verbatim_check.mjs",
     "scratch": "node tools/scratch_voice.mjs",
     "refs": "node tools/check_refs.mjs",
-    "compare": "node tools/compare_printings.mjs"
+    "compare": "node tools/compare_printings.mjs",
+    "casting": "node tools/casting_sampler.mjs",
+    "sound": "node tools/sound_sampler.mjs"
   },
   "dependencies": {
     "p5": "^2.3.3",

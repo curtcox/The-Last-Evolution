@@ -1,0 +1,407 @@
+{
+ "narrator": {
+  "key": "54e6b55b04d9",
+  "model": "eleven_ttv_v3",
+  "text": "I am the last of my type existing today in all the Solar System. I, too, am the last existing who, in memory, sees the struggle for this System, and in memory I am still close to the Center of Rulers, for mine was the ruling type then. But I will pass soon, and with me will pass the last of my kind, a poor inefficient type, but yet the creators of those who are now, and will be, long after I pass forever. So I am setting down my record on the menta-type. And so my task being done, I, F two, like Roal and Trest, shall follow the others of my kind into eternal oblivion, for my kind is now, as theirs was, poor and inefficient. Time has worn me, and oxidation attacked me, but they of Force are eternal, and omniscient. Roal — Trest — I was mistaken when I said no screen could stop that beam of Death. They had the screen, I have found it, too — but too late. These machines I have made myself. Two lives alone they can protect, for not even their power is sufficient for more.",
+  "made": "2026-11-01T15:18:56.639Z",
+  "candidates": {
+   "A": {
+    "generated_voice_id": "xqAbVS84FVt9I0Ev98RM",
+    "seconds": 99.6,
+    "heard": "I am the last of my type existing today in all the solar system. I, too, am the last existing who, in memory, sees the struggle for this system. And, in memory, I am still close to the center of rulers, for mine was the ruling type then. But I will pass soon, and with me will pass the last of my kind. A poor, inefficient type, but yet the creators of those who are now and will be, long after I pass forever. So I am setting down my record on the mentor type. And so, my task being done, I, F two, like Roal and Trest, shall follow the others of my kind into eternal oblivion. For my kind is now, as theirs was, poor and inefficient. Time has worn me, and oxidation attacked me, but they of force are eternal and omniscient. Roal, Trest, I was mistaken when I said no screen could stop that beam of death. They had the screen; I have found it too, but too late. These machines I have made myself. Two lives alone they can protect, for not even their power is sufficient for more",
+    "words": 194,
+    "missed": [
+     "menta"
+    ]
+   },
+   "B": {
+    "generated_voice_id": "y8bAn9N0dR5TXM7ELoJ5",
+    "seconds": 83.2,
+    "heard": "I am the last of my type, existing today in all the Solar System. I, too, am the last existing who, in memory, sees the struggle for this system. And in memory I am still close to the center of rulers, for mine was the ruling type then. But I will pass soon, and with me will pass the last of my kind. A poor, inefficient type, but yet the creators of those who are now and will be long after I pass forever. So I am setting down my record on the mentor type. And so, my task being done, I, F-two, like Roal and Trest, shall follow the others of my kind into eternal oblivion. For my kind is now, as theirs was, poor and inefficient. Time has worn me, and oxidation attacked me, but they of force are eternal and omniscient. Roal, Trest, I was mistaken when I said no screen could stop that beam of death. They had the screen, I have found it too, but too late. These machines I have made myself. Two lives alone they can protect, for not even their power is sufficient for more.",
+    "words": 194,
+    "missed": [
+     "menta"
+    ]
+   },
+   "C": {
+    "generated_voice_id": "rPvCUn05Fn7ivKgbZafW",
+    "seconds": 113.5,
+    "heard": "I am the last of my type existing today in all the solar system. I, too, am the last existing who in memory sees the struggle for this system, and in memory I am still close to the center of rulers, for mine was the ruling type then. But I will pass soon, and with me will pass the last of my kind, a poor, inefficient type, but yet the creators of those who are now and will be long after I pass forever. So I am setting down my record on the mentor type, and so my task being done, I, F2, like Roal and Trest, shall follow the others of my kind into eternal oblivion, for my kind is now as theirs was, poor and inefficient. Time has worn me and oxidation attacked me, but they of force are eternal and omniscient. Roal, Trest, I was mistaken when I said no screen could stop that beam of death. They had the screen. I have found it, too, but too late. These machines I have made myself. Two lives alone they can protect, for not even their power is sufficient for more",
+    "words": 194,
+    "missed": [
+     "menta"
+    ]
+   }
+  }
+ },
+ "roal": {
+  "key": "b7cc25223ce8",
+  "model": "eleven_ttv_v3",
+  "text": "The end — of man. But not the end of evolution. The children of men still live — the machines will go on. Not of man's flesh, but of a better flesh, a flesh that knows no sickness, and no decay, a flesh that spends no thousands of years in advancing a step in its full evolution, but overnight leaps ahead to new heights. Last night we saw it leap ahead, as it discovered the secret that had baffled man for seven centuries, and me for one and a half. I have lived — a century and a half. Surely a good life, and a life a man of six centuries ago would have called full. We will go now. The beams will reach us in half an hour. Man is gone, and it is better, Trest, And I think we had best go soon.",
+  "made": "2026-11-01T15:19:20.402Z",
+  "candidates": {
+   "A": {
+    "generated_voice_id": "jUmqRaXgh5ocW4zdKwIT",
+    "seconds": 78.7,
+    "heard": "The end of man, but not the end of evolution. The children of men still live. The machines will go on, not of man's flesh, but of a better flesh, a flesh that knows no sickness and no decay, a flesh that spends no thousands of years in advancing a step in its full evolution, but overnight leaps ahead to new heights. Last night we saw it leap ahead as it discovered the secret that had baffled man for seven centuries and me for one and a half. I have lived a century and a half, surely a good life and a life a man of six centuries ago would have called full. We will go now. The beams will reach us in half an hour. Man is gone, and it is better, Trest, and I think we had best go soon",
+    "words": 142,
+    "missed": []
+   },
+   "B": {
+    "generated_voice_id": "s1j7frDtu6HJpiSC4lG7",
+    "seconds": 67.7,
+    "heard": "The end of man, but not the end of evolution. The children of men still live. The machines will go on, not of man's flesh, but of a better flesh, a flesh that knows no sickness and no decay, a flesh that spends no thousands of years in advancing a step in its full evolution, but overnight leaps ahead to new heights. Last night we saw it leap ahead as it discovered the secret that had baffled man for seven centuries and me for one and a half. I have lived a century and a half, surely a good life, and a life a man of six centuries ago would have called full. We will go now. The beams will reach us in half an hour. Man is gone, and it is better, Trest, and I think we had best go soon.",
+    "words": 142,
+    "missed": []
+   },
+   "C": {
+    "generated_voice_id": "5ObhqKylCvp8LlpOVl6i",
+    "seconds": 76.4,
+    "heard": "The end of man. But not the end of evolution. The children of man still live. The machines will go on. Not of man's flesh, but of a better flesh. A flesh that knows no sickness and no decay. A flesh that spends no thousands of years in advancing a step in its full evolution, but overnight leaps ahead to new heights. Last night we saw it leap ahead as it discovered the secret that had baffled man for seven centuries, and me for one and a half. I have lived a century and a half. Surely a good life, and a life a man of six centuries ago would have called full. We will go now. The beams will reach us in half an hour. Man is gone, and it is better, Trest. And I think we had best go soon",
+    "words": 142,
+    "missed": [
+     "men"
+    ]
+   }
+  }
+ },
+ "trest": {
+  "key": "b671815ae917",
+  "model": "eleven_ttv_v3",
+  "text": "Then we must find it for ourselves, I think, Roal, that this is the end, The beams will be here in another five minutes, We are alive — but is it worth it? Man is gone now, never to return. Life, too, for that matter,",
+  "made": "2026-11-01T15:19:29.779Z",
+  "candidates": {
+   "A": {
+    "generated_voice_id": "BH9RW1UHJXDvKfguy4TD",
+    "seconds": 19.1,
+    "heard": "Then we must find it for ourselves. I think, Roll, that this is the end. The beams will be here in another five minutes. We are alive, but is it worth it? Man is gone now, never to return. Life too, for that matter",
+    "words": 44,
+    "missed": []
+   },
+   "B": {
+    "generated_voice_id": "ca7ftwkeFG13xq2Ur9jM",
+    "seconds": 17.6,
+    "heard": "Then we must find it for ourselves, I think, Roel that this is the end the beams will be here in another five minutes we are alive but is it worth it man is gone now never to return life too for that matter",
+    "words": 44,
+    "missed": [
+     "roal"
+    ]
+   },
+   "C": {
+    "generated_voice_id": "5pKy0G8ZgPW92e4kuncW",
+    "seconds": 20,
+    "heard": "Then we must find it for ourselves. I think, Raul, that this is the end. The beams will be here in another five minutes. We are alive, but is it worth it? Man is gone now, never to return. Life too, for that matter",
+    "words": 44,
+    "missed": [
+     "roal"
+    ]
+   }
+  }
+ },
+ "kahsh": {
+  "key": "85f96ee2dc0e",
+  "model": "eleven_ttv_v3",
+  "text": "The life-beams? … The life-beams? … The life-beams? … The life-beams? … The life-beams? … The life-beams?",
+  "made": "2026-11-01T15:19:38.110Z",
+  "candidates": {
+   "A": {
+    "generated_voice_id": "LANU9aQTwdRxAt7AjPYx",
+    "seconds": 12.1,
+    "heard": "The life beams. The life beams. The life beams. The life beams. The life beams. The life beams",
+    "words": 18,
+    "missed": []
+   },
+   "B": {
+    "generated_voice_id": "IYUe2eUOdMyM99O7iXvC",
+    "seconds": 12.6,
+    "heard": "The life beams. The life beams. The life beams. The life beams. The life beams. The life beams",
+    "words": 18,
+    "missed": []
+   },
+   "C": {
+    "generated_voice_id": "50k2XY2TdunU6NQTJgEx",
+    "seconds": 12.6,
+    "heard": "The life beams. The life beams. The life beams. The life beams. The life beams. The life beams",
+    "words": 18,
+    "missed": []
+   }
+  }
+ },
+ "cr21": {
+  "key": "70cd1fefec44",
+  "model": "eleven_ttv_v3",
+  "text": "Man is doomed, if these beams cannot be stopped, Let us concentrate on the two problems of stopping the beams, and the Ultimate Energy till the reenforcements, still several days away, can arrive.",
+  "made": "2026-11-01T15:19:47.298Z",
+  "candidates": {
+   "A": {
+    "generated_voice_id": "DHzEMciQQNmSB1lG2Mfz",
+    "seconds": 14.1,
+    "heard": "Man is doomed if these beams cannot be stopped. Let us concentrate on the two problems of stopping the beams and the ultimate energy till the reinforcements, still several days away, can arrive.",
+    "words": 33,
+    "missed": []
+   },
+   "B": {
+    "generated_voice_id": "lm4rwoA9pynv7thg7d0D",
+    "seconds": 15,
+    "heard": "Man is doomed if these beams cannot be stopped. Let us concentrate on the two problems of stopping the beams and the ultimate energy till the reinforcements, still several days away, can arrive.",
+    "words": 33,
+    "missed": []
+   },
+   "C": {
+    "generated_voice_id": "Ynyr8t330NnmCyMiDlNl",
+    "seconds": 13.8,
+    "heard": "Man is doomed if these beams cannot be stopped. Let us concentrate on the two problems of stopping the beams and the ultimate energy till the reinforcements, still several days away, can arrive.",
+    "words": 33,
+    "missed": []
+   }
+  }
+ },
+ "x5638": {
+  "key": "8f9530c6f0d1",
+  "model": "eleven_ttv_v3",
+  "text": "The secret of the force-screen is simple. Correct, … The secret of the force-screen is simple. Correct,",
+  "made": "2026-11-01T15:19:53.401Z",
+  "candidates": {
+   "A": {
+    "generated_voice_id": "sWM38qqQEVO3d6J5TJcM",
+    "seconds": 6.3,
+    "heard": "The secret of the four screen is simple. Correct. The secret of the four screen is simple. Correct",
+    "words": 18,
+    "missed": [
+     "force",
+     "force"
+    ]
+   },
+   "B": {
+    "generated_voice_id": "ccJwQbKNI6ekYLzsB5mZ",
+    "seconds": 6.8,
+    "heard": "The secret of the force screen is simple. Correct. The secret of the force screen is simple. Correct.",
+    "words": 18,
+    "missed": []
+   },
+   "C": {
+    "generated_voice_id": "W4Hbz4Alvut2p4JaCasp",
+    "seconds": 8.8,
+    "heard": "The secret of the fourth screen is simple. Correct. The secret of the fourth screen is simple. Correct.",
+    "words": 18,
+    "missed": [
+     "force",
+     "force"
+    ]
+   }
+  }
+ },
+ "x6349": {
+  "key": "0dfc67e67879",
+  "model": "eleven_ttv_v3",
+  "text": "Their generators were automatically destroyed with the capture of the ship, as you know. We know nothing of their system.",
+  "made": "2026-11-01T15:20:00.270Z",
+  "candidates": {
+   "A": {
+    "generated_voice_id": "xJdKLyUbvijsuhhHQUD4",
+    "seconds": 6.5,
+    "heard": "Their generators were automatically destroyed with the capture of the ship, as you know. We know nothing of their system",
+    "words": 20,
+    "missed": []
+   },
+   "B": {
+    "generated_voice_id": "AQ4Kbb2UC6skeSmEuFEO",
+    "seconds": 7.1,
+    "heard": "Their generators were automatically destroyed with the capture of the ship, as you know. We know nothing of their system",
+    "words": 20,
+    "missed": []
+   },
+   "C": {
+    "generated_voice_id": "JW7lzNamltDFYTQ3YEqg",
+    "seconds": 8.1,
+    "heard": "Their generators were automatically destroyed with the capture of the ship, as you know. We know nothing of their system",
+    "words": 20,
+    "missed": []
+   }
+  }
+ },
+ "x6621": {
+  "key": "b41e9d9b5e35",
+  "model": "eleven_ttv_v3",
+  "text": "They affect chemical action, retarding it greatly in exothermic actions, speeding greatly endothermic actions, The system we do not know. Their minds cannot be read, they cannot be restored to life, so we cannot learn from them.",
+  "made": "2026-11-01T15:20:10.936Z",
+  "candidates": {
+   "A": {
+    "generated_voice_id": "yZeCNZ3WJAZ0SLmpoIBF",
+    "seconds": 20.5,
+    "heard": "They affect chemical action, retarding it greatly in exothermic actions, speeding greatly endothermic actions. The system—we do not know. Their minds cannot be read. They cannot be restored to life, so we cannot learn from them.",
+    "words": 37,
+    "missed": []
+   },
+   "B": {
+    "generated_voice_id": "AXTmTkPzNliTP1v5322O",
+    "seconds": 18.4,
+    "heard": "They affect chemical action, retarding it greatly in exothermic actions, speeding greatly endothermic actions. The system we do not know. Their minds cannot be read. They cannot be restored to life, so we cannot learn from them.",
+    "words": 37,
+    "missed": []
+   },
+   "C": {
+    "generated_voice_id": "f4tbd1NnGtothkENdraD",
+    "seconds": 18.6,
+    "heard": "They affect chemical action, retarding it greatly in exothermic actions, speeding greatly endothermic actions. The system we do not know. Their minds cannot be read. They cannot be restored to life, so we cannot learn from them.",
+    "words": 37,
+    "missed": []
+   }
+  }
+ },
+ "f1": {
+  "key": "068236f40ced",
+  "model": "eleven_ttv_v3",
+  "text": "Roal — your thoughts, I have. You thought of hydrogen? Your thoughts ran swiftly, and illogically, it seemed, but I followed slowly, and find you were right. Hydrogen is the start. What is your thought? Far ahead of us there is a step that no logic can justly ascend, but yet, working backwards, it is perfect.",
+  "made": "2026-11-01T15:20:24.744Z",
+  "candidates": {
+   "A": {
+    "generated_voice_id": "5YbMrpLSTKzNwXIFmdx7",
+    "seconds": 31.2,
+    "heard": "Roll. Your thoughts I have. You thought of hydrogen. Your thoughts ran swiftly and illogically it seemed, but I followed slowly and find you were right. Hydrogen is the start. What is your thought? Far ahead of us there is a step that no logic can justly ascend, but yet, working backwards, it is perfect.",
+    "words": 55,
+    "missed": []
+   },
+   "B": {
+    "generated_voice_id": "gyHwiazZgReFtpx2t92m",
+    "seconds": 26.7,
+    "heard": "Ro, your thoughts I have. You thought of hydrogen? Your thoughts ran swiftly and illogically it seemed. But I followed slowly and find you were right. Hydrogen is the start. What is your thought? Far ahead of us there is a step that no logic can justly ascend. But yet, working backwards, it is perfect",
+    "words": 55,
+    "missed": [
+     "roal"
+    ]
+   },
+   "C": {
+    "generated_voice_id": "kXJzuS0G8QYgehYvVRfz",
+    "seconds": 31.9,
+    "heard": "Roll. Your thoughts I have. You thought of hydrogen. Your thoughts ran swiftly and illogically, it seemed. But I followed slowly and find you were right. Hydrogen is the start. What is your thought? Far ahead of us there is a step that no logic can justly ascend. But yet, working backwards, it is perfect.",
+    "words": 55,
+    "missed": []
+   }
+  }
+ },
+ "cru1": {
+  "key": "1f5ca75c557e",
+  "model": "eleven_ttv_v3",
+  "text": "F two, only a part of the problem is solved. Half of half of the beams of Death are not yet stopped. And we have not the attack system,",
+  "made": "2026-11-01T15:20:32.371Z",
+  "candidates": {
+   "A": {
+    "generated_voice_id": "icEd3PM4QPhC6y18xIwN",
+    "seconds": 8.5,
+    "heard": "F2: Only a part of the problem is solved. Half of half of the beams of death are not yet stopped, and we have not the attack system",
+    "words": 29,
+    "missed": []
+   },
+   "B": {
+    "generated_voice_id": "eGpnx9Ep2G40pySAhVE8",
+    "seconds": 8.8,
+    "heard": "F2: Only a part of the problem is solved. Half of half of the beams of death are not yet stopped, and we have not the attack system",
+    "words": 29,
+    "missed": []
+   },
+   "C": {
+    "generated_voice_id": "UeJSHEQ4lU4pHBkxnk2h",
+    "seconds": 8.7,
+    "heard": "F2: Only a part of the problem is solved. Half of half of the beams of death are not yet stopped, and we have not the attack system",
+    "words": 29,
+    "missed": []
+   }
+  }
+ },
+ "plant": {
+  "key": "80b0bf1b8d87",
+  "model": "eleven_ttv_v3",
+  "text": "Power ready, … Power ready, … Power ready, … Power ready, … Power ready, … Power ready, … Power ready,",
+  "made": "2026-11-01T15:20:40.569Z",
+  "candidates": {
+   "A": {
+    "generated_voice_id": "2Tf3gTYCPKozVRkcd8g4",
+    "seconds": 8.2,
+    "heard": "Power ready. Power ready. Power ready. Power ready. Power ready. Power ready. Power ready.",
+    "words": 14,
+    "missed": []
+   },
+   "B": {
+    "generated_voice_id": "yiFyFqTQOcBDIdKZ4lHh",
+    "seconds": 8.1,
+    "heard": "Our ready. Our ready. Our ready. Our ready. Our ready. Our ready. Our ready.",
+    "words": 14,
+    "missed": [
+     "power",
+     "power",
+     "power",
+     "power",
+     "power",
+     "power",
+     "power"
+    ]
+   },
+   "C": {
+    "generated_voice_id": "5om5QPJ0zrvr4LKNDHsf",
+    "seconds": 13.6,
+    "heard": "Power ready. Power ready. Power ready. Power ready. Power ready. Power ready. Power ready.",
+    "words": 14,
+    "missed": []
+   }
+  }
+ },
+ "sphere1": {
+  "key": "b6482814fb88",
+  "model": "eleven_ttv_v3",
+  "text": "You, of matter, are inefficient, I can exist quite alone. … You, of matter, are inefficient, I can exist quite alone.",
+  "made": "2026-11-01T15:20:58.810Z",
+  "candidates": {
+   "A": {
+    "generated_voice_id": "DTdpfyePSFl4P1UZSjyN",
+    "seconds": 11.8,
+    "heard": "You of matter are inefficient. I can exist quite alone. You of matter are inefficient. I can exist quite alone",
+    "words": 20,
+    "missed": []
+   },
+   "B": {
+    "generated_voice_id": "f4yleQUGaOdIA1BymGea",
+    "seconds": 13.3,
+    "heard": "You of matter are inefficient. I can exist quite alone. You of matter are inefficient. I can exist quite alone",
+    "words": 20,
+    "missed": []
+   },
+   "C": {
+    "generated_voice_id": "sbzhB6X0St7Zud38UO9q",
+    "seconds": 14,
+    "heard": "You of matter are inefficient. I can exist quite alone. You of matter are inefficient. I can exist quite alone",
+    "words": 20,
+    "missed": []
+   }
+  }
+ },
+ "golden": {
+  "key": "eee8b7bb555a",
+  "model": "eleven_ttv_v3",
+  "text": "Once you failed, F two; once you came near destroying all things. Now you have planted the seed. I grow now. Yes, I can deal with the Outsiders — they who have killed and destroyed, that they might possess. But it is not necessary that we destroy. They shall return to their planet. Go, and do not return.",
+  "made": "2026-11-01T15:21:10.994Z",
+  "candidates": {
+   "A": {
+    "generated_voice_id": "vz15kffesx4FjXOEQSFu",
+    "seconds": 32.4,
+    "heard": "Once you failed, F2. Once you came near destroying all things. Now you have planted the seed. I grow now. Yes, I can deal with the outsiders, they who have killed and destroyed that they might possess. But it is not necessary that we destroy. They shall return to their planet. Go, and do not return",
+    "words": 57,
+    "missed": []
+   },
+   "B": {
+    "generated_voice_id": "SZ5PYAulKsprzW8LEBmN",
+    "seconds": 34.8,
+    "heard": "Once you failed, F2. Once you came near destroying all things. Now you have planted the seed. I grow now. Yes, I can deal with the outsiders. They who have killed and destroyed that they might possess. But it is not necessary that we destroy. They shall return to their planet. Go and do not return",
+    "words": 57,
+    "missed": []
+   },
+   "C": {
+    "generated_voice_id": "rTvXkSy0QjvG2LcUv0xG",
+    "seconds": 36.3,
+    "heard": "Once you failed, F2. Once you came near destroying all things. Now you have planted the seed. I grow now. Yes, I can deal with the outsiders. They who have killed and destroyed that they might possess. But it is not necessary that we destroy. They shall return to their planet. Go and do not return",
+    "words": 57,
+    "missed": []
+   }
+  }
+ }
+}

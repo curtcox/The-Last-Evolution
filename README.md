@@ -11,7 +11,8 @@ npm start
 
 This extracts the story, builds the script and checks it word for word, builds the site, and opens it at
 http://localhost:8077/. The studio, for scrubbing scenes, is at http://localhost:8077/studio/. Once `npm run scratch` has
-voiced it, Round 1's listening page is at http://localhost:8077/review/round1/. You need Node.js 20 or newer; making the film also needs Google Chrome and ffmpeg.
+voiced it, Round 1's listening page is at http://localhost:8077/review/round1/, and once `npm run casting` and
+`npm run sound` have run, Round 3's casting and sound pages are at http://localhost:8077/review/round3/. You need Node.js 20 or newer; making the film also needs Google Chrome and ffmpeg.
 
 ## What's where
 
