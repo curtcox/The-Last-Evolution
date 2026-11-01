@@ -199,24 +199,24 @@ gives the film its one visual rule:
 ## 6. Chapters
 
 Chapters are units of construction and review: each has a scene file, a storyboard and a render. They're joined into one
-film, with YouTube chapter markers. The splits follow the story's own scene breaks. Times assume about 140 spoken words
-a minute plus holds. The word counts per chapter are approximate until Phase 1 cuts the chapters on paragraph ids,
-and Phase 1 replaces the times with measured ones from the voices.
+film, with YouTube chapter markers. Six of the ten splits fall at the story's own scene breaks. Phase 1 cut the chapters on paragraph ids (`script/chapters.yaml`), so the word counts are exact;
+the times are from the scratch voices (153 words a minute, `script/reports/runtime.md`), before holds for pictures, and
+Phase 3 sets the real pace by ear. Round 1 (C2) proposes splitting the closing frame off chapter 10 as chapter 11.
 
-| # | title | text (opens with) | words | ≈ min |
+| # | title | text (opens with) | words | min:s |
 |---|---|---|---|---|
-| 0 | The Record | the title page and preamble: "I am the last of my type…" | 94 | 1.5 |
-| 1 | 2538 | "It was 2538 years After the Year of the Son of Man…" | 439 | 3.5 |
-| 2 | The Outsiders | "Then came the Outsiders…" | 610 | 4.5 |
-| 3 | Life Alone Can Understand Life | "The science-investigators had been present…" | 963 | 7 |
-| 4 | The Council | "He was interrupted…" (to F-1's waking) | 593 | 4.5 |
-| 5 | The Hydrogen Wall | "Roal was lying quietly on a couch…" (to the tiny machines' launch) | 1,063 | 8 |
-| 6 | Ten Thousand Motes | "Dawn was breaking again over Denver…" | 564 | 4 |
-| 7 | The Dome | "In Denver, two humans watched the screens…" | 513 | 4 |
-| 8 | Last of Men | "We are alone, Trest…" (to the livid beam) | ~680 | 5 |
-| 9 | Pure Force | "There was a dull, drumming beat…" (to the golden sphere vanishing) | ~570 | 4.5 |
-| 10 | Go, and Do Not Return | "Far in space…" to the end, with the frame | 610 | 4.5 |
-| | | | **6,677** | **≈ 52** |
+| 0 | The Record | the title page and preamble: "I am the last of my type…" | 94 | 0:38 |
+| 1 | 2538 | "It was 2538 years After the Year of the Son of Man…" | 439 | 3:00 |
+| 2 | The Outsiders | "Then came the Outsiders…" | 602 | 4:11 |
+| 3 | Life Alone Can Understand Life | "The science-investigators had been present…" | 963 | 6:42 |
+| 4 | The Council | "He was interrupted…" (to F-1's waking) | 589 | 4:20 |
+| 5 | The Hydrogen Wall | "Roal was lying quietly on a couch…" (to the tiny machines' launch) | 1,059 | 7:27 |
+| 6 | Ten Thousand Motes | "Dawn was breaking again over Denver…" | 564 | 3:56 |
+| 7 | The Dome | "In Denver, two humans watched the screens…" | 513 | 3:44 |
+| 8 | Last of Men | "We are alone, Trest…" (to the livid beam) | 657 | 4:40 |
+| 9 | Pure Force | "There was a dull, drumming beat…" (to the golden sphere vanishing) | 592 | 4:10 |
+| 10 | Go, and Do Not Return | "Far in space…" to the end, with the frame | 605 | 4:13 |
+| | | | **6,677** | **≈ 47** |
 
 **Pilot: chapter 5, *The Hydrogen Wall*.** It has the most of everything:
 - Roal's dreaming speech on the hydrogen atom, the densest science on the site;
@@ -331,7 +331,7 @@ Each phase ends at a gate run by the loop in §2.
 | phase | Claude delivers | Curt reviews | the gate closes when |
 |---|---|---|---|
 | **0. Foundation** ✅ | ✅ the source text, its hash and `npm run story`; ✅ the kit (painting, timing, renderer) with a smoke-test scene; ✅ `npm start`, the local server and the studio; ✅ a first site (home, Read with the illustration, About) and its Pages workflow; ✅ the ElevenLabs key (in the Keychain; it works, though it can't read the quota); ✅ the Morey scan and its copyright status. axol-f's script, voice, review and QR tools are ported in the phases that first use them (1, 3, 5), adapted to a story rather than a conversation | that the site is up, and the Morey finding | the site deploys; the Morey question is answered |
-| **1. Script** (Round 1) | `script.yaml` with the verbatim and attribution reports; the pronunciation list with a scratch-voice listening page; measured runtime; a decision sheet for the open questions in §10 | every attribution, every spoken form, the §10 decisions | the verbatim check passes; every §10 item is decided |
+| **1. Script** (Round 1) ⏳ | ✅ `script.yaml` (`npm run script`) with the verbatim and attribution reports (`npm run check`, `script/reports/`); ✅ the pronunciation list with a scratch-voice listening page (`npm run scratch`); ✅ measured runtime; ✅ a decision sheet, `review/round1.md`. Waiting on Curt. Originally: `script.yaml` with the verbatim and attribution reports; the pronunciation list with a scratch-voice listening page; measured runtime; a decision sheet for the open questions in §10 | every attribution, every spoken form, the §10 decisions | the verbatim check passes; every §10 item is decided |
 | **2. Research and references** | the site's notes in draft (all four areas), `refs.yaml`, the link report, a fact-check list with a source for each claim; a comparison of the 1932 text (archive.org scan) with the 1961 text Gutenberg transcribed, with any differences put to Curt | the notes' content, tone and balance (especially the succession notes), the link list | every claim is sourced; every link is live |
 | **3. Casting and sound** | a casting sampler: 3 candidates per role reading that role's own lines, with the narrator's young and old treatments side by side; motif sketches; effect samples | voices by ear, the motif | each role is cast, the motif is chosen, and the full voice pass is done |
 | **4. Look development** | style frames for the ink-wash-and-energy rule; a model sheet for every design in §5; the chapter-title page; QR layouts A and B with scan reports; the title page | the look | the designs and a QR layout are approved |

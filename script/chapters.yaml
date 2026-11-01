@@ -1,0 +1,16 @@
+# chapters.yaml: where the film's chapters fall (PLAN.md §6), by the first paragraph of each. A chapter runs to the
+# paragraph before the next one's start, and chapter 10 to the end. Six cuts fall at the story's own scene breaks
+# (0|1, 3|4, 5|6, 6|7, 7|8, 8|9); the rest are ours, and the three scene breaks inside chapters (after p013, p058 and
+# p135) become brush-wipe transitions. tools/build_script.mjs reports which is which.
+# Chapter 0 also carries the title page: the masthead, title and byline, shown, not voiced.
+- {n: 0, title: The Record, from: p001}
+- {n: 1, title: '2538', from: p003}
+- {n: 2, title: The Outsiders, from: p007}
+- {n: 3, title: Life Alone Can Understand Life, from: p018}
+- {n: 4, title: The Council, from: p037}
+- {n: 5, title: The Hydrogen Wall, from: p051}
+- {n: 6, title: Ten Thousand Motes, from: p074}
+- {n: 7, title: The Dome, from: p083}
+- {n: 8, title: Last of Men, from: p100}
+- {n: 9, title: Pure Force, from: p115}
+- {n: 10, title: 'Go, and Do Not Return', from: p130}

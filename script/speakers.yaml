@@ -1,0 +1,82 @@
+# speakers.yaml: who speaks each quoted span of the story (PLAN.md §3, rule 2). Everything outside quotation marks is the
+# narrator's, so only paragraphs with quotation marks are listed, and each lists one speaker per span, in order.
+#   p037: [x5638]                               one span, spoken aloud
+#   p062: [f2 thought]                          heard as thought ("waves of thought"), not sound
+#   p036: {who: [roal], sure: no, why: …}       an attribution the text leaves open: it goes on the Round 1 sheet
+# A span that a paragraph leaves open (no closing quotation mark) runs on into the next paragraph's, and the check
+# insists both name the same speaker. Ids are script/cast.yaml's. tools/build_script.mjs turns this into script.yaml.
+
+# Chapter 3. Roal's speech to the gathered men
+p033: {who: [roal, roal, roal], why: 'tagged "he began", after "It was Roal who sent the first thoughts"'}
+p034: {who: [roal], why: "continues p033. The 'single-quoted' words are Roal imagining the Outsiders; he says them himself"}
+p035: {who: [roal], why: continues p033 and closes it}
+p036:
+  who: [roal]
+  sure: no
+  why: >-
+    untagged. A new quotation, but the next line is "He was interrupted", so a man is speaking, and Roal has the floor.
+    It could be Trest, who later leads the work on the beams, or Kahsh
+
+# Chapter 4. The council
+p037: {who: [x5638], why: '"One of the newest science-machines was speaking", named in the next sentence'}
+p038: {who: [roal, roal], why: tagged "said Roal softly"}
+p039: {who: [roal], why: continues p038}
+p040: {who: [x5638], why: tagged "replied X-5638"}
+p041: {who: [roal], why: tagged "asked Roal"}
+p042: {who: [x6349, x6349], why: tagged "replied X-6349"}
+p043: {who: [trest], why: tagged "replied Trest"}
+p044: {who: [kahsh], why: tagged "asked Kahsh-256799"}
+p045: {who: [x6221, x6221], why: tagged "answered X-6221"}
+p046: {who: [cr21, cr21], why: tagged "said C-R-21"}
+
+# Chapter 5. The hydrogen wall
+p052: {who: [f1], why: tagged "called F-1"}
+p053: {who: [roal], why: '"Roal sat up."'}
+p054: {who: [f1], why: "untagged, but it answers Roal's \"you have gained consciousness\" with \"I have\""}
+p056: {who: [roal], why: 'after "Roal''s eyes dreamed"'}
+p057: {who: [roal], why: 'continues p056; "Roal''s soft voice dropped to nothing"'}
+p058: {who: [f1], why: '"F-1 hummed softly"'}
+p062: {who: [f2 thought], why: '"From it came waves of thought": the newborn F-2, not yet named'}
+p064: {who: [f2 thought], why: untagged; the newborn goes on ("I shall make others of my type")}
+p067: {who: [roal], why: tagged "asked Roal"}
+p068: {who: [f2, f2], why: tagged "replied F-2"}
+p069: {who: [cru1], why: 'tagged "said the ruler machine", named C-R-U-1 a sentence later'}
+p070: {who: [f2], why: tagged "said F-2"}
+p072: {who: [f2], why: 'untagged. F-2 made the beam, and in p088 F-2 says "I was mistaken when I said no screen could stop that beam"'}
+
+# Chapter 7. The dome
+p084: {who: [trest], why: tagged "said Trest"}
+p085: {who: [roal, roal], why: "\"Roal's eyes were dreaming again\""}
+p088: {who: [f2], why: 'six machines float in "following F-2", and he speaks of the screen he promised in p072'}
+p090: {who: [trest], why: tagged "said Trest quietly"}
+p091: {who: [f2], why: tagged "answered F-2"}
+
+# Chapter 8. Last of men
+p100: {who: [roal, roal], why: 'tagged "said Roal" and "he said softly"'}
+p101:
+  who: [roal]
+  sure: no
+  why: >-
+    untagged. Roal answering his own "Pity that men would not spread", which lets the next line's "answered Trest"
+    answer him. Or Trest pushing back, and then speaking again in p102
+p102: {who: [trest], why: tagged "answered Trest"}
+p103: {who: [roal], why: 'answers Trest; the speech runs to p107, tagged "said Roal, dreaming again"'}
+p104: {who: [roal], why: continues p103}
+p105: {who: [roal], why: continues p103}
+p106: {who: [roal], why: continues p103}
+p107: {who: [roal, roal], why: 'tagged "said Roal, dreaming again", and closes the speech'}
+p108: {who: [f2 thought], why: 'F-2''s vow, tagged only at its end, in p111: "came from F-2''s thought-apparatus"'}
+p109: {who: [f2 thought], why: continues p108}
+p110: {who: [f2 thought], why: continues p108}
+p111: {who: [f2 thought], why: tagged "came from F-2's thought-apparatus"}
+
+# Chapter 9. Pure force
+p116: {who: [plant], why: '"came the signal of the small brain built into it"'}
+p121: {who: [sphere1 thought, sphere1 thought], why: 'the new globe, answering F-2''s probing thoughts: "came at last"'}
+p125: {who: [golden thought], why: '"Into the thought-apparatus of each … came the impulses, deep in tone"'}
+p128: {who: [golden thought], why: untagged; the golden sphere goes on}
+
+# Chapter 10. Go, and do not return
+p132: {who: [golden thought], why: '"its mighty intelligence spoke"'}
+p133: {who: [golden thought], why: continues p132}
+p135: {who: [golden thought], why: untagged; the golden sphere's last words to the Outsiders}

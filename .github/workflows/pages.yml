@@ -22,7 +22,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - run: npm ci --no-audit --no-fund
       - run: node tools/extract_story.mjs
+      - run: node tools/build_script.mjs
+      - run: node tools/verbatim_check.mjs
       - run: node tools/build_site.mjs
       - uses: actions/upload-pages-artifact@v3
         with:

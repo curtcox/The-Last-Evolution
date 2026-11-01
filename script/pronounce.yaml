@@ -1,0 +1,33 @@
+# pronounce.yaml: how the voices say words they'd otherwise get wrong (PLAN.md §3, rule 3). Each respelling changes
+# only what's sent to the voice, never the text: the script, captions and site keep the story's spelling.
+#   text     the words as the story spells them (matched whole, case-sensitive)
+#   say      what the voice is sent now
+#   options  the choices Round 1 decides between, each heard on the listening page (tools/scratch_voice.mjs), beside
+#            the voice reading the text as is. `say` is the recommended option until Curt picks.
+#   group    entries decided together
+
+# Designations. Option B (digit by digit) is recommended: they're serial numbers, and say so. Each is also lettered on
+# screen the first time it's spoken, so the eye has the number either way.
+- {text: 'X-5638', say: X five six three eight, group: designations, options: {A: X fifty-six thirty-eight, B: X five six three eight}}
+- {text: 'X-6349', say: X six three four nine, group: designations, options: {A: X sixty-three forty-nine, B: X six three four nine}}
+- {text: 'X-6221', say: X six two two one, group: designations, options: {A: X sixty-two twenty-one, B: X six two two one}}
+- {text: 'MX-3401', say: M X three four oh one, group: designations, options: {A: M X thirty-four oh one, B: M X three four oh one}}
+- {text: 'C-R-21', say: C R two one, group: designations, options: {A: C R twenty-one, B: C R two one}}
+- {text: 'C-R-U-1', say: C R U one, group: designations}
+- {text: 'F-1', say: F one, group: designations}
+- {text: 'F-2', say: F two, group: designations}
+- {text: '25374', say: two five three seven four, group: designations, options: {A: 'twenty-five, three seventy-four', B: two five three seven four}}
+- {text: '35429', say: three five four two nine, group: designations, options: {A: 'thirty-five, four twenty-nine', B: three five four two nine}}
+- {text: 'Kahsh-256799', say: 'Kosh, two five six seven nine nine', group: designations, options: {A: 'Kosh, two fifty-six, seven ninety-nine', B: 'Kosh, two five six seven nine nine', C: 'Kash, two five six seven nine nine'}}
+
+# Years, said as years.
+- {text: '2538', say: twenty-five thirty-eight, group: years, options: {A: twenty-five thirty-eight, B: two thousand five hundred and thirty-eight}}
+- {text: '2500', say: twenty-five hundred, group: years}
+- {text: '2100', say: twenty-one hundred, group: years}
+
+# Names and coined words. Campbell never says how to say his names, so these are our choices. (Kahsh is only ever
+# "Kahsh-256799", so its name is decided above: Kosh, or Kash in option C.)
+- {text: Roal, say: Roal, group: names, options: {A: Roal, B: Ro-al}}
+- {text: kilads, say: kill-ads, group: words, options: {A: kill-ads, B: kye-lads}}
+- {text: mentatype, say: menta-type, group: words}
+- {text: Deimos, say: Dye-mos, group: words}
