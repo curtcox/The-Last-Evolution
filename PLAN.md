@@ -87,18 +87,17 @@ its body, from *"I am the last of my type"* to *"you will change your belief."* 
 1. **Every word of the story is spoken, in order.** That includes the speech tags ("said Roal"), the narrator's
    asides, and the period wording ("Year of the Son of Man", "kilads"). Spelling follows the Gutenberg text.
 2. **Who speaks what.** Text inside quotation marks goes to the character speaking; everything else is the narrator's
-   (F-2). `script/speakers.yaml` records each attribution, and the check reports every one for review. The ambiguous
-   ones are listed for Curt in Round 1: the unattributed council lines, the waves of thought, and F-2's vow, which is
-   tagged only at its end.
+   (F-2). `script/speakers.yaml` records each attribution, and the check reports every one for review. Round 1 settled
+   the two the text leaves open (p036 and p101, both Roal) and which lines are heard as thought (DECISIONS.md).
 3. **Speech-only respellings** live in `script/pronounce.yaml` and never change the text. They cover the designations
-   (Roal, 25374; Kahsh-256799; X-5638; C-R-21; C-R-U-1; MX-3401), the years, Deimos, Sirius, kilads, and so on. How
-   to say a designation ("X fifty-six thirty-eight" or "X five-six-three-eight") is a Round 1 decision. Each one is
+   (Roal, 25374; Kahsh-256799; X-5638; C-R-21; C-R-U-1; MX-3401), the years, Deimos, Sirius, kilads, and so on. Round 1
+   decided designations are said digit by digit ("X five six three eight"). Each one is
    lettered on screen in the period's typeface the first time it's spoken.
 4. **Editorial matter isn't voiced, but it is shown.** That covers:
    - the masthead line ("A Classic Reprint from AMAZING STORIES, August, 1932") and the byline, which become a painted
      title page;
    - footnotes [1] (kilad) and [2] (unit), which appear as painted footnotes when their superscripts are spoken
-     *(default; Round 1 can choose to have the narrator voice them as asides instead)*;
+     *(painted only, as Round 1 decided)*;
    - "[Illustration: Illustrated by MOREY]", which becomes the moment the Morey illustration (or our homage to it)
      appears;
    - the scene-break asterisks, which become chapter breaks or brush-wipe transitions.
@@ -124,6 +123,7 @@ available for a cameo if he wants one, but isn't cast by default.
 | **X-5638, X-6349, X-6221** (science machines) | short lines | one family of machine voices, told apart by timbre and pace |
 | **F-1** | 2 speeches | newer and stranger than the others, newly conscious |
 | **C-R-U-1** (coordinator) | 1 line | a ruler, crisp |
+| **the power plant's brain** | "Power ready" | the smallest, flattest of the machine family |
 | **the first force-sphere** | "You, of matter, are inefficient…" | cold, contemptuous, unstable (it's destroyed seconds later) |
 | **the golden sphere** | 3 speeches | deep, vast, "of infinite power, held gently in check", heard as thought rather than sound |
 
@@ -186,7 +186,7 @@ gives the film its one visual rule:
   page. In the film, it appears once, at that moment in chapter 5. Our own painting of the scene builds up to it, then
   dissolves into the page itself.
 - **Text on screen** is the magazine's: chapter titles as pulp page headers with a drop cap, designations lettered in
-  the period's typeface, footnotes as footnotes. Captions are a Round 1 decision (§10).
+  the period's typeface, footnotes as footnotes. Captions are soft (an uploaded `.vtt` written from the script), never burned in.
 - **QR codes** dress as pulp-page furniture: a footnote tag, a "classified ad" box, a stamp in the page corner. They
   follow axol-f's scannability rules (quiet zone, contrast, minimum size and hold time, decoded from rendered frames).
   They're placed at natural pauses, kept off climactic beats, and much sparser than axol-f's: about 30–60 in the whole
@@ -199,9 +199,9 @@ gives the film its one visual rule:
 ## 6. Chapters
 
 Chapters are units of construction and review: each has a scene file, a storyboard and a render. They're joined into one
-film, with YouTube chapter markers. Six of the ten splits fall at the story's own scene breaks. Phase 1 cut the chapters on paragraph ids (`script/chapters.yaml`), so the word counts are exact;
+film, with YouTube chapter markers. Seven of the eleven splits fall at the story's own scene breaks. Phase 1 cut the chapters on paragraph ids (`script/chapters.yaml`), so the word counts are exact;
 the times are from the scratch voices (153 words a minute, `script/reports/runtime.md`), before holds for pictures, and
-Phase 3 sets the real pace by ear. Round 1 (C2) proposes splitting the closing frame off chapter 10 as chapter 11.
+Phase 3 sets the real pace by ear. Round 1 split the closing frame off chapter 10 as chapter 11, a bookend to chapter 0.
 
 | # | title | text (opens with) | words | min:s |
 |---|---|---|---|---|
@@ -215,7 +215,8 @@ Phase 3 sets the real pace by ear. Round 1 (C2) proposes splitting the closing f
 | 7 | The Dome | "In Denver, two humans watched the screens…" | 513 | 3:44 |
 | 8 | Last of Men | "We are alone, Trest…" (to the livid beam) | 657 | 4:40 |
 | 9 | Pure Force | "There was a dull, drumming beat…" (to the golden sphere vanishing) | 592 | 4:10 |
-| 10 | Go, and Do Not Return | "Far in space…" to the end, with the frame | 605 | 4:13 |
+| 10 | Go, and Do Not Return | "Far in space…" (to "Go, and do not return.") | 317 | 2:17 |
+| 11 | Five Great Years | "The Outsiders left…" to the end: the frame, closing the record chapter 0 opens | 288 | 2:02 |
 | | | | **6,677** | **≈ 47** |
 
 **Pilot: chapter 5, *The Hydrogen Wall*.** It has the most of everything:
@@ -331,12 +332,12 @@ Each phase ends at a gate run by the loop in §2.
 | phase | Claude delivers | Curt reviews | the gate closes when |
 |---|---|---|---|
 | **0. Foundation** ✅ | ✅ the source text, its hash and `npm run story`; ✅ the kit (painting, timing, renderer) with a smoke-test scene; ✅ `npm start`, the local server and the studio; ✅ a first site (home, Read with the illustration, About) and its Pages workflow; ✅ the ElevenLabs key (in the Keychain; it works, though it can't read the quota); ✅ the Morey scan and its copyright status. axol-f's script, voice, review and QR tools are ported in the phases that first use them (1, 3, 5), adapted to a story rather than a conversation | that the site is up, and the Morey finding | the site deploys; the Morey question is answered |
-| **1. Script** (Round 1) ⏳ | ✅ `script.yaml` (`npm run script`) with the verbatim and attribution reports (`npm run check`, `script/reports/`); ✅ the pronunciation list with a scratch-voice listening page (`npm run scratch`); ✅ measured runtime; ✅ a decision sheet, `review/round1.md`. Waiting on Curt. Originally: `script.yaml` with the verbatim and attribution reports; the pronunciation list with a scratch-voice listening page; measured runtime; a decision sheet for the open questions in §10 | every attribution, every spoken form, the §10 decisions | the verbatim check passes; every §10 item is decided |
+| **1. Script** (Round 1) ✅ | ✅ `script.yaml` (`npm run script`) with the verbatim and attribution reports (`npm run check`, `script/reports/`); ✅ the pronunciation list with a scratch-voice listening page (`npm run scratch`); ✅ measured runtime; ✅ a decision sheet, `review/round1.md`, closed 2026-11-01 with every recommendation accepted. Originally: `script.yaml` with the verbatim and attribution reports; the pronunciation list with a scratch-voice listening page; measured runtime; a decision sheet for the open questions in §10 | every attribution, every spoken form, the §10 decisions | the verbatim check passes; every §10 item is decided |
 | **2. Research and references** | the site's notes in draft (all four areas), `refs.yaml`, the link report, a fact-check list with a source for each claim; a comparison of the 1932 text (archive.org scan) with the 1961 text Gutenberg transcribed, with any differences put to Curt | the notes' content, tone and balance (especially the succession notes), the link list | every claim is sourced; every link is live |
 | **3. Casting and sound** | a casting sampler: 3 candidates per role reading that role's own lines, with the narrator's young and old treatments side by side; motif sketches; effect samples | voices by ear, the motif | each role is cast, the motif is chosen, and the full voice pass is done |
 | **4. Look development** | style frames for the ink-wash-and-energy rule; a model sheet for every design in §5; the chapter-title page; QR layouts A and B with scan reports; the title page | the look | the designs and a QR layout are approved |
 | **5. Pilot** | chapter 5: storyboard → draft → final render with voice and sound, on the review server | the pilot, in as many rounds as it takes | it's the standard for the rest |
-| **6. Chapters** | storyboards for all 11; then build → draft → review → revise, in batches of about 3 (0–2, 3–4 and 6, 7–10) | each storyboard, then each draft | every chapter is approved, its lint passes, its codes scan |
+| **6. Chapters** | storyboards for all 12; then build → draft → review → revise, in batches of about 3 (0–2, 3–4 and 6, 7–11) | each storyboard, then each draft | every chapter is approved, its lint passes, its codes scan |
 | **7. Site** | the full site against real timings: watch, read, notes, references, about and making-of | the site, on desktop and phone | approved |
 | **8. Assembly** | final renders, the joined film, the mix to −14 LUFS, chapter markers, captions, YouTube title, description and tags, thumbnail options | the final cut, the description, the thumbnail | approved |
 | **9. QA** | a full watch-through report, a phone scan of every code off a real screen, the loudness check, a final link check, a typo pass on every lettered word | a full watch-through of your own | both of us sign off |
@@ -347,23 +348,17 @@ Phases overlap where nothing depends on the earlier one. References (2) can run 
 
 ---
 
-## 10. Open questions for Round 1
+## 10. Round 1's open questions: decided
 
-Claude will bring each of these with a recommendation. None blocks Phase 0.
+All decided on 2026-11-01, as Claude recommended ([review/round1.md](review/round1.md), [DECISIONS.md](DECISIONS.md)):
 
-1. **Captions.** Burned-in, as axol-f's are, or soft captions (an uploaded `.vtt`) so the painting stays clean, given
-   that the site already shows the synced text? Claude leans towards soft captions, plus lettered designations and
-   footnotes on screen.
-2. **Footnotes.** Painted only (the default), or voiced as narrator's asides?
-3. **Designations.** "X fifty-six thirty-eight" or "X five-six-three-eight"? "Roal, two-five-three-seven-four", or
-   just "Roal" with the number lettered on screen? (The verbatim rule needs the number spoken. Respelling only changes
-   how.)
-4. **The title page.** A painted homage to a 1932 *Amazing Stories* masthead and contents page (its own design, no real
-   logo), or a plain period title card?
-5. **A Curt cameo?** For example, a few words in the closing credits in your own voice, or none.
-6. **The making-of page.** Include this project's Claude Code sessions, as axol-f does?
-7. **The title.** Keep *The Last Evolution* alone, or add a subtitle on YouTube, such as *"The Last Evolution (1932):
-   the full story, voiced and painted"*?
+1. **Captions:** soft (`.vtt`), written from the script. Designations and footnotes are lettered in the picture.
+2. **Footnotes:** painted only, for about five seconds when the superscript is spoken.
+3. **Designations:** digit by digit, every time the text has them.
+4. **The title page:** a painted homage to a 1932 pulp contents page, in our own design, with no magazine logo.
+5. **A Curt cameo:** none in the film.
+6. **The making-of page:** yes, with this project's Claude Code sessions, edited as axol-f's were.
+7. **The YouTube title:** *The Last Evolution (1932) by John W. Campbell, Jr.: the full story, voiced and painted*.
 
 ---
 

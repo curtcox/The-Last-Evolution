@@ -3,10 +3,11 @@
 #   text     the words as the story spells them (matched whole, case-sensitive)
 #   say      what the voice is sent now
 #   options  the choices Round 1 decides between, each heard on the listening page (tools/scratch_voice.mjs), beside
-#            the voice reading the text as is. `say` is the recommended option until Curt picks.
+#            the voice reading the text as is. Round 1 settled each on the recommended option, which is `say`;
+#            the options stay so the listening page can still play them side by side.
 #   group    entries decided together
 
-# Designations. Option B (digit by digit) is recommended: they're serial numbers, and say so. Each is also lettered on
+# Designations. Option B (digit by digit), as Round 1 decided: they're serial numbers, and say so. Each is also lettered on
 # screen the first time it's spoken, so the eye has the number either way.
 - {text: 'X-5638', say: X five six three eight, group: designations, options: {A: X fifty-six thirty-eight, B: X five six three eight}}
 - {text: 'X-6349', say: X six three four nine, group: designations, options: {A: X sixty-three forty-nine, B: X six three four nine}}

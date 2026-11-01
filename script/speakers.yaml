@@ -2,7 +2,7 @@
 # narrator's, so only paragraphs with quotation marks are listed, and each lists one speaker per span, in order.
 #   p037: [x5638]                               one span, spoken aloud
 #   p062: [f2 thought]                          heard as thought ("waves of thought"), not sound
-#   p036: {who: [roal], sure: no, why: …}       an attribution the text leaves open: it goes on the Round 1 sheet
+#   p036: {who: [roal], sure: no, why: …}       an attribution the text leaves open: it goes on the next round's sheet
 # A span that a paragraph leaves open (no closing quotation mark) runs on into the next paragraph's, and the check
 # insists both name the same speaker. Ids are script/cast.yaml's. tools/build_script.mjs turns this into script.yaml.
 
@@ -12,9 +12,8 @@ p034: {who: [roal], why: "continues p033. The 'single-quoted' words are Roal ima
 p035: {who: [roal], why: continues p033 and closes it}
 p036:
   who: [roal]
-  sure: no
   why: >-
-    untagged. A new quotation, but the next line is "He was interrupted", so a man is speaking, and Roal has the floor.
+    Round 1 decided Roal. Untagged. A new quotation, but the next line is "He was interrupted", so a man is speaking, and Roal has the floor.
     It could be Trest, who later leads the work on the beams, or Kahsh
 
 # Chapter 4. The council
@@ -55,9 +54,8 @@ p091: {who: [f2], why: tagged "answered F-2"}
 p100: {who: [roal, roal], why: 'tagged "said Roal" and "he said softly"'}
 p101:
   who: [roal]
-  sure: no
   why: >-
-    untagged. Roal answering his own "Pity that men would not spread", which lets the next line's "answered Trest"
+    Round 1 decided Roal. Untagged. Roal answering his own "Pity that men would not spread", which lets the next line's "answered Trest"
     answer him. Or Trest pushing back, and then speaking again in p102
 p102: {who: [trest], why: tagged "answered Trest"}
 p103: {who: [roal], why: 'answers Trest; the speech runs to p107, tagged "said Roal, dreaming again"'}

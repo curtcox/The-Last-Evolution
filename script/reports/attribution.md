@@ -5,10 +5,7 @@ narrator's (F-2, narrating). 62 quoted lines across 51 paragraphs.
 
 ## Open questions
 
-- **p036** (chapter 3) → **Roal, 25374**: "We can readily solve the hidden secret of their force-screen."
-  untagged. A new quotation, but the next line is "He was interrupted", so a man is speaking, and Roal has the floor. It could be Trest, who later leads the work on the beams, or Kahsh
-- **p101** (chapter 8) → **Roal, 25374**: "Why should they? Earth was the planet for which they were best fitted."
-  untagged. Roal answering his own "Pity that men would not spread", which lets the next line's "answered Trest" answer him. Or Trest pushing back, and then speaking again in p102
+None.
 
 ## Speakers
 
@@ -43,9 +40,10 @@ narrator's (F-2, narrating). 62 quoted lines across 51 paragraphs.
 | 7 | The Dome | p083–p099 | 513 | yes |
 | 8 | Last of Men | p100–p114 | 657 | yes |
 | 9 | Pure Force | p115–p129 | 592 | yes |
-| 10 | Go, and Do Not Return | p130–p140 | 605 | no |
+| 10 | Go, and Do Not Return | p130–p135 | 317 | no |
+| 11 | Five Great Years | p136–p140 | 288 | yes |
 
-Scene breaks inside chapters, which become transitions: break02 (chapter 2, after p013), break04 (chapter 5, after p058), break09 (chapter 10, after p135).
+Scene breaks inside chapters, which become transitions: break02 (chapter 2, after p013), break04 (chapter 5, after p058).
 
 ## Every quoted line
 
@@ -73,7 +71,7 @@ Scene breaks inside chapters, which become transitions: break02 (chapter 2, afte
 | p033.5 | Roal, 25374 | "They are destroying the intelligent life--and leaving untouched that which is…" | tagged "he began", after "It was Roal who sent the first thoughts" |
 | p034.1 | Roal, 25374, continued | "You--machines--are far more intelligent than we even now, and capable of changing…" | continues p033. The 'single-quoted' words are Roal imagining the Outsiders; he says them himself |
 | p035.1 | Roal, 25374, continued | "Attack--therefore!" | continues p033 and closes it |
-| p036.1 ❓ | Roal, 25374 | "We can readily solve the hidden secret of their force-screen." | untagged. A new quotation, but the next line is "He was interrupted", so a man is speaking, and Roal has the floor. It could be Trest, who later leads the work on the beams, or Kahsh |
+| p036.1 | Roal, 25374 | "We can readily solve the hidden secret of their force-screen." | Round 1 decided Roal. Untagged. A new quotation, but the next line is "He was interrupted", so a man is speaking, and Roal has the floor. It could be Trest, who later leads the work on the beams, or Kahsh |
 
 ### 4. The Council
 
@@ -135,7 +133,7 @@ Scene breaks inside chapters, which become transitions: break02 (chapter 2, afte
 |---|---|---|---|
 | p100.1 | Roal, 25374 | "We are alone, Trest," | tagged "said Roal" and "he said softly" |
 | p100.3 | Roal, 25374 | "alone, now, in all the system, save for these, the children of men, the machines.…" | tagged "said Roal" and "he said softly" |
-| p101.1 ❓ | Roal, 25374 | "Why should they? Earth was the planet for which they were best fitted." | untagged. Roal answering his own "Pity that men would not spread", which lets the next line's "answered Trest" answer him. Or Trest pushing back, and then speaking again in p102 |
+| p101.1 | Roal, 25374 | "Why should they? Earth was the planet for which they were best fitted." | Round 1 decided Roal. Untagged. Roal answering his own "Pity that men would not spread", which lets the next line's "answered Trest" answer him. Or Trest pushing back, and then speaking again in p102 |
 | p102.1 | Trest, 35429 | "We are alive--but is it worth it? Man is gone now, never to return. Life, too, for…" | tagged "answered Trest" |
 | p103.1 | Roal, 25374 | "Perhaps it was ordained; perhaps that was the right way. Man has always been a…" | answers Trest; the speech runs to p107, tagged "said Roal, dreaming again" |
 | p104.1 | Roal, 25374, continued | "Perhaps, this is--a last evolution. Machines--man was the product of life, the best…" | continues p103 |
@@ -165,3 +163,8 @@ Scene breaks inside chapters, which become transitions: break02 (chapter 2, afte
 | p132.1 | the golden sphere (thought) | "Life-form of greed, from another star you came, destroying forever the great race…" | "its mighty intelligence spoke" |
 | p133.1 | the golden sphere (thought), continued | "We, the heirs of man, alone are left; no man did you leave. Go now to your home…" | continues p132 |
 | p135.1 | the golden sphere (thought) | "Go, and do not return." | untagged; the golden sphere's last words to the Outsiders |
+
+### 11. Five Great Years
+
+| line | speaker | words | why |
+|---|---|---|---|

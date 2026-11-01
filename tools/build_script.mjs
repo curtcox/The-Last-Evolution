@@ -82,6 +82,7 @@ const short = t => t.length > 90 ? t.slice(0, 87).replace(/\s+\S*$/, '') + '…"
 md.push('# Who speaks each line', '', `Written by \`tools/build_script.mjs\` from \`script/speakers.yaml\`. Everything outside quotation marks is the`,
   `narrator's (F-2, narrating). ${q.length} quoted lines across ${new Set(q.map(l => l.id.split('.')[0])).size} paragraphs.`, '');
 md.push('## Open questions', '');
+if (!q.some(l => l.question)) md.push('None.');
 for (const l of q.filter(l => l.question)) { const p = l.id.split('.')[0];
   md.push(`- **${p}** (chapter ${l.ch}) → **${cast[l.who].name}**${l.mode ? ` (${l.mode})` : ''}: ${short(l.text)}`, `  ${speakers[p].why}`); }
 md.push('', '## Speakers', '', '| speaker | lines | words |', '|---|---:|---:|');

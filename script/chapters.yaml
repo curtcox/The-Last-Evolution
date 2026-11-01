@@ -1,7 +1,8 @@
 # chapters.yaml: where the film's chapters fall (PLAN.md §6), by the first paragraph of each. A chapter runs to the
-# paragraph before the next one's start, and chapter 10 to the end. Six cuts fall at the story's own scene breaks
-# (0|1, 3|4, 5|6, 6|7, 7|8, 8|9); the rest are ours, and the three scene breaks inside chapters (after p013, p058 and
-# p135) become brush-wipe transitions. tools/build_script.mjs reports which is which.
+# paragraph before the next one's start, and chapter 11 to the end. Seven cuts fall at the story's own scene breaks
+# (0|1, 3|4, 5|6, 6|7, 7|8, 8|9, 10|11); the rest are ours, and the two scene breaks inside chapters (after p013 and p058)
+# become brush-wipe transitions. Chapter 11, the closing frame, bookends chapter 0 (Round 1, C2).
+# tools/build_script.mjs reports which cut is which.
 # Chapter 0 also carries the title page: the masthead, title and byline, shown, not voiced.
 - {n: 0, title: The Record, from: p001}
 - {n: 1, title: '2538', from: p003}
@@ -14,3 +15,4 @@
 - {n: 8, title: Last of Men, from: p100}
 - {n: 9, title: Pure Force, from: p115}
 - {n: 10, title: 'Go, and Do Not Return', from: p130}
+- {n: 11, title: Five Great Years, from: p136}

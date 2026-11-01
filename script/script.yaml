@@ -173,7 +173,6 @@ chapters:
       - id: p036.1
         who: roal
         text: '"We can readily solve the hidden secret of their force-screen."'
-        question: true
       - id: break03
         shown: break
         text: "*       *       *       *"
@@ -541,7 +540,6 @@ chapters:
       - id: p101.1
         who: roal
         text: '"Why should they? Earth was the planet for which they were best fitted."'
-        question: true
       - id: p102.1
         who: trest
         text: '"We are alive--but is it worth it? Man is gone now, never to return. Life, too, for that matter,"'
@@ -684,8 +682,8 @@ chapters:
         text: And the golden sphere was gone, fast as light it vanished.
   - n: 10
     title: Go, and Do Not Return
-    paras: p130–p140
-    words: 605
+    paras: p130–p135
+    words: 317
     lines:
       - id: p130.1
         who: narrator
@@ -712,6 +710,11 @@ chapters:
       - id: break09
         shown: break
         text: "*       *       *       *       *"
+  - n: 11
+    title: Five Great Years
+    paras: p136–p140
+    words: 288
+    lines:
       - id: p136.1
         who: narrator
         text: The Outsiders left, going out across the void, and they have not returned, though five Great Years have passed, being a period of approximately one hundred and twenty-five thousand of the lesser years--a measure no longer used, for it is very brief. And now I can say that that statement I made to Roal and Trest so very long ago is true, and what he said was true, for the Last Evolution has taken place, and things of pure force and pure intelligence in their countless millions are on those planets and in this System, and I, first of machines to use the Ultimate Energy of annihilating matter, am also the last, and this record being finished, it is to be given unto the forces of one of those force-intelligences, and carried back through the past, and returned to the Earth of long ago.

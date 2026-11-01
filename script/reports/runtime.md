@@ -6,7 +6,7 @@ voiced whole and measured; the rest are estimated from their rates. Silences: 0.
 
 - narrator: **153 words a minute** (480 words in 3:08)
 - dialogue: **153 words a minute** (203 words in 1:20)
-- the film: **about 47 minutes** (47:01), against the plan's estimate of 52
+- the film: **about 47 minutes** (47:07), against the plan's estimate of 52
 
 | # | title | words | length | |
 |---:|---|---:|---:|---|
@@ -20,5 +20,6 @@ voiced whole and measured; the rest are estimated from their rates. Silences: 0.
 | 7 | The Dome | 513 | 3:44 | estimated |
 | 8 | Last of Men | 657 | 4:40 | estimated |
 | 9 | Pure Force | 592 | 4:10 | estimated |
-| 10 | Go, and Do Not Return | 605 | 4:13 | estimated |
-| | | **6,677** | **47:01** | |
+| 10 | Go, and Do Not Return | 317 | 2:17 | estimated |
+| 11 | Five Great Years | 288 | 2:02 | estimated |
+| | | **6,677** | **47:07** | |
