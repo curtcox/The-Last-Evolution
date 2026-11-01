@@ -18,6 +18,7 @@ const SHEETS = [
   ['model4', 'The Outsiders', 'Front and side, in the suit: short, squat, four-limbed, armoured in horny brown plates, three eyes on turrets around the crown, a third of a turn apart. The crown from above, and one beside a man.'],
   ['model5', 'Ships, investigators and motes', 'A torpedo of the void, with its projector turrets and drive bells, and from ahead. An investigator, three inches across. The motes, ten thousand tiny machine-ships: the family form on its side.'],
   ['model6', 'The places', 'The power plant at five hundred feet, with a man at its foot; the black dome cut away, with Roal and Trest under it and the violet beam that holds it; the Denver laboratory\'s hall of screens.'],
+  ['model7', 'Roal acting, and the pilot\'s props', 'Made for the pilot: Roal in profile as chapter 5 needs him, lying on his couch, sitting up, standing, and with his arm thrown up across his face as in Morey\'s page; his eyes, very close, for the match cut to F-1\'s lens; the guinea pig in its cage.'],
 ];
 for (const [loop] of SHEETS) {
   execFileSync('node', ['render.mjs', `--loop=${loop}`, '--stills=1', `--out=${TMP}`], { stdio: ['ignore', 'pipe', 'inherit'] });

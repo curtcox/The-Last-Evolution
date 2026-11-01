@@ -1,0 +1,26 @@
+# sfx.yaml: the film's sound under the voice (PLAN.md §4): the theme and the effects, where they fall and how loud.
+# The files are the Round 3 sketches that were kept (tools/sound_sampler.mjs made them; script/sound.yaml has their
+# prompts), copied into assets/sound/ so a mix never depends on generating them again. tools/timeline.mjs mixes a
+# chapter from these cues: each is laid at its cue (the same cues as script/boards/), looped if it has to run longer
+# than its file, faded, set to its gain, and ducked under the voice. The mix is brought to -14 LUFS, true peak -1 dBFS.
+#   at / until   cues (see script/boards/ch05.yaml); without until, the file plays once
+#   gain         dB, before the ducking;  fade  seconds in and out (or [in, out])
+files:
+  theme: assets/sound/theme.mp3            # 90 s: the credits
+  theme-title: assets/sound/theme-title.mp3   # its opening 40 s: the title page
+  theme-head: assets/sound/theme-head.mp3  # its first phrase, 14 s: each chapter's head
+  workshop: assets/sound/workshop.mp3      # p059's "weird symphony"
+  birth: assets/sound/birth.mp3            # p060: the generators roar, the aura, the lightning
+  snap: assets/sound/snap.mp3              # p060: the dull snap and F-1's fall
+  green-beam: assets/sound/green-beam.mp3  # the death beam's hum
+
+chapters:
+  5:
+    - {fx: theme-head, at: 0, gain: -9}
+    # F-1 at work: the symphony from "Suddenly, force shafts gleamed out" until the tentacles roll back
+    - {fx: workshop, at: 'p058.3:Suddenly', until: 'p060.1:softened to a sigh', gain: -15, fade: [1.5, 3]}
+    - {fx: birth, at: 'p060.1:Suddenly the generators', until: 'p060.1:Suddenly, there was', gain: -14, fade: [0.2, 1.5]}
+    - {fx: snap, at: 'p060.1:dull snap-0.3', gain: -8}
+    # F-2 makes C-R-U-1: the symphony again, quieter, until "the whine of transmuted air died"
+    - {fx: workshop, at: 'p065.1', until: 'p065.1:died', gain: -20, fade: [2, 1]}
+    - {fx: green-beam, at: 'p071.1:came a pale-green beam-0.3', until: 'p071.1:fell dead', gain: -13, fade: [0.3, 1]}

@@ -33,6 +33,13 @@ createServer((req, res) => {
   if (!url.pathname.endsWith('/') && !extname(url.pathname) && p.endsWith('index.html')) {
     res.writeHead(301, { Location: url.pathname + '/' }); return res.end();
   }
-  res.writeHead(200, { 'Content-Type': TYPES[extname(p)] || 'application/octet-stream', 'Cache-Control': 'no-cache' });
+  // byte ranges, so audio and video can seek (as GitHub Pages serves them)
+  const size = statSync(p).size, type = TYPES[extname(p)] || 'application/octet-stream', range = /bytes=(\d*)-(\d*)/.exec(req.headers.range || '');
+  if (range) {
+    const start = range[1] ? +range[1] : size - +range[2], end = range[1] && range[2] ? Math.min(+range[2], size - 1) : size - 1;
+    res.writeHead(206, { 'Content-Type': type, 'Content-Range': `bytes ${start}-${end}/${size}`, 'Accept-Ranges': 'bytes', 'Content-Length': end - start + 1, 'Cache-Control': 'no-cache' });
+    return createReadStream(p, { start, end }).pipe(res);
+  }
+  res.writeHead(200, { 'Content-Type': type, 'Accept-Ranges': 'bytes', 'Content-Length': size, 'Cache-Control': 'no-cache' });
   createReadStream(p).pipe(res);
 }).listen(PORT, () => console.log(`serving the site at http://localhost:${PORT}/ and the studio at http://localhost:${PORT}/studio/`));

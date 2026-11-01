@@ -23,6 +23,9 @@ const DES = {};
       for (let i = 10; i >= 0; i--) { const u = lerp(u0, u1, i / 10); P.push([x + u * r, yb - h - dh * edge(u) * top]); }
       wash(P, dd, { op }); };
     boilSeed('dc' + x + yb);
+    const S = []; for (let i = 0; i <= 14; i++) { const a = i / 14 * Math.PI; S.push([x + Math.cos(a) * r, yb + Math.sin(a) * ry]); }
+    for (let i = 0; i <= 16; i++) { const a = Math.PI + i / 16 * Math.PI; S.push([x + Math.cos(a) * r, yb - h + Math.sin(a) * dh]); }
+    paint(S, { wash: D[0], washOp: 255, ink: null });                 // an opaque ground, so the washes over it don't show the room through
     const g = o.shine ? .22 : 0;
     band(-1, -.62, d + 1, .9); band(-.62 + g, .45, d, 1); band(.45, .8, d + 1, .9); band(.8, 1, Math.min(4, d + 2), .9);
     if (o.shine) band(-.62, -.62 + g, 0, .25);
@@ -56,12 +59,16 @@ const DES = {};
     if (o.grip !== false) for (const s of [-.5, .5]) inkLine([[ex, ey], [ex + Math.cos(a + s) * f, ey + Math.sin(a + s) * f], [ex + Math.cos(a + s * .2) * f * 1.6, ey + Math.sin(a + s * .2) * f * 1.6]], .6, INK);
   }
   // a sense-receptor: a lens in a ringed mount, r across, with a glint of reflected light
+  // o.lit 0..1: light in the glass (a machine speaking, or awake); o.dark: dead, no glint
   function lens(x, y, r, o = {}) {
     boilSeed('ln' + x + y);
     wash(ellPts(x, y, r, r * (o.sq ?? 1), 18), 1, { ink: true, sw: .6 });
     wash(ellPts(x, y, r * .66, r * .66 * (o.sq ?? 1), 16), 4, { ink: true, sw: .4 });
+    if (o.dark) return;
     glow(x - r * .22, y - r * .22, r * .5, NRG.white, .55);
+    if (o.lit) { glow(x, y, r * 1.1, NRG.white, .5 * o.lit); glow(x, y, r * .5, NRG.white, .5 * o.lit); }
   }
+  DES.tentacle = tentacle; DES.lens = lens; DES.disc = disc; DES.dcase = dcase;
 
   // A machine of 2538: the family form, sized and dressed by o (in feet unless noted):
   //   r, h, dh   the dome-case's radius, height and dome; hover  how high its disc floats; d  its wash
@@ -86,13 +93,13 @@ const DES = {};
     for (let i = 0; i < n; i++) arm(i, true);
     // the band, lettered with its designation where it faces us
     if (o.label) letter(o.label, x - face * r * .3, yb - h * .52, Math.min(r * .32, 30), INK, { ink: false, font: `700 ${Math.min(r * .32, 30)}px ${SERIF}`, spacing: 2 });
-    const rx = x + Math.sin(face) * r * .55, top = yb - h - dh;
-    if (o.receptor === 'crown') for (let i = -2; i <= 2; i++) lens(x + i * r * .36, yb - h - dh * .45 * (1 - Math.abs(i) * .25), r * .13);
-    else if (o.receptor === 'great') { lens(rx, yb - h - dh * .42, r * .3); lens(rx - r * .5, yb - h - dh * .2, r * .13); lens(rx + r * .5, yb - h - dh * .2, r * .13); }
-    else if (o.receptor === 'probe') { wash(ribbon([[rx, yb - h - dh * .5], [rx + r * .6, yb - h - dh * .7], [rx + r * 1.0, yb - h - dh * .6]], r * .16, r * .07), d + 2, { ink: true, sw: .5 }); lens(rx - r * .05, yb - h - dh * .45, r * .16); }
-    else lens(rx, yb - h - dh * .45, r * .2);
+    const rx = x + Math.sin(face) * r * .55, top = yb - h - dh, lo = { lit: o.lit, dark: o.dark };
+    if (o.receptor === 'crown') for (let i = -2; i <= 2; i++) lens(x + i * r * .36, yb - h - dh * .45 * (1 - Math.abs(i) * .25), r * .13, lo);
+    else if (o.receptor === 'great') { lens(rx, yb - h - dh * .42, r * .3, lo); lens(rx - r * .5, yb - h - dh * .2, r * .13, lo); lens(rx + r * .5, yb - h - dh * .2, r * .13, lo); }
+    else if (o.receptor === 'probe') { wash(ribbon([[rx, yb - h - dh * .5], [rx + r * .6, yb - h - dh * .7], [rx + r * 1.0, yb - h - dh * .6]], r * .16, r * .07), d + 2, { ink: true, sw: .5 }); lens(rx - r * .05, yb - h - dh * .45, r * .16, lo); }
+    else lens(rx, yb - h - dh * .45, r * .2, lo);
     if (o.nozzles) for (let i = -2; i <= 2; i++) { const u = i * .38; wash(rrPts(x + u * r - r * .06, yb - h * .2, r * .12, r * .3, r * .05), 3, { ink: true, sw: .4 }); }
-    return { top, yb, dy };
+    return { top, yb, dy, r, h, dh, eye: [rx, yb - h - dh * .42], arm: dy - fh * .45 };
   };
   // the machines who speak in the council (p037–p046) and the one who thinks: each a member of the family
   DES.x5638 = (x, g, s, t, o = {}) => DES.machine(x, g, s, t, { r: 1.3, h: 3.4, dh: 1.5, d: 0, arms: 3, reach: 4.2, label: 'X-5638', ...o });   // the newest: slim, light
@@ -109,10 +116,12 @@ const DES = {};
     const r = .75 * s, h = 1.7 * s, dh = .55 * s, yb = ground - (o.hover ?? 2.2) * s + 4 * wob(t, .3);
     boilSeed('crush'); paint(ellPts(x, ground, r * 1.2, r * .16, 16), { fill: D[3], fillOp: 60, bleed: .3, ink: null });
     dcase(x, yb, r, h, dh, 1, { shine: true, rings: [.15, .85] });
-    lens(x, yb - h - dh * .45, r * .22);
-    const L = yb - h * .5, sz = r * .42;
-    glow(x, L, r * 1.2, NRG.gold, .3);
-    letter('C-R-U-1', x, L, sz, NRG.gold, { ink: false, font: `700 ${sz}px ${SERIF}`, spacing: 1, stroke: '#6B4A14' });
+    lens(x, yb - h - dh * .45, r * .22, { lit: o.lit });
+    // its name, glowing on (o.glowK 0..1; o.unlit: not yet, p069)
+    const L = yb - h * .5, sz = r * .42, k = o.unlit ? 0 : o.glowK ?? 1;
+    if (k <= 0) return;
+    glow(x, L, r * 1.2, NRG.gold, .3 * k);
+    letter('C-R-U-1', x, L, sz, NRG.gold, { ink: false, font: `700 ${sz}px ${SERIF}`, spacing: 1, stroke: '#6B4A14', alpha: k });
   };
 
   // F-2: "the small torpedo of metal", "glowing, bluish metal", "three thin tentacles of the same bluish metal" (p060).
@@ -124,8 +133,9 @@ const DES = {};
     if (o.newborn) { aura(x, y, len * .75, NRG.white, .9, t); glow(x, y, len * 1.6, NRG.lightning, .4); }
     boilSeed('f2sh'); if (o.hover !== 0 && !o.newborn) paint(ellPts(x, ground, len * .45, len * .05, 16), { fill: D[3], fillOp: 60, bleed: .3, ink: null });
     // a thin tentacle curling from (sx, sy) out along dir (a unit vector), its tip turned back in a hook
-    const tent = (sx, sy, dx, dy, i) => { const sw = wob(t, .5, i * .29), L = 1.3 * s, nx = -dy, ny = dx, at = (a, b) => [sx + dx * L * a + nx * L * b, sy + dy * L * a + ny * L * b];
-      inkLine(through([[sx, sy], at(.35, .08 + .05 * sw), at(.7, -.04 + .08 * sw), at(.92, .1 + .06 * sw), at(.85, .26 + .05 * sw), at(.72, .22)]), 1, dark, 'inkfine'); };
+    // a thin tentacle trailing from (sx, sy) along dir (a unit vector) in a slow S, its tip curling softly
+    const tent = (sx, sy, dx, dy, i) => { const sw = wob(t, .5, i * .29), L = (view === 'side' ? 1.6 : 1.05) * s, nx = -dy, ny = dx, at = (a, b) => [sx + dx * L * a + nx * L * b, sy + dy * L * a + ny * L * b];
+      inkLine(through([[sx, sy], at(.3, .1 + .05 * sw), at(.62, -.06 + .08 * sw), at(.88, .04 + .07 * sw), at(1, .16 + .05 * sw)]), 1.1, dark, 'inkfine'); };
     boilSeed('f2' + view);
     if (view === 'front') {
       for (let i = 0; i < 3; i++) { const a = Math.PI / 2 + (i - 1) * 2.1; tent(x + Math.cos(a) * rad * .7, y + Math.sin(a) * rad * .7, Math.cos(a), Math.sin(a), i); }
@@ -139,7 +149,7 @@ const DES = {};
     P.push([x - len * .3, y + w * .7], [x - len * .5, y + w * .25], [x - len * .5, y - w * .25], [x - len * .3, y - w * .7]);
     // the three tentacles grow from the underside behind the nose: seen from above, two to one side and one to the other
     if (view === 'top') [[.12, 1], [-.04, -1], [-.12, 1]].forEach(([k, sd], i) => tent(x + len * k, y + sd * w * .8, -.35, sd * .94, i));
-    else [[.14, .2], [0, -.1], [-.14, -.35]].forEach(([k, a], i) => tent(x + len * k, y + w * .8, Math.sin(a), Math.cos(a), i));
+    else [[.14, -.7], [0, -.95], [-.14, -1.2]].forEach(([k, a], i) => tent(x + len * k, y + w * .8, Math.sin(a), Math.cos(a), i));   // trailing back and down
     paint(P, { wash: metal, washOp: 230, fill: metal, fillOp: 90, bleed: .05, ink: INK, sw: .8, br: 'inkfine' });
     paint([[x - len * .45, y - w * .5], [x + len * .28, y - w * .8], [x + len * .38, y - w * .55], [x - len * .45, y - w * .32]], { wash: mixCol(metal, '#FFFFFF', .45), washOp: 160, ink: null });   // the sheen
     paint([[x - len * .45, y + w * .4], [x + len * .3, y + w * .7], [x + len * .44, y + w * .3], [x + len * .3, y + w], [x - len * .3, y + w * .75]], { wash: dark, washOp: 120, ink: null });
@@ -394,5 +404,137 @@ const DES = {};
     wash(rectPts(x0, y0 + h * .08, w, h * .05), 4, { ink: true, sw: .6 });
     // Roal's couch (p051), to the left of the floor
     if (o.couch !== false) { const cx = x0 + w * .2, cy = fy + h * .1; wash([[cx - w * .07, cy], [cx + w * .07, cy], [cx + w * .07, cy + h * .05], [cx - w * .07, cy + h * .05]], 3, { ink: true, sw: .6 }); wash([[cx - w * .07, cy], [cx - w * .08, cy - h * .06], [cx - w * .05, cy - h * .06], [cx - w * .045, cy]], 3, { ink: true, sw: .5 }); }
+  };
+
+  // ---------- people in profile, acting (the pilot's poses) ----------
+  // A figure seen from the side, facing right (o.flip: left), drawn from its hip (hx, hy), s px to the foot. Its pose is
+  // a set of angles (radians): torso from upright (+ leans forward, -π/2 lies back), thigh and shin from hanging straight
+  // down (+ forward), and the near arm's upper and fore arm from hanging (+ forward and up). Standing, the hip is
+  // DES.HIP feet above the ground. o.lid 0..1 closes the eye; o.look tilts the head (+ up). Roal's robe to the ankle.
+  DES.HIP = 3.1;
+  DES.POSE = {
+    stand: { torso: 0, thigh: 0, shin: 0, up: .12, fore: .3, farUp: .05, farFore: .15 },
+    sit: { torso: .1, thigh: 1.45, shin: .12, up: .4, fore: 1.25, farUp: .3, farFore: 1.1 },
+    lie: { torso: -1.5, thigh: 1.5, shin: 1.5, up: .1, fore: 2.6, farUp: .02, farFore: .1 },
+    sitUp: { torso: -.05, thigh: 1.5, shin: 1.5, up: .35, fore: 1.5, farUp: .25, farFore: 1.3 },   // sitting up on the couch, legs along it
+    shield: { torso: -.16, thigh: -.08, shin: .06, up: 2.1, fore: 4.5, farUp: 1.5, farFore: 2.2 },
+  };
+  DES.personSide = (hx, hy, s, t = 0, o = {}) => {
+    const who = o.who || 'roal', u = s * 6 / 7.4, f = o.flip ? -1 : 1, P = { ...DES.POSE.stand, ...o.pose };
+    const cloth = { roal: 1, trest: 2, kahsh: 3, citizen: 1 }[who];
+    const dir = a => [Math.sin(a) * f, -Math.cos(a)];                       // a unit vector at angle a from up
+    const add = (p, a, L) => { const d = dir(a); return [p[0] + d[0] * L * u, p[1] + d[1] * L * u]; };
+    const hip = [hx, hy], waist = add(hip, P.torso, 1.0), sh = add(hip, P.torso, 2.45), neck = add(sh, P.torso, .32);
+    const knee = add(hip, Math.PI - P.thigh, 1.6), ank = add(knee, Math.PI - P.shin, 1.5);
+    boilSeed('ps' + who + (o.key || ''));
+    const arm = (up, fore, d, op, back) => { const sa = add(sh, P.torso + Math.PI, .3), el = add(sa, P.torso + Math.PI - up, 1.2), hd = add(el, P.torso + Math.PI - fore, 1.05);
+      const R = ribbon([sa, el, hd], .5 * u, .42 * u); paint(R, { wash: D[0], washOp: 255, ink: null }); wash(R, d, { ink: true, sw: .45, op });
+      const hp = add(hd, P.torso + Math.PI - fore, .12); paint(ellPts(...hp, .16 * u, .19 * u, 10), { wash: D[0], washOp: 255, ink: null }); wash(ellPts(...hp, .16 * u, .19 * u, 10), back ? 1 : 0, { ink: true, sw: .4, op }); return hd; };
+    arm(P.farUp, P.farFore, dk(cloth + 1), .9, true);
+    // the boot's toe, before the hem covers its heel
+    const footA = Math.PI / 2 - P.shin, toe = add(ank, footA, .5);
+    wash([add(ank, footA + Math.PI, .2), add(add(ank, Math.PI - P.shin, -.25), footA, .1), toe, add(toe, Math.PI - P.shin, .2), add(ank, Math.PI - P.shin, .22)], 4, { ink: true, sw: .4, curv: .3 });
+    // the body as one shape: a spine from the neck to the hem, offset to its front and its back by the robe's depth
+    const spine = [neck, sh, waist, hip, knee, ank], fw = [.2, .5, .44, .5, .42, .58], bw = [.24, .52, .44, .62, .46, .52];
+    const N = spine.map((p, i) => { const a = spine[Math.max(0, i - 1)], b = spine[Math.min(spine.length - 1, i + 1)], L = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1;
+      const tx = (b[0] - a[0]) / L, ty = (b[1] - a[1]) / L; return [ty * f, -tx * f]; });
+    const miter = i => { if (i === 0 || i === spine.length - 1) return 1; const a = spine[i - 1], b = spine[i], L = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1, n0 = [(b[1] - a[1]) / L * f, -(b[0] - a[0]) / L * f]; return 1 / Math.max(.55, n0[0] * N[i][0] + n0[1] * N[i][1]); };
+    const front = spine.map((p, i) => [p[0] + N[i][0] * fw[i] * u * miter(i), p[1] + N[i][1] * fw[i] * u * miter(i)]);
+    const back = spine.map((p, i) => [p[0] - N[i][0] * bw[i] * u * miter(i), p[1] - N[i][1] * bw[i] * u * miter(i)]);
+    paint([...front, ...back.slice().reverse()], { wash: D[0], washOp: 255, ink: null, curv: .25 });
+    wash([...front, ...back.reverse()], cloth, { ink: true, sw: .6, curv: .25 });
+    back.reverse();
+    wash([...spine.slice(1, 4).map((p, i) => [lerp(p[0], back[i + 1][0], .45), lerp(p[1], back[i + 1][1], .45)]), ...back.slice(1, 4).reverse()], dk(cloth + 1), { op: .5, curv: .3 });   // the shadow down the back
+    for (const k of [.3, .65]) inkLine([[lerp(knee[0], ank[0], k) + N[5][0] * .3 * u, lerp(knee[1], ank[1], k) + N[5][1] * .3 * u], [lerp(knee[0], ank[0], k + .3) + N[5][0] * .4 * u, lerp(knee[1], ank[1], k + .3) + N[5][1] * .4 * u]], .4, D[3]);   // the robe's folds
+    inkLine([front[2], back[2]], 1.1, INK);                                                                               // the belt
+    // the standing collar, rising behind the head
+    wash([add(neck, P.torso - Math.PI / 2, .22), add(add(neck, P.torso, .78), P.torso - Math.PI / 2, .45), add(add(neck, P.torso, .82), P.torso - Math.PI / 2, .26), add(neck, P.torso + Math.PI / 2, .14)], dk(cloth + 1), { ink: true, sw: .45 });
+    const hc = add(neck, P.torso + (o.look || 0) * .3, .52);
+    DES.headSide(hc[0], hc[1], u, who, { rot: (P.torso - (o.look || 0) * .5) * f, flip: o.flip, lid: o.lid, hide: o.shieldFace, smile: o.smile });
+    const hand = arm(P.up, P.fore, cloth, 1);
+    return { hip, sh, knee, ank, hand, head: hc };
+  };
+  // A head in profile facing right, u px to the head's height, rotated by o.rot about its centre.
+  DES.headSide = (x, y, u, who = 'roal', o = {}) => {
+    const f = o.flip ? -1 : 1, c = Math.cos(o.rot || 0), sn = Math.sin(o.rot || 0), old = who === 'roal';
+    const E = (a, b) => { const X = a * u * f, Y = b * u; return [x + X * c - Y * sn, y + X * sn + Y * c]; };
+    boilSeed('hs' + who);
+    const face = [[0, -.6], [.27, -.5], [.36, -.26], [.34, -.13], [.36, -.08], [.49, .07], [.37, .12], [.39, .2], [.35, .25], [.36, .37], [.2, .46], [-.04, .33], [-.18, .4], [-.4, .06], [-.38, -.33], [-.2, -.56]];
+    paint(face.map(p => E(...p)), { wash: D[0], washOp: 255, ink: null, curv: .45 });
+    wash(face.map(p => E(...p)), 0, { ink: true, sw: .5, curv: .45, op: .85 });
+    wash([[-.1, -.5], [-.38, -.3], [-.4, .05], [-.2, .38], [-.04, .3], [-.12, -.1]].map(p => E(...p)), 1, { op: .4, curv: .5 });   // the shadow at the back of the skull
+    wash([[-.1, -.06], [.0, -.12], [.02, .08], [-.08, .12]].map(p => E(...p)), 0, { ink: true, sw: .35, curv: .6 });               // the ear
+    if (!o.hide) {
+      const lid = o.lid ?? 0;
+      inkLine([E(.14, -.2), E(.25, -.24), E(.33, -.2)], old ? .75 : .6, old ? D[2] : INK, 'inkfine');                          // the brow
+      if (lid > .8) inkLine([E(.17, -.1), E(.24, -.07), E(.3, -.1)], .5, INK, 'inkfine');
+      else { inkLine([E(.17, -.11), E(.25, -.14 + lid * .05), E(.31, -.1)], .5, INK, 'inkfine'); paint(ellPts(...E(.27, -.1 + lid * .02), u * .03, u * .03 * (1 - lid), 8), { fill: INK, fillOp: 210, bleed: 0, ink: null }); }
+      inkLine([E(.3, .21), E(.37, .21)], .4, INK, 'inkfine');                                                               // the mouth
+    }
+    if (old) {   // thin white hair at the back, a high bare crown, a short white beard
+      wash([[-.15, -.5], [-.38, -.32], [-.44, -.02], [-.32, .08], [-.3, -.2]].map(p => E(...p)), 0, { ink: true, sw: .35, curv: .5 });
+      wash([[.34, .22], [.4, .4], [.3, .6], [.08, .58], [-.06, .36], [.12, .3], [.3, .28]].map(p => E(...p)), 0, { ink: true, sw: .35, curv: .5 });
+      inkLine([E(.1, -.06), E(.18, .14)], .3, D[3]);
+    } else wash([[-.42, -.1], [-.4, -.42], [-.1, -.64], [.24, -.54], [.3, -.42], [.0, -.44], [-.2, -.25], [-.3, .02]].map(p => E(...p)), who === 'trest' ? 4 : 2, { ink: true, sw: .45, curv: .45 });
+  };
+  // Roal's couch (p051), from the side: a long low couch with a raised head at the left. Returns where its seat is.
+  DES.couch = (x, ground, s) => {
+    const L = 6.6 * s, sh = 1.4 * s; boilSeed('couch');
+    paint(ellPts(x, ground, L * .55, s * .2, 16), { fill: D[3], fillOp: 70, bleed: .3, ink: null });
+    for (const k of [-.44, .44]) wash(rrPts(x + k * L - s * .15, ground - sh * .45, s * .3, sh * .45, s * .08), 4, { ink: true, sw: .5 });
+    wash(rrPts(x - L / 2, ground - sh, L, sh * .58, s * .18), 3, { ink: true, sw: .6 });
+    wash(rrPts(x - L / 2 + s * .1, ground - sh - s * .32, L - s * .2, s * .4, s * .18), 2, { ink: true, sw: .5 });
+    wash([[x - L / 2, ground - sh * .6], [x - L / 2 - s * .2, ground - sh - s * 1.3], [x - L / 2 + s * .5, ground - sh - s * 1.35], [x - L / 2 + s * .7, ground - sh - s * .2]], 3, { ink: true, sw: .6, curv: .4 });
+    return { seat: ground - sh - s * .32, x0: x - L / 2, x1: x + L / 2 };
+  };
+  // A pair of human eyes, very close (p055: "In human eyes there was always the expression of thought"). w px across
+  // both; o.old for Roal's lids and lines; o.look -1..1 where they look; o.lid 0..1; o.far: the soft, dreaming gaze.
+  DES.eyes = (x, y, w, t = 0, o = {}) => {
+    const e = w * .19, lk = (o.look ?? 0) * e * .25, lid = o.lid ?? .15;
+    boilSeed('eyes');
+    wash(rectPts(x - w * .7, y - w * .35, w * 1.4, w * .7), 0, { op: .7 });
+    wash([[x - w * .1, y - w * .3], [x + w * .1, y - w * .3], [x + w * .06, y + w * .3], [x - w * .06, y + w * .3]], 1, { op: .45, curv: .4 });   // the bridge of the nose
+    for (const sd of [-1, 1]) {
+      const cx = x + sd * w * .27, cy = y;
+      const almond = []; for (let i = 0; i <= 24; i++) { const a = i / 24 * TAU, k = Math.sin(a) < 0 ? 1 : .8; almond.push([cx + Math.cos(a) * e, cy + Math.sin(a) * e * .42 * k]); }
+      paint(almond, { wash: '#EFE6D2', washOp: 235, ink: null });
+      const ir = e * .42; wash(ellPts(cx + lk, cy, ir, ir, 22), 2, { ink: true, sw: .6 });
+      paint(ellPts(cx + lk, cy, ir * .45, ir * .45, 16), { fill: INK, fillOp: 230, bleed: 0, ink: null });
+      glow(cx + lk - ir * .3, cy - ir * .35, ir * .3, NRG.white, .5);
+      if (o.far) glow(cx + lk, cy, ir * 1.2, '#F4EEDC', .12);
+      // the upper lid, closing over the eye, and its crease; the lower lid
+      const top = []; for (let i = 0; i <= 16; i++) { const a = Math.PI + i / 16 * Math.PI; top.push([cx + Math.cos(a) * e * 1.05, cy + Math.sin(a) * e * .45 * (1 - 2 * lid)]); }
+      for (let i = 16; i >= 0; i--) { const a = Math.PI + i / 16 * Math.PI; top.push([cx + Math.cos(a) * e * 1.1, cy + Math.sin(a) * e * .62]); }
+      wash(top, 1, { ink: false });
+      inkLine(top.slice(0, 17), 1.4, INK, 'inkfine');
+      inkLine(Array.from({ length: 13 }, (_, i) => { const a = Math.PI + (.1 + i / 12 * .8) * Math.PI; return [cx + Math.cos(a) * e * 1.15, cy + Math.sin(a) * e * .75]; }), .6, D[3], 'inkfine');
+      inkLine(Array.from({ length: 13 }, (_, i) => { const a = (.08 + i / 12 * .84) * Math.PI; return [cx + Math.cos(a) * e, cy + Math.sin(a) * e * .4]; }), .6, D[3], 'inkfine');
+      // the brow: white and wild for Roal
+      inkLine([[cx - sd * e * 1.1, cy - e * .95], [cx, cy - e * 1.2], [cx + sd * e * 1.25, cy - e * .9]], o.old ? 2.2 : 1.6, o.old ? D[1] : INK, 'dry');
+      if (o.old) for (let k = 0; k < 3; k++) inkLine([[cx + sd * e * (1.2 + k * .05), cy + e * (.05 + k * .18)], [cx + sd * e * (1.55 + k * .05), cy + e * (.1 + k * .25)]], .5, D[3], 'inkfine');   // crow's feet
+    }
+    return [[x - w * .27 + lk, y], [x + w * .27 + lk, y]];
+  };
+  // a small cage (p071) and the guinea pig in it; o.dead lays it on its side
+  DES.cage = (x, ground, s, t = 0, o = {}) => {
+    const w = 1.2 * s, h = .9 * s; boilSeed('cage');
+    paint(ellPts(x, ground, w * .6, s * .06, 12), { fill: D[3], fillOp: 70, bleed: .3, ink: null });
+    wash(rectPts(x - w / 2, ground - s * .08, w, s * .08), 3, { ink: true, sw: .5 });
+    // the guinea pig: a round brown body, a blunt head, a small ear and a dark eye
+    const px = x - w * .05, py = ground - s * .08, b = s * .32, dead = o.dead || 0;
+    push(); translate(px, py); rotate(dead * Math.PI * .5 * .9); translate(-px, -py);
+    wash(ellPts(px, py - b * .55, b, b * .55, 18), 2, { ink: true, sw: .5 });
+    wash(ellPts(px + b * .75, py - b * .6, b * .45, b * .4, 14), 2, { ink: true, sw: .5 });
+    wash([[px - b * .6, py - b * .9], [px - b * .1, py - b * 1.05], [px + b * .3, py - b * .85], [px - b * .2, py - b * .75]], 0, { op: .7, curv: .5 });   // a pale patch
+    wash(ellPts(px + b * .62, py - b * .95, b * .14, b * .1, 8), 3, { ink: true, sw: .35 });
+    if (dead < .5) paint(ellPts(px + b * .95, py - b * .66, b * .06, b * .06, 8), { fill: INK, fillOp: 220, bleed: 0, ink: null });
+    else inkLine([[px + b * .9, py - b * .66], [px + b * 1.0, py - b * .66]], .5, INK);
+    inkLine([[px + b * 1.18, py - b * .5], [px + b * 1.12, py - b * .52]], .4, INK);
+    pop();
+    // the bars, over it
+    for (let k = 0; k <= 7; k++) inkLine([[x - w / 2 + k * w / 7, ground - s * .08], [x - w / 2 + k * w / 7, ground - h]], .6, D[4], 'inkfine', 0);
+    wash(rectPts(x - w / 2 - s * .03, ground - h - s * .06, w + s * .06, s * .08), 3, { ink: true, sw: .5 });
+    inkLine(through([[x - w * .15, ground - h - s * .06], [x, ground - h - s * .3], [x + w * .15, ground - h - s * .06]]), .8, INK, 'inkfine');   // the handle
+    return [x, ground - h - s * .3];
   };
 })();

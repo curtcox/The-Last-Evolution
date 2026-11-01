@@ -21,6 +21,11 @@
   <canvas id="out" width="1920" height="1080"></canvas>
   <div class="bar"><input id="scrub" type="range" min="0" max="11" step="0.0417" value="0"><span id="tt">loading…</span></div>
 </main>
+<!-- a chapter (studio.html?chapter=5): its timeline from tools/timeline.mjs, before config.js takes its length from it -->
+<script>
+  const chq = new URLSearchParams(location.search).get('chapter'); window.CH = (chq || '').padStart(2, '0');
+  if (chq) document.write(`<script src="src/gen/ch${CH}.js"><\/script><script>window.CHAPTER = CHAPTER<\/script>`);
+</script>
 <!-- engine (Claude Animation Base) -->
 <script src="src/config.js"></script>
 <script src="src/core.js"></script>
@@ -30,8 +35,8 @@
 <script src="src/energy.js"></script>
 <!-- the designs (PLAN.md §5), built from the text: people, machines, Outsiders, ships, places -->
 <script src="src/designs.js"></script>
-<!-- the scene: for now, the toolchain's smoke test; chapters arrive in Phase 5 -->
-<script src="src/scenes/smoke.js"></script>
+<!-- the scene: a chapter's (src/scenes/chNN.js), or without one the toolchain's smoke test -->
+<script>document.write(window.CHAPTER ? `<script src="src/scenes/ch${CH}.js"><\/script>` : '<script src="src/scenes/smoke.js"><\/script>');</script>
 <!-- Phase 4's style frames, as loops: ?loop=look1 … look6, lookTitle -->
 <script src="src/scenes/lookdev.js"></script>
 <!-- Phase 4's model sheets: ?loop=model1 … model6 -->

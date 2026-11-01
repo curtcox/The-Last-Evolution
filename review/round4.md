@@ -93,6 +93,8 @@ Trest's dark hair, and Kahsh's mantle, tall collar and disc of office.
 *Recommend:* approve the costume. The figures themselves are stiff and need more life before the pilot: hands, poses,
 the turn of a head. Say which inventions to drop.
 **Curt:**
+**Claude:** the pilot needed Roal acting, so sheet 7 adds him in profile (lying, sitting up, standing, shielding his
+face) and his eyes close; the figures are now painted solid, so the room no longer shows through them or the machines.
 
 **5.3 F-2 and C-R-U-1** (sheet 3). F-2 is a small torpedo with a blunt nose, a lens and three thin tentacles from its
 underside, in a faint blue. That blue is the one colour in the world that isn't energy, because the text says "bluish

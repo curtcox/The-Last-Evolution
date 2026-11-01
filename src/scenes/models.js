@@ -139,5 +139,23 @@
     y = words('Nearly five hundred feet in height, a mighty, bluntly rounded dome at its top, the cylinder stood, covered over with smoothly gleaming metal, slightly luminescent in itself.', 'p113', 1240, y, 600, 18);
     words('In two minutes it was a solid, black dome that reached over them and curved down to the ground about them.', 'p092', 1240, y, 600, 18);
   };
-  for (const k of ['model1', 'model2', 'model3', 'model4', 'model5', 'model6']) LOOPS[k].len = 2;
+  // 7. The pilot's poses: Roal in profile, lying, sitting up, standing and shielding his face; his eyes; the cage
+  LOOPS.model7 = t => {
+    HALFTONE = .3; head(7, 'Roal acting, and the pilot\'s props');
+    const g = 900, s = 52, u = s * 6 / 7.4;
+    const c = DES.couch(370, g, s);
+    DES.personSide(330, c.seat - .35 * u, s, t, { pose: DES.POSE.lie, lid: .5, key: 'a' });
+    label('lying', 'p051: thinking deeply', 370, 960);
+    const c2 = DES.couch(880, g, s * .8);
+    DES.personSide(860, c2.seat - .4 * u * .8, s * .8, t, { pose: DES.POSE.sit, look: .5, key: 'b' });
+    label('sitting up', 'p053', 880, 960);
+    DES.personSide(1230, g - DES.HIP * s, s, t, { pose: DES.POSE.stand, key: 'c' });
+    label('standing', null, 1230, 960);
+    DES.personSide(1480, g - DES.HIP * s, s, t, { pose: DES.POSE.shield, flip: true, key: 'd' });
+    label('shielding his face', 'p060', 1480, 960);
+    DES.cage(1740, g, 110, t); label('the cage', 'p071', 1740, 960);
+    DES.eyes(1450, 300, 520, t, { old: true, far: true });
+    label('his eyes', 'p055', 1450, 470);
+  };
+  for (const k of ['model1', 'model2', 'model3', 'model4', 'model5', 'model6', 'model7']) LOOPS[k].len = 2;
 })();
