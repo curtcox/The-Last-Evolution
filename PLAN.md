@@ -80,7 +80,8 @@ Claude signs off on a gate only when:
 ## 3. Fidelity: what "verbatim" allows
 
 `text/source/pg27462.txt` is the Gutenberg file, unmodified, licence included, with its SHA-256 recorded. The story is
-its body, from *"I am the last of my type"* to *"you will change your belief."* (6,717 words).
+its body, from *"I am the last of my type"* to *"you will change your belief."* (6,677 words in 140 paragraphs;
+`npm run story` extracts them into `text/story.json`).
 `tools/verbatim_check.mjs` proves the script matches it, and any change outside these rules fails the check:
 
 1. **Every word of the story is spoken, in order.** That includes the speech tags ("said Roal"), the narrator's
@@ -179,10 +180,11 @@ gives the film its one visual rule:
   - the 500-foot power plant with its "bluntly rounded dome".
 
   The people of 2538 are drawn as the pulps drew the future (tunics, high collars), not as caricatures.
-- **Morey.** Phase 0 tracks down a scan of Morey's illustration (archive.org copies of the August 1932 issue or the
-  March 1961 reprint) and checks the image's own copyright status, which is separate from the text's. If it's clear,
-  it appears once, at the "[Illustration]" moment, and on the site. If not, we paint an homage that evokes the period
-  without copying it.
+- **Morey.** *(Found in Phase 0.)* Leo Morey's full-page illustration is on page 415 of the August 1932 issue. It shows
+  F-1's tentacles holding the newborn F-2 in its aura while a man shields his face: the climax of chapter 5, the pilot.
+  It's in the public domain in the US (`assets/ref/README.md` gives the reasoning). It's already on the site's Read
+  page. In the film, it appears once, at that moment in chapter 5. Our own painting of the scene builds up to it, then
+  dissolves into the page itself.
 - **Text on screen** is the magazine's: chapter titles as pulp page headers with a drop cap, designations lettered in
   the period's typeface, footnotes as footnotes. Captions are a Round 1 decision (§10).
 - **QR codes** dress as pulp-page furniture: a footnote tag, a "classified ad" box, a stamp in the page corner. They
@@ -198,7 +200,8 @@ gives the film its one visual rule:
 
 Chapters are units of construction and review: each has a scene file, a storyboard and a render. They're joined into one
 film, with YouTube chapter markers. The splits follow the story's own scene breaks. Times assume about 140 spoken words
-a minute plus holds; Phase 1 replaces them with measured times from the voices.
+a minute plus holds. The word counts per chapter are approximate until Phase 1 cuts the chapters on paragraph ids,
+and Phase 1 replaces the times with measured ones from the voices.
 
 | # | title | text (opens with) | words | ≈ min |
 |---|---|---|---|---|
@@ -213,7 +216,7 @@ a minute plus holds; Phase 1 replaces them with measured times from the voices.
 | 8 | Last of Men | "We are alone, Trest…" (to the livid beam) | ~680 | 5 |
 | 9 | Pure Force | "There was a dull, drumming beat…" (to the golden sphere vanishing) | ~570 | 4.5 |
 | 10 | Go, and Do Not Return | "Far in space…" to the end, with the frame | 610 | 4.5 |
-| | | | **6,717** | **≈ 52** |
+| | | | **6,677** | **≈ 52** |
 
 **Pilot: chapter 5, *The Hydrogen Wall*.** It has the most of everything:
 - Roal's dreaming speech on the hydrogen atom, the densest science on the site;
@@ -327,9 +330,9 @@ Each phase ends at a gate run by the loop in §2.
 
 | phase | Claude delivers | Curt reviews | the gate closes when |
 |---|---|---|---|
-| **0. Foundation** | the repo scaffold, the source text and its hash, the axol-f and kit tools ported, `npm start`, an empty site live on Pages, `ELEVENLABS_API_KEY` checked, the Morey scan and its copyright status | that the site is up, and the Morey finding | the site deploys; the Morey question is answered |
+| **0. Foundation** ✅ | ✅ the source text, its hash and `npm run story`; ✅ the kit (painting, timing, renderer) with a smoke-test scene; ✅ `npm start`, the local server and the studio; ✅ a first site (home, Read with the illustration, About) and its Pages workflow; ✅ the ElevenLabs key (in the Keychain; it works, though it can't read the quota); ✅ the Morey scan and its copyright status. axol-f's script, voice, review and QR tools are ported in the phases that first use them (1, 3, 5), adapted to a story rather than a conversation | that the site is up, and the Morey finding | the site deploys; the Morey question is answered |
 | **1. Script** (Round 1) | `script.yaml` with the verbatim and attribution reports; the pronunciation list with a scratch-voice listening page; measured runtime; a decision sheet for the open questions in §10 | every attribution, every spoken form, the §10 decisions | the verbatim check passes; every §10 item is decided |
-| **2. Research and references** | the site's notes in draft (all four areas), `refs.yaml`, the link report, a fact-check list with a source for each claim | the notes' content, tone and balance (especially the succession notes), the link list | every claim is sourced; every link is live |
+| **2. Research and references** | the site's notes in draft (all four areas), `refs.yaml`, the link report, a fact-check list with a source for each claim; a comparison of the 1932 text (archive.org scan) with the 1961 text Gutenberg transcribed, with any differences put to Curt | the notes' content, tone and balance (especially the succession notes), the link list | every claim is sourced; every link is live |
 | **3. Casting and sound** | a casting sampler: 3 candidates per role reading that role's own lines, with the narrator's young and old treatments side by side; motif sketches; effect samples | voices by ear, the motif | each role is cast, the motif is chosen, and the full voice pass is done |
 | **4. Look development** | style frames for the ink-wash-and-energy rule; a model sheet for every design in §5; the chapter-title page; QR layouts A and B with scan reports; the title page | the look | the designs and a QR layout are approved |
 | **5. Pilot** | chapter 5: storyboard → draft → final render with voice and sound, on the review server | the pilot, in as many rounds as it takes | it's the standard for the rest |

@@ -1,0 +1,23 @@
+{
+  "name": "the-last-evolution",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "The Last Evolution (John W. Campbell, Jr., 1932), read in full: a voiced, painted film and its companion site",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node tools/start.mjs",
+    "story": "node tools/extract_story.mjs",
+    "site": "node tools/build_site.mjs",
+    "serve": "node tools/serve.mjs",
+    "key": "node tools/eleven.mjs",
+    "smoke": "node render.mjs --sheet=0,2,4,5,6,7.5 --cols=3 --out=out/check/smoke.jpg"
+  },
+  "dependencies": {
+    "p5": "^2.3.3",
+    "p5.brush": "^2.2.3",
+    "puppeteer-core": "^25.11.0"
+  }
+}
