@@ -1,59 +1,81 @@
 # cast.yaml: who speaks in the film. Every quoted line in script/speakers.yaml names one of these ids; everything outside
-# quotation marks is the narrator's (PLAN.md §3). Voices are chosen in Phase 3 and added here then; until then the
-# scratch voice (tools/scratch_voice.mjs) uses the stock voice under `scratch`, only to hear the words and time them.
+# quotation marks is the narrator's (PLAN.md §3). The cast was chosen in Round 3: `pick` is the candidate chosen on the
+# casting page (its preview id in script/casting_candidates.json), and `voice` the voice saved to the ElevenLabs account
+# from it (tools/save_cast.mjs), once it's saved. F-2 in the scenes is the narrator's voice, untreated. `scratch` is the
+# stock voice tools/scratch_voice.mjs used in Round 1, only to hear the words and time them.
 narrator:
   name: F-2, narrating
   about: the whole narration. Very old, precise, unhurried, faintly worn, with a dry wit
-  scratch: JBFqnCBsd6RMkjVDRZzb   # George
+  scratch: JBFqnCBsd6RMkjVDRZzb # George
+  pick: C
+  voice: rPvCUn05Fn7ivKgbZafW
 f2:
   name: F-2, in the scenes
   about: the same voice as the narrator, young and clean
-  scratch: onwK4e9ZLuTAKqWW03F9   # Daniel
+  scratch: onwK4e9ZLuTAKqWW03F9 # Daniel
+  voice: rPvCUn05Fn7ivKgbZafW
 roal:
   name: Roal, 25374
   about: human, 150 years old; soft, dreaming, a quiet chuckle
-  scratch: pqHfZKP75CvOlQylNhV4   # Bill
+  scratch: pqHfZKP75CvOlQylNhV4 # Bill
+  pick: B
+  voice: s1j7frDtu6HJpiSC4lG7
 trest:
   name: Trest, 35429
   about: human; quiet and plain, the realist
-  scratch: iP95p4xoKVk53GoZ742B   # Chris
+  scratch: iP95p4xoKVk53GoZ742B # Chris
+  pick: A
+  voice: BH9RW1UHJXDvKfguy4TD
 kahsh:
   name: Kahsh-256799
   about: human, one of the Man-rulers; official
-  scratch: cjVigY5qzO86Huf0OWal   # Eric
+  scratch: cjVigY5qzO86Huf0OWal # Eric
+  pick: B
+  voice: IYUe2eUOdMyM99O7iXvC
 cr21:
   name: C-R-21
   about: chief of the machine rulers; "the vibrationally correct, emotionless tones of all the race of machines"
-  scratch: SAz9YHcvj6GT2YYXdXww   # River
+  scratch: SAz9YHcvj6GT2YYXdXww # River
+  pick: B
+  voice: lm4rwoA9pynv7thg7d0D
 x5638:
   name: X-5638
   about: one of the newest science-machines
-  scratch: SAz9YHcvj6GT2YYXdXww   # River
+  scratch: SAz9YHcvj6GT2YYXdXww # River
+  pick: B
+  voice: ccJwQbKNI6ekYLzsB5mZ
 x6349:
   name: X-6349
   about: a science-machine
-  scratch: SAz9YHcvj6GT2YYXdXww   # River
+  scratch: SAz9YHcvj6GT2YYXdXww # River
+  pick: A
 x6621:
   name: X-6621
   about: the greatest of the chemist-investigators
-  scratch: SAz9YHcvj6GT2YYXdXww   # River
+  scratch: SAz9YHcvj6GT2YYXdXww # River
+  pick: B
 f1:
   name: F-1
   about: the new brain-machine, newly conscious
-  scratch: nPczCjzI2devNBz1zQrb   # Brian
+  scratch: nPczCjzI2devNBz1zQrb # Brian
+  pick: B
 cru1:
   name: C-R-U-1
   about: the coordinator machine F-2 makes; a ruler
-  scratch: SAz9YHcvj6GT2YYXdXww   # River
+  scratch: SAz9YHcvj6GT2YYXdXww # River
+  pick: A
 plant:
   name: the power plant's brain
   about: '"the small brain built into it": two words, "Power ready"'
-  scratch: SAz9YHcvj6GT2YYXdXww   # River
+  scratch: SAz9YHcvj6GT2YYXdXww # River
+  pick: C
 sphere1:
   name: the first force-sphere
   about: cold, contemptuous; destroyed seconds later
-  scratch: N2lVS1w4EtoT3dr4eOWO   # Callum
+  scratch: N2lVS1w4EtoT3dr4eOWO # Callum
+  pick: C
 golden:
   name: the golden sphere
   about: '"deep in tone, seeming of infinite power, held gently in check"'
-  scratch: HIGUfNOdjuWQwwapnTRW   # Chuck Miller
+  scratch: HIGUfNOdjuWQwwapnTRW # Chuck Miller
+  pick: B

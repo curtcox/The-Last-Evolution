@@ -14,7 +14,7 @@ import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import YAML from 'yaml';
 import { eleven } from './eleven.mjs';
-import { PATHS, readYaml, respeller } from './script_lib.mjs';
+import { PATHS, readYaml, respeller, TREAT } from './script_lib.mjs';
 import { publishReview } from './publish_review.mjs';
 
 const OUT = 'out/review/round3', AUDIO = `${OUT}/audio`, CANDS = 'script/casting_candidates.json';
@@ -26,12 +26,6 @@ const cands = existsSync(CANDS) ? JSON.parse(readFileSync(CANDS, 'utf8')) : {};
 mkdirSync(AUDIO, { recursive: true });
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-// the processing each treatment applies (ffmpeg filters)
-const TREAT = {
-  old: { label: 'old', af: 'asetrate=44100*0.97,aresample=44100,atempo=0.97,vibrato=f=4.5:d=0.04,highpass=f=120,lowpass=f=6500,aecho=0.8:0.6:35:0.12' },
-  thought: { label: 'as thought', af: 'chorus=0.6:0.9:45|60:0.35|0.3:0.25|0.4:1.5|1.2,aecho=0.8:0.7:110|230:0.3|0.18,highpass=f=90' },
-  machine: { label: 'machine', af: 'flanger=delay=1.5:depth=1.5:regen=20:width=60:speed=0.3,highpass=f=150,lowpass=f=7500,aecho=0.8:0.4:12:0.15' },
-};
 
 // what a role reads: its lines from the listed paragraphs, as the voice would be sent them, cut at a sentence to fit
 const lines = script.chapters.flatMap(c => c.lines.filter(l => l.who));

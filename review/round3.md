@@ -31,6 +31,17 @@ Some marks on the page aren't really misses: "Roal" heard as "Ro" or "Roll", and
 still cool and aloof. All three new candidates read their line correctly, and they take it more slowly than the first
 three (15 to 19 seconds for the two takes, against 12 to 14). The page now shows them, and a pick or "none" saved for
 the old three is cleared.
+**Curt:** narrator C, roal B, trest A, kahsh B, cr21 B, x5638 B, x6349 A, x6621 B, f1 B, cru1 A, plant C, sphere1 C,
+golden B.
+**Claude:** recorded in `script/cast.yaml` (`pick`). Both flagged misreadings were avoided: X-5638 B and the power
+plant C read their lines right. Six are saved to the account: the narrator, Roal, Trest, Kahsh, C-R-21 and X-5638.
+The account then refused the seventh: its plan allows **10 custom voices**, and four were already taken by the clones
+on it. The other seven (X-6349, X-6621, F-1, C-R-U-1, the power plant, the force-sphere, the golden sphere) are still
+previews, which may not stay available for long. To save them, the account needs seven free slots: either a plan with
+more (ElevenLabs' Creator plan has 30, and the full voice pass needs a bigger character allowance anyway: the film is
+about 40,000 characters before retakes), or room made by deleting voices on the account you no longer need. Deleting
+is yours to decide; I haven't touched the voices that were there. Once there's room, `npm run save-cast` with the line
+above saves the rest.
 **Curt:**
 
 **1.2 One voice for F-2.** The plan has the narrator and the F-2 of the scenes as one voice: young (raw) in the scenes,
@@ -38,6 +49,8 @@ old (treated) as the narrator. The narrator's candidates read narration and one 
 can hear both treatments of the same voice.
 *Recommend:* keep one voice. If no candidate works both ways, cast the narrator first; I'll design the young F-2 to
 match.
+**Claude:** done that way for now: F-2 in the scenes uses the narrator's voice (C), raw. Say if you'd rather have a
+young F-2 of its own.
 **Curt:**
 
 ## 2. The treatments
@@ -85,15 +98,23 @@ an AI-generated credit either way.
 **4.1 Model.** The account has Eleven v4, the newest, as well as v3 and Multilingual v2, which the scratch voice used.
 *Recommend:* **v4.** Once the narrator is picked, I'll voice one paragraph with v3 and v4 so you can confirm by ear
 before the full pass.
+**Claude:** [the voice trial](https://curtcox.github.io/The-Last-Evolution/review/round3/trial.html) is up: chapter
+1's opening paragraph in the narrator's voice, and part of the council (the narrator, X-5638, Roal and C-R-21), each in
+v3 and v4, with the treatments on. Speech-to-text found every word in both narrator takes. Still recommend v4.
 **Curt:**
 
 **4.2 Pace.** The scratch voices ran at 153 words a minute. The plan's narrator is unhurried.
 *Recommend:* aim for about **135 words a minute for the narrator** (about 52 minutes for the film), and let dialogue
 run at its natural pace. Set it by ear on the pilot chapter.
+**Claude:** with the old treatment on, v4 reads the narrator at **135 words a minute** on its own, right on the
+target; v3 at 122. v4 ignored a request to slow down, so the pace will be adjusted, if it needs it, by the narrator's
+treatment rather than the model.
 **Curt:**
 
 **4.3 Saving the voices.** Your picks are previews until they're saved to your ElevenLabs account, one voice slot each,
 13 at most. The ids are kept in `script/casting_candidates.json`. If the account runs out of slots, I'll say so before
 saving anything.
 *Recommend:* save the picks as soon as you've made them, since I don't know how long previews stay available.
+**Claude:** six saved; the account ran out of slots for the other seven (see 1.1). I couldn't check the limit
+beforehand, since the key can't read the account's plan, so the six went before the refusal said so.
 **Curt:**

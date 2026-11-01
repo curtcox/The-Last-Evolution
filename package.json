@@ -22,6 +22,9 @@
     "casting": "node tools/casting_sampler.mjs",
     "sound": "node tools/sound_sampler.mjs",
     "look": "node tools/look_sampler.mjs",
+    "models": "node tools/model_sheets.mjs",
+    "trial": "node tools/voice_trial.mjs",
+    "save-cast": "node tools/save_cast.mjs",
     "publish-review": "node tools/publish_review.mjs"
   },
   "dependencies": {

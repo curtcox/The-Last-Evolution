@@ -39,3 +39,11 @@ Every settled decision, with its date and who made it. See [PLAN.md §2](PLAN.md
 | 2026-11-01 | Moskowitz's 1961 introduction | Paraphrased only | Curt, accepting Claude's Round 2 recommendation |
 | 2026-11-01 | Decision pages | Every page to listen, look and pick on is published on the site at /review/, with its audio, as well as served locally; the site's Review page lists each round's sheet and pages | Curt |
 | 2026-11-01 | The force-sphere's voice | Round 3's first three rejected; redesigned as more ethereal (airy, distant, floating, a faint shimmer) | Curt |
+| 2026-11-01 | The cast | Narrator C (also F-2 in the scenes, raw), Roal B, Trest A, Kahsh B, C-R-21 B, X-5638 B, X-6349 A, X-6621 B, F-1 B, C-R-U-1 A, the power plant C, the force-sphere C, the golden sphere B; recorded in `script/cast.yaml` | Curt |
+| 2026-11-01 | The medium | Ink wash on yellowed pulp stock in five sepia dilutions, with a pen line where needed, boiling at 12 drawings a second; the details judged on the model sheets | Curt, accepting Claude's Round 4 recommendation |
+| 2026-11-01 | The halftone | Light (the frames' strength); energy kept out of it | Curt, accepting Claude's Round 4 recommendation |
+| 2026-11-01 | Energy | Laid as added light over a thin wash of its colour, never mixed into the ink | Curt, accepting Claude's Round 4 recommendation |
+| 2026-11-01 | Screens under fire | Violet, blue, orange, red in time and in space: the hit hottest, the rest following | Curt, accepting Claude's Round 4 recommendation |
+| 2026-11-01 | The colour arc | As in PLAN.md §5 and the six frames | Curt, accepting Claude's Round 4 recommendation |
+| 2026-11-01 | Chapter-title page | The running head, double rule, italic title, and the opening paragraph with a drop cap, in Old Standard TT; the narrator starts reading over it | Curt, accepting Claude's Round 4 recommendation; the paragraph is Claude's call on the open point |
+| 2026-11-01 | Phase 4 order | Model sheets first, then QR layouts A and B, then the title page | Curt, accepting Claude's Round 4 recommendation |

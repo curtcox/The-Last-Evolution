@@ -1,5 +1,5 @@
-// script_lib.mjs: what build_script.mjs, verbatim_check.mjs and scratch_voice.mjs share: the files, the split of a
-// paragraph at its quotation marks, and the words a line sends to the voice.
+// script_lib.mjs: what the script and voice tools share: the files, the split of a
+// paragraph at its quotation marks, the words a line sends to the voice, and the treatments that colour a voice.
 import { readFileSync } from 'node:fs';
 import YAML from 'yaml';
 
@@ -54,3 +54,10 @@ export function respeller(pronounce) {
     return t.replace(/\u0000(\d+)\u0000/g, (m, n) => said[n]);
   };
 }
+
+// the processing each treatment applies (ffmpeg filters)
+export const TREAT = {
+  old: { label: 'old', af: 'asetrate=44100*0.97,aresample=44100,atempo=0.97,vibrato=f=4.5:d=0.04,highpass=f=120,lowpass=f=6500,aecho=0.8:0.6:35:0.12' },
+  thought: { label: 'as thought', af: 'chorus=0.6:0.9:45|60:0.35|0.3:0.25|0.4:1.5|1.2,aecho=0.8:0.7:110|230:0.3|0.18,highpass=f=90' },
+  machine: { label: 'machine', af: 'flanger=delay=1.5:depth=1.5:regen=20:width=60:speed=0.3,highpass=f=150,lowpass=f=7500,aecho=0.8:0.4:12:0.15' },
+};
