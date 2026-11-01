@@ -21,6 +21,7 @@
     "compare": "node tools/compare_printings.mjs",
     "casting": "node tools/casting_sampler.mjs",
     "sound": "node tools/sound_sampler.mjs",
+    "look": "node tools/look_sampler.mjs",
     "publish-review": "node tools/publish_review.mjs"
   },
   "dependencies": {

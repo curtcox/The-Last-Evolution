@@ -218,7 +218,7 @@ function drawLetters(c) {
     const k = L.pop != null ? backOut(L.pop) : 1; if (k <= .01) continue;
     c.save(); c.translate(L.x, L.y); c.rotate(L.rot || 0); c.scale(k, k); c.globalAlpha = L.alpha ?? 1;
     c.font = L.font || `${L.size}px "Permanent Marker", "Comic Sans MS", cursive`;
-    c.textAlign = L.align || 'center'; c.textBaseline = 'middle';
+    c.textAlign = L.align || 'center'; c.textBaseline = 'middle'; c.letterSpacing = (L.spacing || 0) + 'px';
     if (L.stroke) { c.lineJoin = 'round'; c.lineWidth = L.size * .12; c.strokeStyle = L.stroke; c.strokeText(L.txt, 0, 0); }
     if (L.ink !== false) { c.fillStyle = PAL.ink; c.fillText(L.txt, L.size * .045, L.size * .055); }
     c.fillStyle = L.color; c.fillText(L.txt, 0, 0);

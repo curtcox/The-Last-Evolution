@@ -1,6 +1,7 @@
 // scratch_voice.mjs: Round 1's listening page and runtime, in stock ElevenLabs voices (script/cast.yaml's `scratch`).
 // These aren't the film's voices (Phase 3 casts those); they're for hearing the words and timing them.   npm run scratch
-//   out/review/round1/          the listening page (http://localhost:8077/review/round1/):
+//   out/review/round1/          the listening page (http://localhost:8077/review/round1/), published with the site (at
+//                               /review/round1/) by tools/publish_review.mjs:
 //                                 each respelling in script/pronounce.yaml, in the sentence it first appears in, read
 //                                 as the story spells it and as each option would say it;
 //                                 the sample chapters, line by line, played in order
@@ -13,6 +14,7 @@ import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { eleven } from './eleven.mjs';
 import { PATHS, readYaml, plain, respeller, words } from './script_lib.mjs';
+import { publishReview } from './publish_review.mjs';
 
 const SAMPLE = [0, 4];                       // chapters voiced whole: the opening narration, and the council's dialogue
 const MODEL = 'eleven_multilingual_v2';
@@ -105,14 +107,14 @@ console.log(`narrator ${wpm('narrator').toFixed(0)} wpm, dialogue ${wpm('dialogu
 const groups = [...new Set(entries.map(e => e.group))];
 const player = (f, label) => `<button class="play" data-src="audio/${f}">${esc(label)}</button>`;
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Round 1: listen</title><link rel="stylesheet" href="/style.css"><style>
+<title>Round 1: listen</title><link rel="stylesheet" href="../../style.css"><style>
 .play{font:inherit;font-size:.85em;padding:.25em .7em;margin:.15em .3em .15em 0;border:1px solid var(--rule);background:var(--paper2);color:var(--ink);border-radius:4px;cursor:pointer}
 .play.on{background:var(--accent);color:var(--paper)} .rec{font-weight:700} .rec::after{content:" ✓ recommended"}
 .entry{border-top:1px solid var(--rule);padding:.6em 0} .ctx{color:var(--ink2);font-size:.9em;margin:.2em 0}
 .line{margin:.25em 0;padding:.2em .4em;border-left:3px solid transparent} .line.now{border-color:var(--accent);background:var(--paper2)}
 .who{font-variant:small-caps;color:var(--ink2);margin-right:.5em} .say{color:var(--ink2);font-size:.85em}
 </style></head><body><main>
-<p class="kicker">Round 1 · scratch voices, not the cast</p><h1>Listen</h1>
+<p class="kicker"><a href="../">Review</a> · Round 1 · scratch voices, not the cast</p><h1>Listen</h1>
 <p>Stock ElevenLabs voices, for hearing the words and timing them. The cast comes in Phase 3. The decisions these belong
 to are in <a href="https://github.com/curtcox/The-Last-Evolution/blob/main/review/round1.md">review/round1.md</a>.</p>
 <h2>How the words are said</h2>
@@ -135,4 +137,5 @@ document.addEventListener('click', e => {
 });
 </script></body></html>`;
 writeFileSync(`${OUT}/index.html`, html);
+publishReview('round1');
 console.log(`${OUT}/index.html: ${entries.length} respellings, chapters ${SAMPLE.join(' and ')}`);

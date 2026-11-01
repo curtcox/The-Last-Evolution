@@ -11,9 +11,9 @@ npm start
 
 This extracts the story, builds the script and checks it word for word, builds the site, and opens it at
 http://localhost:8077/. The studio, for scrubbing scenes, is at http://localhost:8077/studio/. Once `npm run scratch` has
-voiced it, Round 1's listening page is at http://localhost:8077/review/round1/. Round 3's casting and sound pages are
-published on the site, at [/review/](https://curtcox.github.io/The-Last-Evolution/review/), and locally at
-http://localhost:8077/review/round3/. You need Node.js 20 or newer; making the film also needs Google Chrome and ffmpeg.
+voiced it, Round 1's listening page is at http://localhost:8077/review/round1/. Every round's pages to listen, look and
+pick on (Round 1's listening page, Round 3's casting and sound, Round 4's style frames) are published on the site, at
+[/review/](https://curtcox.github.io/The-Last-Evolution/review/), and locally at http://localhost:8077/review/. You need Node.js 20 or newer; making the film also needs Google Chrome and ffmpeg.
 
 ## What's where
 
@@ -26,8 +26,8 @@ http://localhost:8077/review/round3/. You need Node.js 20 or newer; making the f
 | [notes/](notes/) | The site's notes in draft (the 1932 science, machines as heirs, Campbell and the pulps), their sources and fact-check list |
 | [review/](review/) | Each review round's decision sheet, starting with [Round 1](review/round1.md); the pages to listen and pick on are in [site/review/](site/review/), published at [/review/](https://curtcox.github.io/The-Last-Evolution/review/) |
 | [assets/ref/](assets/ref/README.md) | Scans and OCR of the 1932 and 1961 printings, including Leo Morey's illustration, and their copyright status; the [three-way comparison](text/comparison_1932.md) |
-| [src/](src/) | The painting engine (from the Claude Animation Base) and the scenes |
-| [tools/](tools/) | Story extraction, the script builder and verbatim check, the scratch voice, the site builder, the local server, the ElevenLabs key check |
+| [src/](src/) | The painting engine (from the Claude Animation Base), the film's medium ([pulp.js](src/pulp.js): paper, ink wash, halftone, lettering; [energy.js](src/energy.js): beams, lightning, auras, screens) and the scenes, so far the [style frames](src/scenes/lookdev.js) |
+| [tools/](tools/) | Story extraction, the script builder and verbatim check, the scratch voice, the casting, sound and look samplers, the publisher for review pages, the site builder, the local server, the ElevenLabs key check |
 | [render.mjs](render.mjs) | The headless renderer: contact sheets, strips, stills, video |
 | [ANIMATION_GUIDE.md](ANIMATION_GUIDE.md) | The kit's guide to painting and timing (without its Clawd sections) |
 

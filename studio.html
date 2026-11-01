@@ -25,8 +25,13 @@
 <script src="src/config.js"></script>
 <script src="src/core.js"></script>
 <script src="src/timeline.js"></script>
+<!-- the film's medium: pulp paper and ink wash, and energy, the only colour (PLAN.md §5) -->
+<script src="src/pulp.js"></script>
+<script src="src/energy.js"></script>
 <!-- the scene: for now, the toolchain's smoke test; chapters arrive in Phase 5 -->
 <script src="src/scenes/smoke.js"></script>
+<!-- Phase 4's style frames, as loops: ?loop=look1 … look6, lookTitle -->
+<script src="src/scenes/lookdev.js"></script>
 <script>
   // studio.html?loop=<name> scrubs a standalone loop instead of the video.
   const q = new URLSearchParams(location.search).get('loop'); if (q && LOOPS[q]) window.LOOP = LOOPS[q];
