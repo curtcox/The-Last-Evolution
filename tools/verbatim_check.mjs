@@ -3,7 +3,9 @@
 // on trust:
 //   1. the source file's SHA-256 is the one recorded, and story.json was extracted from it
 //   2. every paragraph of the story is in the script, once, in order, and nothing else is: its lines joined with single
-//      spaces are the paragraph exactly, and each paragraph is found in the source file as is (line breaks aside)
+//      spaces are the paragraph exactly, and each paragraph is found in the source file as is (line breaks aside) once
+//      its emendations (text/emendations.yaml, the 1932 readings) are undone. Each emendation is applied exactly once,
+//      and no paragraph differs from the source in any other way
 //   3. every other block (masthead, title, byline, scene breaks, illustration, THE END, footnotes) is a shown line,
 //      never a spoken one
 //   4. narration has no quotation marks in it; a quoted line starts with one and ends with one, unless its speech runs on
@@ -12,10 +14,12 @@
 //   5. the spoken words add up to the story's count
 // Writes script/reports/verbatim.md, and exits 1 if anything fails.
 import { readFileSync, writeFileSync } from 'node:fs';
+import YAML from 'yaml';
 import { createHash } from 'node:crypto';
 import { PATHS, readYaml, readStory, words, parseWho } from './script_lib.mjs';
 
 const story = readStory(), script = readYaml(PATHS.script), cast = readYaml(PATHS.cast), speakers = readYaml(PATHS.speakers);
+const emendations = YAML.parse(readFileSync('text/emendations.yaml', 'utf8'));
 const fails = [], notes = [];
 const fail = m => fails.push(m);
 
@@ -46,7 +50,12 @@ story.blocks.forEach((b, i) => {
   if (g.lines.some(l => !l.who)) fail(`${b.id}: a paragraph of the story isn't spoken`);
   const joined = g.lines.map(l => l.text).join(' ');
   if (joined !== b.text) fail(`${b.id}: the script's lines don't make the paragraph:\n    script: ${joined}\n    story:  ${b.text}`);
-  if (!flat.includes(b.text)) fail(`${b.id}: not found word for word in ${story.source}`);
+  let back = b.text;   // the paragraph as Gutenberg has it: its emendations undone, each found exactly once
+  for (const e of emendations.filter(e => e.para === b.id)) {
+    if (back.split(e.first).length !== 2) fail(`${b.id}: emendation ${e.n}'s 1932 words aren't in it exactly once`);
+    back = back.replace(e.first, () => e.gutenberg);
+  }
+  if (!flat.includes(back)) fail(`${b.id}: not found word for word in ${story.source}${b.emended ? ', even with its emendations undone' : ''}`);
   const named = (s => (Array.isArray(s) ? s : s?.who) || [])(speakers[b.id]).map(w => parseWho(w).who);
   const given = g.lines.filter(l => l.who !== 'narrator').map(l => l.who);
   if (named.join() !== given.join()) fail(`${b.id}: speakers.yaml names [${named}], the script has [${given}]; run npm run script`);
@@ -72,6 +81,7 @@ notes.push(`${story.blocks.filter(b => b.kind === 'para').length} paragraphs, ${
   `${lines.filter(l => l.who).length} spoken lines: ${quoted} quoted, ${lines.filter(l => l.who === 'narrator').length} the narrator's`,
   `${lines.filter(l => l.shown).length} shown lines (masthead, title, byline, scene breaks, illustration, THE END, footnotes)`,
   `${lines.filter(l => l.say).length} lines where the voice is sent a respelling (script/pronounce.yaml)`,
+  `${emendations.length} readings restored from the 1932 printing (text/emendations.yaml), each found exactly once; no other change from the source`,
   `source ${story.source}, SHA-256 ${sha.slice(0, 16)}…, as recorded`);
 
 const md = ['# Verbatim check', '', `Written by \`tools/verbatim_check.mjs\`. ${fails.length ? `**FAILED: ${fails.length} problem(s).**` : '**Passed.**'}`, '',

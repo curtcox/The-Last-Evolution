@@ -102,7 +102,7 @@ reached 3,600 degrees in 1931 ([Edwin Fitch Northrup][wp-northrup]). Turning one
 ## The green beams
 *p024, p045 · chapters 2–4*
 
-X-6221 says the life-beams "affect chemical action, retarding it greatly in exothermic actions, speeding greatly
+X-6621 says the life-beams "affect chemical action, retarding it greatly in exothermic actions, speeding greatly
 endothermic actions". Exothermic reactions give off heat, and endothermic ones absorb it. Life runs on releasing energy
 (respiration is exothermic), so a beam that stalls exothermic chemistry and drives endothermic chemistry would stop
 metabolism and burn out nerves. It's invented, but it's invented from real chemistry.

@@ -11,15 +11,15 @@ None.
 
 | speaker | lines | words |
 |---|---:|---:|
-| F-2, narrating | 124 | 5,011 |
-| Roal, 25374 | 25 | 916 |
+| F-2, narrating | 124 | 5,038 |
+| Roal, 25374 | 25 | 918 |
 | F-2, in the scenes | 12 | 368 |
 | the golden sphere | 5 | 146 |
 | F-1 | 3 | 54 |
 | Trest, 35429 | 4 | 43 |
-| X-6221 | 2 | 37 |
+| X-6621 | 2 | 37 |
 | C-R-21 | 2 | 33 |
-| C-R-U-1 | 1 | 27 |
+| C-R-U-1 | 1 | 28 |
 | X-6349 | 2 | 20 |
 | the first force-sphere | 2 | 10 |
 | X-5638 | 2 | 8 |
@@ -32,11 +32,11 @@ None.
 |---:|---|---|---:|---|
 | 0 | The Record | p001–p002 | 94 | the start |
 | 1 | 2538 | p003–p006 | 439 | yes |
-| 2 | The Outsiders | p007–p017 | 602 | no |
-| 3 | Life Alone Can Understand Life | p018–p036 | 963 | no |
+| 2 | The Outsiders | p007–p017 | 626 | no |
+| 3 | Life Alone Can Understand Life | p018–p036 | 970 | no |
 | 4 | The Council | p037–p050 | 589 | yes |
-| 5 | The Hydrogen Wall | p051–p073 | 1,059 | no |
-| 6 | Ten Thousand Motes | p074–p082 | 564 | yes |
+| 5 | The Hydrogen Wall | p051–p073 | 1,060 | no |
+| 6 | Ten Thousand Motes | p074–p082 | 562 | yes |
 | 7 | The Dome | p083–p099 | 513 | yes |
 | 8 | Last of Men | p100–p114 | 657 | yes |
 | 9 | Pure Force | p115–p129 | 592 | yes |
@@ -71,7 +71,7 @@ Scene breaks inside chapters, which become transitions: break02 (chapter 2, afte
 | p033.5 | Roal, 25374 | "They are destroying the intelligent life--and leaving untouched that which is…" | tagged "he began", after "It was Roal who sent the first thoughts" |
 | p034.1 | Roal, 25374, continued | "You--machines--are far more intelligent than we even now, and capable of changing…" | continues p033. The 'single-quoted' words are Roal imagining the Outsiders; he says them himself |
 | p035.1 | Roal, 25374, continued | "Attack--therefore!" | continues p033 and closes it |
-| p036.1 | Roal, 25374 | "We can readily solve the hidden secret of their force-screen." | Round 1 decided Roal. Untagged. A new quotation, but the next line is "He was interrupted", so a man is speaking, and Roal has the floor. It could be Trest, who later leads the work on the beams, or Kahsh |
+| p036.1 | Roal, 25374 | "We can readily solve the hidden secret of their powerful force-screen." | Round 1 decided Roal. Untagged. A new quotation, but the next line is "He was interrupted", so a man is speaking, and Roal has the floor. It could be Trest, who later leads the work on the beams, or Kahsh |
 
 ### 4. The Council
 
@@ -87,8 +87,8 @@ Scene breaks inside chapters, which become transitions: break02 (chapter 2, afte
 | p042.3 | X-6349 | "as you know. We know nothing of their system." | tagged "replied X-6349" |
 | p043.1 | Trest, 35429 | "Then we must find it for ourselves," | tagged "replied Trest" |
 | p044.1 | Kahsh-256799 | "The life-beams?" | tagged "asked Kahsh-256799" |
-| p045.1 | X-6221 | "They affect chemical action, retarding it greatly in exothermic actions, speeding…" | tagged "answered X-6221" |
-| p045.3 | X-6221 | "The system we do not know. Their minds cannot be read, they cannot be restored to…" | tagged "answered X-6221" |
+| p045.1 | X-6621 | "They affect chemical action, retarding it greatly in exothermic actions, speeding…" | tagged "answered X-6621" (1932; Gutenberg has X-6221) |
+| p045.3 | X-6621 | "The system we do not know. Their minds cannot be read, they cannot be restored to…" | tagged "answered X-6621" (1932; Gutenberg has X-6221) |
 | p046.1 | C-R-21 | "Man is doomed, if these beams cannot be stopped," | tagged "said C-R-21" |
 | p046.3 | C-R-21 | "Let us concentrate on the two problems of stopping the beams, and the Ultimate Energy…" | tagged "said C-R-21" |
 

@@ -80,9 +80,12 @@ Claude signs off on a gate only when:
 ## 3. Fidelity: what "verbatim" allows
 
 `text/source/pg27462.txt` is the Gutenberg file, unmodified, licence included, with its SHA-256 recorded. The story is
-its body, from *"I am the last of my type"* to *"you will change your belief."* (6,677 words in 140 paragraphs;
-`npm run story` extracts them into `text/story.json`).
-`tools/verbatim_check.mjs` proves the script matches it, and any change outside these rules fails the check:
+its body, from *"I am the last of my type"* to *"you will change your belief."*. `npm run story` extracts it into
+`text/story.json` and applies `text/emendations.yaml`: 16 readings from the 1932 first printing, restored where the 1961
+reprint that Gutenberg transcribed lost or changed words (Round 2; the evidence is in `text/comparison_1932.md`). That
+gives 6,707 words in 140 paragraphs.
+`tools/verbatim_check.mjs` proves the script matches it, with exactly those emendations and nothing else, and any
+change outside these rules fails the check:
 
 1. **Every word of the story is spoken, in order.** That includes the speech tags ("said Roal"), the narrator's
    asides, and the period wording ("Year of the Son of Man", "kilads"). Spelling follows the Gutenberg text.
@@ -120,7 +123,7 @@ available for a cameo if he wants one, but isn't cast by default.
 | **Trest, 35429** | ~6 lines | quiet and plain, the realist beside Roal |
 | **Kahsh-256799** (Man-ruler) | 1 line | human, official |
 | **C-R-21** (chief of machine rulers) | 1 speech | "the vibrationally correct, emotionless tones of all the race of machines": the reference point for the machine voices |
-| **X-5638, X-6349, X-6221** (science machines) | short lines | one family of machine voices, told apart by timbre and pace |
+| **X-5638, X-6349, X-6621** (science machines) | short lines | one family of machine voices, told apart by timbre and pace |
 | **F-1** | 2 speeches | newer and stranger than the others, newly conscious |
 | **C-R-U-1** (coordinator) | 1 line | a ruler, crisp |
 | **the power plant's brain** | "Power ready" | the smallest, flattest of the machine family |
@@ -206,18 +209,18 @@ Phase 3 sets the real pace by ear. Round 1 split the closing frame off chapter 1
 | # | title | text (opens with) | words | min:s |
 |---|---|---|---|---|
 | 0 | The Record | the title page and preamble: "I am the last of my type…" | 94 | 0:38 |
-| 1 | 2538 | "It was 2538 years After the Year of the Son of Man…" | 439 | 3:00 |
-| 2 | The Outsiders | "Then came the Outsiders…" | 602 | 4:11 |
-| 3 | Life Alone Can Understand Life | "The science-investigators had been present…" | 963 | 6:42 |
-| 4 | The Council | "He was interrupted…" (to F-1's waking) | 589 | 4:20 |
-| 5 | The Hydrogen Wall | "Roal was lying quietly on a couch…" (to the tiny machines' launch) | 1,059 | 7:27 |
-| 6 | Ten Thousand Motes | "Dawn was breaking again over Denver…" | 564 | 3:56 |
+| 1 | 2538 | "It was 2538 years After the Year of the Son of Man…" | 439 | 3:01 |
+| 2 | The Outsiders | "Then came the Outsiders…" | 626 | 4:21 |
+| 3 | Life Alone Can Understand Life | "The science-investigators had been present…" | 970 | 6:45 |
+| 4 | The Council | "He was interrupted…" (to F-1's waking) | 589 | 4:21 |
+| 5 | The Hydrogen Wall | "Roal was lying quietly on a couch…" (to the tiny machines' launch) | 1,060 | 7:28 |
+| 6 | Ten Thousand Motes | "Dawn was breaking again over Denver…" | 562 | 3:55 |
 | 7 | The Dome | "In Denver, two humans watched the screens…" | 513 | 3:44 |
 | 8 | Last of Men | "We are alone, Trest…" (to the livid beam) | 657 | 4:40 |
-| 9 | Pure Force | "There was a dull, drumming beat…" (to the golden sphere vanishing) | 592 | 4:10 |
+| 9 | Pure Force | "There was a dull, drumming beat…" (to the golden sphere vanishing) | 592 | 4:11 |
 | 10 | Go, and Do Not Return | "Far in space…" (to "Go, and do not return.") | 317 | 2:17 |
 | 11 | Five Great Years | "The Outsiders left…" to the end: the frame, closing the record chapter 0 opens | 288 | 2:02 |
-| | | | **6,677** | **≈ 47** |
+| | | | **6,707** | **≈ 47** |
 
 **Pilot: chapter 5, *The Hydrogen Wall*.** It has the most of everything:
 - Roal's dreaming speech on the hydrogen atom, the densest science on the site;
@@ -333,7 +336,7 @@ Each phase ends at a gate run by the loop in §2.
 |---|---|---|---|
 | **0. Foundation** ✅ | ✅ the source text, its hash and `npm run story`; ✅ the kit (painting, timing, renderer) with a smoke-test scene; ✅ `npm start`, the local server and the studio; ✅ a first site (home, Read with the illustration, About) and its Pages workflow; ✅ the ElevenLabs key (in the Keychain; it works, though it can't read the quota); ✅ the Morey scan and its copyright status. axol-f's script, voice, review and QR tools are ported in the phases that first use them (1, 3, 5), adapted to a story rather than a conversation | that the site is up, and the Morey finding | the site deploys; the Morey question is answered |
 | **1. Script** (Round 1) ✅ | ✅ `script.yaml` (`npm run script`) with the verbatim and attribution reports (`npm run check`, `script/reports/`); ✅ the pronunciation list with a scratch-voice listening page (`npm run scratch`); ✅ measured runtime; ✅ a decision sheet, `review/round1.md`, closed 2026-11-01 with every recommendation accepted. Originally: `script.yaml` with the verbatim and attribution reports; the pronunciation list with a scratch-voice listening page; measured runtime; a decision sheet for the open questions in §10 | every attribution, every spoken form, the §10 decisions | the verbatim check passes; every §10 item is decided |
-| **2. Research and references** ⏳ | ✅ the three-way text comparison, 1932, 1961 and Gutenberg (`npm run compare`, `text/comparison_1932.md`); ✅ the notes in draft (`notes/`: science, succession, history; the synced text is Phase 7's); ✅ `notes/refs.yaml` and the link report (`npm run refs`); ✅ the fact-check list; ✅ the Round 2 sheet, `review/round2.md`. Waiting on Curt. Originally: the site's notes in draft (all four areas), `refs.yaml`, the link report, a fact-check list with a source for each claim; a comparison of the 1932 text (archive.org scan) with the 1961 text Gutenberg transcribed, with any differences put to Curt | the notes' content, tone and balance (especially the succession notes), the link list | every claim is sourced; every link is live |
+| **2. Research and references** ✅ | ✅ the three-way text comparison, 1932, 1961 and Gutenberg (`npm run compare`, `text/comparison_1932.md`); ✅ the notes in draft (`notes/`: science, succession, history; the synced text is Phase 7's); ✅ `notes/refs.yaml` and the link report (`npm run refs`); ✅ the fact-check list; ✅ the Round 2 sheet, `review/round2.md`, closed 2026-11-01 with every recommendation accepted: the 1932 readings restored (`text/emendations.yaml`, marked on the Read page). Originally: the site's notes in draft (all four areas), `refs.yaml`, the link report, a fact-check list with a source for each claim; a comparison of the 1932 text (archive.org scan) with the 1961 text Gutenberg transcribed, with any differences put to Curt | the notes' content, tone and balance (especially the succession notes), the link list | every claim is sourced; every link is live |
 | **3. Casting and sound** | a casting sampler: 3 candidates per role reading that role's own lines, with the narrator's young and old treatments side by side; motif sketches; effect samples | voices by ear, the motif | each role is cast, the motif is chosen, and the full voice pass is done |
 | **4. Look development** | style frames for the ink-wash-and-energy rule; a model sheet for every design in §5; the chapter-title page; QR layouts A and B with scan reports; the title page | the look | the designs and a QR layout are approved |
 | **5. Pilot** | chapter 5: storyboard → draft → final render with voice and sound, on the review server | the pilot, in as many rounds as it takes | it's the standard for the rest |

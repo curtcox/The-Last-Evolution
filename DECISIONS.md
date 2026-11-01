@@ -29,3 +29,11 @@ Every settled decision, with its date and who made it. See [PLAN.md §2](PLAN.md
 | 2026-11-01 | Curt cameo | None in the film | Curt, accepting Claude's Round 1 recommendation |
 | 2026-11-01 | Making-of page | Yes, with this project's Claude Code sessions, edited as axol-f's were | Curt, accepting Claude's Round 1 recommendation |
 | 2026-11-01 | YouTube title | *The Last Evolution (1932) by John W. Campbell, Jr.: the full story, voiced and painted* | Curt, accepting Claude's Round 1 recommendation |
+| 2026-11-01 | The film's text | Gutenberg with every 1932 reading restored where 1961 lost or changed words (comparison items 1–16); Gutenberg's own corrections kept (17–19) | Curt, accepting Claude's Round 2 recommendation |
+| 2026-11-01 | Emendations | Listed in `text/emendations.yaml`; the source file stays unmodified; the verbatim check allows exactly those changes; the Read page marks each | Curt, accepting Claude's Round 2 recommendation |
+| 2026-11-01 | The chemist's number | X-6621, as first printed | Curt, accepting Claude's Round 2 recommendation |
+| 2026-11-01 | Notes content | Approved as drafted; wording tightened for the site in Phase 7 | Curt, accepting Claude's Round 2 recommendation |
+| 2026-11-01 | Machines-as-heirs note | Neutral, as drafted | Curt, accepting Claude's Round 2 recommendation |
+| 2026-11-01 | AI disclosure in the notes | Kept: made with Claude; Anthropic's chief executive signed the 2023 statement | Curt, accepting Claude's Round 2 recommendation |
+| 2026-11-01 | Campbell's later record | One brief, sourced paragraph, as history alongside the story | Curt, accepting Claude's Round 2 recommendation |
+| 2026-11-01 | Moskowitz's 1961 introduction | Paraphrased only | Curt, accepting Claude's Round 2 recommendation |

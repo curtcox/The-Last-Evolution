@@ -1,15 +1,18 @@
 // build_site.mjs: the companion site → site/public/ (published by .github/workflows/pages.yml).   npm run site
 //   index.html   what this is and where it stands
-//   read/        the story in full, from text/story.json: a printable page with an anchor per paragraph (#p001…)
+//   read/        the story in full, from text/story.json: a printable page with an anchor per paragraph (#p001…), each
+//                reading restored from the 1932 printing marked and listed (text/emendations.yaml)
 //   about/       sources, credits, licences
 //   img/         site/img/, copied as is (Morey's illustration, sized for the web from assets/ref/)
 // Links are relative, so the same files work at http://localhost:8077/ and at curtcox.github.io/The-Last-Evolution/.
 // Later phases add the film beside the synced text, the notes and the r/NAME/ forwarding pages (PLAN.md §7).
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync } from 'node:fs';
+import YAML from 'yaml';
 
 const OUT = 'site/public';
 const REPO = 'https://github.com/curtcox/The-Last-Evolution';
 const story = JSON.parse(readFileSync('text/story.json', 'utf8'));
+const emendations = YAML.parse(readFileSync('text/emendations.yaml', 'utf8'));
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 // the text as typeset: Gutenberg's "--" as an em dash and _x_ as italics. Only the page changes; the words don't.
 const typeset = s => esc(s).replace(/--/g, '—').replace(/_([^_]+)_/g, '<i>$1</i>')
@@ -42,6 +45,22 @@ ${body}
 }
 
 const blocks = story.blocks;
+
+// a paragraph's restored 1932 readings, marked: the restored words highlighted, or, where 1932 simply lacks a word, a
+// small mark after the phrase. Each links to its entry in the list at the foot of the page.
+function emend(b, html) {
+  for (const n of b.emended || []) {
+    const e = emendations.find(e => e.n === n), phrase = typeset(e.first), i = html.indexOf(phrase);
+    if (i < 0) throw new Error(`emendation ${n}: can't find its phrase in ${b.id}`);
+    const tip = `Restored from the 1932 printing. Gutenberg (1961): ${esc(e.gutenberg)}`;
+    const marked = e.mark
+      ? phrase.replace(new RegExp(`(?<![\\w-])${typeset(e.mark).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![\\w-])`), m => `<a class="em" href="#em${n}" id="emr${n}" title="${tip}">${m}</a>`)
+      : `${phrase}<a class="em-gap" href="#em${n}" id="emr${n}" title="${tip}">°</a>`;
+    html = html.slice(0, i) + marked + html.slice(i + phrase.length);
+  }
+  return html;
+}
+const SCANS = `${REPO}/blob/main/assets/ref/1932`;
 const by = k => blocks.find(b => b.kind === k).text;
 
 const home = page(0, 'The Last Evolution', `
@@ -63,7 +82,7 @@ const body = blocks.map(b => {
     case 'masthead': return `<p class="kicker">${esc(b.text)}</p>`;
     case 'title': return `<h1>${typeset(b.text)}</h1>`;
     case 'byline': return `<p class="byline">${esc(b.text)}</p>`;
-    case 'para': return `<p id="${b.id}"><a class="pid" href="#${b.id}" aria-label="paragraph ${+b.id.slice(1)}">${+b.id.slice(1)}</a>${typeset(b.text)}</p>`;
+    case 'para': return `<p id="${b.id}"><a class="pid" href="#${b.id}" aria-label="paragraph ${+b.id.slice(1)}">${+b.id.slice(1)}</a>${emend(b, typeset(b.text))}</p>`;
     case 'break': return `<p class="break" id="${b.id}" aria-hidden="true">*&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;*</p>`;
     case 'illustration': return `<figure id="illustration" class="illus"><a href="../img/morey_1932_p415.jpg"><img
 src="../img/morey_1932_p415.jpg" width="1200" height="1665" loading="lazy" alt="Leo Morey's illustration: a great domed machine
@@ -77,10 +96,16 @@ in the US.</figcaption></figure>`;
       .replace(/^/, `<a href="#ref${n}">[${n}]</a> `)}</p>`; }
   }
 }).join('\n');
-const read = page(1, 'Read: The Last Evolution', `<article class="story">${body}</article>
+const restored = `<h2 class="notes-h" id="restored">Restored from the first printing</h2>
+<p class="fn">The 1961 reprint that Project Gutenberg transcribed lost words that are in the 1932 first printing. These are
+put back, as marked above (<a href="${REPO}/blob/main/text/comparison_1932.md">the comparison</a>).</p>
+<ul class="fn em-list">${[...emendations].sort((a, b) => a.para.localeCompare(b.para)).map(e => `<li id="em${e.n}"><a href="#emr${e.n}">¶${+e.para.slice(1)}</a>
+1932: “${typeset(e.first)}” · Gutenberg: “${typeset(e.gutenberg)}” · <a href="${SCANS}/${e.scan}.jpg">scan</a></li>`).join('\n')}</ul>`;
+const read = page(1, 'Read: The Last Evolution', `<article class="story">${body}${restored}</article>
 <p class="src">Text: <a href="https://www.gutenberg.org/ebooks/27462">Project Gutenberg eBook #27462</a>, transcribed from
-<i>Amazing Stories</i>, March 1961; first published in <i>Amazing Stories</i>, August 1932. Typeset here with em dashes and
-italics; the words are unchanged.</p>`);
+<i>Amazing Stories</i>, March 1961, with ${emendations.length} readings restored from the first printing, <i>Amazing
+Stories</i>, August 1932 (<a href="#restored">listed above</a>). Typeset here with em dashes and italics; otherwise the
+words are Gutenberg's.</p>`);
 
 const about = page(1, 'About: The Last Evolution', `
 <h1>About</h1>
@@ -89,6 +114,10 @@ const about = page(1, 'About: The Last Evolution', `
 reprinted there in March 1961. The text comes from <a href="https://www.gutenberg.org/ebooks/27462">Project Gutenberg
 eBook #27462</a>, whose transcribers found no evidence that its US copyright was renewed, so it is in the public domain
 in the United States. The repository keeps the Gutenberg file unmodified, with its licence and a checksum.</p>
+<p>Gutenberg transcribed the 1961 reprint, whose typesetter lost words that are in the 1932 first printing: a 24-word
+clause, two negatives, and a dozen smaller words. This site and the film restore those ${emendations.length} readings from
+the 1932 scan, and the <a href="../read/#restored">Read page</a> marks each one
+(<a href="${REPO}/blob/main/text/comparison_1932.md">the comparison</a>).</p>
 <h2>The adaptation</h2>
 <p>A film of the whole story, word for word, voiced with AI-generated voices (ElevenLabs) and painted in code with
 <a href="https://p5js.org">p5.js</a> and <a href="https://github.com/acamposuribe/p5.brush">p5.brush</a>, on John
@@ -128,6 +157,9 @@ h2 { font: 1.6em/1.1 "Bebas Neue", Impact, sans-serif; letter-spacing: .04em; ma
 .illus img { width: 100%; max-width: 30em; height: auto; border: 1px solid var(--rule); filter: sepia(.25); }
 .illus figcaption { margin-top: .5em; text-align: left; }
 .fn { font-size: .9em; }
+.em { text-decoration: underline dotted var(--accent); text-underline-offset: .2em; }
+.em-gap { font-size: .7em; vertical-align: super; text-decoration: none; color: var(--accent); }
+.em-list li { margin-bottom: .4em; }
 .notes-h { font-size: 1.2em; }
 sup a { text-decoration: none; color: var(--accent); }
 .src, footer { font-size: .85em; color: var(--ink2); }

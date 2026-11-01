@@ -1,0 +1,32 @@
+# emendations.yaml: where the film's text differs from Gutenberg's, restoring the first printing (Amazing Stories, August
+# 1932) where the 1961 reprint Gutenberg transcribed lost or changed words. Round 2 decided this (DECISIONS.md), and
+# text/comparison_1932.md gives the evidence; the numbers are its item numbers. Gutenberg's own corrections of errors
+# both printings share (items 17–19: F-1 for F-2, Deimos, Rulers') are kept as Gutenberg has them.
+#   para       the paragraph
+#   gutenberg  words in Gutenberg's text, found exactly once in that paragraph
+#   first      what the 1932 printing has in their place, checked against the scan
+#   mark       the words the site's Read page highlights as restored (none where 1932 simply lacks a word)
+#   scan       the crop of the 1932 page that shows it
+# text/source/pg27462.txt is never changed. tools/extract_story.mjs applies these to make text/story.json, and
+# tools/verbatim_check.mjs holds the script to Gutenberg plus exactly these changes.
+- {n: 1, para: p013, scan: p416_p012-p013, mark: 'could not withstand it; the last plunger snapped shut. Instantly the vast energies stored for operating the ship were released, and the entire machine',
+   gutenberg: 'A combination was arranged so that the machine, as well as',
+   first: 'A combination was arranged so that the machine could not withstand it; the last plunger snapped shut. Instantly the vast energies stored for operating the ship were released, and the entire machine, as well as'}
+- {n: 2, para: p034, scan: p417_p033-p036, mark: "don't", gutenberg: 'and they realize it.', first: "and they don't realize it."}
+- {n: 3, para: p069, scan: p418_p065-p072, mark: not, gutenberg: 'And we have the attack system', first: 'And we have not the attack system'}
+- {n: 4, para: p005, scan: p414_p005-p007, mark: an, gutenberg: 'nor the how, and imagination that outstrips', first: 'nor the how, an imagination that outstrips'}
+- {n: 5, para: p020, scan: p416_p018-p023, mark: 'unable to withstand any acceleration above the',
+   gutenberg: 'they were able to withstand only very meager earth-acceleration', first: 'they were unable to withstand any acceleration above the very meager earth-acceleration'}
+- {n: 6, para: p021, scan: p416_p018-p023, mark: in, gutenberg: 'they attacked at such numbers', first: 'they attacked in such numbers'}
+- {n: 7, para: p021, scan: p416_p018-p023, mark: complete,
+   gutenberg: 'while being destroyed, were able to send back signals up to the moment of annihilation',
+   first: 'while being destroyed, they were able to send back signals up to the moment of complete annihilation'}
+- {n: 8, para: p036, scan: p417_p033-p036, mark: powerful, gutenberg: 'hidden secret of their force-screen', first: 'hidden secret of their powerful force-screen'}
+- {n: 9, para: p037, scan: p417_p037-p041, mark: within, gutenberg: 'Already, with his parts,', first: 'Already, within his parts,'}
+- {n: 10, para: p048, scan: p417_p044-p049, mark: that, gutenberg: 'recombine in the extrapolation', first: 'recombine in that extrapolation'}
+- {n: 11, para: p079, scan: p419_p077-p080, gutenberg: 'alike turned as aside', first: 'alike turned aside'}
+- {n: 12, para: p080, scan: p419_p077-p080, gutenberg: 'As at the one command', first: 'As at one command'}
+- {n: 13, para: p108, scan: p420_p106-p111, mark: forevermore, gutenberg: 'this day and forever gone', first: 'this day and forevermore gone'}
+- {n: 14, para: p134, scan: p421_p133-p134, mark: that, gutenberg: 'they saw the sphere send', first: 'they saw that sphere send'}
+- {n: 15, para: p137, scan: p421_p134-p138, mark: as, gutenberg: 'is now, and theirs was', first: 'is now, as theirs was'}
+- {n: 16, para: p045, scan: p417_p044-p049, mark: 'X-6621', gutenberg: 'answered X-6221', first: 'answered X-6621'}

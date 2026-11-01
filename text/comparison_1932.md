@@ -12,6 +12,9 @@ There are three versions of the story's words:
 - the 1961 OCR is in `assets/ref/amazing_1961-03_ocr_story.txt`, with 49 differences listed in
   [compare_1961_raw.md](compare_1961_raw.md).
 
+**Round 2 restored the 1932 readings of items 1–16 below** (`text/emendations.yaml`), and kept Gutenberg's corrections
+(items 17–19). So the film and the site's Read page follow 1932, minus its misprints.
+
 Most of those differences are OCR noise. The real ones are below. Each 1932 reading was checked against the page scan;
 the crops are in [assets/ref/1932/](../assets/ref/1932/). The 1961 readings are from the OCR, and every one is clean
 where it matters. Only words are compared, not punctuation or capitals.
@@ -26,7 +29,7 @@ where it matters. Only words are compared, not punctuation or capitals.
 
 ## 1961 changed the meaning, and Gutenberg kept it
 
-| | where | 1932 (first printing) | 1961 = Gutenberg (what we voice now) | 1932 scan |
+| | where | 1932 (first printing) | 1961 = Gutenberg | 1932 scan |
 |---|---|---|---|---|
 | 1 | p013 | A combination was arranged so that the machine **could not withstand it; the last plunger snapped shut. Instantly the vast energies stored for operating the ship were released, and the entire machine**, as well as the investigator and the Outsiders, were destroyed. | A combination was arranged so that the machine, as well as the investigator and the Outsiders, were destroyed. | [p416](../assets/ref/1932/p416_p012-p013.jpg) |
 | 2 | p034 | You are their most deadly enemies, and they **don't** realize it. They have no intelligent machines; probably they can conceive of none. | …and they realize it… | [p417](../assets/ref/1932/p417_p033-p036.jpg) |

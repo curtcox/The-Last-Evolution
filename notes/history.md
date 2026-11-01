@@ -57,7 +57,7 @@ the film at that moment.
 ## The reprint, and the text we use
 *Amazing* reprinted the story in March 1961 as "A Classic Reprint", under the editor Cele Goldsmith
 ([Amazing Stories][wp-amazing], [scan][archive-1961]). Project Gutenberg transcribed that reprint
-([eBook #27462][gutenberg]), and it's the text the film reads. Comparing the three texts turned up a 24-word clause and
+([eBook #27462][gutenberg]), and the film reads it with 16 readings from the 1932 printing restored. Comparing the three texts turned up a 24-word clause and
 two negatives lost in 1961, a dozen smaller typesetting slips, and a misprint from 1932 that Gutenberg corrected: F-2
 for F-1, three times ([the comparison](../text/comparison_1932.md)).
 

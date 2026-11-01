@@ -5,7 +5,7 @@
 # Lines with `shown` instead of `who` are on screen, not spoken.
 source: text/source/pg27462.txt
 sha256: 9eb0bee09fba62c9bd5ebe56fc793c98c7359e125ff1b80a2b888763cc649a21
-words: 6677
+words: 6707
 chapters:
   - n: 0
     title: The Record
@@ -46,14 +46,14 @@ chapters:
         say: Up to the year twenty-one hundred, the numbers of mankind had increased rapidly and continuously, but from that time on, there was a steady decrease. By twenty-five hundred, their number was a scant two millions, out of a population that once totaled many hundreds of millions, and was close to ten billions in twenty-one hundred.
       - id: p005.1
         who: narrator
-        text: Some few of these remaining two millions devoted themselves to the adventure of discovery and exploration of places unseen, of other worlds and other planets. But fewer still devoted themselves to the highest adventure, the unseen places of the mind. Machines--with their irrefutable logic, their cold preciseness of figures, their tireless, utterly exact observation, their absolute knowledge of mathematics--they could elaborate any idea, however simple its beginning, and reach the conclusion. From any three facts they even then could have built in mind all the Universe. Machines had imagination of the ideal sort. They had the ability to construct a necessary future result from a present fact. But Man had imagination of a different kind, theirs was the illogical, brilliant imagination that sees the future result vaguely, without knowing the why, nor the how, and imagination that outstrips the machine in its preciseness. Man might reach the conclusion more swiftly, but the machine always reached the conclusion eventually, and it was always the correct conclusion. By leaps and bounds man advanced. By steady, irresistible steps the machine marched forward.
+        text: Some few of these remaining two millions devoted themselves to the adventure of discovery and exploration of places unseen, of other worlds and other planets. But fewer still devoted themselves to the highest adventure, the unseen places of the mind. Machines--with their irrefutable logic, their cold preciseness of figures, their tireless, utterly exact observation, their absolute knowledge of mathematics--they could elaborate any idea, however simple its beginning, and reach the conclusion. From any three facts they even then could have built in mind all the Universe. Machines had imagination of the ideal sort. They had the ability to construct a necessary future result from a present fact. But Man had imagination of a different kind, theirs was the illogical, brilliant imagination that sees the future result vaguely, without knowing the why, nor the how, an imagination that outstrips the machine in its preciseness. Man might reach the conclusion more swiftly, but the machine always reached the conclusion eventually, and it was always the correct conclusion. By leaps and bounds man advanced. By steady, irresistible steps the machine marched forward.
       - id: p006.1
         who: narrator
         text: Together, man and the machine were striding through science irresistibly.
   - n: 2
     title: The Outsiders
     paras: p007–p017
-    words: 602
+    words: 626
     lines:
       - id: p007.1
         who: narrator
@@ -80,7 +80,7 @@ chapters:
         text: "[Illustration: Illustrated by MOREY]"
       - id: p013.1
         who: narrator
-        text: Directed by the Center of Rulers, the investigator sought the power room, and relayed the control signals from the Rulers' brains. The ship-brain had been destroyed, but the controls were still readily workable. Quickly they were shot home, and the enormous plungers shut. A combination was arranged so that the machine, as well as the investigator and the Outsiders, were destroyed. A second investigator, which had started when the plan was decided on, had now arrived. The Outsider's ship nearest the transport-machine had been badly damaged, and the investigator entered the broken side.
+        text: Directed by the Center of Rulers, the investigator sought the power room, and relayed the control signals from the Rulers' brains. The ship-brain had been destroyed, but the controls were still readily workable. Quickly they were shot home, and the enormous plungers shut. A combination was arranged so that the machine could not withstand it; the last plunger snapped shut. Instantly the vast energies stored for operating the ship were released, and the entire machine, as well as the investigator and the Outsiders, were destroyed. A second investigator, which had started when the plan was decided on, had now arrived. The Outsider's ship nearest the transport-machine had been badly damaged, and the investigator entered the broken side.
       - id: break02
         shown: break
         text: "*       *       *       *"
@@ -99,7 +99,7 @@ chapters:
   - n: 3
     title: Life Alone Can Understand Life
     paras: p018–p036
-    words: 963
+    words: 970
     lines:
       - id: p018.1
         who: narrator
@@ -110,10 +110,10 @@ chapters:
         text: From investigations, machines were prepared that were capable of producing considerable destruction. Torpedoes, being our principal weapon, were equipped with such atomic explosives as had been developed for blasting, a highly effective induction-heat ray developed for furnaces being installed in some small machines made for the purpose in the few hours we had before the enemy reached Earth.
       - id: p020.1
         who: narrator
-        text: In common with all life-forms, they were able to withstand only very meager earth-acceleration. A range of perhaps four units was their limit, and it took several hours to reach the planet.
+        text: In common with all life-forms, they were unable to withstand any acceleration above the very meager earth-acceleration. A range of perhaps four units was their limit, and it took several hours to reach the planet.
       - id: p021.1
         who: narrator
-        text: I still believe the reception was a warm one. Our machines met them beyond the orbit of Luna, and the directed torpedoes sailed at the hundred great ships. They were thrown aside by a magnetic field surrounding the ship, but were redirected instantly, and continued to approach. However, some beams reached out, and destroyed them by instant volatilization. But, they attacked at such numbers that fully half the fleet was destroyed by their explosions before the induction beam fleet arrived. These beams were, to our amazement, quite useless, being instantly absorbed by a force-screen, and the remaining ships sailed on undisturbed, our torpedoes being exhausted. Several investigator machines sent out for the purpose soon discovered the secret of the force-screen, and while being destroyed, were able to send back signals up to the moment of annihilation.
+        text: I still believe the reception was a warm one. Our machines met them beyond the orbit of Luna, and the directed torpedoes sailed at the hundred great ships. They were thrown aside by a magnetic field surrounding the ship, but were redirected instantly, and continued to approach. However, some beams reached out, and destroyed them by instant volatilization. But, they attacked in such numbers that fully half the fleet was destroyed by their explosions before the induction beam fleet arrived. These beams were, to our amazement, quite useless, being instantly absorbed by a force-screen, and the remaining ships sailed on undisturbed, our torpedoes being exhausted. Several investigator machines sent out for the purpose soon discovered the secret of the force-screen, and while being destroyed, they were able to send back signals up to the moment of complete annihilation.
       - id: p022.1
         who: narrator
         text: A few investigators thrown into the heat beam of the enemy reported it identical with ours, explaining why they had been prepared for this form of attack.
@@ -164,7 +164,7 @@ chapters:
         text: '"They are destroying the intelligent life--and leaving untouched that which is necessarily their deadliest enemy--the machines.'
       - id: p034.1
         who: roal
-        text: "\"You--machines--are far more intelligent than we even now, and capable of changing overnight, capable of infinite adaptation to circumstance; you live as readily on Pluto as on Mercury or Earth. Any place is a home-world to you. You can adapt yourselves to any condition. And--most dangerous to them--you can do it instantly. You are their most deadly enemies, and they realize it. They have no intelligent machines; probably they can conceive of none. When you attack them, they merely say 'The life-form of Earth is sending out controlled machines. We will find good machines we can use.' They do not conceive that those machines which they hope to use are attacking them."
+        text: "\"You--machines--are far more intelligent than we even now, and capable of changing overnight, capable of infinite adaptation to circumstance; you live as readily on Pluto as on Mercury or Earth. Any place is a home-world to you. You can adapt yourselves to any condition. And--most dangerous to them--you can do it instantly. You are their most deadly enemies, and they don't realize it. They have no intelligent machines; probably they can conceive of none. When you attack them, they merely say 'The life-form of Earth is sending out controlled machines. We will find good machines we can use.' They do not conceive that those machines which they hope to use are attacking them."
         continues: true
       - id: p035.1
         who: roal
@@ -172,7 +172,7 @@ chapters:
         continues: true
       - id: p036.1
         who: roal
-        text: '"We can readily solve the hidden secret of their force-screen."'
+        text: '"We can readily solve the hidden secret of their powerful force-screen."'
       - id: break03
         shown: break
         text: "*       *       *       *"
@@ -189,8 +189,8 @@ chapters:
         text: '"The secret of the force-screen is simple."'
       - id: p037.3
         who: narrator
-        text: A small ray-machine, which had landed near, rose into the air at the command of the scientist-machine, X-5638 it was, and trained upon it the deadly induction beam. Already, with his parts, X-5638 had constructed the defensive apparatus, for the ray fell harmless from his screen.
-        say: A small ray-machine, which had landed near, rose into the air at the command of the scientist-machine, X five six three eight it was, and trained upon it the deadly induction beam. Already, with his parts, X five six three eight had constructed the defensive apparatus, for the ray fell harmless from his screen.
+        text: A small ray-machine, which had landed near, rose into the air at the command of the scientist-machine, X-5638 it was, and trained upon it the deadly induction beam. Already, within his parts, X-5638 had constructed the defensive apparatus, for the ray fell harmless from his screen.
+        say: A small ray-machine, which had landed near, rose into the air at the command of the scientist-machine, X five six three eight it was, and trained upon it the deadly induction beam. Already, within his parts, X five six three eight had constructed the defensive apparatus, for the ray fell harmless from his screen.
       - id: p038.1
         who: roal
         text: '"Very good,"'
@@ -241,14 +241,14 @@ chapters:
         text: asked Kahsh-256799, one of the Man-rulers.
         say: asked Kosh, two five six seven nine nine, one of the Man-rulers.
       - id: p045.1
-        who: x6221
+        who: x6621
         text: '"They affect chemical action, retarding it greatly in exothermic actions, speeding greatly endothermic actions,"'
       - id: p045.2
         who: narrator
-        text: answered X-6221, the greatest of the chemist-investigators.
-        say: answered X six two two one, the greatest of the chemist-investigators.
+        text: answered X-6621, the greatest of the chemist-investigators.
+        say: answered X six six two one, the greatest of the chemist-investigators.
       - id: p045.3
-        who: x6221
+        who: x6621
         text: '"The system we do not know. Their minds cannot be read, they cannot be restored to life, so we cannot learn from them."'
       - id: p046.1
         who: cr21
@@ -268,8 +268,8 @@ chapters:
         text: In the great Laboratories, the scientists reassembled. There, they fell to work in two small, and one large group. One small group investigated the secret of the Ultimate Energy of annihilation of matter under Roal, another investigated the beams, under Trest.
       - id: p048.1
         who: narrator
-        text: But under the direction of MX-3401, nearly all the machines worked on a single great plan. The usual driving and lifting units were there, but a vastly greater dome-case, far more powerful energy-generators, far greater force-beam controls were used and more tentacles were built on the framework. Then all worked, and gradually, in the great dome-case, there were stacked the memory-units of the new type, and into these fed all the sensation-ideas of all the science-machines, till nearly a tenth of them were used. Countless billions of different factors on which to work, countless trillions of facts to combine and recombine in the extrapolation that is imagination.
-        say: But under the direction of M X three four oh one, nearly all the machines worked on a single great plan. The usual driving and lifting units were there, but a vastly greater dome-case, far more powerful energy-generators, far greater force-beam controls were used and more tentacles were built on the framework. Then all worked, and gradually, in the great dome-case, there were stacked the memory-units of the new type, and into these fed all the sensation-ideas of all the science-machines, till nearly a tenth of them were used. Countless billions of different factors on which to work, countless trillions of facts to combine and recombine in the extrapolation that is imagination.
+        text: But under the direction of MX-3401, nearly all the machines worked on a single great plan. The usual driving and lifting units were there, but a vastly greater dome-case, far more powerful energy-generators, far greater force-beam controls were used and more tentacles were built on the framework. Then all worked, and gradually, in the great dome-case, there were stacked the memory-units of the new type, and into these fed all the sensation-ideas of all the science-machines, till nearly a tenth of them were used. Countless billions of different factors on which to work, countless trillions of facts to combine and recombine in that extrapolation that is imagination.
+        say: But under the direction of M X three four oh one, nearly all the machines worked on a single great plan. The usual driving and lifting units were there, but a vastly greater dome-case, far more powerful energy-generators, far greater force-beam controls were used and more tentacles were built on the framework. Then all worked, and gradually, in the great dome-case, there were stacked the memory-units of the new type, and into these fed all the sensation-ideas of all the science-machines, till nearly a tenth of them were used. Countless billions of different factors on which to work, countless trillions of facts to combine and recombine in that extrapolation that is imagination.
       - id: p049.1
         who: narrator
         text: Then--a widely different type of thought-combine, and a greater sense-receptor. It was a new brain-machine. New, for it was totally different, working with all the vast knowledge accumulated in six centuries of intelligent research by man, and a century of research by man and machine. No one branch, but all physics, all chemistry, all life-knowledge, all science was in it.
@@ -279,7 +279,7 @@ chapters:
   - n: 5
     title: The Hydrogen Wall
     paras: p051–p073
-    words: 1059
+    words: 1060
     lines:
       - id: p051.1
         who: narrator
@@ -380,8 +380,8 @@ chapters:
         text: '"This, I have made, is not a scientist. It is a coordinator machine--a ruler."'
       - id: p069.1
         who: cru1
-        text: '"F-2, only a part of the problem is solved. Half of half of the beams of Death are not yet stopped. And we have the attack system,"'
-        say: F two, only a part of the problem is solved. Half of half of the beams of Death are not yet stopped. And we have the attack system,
+        text: '"F-2, only a part of the problem is solved. Half of half of the beams of Death are not yet stopped. And we have not the attack system,"'
+        say: F two, only a part of the problem is solved. Half of half of the beams of Death are not yet stopped. And we have not the attack system,
       - id: p069.2
         who: narrator
         text: said the ruler machine. Force played from it, and on its sides appeared C-R-U-1 in dully glowing golden light.
@@ -410,7 +410,7 @@ chapters:
   - n: 6
     title: Ten Thousand Motes
     paras: p074–p082
-    words: 564
+    words: 562
     lines:
       - id: p074.1
         who: narrator
@@ -430,10 +430,10 @@ chapters:
         text: But there had not been quite ten thousand of the tiny machines, and some few free ships had turned to the help of their attacked sister-ships. And one after another the terrestrial machines were vanishing in puffs of incandescent vapor.
       - id: p079.1
         who: narrator
-        text: Then--from one after another of the Earth-ships, in quick succession, a new ray reached out--the ray of green radiance that killed all life forms, and ship after ship of that interstellar host was dead and lifeless. Dozens--till suddenly they ceased to feel those beams, as a strange curtain of waving blankness spread out from the ships, and both induction-beam and death-beam alike turned as aside, each becoming useless. From the outsiders came beams, for now that their slowly created screen of blankness was up, they could work through it, while they remained shielded perfectly.
+        text: Then--from one after another of the Earth-ships, in quick succession, a new ray reached out--the ray of green radiance that killed all life forms, and ship after ship of that interstellar host was dead and lifeless. Dozens--till suddenly they ceased to feel those beams, as a strange curtain of waving blankness spread out from the ships, and both induction-beam and death-beam alike turned aside, each becoming useless. From the outsiders came beams, for now that their slowly created screen of blankness was up, they could work through it, while they remained shielded perfectly.
       - id: p080.1
         who: narrator
-        text: Now it was the screens of the Earth-machines that flamed in defense. As at the one command, they darted suddenly toward the ship each attacked--nearer--then the watchers from a distance saw them disappear, and the screens back on Earth went suddenly blank.
+        text: Now it was the screens of the Earth-machines that flamed in defense. As at one command, they darted suddenly toward the ship each attacked--nearer--then the watchers from a distance saw them disappear, and the screens back on Earth went suddenly blank.
       - id: p081.1
         who: narrator
         text: Half an hour later, nine thousand six hundred and thirty-three titanic ships moved majestically on.
@@ -574,7 +574,7 @@ chapters:
         text: '"And I think we had best go soon."'
       - id: p108.1
         who: f2
-        text: '"We, your heirs, have fought hard, and with all our powers to aid you, Last of Men, and we fought to save your race. We have failed, and as you truly say, Man and Life have this day and forever gone from this system.'
+        text: '"We, your heirs, have fought hard, and with all our powers to aid you, Last of Men, and we fought to save your race. We have failed, and as you truly say, Man and Life have this day and forevermore gone from this system.'
         mode: thought
       - id: p109.1
         who: f2
@@ -702,7 +702,7 @@ chapters:
         continues: true
       - id: p134.1
         who: narrator
-        text: Forces gripped the mighty ship, and as some fragile toy it twisted and bent, and yet was not hurt. In awful wonder those Outsiders saw the ship turned inside out, and yet it was whole, and no part damaged. They saw the ship restored, and its great screen of blankness out, protecting it from all known rays. The ship twisted, and what they knew were curves, yet were lines, and angles that were acute, were somehow straight lines. Half mad with horror, they saw the sphere send out a beam of blue-white radiance, and it passed easily through that screen, and through the ship, and all energies within it were instantly locked. They could not be changed; it could be neither warmed nor cooled; what was open could not be shut, and what was shut could not be opened. All things were immovable and unchangeable for all time.
+        text: Forces gripped the mighty ship, and as some fragile toy it twisted and bent, and yet was not hurt. In awful wonder those Outsiders saw the ship turned inside out, and yet it was whole, and no part damaged. They saw the ship restored, and its great screen of blankness out, protecting it from all known rays. The ship twisted, and what they knew were curves, yet were lines, and angles that were acute, were somehow straight lines. Half mad with horror, they saw that sphere send out a beam of blue-white radiance, and it passed easily through that screen, and through the ship, and all energies within it were instantly locked. They could not be changed; it could be neither warmed nor cooled; what was open could not be shut, and what was shut could not be opened. All things were immovable and unchangeable for all time.
       - id: p135.1
         who: golden
         text: '"Go, and do not return."'
@@ -720,8 +720,8 @@ chapters:
         text: The Outsiders left, going out across the void, and they have not returned, though five Great Years have passed, being a period of approximately one hundred and twenty-five thousand of the lesser years--a measure no longer used, for it is very brief. And now I can say that that statement I made to Roal and Trest so very long ago is true, and what he said was true, for the Last Evolution has taken place, and things of pure force and pure intelligence in their countless millions are on those planets and in this System, and I, first of machines to use the Ultimate Energy of annihilating matter, am also the last, and this record being finished, it is to be given unto the forces of one of those force-intelligences, and carried back through the past, and returned to the Earth of long ago.
       - id: p137.1
         who: narrator
-        text: And so my task being done, I, F-2, like Roal and Trest, shall follow the others of my kind into eternal oblivion, for my kind is now, and theirs was, poor and inefficient. Time has worn me, and oxidation attacked me, but they of Force are eternal, and omniscient.
-        say: And so my task being done, I, F two, like Roal and Trest, shall follow the others of my kind into eternal oblivion, for my kind is now, and theirs was, poor and inefficient. Time has worn me, and oxidation attacked me, but they of Force are eternal, and omniscient.
+        text: And so my task being done, I, F-2, like Roal and Trest, shall follow the others of my kind into eternal oblivion, for my kind is now, as theirs was, poor and inefficient. Time has worn me, and oxidation attacked me, but they of Force are eternal, and omniscient.
+        say: And so my task being done, I, F two, like Roal and Trest, shall follow the others of my kind into eternal oblivion, for my kind is now, as theirs was, poor and inefficient. Time has worn me, and oxidation attacked me, but they of Force are eternal, and omniscient.
       - id: p138.1
         who: narrator
         text: This I have treated as fictitious. Better so--for man is an animal to whom hope is as necessary as food and air. Yet this which is made of excerpts from certain records on thin sheets of metal is no fiction, and it seems I must so say.

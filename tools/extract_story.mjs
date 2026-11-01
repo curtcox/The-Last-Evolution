@@ -1,12 +1,16 @@
 // extract_story.mjs: the Gutenberg file → the story, as numbered blocks.   npm run story
 //   text/source/pg27462.txt   the Gutenberg file, unmodified (its SHA-256 is checked against pg27462.txt.sha256 first)
-//   text/story.json           every block in order: { id, kind, text }. kind is one of
+//   text/emendations.yaml     the 1932 readings restored where the 1961 reprint lost words (Round 2)
+//   text/story.json           every block in order: { id, kind, text, emended? }. kind is one of
 //                             masthead · title · byline · para · break · illustration · end · footnote
+//                             emended lists the emendations (by n) applied to that paragraph
 //   text/story.md             the same, readable, with each block's id in a comment
 // Only 'para' blocks are spoken (PLAN.md §3); the rest are shown. Lines are unwrapped into paragraphs, and nothing else
-// in the text is changed: spelling, dashes and the italics' underscores stay as Gutenberg has them.
+// in the text is changed but the listed emendations: spelling, dashes and the italics' underscores stay as Gutenberg
+// has them.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
+import YAML from 'yaml';
 
 const SRC = 'text/source/pg27462.txt';
 const raw = readFileSync(SRC);
@@ -42,10 +46,20 @@ for (const p of paras(at('I am the last', start), end - 1)) {
 add('end', 'THE END', 'end');
 for (const p of paras(notes + 1, stop - 1)) add('footnote', p, `fn${p.match(/^\[(\d+)\]/)[1]}`);
 
+// the emendations: each one's Gutenberg words must be in its paragraph exactly once
+const emendations = YAML.parse(readFileSync('text/emendations.yaml', 'utf8'));
+for (const e of emendations) {
+  const b = blocks.find(b => b.id === e.para && b.kind === 'para');
+  const count = b ? b.text.split(e.gutenberg).length - 1 : 0;
+  if (count !== 1) { console.error(`emendation ${e.n}: "${e.gutenberg}" is in ${e.para} ${count} times, not once`); process.exit(1); }
+  b.text = b.text.replace(e.gutenberg, () => e.first);
+  (b.emended ||= []).push(e.n);
+}
+
 const spoken = blocks.filter(b => b.kind === 'para');
 const words = spoken.reduce((s, b) => s + b.text.split(/\s+/).filter(w => /[\w]/.test(w)).length, 0);
 writeFileSync('text/story.json', JSON.stringify({ source: SRC, sha256: got, words, blocks }, null, 1) + '\n');
 writeFileSync('text/story.md', `# ${head[1].replace(/_/g, '')}\n\nExtracted from \`${SRC}\` by \`tools/extract_story.mjs\`; don't edit. `
-  + `${spoken.length} spoken paragraphs, ${words} words.\n\n`
+  + `${spoken.length} spoken paragraphs, ${words} words, with ${emendations.length} readings restored from 1932 (text/emendations.yaml).\n\n`
   + blocks.map(b => `<!-- ${b.id} (${b.kind}) -->\n${b.kind === 'break' ? '\\* \\* \\*' : b.text}\n`).join('\n'));
-console.log(`text/story.json: ${blocks.length} blocks, ${spoken.length} spoken paragraphs, ${words} words, ${nb} scene breaks`);
+console.log(`text/story.json: ${blocks.length} blocks, ${spoken.length} spoken paragraphs, ${words} words, ${nb} scene breaks, ${emendations.length} emendations`);

@@ -11,7 +11,7 @@
 # screen the first time it's spoken, so the eye has the number either way.
 - {text: 'X-5638', say: X five six three eight, group: designations, options: {A: X fifty-six thirty-eight, B: X five six three eight}}
 - {text: 'X-6349', say: X six three four nine, group: designations, options: {A: X sixty-three forty-nine, B: X six three four nine}}
-- {text: 'X-6221', say: X six two two one, group: designations, options: {A: X sixty-two twenty-one, B: X six two two one}}
+- {text: 'X-6621', say: X six six two one, group: designations, options: {A: X sixty-six twenty-one, B: X six six two one}}   # 1932's number (Round 2); Gutenberg has X-6221
 - {text: 'MX-3401', say: M X three four oh one, group: designations, options: {A: M X thirty-four oh one, B: M X three four oh one}}
 - {text: 'C-R-21', say: C R two one, group: designations, options: {A: C R twenty-one, B: C R two one}}
 - {text: 'C-R-U-1', say: C R U one, group: designations}
