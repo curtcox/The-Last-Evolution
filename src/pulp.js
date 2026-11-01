@@ -89,18 +89,18 @@ composite = function (t) {
 const SERIF = '"Old Standard TT", Georgia, serif';
 function pageHeader(title, x, y, wd, o = {}) {
   const col = o.col || PULP.ink;
-  letter('THE LAST EVOLUTION', x + wd / 2, y, 30, col, { ink: false, screen: true, font: `700 30px ${SERIF}`, spacing: 6 });
+  letter('THE LAST EVOLUTION', x + wd / 2, y, 30, col, { ink: false, screen: o.screen ?? true, font: `700 30px ${SERIF}`, spacing: 6 });
   rule(x, y + 30, wd, col, 3); rule(x, y + 40, wd, col, 1);
-  letter(title, x + wd / 2, y + 100, 64, col, { ink: false, screen: true, font: `italic 64px ${SERIF}` });
+  letter(title, x + wd / 2, y + 100, 64, col, { ink: false, screen: o.screen ?? true, font: `italic 64px ${SERIF}` });
 }
 function rule(x, y, wd, col = PULP.ink, sw = 1) { inkLine([[x, y], [x + wd * .5, y + jit(.6)], [x + wd, y]], sw * .45, col, 'inkfine', 0); }
 // A drop cap and the lines that run beside and under it: the opening of a chapter's text as the page shows it.
 function dropCapPara(text, x, y, wd, o = {}) {
   const size = o.size || 30, lh = size * 1.32, col = o.col || PULP.ink, capLines = 3, capH = lh * capLines;
-  letter(text[0], x, y + capH / 2 - size * .1, capH * 1.12, col, { ink: false, screen: true, align: 'left', font: `700 ${capH * 1.12}px ${SERIF}` });
+  letter(text[0], x, y + capH / 2 - size * .1, capH * 1.12, col, { ink: false, screen: o.screen ?? true, align: 'left', font: `700 ${capH * 1.12}px ${SERIF}` });
   const c = letG.drawingContext; c.font = `700 ${capH * 1.12}px ${SERIF}`; const capW = c.measureText(text[0]).width + size * .5; c.font = `${size}px ${SERIF}`;
   const words = text.slice(1).split(' '); let line = '', ln = 0;
-  const width = () => ln < capLines ? wd - capW : wd, place = s => letter(s, ln < capLines ? x + capW : x, y + ln * lh + lh / 2, size, col, { ink: false, screen: true, align: 'left', font: `${size}px ${SERIF}` });
+  const width = () => ln < capLines ? wd - capW : wd, place = s => letter(s, ln < capLines ? x + capW : x, y + ln * lh + lh / 2, size, col, { ink: false, screen: o.screen ?? true, align: 'left', font: `${size}px ${SERIF}` });
   for (const w of words) { const t = line ? line + ' ' + w : w; if (c.measureText(t).width > width()) { place(line); ln++; line = w; if (ln >= (o.lines || 9)) return; } else line = t; }
   if (line) place(line);
 }

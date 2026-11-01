@@ -1,76 +1,168 @@
-// ch05.js: chapter 5, The Hydrogen Wall: the pilot (PLAN.md §6). It draws script/boards/ch05.yaml shot by shot; every
-// time in it is a cue against the voice (src/gen/ch05.js, from tools/timeline.mjs), so it holds when a line is voiced
-// again. studio.html?chapter=5. This is the blocking pass: each shot's key poses and its event, with simple motion
-// between them, for the storyboard (tools/storyboard.mjs) and the first draft.
+// ch05.js: chapter 5, The Hydrogen Wall: the pilot (PLAN.md §6). It draws script/boards/ch05.yaml; every time in it is
+// a cue against the voice (src/gen/ch05.js, from tools/timeline.mjs), so it holds when a line is voiced again.
+// studio.html?chapter=5. This is the draft pass (Round 5's notes): the film is continuous. The hall is one world, drawn
+// whole at every moment, and each figure's place in it is a function of time, so things walk, drift and turn from mark
+// to mark instead of jumping; the camera moves between the storyboard's framings (camPath) instead of cutting; the
+// other spaces (the page, Roal's eyes, F-1's lens, the science plate, Morey's page, the rock) are reached by matched
+// dissolves and pushes. The storyboard's shots are now framings and beats within that, and its boards are stills of it.
 (() => {
-  const D = PULP.w, INK = PULP.ink, S = CHAPTER.shots;
-  const C = cue, K = (t, a, b) => seg(t, C(a), C(b));
+  const D = PULP.w, INK = PULP.ink, S = CHAPTER.shots, C = cue;
+  const K = (t, a, b) => seg(t, C(a), C(b)), ez = (t, a, b) => ease(seg(t, a, b));
+  const win = (t, a, b, fi = .5, fo = fi) => clamp(Math.min((t - a) / fi, (b - t) / fo));    // 1 inside [a, b], faded at both ends
+  const lerpP = (a, b, k) => [lerp(a[0], b[0], k), lerp(a[1], b[1], k)];
+  const T0 = id => S[id][0], T1 = id => S[id][1];
   const FORCE = '#CFE0FF';                       // F-1's force shafts: the text gives them no colour, so a cold white
+  // a setting that steps from key to key, easing over d seconds (or the key's own third value) after each key's time
+  function steps(t, keys, d = 1.2) { let v = keys[0][1]; for (let i = 1; i < keys.length && t >= keys[i][0]; i++) v = lerp(v, keys[i][1], ease((t - keys[i][0]) / (keys[i][2] ?? d))); return v; }
 
-  // ---------- the hall: one set, framed by the camera ----------
-  // world layout (px): the floor's line at 864, figures stand at G; Roal's couch at the left, F-1 at the right, the
-  // working point between them, the tiers of science-machines floating behind
-  const G = 1000, F1 = { x: 1420, g: 975, s: 50 }, WORK = [1000, 790], COUCH = { x: 420, s: 44 }, RS = 44, RU = RS * 6 / 7.4, FS = 30;
-  const f2At = (t, o = {}) => DES.f2(WORK[0], WORK[1] + 2.4 * FS, FS, t, { hover: 2.4, ...o });
-  const night = (op = .85) => { boilSeed('night'); paint(rectPts(-500, -400, 3000, 1900), { wash: PULP.black, washOp: 215 * op, fill: '#3B322B', fillOp: 60, bleed: .2, tex: .4, ink: null }); };
-  function hallBack(t, o = {}) {
-    DES.lab(-300, -150, 2520, 1300, o.screens ?? t, { couch: false });
-    night(o.dark ?? .85);
+  // ---------- acting from the voice: mouths and lenses move with the words ----------
+  const SAID = {}; for (const l of CHAPTER.lines) (SAID[l.who] ||= []).push(l);
+  function talk(t, who) {
+    for (const l of SAID[who] || []) { if (t < l.t0 - .1 || t > l.t1 + .1) continue;
+      for (const w of l.words) if (t >= w[1] && t <= w[2]) return Math.pow(Math.sin(Math.PI * Math.min(1, (t - w[1]) / Math.max(.1, w[2] - w[1]) * 1.6)), .7) * (.55 + .45 * Math.abs(Math.sin(t * 19))); }
+    return 0;
   }
-  // a science-machine far off on its tier: the family form in silhouette, its lens lit by whatever light there is
-  function farMachine(x, y, s, d, lit = 0, i = 0) {
+  const blink = (t, seed) => { const p = frac(t / 3.9 + hash(seed)); return p < .04 ? Math.sin(Math.PI * p / .04) : 0; };
+
+  // ---------- the hall: one set ----------
+  // world layout (px): the floor's back edge at 864, figures stand at G; Roal's couch at the left, F-1's place at the
+  // right, the working point between them, the tiers of science-machines floating in a ring behind and around
+  const G = 1000, F1 = { x: 1420, g: 975, s: 50 }, WORK = [1000, 790], COUCH = { x: 420, s: 44 }, RS = 44, RU = RS * 6 / 7.4, FS = 30;
+  const MAKE = [1330, 830], CRU = [1330, 810], CAGE = [760, G], SEAT = G - 1.72 * COUCH.s, F2HOV = (G - WORK[1]) / FS;
+  const night = op => { boilSeed('night'); paint(rectPts(-500, -400, 3000, 1900), { wash: PULP.black, washOp: 215 * op, fill: '#3B322B', fillOp: 60, bleed: .2, tex: .4, ink: null }); };
+
+  // the moments everything keys to
+  const tCome = C('p054.1'), tBack = C('p058.1') + .3, tSudden = C('p058.3:Suddenly'), tTent = C('p058.3:tentacles became');
+  const tStraight = C('p060.1:straightened'), tRolled = C('p060.1:rolled back') + 1, tThree = C('p060.1:but three beams'), tSmall = C('p060.1:It was a small thing');
+  const tGen = C('p060.1:Suddenly the generators'), tAura = C('p060.1:An enormous aura'), tShot = C('p060.1:shot through');
+  const tCrack = C('p060.1:Lightning cracked'), tHit = C('p060.1:to one machine'), tSnap = C('p060.1:dull snap'), tFell = C('p060.1:fell heavily');
+  const tMake = C('p064.1:I shall make others'), tCage = C('p071.1'), tHeld = C('p071.1:which held'), tPig = C('p071.1:a guinea pig') + 1;
+  const tGreen = C('p071.1:came a pale-green beam'), tDead = C('p071.1:fell dead');
+
+  // a science-machine far off on its tier: the family form in silhouette, its lens turned toward the work and lit by
+  // the flashes
+  function farMachine(x, y, s, d, lit, i, lx) {
     boilSeed('fm' + i);
     wash(ellPts(x, y, s * 2, s * .4, 14), d + 1, { ink: true, sw: .4 });
     wash([[x - s * 1.5, y - s * .6], [x - s * 1.5, y - s * 3.4], [x - s * 1.1, y - s * 4.3], [x + s * 1.1, y - s * 4.3], [x + s * 1.5, y - s * 3.4], [x + s * 1.5, y - s * .6]], d, { ink: true, sw: .45, curv: .3 });
-    glow(x, y - s * 3.6, s * (.6 + 1.4 * lit), NRG.white, .25 + .6 * lit);
+    inkLine([[x - s * 1.5, y - s * 2.2], [x + s * 1.5, y - s * 2.2]], .35, D[4]);
+    const ex = x + lx * s * .7; paint(ellPts(ex, y - s * 3.6, s * .5, s * .45, 10), { wash: mixCol(D[4], '#EFE6D2', .2 + .7 * lit), washOp: 230, ink: PULP.ink, sw: .3 });
+    glow(ex, y - s * 3.6, s * (.8 + 1.6 * lit), NRG.white, .3 + .6 * lit);
   }
-  function tiers(t, lit = 0, o = {}) {
-    for (let r = 0; r < 2; r++) for (let i = 0; i < 9; i++) {
-      const x = 80 + i * 225 + r * 110 + 14 * wob(t, .07, i * .3 + r), y = 600 + r * 120 + 6 * wob(t, .11, i * .7);
-      if (o.skip && Math.abs(x - o.skip) < 220 && r === 1) continue;
-      farMachine(x, y, 10 + r * 2, 2 + r, lit * (.5 + .5 * hash(i + r * 9 + Math.floor(t * 6))), r * 9 + i);
+  // "floating tiers of science-machines, watching steadily" (p059): two rings of them around F-1's place. The far side
+  // is small, high and dim against the screens; the near side is the family drawn whole, larger and lower, floating
+  // left and right of the floor so the work stays clear. Every lens turns to the working point.
+  function tierRing(t, lit, near) {
+    for (let r = 0; r < 2; r++) for (let i = 0; i < 12; i++) {
+      const th = (i + .5 * r) / 12 * TAU + .03 * wob(t, .015, r), z = Math.sin(th);
+      if ((z > 0) !== near || (near && Math.abs(Math.cos(th)) < .6)) continue;
+      const x = 1150 + Math.cos(th) * (1000 + r * 90) + 10 * wob(t, .07, i), y = 430 + r * 130 + z * (90 + r * 30) + 6 * wob(t, .11, i * .7);
+      const l = lit * (.5 + .5 * hash(i + r * 12 + Math.floor(t * 6))), look = clamp((WORK[0] - x) / 900, -1, 1);
+      if (!near) farMachine(x, y, (12 + r * 3) * (1 + .35 * z), z < -.5 ? 3 : 2, l, r * 12 + i, look);
+      else { const s = 13 + r * 3; DES.machine(x, G, s, t, { r: 1.5, h: 3, dh: 1, d: 2 + r, arms: 3, reach: 3, hover: (G - y) / s, face: look * .9, lit: l, label: null }); glow(x + look * s * .8, y - s * 4.6, s * (1 + 1.6 * l), NRG.white, .2 + .5 * l); }
     }
   }
-  // F-1, with its tentacles hanging or reaching for points; o.hum 0..1 lights its bands; o.fall 0..1 drops it
-  function f1(t, o = {}) {
-    const { x, g, s } = F1, fall = o.fall || 0, tilt = fall * .22;
+
+  // ---------- F-1 ----------
+  // It drifts to Roal's couch to talk (p054), and back to its place to work (p058); its lens turns down to him
+  const f1In = t => ez(t, tCome, tCome + 7), f1Near = t => f1In(t) * (1 - ez(t, tBack, tBack + 6));
+  const f1X = t => lerp(F1.x, 860, f1Near(t)), f1Hov = t => lerp(3, 1, f1Near(t));
+  const f1Face = t => steps(t, [[0, 0], [C('p052.2'), -.55], [tBack + 2, 0, 3]], 1.2);
+  const f1Eye = t => [f1X(t) + Math.sin(f1Face(t)) * 3.4 * F1.s * .55, F1.g - (f1Hov(t) + .7 + 7.5 + 2.6 * .42) * F1.s];   // as DES.machine places it
+  // its tentacles: hanging until the work starts, then six of them weaving round the working point; rolled back when
+  // it's done; two reaching to hold the newborn in the aura
+  const hangTip = (x, i) => { const sx = x + (i - 2.5) * F1.s * 1.1; return [sx + (sx - x) * .35, F1.g - 40]; };
+  const around = (t, i) => { const a = i * 1.05 + .3, r = 60 + 18 * (i % 3); return [WORK[0] + Math.cos(a) * r + 30 * wob(t, 3, i * .37), WORK[1] + Math.sin(a) * r * .6 + 30 * wob(t, 2.6, i * .53)]; };
+  function reachAt(t, x) {
+    if (t < tTent || t > tSnap) return null;
+    return [0, 1, 2, 3, 4, 5].map(i => {
+      const h = hangTip(x, i); let p = lerpP(h, around(t, i), ez(t, tTent, tTent + 1.2));
+      p = lerpP(p, h, ez(t, tStraight, tRolled));
+      if (i < 2) p = lerpP(p, [WORK[0] + 40 + 30 * i + 12 * wob(t, .6, i), WORK[1] - 20 + 35 * i], ez(t, tGen, tGen + 1.2));
+      return p;
+    });
+  }
+  function f1(t, o) {
+    const x = f1X(t), g = F1.g, s = F1.s, fall = o.fall || 0, land = tFell + .5;
     if (o.gone >= 1) return;
-    push(); translate(x, g); rotate(tilt); if (o.gone) scale(1, 1 - o.gone); translate(-x, -g);
-    const m = DES.f1(x, g, s, t, { arms: o.reach ? 0 : 8, hover: lerp(3, .35, easeIn(fall)), lit: o.lit, dark: o.dark });
-    if (o.reach) o.reach.forEach((p, i) => { const sx = x + (i - (o.reach.length - 1) / 2) * s * 1.1, sy = m.arm, w = o.writhe || 0;
+    // the fall has weight: a lurch back as the snap takes it, the drop, a bounce on landing, and settling
+    const lurch = -.05 * Math.sin(Math.PI * seg(t, tSnap, tFell + .1)), bounce = t > land ? spring(t, land, 5, 14) : 0;
+    push(); translate(x, g); rotate(lurch + fall * .3 - .06 * bounce); if (o.gone) scale(1, 1 - o.gone); translate(-x, -g);
+    const reach = reachAt(t, x), m = DES.f1(x, g, s, t, { arms: reach ? 0 : 8, hover: lerp(f1Hov(t), .2, easeIn(fall)) + .5 * Math.abs(bounce), lit: o.lit, dark: o.dark, face: f1Face(t) });
+    if (reach) reach.forEach((p, i) => { const sx = x + (i - 2.5) * s * 1.1, sy = m.arm, w = o.writhe || 0;
       const mx = lerp(sx, p[0], .5) + s * 2.2 * wob(t, .9 + .4 * w, i * .37) * (.3 + w), my = lerp(sy, p[1], .5) + s * 1.5 * wob(t, .7 + .5 * w, i * .21) * (.3 + w);
       DES.tentacle([[sx, sy], [lerp(sx, mx, .5), lerp(sy, my, .6) + s], [mx, my], [lerp(mx, p[0], .6), lerp(my, p[1], .6)], p], .34 * s, .16 * s, 4); });
     if (o.hum) for (let k = 0; k < 5; k++) glow(x, m.yb - m.h * (.1 + k * .2), m.r * 1.1, NRG.white, .22 * o.hum);
     pop();
     return m;
   }
-  // Roal in profile: on the couch (k 0 lying … 1 sitting up), or standing at x
-  function roalCouch(t, k = 0, o = {}) {
-    const c = DES.couch(COUCH.x, G, COUCH.s);
-    const pose = {}; for (const f of ['torso', 'thigh', 'shin', 'up', 'fore', 'farUp', 'farFore']) pose[f] = lerp(DES.POSE.lie[f], DES.POSE.sitUp[f], k);
-    const breath = .012 * wob(t, .22);
-    return DES.personSide(COUCH.x - 30 + k * 12, c.seat - .38 * RU, RS, t, { pose: { ...pose, torso: pose.torso + breath }, look: o.look ?? k * .35, lid: o.lid, key: 'r' });
+  // the science-machine that drifts too close in the birth and is struck (p060); it falls beside F-1
+  function stray(t) {
+    const k = ez(t, tGen - 3, tGen + 8), fall = easeIn(seg(t, tFell + .1, tFell + .7)), x = lerp(1760, 1210, k), g = lerp(905, 990, k);
+    push(); translate(x, g); rotate(-fall * .5); translate(-x, -g);
+    DES.machine(x, g + fall * 12, 16, t, { r: 1.6, h: 3, d: 2, arms: 3, dark: t > tHit + .3, label: null, hover: lerp(1.5, .1, fall) });
+    pop();
+    if (t > tHit && t < tHit + 2.5) glow(x, g - 90, 160 * (1 - seg(t, tHit, tHit + 2.5) * .5), NRG.lightning, .7 * (1 - seg(t, tHit, tHit + 2.5)));
+    return [x, g - 100];
   }
-  const roalStand = (t, x, o = {}) => DES.personSide(x, G - DES.HIP * RS, RS, t, { pose: o.pose || DES.POSE.stand, flip: o.flip, look: o.look, key: 'rs' });
+
+  // ---------- Roal ----------
+  // On the couch (lying, then sitting up, p053); he gets up while F-1 hums (p058), and walks: to watch the work, to the
+  // newborn's side, a step back from the aura, back out of the way when F-2 says it will make others, forward to ask.
+  const tRise = C('p058.1') + .8, tRise1 = tRise + 1.5, tRise2 = tRise1 + 1.5;
+  const WALKS = [[tRise2 + .2, tRise2 + 1.6, 560, 590], [C('p060.1:rolled back') + .3, C('p060.1:rolled back') + 5.5, 590, 830], [tAura, tAura + .9, 830, 770],
+    [tMake + .3, tMake + 4, 770, 610], [C('p067.1') - .2, C('p067.1') + 1.2, 610, 660]];
+  const mixPose = (a, b, k) => { const p = {}; for (const f in a) p[f] = lerp(a[f], b[f] ?? a[f], k); return p; };
+  const LOOK = [[0, 0], [T0('D') + .4, .2, .6], [T0('D') + 1.4, .62], [tCome + 3, .45], [T0('H'), .6], [T0('M'), .55], [tRise, .1], [tRise2 + 2, .4], [C('p060.1:rolled back') + 5, -.15], [tGen, .3],
+    [tFell + 2, .1], [C('p064.1:nor molecular'), .05], [C('p067.1'), .12], [C('p072.1:Let machines be made'), .3]];
+  function roal(t) {
+    const P = DES.POSE, look = steps(t, LOOK, 1), lidBase = steps(t, [[0, .3], [T0('D'), 0, .6], [T0('H'), .1], [T0('M'), .1], [C('p057.2'), .45, 4], [tRise, 0, .5]], 1);
+    const lid = Math.max(lidBase, blink(t, 3)), say = talk(t, 'roal');
+    if (t < tRise) {   // on the couch
+      const k = backOut(K(t, 'p053.1', 'p053.1+1.3')), pose = mixPose(P.lie, P.sitUp, k); pose.torso += .012 * wob(t, .22);
+      return DES.personSide(COUCH.x - 30 + k * 12, SEAT - .38 * RU, RS, t, { pose, look, lid, key: 'r', talk: say });
+    }
+    let hip, pose, flip = false, f = 1;
+    if (t < tRise1) { const k = ease(seg(t, tRise, tRise1)); pose = mixPose(P.sitUp, P.sit, k); hip = [lerp(COUCH.x - 18, 505, k), lerp(SEAT - .38 * RU, SEAT - .2 * RU, k)]; }
+    else if (t < tRise2) { const k = ease(seg(t, tRise1, tRise2)); pose = mixPose(P.sit, P.stand, k); pose.torso += .55 * Math.sin(Math.PI * k); hip = [lerp(505, 560, k), lerp(SEAT - .2 * RU, G - DES.HIP * RS, k)]; }
+    else {
+      let x = 560, walk = null;
+      for (const w of WALKS) { if (t < w[0]) break; const q = seg(t, w[0], w[1]); x = lerp(w[2], w[3], ease(q)); if (q < 1) walk = { q, d: x - w[2], back: w[3] < w[2] }; }
+      pose = { ...P.stand }; hip = [x, G - DES.HIP * RS];
+      // breath and a slow shift of weight, standing
+      pose.torso += .015 * wob(t, .22) + .02 * wob(t, .05, .3); hip[1] += 1.5 * wob(t, .22);
+      if (walk) {
+        const ph = Math.PI * Math.abs(walk.d) / (1.25 * RU) * Math.sign(walk.d || 1), m = clamp(Math.min(walk.q, 1 - walk.q) * 7), sn = Math.sin(ph), cs = Math.cos(ph);
+        pose.thigh = .32 * sn * m; pose.shin = (.32 * sn - .35 * Math.max(0, cs)) * m; pose.farThigh = -.32 * sn * m; pose.farShin = (-.32 * sn - .35 * Math.max(0, -cs)) * m;
+        pose.up = .12 - .28 * sn * m; pose.farUp = .05 + .28 * sn * m; pose.torso += .06 * m; hip[1] -= 3 * Math.abs(cs) * m;
+      }
+      // walking away from the floor he turns to go, and turns back at the end (a quick squash of the profile)
+      const w3 = WALKS[3]; f = 1 - 2 * ez(t, w3[0] - .1, w3[0] + .35) + 2 * ez(t, w3[1] - .1, w3[1] + .35); flip = f < 0;
+      // his arm up across his face in the birth's light (Morey's page), down again when F-1 has fallen
+      const sh = ez(t, tAura, tAura + .5) * (1 - ez(t, tFell + 1.5, tFell + 2.8)); pose = mixPose(pose, P.shield, sh);
+      // asking (p067): the near hand opens toward F-2
+      const ask = win(t, C('p067.1'), C('p067.1$') + .6, .4, .8); pose.up = lerp(pose.up, .55, ask); pose.fore = lerp(pose.fore, 1.5, ask);
+    }
+    push(); translate(hip[0], 0); scale(Math.max(.2, Math.abs(f)), 1); translate(-hip[0], 0);
+    const r = DES.personSide(hip[0], hip[1], RS, t, { pose, flip, look: flip ? .05 : look, lid, key: 'rs', talk: say });
+    pop();
+    return r;
+  }
   // thought, drawn two ways: Roal's as a loose curl of pale wash, the machines' as ruled ink
-  function dreamCurl(x, y, k, t, sc = 1) {
-    if (k <= 0) return;
-    const P = []; for (let i = 0; i <= 14 * k; i++) { const u = i / 14; P.push([x + sc * (u * 160 + 70 * Math.sin(u * 7 + t * .6)), y - sc * (u * 300 + 30 * Math.sin(u * 5 + t * .4))]); }
-    if (P.length > 2) { boilSeed('curl'); wash(ribbon(P, 26 * sc, 6 * sc), 0, { op: .6 }); }
+  function dreamCurl(x, y, k, t, op = .6) {
+    if (k <= 0 || op <= 0) return;
+    const P = []; for (let i = 0; i <= 14 * k; i++) { const u = i / 14; P.push([x + u * 160 + 70 * Math.sin(u * 7 + t * .6), y - (u * 300 + 30 * Math.sin(u * 5 + t * .4))]); }
+    if (P.length > 2) { boilSeed('curl'); wash(ribbon(P, 26, 6), 0, { op }); }
   }
-  function ruled(P, k, col = '#EFE6D2', sw = 1) {   // a ruled ink path drawn on to fraction k of its length
-    if (k <= 0) return;
+  function ruled(P, k, col = '#EFE6D2', sw = 1, k0 = 0) {   // a ruled ink path, drawn from fraction k0 to k of its length
+    if (k <= k0) return;
     const L = []; for (let i = 1; i < P.length; i++) L.push(Math.hypot(P[i][0] - P[i - 1][0], P[i][1] - P[i - 1][1]));
-    let left = k * L.reduce((a, b) => a + b, 0); const Q = [P[0]];
-    for (let i = 1; i < P.length && left > 0; i++) { const f = Math.min(1, left / L[i - 1]); Q.push([lerp(P[i - 1][0], P[i][0], f), lerp(P[i - 1][1], P[i][1], f)]); left -= L[i - 1]; }
+    const tot = L.reduce((a, b) => a + b, 0), at = d => { for (let i = 1; i < P.length; i++) { if (d <= L[i - 1]) return lerpP(P[i - 1], P[i], d / L[i - 1]); d -= L[i - 1]; } return P.at(-1); };
+    let acc = 0; const Q = [at(k0 * tot)];
+    for (let i = 1; i < P.length; i++) { acc += L[i - 1]; if (acc > k0 * tot && acc < k * tot) Q.push(P[i]); }
+    Q.push(at(k * tot));
     if (Q.length > 1) inkLine(Q, sw, col, 'inkfine', 0);
   }
-  // the dark field of Roal's science plates
-  const plate = () => { boilSeed('plate'); paint(rectPts(-200, -200, W + 400, H + 400), { wash: '#2E2620', washOp: 255, fill: '#3B322B', fillOp: 120, bleed: .25, tex: .5, ink: null }); blooms(0, H, 8, 4, 55, .5); };
-  const dotted = (cx, cy, rx, ry, col = '#B4A283', n = 60) => { for (let i = 0; i < n; i += 2) { const a0 = i / n * TAU, a1 = (i + 1) / n * TAU; inkLine([[cx + Math.cos(a0) * rx, cy + Math.sin(a0) * ry], [cx + Math.cos(a1) * rx, cy + Math.sin(a1) * ry]], .7, col, 'inkfine', 0); } };
-  const proton = (x, y, r) => { boilSeed('proton'); wash(ellPts(x, y, r, r, 24), 2, { ink: true, sw: .8 }); wash(ellPts(x - r * .3, y - r * .3, r * .35, r * .3, 12), 0, { op: .6 }); };
-  const electron = (x, y, r) => { boilSeed('el' + Math.round(x) + Math.round(y)); paint(ellPts(x, y, r, r, 14), { wash: '#EFE6D2', washOp: 240, ink: '#B4A283', sw: .5 }); };
-  const flashRing = (x, y, r, a) => { for (let i = 0; i < 28; i++) { const q = i / 28 * TAU; glow(x + Math.cos(q) * r, y + Math.sin(q) * r, 26, NRG.white, a); } };
   // thought-speech's signature (PLAN.md §4): rings of light going out from the thinker, one per beat of the words
   function thoughtRings(x, y, t, t0, t1, o = {}) {
     if (t < t0) return;
@@ -79,575 +171,386 @@
       if ((t - t0) - n * per > t1 - t0 + per) continue;
       for (let i = 0; i < 26; i++) { const q = i / 26 * TAU; glow(x + Math.cos(q) * r, y + Math.sin(q) * r * (o.sq ?? .55), 22, o.col || '#E6EEFF', a); } }
   }
-  const fadeFrom = (k, col = PULP.black) => flash(1 - clamp(k), col);
-  const out = (lt, dur, d = .5, col = PULP.black) => { if (lt > dur - d) flash(seg(lt, dur - d, dur), col); };
-  const inn = (lt, d = .5, col = PULP.black) => { if (lt < d) flash(1 - seg(lt, 0, d), col); };
+  const electron = (x, y, r, key) => { boilSeed('el' + key); paint(ellPts(x, y, r, r, 14), { wash: '#EFE6D2', washOp: 240, ink: '#B4A283', sw: .5 }); };
 
-  // ---------- A: the chapter's page ----------
-  function A(t, lt, dur) {
-    HALFTONE = 0;
-    const x = 460, wd = 1000;
-    pageHeader('The Hydrogen Wall', x, 250, wd);
-    dropCapPara('Roal was lying quietly on a couch. He was thinking deeply, and yet not with the logical trains of thought that machines must follow.', x, 470, wd, { size: 44, lines: 8 });
-    rule(x + wd * .35, 800, wd * .3, INK, 1);
-    flushLetters();
-    if (lt < 1.2) flash(1 - easeOut(lt / 1.2), PULP.paper);
-    if (lt > dur - 1.2) { const k = ease(seg(lt, dur - 1.2, dur)); boilSeed('soak'); paint(ellPts(W / 2, H / 2, 1400 * k, 900 * k, 30, 40), { wash: '#3B322B', washOp: 255 * k, fill: '#3B322B', fillOp: 160, bleed: .3, ink: null }); }
+  // ---------- F-2 ----------
+  // Born at the working point and staying there, floating on its own power. It turns as it attends: to Roal when it
+  // answers him (p068), back to the ruler it made on F-1's empty floor, three-quarters toward us (p070), to the cage,
+  // and its nose up to the screens (p072). Its heading: 0 faces right, π left, π/2 toward us; the side view squashes
+  // through a turn (foreshortened), and only nearly nose-on becomes the front view.
+  const f2Head = t => steps(t, [[0, 0], [C('p068.1') - .3, Math.PI, .8], [C('p068.3:It is a coordinator'), 0, .8], [T0('AH') - .2, 1.15, .6], [T0('AI') + .5, Math.PI, .7]]);
+  function f2(t, o = {}) {
+    const x = WORK[0], hd = f2Head(t), c = Math.cos(hd), tilt = .45 * ez(t, tGen, tGen + 1.5) * (1 - ez(t, tSnap, tSnap + 2.5)) - .35 * K(t, 'p072.1:Let machines be made', 'p072.1:Let machines be made+1.2') * (c < 0 ? -1 : 1);
+    push(); translate(x, WORK[1]); rotate(tilt); if (Math.abs(c) >= .3) scale(c, 1); translate(-x, -WORK[1]);
+    DES.f2(x, G, FS, t, { hover: F2HOV, view: Math.abs(c) < .3 ? 'front' : 'side', newborn: o.newborn });
+    pop();
   }
+  const f2Nose = t => [WORK[0] + Math.cos(f2Head(t)) * 4.2 * FS * .45, WORK[1] + 4];
 
-  // ---------- B: the hall at night ----------
-  function B(t, lt, dur) {
-    HALFTONE = .3;
-    camBegin(lerp(860, 760, ease(lt / dur)), 700, 1.05);
-    hallBack(t); tiers(t); f1(t, { lit: .15 });
-    const r = roalCouch(t, 0, { lid: .3 });
-    const k = K(t, 'p051.1:not with', 'p051.1$');
-    dreamCurl(r.head[0] + 20, r.head[1] - 30, k, t);
-    ruled([[F1.x - 30, 560], [1080, 560], [1080, 470], [860, 470], [860, 400], [700, 400]], seg(t, C('p051.1:not with') + 1, C('p051.1$') + .5) * .9, D[0], .9);
-    camEnd();
-    inn(lt, .8, '#3B322B');
+  // ---------- the hall, whole, at time t ----------
+  function symphony(t) {   // the flashes of p059: 0..1, and the envelope they live in
+    const fl = hash(Math.floor(t * 5)), env = win(t, T0('Q'), T0('S') + .5, .3, 1.5);
+    return { lit: (fl > .4 ? fl : .15) * env, env, fl };
   }
+  const roarAt = t => ez(t, tGen, tAura) * (1 - ez(t, tSnap, tSnap + .4));
+  function hallWorld(t) {
+    const sym = symphony(t), roar = roarAt(t), snapped = t > tSnap, up = ez(t, C('p056.1'), C('p056.1:but a single proton')) * win(t, T0('H'), T0('M'), .1, 1);
+    const dark = steps(t, [[0, .85], [T0('H'), .8], [T0('M'), .89], [T0('N'), .84], [T0('P'), .86], [T0('Q'), .93], [T0('R'), .91], [T0('S'), .89], [T0('U'), .9], [T0('W'), .78], [T0('X'), .55], [tSnap, .82, .25],
+      [T0('Y'), .91], [T0('Z'), .9], [T0('AA'), .91], [T0('AC'), .93], [T0('AE'), .92], [T0('AF'), .87], [T0('AG'), .9], [T0('AH'), .87], [T0('AI'), .86]]) + .35 * up - .4 * sym.lit - .3 * roar;
+    const lit = Math.max(steps(t, [[0, 0], [tSudden, .4, .3], [T0('S') + 2, .1], [T0('W'), .8, .3], [tSnap, .1, .3], [T0('Z'), .3], [T0('AE'), .15], [T0('AK'), .3]]), sym.lit, roar);
+    DES.lab(-300, -150, 2520, 1300, t, { couch: false });
+    night(dark);
+    tierRing(t, lit, false);
+    DES.couch(COUCH.x, G, COUCH.s);
 
-  // ---------- C: F-1 speaks ----------
-  function C_(t, lt, dur) {
-    HALFTONE = .3;
-    const k = ease(lt / dur);
-    camBegin(F1.x - 40, lerp(800, 560, k), 1.7);
-    hallBack(t); f1(t, { lit: .3 + .7 * K(t, 'p052.1', 'p052.1$') * (1 - K(t, 'p052.2', 'p052.2$') * .5) });
-    camEnd();
-  }
+    // F-1: talking, humming, working; struck dead by its own child's birth; unmade by it
+    const fall = easeIn(K(t, 'p060.1:fell heavily', 'p060.1:fell heavily+.5')), gone = ease(K(t, 'p063.1:float back along it', 'p063.1:In seconds+.8'));
+    const hum = snapped ? 0 : Math.max(win(t, T0('N'), tSudden + 1, 1, 1) * (.4 + .3 * Math.abs(wob(t, 1.7))), tSudden < t ? .5 * (1 - ez(t, tStraight, tRolled)) : 0,
+      K(t, 'p058.3:the hum', 'p058.3:waxed') * win(t, T0('P'), T0('Q'), .5, .5) * (.3 + .7 * (.5 + .5 * Math.sin(t * 2.2))), sym.lit, roar, win(t, T0('W'), tSnap, .2, .1));
+    const writhe = ez(t, tTent, tTent + 1) * (1 - ez(t, tStraight, tRolled)) + .2 * ez(t, tGen, tGen + 1);
+    f1(t, { fall, gone, dark: snapped, hum, writhe, lit: snapped ? 0 : steps(t, [[0, .15], [T0('C'), .3], [tSudden, .5], [tGen, 1, .8]]) + .7 * talk(t, 'f1') });
+    const st = stray(t);
+    if (t > tFell + .5) { const d = seg(t, tFell + .5, tFell + 3.5); if (d < 1) { boilSeed('dust'); paint(ellPts(F1.x, F1.g, 260 + 200 * d, 50 + 30 * d, 20, 20), { fill: D[1], fillOp: 90 * (1 - d), bleed: .4, ink: null }); } }
 
-  // ---------- D: Roal sits up ----------
-  function D_(t, lt, dur) {
-    HALFTONE = .3;
-    const k = backOut(K(t, 'p053.1', 'p053.1+1.3'));
-    camBegin(COUCH.x + 30, 850, 2.6 + .15 * K(t, 'p053.2', 'p053.2$'));
-    hallBack(t); roalCouch(t, k, { look: .2 + .45 * k, lid: lerp(.3, 0, k) });
-    camEnd();
-  }
-
-  // ---------- E: F-1 has followed him (over his shoulder) ----------
-  function E(t, lt, dur) {
-    HALFTONE = .3;
-    const k = ease(K(t, 'p054.1', 'p054.1:What is your thought'));
-    camBegin(lerp(1080, 1000, k), 720, 1.25);
-    hallBack(t); tiers(t);
-    push(); translate(lerp(0, -170, k), lerp(0, 130, k)); f1(t, { lit: .5 + .5 * Math.abs(wob(t, 2.3)) * (t < C('p054.1$') ? 1 : 0) }); pop();
-    camEnd();
-    // Roal's head and shoulder dark in the foreground, left
-    boilSeed('ots'); DES.personSide(260, 1400, 260, t, { pose: DES.POSE.sitUp, look: .6, key: 'ots' }); boilSeed('otsd'); wash(ellPts(260, 760, 380, 520, 24), 4, { op: .45 });
-  }
-
-  // ---------- F, G: Roal's eyes, then the lens ----------
-  function F(t, lt, dur) {
-    HALFTONE = .25;
-    camBegin(W / 2, H / 2, 1 + .04 * lt / dur);
-    boilSeed('skin'); paint(rectPts(-100, -100, W + 200, H + 200), { wash: D[0], washOp: 255, fill: D[1], fillOp: 60, bleed: .2, ink: null });
-    DES.eyes(W / 2, H / 2 + 40, 1500, t, { old: true, far: true, lid: .2 + .08 * K(t, 'p055.1', 'p055.1+3'), look: -.15 });
-    camEnd();
-    inn(lt, .4);
-  }
-  function G_(t, lt, dur) {
-    HALFTONE = .25;
-    boilSeed('lensbg'); paint(rectPts(-100, -100, W + 200, H + 200), { wash: D[2], washOp: 255, ink: null });
-    camBegin(W / 2, H / 2, 1 + .02 * lt / dur);
-    boilSeed('biglens'); wash(ellPts(W / 2, H / 2 + 40, 560, 560, 48), 1, { ink: true, sw: 1.4 });
-    wash(ellPts(W / 2, H / 2 + 40, 420, 420, 40), 4, { ink: true, sw: 1 });
-    // the hall, small and bent in the glass
-    for (let i = 0; i < 6; i++) { const a = -2.4 + i * .3; inkLine([[W / 2 + Math.cos(a) * 380, H / 2 + 40 + Math.sin(a) * 380], [W / 2 + Math.cos(a) * 150, H / 2 + 40 + Math.sin(a) * 150]], .6, D[2]); }
-    glow(W / 2 - 120, H / 2 - 80, 120, NRG.white, .5);
-    camEnd();
-    out(lt, dur, .4);
-  }
-
-  // ---------- H: into the atom ----------
-  function H_(t, lt, dur) {
-    HALFTONE = .3;
-    const up = ease(K(t, 'p056.1', 'p056.1:but a single proton'));
-    camBegin(COUCH.x + 60, lerp(860, 560, up), lerp(2, 1.3, up));
-    hallBack(t, { dark: .80 + .35 * up }); roalCouch(t, 1, { look: .6, lid: .1 });
-    camEnd();
-    const k = K(t, 'p056.1:but a single proton', 'p056.1:Yet never');
-    if (k > 0) { boilSeed('fall'); paint(rectPts(-100, -100, W + 200, H + 200), { wash: '#2E2620', washOp: 255 * ease(k * 2), ink: null }); }
-    if (t > C('p056.1:but a single proton')) proton(W / 2, H / 2, 70 * backOut(K(t, 'p056.1:but a single proton', 'p056.1:but a single proton+.6')));
-    if (t > C('p056.1:but a single electron')) { const a = (t - C('p056.1:but a single electron')) * 1.2; electron(W / 2 + Math.cos(a) * 420, H / 2 + Math.sin(a) * 220, 16); }
-    out(lt, dur, .3, '#2E2620');
-  }
-
-  // ---------- I: the plate of the atom ----------
-  function I_(t, lt, dur) {
-    HALFTONE = .3; plate();
-    dotted(W / 2, H / 2, 420, 220);
-    proton(W / 2, H / 2, 70);
-    const a = (t - C('p056.1:but a single electron')) * 1.2; electron(W / 2 + Math.cos(a) * 420, H / 2 + Math.sin(a) * 220, 16);
-  }
-
-  // ---------- J: the bombardment ----------
-  function J(t, lt, dur) {
-    HALFTONE = .3; plate();
-    const t0 = C('p056.1:the awful expelling force'), k = clamp((t - t0) / 3);
-    camBegin(lerp(700, 1100, ease(K(t, 'p056.1:Never in all science', 'p056.1:bombard atoms'))), H / 2, 1);
-    const bx = 120, by = 520;
-    if (t > t0 - .3) { const b = backOut(seg(t, t0 - .3, t0 + .4)); glow(bx, by, 260 * b, NRG.white, .8 * (1 - k * .6)); boilSeed('burst'); paint(starPts(bx, by, 120 * b, .35, 9), { wash: '#EFE6D2', washOp: 160, ink: null }); }
-    const ax = 1400, ay = 520;
-    dotted(ax, ay, 300, 160); proton(ax, ay, 55);
-    const ea = t * 1.2; electron(ax + Math.cos(ea) * 300, ay + Math.sin(ea) * 160, 13);
-    for (let i = 0; i < 9; i++) {   // the bombarding electrons: each swerves off before it reaches the proton
-      const s0 = t0 + i * .35, q = clamp((t - s0) / 2.2); if (q <= 0) continue;
-      const aim = (i - 4) * 26, mx = lerp(bx, ax - 150, Math.min(1, q * 1.6)), my = lerp(by, ay + aim, Math.min(1, q * 1.6));
-      const sw = Math.max(0, q * 1.6 - 1) / .6, dir = aim >= 0 ? 1 : -1;
-      const x = q * 1.6 < 1 ? mx : ax - 150 + sw * 260, y = q * 1.6 < 1 ? my : ay + aim + dir * sw * sw * 380;
-      electron(x, y, 9);
+    // B: his thought rises as a curl; F-1's ruled line follows it, and is wiped when the scene moves on
+    const head0 = [COUCH.x - 10, SEAT - 120];
+    dreamCurl(head0[0] + 20, head0[1] - 30, K(t, 'p051.1:not with', 'p051.1$'), t, .6 * (1 - ez(t, T0('C'), T0('C') + 1.5)));
+    const line1 = [[F1.x - 30, 560], [1080, 560], [1080, 470], [860, 470], [860, 400], [700, 400]];
+    ruled(line1, seg(t, C('p051.1:not with') + 1, C('p051.1$') + .5) * .9, D[0], .9, .9 * ez(t, T0('C'), T0('C') + 1.5));
+    // N: the steps no logic can ascend, climbing from its lens to a gap; a line from the far side closes it
+    if (t > C('p058.2') && t < T0('O') + 2) {
+      const [x0, y0] = [F1.x - 240, 560], steps_ = [[x0, y0]]; for (let i = 0; i < 6; i++) { const [x, y] = steps_.at(-1); steps_.push([x - 90, y], [x - 90, y - 60]); }
+      const gap = steps_.at(-1), far = [gap[0] - 240, gap[1] - 140], wipe = ez(t, T0('O'), T0('O') + 1.5);
+      ruled(steps_, K(t, 'p058.2', 'p058.2:no logic can'), '#EFE6D2', 1.1, wipe);
+      if (t > C('p058.2:a step') && wipe < 1) { boilSeed('far'); paint(ellPts(...far, 14, 14, 12), { wash: '#EFE6D2', washOp: 220 * (1 - wipe), ink: null }); glow(...far, 40, NRG.white, .4 * (1 - wipe)); }
+      if (t > C('p058.2:working backwards')) {
+        ruled([far, [far[0], far[1] + 70], [far[0] + 120, far[1] + 70], [far[0] + 120, gap[1]], gap], K(t, 'p058.2:working backwards', 'p058.2$'), '#EFE6D2', 1.1, wipe);
+        if (t > C('p058.2$')) glow(gap[0], gap[1], 50, NRG.white, .6 * (1 - seg(t, C('p058.2$'), C('p058.2$') + 1.2)));
+      }
     }
-    camEnd();
-  }
-
-  // ---------- K: falling in, to the wall ----------
-  function K_(t, lt, dur) {
-    HALFTONE = .3; plate();
-    const rings = [460, 330, 230, 150], flashes = ['p056.1:there goes a flash', 'p056.1:Another flash', 'p056.1:Always falling nearer', 'p056.1:that one state'];
-    let ring = 0; flashes.forEach((c, i) => { if (t > C(c)) ring = i + 1; });
-    const push = 1 + .5 * ease(K(t, 'p056.1:the proton is positive', 'p056.1:What is that wall'));
-    camBegin(W / 2, H / 2, push);
-    rings.forEach((r, i) => dotted(W / 2, H / 2, r, r * .55, i === 3 && t > C('p056.1:Blocked') ? '#EFE6D2' : '#8D7C63', 50 + i * 10));
-    if (t > C('p056.1:Blocked')) { boilSeed('wall'); const k = K(t, 'p056.1:Blocked', 'p056.1:What is that wall'); paint(ellPts(W / 2, H / 2, 150, 82, 40), { ink: '#EFE6D2', sw: 1.2 + 2.5 * k, br: 'dry' }); glow(W / 2, H / 2, 180 + 40 * k, '#F4EEDC', .1 + .15 * k); }
-    proton(W / 2, H / 2, 60);
-    // the electron: on its ring, falling to the next at each flash (a quick drop, eased)
-    const rr = i => rings[Math.min(3, i)], from = ring === 0 ? 0 : ring - 1, dk = ring === 0 ? 1 : easeOut(clamp((t - C(flashes[ring - 1])) / .5));
-    const R = ring === 0 ? rings[0] : lerp(rr(from), rr(ring), dk), a = t * (2.4 - R / 300);
-    electron(W / 2 + Math.cos(a) * R, H / 2 + Math.sin(a) * R * .55, 14);
-    flashes.forEach(c => { const age = t - C(c); if (age > 0 && age < 1.2) flashRing(W / 2 + Math.cos(a) * R, H / 2 + Math.sin(a) * R * .55, 30 + age * 500, .5 * (1 - age / 1.2)); });
-    camEnd();
-  }
-
-  // ---------- L: space curves ----------
-  function L_(t, lt, dur) {
-    HALFTONE = .3; plate();
-    const bend = .15 + .85 * ease(K(t, 'p057.1', 'p057.1:beyond all bounds')), fold = ease(K(t, 'p057.1:beyond all bounds', 'p057.1:and are in a new space+1'));
-    camBegin(W / 2, H / 2, 1 + 1.5 * ease(K(t, 'p057.1:and are in a new space', 'p057.1$+1.5')));
-    const cx = W / 2, cy = H / 2, warp = (x, y) => { const dx = x - cx, dy = y - cy, r = Math.hypot(dx, dy) || 1, d = bend * 260 * Math.exp(-r / 380) * (1 + 1.5 * fold), r2 = Math.max(3, r - d); return [cx + dx * r2 / r, cy + dy * r2 / r]; };
-    for (let i = -10; i <= 10; i++) { const P = [], Q = []; for (let j = -14; j <= 14; j++) { P.push(warp(cx + i * 70, cy + j * 50)); Q.push(warp(cx + j * 70, cy + i * 50)); } inkLine(P, .6, '#8D7C63', 'inkfine', .3); inkLine(Q, .6, '#8D7C63', 'inkfine', .3); }
-    proton(cx, cy, 40 * (1 - fold * .7));
-    const er = lerp(260, 30, ease(K(t, 'p057.1:As the two come nearer', 'p057.1:beyond all bounds'))), ea = t * 3;
-    if (fold < .9) electron(cx + Math.cos(ea) * er, cy + Math.sin(ea) * er * .55, 12);
-    if (fold > 0) { glow(cx, cy, 30 + 400 * fold, NRG.white, .8 * fold); glow(cx, cy, 20 + 120 * fold, '#F4EEDC', fold); }
-    camEnd();
-    if (lt > dur - 1) flash(seg(lt, dur - 1, dur), '#F4EEDC');
-  }
-
-  // ---------- M: his voice drops ----------
-  function M(t, lt, dur) {
-    HALFTONE = .3;
-    camBegin(COUCH.x - 10, 790, 4.2 + .15 * lt / dur);
-    hallBack(t, { dark: .89 }); roalCouch(t, 1, { look: .55, lid: lerp(.1, .45, K(t, 'p057.2', 'p057.2$')) });
-    camEnd();
-    for (let i = 0; i < 5; i++) { const a = (1 - K(t, 'p057.2', 'p057.2+3')) * .5; if (a > 0) inkLine([[1200 + i * 60, 200], [1200 + i * 60, 900]], .5, '#8D7C63', 'inkfine', 0); }
-    if (lt < 1) flash(1 - seg(lt, 0, 1), '#F4EEDC');
-  }
-
-  // ---------- N: F-1 hums; the step no logic can ascend ----------
-  function N_(t, lt, dur) {
-    HALFTONE = .3;
-    camBegin(1150, 640, 1.2);
-    hallBack(t, { dark: .84 }); tiers(t);
-    f1(t, { hum: .4 + .3 * Math.abs(wob(t, 1.7)), lit: .4 });
-    camEnd();
-    // the steps: ruled lines climbing from its lens, stopping at the gap; then a line from the far side coming back down
-    const x0 = 1180, y0 = 560, st = 6, sw = 90, sh = 60, steps = [[x0, y0]];
-    for (let i = 0; i < st; i++) { const [x, y] = steps.at(-1); steps.push([x - sw, y], [x - sw, y - sh]); }
-    const gapEnd = steps.at(-1), far = [gapEnd[0] - 240, gapEnd[1] - 140];
-    ruled(steps, K(t, 'p058.2', 'p058.2:no logic can'), '#EFE6D2', 1.1);
-    if (t > C('p058.2:working backwards')) {
-      const back = [far, [far[0], far[1] + 70], [far[0] + 120, far[1] + 70], [far[0] + 120, gapEnd[1]], gapEnd];
-      ruled(back, K(t, 'p058.2:working backwards', 'p058.2$'), '#EFE6D2', 1.1);
-      if (t > C('p058.2$')) glow(gapEnd[0], gapEnd[1], 50, NRG.white, .6 * (1 - seg(t, C('p058.2$'), C('p058.2$') + 1.2)));
-    }
-    if (t > C('p058.2:a step')) { boilSeed('far'); paint(ellPts(...far, 14, 14, 12), { wash: '#EFE6D2', washOp: 220, ink: null }); glow(...far, 40, NRG.white, .4); }
-  }
-
-  // ---------- O: force shafts ----------
-  function O(t, lt, dur) {
-    HALFTONE = .3;
-    const go = C('p058.3:Suddenly'), [sx, sy] = shakeXY(t, t > go && t < go + .4 ? 8 : 0);
-    camBegin(1080 + sx, 640 + sy, 1.05);
-    hallBack(t, { dark: .84 }); tiers(t, t > go ? .4 : 0);
-    const w = K(t, 'p058.3:tentacles became', 'p058.3:writhing masses+1');
-    const pts = [[WORK[0] - 60, WORK[1] - 40], [WORK[0] + 40, WORK[1] - 70], [WORK[0] + 70, WORK[1] + 20], [WORK[0] - 30, WORK[1] + 50], [WORK[0] - 90, WORK[1] + 10], [WORK[0] + 10, WORK[1] - 10]];
-    f1(t, { reach: w > 0 ? pts.map(p => [p[0] + 30 * wob(t, 3, p[0]), p[1] + 30 * wob(t, 2.6, p[1])]) : null, writhe: w, lit: .5, hum: t > go ? .5 : .1 });
-    if (t > go) { const k = ease(seg(t, go, go + .5)); [[-60, 0], [0, 0], [60, 0]].forEach(([dx], i) => beam(F1.x + dx, 640, WORK[0] + dx * .3, WORK[1], 18, 8, FORCE, k, { washOp: 50 })); }
-    camEnd();
-  }
-
-  // ---------- P: the transmutation field ----------
-  function P_(t, lt, dur) {
-    HALFTONE = .3;
-    camBegin(WORK[0] + 60, WORK[1] - 40, 2 + .5 * ease(lt / dur));
-    hallBack(t, { dark: .86 });
-    const pulse = .5 + .5 * Math.sin(t * 2.2);
-    f1(t, { reach: [[WORK[0] - 50, WORK[1] - 30], [WORK[0] + 30, WORK[1] - 55], [WORK[0] + 55, WORK[1] + 15], [WORK[0] - 25, WORK[1] + 40], [WORK[0] - 70, WORK[1] + 10], [WORK[0] + 5, WORK[1] - 5]].map((p, i) => [p[0] + 40 * wob(t, 3.3, i * .2), p[1] + 40 * wob(t, 2.9, i * .4)]), writhe: 1, hum: K(t, 'p058.3:the hum', 'p058.3:waxed') * pulse + .3, lit: .6 });
-    // the air, pulled in spirals into the field
-    for (let i = 0; i < 12; i++) { const a0 = i / 12 * TAU + t * 2, P = []; for (let k = 0; k <= 10; k++) { const r = 260 - k * 22, a = a0 + k * .35; P.push([WORK[0] + Math.cos(a) * r, WORK[1] + Math.sin(a) * r * .6]); } boilSeed('air' + i); inkLine(P, .5, D[0], 'inkfine', .5); }
-    const m = K(t, 'p058.3:Fierce beams', 'p058.3$');
-    glow(...WORK, 120 + 60 * m, NRG.white, .4 + .4 * m); glow(...WORK, 220, FORCE, .3);
-    if (m > 0) { boilSeed('something'); paint(ellPts(...WORK, 60 * m, 18 * m, 14, 12), { wash: mixCol(D[1], '#7F9BD0', .38), washOp: 160 * m, ink: null }); }
-    camEnd();
-    if (lt > dur - .3) brushWipe((lt - (dur - .3)) / .6, [PULP.w[4], PULP.w[3]]);
-  }
-
-  // ---------- Q: a weird symphony ----------
-  function Q_(t, lt, dur) {
-    HALFTONE = .3;
-    const fl = hash(Math.floor(t * 5)), lit = fl > .35 ? fl : .15, [sx, sy] = shakeXY(t, fl > .8 ? 5 : 0);
-    camBegin(1000 + sx, 660 + sy, 1.3);
-    hallBack(t, { dark: .93 - .4 * lit }); tiers(t, lit);
-    f1(t, { reach: [[WORK[0] - 50, WORK[1] - 30], [WORK[0] + 30, WORK[1] - 55], [WORK[0] + 55, WORK[1] + 15], [WORK[0] - 25, WORK[1] + 40]].map((p, i) => [p[0] + 30 * wob(t, 3.3, i * .2), p[1] + 30 * wob(t, 2.9, i * .4)]), writhe: 1, hum: lit, lit: .5 + .5 * lit });
-    boilSeed('arc' + Math.floor(t * 12));
-    if (fl > .35) { lightning(WORK[0] + 40, WORK[1] - 20, WORK[0] + 260 * (hash(Math.floor(t * 5) + 3) - .5) * 2, G - 20, NRG.lightning, { amp: .15, r: 50 }); lightning(WORK[0] - 30, WORK[1], WORK[0] - 240 - 200 * hash(Math.floor(t * 5) + 7), 560 + 200 * hash(Math.floor(t * 5) + 9), NRG.lightning, { amp: .14, r: 40, br: 1 }); }
-    const hot = K(t, 'p059.1:glimpses of white-hot metal', 'p059.1:The sputter');
-    glow(...WORK, 90, '#FFE2B0', .5 + .4 * hot); glow(...WORK, 40, NRG.white, .7);
-    [[F1.x - 40, 640], [F1.x + 40, 640]].forEach(([x, y]) => beam(x, y, WORK[0], WORK[1], 14, 8, FORCE, 1, { washOp: 40, splash: false }));
-    camEnd();
-    inn(lt, .3, PULP.w[4]);
-  }
-
-  // ---------- R: the tiers ----------
-  function R_(t, lt, dur) {
-    HALFTONE = .3;
-    const fl = hash(Math.floor(t * 4)), lit = fl > .5 ? fl : .2;
-    camBegin(980, 640, lerp(1.1, .92, ease(lt / dur)));
-    hallBack(t, { dark: .91 - .3 * lit }); tiers(t, lit);
-    f1(t, { reach: [[WORK[0] - 40, WORK[1] - 30], [WORK[0] + 30, WORK[1] - 45], [WORK[0] + 45, WORK[1] + 15]], writhe: .8, hum: lit, lit: .6 });
-    glow(...WORK, 110, '#FFE2B0', .6);
-    roalStand(t, 330, { look: .4 });
-    camEnd();
-  }
-
-  // ---------- S: the thing revealed ----------
-  function S_(t, lt, dur) {
-    HALFTONE = .3;
-    camBegin(WORK[0] + 80, WORK[1] - 60, 1.8);
-    hallBack(t, { dark: .89 });
-    const roll = ease(K(t, 'p060.1:straightened', 'p060.1:rolled back+1'));
-    const reach = [[WORK[0] - 50, WORK[1] - 30], [WORK[0] + 30, WORK[1] - 55], [WORK[0] + 55, WORK[1] + 15]].map(([x, y], i) => [lerp(x, F1.x - 160 + i * 40, roll), lerp(y, 700 + i * 30, roll)]);
-    f1(t, { reach, writhe: 1 - roll, hum: .4 * (1 - K(t, 'p060.1:softened', 'p060.1:sigh')) + .15, lit: .5 });
-    const three = K(t, 'p060.1:but three beams', 'p060.1:but three beams+.8');
+    // O to the snap: the force shafts from F-1 to the working point; then "but three beams"
+    const shafts = ez(t, tSudden, tSudden + .5) * (1 - ez(t, tStraight, tThree)), three = K(t, 'p060.1:but three beams', 'p060.1:but three beams+.8') * (snapped ? 0 : 1);
+    if (shafts > 0) [-60, 0, 60].forEach(dx => beam(F1.x + dx, 640, WORK[0] + dx * .3, WORK[1], 18, 8, FORCE, 1, { washOp: 50 * shafts, a: .5 * shafts, splash: false }));
     if (three > 0) [-50, 0, 50].forEach(dx => beam(F1.x + dx, 660, WORK[0] + dx * .2, WORK[1], 10, 6, FORCE, three, { washOp: 40, splash: false }));
-    const whole = K(t, 'p060.1:held the structure', 'p060.1:It was a small thing');
-    glow(...WORK, 120, NRG.white, .3 + .3 * (1 - whole));
-    f2At(t);
-    if (whole < 1) { boilSeed('unf'); wash(ellPts(WORK[0] - 20, WORK[1], 70 * (1 - whole), 26, 14), 0, { op: .8 * (1 - whole) }); }
-    camEnd();
-  }
-
-  // ---------- T: half the size of Roal ----------
-  function T_(t, lt, dur) {
-    HALFTONE = .3;
-    camBegin(WORK[0] - 60, 820, 2.2);
-    hallBack(t, { dark: .89 });
-    [-50, 0, 50].forEach(dx => beam(WORK[0] + 200 + dx, 500, WORK[0] + dx * .2, WORK[1], 10, 6, FORCE, 1, { washOp: 40, splash: false }));
-    glow(...WORK, 100, NRG.white, .3);
-    f2At(t);
-    roalStand(t, WORK[0] - 170, { look: -.1 });
-    camEnd();
-  }
-
-  // ---------- U: the birth (our painting of Morey's moment) ----------
-  function U_(t, lt, dur) {
-    HALFTONE = .3;
-    const roar = ease(K(t, 'p060.1:Suddenly the generators', 'p060.1:An enormous aura')), bolt = K(t, 'p060.1:shot through', 'p060.1:shot through+.5');
-    const shield = K(t, 'p060.1:An enormous aura', 'p060.1:An enormous aura+.5');
-    const [sx, sy] = shakeXY(t, 4 * roar);
-    camBegin(WORK[0] + 170 + sx, lerp(640, 600, ease(lt / dur)) + sy, 1.55 + .1 * ease(lt / dur));
-    hallBack(t, { dark: .9 - .3 * roar }); tiers(t, roar);
-    f1(t, { reach: [[WORK[0] + 40, WORK[1] - 20], [WORK[0] + 70, WORK[1] + 15]], writhe: .2, hum: roar, lit: roar });
-    aura(...WORK, 120 + 220 * roar, NRG.white, .4 + .6 * roar, t);
-    push(); translate(...WORK); rotate(.45); translate(-WORK[0], -WORK[1]); f2At(t, { newborn: roar > .3 }); pop();   // tilted in the aura, nose down, as Morey has it
-    if (bolt > 0) { boilSeed('bolt' + Math.floor(t * 12)); lightning(WORK[0] - 40, WORK[1], WORK[0] - 300, G - 10, NRG.lightning, { amp: .15 }); lightning(WORK[0] + 60, WORK[1] + 20, WORK[0] + 260, G, NRG.lightning, { amp: .12 }); lightning(WORK[0], WORK[1] - 40, WORK[0] - 120, 420, NRG.lightning, { amp: .12, br: 1 }); glow(...WORK, 520, NRG.lightning, .4 * bolt); }
-    camEnd();
-    // Roal, close in the foreground at the left, lit by it, his arm thrown up across his face
-    const r = DES.personSide(260, 1150, 130, t, { pose: shield > 0 ? DES.POSE.shield : DES.POSE.stand, look: .35, key: 'ufg' });
-    glow(r.head[0] + 40, r.head[1], 260, NRG.white, .25 * roar);
-  }
-  // ---------- V: Morey's page ----------
-  const MOREY = Object.assign(new Image(), { src: 'assets/ref/morey_1932_p415.jpg' });
-  let moreyG = null;
-  function V_(t, lt, dur) {
-    HALFTONE = 0;
-    U_(t, lt + (C('p060.1:blue lightning+0.8') - S.U[0]), dur);   // our painting, under the dissolve
-    if (!moreyG && MOREY.complete && MOREY.naturalWidth) { moreyG = createGraphics(MOREY.naturalWidth / 2, MOREY.naturalHeight / 2); moreyG.drawingContext.drawImage(MOREY, 0, 0, moreyG.width, moreyG.height); }
-    if (!moreyG) return;
-    const a = clamp(lt / 1.2) * (1 - seg(lt, dur - .8, dur)), h = 1040 * (1 + .02 * lt / dur), w = h * moreyG.width / moreyG.height;
-    flushBrush();
-    push(); tint(255, 255 * a); paint(rectPts(-60, -60, W + 120, H + 120), { wash: PULP.paper, washOp: 255 * a, ink: null }); flushBrush();
-    blendMode(MULTIPLY); tint(255, 255 * a); image(moreyG, W / 2 - w / 2, H / 2 - h / 2, w, h); blendMode(BLEND); noTint(); pop();
-  }
-
-  // ---------- W: lightning ----------
-  function W_(t, lt, dur) {
-    HALFTONE = .3;
-    const s1 = C('p060.1:Lightning cracked'), s2 = C('p060.1:to one machine'), struck = K(t, 'p060.1:to one machine', 'p060.1:too close+.5');
-    const [sx, sy] = shakeXY(t, (t > s1 && t < s1 + .4) || (t > s2 && t < s2 + .4) ? 9 : 2);
-    camBegin(WORK[0] + 60 + sx, 760 + sy, 1.2);
-    hallBack(t, { dark: .78 }); tiers(t, .8, { skip: 700 });
-    f1(t, { reach: [[WORK[0] + 30, WORK[1] - 30], [WORK[0] + 60, WORK[1] + 10]], hum: 1, lit: 1 });
-    aura(...WORK, 300, NRG.white, 1, t); f2At(t, { newborn: true });
-    boilSeed('wb' + Math.floor(t * 12));
-    if (t > s1) lightning(F1.x - 60, 700, F1.x - 260, G, NRG.lightning, { amp: .18 });
-    const mx = 640, mg = 920 + 80 * easeIn(clamp(struck * 1.5 - .5));
-    if (t > s2) lightning(WORK[0] - 40, WORK[1], mx, mg - 160, NRG.lightning, { amp: .14 });
-    DES.machine(mx, mg, 16, t, { r: 1.6, h: 3, d: 2, arms: 3, dark: struck > .3, label: null });
-    if (struck > 0) glow(mx, mg - 90, 160 * (1 - struck * .5), NRG.lightning, .7 * (1 - struck * .5));
-    roalStand(t, WORK[0] - 360, { pose: DES.POSE.shield, look: .3 });
-    camEnd();
-  }
-
-  // ---------- X: F-1 falls ----------
-  function X_(t, lt, dur) {
-    HALFTONE = .3;
-    const snap = C('p060.1:dull snap'), fall = easeIn(K(t, 'p060.1:fell heavily', 'p060.1:fell heavily+.5')), land = C('p060.1:fell heavily+.5');
-    const [sx, sy] = shakeXY(t, t > land && t < land + .5 ? 12 * (1 - seg(t, land, land + .5)) : 0);
-    camBegin(1050 + sx, 720 + sy, 1.1);
-    hallBack(t, { dark: t > snap ? .82 : .55 }); tiers(t, t > snap ? .1 : .7, { skip: 700 });
-    f1(t, { fall, dark: t > snap, hum: t > snap ? 0 : .8, lit: t > snap ? 0 : .8 });
-    DES.machine(660, 1000, 16, t, { r: 1.6, h: 3, d: 3, arms: 3, dark: true, hover: .1 });
-    if (t < snap + .3) aura(...WORK, 160, NRG.white, .8, t); else glow(...WORK, 80, '#E6EEFF', .35);
-    f2At(t);
-    if (t > land) { boilSeed('dust'); const d = seg(t, land, land + 3); paint(ellPts(F1.x, F1.g, 260 + 200 * d, 50 + 30 * d, 20, 20), { fill: D[1], fillOp: 90 * (1 - d), bleed: .4, ink: null }); }
-    roalStand(t, WORK[0] - 360, { look: .1 });
-    camEnd();
-  }
-
-  // ---------- Y: held on its own power ----------
-  function Y_(t, lt, dur) {
-    HALFTONE = .3;
-    camBegin(WORK[0] + 60, WORK[1] + 20, 1.6 + .25 * ease(lt / dur));
-    hallBack(t, { dark: .91 });
-    f1(t, { fall: 1, dark: true });
-    glow(...WORK, 90, '#E6EEFF', .35 + .1 * wob(t, .5));
-    f2At(t);
-    camEnd();
-  }
-
-  // ---------- Z: waves of thought ----------
-  function Z_(t, lt, dur) {
-    HALFTONE = .3;
-    camBegin(1000, 720, 1.05);
-    hallBack(t, { dark: .90 }); tiers(t, .3);
-    f1(t, { fall: 1, dark: true });
-    DES.machine(660, 1000, 16, t, { r: 1.6, h: 3, d: 3, arms: 3, dark: true, hover: .1 });
-    thoughtRings(...WORK, t, C('p062.1:From it came waves'), C('p062.2$'));
-    glow(...WORK, 80, '#E6EEFF', .35);
-    f2At(t);
-    roalStand(t, WORK[0] - 360, { look: .1 });
-    camEnd();
-  }
-
-  // ---------- AA: F-1 unmade ----------
-  function AA(t, lt, dur) {
-    HALFTONE = .3;
-    camBegin(1100, 760, 1.15);
-    hallBack(t, { dark: .91 });
-    const flood = K(t, 'p063.1:From the floating machine', 'p063.1:down a straight channel+1'), gone = ease(K(t, 'p063.1:float back along it', 'p063.1:In seconds+.8'));
-    const tx = F1.x, ty = F1.g - 120;
-    f1(t, { fall: 1, dark: true, gone });
-    if (flood > 0) {
-      const ex = lerp(WORK[0], tx, flood), ey = lerp(WORK[1], ty, flood);
-      beam(WORK[0] + 40, WORK[1], ex, ey, 30, 160, '#F4EEDC', 1, { washOp: 40, a: .45, splash: flood >= 1 && gone < 1 });
-      // F-1's atomic sections floating back along the stream
-      if (gone > 0 && gone < 1) for (let i = 0; i < 14; i++) { const q = frac(hash(i) + (t - C('p063.1:float back along it')) * .5); boilSeed('sec' + i); const x = lerp(tx, WORK[0] + 60, q), y = lerp(ty, WORK[1], q) + (hash(i * 3) - .5) * 80 * (1 - q); wash(rectPts(x - 8, y - 6, 16, 12), 1, { ink: true, sw: .4, op: 1 - q }); glow(x, y, 18, '#F4EEDC', .3); }
+    // P: the transmutation field; the air pulled into it in spirals, something taking shape
+    const field = win(t, T0('P') - 1, T0('Q') + .4, 1.5, .1);
+    if (field > 0) {
+      for (let i = 0; i < 12; i++) { const a0 = i / 12 * TAU + t * 2, P = []; for (let k = 0; k <= 10; k++) { const r = 260 - k * 22, a = a0 + k * .35; P.push([WORK[0] + Math.cos(a) * r, WORK[1] + Math.sin(a) * r * .6]); } boilSeed('air' + i); inkLine(P, .5 * field, D[0], 'inkfine', .5); }
+      const m = K(t, 'p058.3:Fierce beams', 'p058.3$');
+      glow(...WORK, 120 + 60 * m, NRG.white, (.4 + .4 * m) * field); glow(...WORK, 220, FORCE, .3 * field);
+      if (m > 0) { boilSeed('something'); paint(ellPts(...WORK, 60 * m, 18 * m, 14, 12), { wash: mixCol(D[1], '#7F9BD0', .38), washOp: 160 * m * field, ink: null }); }
     }
-    glow(...WORK, 80, '#E6EEFF', .35);
-    f2At(t);
-    camEnd();
-  }
+    // Q, R: the weird symphony; arcs across the floor, white-hot metal in the beams
+    if (sym.env > 0) {
+      const f5 = Math.floor(t * 5); boilSeed('arc' + Math.floor(t * 12));
+      if (sym.fl > .4 && t < T0('R') + .5) { lightning(WORK[0] + 40, WORK[1] - 20, WORK[0] + 260 * (hash(f5 + 3) - .5) * 2, G - 20, NRG.lightning, { amp: .15, r: 50 }); lightning(WORK[0] - 30, WORK[1], WORK[0] - 240 - 200 * hash(f5 + 7), 560 + 200 * hash(f5 + 9), NRG.lightning, { amp: .14, r: 40, br: 1 }); }
+      const hot = K(t, 'p059.1:glimpses of white-hot metal', 'p059.1:The sputter');
+      glow(...WORK, 90, '#FFE2B0', (.5 + .4 * hot) * sym.env); glow(...WORK, 40, NRG.white, .7 * sym.env);
+    }
 
-  // ---------- AB: the Ultimate Energy ----------
-  function AB(t, lt, dur) {
-    HALFTONE = .3;
-    const pan = ease(K(t, 'p064.1:as they are in you', 'p064.1:nor molecular+1'));
-    camBegin(lerp(WORK[0] + 120, WORK[0] - 140, pan), WORK[1] - 20, 2);
-    hallBack(t, { dark: .90 }); tiers(t, .3);
-    roalStand(t, WORK[0] - 300, { look: .1 });
-    const core = K(t, 'p064.1:The Ultimate Energy', 'p064.1:is generated');
-    glow(...WORK, 90 + 40 * core, NRG.white, .35 + .4 * core);
-    f2At(t);
-    if (core > 0) { glow(WORK[0] + 10, WORK[1], 40, NRG.white, .7 * core); }
+    // F-2: from the tentacles rolling back, held in the beams, born in the aura, on its own power after
+    if (t > T0('S')) {
+      const whole = K(t, 'p060.1:held the structure', 'p060.1:It was a small thing'), reveal = ez(t, T0('S'), tThree);
+      if (roar > 0) aura(...WORK, 120 + 220 * roar, NRG.white, .4 + .6 * roar, t);
+      if (t > tCrack && t < tSnap + .3) aura(...WORK, 300 * (1 - .45 * seg(t, tSnap - .5, tSnap + .3)), NRG.white, 1, t);
+      f2(t, { newborn: roar > .3 });
+      if (whole < 1) { boilSeed('unf'); wash(ellPts(WORK[0] - 20, WORK[1], 70 * (1 - whole), 26, 14), 0, { op: .8 * (1 - whole) }); }
+      glow(...WORK, 150, NRG.white, .8 * (1 - reveal));
+      if (t > tSnap + .3) glow(...WORK, 85, '#E6EEFF', .35 + .1 * wob(t, .5) + .3 * talk(t, 'f2'));
+      if (roar > 0 && t < tCrack) { const bolt = K(t, 'p060.1:shot through', 'p060.1:shot through+.5');
+        if (bolt > 0) { boilSeed('bolt' + Math.floor(t * 12)); lightning(WORK[0] - 40, WORK[1], WORK[0] - 300, G - 10, NRG.lightning, { amp: .15 }); lightning(WORK[0] + 60, WORK[1] + 20, WORK[0] + 260, G, NRG.lightning, { amp: .12 }); lightning(WORK[0], WORK[1] - 40, WORK[0] - 120, 420, NRG.lightning, { amp: .12, br: 1 }); glow(...WORK, 520, NRG.lightning, .4 * bolt); } }
+    }
+    // W: lightning from F-1 to the floor, and from the aura to the machine that came too close
+    if (t > tCrack && t < tSnap) { boilSeed('wb' + Math.floor(t * 12)); lightning(F1.x - 60, 700, F1.x - 260, G, NRG.lightning, { amp: .18 });
+      if (t > tHit && t < tHit + 1.5) lightning(WORK[0] + 60, WORK[1], st[0], st[1], NRG.lightning, { amp: .14 }); }
+    // Z, AB, AC: F-2's thought going out in rings; the light inside it; the memories in the rings
+    thoughtRings(...WORK, t, C('p062.1:From it came waves'), C('p062.2$'));
     thoughtRings(...WORK, t, C('p064.1'), C('p064.1$'), { r1: 380 });
-    camEnd();
-  }
-
-  // ---------- AC: all memories ----------
-  function AC(t, lt, dur) {
-    HALFTONE = .3;
-    camBegin(WORK[0], WORK[1], 2.2 + .3 * ease(lt / dur));
-    hallBack(t, { dark: .93 });
-    thoughtRings(...WORK, t, C('p064.1'), C('p064.1$'), { r1: 380 });
-    // memories drifting in the rings: towers of 2538, a torpedo of the void, a green beam
-    const mem = K(t, 'p064.1:Already they hold', 'p064.1:known and seen'), fade = 1 - K(t, 'p064.1:I shall make others', 'p064.1$');
+    const core = K(t, 'p064.1:The Ultimate Energy', 'p064.1:is generated') * (1 - ez(t, T0('AD'), T0('AD') + 2));
+    if (core > 0) { glow(...WORK, 90 + 40 * core, NRG.white, .4 * core); glow(WORK[0] + 10, WORK[1], 40, NRG.white, .7 * core); }
+    const mem = K(t, 'p064.1:Already they hold', 'p064.1:known and seen') * (1 - K(t, 'p064.1:I shall make others', 'p064.1$'));
     if (mem > 0) for (let i = 0; i < 5; i++) {
-      const a = i / 5 * TAU + t * .15, x = WORK[0] + Math.cos(a) * 260, y = WORK[1] + Math.sin(a) * 150, op = mem * fade * .8;
+      const a = i / 5 * TAU + t * .15, x = WORK[0] + Math.cos(a) * 260, y = WORK[1] + Math.sin(a) * 150, op = mem * .8;
       boilSeed('mem' + i);
       if (i % 3 === 0) { for (let k = 0; k < 3; k++) wash(rectPts(x - 30 + k * 22, y - 30 - 25 * hash(k + i), 14, 50 + 25 * hash(k + i)), 0, { op }); }
       else if (i % 3 === 1) wash(ellPts(x, y, 50, 10, 14), 0, { op });
       else glow(x, y, 40, NRG.death, .5 * op);
     }
-    glow(...WORK, 90, NRG.white, .5);
-    f2At(t);
-    camEnd();
+    // AA: the stream of light that unmakes F-1, its sections floating back along it
+    const flood = K(t, 'p063.1:From the floating machine', 'p063.1:down a straight channel+1'), streamA = 1 - ez(t, C('p063.1:In seconds') + .8, C('p063.1$'));
+    if (flood > 0 && streamA > 0) {
+      const tx = F1.x, ty = F1.g - 120, ex = lerp(WORK[0], tx, flood), ey = lerp(WORK[1], ty, flood);
+      beam(WORK[0] + 40, WORK[1], ex, ey, 30, 160, '#F4EEDC', 1, { washOp: 40 * streamA, a: .45 * streamA, splash: flood >= 1 && gone < 1 });
+      if (gone > 0 && gone < 1) for (let i = 0; i < 14; i++) { const q = frac(hash(i) + (t - C('p063.1:float back along it')) * .5); boilSeed('sec' + i); const x = lerp(tx, WORK[0] + 60, q), y = lerp(ty, WORK[1], q) + (hash(i * 3) - .5) * 80 * (1 - q); wash(rectPts(x - 8, y - 6, 16, 12), 1, { ink: true, sw: .4, op: 1 - q }); glow(x, y, 18, '#F4EEDC', .3); }
+    }
+    // AD, AE: forces that laugh at matter, making C-R-U-1 on the floor where F-1 stood; the glow fades from it
+    const forces = win(t, T0('AD') - .5, T0('AE') + 1.5, 1, 2);
+    if (forces > 0) {
+      const died = C('p065.1:died'), strain = t > died ? 1 + .15 * Math.sin(t * 20) : 1, made = ez(t, T0('AE') - .5, T0('AE') + 2.5);
+      for (let i = 0; i < 7; i++) { const a = t * (1.3 + i * .2) + i, r = (40 + 30 * Math.sin(t * 1.7 + i)) * strain * (1 - made * .6); glow(MAKE[0] + Math.cos(a) * r, MAKE[1] + Math.sin(a) * r * .7, 50, [NRG.white, FORCE, '#F4EEDC'][i % 3], .5 * forces); }
+      glow(...MAKE, 130 + 60 * (1 - made), FORCE, .4 * forces);
+      beam(WORK[0] + 60, WORK[1], MAKE[0] - 40, MAKE[1], 8, 30, FORCE, 1, { washOp: 30 * forces * (1 - made), splash: false, a: .3 * forces * (1 - made) });
+      if (t > C('p065.1:Lurid flares') && made < 1) for (let i = 0; i < 3; i++) { const q = frac(t * .7 + i / 3); glow(MAKE[0] + (hash(i) - .5) * 80, MAKE[1] - q * 260, 40 * (1 - q), '#F2F0FF', .7 * (1 - q) * (1 - made)); }
+      for (let i = 0; i < 6 && made < .5; i++) { const caught = t > C('p065.1:futilely') + i * 1.4, a = t * 2 + i * 1.3, r = lerp(120 + 30 * Math.sin(t * 3 + i), 20, ez(t, C('p065.1:futilely') + i * 1.4, C('p065.1:futilely') + i * 1.4 + .6)); if (!caught || r > 21) electron(MAKE[0] + Math.cos(a) * r, MAKE[1] + Math.sin(a) * r * .6, 7, i); }
+    }
+    if (t > T0('AE') - .3) {
+      const name = K(t, 'p069.2:Force played', 'p069.2:in dully glowing');
+      if (t > C('p069.2:Force played')) glow(CRU[0], CRU[1] - 40, 120, FORCE, .3 * (1 - name * .5));
+      DES.cru1(CRU[0], G, 34, t, { hover: (G - CRU[1]) / 34, unlit: name < .05, glowK: name, lit: .7 * talk(t, 'cru1') });
+    }
+    // AF to AK: F-2's glow as it speaks
+    if (t > T0('AF')) glow(WORK[0], WORK[1], 60, '#E6EEFF', .2 * talk(t, 'f2'));
+
+    roal(t);
+
+    // AI, AJ: the life-form investigator brings the cage and sets it down; the green beam; it leaves when it's done
+    if (t > tCage - 2) {
+      const k = ez(t, tCage - 2, tHeld), down = ez(t, tHeld, tPig), leave = ez(t, C('p072.1') + 1.5, C('p072.1') + 8);
+      const ix = lerp(2150, CAGE[0] + 130, k) + 1300 * leave, iy = G - 30 * (1 - down) - 60 * leave;   // in from the right, under F-2
+      const m = DES.machine(ix, iy, 14, t, { r: 1.4, h: 2.6, dh: 1, d: 1, arms: 2, reach: 3 });
+      const cy = lerp(G - 70, G, down);
+      if (leave < .05) { const hd = [CAGE[0], cy - 108]; DES.tentacle([[ix - 14, m.arm], [lerp(ix - 14, hd[0], .45), Math.min(m.arm, hd[1]) - 18], [lerp(ix - 14, hd[0], .8), hd[1] - 14], hd], 5, 3, 4, { grip: true }); }
+      // AJ: forces play about F-2's base; the pale-green beam passes through the cage
+      const fz = K(t, 'p071.1:Forces played', 'p071.1:moments later') * (1 - ez(t, tDead, tDead + 2));
+      for (let i = 0; i < 5; i++) if (fz > 0) { const a = t * 2 + i * 1.3; glow(WORK[0] + Math.cos(a) * 60, WORK[1] + 40 + Math.sin(a) * 20, 30, FORCE, .4 * fz); }
+      DES.cage(CAGE[0], cy, 90, t, { dead: ease(K(t, 'p071.1:and the little animal', 'p071.1:fell dead')) });
+      const bk = seg(t, tGreen, tGreen + .5) * (1 - seg(t, tDead + .5, tDead + 1.2));
+      if (bk > 0) { const n = f2Nose(t); beam(n[0], n[1], CAGE[0] - 30, G - 40, 6, 30, NRG.death, bk, { washOp: 60 }); }
+    }
+    tierRing(t, lit, true);
+    // AK: the enemy on the screens, torpedoes of the void hanging in three of them, with a faint green
+    const ships = K(t, 'p072.1:Let machines be made', 'p072.1:Let machines be made+2');
+    if (ships > 0) for (let i = 0; i < 3; i++) { const sx = 610 + i * 252, sy = 210; DES.oShip(sx + 20 * wob(t, .05, i), sy, 150, t, { d: 3 }); glow(sx, sy + 30, 60, NRG.death, .25 * ships); }
   }
 
-  // ---------- AD: forces that laugh at matter ----------
-  const MAKE = [620, 830];
-  function AD(t, lt, dur) {
+  // ---------- the hall's camera: the storyboard's framings, and the moves between them ----------
+  const along = (t, id) => ez(t, T0(id), T1(id));
+  const HALLCAM = [
+    [T0('B'), t => { const k = along(t, 'B'); return [lerp(960, 830, k), lerp(640, 690, k), lerp(1, 1.1, k)]; }],
+    [T0('C'), t => [1385, lerp(800, 560, ez(t, T0('C'), T1('C') + 1)), 1.7], { mv: 1.8, lead: .6 }],
+    [T0('D'), t => [COUCH.x + 40, 850, 2.4 + .15 * K(t, 'p053.2', 'p053.2$')], { mv: 3.2, lead: .9, dip: .35 }],
+    [T0('E'), t => { const k = f1In(t); return [lerp(860, 660, k), lerp(700, 680, k), lerp(1.05, 1.35, k)]; }, { mv: 2.2, lead: .4 }],
+    [T0('F'), t => [COUCH.x - 14, SEAT - 132, 5.5], { mv: 2.2, lead: 1.6 }],                  // into his eyes
+    [T0('H'), t => { const e = f1Eye(t); return [e[0], e[1], 4]; }, { mv: .01, lead: .6 }],    // out of F-1's lens
+    [T0('H') + .7, t => { const up = ez(t, C('p056.1'), C('p056.1:but a single proton')); return [COUCH.x + 60, lerp(860, 560, up), lerp(2, 1.3, up)]; }, { mv: 2.8, lead: 0 }],
+    [T0('M'), t => [COUCH.x - 10, 790, lerp(4.2, 3.6, along(t, 'M'))], { mv: .01, lead: 0 }],
+    [T0('N'), t => [lerp(980, 1040, along(t, 'N')), 660, 1.08], { mv: 4, lead: -.5 }],
+    [T0('O'), t => [1080, 640, 1.05 + .04 * along(t, 'O')], { mv: 2, lead: .5 }],
+    [T0('P'), t => [WORK[0] + 90, WORK[1] - 40, 2 + .5 * along(t, 'P')], { mv: 2.5, lead: .3 }],
+    [T0('Q'), t => [lerp(1030, 980, along(t, 'Q')), 660, 1.3], { mv: .01, lead: 0 }],           // under the wipe
+    [T0('R'), t => [1000, 600, lerp(1, .93, along(t, 'R'))], { mv: 2.5, lead: .5 }],
+    [T0('S'), t => [WORK[0] + 80, WORK[1] - 50, 1.8], { mv: 2.2, lead: .4 }],
+    [tStraight + 1, t => [lerp(WORK[0] + 40, WORK[0] - 40, ez(t, tStraight + 1, T1('S'))), lerp(WORK[1] - 30, 800, ez(t, tStraight + 1, T1('S'))), 1.8], { mv: 3, lead: 0 }],   // with Roal coming in
+    [T0('T'), t => [WORK[0] - 70, 820, lerp(2, 2.1, along(t, 'T'))], { mv: 2, lead: .5 }],
+    [T0('U'), t => { const k = along(t, 'U'); return [WORK[0] + 110, lerp(650, 600, k), 1.45 + .12 * k]; }, { mv: 1.6, lead: .3 }],
+    [T0('W'), t => [WORK[0] + 150, 740, 1.12], { mv: 1.2, lead: .4 }],
+    [T0('X'), t => [1110, 730, 1.1], { mv: 1.5, lead: .3 }],
+    [T0('Y'), t => [WORK[0] + 60, WORK[1] + 20, 1.6 + .25 * along(t, 'Y')], { mv: 2.4, lead: .3 }],
+    [T0('Z'), t => [lerp(1000, 1040, along(t, 'Z')), 700, 1.05], { mv: 2.5, lead: .3 }],
+    [T0('AA'), t => [1150, 760, 1.15 + .05 * along(t, 'AA')], { mv: 2, lead: .4 }],
+    [T0('AB'), t => { const p = ez(t, C('p064.1:as they are in you'), C('p064.1:nor molecular') + 1); return [lerp(WORK[0] + 120, WORK[0] - 160, p), WORK[1] - 20, 2]; }, { mv: 2.2, lead: .3 }],
+    [T0('AC'), t => [WORK[0] - 40, WORK[1], 2.2 + .3 * along(t, 'AC')], { mv: 1.8, lead: .3 }],
+    [tMake + .5, t => [lerp(1000, 1120, ez(t, tMake, T1('AC'))), 790, 1.45], { mv: 2.5, lead: 0 }],   // to the empty floor
+    [T0('AD'), t => [lerp(1150, 1250, along(t, 'AD')), 790, 1.6 + .3 * along(t, 'AD')], { mv: 2.4, lead: .3 }],
+    [T0('AE'), t => [CRU[0] + 10, CRU[1] - 38, lerp(3.4, 3.8, along(t, 'AE'))], { mv: 2, lead: .3 }],
+    [T0('AF'), t => [lerp(980, 1000, along(t, 'AF')), 800, 1.4], { mv: 2.4, lead: .3 }],
+    [T0('AG'), t => [CRU[0] + 10, CRU[1] - 38, 3.2 + .5 * ez(t, C('p069.2:on its sides appeared'), C('p069.2$'))], { mv: 2, lead: .3 }],
+    [T0('AH'), t => [WORK[0], WORK[1] - 10, 3.4], { mv: 2.6, lead: .6, dip: .3 }],
+    [T0('AI'), t => [lerp(790, 840, along(t, 'AI')), 890, 2.3], { mv: 1.8, lead: .3 }],
+    [T0('AJ'), t => { const k = ez(t, C('p071.1:and the little animal'), C('p071.1$') + 1); return [lerp(880, 800, k), 880, lerp(1.8, 2.4, k)]; }, { mv: 1.5, lead: .3 }],
+    [T0('AK'), t => { const k = ez(t, C('p072.1:Let machines be made'), C('p072.1$')); return [900, lerp(820, 380, k), lerp(1.5, 1.2, k)]; }, { mv: 1.8, lead: .3 }],
+  ];
+  // shake: the force shafts' arrival, the symphony's arcs, the roar, the strikes, F-1 landing
+  function shake(t) {
+    const land = tFell + .5, sym = symphony(t);
+    return Math.max(t > tSudden && t < tSudden + .4 ? 8 : 0, sym.fl > .8 && t < T0('R') ? 5 * sym.env : 0, 4 * roarAt(t), t > T0('W') && t < tSnap ? 2 : 0,
+      (t > tCrack && t < tCrack + .4) || (t > tHit && t < tHit + .4) ? 9 : 0, t > land && t < land + .5 ? 12 * (1 - seg(t, land, land + .5)) : 0);
+  }
+  function hall(t) {
     HALFTONE = .3;
-    const died = C('p065.1:died');
-    camBegin(lerp(800, 700, ease(lt / dur)), 780, 1.6 + .3 * ease(lt / dur));
-    hallBack(t, { dark: .93 });
-    f2At(t);
-    const strain = t > died ? 1 + .15 * Math.sin(t * 20) : 1;
-    for (let i = 0; i < 7; i++) { const a = t * (1.3 + i * .2) + i, r = (40 + 30 * Math.sin(t * 1.7 + i)) * strain; glow(MAKE[0] + Math.cos(a) * r, MAKE[1] + Math.sin(a) * r * .7, 50, [NRG.white, FORCE, '#F4EEDC'][i % 3], .5); }
-    glow(...MAKE, 130, FORCE, .4);
-    beam(WORK[0] - 40, WORK[1], MAKE[0] + 40, MAKE[1], 8, 30, FORCE, 1, { washOp: 30, splash: false, a: .3 });
-    if (t > C('p065.1:Lurid flares')) for (let i = 0; i < 3; i++) { const q = frac(t * .7 + i / 3); glow(MAKE[0] + (hash(i) - .5) * 80, MAKE[1] - q * 260, 40 * (1 - q), '#F2F0FF', .7 * (1 - q)); }
-    // the electrons, futilely resisting: little pale motes dodging, caught one by one
-    for (let i = 0; i < 6; i++) { const caught = t > C('p065.1:futilely') + i * 1.4, a = t * 2 + i * 1.3, r = caught ? 20 : 120 + 30 * Math.sin(t * 3 + i); electron(MAKE[0] + Math.cos(a) * r, MAKE[1] + Math.sin(a) * r * .6, 7); }
+    let [cx, cy, z] = camPath(t, HALLCAM);
+    const hw = W / 2 / z, hh = H / 2 / z; cx = clamp(cx, -300 + hw, 2220 - hw); cy = clamp(cy, -150 + hh, 1150 - hh);   // keep inside the set
+    const [sx, sy] = shakeXY(t, shake(t));
+    camBegin(cx + sx / z, cy + sy / z, z);
+    hallWorld(t);
+    camEnd();
+    // the scene's openings and closings, in screen space
+    if (t < T0('B') + .8) flash(1 - seg(t, T0('B'), T0('B') + .8), '#3B322B');
+    if (t > T0('M') && t < T0('M') + 1) flash(1 - seg(t, T0('M'), T0('M') + 1), '#F4EEDC');
+    if (t > T0('Q') - .3 && t < T0('Q') + .3) brushWipe((t - (T0('Q') - .3)) / .6, [PULP.w[4], PULP.w[3]]);
+    if (t > T0('V') && t < T1('V')) morey(t);
+    if (t > T0('AL') - .3) brushWipe((t - (T0('AL') - .3)) / .6, [PULP.w[3], PULP.w[2]]);
+  }
+
+  // ---------- V: Morey's page, over the hall ----------
+  const MOREY = Object.assign(new Image(), { src: 'assets/ref/morey_1932_p415.jpg' });
+  let moreyG = null;
+  function morey(t) {
+    if (!moreyG && MOREY.complete && MOREY.naturalWidth) { moreyG = createGraphics(MOREY.naturalWidth / 2, MOREY.naturalHeight / 2); moreyG.drawingContext.drawImage(MOREY, 0, 0, moreyG.width, moreyG.height); }
+    if (!moreyG) return;
+    const lt = t - T0('V'), dur = T1('V') - T0('V'), a = clamp(lt / 1.2) * (1 - seg(lt, dur - .8, dur)), h = 1040 * (1 + .02 * lt / dur), w = h * moreyG.width / moreyG.height;
+    HALFTONE = .3 * (1 - a);
+    flushBrush();
+    push(); paint(rectPts(-60, -60, W + 120, H + 120), { wash: PULP.paper, washOp: 255 * a, ink: null }); flushBrush();
+    blendMode(MULTIPLY); tint(255, 255 * a); image(moreyG, W / 2 - w / 2, H / 2 - h / 2, w, h); blendMode(BLEND); noTint(); pop();
+  }
+
+  // ---------- A: the chapter's page ----------
+  function page(t) {
+    HALFTONE = 0;
+    const k = ease(seg(t, 0, T1('A'))), x = 460, wd = 1000;
+    camBegin(W / 2 + 40 * k, H / 2 + 40 * k, 1 + .06 * k);
+    pageHeader('The Hydrogen Wall', x, 250, wd, { screen: false });
+    dropCapPara('Roal was lying quietly on a couch. He was thinking deeply, and yet not with the logical trains of thought that machines must follow.', x, 470, wd, { size: 44, lines: 8, screen: false });
+    rule(x + wd * .35, 800, wd * .3, INK, 1);
+    camEnd();
+    flushLetters();
+    if (t < 1.2) flash(1 - easeOut(t / 1.2), PULP.paper);
+    const lt = t, dur = T1('A');
+    if (lt > dur - 1.2) { const s = ease(seg(lt, dur - 1.2, dur)); boilSeed('soak'); paint(ellPts(W / 2, H / 2, 1400 * s, 900 * s, 30, 40), { wash: '#3B322B', washOp: 255 * s, fill: '#3B322B', fillOp: 160, bleed: .3, ink: null }); }
+  }
+
+  // ---------- F, and the interlude in K: Roal's eyes ----------
+  // Pushed into from the hall; at the end it pushes into his pupil, which becomes F-1's lens.
+  const PUPIL = [W / 2 + 1500 * .27 - .15 * 1500 * .19 * .25, H / 2 + 40];
+  function eyes(t, o = {}) {
+    HALFTONE = .25;
+    boilSeed('skin'); paint(rectPts(-100, -100, W + 200, H + 200), { wash: D[0], washOp: 255, fill: D[1], fillOp: 60, bleed: .2, ink: null });
+    if (o.dream) {   // K: his eyes over the atom, dreaming
+      camBegin(W / 2, H / 2, 1.1 + .05 * seg(t, o.t0, o.t0 + 6));
+      DES.eyes(W / 2, H / 2 + 40, 1500, t, { old: true, far: true, lid: .25 + .3 * blink(t, 11), look: .05 * wob(t, .1) });
+    } else {
+      const m = ez(t, T0('G') - 1.5, T0('G') + .4), z = (1 + .05 * seg(t, T0('F'), T0('G'))) * Math.exp(lerp(0, Math.log(2.6), m));
+      camBegin(lerp(W / 2, PUPIL[0], m), lerp(H / 2 + 20, PUPIL[1], m), z);
+      DES.eyes(W / 2, H / 2 + 40, 1500, t, { old: true, far: true, lid: .2 + .08 * K(t, 'p055.1', 'p055.1+3') + .8 * blink(t, 7) * (t < T0('G') - 2 ? 1 : 0), look: -.15 });
+    }
+    camEnd();
+  }
+  // ---------- G: F-1's lens ----------
+  // It comes in matched to the pupil and keeps the push; at the end it pulls back to match F-1's lens in the hall.
+  function lens(t) {
+    HALFTONE = .25;
+    boilSeed('lensbg'); paint(rectPts(-100, -100, W + 200, H + 200), { wash: D[2], washOp: 255, ink: null });
+    const z = lerp(.59, 1, easeOut(seg(t, T0('G') - .5, T0('G') + 3))) * Math.exp(lerp(0, Math.log(.36), ease(seg(t, T0('H') - 1.4, T0('H') + .5))));
+    camBegin(W / 2, H / 2 + 40, z);
+    boilSeed('biglens'); wash(ellPts(W / 2, H / 2 + 40, 560, 560, 48), 1, { ink: true, sw: 1.4 });
+    wash(ellPts(W / 2, H / 2 + 40, 420, 420, 40), 4, { ink: true, sw: 1 });
+    for (let i = 0; i < 6; i++) { const a = -2.4 + i * .3; inkLine([[W / 2 + Math.cos(a) * 380, H / 2 + 40 + Math.sin(a) * 380], [W / 2 + Math.cos(a) * 150, H / 2 + 40 + Math.sin(a) * 150]], .6, D[2]); }   // the hall, small and bent in the glass
+    glow(W / 2 - 120, H / 2 - 80, 120, NRG.white, .5);
     camEnd();
   }
 
-  // ---------- AE: a ruler is made ----------
-  function AE(t, lt, dur) {
+  // ---------- H to L: the science plate of Roal's atom ----------
+  // One atom throughout: the camera pulls back to the bombardment and pushes in ring by ring to the wall, and the grid
+  // of space bends around the same proton.
+  const AT = [W / 2, H / 2], RINGS = [460, 330, 230, 150], BURST = [AT[0] - 1500, AT[1]], RY = .55;
+  const tProton = C('p056.1:but a single proton'), tElec = C('p056.1:but a single electron'), tAwful = C('p056.1:the awful expelling force'), tNever = C('p056.1:Never in all science');
+  const tReach = C('p056.1:never do they reach'), tPos = C('p056.1:the proton is positive'), tBlocked = C('p056.1:Blocked'), tWall = C('p056.1:What is that wall');
+  const FLASH = ['p056.1:there goes a flash', 'p056.1:Another flash', 'p056.1:Always falling nearer', 'p056.1:that one state'].map(C);
+  const tNear = C('p057.1:As the two come nearer'), tBounds = C('p057.1:beyond all bounds'), tNew = C('p057.1:and are in a new space');
+  const eR = t => { let R = RINGS[0]; FLASH.forEach((f, i) => { R = lerp(R, RINGS[Math.min(3, i + 1)], easeOut(clamp((t - f) / .5))); }); return lerp(R, 30, ease(seg(t, tNear, tBounds))); };
+  // the electron's angle: the integral of its speed, which rises as its orbit tightens (so nothing jumps when it falls)
+  const ePhase = t => { let a = 0; for (let s = tElec; s < t; s += .04) a += .04 * Math.min(4.5, 1.2 * Math.pow(RINGS[0] / eR(s), .6)); return a; };
+  const BG = '#2E2620', fade = (col, a) => mixCol(BG, col, a);
+  const dotted = (cx, cy, rx, ry, col, n = 60) => { for (let i = 0; i < n; i += 2) { const a0 = i / n * TAU, a1 = (i + 1) / n * TAU; inkLine([[cx + Math.cos(a0) * rx, cy + Math.sin(a0) * ry], [cx + Math.cos(a1) * rx, cy + Math.sin(a1) * ry]], .7, col, 'inkfine', 0); } };
+  const proton = (x, y, r) => { if (r < 1) return; boilSeed('proton'); wash(ellPts(x, y, r, r, 24), 2, { ink: true, sw: .8 }); wash(ellPts(x - r * .3, y - r * .3, r * .35, r * .3, 12), 0, { op: .6 }); };
+  const flashRing = (x, y, r, a) => { for (let i = 0; i < 28; i++) { const q = i / 28 * TAU; glow(x + Math.cos(q) * r, y + Math.sin(q) * r, 26, NRG.white, a); } };
+  const PLATECAM = [
+    [tProton, t => [AT[0], AT[1], lerp(1.7, 1, ez(t, tProton, tElec + 1.5))]],
+    [tNever, t => { const k = ez(t, tAwful + .5, tReach + 1.5); return [lerp(BURST[0] + 700, AT[0] - 350, k), AT[1], lerp(.62, .78, k)]; }, { mv: 2.2, lead: .4 }],
+    [tPos, t => { let n = 0; FLASH.forEach(f => { n += ez(t, f, f + 1.2); }); return [AT[0], AT[1], 1 + .13 * n + .35 * ez(t, tBlocked, tWall + 1)]; }, { mv: 2.5, lead: .3 }],
+    [T0('L'), t => [AT[0], AT[1], 1 + 1.6 * ez(t, tNew, T1('L'))], { mv: 2.5, lead: 0 }],
+  ];
+  function plate(t) {
     HALFTONE = .3;
-    camBegin(MAKE[0] + 20, MAKE[1] - 10, 3);
-    hallBack(t, { dark: .92 });
-    const fade = ease(lt / 2.5);
-    glow(...MAKE, 160 * (1 - fade) + 40, FORCE, .5 * (1 - fade) + .1);
-    DES.cru1(MAKE[0], MAKE[1] + 2.2 * 34 - 20, 34, t, { hover: 2.2, unlit: true });
+    boilSeed('plate'); paint(rectPts(-200, -200, W + 400, H + 400), { wash: BG, washOp: 255, fill: '#3B322B', fillOp: 120, bleed: .25, tex: .5, ink: null }); blooms(0, H, 8, 4, 55, .5);
+    const [cx, cy, z] = camPath(t, PLATECAM);
+    camBegin(cx, cy, z);
+    const [ax, ay] = AT, orbit = ez(t, tElec, tElec + 1) * (1 - ez(t, T0('L'), T0('L') + 2)), rings = ez(t, tPos, tPos + 2) * (1 - ez(t, T0('L'), T0('L') + 2));
+    const bend = .15 + .85 * ez(t, C('p057.1'), tBounds), fold = ez(t, tBounds, tNew + 1), grid = ez(t, T0('L') - .5, T0('L') + 2.5);
+    // the grid of space, bending toward the proton until it folds shut (L)
+    if (grid > 0) { const warp = (x, y) => { const dx = x - ax, dy = y - ay, r = Math.hypot(dx, dy) || 1, d = bend * 260 * Math.exp(-r / 380) * (1 + 1.5 * fold), r2 = Math.max(3, r - d); return [ax + dx * r2 / r, ay + dy * r2 / r]; };
+      for (let i = -10; i <= 10; i++) { const P = [], Q = []; for (let j = -14; j <= 14; j++) { P.push(warp(ax + i * 70, ay + j * 50)); Q.push(warp(ax + j * 70, ay + i * 50)); } inkLine(P, .6, fade('#8D7C63', grid), 'inkfine', .3); inkLine(Q, .6, fade('#8D7C63', grid), 'inkfine', .3); } }
+    // the orbit, then the nested rings and the wall
+    if (orbit > 0) dotted(ax, ay, RINGS[0], RINGS[0] * RY, fade('#B4A283', orbit));
+    if (rings > 0) for (let i = 1; i < 4; i++) dotted(ax, ay, RINGS[i], RINGS[i] * RY, fade(i === 3 && t > tBlocked ? '#EFE6D2' : '#8D7C63', rings), 50 + i * 10);
+    if (t > tBlocked && rings > 0) { boilSeed('wall'); const k = K(t, 'p056.1:Blocked', 'p056.1:What is that wall'); paint(ellPts(ax, ay, 150, 82, 40), { ink: fade('#EFE6D2', rings), sw: 1.2 + 2.5 * k, br: 'dry' }); glow(ax, ay, 180 + 40 * k, '#F4EEDC', (.1 + .15 * k) * rings); }
+    // the bombardment (J): a burst far to the left; its electrons fly at the atom, and every one swerves off
+    if (t > tAwful - .3 && t < tPos + 3) {
+      const t0 = tAwful, k = clamp((t - t0) / 3), b = backOut(seg(t, t0 - .3, t0 + .4)), out = 1 - ez(t, tPos - 1, tPos + 2), [bx, by] = BURST;
+      glow(bx, by, 260 * b, NRG.white, .8 * (1 - k * .6) * out); boilSeed('burst'); paint(starPts(bx, by, 120 * b, .35, 9), { wash: '#EFE6D2', washOp: 160 * out, ink: null });
+      for (let i = 0; i < 9; i++) {
+        const s0 = t0 + i * .35, q = clamp((t - s0) / 2.6); if (q <= 0 || q >= 1) continue;
+        const aim = (i - 4) * 26, f = Math.min(1, q * 1.6), mx = lerp(bx, ax - 200, f), my = lerp(by, ay + aim, f), sw = Math.max(0, q * 1.6 - 1) / .6, dir = aim >= 0 ? 1 : -1;
+        electron(f < 1 ? mx : ax - 200 + sw * 300, f < 1 ? my : ay + aim + dir * sw * sw * 420, 9, 'b' + i);
+      }
+    }
+    proton(ax, ay, 64 * backOut(seg(t, tProton, tProton + .6)) * (1 - .7 * fold));
+    // the electron: on its orbit, dropping a ring at each flash, stopping at the wall, then passing it (L)
+    if (t > tElec && fold < .9) {
+      const R = eR(t), a = ePhase(t), ex = ax + Math.cos(a) * R, ey = ay + Math.sin(a) * R * RY, s = backOut(seg(t, tElec, tElec + .5));
+      electron(ex, ey, 15 * s, 'e');
+      FLASH.forEach(f => { const age = t - f; if (age > 0 && age < 1.2) flashRing(ex, ey, 30 + age * 500, .5 * (1 - age / 1.2)); });
+    }
+    if (fold > 0) { glow(ax, ay, 30 + 400 * fold, NRG.white, .8 * fold); glow(ax, ay, 20 + 120 * fold, '#F4EEDC', fold); }
     camEnd();
+    if (t > T1('L') - 1) flash(seg(t, T1('L') - 1, T1('L')), '#F4EEDC');
   }
 
-  // ---------- AF: Roal asks ----------
-  function AF(t, lt, dur) {
-    HALFTONE = .3;
-    const step = ease(K(t, 'p067.1', 'p067.1+1')), turn = K(t, 'p068.3:It is a coordinator', 'p068.3:It is a coordinator+.6');
-    camBegin(760, 820, 1.75);
-    hallBack(t, { dark: .87 });
-    DES.cru1(MAKE[0] + 30, G - 40, 34, t, { hover: 2.6, unlit: true });
-    roalStand(t, 480 + 40 * step, { look: .15 });
-    DES.f2(WORK[0] - 60, G, FS, t, { hover: 6, view: turn > .5 ? 'side' : 'side' });
-    if (t > C('p068.1') && t < C('p068.3$')) glow(WORK[0] - 60, G - 6 * FS, 60, '#E6EEFF', .25 + .2 * Math.abs(wob(t, 2)));
-    camEnd();
-  }
-
-  // ---------- AG: C-R-U-1 ----------
-  function AG(t, lt, dur) {
-    HALFTONE = .3;
-    const name = K(t, 'p069.2:Force played', 'p069.2:in dully glowing');
-    camBegin(MAKE[0] + 30, G - 150, 3 + .5 * ease(K(t, 'p069.2:on its sides appeared', 'p069.2$')));
-    hallBack(t, { dark: .90 });
-    if (t > C('p069.2:Force played')) glow(MAKE[0] + 30, G - 150, 120, FORCE, .3 * (1 - name * .5));
-    DES.cru1(MAKE[0] + 30, G - 40, 34, t, { hover: 2.6, unlit: name < .05, glowK: name, lit: t > C('p069.1') && t < C('p069.1$') ? .6 : 0 });
-    camEnd();
-  }
-
-  // ---------- AH: some life-form ----------
-  function AH(t, lt, dur) {
-    HALFTONE = .3;
-    camBegin(WORK[0] - 60, G - 170, 3.2);
-    hallBack(t, { dark: .87 });
-    glow(WORK[0] - 60, G - 6 * FS, 60, '#E6EEFF', .3);
-    DES.f2(WORK[0] - 60, G, FS, t, { hover: 6, flip: true });
-    camEnd();
-  }
-
-  // ---------- AI: the guinea pig ----------
-  const CAGE = [700, G];
-  function AI(t, lt, dur) {
-    HALFTONE = .3;
-    const k = ease(K(t, 'p071.1', 'p071.1:which held')), down = ease(K(t, 'p071.1:which held', 'p071.1:a guinea pig+1'));
-    camBegin(760, 900, 2.5);
-    hallBack(t, { dark: .86 });
-    DES.f2(WORK[0] - 60, G, FS, t, { hover: 6 });
-    // the life-form investigator: a small machine of the family, its tentacle carrying the cage
-    const ix = lerp(300, CAGE[0] - 110, k), m = DES.machine(ix, G - 30 * (1 - down), 14, t, { r: 1.4, h: 2.6, dh: 1, d: 1, arms: 2, reach: 3 });
-    const cy = lerp(G - 70, G, down), handle = [CAGE[0], cy - 1.2 * 90 * .9 - 90 * .3 + 90 * .9];
-    DES.tentacle([[ix + 14, m.arm], [ix + 60, m.arm + 10], [lerp(ix + 60, CAGE[0], .6), cy - 140], [CAGE[0], cy - 108]], 5, 3, 4, { grip: true });
-    DES.cage(CAGE[0], cy, 90, t);
-    camEnd();
-  }
-
-  // ---------- AJ: the pale-green beam ----------
-  function AJ(t, lt, dur) {
-    HALFTONE = .3;
-    const forces = K(t, 'p071.1:Forces played', 'p071.1:moments later'), g0 = C('p071.1:came a pale-green beam'), g1 = C('p071.1:fell dead');
-    camBegin(lerp(820, 760, ease(K(t, 'p071.1:and the little animal', 'p071.1$+1'))), 880, lerp(1.9, 2.4, ease(K(t, 'p071.1:and the little animal', 'p071.1$+1'))));
-    hallBack(t, { dark: .87 });
-    const fx = WORK[0] - 60, fy = G - 6 * FS;
-    for (let i = 0; i < 5; i++) if (forces > 0) { const a = t * 2 + i * 1.3; glow(fx + Math.cos(a) * 60, fy + 40 + Math.sin(a) * 20, 30, FORCE, .4 * forces); }
-    DES.f2(fx, G, FS, t, { hover: 6 });
-    const beamK = seg(t, g0, g0 + .5) * (1 - seg(t, g1 + .5, g1 + 1.2));
-    if (beamK > 0) beam(fx - 40, fy + 10, CAGE[0] - 120, G - 40, 6, 30, NRG.death, beamK, { washOp: 60 });
-    DES.cage(CAGE[0], G, 90, t, { dead: ease(K(t, 'p071.1:and the little animal', 'p071.1:fell dead')) });
-    camEnd();
-  }
-
-  // ---------- AK: no screen ----------
-  function AK(t, lt, dur) {
-    HALFTONE = .3;
-    const tilt = ease(K(t, 'p072.1:Let machines be made', 'p072.1$'));
-    camBegin(900, lerp(820, 380, tilt), lerp(1.5, 1.2, tilt));
-    hallBack(t, { dark: .86 }); tiers(t, .3);
-    DES.cage(CAGE[0], G, 90, t, { dead: 1 });
-    DES.f2(WORK[0] - 60, G, FS, t, { hover: 6 });
-    roalStand(t, 380, { look: .2 });
-    // the enemy on the screens: torpedoes of the void hanging in three of them, with a faint green
-    if (tilt > 0) for (let i = 0; i < 3; i++) { const sx = 610 + i * 252, sy = 210; DES.oShip(sx, sy, 150, t, { d: 3 }); glow(sx, sy + 30, 60, NRG.death, .25 * tilt); }
-    camEnd();
-  }
-
-  // ---------- AL: faster than man ever could ----------
-  function rock(t, dawn) {
-    boilSeed('sky'); paint(rectPts(-200, -200, W + 400, 900), { wash: mixCol(D[2], D[0], dawn), washOp: 255, fill: D[1], fillOp: 80, bleed: .3, ink: null });
+  // ---------- AL, AM: outside, on the bare rock ----------
+  function rockSky(t, dawn) {
+    boilSeed('sky'); paint(rectPts(-200, -1400, W + 400, 2300), { wash: mixCol(D[2], D[0], dawn), washOp: 255, fill: D[1], fillOp: 80, bleed: .3, ink: null });
     blooms(0, 600, 6, 1, 73, .4);
     boilSeed('mtn'); wash([[-200, 700], [200, 520], [420, 600], [700, 470], [980, 590], [1300, 500], [1600, 610], [2100, 540], [2100, 760], [-200, 760]], 2, { ink: true, sw: .5 });
     boilSeed('rock'); wash([[-200, 720], [2100, 700], [2100, 1300], [-200, 1300]], 3, { op: 1.1 });
     for (let i = 0; i < 18; i++) { boilSeed('crack' + i); const x = hash(i * 3) * W, y = 760 + hash(i * 5) * 300; inkLine([[x, y], [x + 60 + 80 * hash(i), y + 10 * (hash(i * 7) - .5)]], .4, D[4]); }
   }
-  function greatMachine(x, g, k, t) {   // the great automatic machine, built in steps: k 0..1
-    const s = 22, levels = Math.floor(k * 6);
-    for (let i = 0; i < levels; i++) { boilSeed('gm' + i); const w = (9 - i) * s, y = g - i * s * 1.6; wash(rrPts(x - w, y - s * 1.6, w * 2, s * 1.6, s * .3), 2 + (i % 2), { ink: true, sw: .6 }); for (let j = -3; j <= 3; j++) inkLine([[x + j * w / 4, y], [x + j * w / 4, y - s * 1.6]], .4, D[4]); }
+  function greatMachine(x, g, k) {   // the great automatic machine, built in steps: k 0..1, each level easing up into place
+    const s = 22;
+    for (let i = 0; i < 6; i++) { const lk = clamp(k * 6 - i); if (lk <= 0) break; boilSeed('gm' + i); const w = (9 - i) * s, y = g - i * s * 1.6 + (1 - easeOut(lk)) * 30, hh = s * 1.6 * easeOut(lk);
+      wash(rrPts(x - w, y - hh, w * 2, hh, s * .3), 2 + (i % 2), { ink: true, sw: .6 }); for (let j = -3; j <= 3; j++) inkLine([[x + j * w / 4, y], [x + j * w / 4, y - hh]], .4, D[4]); }
     if (k >= 1) { boilSeed('gmtop'); DES.dcase(x, g - 6 * s * 1.6, 3 * s, 2.5 * s, 1.5 * s, 1, { shine: true, rings: [.5] }); }
     return [x, g - 6 * s * 1.6 - 4 * s];
   }
-  function AL(t, lt, dur) {
+  function rock(t) {
     HALFTONE = .3;
-    const k = K(t, 'p073.1:In a matter of hours', 'p073.1:they had built+1.5'), dawn = .2 + .5 * k;
-    camBegin(W / 2, H / 2, 1);
-    rock(t, dawn);
-    greatMachine(960, 860, k, t);
-    for (let i = 0; i < 10; i++) { const a = t * .8 + i * .63, x = 960 + Math.cos(a) * (240 + 40 * hash(i)), y = 760 - 120 * k + Math.sin(a) * 60; DES.machine(x, y + 60, 6, t, { arms: 2, d: 1 }); }
-    if (t > C('p073.1:under the direction')) DES.cru1(1400, 640, 30, t, { hover: 2.5, glowK: 1 });
-    camEnd();
-    if (lt < .3) brushWipe(.5 + lt / .6, [PULP.w[3], PULP.w[2]]);
-  }
-
-  // ---------- AM: up and out ----------
-  function AM(t, lt, dur) {
-    HALFTONE = .3;
-    const up = ease(K(t, 'p073.1:floating up and out', 'p073.1$+4'));
-    camBegin(W / 2, lerp(H / 2, -300, up), 1);
-    rock(t, .75);
-    const top = greatMachine(960, 860, 1, t);
+    const k = K(t, 'p073.1:In a matter of hours', 'p073.1:they had built+1.5'), up = ez(t, C('p073.1:floating up and out'), C('p073.1$') + 4), go = C('p073.1:In hours more');
+    camBegin(W / 2, lerp(H / 2, -300, up), lerp(1, 1.05, ez(t, T0('AL'), go)));
+    rockSky(t, .2 + .55 * k);
+    const top = greatMachine(960, 860, k);
+    // the builders swarming over it; when it's done they are the first to rise
+    for (let i = 0; i < 10; i++) { const a = t * .8 + i * .63, rise = Math.max(0, t - go - i * .3), x = 960 + Math.cos(a) * (240 + 40 * hash(i)) * (1 - Math.min(.7, rise * .1)), y = 760 - 120 * k + Math.sin(a) * 60 - rise * rise * 40;
+      if (y > -1400) DES.machine(x, y + 60, 6, t, { arms: 2, d: 1 }); }
+    const tDir = C('p073.1:under the direction');
+    if (t > tDir - 2) DES.cru1(lerp(2150, 1400, ez(t, tDir - 2, tDir + 1.5)), 640, 30, t, { hover: 2.5, glowK: 1 });
     boilSeed('stars'); for (let i = 0; i < 40; i++) glow(hash(i * 3.1) * W, -900 + hash(i * 7.7) * 900, 8, NRG.white, .4 * up);
-    const go = C('p073.1:In hours more');
     for (let i = 0; i < 120; i++) { const st = go + i * .07, q = (t - st) / 6; if (q <= 0) continue;
-      const x = top[0] + (hash(i) - .5) * 1400 * q, y = top[1] - q * (900 + 600 * hash(i * 3)); const sz = 16 * (1 - q * .5);
+      const x = top[0] + (hash(i) - .5) * 1400 * q, y = top[1] - q * (900 + 600 * hash(i * 3)), sz = 16 * (1 - q * .5);
       if (sz > 3) DES.mote(x, y, sz, t, { ang: -Math.PI / 2 + (hash(i) - .5) * .8, drive: true }); else glow(x, y, 6, NRG.white, .5); }
     camEnd();
-    if (lt > dur - 1.5) flash(seg(lt, dur - 1.5, dur), PULP.paper);
+    if (t < T0('AL') + .3) brushWipe(.5 + (t - T0('AL')) / .6, [PULP.w[3], PULP.w[2]]);
+    if (t > DUR - 1.5) flash(seg(t, DUR - 1.5, DUR), PULP.paper);
   }
 
-  shots([[S.A[0], A], [S.B[0], B], [S.C[0], C_], [S.D[0], D_], [S.E[0], E], [S.F[0], F], [S.G[0], G_], [S.H[0], H_], [S.I[0], I_], [S.J[0], J], [S.K[0], K_],
-    [S.L[0], L_], [S.M[0], M], [S.N[0], N_], [S.O[0], O], [S.P[0], P_], [S.Q[0], Q_], [S.R[0], R_], [S.S[0], S_], [S.T[0], T_], [S.U[0], U_], [S.V[0], V_],
-    [S.W[0], W_], [S.X[0], X_], [S.Y[0], Y_], [S.Z[0], Z_], [S.AA[0], AA], [S.AB[0], AB], [S.AC[0], AC], [S.AD[0], AD], [S.AE[0], AE], [S.AF[0], AF],
-    [S.AG[0], AG], [S.AH[0], AH], [S.AI[0], AI], [S.AJ[0], AJ], [S.AK[0], AK], [S.AL[0], AL], [S.AM[0], AM]]);
+  // ---------- the film: which space, and the dissolves between them ----------
+  function film(t) {
+    const tE = T0('F'), tG = T0('G'), tH = T0('H'), tM = T0('M');
+    if (t < T0('B')) return page(t);
+    if (t < tE - .7) return hall(t);
+    if (t < tE + .5) return dissolve(seg(t, tE - .7, tE + .5), () => hall(t), () => eyes(t));
+    if (t < tG - .6) return eyes(t);
+    if (t < tG + .4) return dissolve(seg(t, tG - .6, tG + .4), () => eyes(t), () => lens(t));
+    if (t < tH - .5) return lens(t);
+    if (t < tH + .5) return dissolve(seg(t, tH - .5, tH + .5), () => lens(t), () => hall(t));
+    if (t < tProton - .6) return hall(t);
+    if (t < tProton + 1) return dissolve(seg(t, tProton - .6, tProton + 1), () => hall(t), () => plate(t));
+    if (t < tM) {   // the plate; at "the proton is positive", his eyes dreaming over it
+      const ek = .55 * win(t, tPos - .3, tPos + 5, 1, 1.4);
+      return ek > 0 ? dissolve(ek, () => plate(t), () => eyes(t, { dream: true, t0: tPos })) : plate(t);
+    }
+    if (t < T0('AL')) return hall(t);
+    return rock(t);
+  }
+  shots([[0, film]]);
+  window.CH05 = { hallCam: t => camPath(t, HALLCAM), plateCam: t => camPath(t, PLATECAM) };   // for checking the moves
 })();

@@ -27,6 +27,35 @@ function placeholder(t) {
   paint(ellPts(960, 540, 520, 300, 30, 20), { fill: PAL.ink, fillOp: 40, bleed: .3, ink: null });
 }
 
+// ---------- moving between shots: camera paths and dissolves ----------
+// A camera path through a chapter: framings, each a function of t returning [cx, cy, zoom], and the move into each.
+//   camPath(t, [[t0, frame, { mv, lead, dip }], ...])  in time order. The move into a framing starts lead seconds
+//   before its t0 and takes mv seconds (defaults 2 and .7), from wherever the path was then, still drifting. Zoom
+//   moves geometrically; dip pulls back by that fraction halfway through, for long moves (see the space between).
+function camPath(t, list, i = null) {
+  if (i === null) { i = 0; while (i + 1 < list.length && t >= list[i + 1][0] - (list[i + 1][2]?.lead ?? .7)) i++; }
+  const [t0, frame, o = {}] = list[i], cur = frame(t);
+  if (i === 0) return cur;
+  const mv = o.mv ?? 2, k = (t - (t0 - (o.lead ?? .7))) / mv;
+  return k >= 1 ? cur : camMix(camPath(t, list, i - 1), cur, ease(k), o.dip ?? 0);
+}
+function camMix(a, b, k, dip = 0) {
+  const z = Math.exp(lerp(Math.log(a[2]), Math.log(b[2]), k)) * (1 - dip * Math.sin(Math.PI * k));
+  return [lerp(a[0], b[0], k), lerp(a[1], b[1], k), z];
+}
+// Cross-dissolve: each draw paints the whole frame from bare paper; k 0 is all A, 1 all B. B is painted on fresh paper,
+// then A laid over it at 1 - k, so the two never mix as wet paint would.
+let DISS = null;
+function dissolve(k, drawA, drawB) {
+  if (k <= 0) return drawA();
+  if (k >= 1) return drawB();
+  drawA(); flushLetters(); flushBrush();
+  if (!DISS) { DISS = createGraphics(W, H); DISS.pixelDensity(1); }
+  DISS.clear(); DISS.drawingContext.drawImage(drawingContext.canvas, 0, 0, W, H);
+  image(paperG, 0, 0); drawB(); flushLetters(); flushBrush();
+  push(); tint(255, 255 * (1 - k)); image(DISS, 0, 0); noTint(); pop();
+}
+
 // ---------- brush wipe ----------
 // A transition: fat paint strokes sweep across to cover the frame (p 0 → .5), then drag off (p .5 → 1).
 // Cut to the next shot at p = .5, under full cover. Call it last in both shots, in screen space (outside a camera):

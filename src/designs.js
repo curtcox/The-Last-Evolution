@@ -410,7 +410,8 @@ const DES = {};
   // A figure seen from the side, facing right (o.flip: left), drawn from its hip (hx, hy), s px to the foot. Its pose is
   // a set of angles (radians): torso from upright (+ leans forward, -π/2 lies back), thigh and shin from hanging straight
   // down (+ forward), and the near arm's upper and fore arm from hanging (+ forward and up). Standing, the hip is
-  // DES.HIP feet above the ground. o.lid 0..1 closes the eye; o.look tilts the head (+ up). Roal's robe to the ankle.
+  // DES.HIP feet above the ground. o.lid 0..1 closes the eye; o.look tilts the head (+ up); o.talk 0..1 opens the mouth.
+  // Walking adds the far leg (farThigh, farShin), whose boot steps under the hem. Roal's robe to the ankle.
   DES.HIP = 3.1;
   DES.POSE = {
     stand: { torso: 0, thigh: 0, shin: 0, up: .12, fore: .3, farUp: .05, farFore: .15 },
@@ -431,6 +432,9 @@ const DES = {};
       const R = ribbon([sa, el, hd], .5 * u, .42 * u); paint(R, { wash: D[0], washOp: 255, ink: null }); wash(R, d, { ink: true, sw: .45, op });
       const hp = add(hd, P.torso + Math.PI - fore, .12); paint(ellPts(...hp, .16 * u, .19 * u, 10), { wash: D[0], washOp: 255, ink: null }); wash(ellPts(...hp, .16 * u, .19 * u, 10), back ? 1 : 0, { ink: true, sw: .4, op }); return hd; };
     arm(P.farUp, P.farFore, dk(cloth + 1), .9, true);
+    // walking (P.farThigh, P.farShin): the far boot, stepping under the hem
+    if (P.farThigh != null) { const fk = add(hip, Math.PI - P.farThigh, 1.6), fa = add(fk, Math.PI - P.farShin, 1.5), fA = Math.PI / 2 - P.farShin, ft = add(fa, fA, .5);
+      wash([add(fa, fA + Math.PI, .2), add(add(fa, Math.PI - P.farShin, -.25), fA, .1), ft, add(ft, Math.PI - P.farShin, .2), add(fa, Math.PI - P.farShin, .22)], 4, { ink: true, sw: .4, curv: .3, op: .9 }); }
     // the boot's toe, before the hem covers its heel
     const footA = Math.PI / 2 - P.shin, toe = add(ank, footA, .5);
     wash([add(ank, footA + Math.PI, .2), add(add(ank, Math.PI - P.shin, -.25), footA, .1), toe, add(toe, Math.PI - P.shin, .2), add(ank, Math.PI - P.shin, .22)], 4, { ink: true, sw: .4, curv: .3 });
@@ -450,7 +454,7 @@ const DES = {};
     // the standing collar, rising behind the head
     wash([add(neck, P.torso - Math.PI / 2, .22), add(add(neck, P.torso, .78), P.torso - Math.PI / 2, .45), add(add(neck, P.torso, .82), P.torso - Math.PI / 2, .26), add(neck, P.torso + Math.PI / 2, .14)], dk(cloth + 1), { ink: true, sw: .45 });
     const hc = add(neck, P.torso + (o.look || 0) * .3, .52);
-    DES.headSide(hc[0], hc[1], u, who, { rot: (P.torso - (o.look || 0) * .5) * f, flip: o.flip, lid: o.lid, hide: o.shieldFace, smile: o.smile });
+    DES.headSide(hc[0], hc[1], u, who, { rot: (P.torso - (o.look || 0) * .5) * f, flip: o.flip, lid: o.lid, hide: o.shieldFace, smile: o.smile, talk: o.talk });
     const hand = arm(P.up, P.fore, cloth, 1);
     return { hip, sh, knee, ank, hand, head: hc };
   };
@@ -470,6 +474,7 @@ const DES = {};
       if (lid > .8) inkLine([E(.17, -.1), E(.24, -.07), E(.3, -.1)], .5, INK, 'inkfine');
       else { inkLine([E(.17, -.11), E(.25, -.14 + lid * .05), E(.31, -.1)], .5, INK, 'inkfine'); paint(ellPts(...E(.27, -.1 + lid * .02), u * .03, u * .03 * (1 - lid), 8), { fill: INK, fillOp: 210, bleed: 0, ink: null }); }
       inkLine([E(.3, .21), E(.37, .21)], .4, INK, 'inkfine');                                                               // the mouth
+      if (o.talk > .05) paint(ellPts(...E(.335, .225), u * .035, u * .04 * o.talk, 8), { fill: INK, fillOp: 200, bleed: 0, ink: null });   // open, speaking
     }
     if (old) {   // thin white hair at the back, a high bare crown, a short white beard
       wash([[-.15, -.5], [-.38, -.32], [-.44, -.02], [-.32, .08], [-.3, -.2]].map(p => E(...p)), 0, { ink: true, sw: .35, curv: .5 });

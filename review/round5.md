@@ -5,14 +5,15 @@ starts with the storyboard. It's the standard every other chapter will follow, s
 pattern as much as about this chapter.
 
 **To watch:** [the storyboard](https://curtcox.github.io/The-Last-Evolution/review/round5/ch05.html) on the site, or
-locally after `npm start` (http://localhost:8077/review/round5/ch05.html).
+locally after `npm start` (http://localhost:8077/review/round5/ch05.html). **New:** [the
+draft](https://curtcox.github.io/The-Last-Evolution/review/round5/ch05-draft.html), with motion, made from your notes
+(§4).
 - **What it is:** a board for each of the 39 shots, laid over the chapter's sound, 9:03 in all. The board changes with
   the shot, and the words light up as they're said. Click any shot to start there.
 - **The sound:** the cast's voices from the Round 3 pass, with silences added where the pictures need them, the
   theme's first phrase under the chapter's page, and the kept effects ducked under the voice.
-- **The boards:** each one is a still from the scene's blocking pass (`src/scenes/ch05.js`). It shows the shot's key
-  pose and its event, but not yet its motion. In the studio you can scrub the motion that's there so far
-  (http://localhost:8077/studio/?chapter=5).
+- **The boards:** each one is now a still of the draft at the shot's key moment (they were the blocking pass's). In
+  the studio you can scrub the whole chapter (http://localhost:8077/studio/?chapter=5).
 - **The written storyboard:** [`script/boards/ch05.yaml`](../script/boards/ch05.yaml). For each shot it gives what's
   seen, the event, the camera and the reads, and each one is cued to the voice by its words.
 
@@ -97,6 +98,18 @@ with its reason in the storyboard file.
 
 *Recommend:* I generate three short effects for these in the draft. That's a few cents of credit, from the same
 period-science prompts as the others.
+
+*A second way, from your notes:* [AudioOnline](https://github.com/curtcox/AudioOnline) makes sound from a few lines of
+code: oscillators, noise, filters, envelopes and effects placed on tracks over time, rendered in the browser to a WAV,
+byte for byte the same every time. Weighed for these three:
+- **For it:** they're abstract energies (a cold hum, a rising whine, a crackle), which synthesis does well. The source
+  would live in the repo, so each could be tuned and re-timed to its cue exactly and remade at will. It costs no credit,
+  and there's no licence to check for it (the commercial-use question in Round 3 is about generated audio).
+- **Against it:** it isn't wired into the toolchain yet; its renderer runs in a browser, though its own tests run it
+  headless under Node. The other nine effects are generated, so three synthesised ones might sit apart from them, and
+  organic textures (a roar, crackling) are harder to make convincing from scratch.
+
+*Recommend, revised:* make each of the three both ways and choose by ear. It's a small job either way.
 **Curt:**
 
 ## 3. Next
@@ -105,6 +118,9 @@ period-science prompts as the others.
 wide, then a watch page where notes can be pinned to a moment.
 *Recommend:* start the draft as soon as 1.1 is answered. Changes from 1.2–1.4 can go in while it's being built.
 **Curt:**
+
+*Done, after your notes below* (§4). 1.1–1.4 are still open: the draft keeps the beats, inventions and pauses as
+recommended, so any answer there carries into it.
 
 ## Claude's open concerns
 
@@ -125,3 +141,88 @@ The loop in §2 asks me to name what I'm not happy with. On the storyboard:
 5. **Two things you haven't answered yet feed this chapter:**
    - **Your listen to the voice pass (Round 3, 4.4).** One of its two flagged lines, F-1's "Roal—", is shot C here.
    - **The model sheets (Round 4, §5).** The pilot uses the recommended designs, and any change there carries into it.
+
+## 4. The draft
+
+**Curt's notes on the storyboard** (his words):
+> I share your concerns.
+>
+> Add more intermediate animation to show objects moving from position to position rather than jumping.
+> Also, use more panning and zooming in place of the current jump cuts.
+> Combine these techniques as necessary. Visually holding on a still frame should be used sparingly.
+>
+> Consider custom sound creation via https://github.com/curtcox/AudioOnline as an option.
+> Treat that as a data point not a suggestion.
+
+Recorded in DECISIONS.md as the pattern for the film. AudioOnline is weighed in 2.2.
+
+**To watch:** [the draft](https://curtcox.github.io/The-Last-Evolution/review/round5/ch05-draft.html), 9:03, or
+locally at http://localhost:8077/review/round5/ch05-draft.html. Pause anywhere and type to pin a note to that moment;
+*Copy notes* gives them back as timed text to paste here or send.
+
+**What changed from the storyboard:**
+- **No jump cuts in the hall.** It's one continuous place, drawn whole at every moment. The camera moves from each of the
+  storyboard's framings to the next, panning and zooming, easing out and back in on the long moves, starting a little
+  before the words it serves. The only hard changes are hidden: under the story's two brush wipes, and behind the flash
+  out of the science plate.
+- **Everything moves from mark to mark.**
+  - F-1 drifts across the floor to Roal's couch to talk, and back to its place to work.
+  - Roal sits up, swings his legs off the couch and stands while F-1 hums. Then he walks: to watch the work, to the
+    newborn's side, a step back from the aura, back out of the way when F-2 says it will make others, and forward to
+    ask his question.
+  - F-1's tentacles reach out from hanging to the work, and roll back.
+  - The struck science-machine drifts in from the right during the roar, and falls beside F-1.
+  - F-2 turns to whatever it attends to: to Roal, to the ruler, three-quarters toward us, to the cage, and its nose up
+    to the screens. The turns squash through the profile.
+  - The investigator floats in with the cage and later leaves. C-R-U-1 floats into the dawn.
+- **The other spaces are reached by matched moves.**
+  - The camera pushes into Roal's face and dissolves into his eyes.
+  - It pushes into his pupil, which becomes F-1's lens.
+  - It pulls back from the lens into the hall, on F-1's lens.
+  - The hall darkens into the plate as the proton appears.
+  - The plate is one atom throughout: the camera pulls back to the bombardment, pushes in ring by ring to the wall, and
+    the grid bends around the same proton.
+  - Morey's page dissolves in over the hall, which goes on under it.
+- **Acting from the voice.** Mouths open on their words; F-1's and C-R-U-1's lenses and F-2's glow light with theirs.
+  Roal breathes, blinks, shifts his weight, looks up at F-1 and down at F-2, and opens his hand when he asks.
+
+**On my concerns:**
+1. **Stiff figures:** better, not solved. The walking, standing and talking are simple, and there's still no
+   three-quarter head (M is a close profile).
+2. **Weak boards:**
+   - R: the tiers now float in a ring, small and high at the back, whole machines left and right at the front, with
+     every lens turned to the work and lit by the flashes. Better.
+   - AE and AH: closer.
+   - AI: now a moving shot.
+   - Q: it was a still's problem; in motion its light and dark work.
+3. **The dream:** Roal's eyes now dissolve in over the atom at "the proton is positive", and back out. They show as a
+   double exposure rather than a cut.
+4. **F-2's design:** still open (Round 4 §5.3).
+
+**Staging I changed to make the continuity work:**
+- E is no longer over Roal's shoulder: F-1 comes across the floor to him instead.
+- C-R-U-1 is made on F-1's empty floor (the text's "the empty floor"), not at Roal's end of the hall.
+- The investigator comes in from the right, under F-2.
+- In the birth, Roal is in the hall at the left with his arm up, not a separate figure close in the foreground.
+
+**4.1 The moves.** Do the camera's pans, zooms and dissolves read, and is there anywhere that wants a cut or a hold
+after all?
+*Recommend:* note on the draft page wherever a move is too fast, too slow or too busy.
+**Curt:**
+
+**4.2 The restaging.** E without the over-the-shoulder shot; C-R-U-1 on F-1's floor; the investigator from the right;
+Roal in the hall at the birth.
+*Recommend:* keep all four. Each one keeps the floor continuous.
+**Curt:**
+
+**4.3 Next.** After your notes on the draft: the acting pass (a three-quarter head for the close shots, hands and weight),
+the painting brought up to the model sheets, then the final render at 24 frames a second with the effects from 2.2.
+*Recommend:* that order.
+**Curt:**
+
+**My concerns on the draft:**
+- **F-1's fall** has a lurch, a bounce and dust now, but it's still a big tilt more than a collapse.
+- **Fast moves at 12 frames a second** can step visibly. The fastest move is under 60 px a frame; 24 fps in the final
+  render will smooth them.
+- **The investigator** is a small machine carrying the cage by one tentacle; at this size it reads, but only just.
+

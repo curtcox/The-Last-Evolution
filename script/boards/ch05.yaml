@@ -8,6 +8,10 @@
 #   p060.1:dull snap where those words start in it (the voice's words, from forced alignment)
 #   ...+1.5 / -0.4   an offset in seconds after any of those
 # tools/timeline.mjs resolves them into src/gen/ch05.js, where the scene's cue() reads them too.
+#
+# From the draft on (Round 5's notes), a shot here is a framing and a beat, not a cut: the hall is one continuous place,
+# the camera pans and zooms from each framing to the next, and the figures move from mark to mark. "camera" says how
+# the shot is reached and what the camera does in it; jumps are kept for the story's own scene breaks (brush wipes).
 chapter: 5
 logline: >-
   An old man dreams his way to the wall inside the hydrogen atom; a new machine follows him through it, and builds a
@@ -81,9 +85,9 @@ shots:
   - id: C
     at: 'p052.1'
     title: F-1 speaks
-    seen: F-1 from low by the couch, vast; its great lens and the two small ones.
+    seen: F-1 from low, vast; its great lens and the two small ones.
     event: The great lens brightens with the words and turns down toward the couch.
-    camera: a slow tilt up its height
+    camera: moves in from the wide to F-1, then a slow tilt up its height
     reads:
       - [0, F-1, close and huge]
       - ['p052.2', '"the new machine": the lens turning to us']
@@ -93,8 +97,8 @@ shots:
     at: 'p053.1'
     title: Roal sits up
     seen: Roal on the couch, in profile, facing right.
-    event: He swings up to sit, looks up at the machine, and smiles.
-    camera: steady, a little push on his line
+    event: He swings up to sit, looks up at the machine, and speaks.
+    camera: pans back down from F-1 to him, easing out and in on the way; a little push on his line
     reads:
       - [0, Roal sits up (anticipation, then the move)]
       - ['p053.2', his face up to F-1, the quiet smile]
@@ -103,9 +107,9 @@ shots:
   - id: E
     at: 'p054.1'
     title: F-1 has followed him
-    seen: Over Roal's shoulder (his head and collar dark in the foreground, left); F-1 beyond.
-    event: F-1 drifts nearer and lowers itself to his level as it speaks; its tentacles stir; it stops, waiting.
-    camera: steady
+    seen: Roal sitting on the couch at the left; F-1 beyond, at its place.
+    event: F-1 drifts across the floor to him and lowers itself nearer his level as it speaks, its lens lighting with its words; it stops, waiting.
+    camera: pulls back to hold them both, closing in as F-1 arrives
     reads:
       - [0, the machine coming down to the man]
       - ['p054.1:What is your thought', it waits]
@@ -116,28 +120,31 @@ shots:
     title: Roal's eyes
     seen: Roal's eyes, very close; the brows and lids of a hundred and fifty years.
     event: His gaze goes far off and soft.
-    camera: still, a slow push
+    in: the camera pushes into his face, and it dissolves into his eyes
+    camera: a slow push
     reads:
       - [0, his eyes, dreaming]
     board: p055.1+2.5
-    out: match cut, his pupil to F-1's lens
+    out: the push goes into his pupil, which dissolves into F-1's lens, matched
 
   - id: G
     at: 'p055.1:that machines never show'
     title: The lens
     seen: F-1's great lens, as close; polished, blank, the hall reflected in it, small.
     event: Nothing moves in it. That's the read.
-    camera: still
+    camera: the push carries on in, then pulls back until the lens matches F-1's own in the hall
     reads:
       - [0, the same circle, empty of thought]
     board: p055.1$
+    out: dissolve to the hall, on F-1's lens
 
   - id: H
     at: 'p056.1'
     title: Into the atom
     seen: Roal seated, looking up into the dark above the hall. The dark above him deepens and a point of light appears.
     event: The hall falls away into a field of dark wash; the point becomes an atom.
-    camera: tilts up with his gaze, past him into the dark
+    camera: from F-1's lens, pans down to Roal, then tilts up with his gaze, past him into the dark
+    out: dissolve into the plate as the proton appears
     reads:
       - [0, Roal looking up]
       - ['p056.1:but a single proton', the proton, then the electron, appearing in the dark]
@@ -150,7 +157,7 @@ shots:
       A pulp science plate on dark paper: the proton, a dark ink sphere; the electron, a small pale one, on a wide
       orbit drawn as a dotted ellipse.
     event: The electron circles, never touching.
-    camera: still
+    camera: pulls back from the proton as the electron appears
     reads:
       - [0, the electron circling the proton]
     board: p056.1:collide+0.6
@@ -160,7 +167,7 @@ shots:
     title: The bombardment
     seen: At the left, an atom bursts in white light; a spray of electrons flies at the hydrogen atom.
     event: Every one swerves or glances off before it reaches the proton.
-    camera: a quick pan from the burst to the atom
+    camera: pulls back and left to hold the burst and the atom, then pans with the electrons toward the atom
     reads:
       - [0, the burst]
       - ['p056.1:never do they reach', the swerve; none touches]
@@ -173,9 +180,11 @@ shots:
     event: >-
       At each "flash" the electron drops one ring inward and a ring of white light leaves it; "always falling nearer";
       then at "Blocked" it stops dead at the innermost ring, and that ring is drawn darker: the wall.
-    camera: pushes in ring by ring
+    camera: >-
+      Roal's eyes dissolve in over the atom at "the proton is positive" (his dreaming, a double exposure) and out again;
+      then the camera pushes in ring by ring, the same atom throughout
     reads:
-      - [0, the electron attracted, its orbit]
+      - [0, the electron attracted, its orbit; his eyes over it]
       - ['p056.1:there goes a flash', the first drop and its flash]
       - ['p056.1:Another flash', the second]
       - ['p056.1:Blocked', it stops; the wall]
@@ -200,9 +209,10 @@ shots:
   - id: M
     at: 'p057.2'
     title: His voice drops
-    seen: Roal's face, three-quarters, the last of the plate's lines fading in front of it.
-    event: His lips close; his eyes go on dreaming.
-    camera: still
+    seen: Roal's face, close, in profile.
+    in: out of the plate's light
+    event: His lids lower; his eyes go on dreaming.
+    camera: a slow pull back
     reads:
       - [0, the old man's face, silent]
     board: p057.2+2
@@ -210,11 +220,12 @@ shots:
   - id: N
     at: 'p058.1'
     title: F-1 hums
-    seen: F-1 in the hall, its bands faintly lit, humming.
+    seen: F-1 in the hall, its bands faintly lit, humming; Roal at the left.
     event: >-
+      F-1 drifts back to its place; Roal gets up off the couch and stands to watch.
       "Far ahead of us there is a step": ruled ink steps climb up from its lens and stop at a gap; then "working
       backwards" a line comes down from the far side and the gap closes.
-    camera: steady
+    camera: pulls back from Roal's face to the wide, taking in both
     reads:
       - [0, F-1 humming]
       - ['p058.2', the steps climbing to the gap]
@@ -228,7 +239,7 @@ shots:
     event: >-
       "Suddenly": force shafts gleam out of it in blue-white, down to a point on the floor; its tentacles come alive and
       weave around that point, smeared with speed.
-    camera: still, then a hit of shake at "Suddenly"
+    camera: eases to F-1, then a hit of shake at "Suddenly"
     reads:
       - [0, F-1 still]
       - ['p058.3:Suddenly', the shafts]
@@ -243,7 +254,7 @@ shots:
     event: >-
       Fierce beams push at something taking shape in the glow; F-1's bands pulse brighter and dimmer as its generators
       wax and wane.
-    camera: a slow push into the field
+    camera: moves in to the working point and keeps pushing into the field
     reads:
       - [0, the air spiralling in]
       - ['p058.3:Fierce beams', the something taking shape]
@@ -258,7 +269,7 @@ shots:
     event: >-
       Arcs crack across the floor in blue-white; white-hot metal glows in the beams; each flash shows the hall, then
       takes it away: "light and dark, sound and quiet".
-    camera: steady, small shakes on the arcs
+    camera: under the wipe; a slow drift, small shakes on the arcs
     reads:
       - [0, the flashes]
       - ['p059.1:glimpses of white-hot metal', the white-hot metal held in beams]
@@ -269,8 +280,9 @@ shots:
     at: 'p059.1:About F-1 were clustered'
     title: The tiers
     seen: >-
-      Wide: the floating tiers of science-machines in a ring around F-1, their lenses lit by the flashes. Roal small at
-      the bottom left, standing now.
+      Wide: the floating tiers of science-machines in a ring around F-1, the far side small and high against the
+      screens, the near side floating left and right of the floor; their lenses lit by the flashes, all turned to the
+      work. Roal small at the left, standing.
     event: The machines don't move. They watch.
     camera: a slow pull back
     reads:
@@ -282,8 +294,9 @@ shots:
     title: The thing revealed
     seen: Close on the working point. The tentacles writhe once more, straighten and roll back.
     event: >-
-      The whine softens; three beams of force hold a structure of glowing, bluish metal: F-2, unfinished, then whole.
-    camera: steady
+      The whine softens; three beams of force hold a structure of glowing, bluish metal: F-2, unfinished, then whole,
+      coming out of the glow. Roal walks in from the left to see it.
+    camera: moves in to the working point, then drifts left and down as Roal comes in
     reads:
       - [0, the tentacles rolling back]
       - ['p060.1:but three beams', the three beams and what they hold]
@@ -294,7 +307,7 @@ shots:
     title: Half the size of Roal
     seen: Roal standing, in profile, beside the small torpedo held in its three beams.
     event: He looks at it; it's scarcely half his height. Its three thin tentacles uncurl.
-    camera: steady
+    camera: settles on the two of them
     reads:
       - [0, the scale; the man and the made thing]
       - ['p060.1:From it curled', its tentacles]
@@ -304,9 +317,10 @@ shots:
     at: 'p060.1:Suddenly the generators'
     title: The birth
     seen: >-
-      Low, looking up: F-1 towering, a tentacle holding the newborn in an enormous aura of white light shot through with
-      blue lightning; Roal at the left, his arm thrown up across his face. Our painting of Morey's moment.
-    event: The generators roar; the aura blooms; lightning crackles out of it.
+      Low, looking up: F-1 towering, two tentacles holding the newborn, tilted nose down, in an enormous aura of white
+      light shot through with blue lightning; Roal at the left, his arm thrown up across his face. Our painting of
+      Morey's moment.
+    event: The generators roar; the aura blooms; Roal steps back from it; lightning crackles out of it.
     camera: a push up toward the aura, then the dissolve
     reads:
       - [0, the roar and the aura]
@@ -321,7 +335,7 @@ shots:
       Leo Morey's illustration from the August 1932 issue, page 415, whole, on its yellowed paper. Its caption is the
       sentence just spoken.
     event: The page holds while the caption's words are still in the air, then dissolves back into the hall.
-    camera: a very slow push
+    camera: a very slow push; under it the hall goes on
     reads:
       - [0, the page; the caption]
     board: '+2'
@@ -330,9 +344,11 @@ shots:
   - id: W
     at: 'p060.1:Lightning cracked'
     title: Lightning
-    seen: The hall in the birth's light. Lightning strikes the floor near F-1, then a science-machine that has drifted close.
+    seen: >-
+      The hall in the birth's light. Lightning strikes the floor near F-1, then the science-machine that has drifted
+      close (in from the right since the roar began).
     event: The struck machine flares and slumps.
-    camera: shakes with each strike
+    camera: widens as the page dissolves; shakes with each strike
     reads:
       - [0, lightning to the floor]
       - ['p060.1:to one machine', the machine struck]
@@ -345,7 +361,7 @@ shots:
     event: >-
       The snap: F-1's lenses go dark, it drops heavily to the floor, and the fused mass of metal falls beside it. The
       shake, the dust, and stillness.
-    camera: a jolt on the fall, then still
+    camera: eases wider; a jolt on the fall, then still
     reads:
       - [0, the snap; the light going out of F-1]
       - ['p060.1:fell heavily', the fall]
@@ -369,7 +385,7 @@ shots:
     event: >-
       Rings of thought go out from F-2 across the man and the machines; with "See." it turns toward F-1's fallen
       hulk.
-    camera: steady, wide
+    camera: pulls back wide
     reads:
       - [0, the rings reaching everyone]
       - ['p062.2:It is not worth it', the verdict; it turns to F-1]
@@ -378,11 +394,11 @@ shots:
   - id: AA
     at: 'p063.1'
     title: F-1 unmade
-    seen: F-2 and F-1's hulk, side on.
+    seen: F-2 and F-1's hulk, side on; Roal watching.
     event: >-
       A stream of brilliant light flows from F-2 down a straight channel and floods F-1; F-1 flows into it in sections
       and floats back along it; the floor is bare.
-    camera: steady
+    camera: eases right to hold the stream's length
     reads:
       - [0, the stream of light]
       - ['p063.1:It flooded F-1', F-1 flowing back up the stream]
@@ -396,7 +412,7 @@ shots:
     event: >-
       "The Ultimate Energy which is in me is generated": the glow inside it steadies. Its thought rings go out to the
       machines ("not atomic, as they are in you"), then to Roal ("nor molecular as in man").
-    camera: steady, then a pan from the machines to Roal
+    camera: moves in on F-2, then pans from the machines to Roal
     reads:
       - [0, F-2, the light inside it]
       - ['p064.1:as they are in you', the machines]
@@ -409,17 +425,18 @@ shots:
     seen: F-2's rings, and in them, faint painted memories of what the others have seen.
     event: >-
       In the rings drift the towers of 2538, the torpedoes of the void, the green beams: all things each of them has
-      done, known and seen. "I shall make others of my type": it turns to the empty floor.
-    camera: a slow push
+      done, known and seen. "I shall make others of my type": Roal steps back out of the way, and the camera turns
+      with F-2's attention to the empty floor where F-1 stood.
+    camera: a slow push; then a pan to the empty floor
     reads:
       - [0, memories in the rings]
-      - ['p064.1:I shall make others', it turns to the floor]
+      - ['p064.1:I shall make others', the empty floor]
     board: 'p064.1:known and seen'
 
   - id: AD
     at: 'p065.1'
     title: Forces that laugh at matter
-    seen: F-2 small at the right; at the left, over the floor, a ball of glowing forces with no tentacles at all.
+    seen: F-2 at the left; at the right, over the floor where F-1 stood, a ball of glowing forces with no tentacles at all.
     event: >-
       The forces dance and mingle; lurid flares shoot up; tiny pale motes, electrons, dodge and are caught (the atom's
       electron again). The whine dies; the forces strain.
@@ -435,7 +452,7 @@ shots:
     title: A ruler is made
     seen: The glow fades from a small cylinder where the forces had danced.
     event: It's there, floating, smaller than F-2 is long.
-    camera: steady
+    camera: moves in close on it
     reads:
       - [0, the new machine]
     board: p066.1$
@@ -443,9 +460,9 @@ shots:
   - id: AF
     at: 'p067.1'
     title: Roal asks
-    seen: Roal standing at the left, F-2 at the right, the new cylinder behind it.
-    event: Roal steps forward and asks; F-2 answers, then turns toward the cylinder at "a ruler".
-    camera: steady two-shot
+    seen: Roal standing at the left, F-2 in the middle, the new cylinder on F-1's floor at the right.
+    event: Roal steps forward and asks, his hand open; F-2 turns to him to answer, then back toward the cylinder at "a ruler".
+    camera: pulls back to hold all three
     reads:
       - [0, Roal's question]
       - ['p068.1', "F-2's answer"]
@@ -459,7 +476,7 @@ shots:
     event: >-
       It speaks; then "force played from it", and on its side its designation glows on in dull gold: C-R-U-1, lettered as
       the text says.
-    camera: steady, a push at the name
+    camera: moves back in on it; a push at the name
     reads:
       - [0, the ruler speaking]
       - ['p069.2:on its sides appeared', its name glowing on]
@@ -468,9 +485,9 @@ shots:
   - id: AH
     at: 'p070.1'
     title: Some life-form
-    seen: F-2, turning from the ruler toward us.
+    seen: F-2, close, turning from the ruler three-quarters toward us.
     event: It answers, brief.
-    camera: steady
+    camera: travels from the ruler to F-2
     reads:
       - [0, F-2's answer]
     board: p070.1+1
@@ -478,9 +495,11 @@ shots:
   - id: AI
     at: 'p071.1'
     title: The guinea pig
-    seen: A life-form investigator, a small machine of the family, floats in with a small cage in its tentacles; in the cage, a guinea pig.
-    event: It sets the cage down before F-2.
-    camera: steady
+    seen: >-
+      A life-form investigator, a small machine of the family, floats in from the right, under F-2, with a small cage
+      in its tentacle; in the cage, a guinea pig.
+    event: It sets the cage down before F-2, which turns to it.
+    camera: moves down to the floor and drifts with the investigator
     reads:
       - [0, the investigator and the cage]
       - ['p071.1:which held', the guinea pig, alive]
@@ -493,7 +512,7 @@ shots:
     event: >-
       Forces play about F-2's base; a pale-green beam leaves it and passes through the cage. The guinea pig falls dead.
       The film's first green.
-    camera: steady; a small push to the cage after the beam
+    camera: a small push to the cage after the beam
     reads:
       - [0, forces at F-2's base]
       - ['p071.1:came a pale-green beam', the green beam]
@@ -506,9 +525,9 @@ shots:
     title: No screen
     seen: F-2 above the cage, the machines and Roal beyond.
     event: >-
-      F-2 turns from the cage up toward the wall of screens, where the Outsiders' ships hang; "attack that enemy
-      life-form".
-    camera: steady, then a tilt up to the screens
+      F-2 turns its nose from the cage up toward the wall of screens, where the Outsiders' ships hang; "attack that
+      enemy life-form". The investigator leaves.
+    camera: eases wider, then a tilt up to the screens
     reads:
       - [0, F-2 judging the beam]
       - ['p072.1:Let machines be made', the screens and the enemy]
@@ -521,8 +540,10 @@ shots:
     seen: >-
       Outside, on the bare rock, under a grey dawn: machines swarming over a rising frame; C-R-U-1 above them, its gold
       name glowing.
-    event: The great automatic machine grows in steps as hours pass (the sky lightening, shadows swinging).
-    camera: steady, wide
+    event: >-
+      The great automatic machine grows level by level as hours pass (the sky lightening); C-R-U-1 floats in from the
+      right to direct them.
+    camera: wide, a slow push
     reads:
       - [0, outside; the machines at work]
       - ['p073.1:under the direction', the ruler directing]
@@ -533,7 +554,7 @@ shots:
     at: 'p073.1:In hours more'
     title: Up and out
     seen: The great machine on the rock; from its top, tiny machines stream up into the sky.
-    event: Thousands rise and spread; the camera follows them up until they're specks among the last stars.
+    event: The builders rise first; thousands follow and spread; the camera follows them up until they're specks among the last stars.
     camera: tilts up and up
     reads:
       - [0, the first of them leaving]

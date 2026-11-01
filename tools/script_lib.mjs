@@ -56,6 +56,15 @@ export function respeller(pronounce) {
   };
 }
 
+// A voiced line's words as the story spells them, timed by the voice's: each word of the text takes as many of the
+// voice's words as its respelling has ("F-1" takes "F one"); if the counts don't tally, the voice's own words are
+// returned. line: a timeline line ({ text, words: [[word, start, end], ...] }); say: a respeller(). → [[word, start]]
+export function storyWords(line, say) {
+  const tw = plain(line.text).split(/\s+/).filter(w => /\w/.test(w)), k = tw.map(w => say(w).split(/\s+/).filter(x => /\w/.test(x)).length);
+  if (k.reduce((a, b) => a + b, 0) !== line.words.length) return line.words.map(w => [w[0], w[1]]);
+  let i = 0; return tw.map((w, j) => { const at = line.words[i][1]; i += k[j]; return [w, at]; });
+}
+
 // the processing each treatment applies (ffmpeg filters)
 export const TREAT = {
   old: { label: 'old', af: 'asetrate=44100*0.97,aresample=44100,atempo=0.97,vibrato=f=4.5:d=0.04,highpass=f=120,lowpass=f=6500,aecho=0.8:0.6:35:0.12' },

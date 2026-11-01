@@ -1,6 +1,6 @@
 // publish_review.mjs: a round's decision pages, put where the site publishes them.   npm run publish-review -- round3
 // Copies out/review/<round>/*.html to site/review/<round>/ (committed; build_site.mjs serves it at /review/<round>/ on
-// the site), with every audio file, image and video the pages use (in their audio/ and img/ folders). Each file is
+// the site), with every audio file, image and video the pages use (in their audio/, img/ and video/ folders). Each file is
 // renamed by its content (name-hash.ext), so a redone clip or frame never shows stale from a browser's cache; audio
 // above 128 kbps is re-encoded (speech at 64 kbps mono, stereo at 128 kbps) to keep the repo small; and files no page
 // uses any more are removed. The samplers call it when they finish,
@@ -12,11 +12,11 @@ import { fileURLToPath } from 'node:url';
 
 export function publishReview(round) {
   const src = `out/review/${round}`, dst = `site/review/${round}`;
-  const dirs = ['audio', 'img'].filter(d => existsSync(`${src}/${d}`));
+  const dirs = ['audio', 'img', 'video'].filter(d => existsSync(`${src}/${d}`));
   for (const d of dirs) mkdirSync(`${dst}/${d}`, { recursive: true });
   const used = new Set(), pages = readdirSync(src).filter(f => f.endsWith('.html'));
   for (const page of pages) {
-    const html = readFileSync(`${src}/${page}`, 'utf8').replace(/\b(audio|img)\/([\w.-]+?)\.(mp3|jpg|png|mp4)\b/g, (m, dir, name, ext) => {
+    const html = readFileSync(`${src}/${page}`, 'utf8').replace(/\b(audio|img|video)\/([\w.-]+?)\.(mp3|jpg|png|mp4)\b/g, (m, dir, name, ext) => {
       const from = `${src}/${dir}/${name}.${ext}`;
       if (!existsSync(from)) return m;
       const out = `${dir}/${name}-${createHash('sha256').update(readFileSync(from)).digest('hex').slice(0, 8)}.${ext}`;
