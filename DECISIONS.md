@@ -47,3 +47,4 @@ Every settled decision, with its date and who made it. See [PLAN.md §2](PLAN.md
 | 2026-11-01 | The colour arc | As in PLAN.md §5 and the six frames | Curt, accepting Claude's Round 4 recommendation |
 | 2026-11-01 | Chapter-title page | The running head, double rule, italic title, and the opening paragraph with a drop cap, in Old Standard TT; the narrator starts reading over it | Curt, accepting Claude's Round 4 recommendation; the paragraph is Claude's call on the open point |
 | 2026-11-01 | Phase 4 order | Model sheets first, then QR layouts A and B, then the title page | Curt, accepting Claude's Round 4 recommendation |
+| 2026-11-01 | Saving the cast | All thirteen voices saved to the ElevenLabs account, after the plan was upgraded for more voice slots | Curt |

@@ -42,7 +42,9 @@ more (ElevenLabs' Creator plan has 30, and the full voice pass needs a bigger ch
 about 40,000 characters before retakes), or room made by deleting voices on the account you no longer need. Deleting
 is yours to decide; I haven't touched the voices that were there. Once there's room, `npm run save-cast` with the line
 above saves the rest.
-**Curt:**
+**Curt:** I'll upgrade the plan. … It's upgraded.
+**Claude:** the other seven are saved. All thirteen are on the account now, each named "TLE" and its role, with its id
+in `script/cast.yaml`.
 
 **1.2 One voice for F-2.** The plan has the narrator and the F-2 of the scenes as one voice: young (raw) in the scenes,
 old (treated) as the narrator. The narrator's candidates read narration and one of F-2's scene speeches (p088), so you
@@ -116,5 +118,6 @@ treatment rather than the model.
 saving anything.
 *Recommend:* save the picks as soon as you've made them, since I don't know how long previews stay available.
 **Claude:** six saved; the account ran out of slots for the other seven (see 1.1). I couldn't check the limit
-beforehand, since the key can't read the account's plan, so the six went before the refusal said so.
+beforehand, since the key can't read the account's plan, so the six went before the refusal said so. After your
+upgrade, the other seven are saved too (see 1.1).
 **Curt:**
