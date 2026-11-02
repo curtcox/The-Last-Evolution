@@ -1,6 +1,6 @@
 # The margin notes
 
-Written by `tools/annotated.mjs` on 2026-11-02: 48 notes over 57:03, about one every 71 s. None closer than 20 s.
+Written by `tools/annotated.mjs` on 2026-11-02: 49 notes over 57:03, about one every 70 s. None closer than 20 s.
 
 | at | ch | note | kind | gap |
 |---|---|---|---|---|
@@ -8,7 +8,8 @@ Written by `tools/annotated.mjs` on 2026-11-02: 48 notes over 57:03, about one e
 | 0:27 | 0 | The narrator (`narrator`) | Who's who | 27 s |
 | 0:54 | 0 | Mentatype (`mentatype`) | Words | 27 s |
 | 1:24 | 1 | Six centuries of machines (`six-centuries`) | 1932 science | 30 s |
-| 2:52 | 1 | Ten billion in 2100 (`population`) | 1932 science | 88 s |
+| 1:55 | 1 | A world without work (`no-work`) | Heirs | 31 s |
+| 2:52 | 1 | Ten billion in 2100 (`population`) | 1932 science | 56 s |
 | 3:37 | 1 | The curl and the ruled line (`two-imaginations`) | The making | 45 s |
 | 5:10 | 2 | Kilads (`kilads`) | Words | 94 s |
 | 5:39 | 2 | From Deimos, at a thousand g (`units`) | 1932 science | 29 s |

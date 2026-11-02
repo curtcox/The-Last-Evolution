@@ -60,3 +60,7 @@ wp-alignment: {url: 'https://en.wikipedia.org/wiki/AI_alignment', title: 'AI ali
 wp-three-laws: {url: 'https://en.wikipedia.org/wiki/Three_Laws_of_Robotics', title: 'Three Laws of Robotics (Wikipedia)', kind: reference}
 wp-llama: {url: 'https://en.wikipedia.org/wiki/Llama_(language_model)', title: 'Llama (language model) (Wikipedia)', kind: reference}
 wp-stochastic-parrot: {url: 'https://en.wikipedia.org/wiki/Stochastic_parrot', title: 'Stochastic parrot (Wikipedia)', kind: reference}
+wp-best-of-campbell: {url: 'https://en.wikipedia.org/wiki/The_Best_of_John_W._Campbell', title: 'The Best of John W. Campbell (Wikipedia)', kind: reference}
+blackgate-best-of: {url: 'https://www.blackgate.com/?p=226361', title: 'Black Gate on The Best of John W. Campbell (1976)', kind: secondary}
+keynes-1930: {url: 'https://www.marxists.org/reference/subject/economics/keynes/1930/our-grandchildren.htm', title: 'Keynes, "Economic Possibilities for our Grandchildren" (1930)', kind: primary}
+wp-nick-bostrom: {url: 'https://en.wikipedia.org/wiki/Nick_Bostrom', title: 'Nick Bostrom (Wikipedia)', kind: reference}

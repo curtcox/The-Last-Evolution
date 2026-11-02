@@ -54,6 +54,19 @@ notes:
       to see (television), but there was no electronic computer anywhere, and Turing's paper defining one was four
       years away ([Turing machine][wp-turing-machine]).
     more: science.md#thinking-machines-before-computers
+  - id: no-work
+    on: no productive work was necessary
+    kind: heirs
+    title: A world without work
+    body: >-
+      Campbell's 2538 is a utopia an economist had just imagined. In 1930 John Maynard Keynes guessed that "the economic
+      problem may be solved" within a century, and thought "with dread" of how the ordinary man would meet the freedom
+      ([Keynes][keynes-1930]).
+
+      Campbell came back to this world and soured on it. In "Twilight" (1934) and the Machine stories after it, perfect
+      machines provide everything, and mankind loses its curiosity and drive ([Twilight][wp-twilight]). Here the
+      Outsiders come before anyone finds out.
+    more: succession.md#after-campbell
   - id: population
     on: close to ten billions in 2100
     kind: science

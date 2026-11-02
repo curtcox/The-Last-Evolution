@@ -25,11 +25,20 @@ change your belief." The story makes its case, and then asks the reader to argue
   Machines" in *Erewhon* (1872) ([Darwin among the Machines][wp-butler]).
 - **1920.** Karel Čapek's play *R.U.R.* gave the world the word *robot* (Čapek credited his brother Josef with it): a
   story of manufactured workers who rise up and replace humanity ([R.U.R.][wp-rur]).
+- **1930.** John Maynard Keynes, in "Economic Possibilities for our Grandchildren", guesses that "the economic problem
+  may be solved" within a hundred years, leaving man "his real, his permanent problem": how to use his freedom. He
+  thinks "with dread" of how the ordinary man will adjust ([Keynes][keynes-1930]). The story's 2538, where "no
+  productive work was necessary", pictures that world.
 
 ## After Campbell
 - **1934.** Campbell himself, as Don A. Stuart, returned to the theme in "Twilight": a far future in which humanity has
   dwindled into apathy while its machines run on, perfectly, without purpose ([Twilight][wp-twilight]). Where "The Last
   Evolution" is triumphant, "Twilight" is elegiac. See also [Campbell and the pulps](history.md).
+- **1935.** The Machine stories, also as Stuart: "The Machine", "The Invaders" and "Rebellion" ([SFE][sfe-campbell]). In
+  these and "Twilight", collected after "The Last Evolution" in *The Best of John W. Campbell* (1976), machines bring
+  peace, plenty and long life, the perfection goes stale, and mankind must go back to an earlier stage of life ([The
+  Best of John W. Campbell][wp-best-of-campbell], [Black Gate][blackgate-best-of]). Campbell's pessimism about utopia is
+  the other side of this story's hope.
 - **1940.** Campbell and the young Isaac Asimov work out the Three Laws of Robotics in a talk on 23 December. Asimov
   credited Campbell with them; Campbell said Asimov had them in mind already. They first appeared together in
   "Runaround" (1942): machines made loyal by rule ([Three Laws of Robotics][wp-three-laws]).
@@ -54,6 +63,10 @@ Today, two camps argue over the question the story raises.
   included Geoffrey Hinton, Yoshua Bengio and the heads of the major AI labs ([Statement on AI Risk][cais-statement]).
   Nick Bostrom's *Superintelligence* (2014) set out the case at book length ([Superintelligence][wp-bostrom]).
 
+A third worry runs beside both, and it was Campbell's: not that the machines fail us or replace us, but that they serve
+us so well that nothing is left for us to do. Bostrom's *Deep Utopia* (2024) asks what would make a life worth living in
+such a world ([Nick Bostrom][wp-nick-bostrom]).
+
 Campbell's story fits neither camp neatly. Its machines are what today's researchers call *aligned*, advancing the
 objectives their makers intended, which the field counts an open problem ([AI alignment][wp-alignment]). They're loyal,
 grieving, true to their makers' dreams ("fulfilling the promise you saw, and completing the dreams you dreamt").
@@ -68,7 +81,11 @@ the project doesn't hide. The [making-of page](../PLAN.md#7-the-companion-site) 
 <!-- refs: written by tools/check_refs.mjs -->
 [wp-butler]: https://en.wikipedia.org/wiki/Darwin_among_the_Machines
 [wp-rur]: https://en.wikipedia.org/wiki/R.U.R.
+[keynes-1930]: https://www.marxists.org/reference/subject/economics/keynes/1930/our-grandchildren.htm
 [wp-twilight]: https://en.wikipedia.org/wiki/Twilight_(short_story)
+[sfe-campbell]: https://sf-encyclopedia.com/entry/campbell_john_w_jr
+[wp-best-of-campbell]: https://en.wikipedia.org/wiki/The_Best_of_John_W._Campbell
+[blackgate-best-of]: https://www.blackgate.com/?p=226361
 [wp-three-laws]: https://en.wikipedia.org/wiki/Three_Laws_of_Robotics
 [qi-turing]: https://quoteinvestigator.com/2022/01/06/outstrip/
 [wp-singularity]: https://en.wikipedia.org/wiki/Technological_singularity
@@ -76,5 +93,6 @@ the project doesn't hide. The [making-of page](../PLAN.md#7-the-companion-site) 
 [dwarkesh-sutton]: https://www.dwarkesh.com/p/richard-sutton
 [cais-statement]: https://www.safe.ai/work/statement-on-ai-risk
 [wp-bostrom]: https://en.wikipedia.org/wiki/Superintelligence:_Paths,_Dangers,_Strategies
+[wp-nick-bostrom]: https://en.wikipedia.org/wiki/Nick_Bostrom
 [wp-alignment]: https://en.wikipedia.org/wiki/AI_alignment
 <!-- /refs -->

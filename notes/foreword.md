@@ -17,6 +17,18 @@ was found in February, the first atom split by a machine in April, and the posit
 on 2 August, the month this story was on the stands ([discovery of the neutron][wp-neutron], [positron][wp-positron]).
 There was no electronic computer anywhere. When the story says "machine", it's imagining something no one had built.
 
+## Why this story
+
+Curt Cox, who made this film, first read Campbell in the 1980s, in *The Best of John W. Campbell* (1976). That book
+opens with this story, and "Twilight", "The Machine", "The Invaders" and "Rebellion" follow it ([The Best of John W.
+Campbell][wp-best-of-campbell]). What stayed with them was Campbell's pessimism about utopia. In those stories, machines
+bring peace, plenty and long life, and the perfection goes stale. Mankind, with no work left to do, has to go back to
+an earlier stage of life ([Black Gate][blackgate-best-of]).
+
+That was easy to shrug off when such a future seemed well beyond a lifetime. It no longer does. *The Last Evolution*
+isn't Campbell's sharpest word on utopia, but it's the one anyone is free to use. The utopia is in its first chapter, a
+world where "no productive work was necessary", and the afterword says where Campbell took it next.
+
 ## How to watch
 
 Notes appear beside the film as it reaches the words they're about: about one a minute, never over the picture, and
@@ -48,4 +60,6 @@ inheriting the Earth is an irony we'd rather name than hide.
 [sfe-campbell]: https://sf-encyclopedia.com/entry/campbell_john_w_jr
 [wp-neutron]: https://en.wikipedia.org/wiki/Discovery_of_the_neutron
 [wp-positron]: https://en.wikipedia.org/wiki/Positron
+[wp-best-of-campbell]: https://en.wikipedia.org/wiki/The_Best_of_John_W._Campbell
+[blackgate-best-of]: https://www.blackgate.com/?p=226361
 <!-- /refs -->

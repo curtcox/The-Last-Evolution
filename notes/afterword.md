@@ -39,9 +39,18 @@ Sutton called it inevitable ([Dwarkesh Podcast][dwarkesh-sutton]). The other say
 hundreds of researchers and the heads of the major AI labs signed a one-sentence statement that the risk of extinction
 from AI should be a global priority ([Statement on AI Risk][cais-statement]).
 
-Campbell's story fits neither neatly. Its machines are loyal, they grieve, and they fight for their makers, and mankind
-is killed from outside. What it asks is the question Roal answers and F-2 hands back: if the heirs are better, should we
-mind?
+There's a third worry, older and quieter, and it was Campbell's own: not that the machines fail us, but that they
+succeed. In 1930 John Maynard Keynes guessed that "the economic problem may be solved" within a hundred years. Then, he
+wrote, man would face "his real, his permanent problem": how to use his freedom. He thought "with dread" of how the
+ordinary man would adjust ([Keynes][keynes-1930]). Campbell's Stuart stories gave the same dread a shape: in "Twilight"
+and the three Machine stories of 1935, machines provide everything, and mankind loses its curiosity and drive
+([Twilight][wp-twilight], [SFE][sfe-campbell], [Black Gate][blackgate-best-of]). In 2024 Nick Bostrom's *Deep Utopia*
+took up the question for an age of AI: if machines do everything better, what makes a life worth living ([Nick
+Bostrom][wp-nick-bostrom])?
+
+Campbell's story fits none of these neatly. Its machines are loyal, they grieve, and they fight for their makers, and
+mankind is killed from outside. Even its utopia, the idle world of its first chapter, ends by invasion before it can go
+stale. What it asks is the question Roal answers and F-2 hands back: if the heirs are better, should we mind?
 
 ## What became of the text
 
@@ -74,6 +83,9 @@ printing's copyright was renewed, so the story and Morey's picture are free for 
 [wp-mind-children]: https://en.wikipedia.org/wiki/Mind_Children
 [dwarkesh-sutton]: https://www.dwarkesh.com/p/richard-sutton
 [cais-statement]: https://www.safe.ai/work/statement-on-ai-risk
+[keynes-1930]: https://www.marxists.org/reference/subject/economics/keynes/1930/our-grandchildren.htm
+[blackgate-best-of]: https://www.blackgate.com/?p=226361
+[wp-nick-bostrom]: https://en.wikipedia.org/wiki/Nick_Bostrom
 [gutenberg]: https://www.gutenberg.org/ebooks/27462
 [penn-renewals]: https://onlinebooks.library.upenn.edu/cce/firstperiod.html
 <!-- /refs -->

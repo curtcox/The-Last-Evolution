@@ -1,8 +1,8 @@
 # Fact-check list
 
 Each factual claim in the notes, the source it rests on, and how it was checked. "Read" means Claude read the source and
-found the claim in it on 2026-11-01, or on 2026-11-02 for the last Round 7 additions, the textbook claims and the
-expanded Heirs notes. "Computed"
+found the claim in it on 2026-11-01, or on 2026-11-02 for the last Round 7 additions, the textbook claims, the
+expanded Heirs notes and the utopia additions. "Computed"
 means arithmetic from the story's own text. No claim now rests on general knowledge alone.
 `npm run refs` confirms that every link answers.
 
@@ -71,6 +71,12 @@ means arithmetic from the story's own text. No claim now rests on general knowle
 | Bostrom, *Superintelligence*, 2014 | wp-bostrom | read |
 | Campbell and Asimov's talk of 23 December 1940; Asimov credited Campbell with the Three Laws, Campbell said Asimov had them in mind; first together in "Runaround" (1942) | wp-three-laws | read |
 | An AI is aligned if it advances its makers' intended objectives; alignment is an open problem | wp-alignment | read |
+| Keynes, 1930: "the economic problem may be solved, or be at least within sight of solution, within a hundred years"; man's "real, his permanent problem" of using his freedom; "I think with dread" of the ordinary man's readjustment | keynes-1930 | read (the essay's text) |
+| The Machine series as Stuart: "The Machine" (February), "The Invaders" (June), "Rebellion" (August 1935), all *Astounding* | sfe-campbell | read |
+| *The Best of John W. Campbell* (US, 1976, ed. Lester del Rey) opens with "The Last Evolution", then "Twilight", "The Machine", "The Invaders", "Rebellion"; the 1973 UK edition has different contents | wp-best-of-campbell | read |
+| In these stories machines (or aliens, or a Machine) bring prosperity, peace and long life; work becomes unnecessary; the utopia fades and humanity returns to an earlier stage | blackgate-best-of | read (a review of the 1976 edition) |
+| "Twilight": humans have lost their curiosity and drive; all work done by machines | wp-twilight | read |
+| Bostrom, *Deep Utopia: Life and Meaning in a Solved World* (2024): what an ideal life would be after superintelligence, when machines outdo people at work and leisure | wp-nick-bostrom | read |
 
 ## The margin notes, foreword and afterword ([annotations.yaml](annotations.yaml), Round 7)
 

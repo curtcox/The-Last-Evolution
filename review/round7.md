@@ -45,7 +45,7 @@ them off and let viewers turn them on.
 *Recommend:* on, with that suggestion in the foreword.
 **Curt:** use your recommendations.
 
-**1.3 How many.** There are 48 notes over 57 minutes, about one every 71 seconds, and none closer than 20 seconds to
+**1.3 How many.** There are 49 notes over 57 minutes, about one every 70 seconds, and none closer than 20 seconds to
 the one before.
 - **The rule:** notes stay sparse where the story is busiest. The battle, the end of chapter 7 and the globe of force
   in chapter 9 each run two to four minutes without a note.
@@ -70,7 +70,7 @@ the one before.
 | Words | 3 | the story's own terms and numbers: mentatype, kilads, 9,633 |
 | 1932 science | 13 | what Campbell knew, and what we know now |
 | The text | 5 | the two printings, the footnotes, Morey's picture |
-| Heirs | 11 | the idea that machines might inherit from us, before Campbell and since |
+| Heirs | 12 | the idea that machines might inherit from us, before Campbell and since |
 | The making | 11 | where the film pictures what the text leaves unsaid |
 
 *Recommend:* these six.
@@ -173,6 +173,42 @@ natural set to choose from. Each code would open the annotated film at its note,
 
 *Recommend:* choose the codes from these notes when the QR layouts are made (Phase 4).
 **Curt:** use your recommendations.
+
+## 5. Why this story
+
+**Curt:** In the 80s, I read Campbell's works in *The Best of John W. Campbell* and was struck by his pessimism around
+the concept of utopia. It was much easier to shrug off then when its future seemed well beyond my lifetime -- yet here
+we are. This isn't the most illustrative work for framing that concern, but it is the one that I can freely use. Make
+any changes you see fit.
+
+**Claude:** that's the reason the project hadn't stated, so I've written it into the foreword and followed the thread
+through the other notes.
+- **The book.** The US edition (1976, edited by Lester del Rey) opens with *The Last Evolution*. The next four stories
+  are "Twilight", "The Machine", "The Invaders" and "Rebellion". Those are the utopia stories: machines bring peace,
+  plenty and long life, the perfection goes stale, and mankind has to go back to an earlier stage of life. Read in
+  order, the book gives this story first and the pessimism on the pages right after it.
+- **[The foreword](../notes/foreword.md)** has a new section, *Why this story*: your reading in the 1980s, the pessimism
+  about utopia, a future no longer beyond a lifetime, and this as the story anyone may use. It also points out that the
+  utopia is in this story's first chapter: "no productive work was necessary". It's in the third person, "Curt Cox, who
+  made this film", to match the rest of the foreword. It could be in your own first person if you'd rather; either way,
+  please check that it says what you meant.
+- **[The afterword](../notes/afterword.md)** adds a third worry beside the two camps, Campbell's own: not that the
+  machines fail us, but that they succeed.
+  - Keynes in 1930: "the economic problem may be solved" within a century, and his "dread" of what the ordinary man
+    would do with the freedom.
+  - "Twilight" and the three Machine stories of 1935.
+  - Bostrom's *Deep Utopia* (2024), the same question for an age of AI.
+  It then notes that this story's utopia is ended by invasion before it can go stale.
+- **A new margin note**, *A world without work* (Heirs, 1:55), sits on "no productive work was necessary". It sets 2538
+  beside Keynes, then says Campbell soured on that world in "Twilight" and the Machine stories. It comes 31 seconds
+  after the note before it and 56 seconds before the next. That makes 49 notes, 12 of them Heirs; §1.3 and §1.4 now say
+  so.
+- **[The longer Heirs notes](../notes/succession.md)** gain Keynes (1930), the Machine stories (1935), and *Deep Utopia*
+  beside the two camps.
+- **Sources.** All four new sources are in the [fact-check list](../notes/factcheck.md), each read for its claim. The
+  plots of "The Machine" and its sequels rest on a review of the 1976 book ([Black
+  Gate](https://www.blackgate.com/?p=226361)), since I haven't read those stories themselves, so
+  the notes describe them only in outline. Copies of the book would let me read them and say more.
 
 ## Claude's open concerns
 
