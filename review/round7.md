@@ -1,5 +1,7 @@
 # Round 7: the film, annotated
 
+**Closed 2026-11-02: Curt accepted every recommendation.** The decisions are logged in [DECISIONS.md](../DECISIONS.md).
+
 Curt asked me to "start work on an annotated version for the web site", thinking about the notes for particular points
 in the film, and about forewords and afterwords. This round is a first pass at that, over the draft film from Round 6.
 It's the start of the site's watch page (PLAN.md §7, Phase 7), with notes drawn from the ones Round 2 approved.
@@ -209,6 +211,56 @@ through the other notes.
   plots of "The Machine" and its sequels rest on a review of the 1976 book ([Black
   Gate](https://www.blackgate.com/?p=226361)), since I haven't read those stories themselves, so
   the notes describe them only in outline. Copies of the book would let me read them and say more.
+
+## 6. Every kind of visitor
+
+**Curt:** Review the site and the video. Use whatever tools you want. Make any changes you want. Consider what is there
+now from the perspective of all different types of future visitors.
+
+**Claude:** I went through the site at desktop and phone widths and in dark mode, followed note links into the film,
+played it with captions on, and looked at frames and levels from every chapter. What each visitor would have met, and
+what changed:
+- **Someone arriving at the front page** read "The film isn't made yet", with no way to the draft. The front page now
+  offers three ways in: watch the film (a draft, with notes), read the story, see how it's made. The *In production*
+  box says what's left. Every page's menu has *Watch*.
+- **Someone following a shared link or a QR code** landed on a page titled "Round 7: the film, annotated", at an address
+  that moves when the watch page is built (Phase 7).
+  - The site now has a lasting address, [/watch/](https://curtcox.github.io/The-Last-Evolution/watch/). For now it
+    forwards to this page, keeping any `#note=` or `#t=` link. So the QR codes should use `watch/#note=bacteria`
+    rather than `annotated.html#note=bacteria` (§4.2).
+  - The page is titled *The Last Evolution, annotated (draft)*, and links to it show a description and Morey's
+    picture.
+  - Its notice now speaks to anyone, not just to you, and has a *Skip to the film* link past the foreword.
+  - The site has a 404 page and a tab icon.
+- **Someone who can't hear it** had the words under the player, but nothing in full screen.
+  - The player now has English captions, built in the page from the voice's word timings. Once turned on, they stay on
+    from chapter to chapter.
+  - The speaker is named in the captions and in the line under the player ("Roal: Attack — therefore!").
+  - 37 of the 186 lines had shown the voice's respellings ("Roal, two five three seven four") because the voice
+    counted words differently. They're now aligned to the text ("Roal, 25374"). All 49 notes kept their times.
+- **Someone using a screen reader** would have heard the whole margin re-read each time a note arrived. Now only the new
+  note's kind and title are announced, and only while the film plays.
+- **Someone who finds a mistake** had nowhere to say so. The About page and the film page now ask for a GitHub issue.
+- **A teacher or researcher** now finds, on the About page, the longer notes, their sources, and the fact-check list.
+  Morey's illustration is credited there too.
+- **Anyone watching** saw two clocks: the player's own, for the chapter, and the film's. The film's is now labelled
+  "the whole film".
+- **The Review page** showed Rounds 3 to 7 as open, though DECISIONS.md settles them all. Each sheet now has its
+  closing line.
+- **The film itself.**
+  - Loudness holds steady from chapter to chapter: −14.3 to −14.7 LUFS, with peaks below −0.4 dB.
+  - The frames match the draft Round 6 accepted.
+  - I changed nothing in it. The acting and painting pass is next anyway.
+
+Not changed, for later:
+- **The film has no credits.** It ends on THE END. Anyone who meets the video away from this site, a download or a
+  clip, won't learn that the voices are made with AI, or where the notes are. Phase 8 plans credits cut to the theme.
+  *Recommend:* they include that line and the site's address.
+- **The foreword comes first.** It's about a thousand words before the player. Round 7 put it there on purpose, and the
+  skip link now gets returning visitors past it. *Recommend:* keep it as it is.
+- **The older review pages** (the Round 5 and 6 drafts) still show the respellings, until they're rebuilt. They're the
+  record of their rounds, so I left them.
+- **The "More" links** still open the long notes on GitHub, until Phase 7 makes them pages of their own.
 
 ## Claude's open concerns
 

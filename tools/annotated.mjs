@@ -3,7 +3,8 @@
 //                                      with each note of notes/annotations.yaml appearing beside the picture as its words
 //                                      are spoken; notes/foreword.md above, notes/afterword.md below (scrolled to when the
 //                                      film ends), and every note listed by chapter. Kinds can be turned off; Curt's own
-//                                      notes pin to a moment, as on the film page.
+//                                      notes pin to a moment, as on the film page. Captions (each chapter's track, made
+//                                      in the page from the voice's word timings) can be turned on in the player.
 //   notes/reports/annotations.md       each note's time, and the gaps that break Round 7's spacing rule
 // Notes are anchored to words, not seconds, so re-timing the voice moves them with it. First: npm run film (Round 6).
 import { readdirSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
@@ -11,6 +12,7 @@ import { readYaml, respeller, storyWords, PATHS } from './script_lib.mjs';
 import { publishReview } from './publish_review.mjs';
 
 const OUT = 'out/review/round7', REPO = 'https://github.com/curtcox/The-Last-Evolution', UP = '../../', GAP = 20;
+const cast = readYaml('script/cast.yaml'), who = id => id === 'narrator' ? '' : (s => s[0].toUpperCase() + s.slice(1))(cast[id].name.split(',')[0]);
 const say = respeller(readYaml(PATHS.pronounce)), refs = readYaml('notes/refs.yaml'), { kinds, notes } = readYaml('notes/annotations.yaml');
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const hms = s => { const d = Math.round(s), h = Math.floor(d / 3600), m = Math.floor(d % 3600 / 60); return (h ? h + ':' + String(m).padStart(2, '0') : m) + ':' + String(d % 60).padStart(2, '0'); };
@@ -43,7 +45,7 @@ for (let n = 0; n <= 11; n++) {
   const round = n === 5 ? 'round5' : 'round6', file = published(round).find(f => new RegExp(`^ch${NN}-draft-[0-9a-f]{8}\\.mp4$`).test(f));
   if (!file) throw new Error(`chapter ${n} has no published draft; run npm run film first`);
   chapters.push({ n, title: TL.title, src: `../${round}/video/${file}`, at, dur: TL.duration, shots: TL.shots.map(s => ({ id: s.id, t0: s.t0 })),
-    lines: TL.lines.map(l => ({ id: l.id, t0: l.t0, t1: l.t1, words: storyWords(l, say) })) });
+    lines: TL.lines.map(l => ({ id: l.id, who: who(l.who), t0: l.t0, t1: l.t1, words: storyWords(l, say) })) });
   at += TL.duration;
 }
 const total = at;
@@ -56,8 +58,8 @@ const timed = notes.map(note => {
     if (!s) throw new Error(`${note.id}: no shot ${note.shot}`);
     return { ...note, ch: c.n, T: c.at + s.t0 };
   }
-  // where a respelling kept the voice's words from lining up with the text's (storyWords), they're the respelt ones
-  const wants = [bits(note.on), bits(say(note.on))].filter((w, i, a) => !i || w.join() !== a[0].join()), hits = [];
+  // the line's words are the text's (storyWords), so a phrase is matched as printed
+  const wants = [bits(note.on)], hits = [];
   for (const c of chapters) for (const l of c.lines) {
     if (note.at && !l.id.startsWith(note.at + '.')) continue;
     const ws = l.words.flatMap(w => bits(w[0]).map(b => [b, w[1]]));
@@ -83,7 +85,12 @@ const DATA = JSON.stringify({ CH: chapters.map(({ shots, ...c }) => ({ ...c, lin
 
 mkdirSync(OUT, { recursive: true });
 writeFileSync(`${OUT}/annotated.html`, `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Round 7: the film, annotated</title>
+<title>The Last Evolution, annotated (draft)</title>
+<meta name="description" content="John W. Campbell, Jr.'s 1932 story The Last Evolution, read in full by a cast of voices over ink-wash paintings, with notes in the margin on its science, its text and its ideas. A draft.">
+<meta property="og:title" content="The Last Evolution, annotated (draft)"><meta property="og:type" content="video.other">
+<meta property="og:description" content="Campbell's 1932 story of the machines that inherited the Earth, read in full and painted, with notes as it plays.">
+<meta property="og:image" content="https://curtcox.github.io/The-Last-Evolution/img/morey_1932_p415.jpg">
+<link rel="icon" href="${UP}favicon.svg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&display=swap">
 <link rel="stylesheet" href="${UP}style.css"><style>
 main{max-width:1240px} .read{max-width:38em;margin:0 auto} .read h3{font:1.25em/1.2 "Bebas Neue",Impact,sans-serif;letter-spacing:.04em;margin:1.4em 0 .2em}
@@ -96,7 +103,7 @@ main{max-width:1240px} .read{max-width:38em;margin:0 auto} .read h3{font:1.25em/
 .ticks span{position:absolute;top:0;width:1px;height:.5em;background:var(--ink2)} .ticks i{position:absolute;top:.7em;width:5px;height:5px;margin-left:-2px;border-radius:50%;background:var(--accent);opacity:.7}
 .time{display:flex;justify-content:space-between;font-size:.85em;color:var(--ink2);font-variant-numeric:tabular-nums}
 .now{min-height:3.2em;font-size:.95em;margin:.3em 0 0} .now .who,.chnow{font-variant:small-caps;color:var(--ink2);margin-right:.5em}
-.now .w{color:var(--ink2)} .now .w.said{color:var(--ink)}
+.now .who{font-variant:normal;font-style:italic;color:var(--ink)} .now .w{color:var(--ink2)} .now .w.said{color:var(--ink)}
 .kinds{display:flex;flex-wrap:wrap;gap:.35em;margin:.4em 0;font-size:.82em} .kinds button{font:inherit;padding:.15em .6em;border:1px solid var(--rule);background:none;color:var(--ink2);cursor:pointer;border-radius:1em}
 .kinds button[aria-pressed=true]{background:var(--paper2);color:var(--ink);border-color:var(--accent)}
 .margin{position:sticky;top:0;max-height:100vh;overflow-y:auto;padding:.5em 0 30vh;font-size:.88em;line-height:1.45}
@@ -105,7 +112,7 @@ main{max-width:1240px} .read{max-width:38em;margin:0 auto} .read h3{font:1.25em/
 .note.on{opacity:1;border-color:var(--accent)} .note h4{margin:0;font-size:1em} .note h4 .k{font-weight:400;font-variant:small-caps;color:var(--ink2);margin-right:.4em}
 .note h4 a.nl{color:inherit;text-decoration:none} .note h4 a.nl:hover{text-decoration:underline}
 .note p{margin:.2em 0} .note .more{font-size:.9em}
-.card{display:none} .gone{display:none!important}
+.card{display:none} .gone{display:none!important} .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
 @media (max-width:60em){.film{grid-template-columns:1fr}.player{position:static}.margin{display:none}.card{display:block;min-height:5.5em;font-size:.85em;line-height:1.4;border-top:1px solid var(--rule);padding-top:.3em}.card .note{opacity:1;margin:0}}
 .pin{display:flex;gap:.5em;margin-top:.3em} .pin input{flex:1;font:inherit;padding:.3em .5em;border:1px solid var(--rule);background:var(--paper2);color:var(--ink)}
 .pin button,.notesbar button{font:inherit;padding:.3em .8em;border:1px solid var(--rule);background:var(--paper2);color:var(--ink);cursor:pointer}
@@ -113,28 +120,29 @@ ol.pins{padding-left:1.4em} ol.pins li{margin:.25em 0} .at{cursor:pointer;color:
 ol.pins .x{cursor:pointer;color:var(--ink2);margin-left:.5em} .notesbar{display:flex;gap:.5em;align-items:center} .t{color:var(--ink2);font-size:.85em}
 .index h3{margin:1.2em 0 .3em} .index .note{opacity:1}
 </style></head><body><main>
-<p class="kicker"><a href="../">Review</a> · Round 7 · the annotated film</p><h1>The Last Evolution, annotated</h1>
+<p class="kicker"><a href="${UP}">The Last Evolution</a> · <a href="../">Review</a> · Round 7</p><h1>The Last Evolution, annotated</h1>
 <div class="read">
-<p class="draft"><b>A draft, over the draft film.</b> The notes, the foreword and the afterword are for review: what
-to say, where, and how. The film under them is Round 6's. Pin your own notes to any moment, below the player, and
-<i>Copy</i> them for the <a href="${REPO}/blob/main/review/round7.md">decision sheet</a>.</p>
+<p class="draft"><b>A draft.</b> Every word of the story is here, voiced, but the paintings are still rough: the finished
+film will be painted again in full. The notes are being reviewed too (<a href="${REPO}/blob/main/review/round7.md">Round
+7</a>); if you spot a mistake, <a href="${REPO}/issues">say so on GitHub</a>.
+<a href="#film" id="skip">Skip to the film</a> or read on.</p>
 <h2 id="foreword">${esc(fore.title)}</h2>
 ${fore.html}
 <button class="begin" id="begin">Begin the film</button>
 </div>
 <div class="film" id="film"><div>
-<div class="player"><video id="v" controls preload="metadata" playsinline></video>
+<div class="player"><video id="v" controls preload="metadata" playsinline aria-label="the film"></video>
 <div class="bar"><div class="ticks">${chapters.slice(1).map(c => `<span style="left:${(100 * c.at / total).toFixed(2)}%"></span>`).join('')}${timed.map(x => `<i data-k="${x.kind}" style="left:${(100 * x.T / total).toFixed(2)}%"></i>`).join('')}</div>
 <input id="scrub" type="range" min="0" max="${total.toFixed(1)}" step="0.1" value="0" aria-label="the whole film"></div>
-<div class="time"><span id="tnow">0:00</span><span>${hms(total)}</span></div>
+<div class="time"><span id="tnow">0:00</span><span>the whole film, ${hms(total)}</span></div>
 <p class="now" id="now"></p>
-<div class="card" id="card" aria-live="polite"></div>
+<div class="card" id="card"></div><p class="sr" id="say" aria-live="polite"></p>
 <div class="kinds" id="kinds"><span class="t">Notes:</span>${Object.entries(kinds).map(([k, label]) => `<button data-k="${k}" aria-pressed="true">${esc(label)}</button>`).join('')}<button id="none" aria-pressed="false">None</button></div>
-<div class="pin"><input id="pin" placeholder="Your note at this moment…" aria-label="your note"><button id="pinb">Pin</button></div></div>
-<h3>Your notes</h3><div class="notesbar"><button id="copy">Copy</button><button id="clear">Clear</button><span id="msg" class="t"></span></div>
+<div class="pin"><input id="pin" placeholder="Your own note at this moment…" aria-label="your note"><button id="pinb">Pin</button></div></div>
+<h3>Your notes</h3><p class="t">Kept in this browser only. <i>Copy</i> puts them on the clipboard, with their times.</p><div class="notesbar"><button id="copy">Copy</button><button id="clear">Clear</button><span id="msg" class="t"></span></div>
 <ol class="pins" id="pins"></ol>
 </div>
-<aside class="margin" id="margin" aria-live="polite"><p class="empty">Notes appear here as the film reaches them.</p></aside></div>
+<aside class="margin" id="margin" aria-label="notes"><p class="empty">Notes appear here as the film reaches them.</p></aside></div>
 <div class="read">
 <h2 id="afterword">${esc(after.title)}</h2>
 ${after.html}
@@ -149,9 +157,25 @@ let cur = 0, want = null, scrubbing = false;
 const chAt = T => { let i = 0; while (i + 1 < CH.length && T >= CH[i + 1].at) i++; return i; };
 const filmTime = () => CH[cur].at + v.currentTime;
 const play = () => v.play().catch(() => {});  // refused until the viewer has touched the page
+// captions: each chapter's words in cues of a line or two, broken at a sentence's end or when long, the speaker named
+const vtt = c => { const ts = s => new Date(s * 1000).toISOString().slice(11, 23), cues = [];
+  for (const l of c.lines) { let cue = [];
+    const flush = (end) => { if (!cue.length) return; cues.push({ t0: cue[0][1], t1: end, text: (cues.at(-1)?.l === l || !l.who ? '' : l.who + ': ') + cue.map(w => w[0]).join(' '), l }); cue = []; };
+    l.words.forEach((w, j) => { const len = cue.reduce((a, x) => a + x[0].length + 1, 0);
+      if (cue.length && (len + w[0].length > 74 || (/[.?!]["”’]*$/.test(cue.at(-1)[0]) && len > 20) || (/[,;:—-]$/.test(cue.at(-1)[0]) && len > 50))) flush(w[1]);
+      cue.push(w); });
+    flush(l.t1 + .3); }
+  cues.forEach((q, i) => { if (cues[i + 1] && q.t1 > cues[i + 1].t0) q.t1 = cues[i + 1].t0; if (q.t1 <= q.t0) q.t1 = q.t0 + .5; });
+  return 'WEBVTT\\n\\n' + cues.map(q => ts(q.t0) + ' --> ' + ts(q.t1) + '\\n' + q.text.replace(/--/g, '—').replace(/&/g, '&amp;').replace(/</g, '&lt;')).join('\\n\\n') + '\\n'; };
+let ccMode = 'disabled';
+function captions(i) {
+  const old = v.querySelector('track'); if (old) { ccMode = old.track.mode; URL.revokeObjectURL(old.src); old.remove(); }
+  const tr = document.createElement('track'); tr.kind = 'captions'; tr.srclang = 'en'; tr.label = 'English';
+  tr.src = URL.createObjectURL(new Blob([vtt(CH[i])], { type: 'text/vtt' })); v.append(tr); tr.track.mode = ccMode;
+}
 function go(T, andPlay = true) {
   const i = chAt(T), t = T - CH[i].at;
-  if (i !== cur || !v.src) { cur = i; want = { t, play: andPlay }; v.src = CH[i].src; v.load(); }
+  if (i !== cur || !v.src) { cur = i; want = { t, play: andPlay }; v.src = CH[i].src; captions(i); v.load(); }
   else if (want) want = { t, play: andPlay };  // still loading: the latest seek wins
   else { v.currentTime = t; if (andPlay) play(); }
 }
@@ -178,6 +202,8 @@ let upto = -2, lit = null;
 function margins(T) {
   let k = -1; for (let i = 0; i < NOTES.length && NOTES[i].T <= T; i++) if (shown.has(NOTES[i].kind)) k = i;
   if (k !== upto) {
+    // a screen reader hears only the newest note's kind and title, as the film reaches it
+    if (k > upto && upto >= -1 && k >= 0 && !v.paused) document.getElementById('say').textContent = KINDS[NOTES[k].kind] + ' note: ' + NOTES[k].html.match(/<h4>(.*?)<\\/h4>/)[1].replace(/<[^>]+>/g, '');
     upto = k; margin.innerHTML = ''; card.innerHTML = '';
     const list = NOTES.map((n, i) => i).filter(i => i <= k && shown.has(NOTES[i].kind));
     if (!list.length) margin.innerHTML = '<p class="empty">' + (shown.size ? 'Notes appear here as the film reaches them.' : 'Notes are off.') + '</p>';
@@ -194,7 +220,7 @@ function tick() {
   if (!scrubbing) { scrub.value = T; document.getElementById('tnow').textContent = hms(T); }
   const L = c.lines.find(l => t >= l.t0 - .05 && t < l.t1 + .3);
   const wi = L ? Math.max(0, L.words.findLastIndex(w => w[1] <= t)) : 0, a = Math.max(0, wi - 14), win = cur + ':' + (L ? L.t0 + ':' + a : '');
-  if (win !== now.dataset.win) { now.dataset.win = win; now.innerHTML = '<span class="chnow">' + c.n + ' · ' + c.title.replace(/[<&]/g, '') + '</span>' + (!L ? '' : (a ? '… ' : '') + L.words.slice(a, a + 34).map(w => '<span class="w" data-t="' + w[1] + '">' + w[0].replace(/[<&]/g, '') + '</span>').join(' ') + (a + 34 < L.words.length ? ' …' : '')); }
+  if (win !== now.dataset.win) { now.dataset.win = win; now.innerHTML = '<span class="chnow">' + c.n + ' · ' + c.title.replace(/[<&]/g, '') + '</span>' + (L && L.who ? '<span class="who">' + L.who.replace(/[<&]/g, '') + ':</span> ' : '') + (!L ? '' : (a ? '… ' : '') + L.words.slice(a, a + 34).map(w => '<span class="w" data-t="' + w[1] + '">' + w[0].replace(/[<&]/g, '') + '</span>').join(' ') + (a + 34 < L.words.length ? ' …' : '')); }
   if (L) now.querySelectorAll('.w').forEach(e => e.classList.toggle('said', +e.dataset.t <= t));
   margins(T);
   requestAnimationFrame(tick);

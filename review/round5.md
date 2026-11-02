@@ -1,5 +1,8 @@
 # Round 5: the pilot
 
+**Closed 2026-11-01: Curt settled the motion; the look was held open for the whole film, and settled in Round 6.** The
+decisions are logged in [DECISIONS.md](../DECISIONS.md).
+
 Phase 5 makes chapter 5, *The Hydrogen Wall*, in three steps: storyboard, draft, final render (PLAN.md §9). This round
 starts with the storyboard. It's the standard every other chapter will follow, so the questions here are about the
 pattern as much as about this chapter.

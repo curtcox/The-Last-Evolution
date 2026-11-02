@@ -1,5 +1,8 @@
 # Round 3: casting and sound
 
+**Closed 2026-11-01: Curt chose the cast and accepted the other recommendations.** The decisions are logged in
+[DECISIONS.md](../DECISIONS.md).
+
 This round is mostly for your ears. I can't hear the candidates, so I don't recommend voices or a motif. What I could
 check, I did: every candidate was run through speech-to-text and compared with the words it was given, and the page
 flags any that dropped or garbled words. Where something other than taste decides, there's a recommendation.

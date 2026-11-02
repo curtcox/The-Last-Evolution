@@ -1,5 +1,7 @@
 # Round 6: the whole film, in draft
 
+**Closed 2026-11-02: Curt accepted every recommendation.** The decisions are logged in [DECISIONS.md](../DECISIONS.md).
+
 Curt watched chapter 5's draft and named two possible issues: "it's very monochrome" and "it's flickery". They said
 "Those might be the right calls. I want to see the whole thing before I decide." (Round 5, §5.) So this round is the
 whole film at draft level: the other eleven chapters made the way the pilot was, joined with it in order.

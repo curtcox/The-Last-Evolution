@@ -57,12 +57,26 @@ export function respeller(pronounce) {
 }
 
 // A voiced line's words as the story spells them, timed by the voice's: each word of the text takes as many of the
-// voice's words as its respelling has ("F-1" takes "F one"); if the counts don't tally, the voice's own words are
-// returned. line: a timeline line ({ text, words: [[word, start, end], ...] }); say: a respeller(). → [[word, start]]
+// voice's words as its respelling has ("F-1" takes "F one"); if the counts don't tally, the two are aligned. Always the
+// text's words. line: a timeline line ({ text, words: [[word, start, end], ...] }); say: a respeller(). → [[word, start]]
 export function storyWords(line, say) {
-  const tw = plain(line.text).split(/\s+/).filter(w => /\w/.test(w)), k = tw.map(w => say(w).split(/\s+/).filter(x => /\w/.test(x)).length);
-  if (k.reduce((a, b) => a + b, 0) !== line.words.length) return line.words.map(w => [w[0], w[1]]);
-  let i = 0; return tw.map((w, j) => { const at = line.words[i][1]; i += k[j]; return [w, at]; });
+  // the text's words, and its dashes, which the voice's timings count as words too
+  const tw = plain(line.text).split(/\s+/).filter(w => /\w|—/.test(w)), k = tw.map(w => say(w).split(/\s+/).filter(x => /\w/.test(x)).length);
+  if (k.reduce((a, b) => a + b, 0) === line.words.length) { let i = 0; return tw.map((w, j) => { const at = line.words[i][1]; i += k[j]; return [w, at]; }); }
+  // the voice split its words otherwise ("twenty-five" as one): align the respelt words with the voice's by edit
+  // distance, and give each of the text's words the time of the first voice word matched to it
+  const key = s => s.toLowerCase().replace(/[^a-z0-9]/g, ''), E = [], V = line.words.map(w => key(w[0]));
+  tw.forEach((w, j) => { const xs = say(w).split(/\s+/).filter(x => /\w/.test(x)); (xs.length ? xs : [w]).forEach(x => E.push([key(x), j])); });
+  const d = Array.from({ length: E.length + 1 }, (_, i) => Array.from({ length: V.length + 1 }, (_, j) => i + j));
+  for (let i = 1; i <= E.length; i++) for (let j = 1; j <= V.length; j++)
+    d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (E[i - 1][0] === V[j - 1] ? 0 : 1));
+  const at = Array(tw.length).fill(null);
+  for (let i = E.length, j = V.length; i > 0;) {
+    if (j > 0 && d[i][j] === d[i - 1][j - 1] + (E[i - 1][0] === V[j - 1] ? 0 : 1)) { at[E[i - 1][1]] = line.words[j - 1][1]; i--; j--; }
+    else if (d[i][j] === d[i - 1][j] + 1) i--; else j--;
+  }
+  let last = line.words[0][1];
+  return tw.map((w, j) => [w, last = at[j] ?? last]);
 }
 
 // the processing each treatment applies (ffmpeg filters)

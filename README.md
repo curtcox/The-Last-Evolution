@@ -3,6 +3,9 @@
 A voiced, painted film of John W. Campbell, Jr.'s 1932 story *The Last Evolution*, read in full, and its companion site:
 https://curtcox.github.io/The-Last-Evolution/
 
+The whole film is drafted. Watch it, with notes beside it as it plays, at
+[/watch/](https://curtcox.github.io/The-Last-Evolution/watch/), the film's lasting address.
+
 ## Try it
 
 ```bash

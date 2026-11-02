@@ -1,18 +1,22 @@
 // build_site.mjs: the companion site → site/public/ (published by .github/workflows/pages.yml).   npm run site
 //   index.html   what this is and where it stands
+//   watch/       the film's lasting address: for now it forwards to the annotated draft (Round 7), keeping any #note= or
+//                #t= link, so links shared today still work when the watch page takes its place (Phase 7)
 //   read/        the story in full, from text/story.json: a printable page with an anchor per paragraph (#p001…), each
 //                reading restored from the 1932 printing marked and listed (text/emendations.yaml)
 //   about/       sources, credits, licences
 //   review/      each review round: its decision sheet (review/roundN.md, on GitHub) and its decision pages, copied from
 //                site/review/ (put there by tools/publish_review.mjs, with their audio)
 //   img/         site/img/, copied as is (Morey's illustration, sized for the web from assets/ref/)
+//   404.html     for a mistyped or outdated link; favicon.svg, the tab's icon
 // Links are relative, so the same files work at http://localhost:8077/ and at curtcox.github.io/The-Last-Evolution/.
 // Later phases add the film beside the synced text, the notes and the r/NAME/ forwarding pages (PLAN.md §7).
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, existsSync, readdirSync } from 'node:fs';
 import YAML from 'yaml';
 
 const OUT = 'site/public';
-const REPO = 'https://github.com/curtcox/The-Last-Evolution';
+const REPO = 'https://github.com/curtcox/The-Last-Evolution', SITE = 'https://curtcox.github.io/The-Last-Evolution/';
+const WATCH = 'review/round7/annotated.html';   // what watch/ forwards to, until the watch page is built
 const story = JSON.parse(readFileSync('text/story.json', 'utf8'));
 const emendations = YAML.parse(readFileSync('text/emendations.yaml', 'utf8'));
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -20,22 +24,26 @@ const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&
 const typeset = s => esc(s).replace(/--/g, '—').replace(/_([^_]+)_/g, '<i>$1</i>')
   .replace(/\[(\d)\]/g, (m, n) => `<sup><a href="#fn${n}" id="ref${n}">${n}</a></sup>`);
 
-function page(depth, title, body, { wide = false } = {}) {
-  const up = '../'.repeat(depth);
+const DESCRIPTION = "The Last Evolution, John W. Campbell, Jr.'s 1932 story, read in full: a voiced, painted film and its companion site.";
+function page(depth, title, body, { wide = false, abs = false } = {}) {
+  const up = abs ? '/The-Last-Evolution/' : '../'.repeat(depth);
   return `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${title}</title>
-<meta name="description" content="The Last Evolution, John W. Campbell, Jr.'s 1932 story, read in full: a voiced, painted film and its companion site.">
+<meta name="description" content="${DESCRIPTION}">
+<meta property="og:title" content="${title}"><meta property="og:description" content="${DESCRIPTION}">
+<meta property="og:image" content="${SITE}img/morey_1932_p415.jpg">
+<link rel="icon" href="${up}favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&display=swap">
 <link rel="stylesheet" href="${up}style.css">
 </head>
 <body>
 <header class="mast"><a href="${up}" class="name">The Last Evolution</a>
-<nav><a href="${up}read/">Read</a><a href="${up}about/">About</a><a href="${up}review/">Review</a><a href="${REPO}">Source</a></nav></header>
+<nav><a href="${up}watch/">Watch</a><a href="${up}read/">Read</a><a href="${up}about/">About</a><a href="${up}review/">Review</a><a href="${REPO}">Source</a></nav></header>
 <main${wide ? ' class="wide"' : ''}>
 ${body}
 </main>
@@ -72,11 +80,18 @@ const home = page(0, 'The Last Evolution', `
 <p class="lede">A machine's memoir of the war in which mankind died and its machines inherited the Solar System: John W.
 Campbell, Jr.'s story from 1932, voiced by a full cast and painted in the manner of the pulp magazine it first appeared
 in. Every word of the story is in the film.</p>
+<ul class="ways">
+<li><a href="watch/"><b>Watch</b></a> the whole film, about an hour, with notes beside it as it plays: on the 1932
+science, the text, and the idea at its heart, that machines might inherit from us. It's a draft: every word is voiced,
+and the paintings are still rough.</li>
+<li><a href="read/"><b>Read</b></a> the story (${story.words.toLocaleString()} words, about half an hour), with the
+words the 1961 reprint lost put back from the first printing.</li>
+<li><a href="review/"><b>See how it's made</b></a>, round by round: every choice, and why.</li>
+</ul>
 <div class="status"><h2>In production</h2>
-<p>The film isn't made yet. This site will hold it, the full text beside it as it plays, and notes on the 1932 science,
-the ideas about machine succession the story anticipates, and Campbell and the pulps.
-<a href="${REPO}/blob/main/PLAN.md">The plan</a> says how it's being made.</p>
-<p>Meanwhile, the story itself is here: <a href="read/">read it</a> (${story.words.toLocaleString()} words, about half an hour).</p></div>
+<p>The whole film is drafted. Next, its people and machines are acted and painted to their finished designs, chapter by
+chapter, and then it's rendered in full and posted to YouTube with captions. <a href="${REPO}/blob/main/PLAN.md">The
+plan</a> says how.</p></div>
 `);
 
 const body = blocks.map(b => {
@@ -104,6 +119,7 @@ put back, as marked above (<a href="${REPO}/blob/main/text/comparison_1932.md">t
 <ul class="fn em-list">${[...emendations].sort((a, b) => a.para.localeCompare(b.para)).map(e => `<li id="em${e.n}"><a href="#emr${e.n}">¶${+e.para.slice(1)}</a>
 1932: “${typeset(e.first)}” · Gutenberg: “${typeset(e.gutenberg)}” · <a href="${SCANS}/${e.scan}.jpg">scan</a></li>`).join('\n')}</ul>`;
 const read = page(1, 'Read: The Last Evolution', `<article class="story">${body}${restored}</article>
+<p class="src">Hear it read: <a href="../watch/">the film</a>, in draft, with notes.</p>
 <p class="src">Text: <a href="https://www.gutenberg.org/ebooks/27462">Project Gutenberg eBook #27462</a>, transcribed from
 <i>Amazing Stories</i>, March 1961, with ${emendations.length} readings restored from the first printing, <i>Amazing
 Stories</i>, August 1932 (<a href="#restored">listed above</a>). Typeset here with em dashes and italics; otherwise the
@@ -120,15 +136,43 @@ in the United States. The repository keeps the Gutenberg file unmodified, with i
 clause, two negatives, and a dozen smaller words. This site and the film restore those ${emendations.length} readings from
 the 1932 scan, and the <a href="../read/#restored">Read page</a> marks each one
 (<a href="${REPO}/blob/main/text/comparison_1932.md">the comparison</a>).</p>
+<p>Leo Morey's illustration for the story, from the same issue, is on the <a href="../read/#illustration">Read
+page</a>. It is in the public domain in the US too.</p>
 <h2>The adaptation</h2>
 <p>A film of the whole story, word for word, voiced with AI-generated voices (ElevenLabs) and painted in code with
 <a href="https://p5js.org">p5.js</a> and <a href="https://github.com/acamposuribe/p5.brush">p5.brush</a>, on John
 Heibel's <a href="https://github.com/JohnHeibel/ClaudeAnimationBase">Claude Animation Base</a> (MIT). It's being made by
-Curt Cox with Claude, Anthropic's AI model, in Claude Code.</p>
-<p>The voices, sound effects and music in the film are AI-generated, and every on-screen design is original.</p>
+Curt Cox with Claude, Anthropic's AI model, in Claude Code. <a href="../watch/">The draft</a> can be watched now.</p>
+<p>The voices, sound effects and music in the film are AI-generated. Each voice was designed for its part, and none is a
+real person's. Every on-screen design is original.</p>
+<h2>The notes</h2>
+<p>The notes beside the film, and the longer ones on <a href="${REPO}/blob/main/notes/science.md">the science of
+1932</a>, <a href="${REPO}/blob/main/notes/succession.md">machines as heirs</a> and
+<a href="${REPO}/blob/main/notes/history.md">Campbell and the pulps</a>, cite their sources. Each claim was checked in
+its source, or worked out from the story's own numbers, as <a href="${REPO}/blob/main/notes/factcheck.md">the fact-check
+list</a> records.</p>
+<h2>Corrections</h2>
+<p>If you find a mistake in the text, the film or the notes, please <a href="${REPO}/issues">open an issue on
+GitHub</a>.</p>
 <h2>The code</h2>
 <p>Everything is on <a href="${REPO}">GitHub</a> under the MIT licence.</p>
 `);
+
+// watch/: forwards to the film, with any #note= or #t= link kept
+const watch = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>The Last Evolution: watch</title>
+<link rel="canonical" href="${SITE}${WATCH}"><meta http-equiv="refresh" content="0; url=../${WATCH}">
+<script>location.replace('../${WATCH}' + location.hash)</script></head>
+<body><p><a href="../${WATCH}">The film, annotated</a></p></body></html>
+`;
+const notFound = page(0, 'Not found: The Last Evolution', `
+<h1>Not found</h1>
+<p>There's no page at this address. It may have moved while the film is being made.</p>
+<p><a href="/The-Last-Evolution/watch/">Watch the film</a>, <a href="/The-Last-Evolution/read/">read the story</a>, or
+start from <a href="/The-Last-Evolution/">the front page</a>.</p>
+`, { abs: true });
+// the tab's icon: a sepia "E" on pulp paper
+const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="4" fill="#F1E8D3"/><rect x="2" y="2" width="28" height="28" rx="3" fill="none" stroke="#2B2233" stroke-width="1.5"/><text x="16" y="25" font-family="Georgia,serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#2B2233">E</text></svg>
+`;
 
 const css = `:root { --paper: #F1E8D3; --paper2: #E6DABF; --ink: #2B2233; --ink2: #5B5148; --accent: #3F8F55; --rule: #CDBF9F; color-scheme: light; }
 @media (prefers-color-scheme: dark) { :root { --paper: #1C1A17; --paper2: #26231F; --ink: #E8DFCC; --ink2: #B3A893; --accent: #8FD9A0; --rule: #4A4339; color-scheme: dark; } }
@@ -147,6 +191,7 @@ h2 { font: 1.6em/1.1 "Bebas Neue", Impact, sans-serif; letter-spacing: .04em; ma
 .kicker { font-variant: small-caps; letter-spacing: .06em; color: var(--ink2); margin: 0; }
 .byline { font-variant: small-caps; letter-spacing: .05em; margin: 0 0 1.5em; }
 .lede { font-size: 1.15em; }
+.ways { padding-left: 1.2em; } .ways li { margin: 0 0 .7em; }
 .status { border: 1px solid var(--rule); background: var(--paper2); padding: .2em 1.2em 1em; margin-top: 2em; }
 .status h2 { margin-top: .6em; }
 .story p { margin: 0 0 .9em; text-align: justify; hyphens: auto; position: relative; }
@@ -188,8 +233,11 @@ ${r.pages.length ? `<ul>${r.pages.map(p => `<li><a href="${p.href}">${esc(p.titl
 `);
 
 rmSync(OUT, { recursive: true, force: true });
-for (const d of ['', 'read', 'about', 'review']) mkdirSync(`${OUT}/${d}`, { recursive: true });
+for (const d of ['', 'watch', 'read', 'about', 'review']) mkdirSync(`${OUT}/${d}`, { recursive: true });
 writeFileSync(`${OUT}/index.html`, home);
+writeFileSync(`${OUT}/watch/index.html`, watch);
+writeFileSync(`${OUT}/404.html`, notFound);
+writeFileSync(`${OUT}/favicon.svg`, favicon);
 writeFileSync(`${OUT}/read/index.html`, read);
 writeFileSync(`${OUT}/about/index.html`, about);
 if (existsSync('site/review')) cpSync('site/review', `${OUT}/review`, { recursive: true });

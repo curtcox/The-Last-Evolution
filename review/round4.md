@@ -1,5 +1,7 @@
 # Round 4: the look
 
+**Closed 2026-11-01: Curt accepted every recommendation.** The decisions are logged in [DECISIONS.md](../DECISIONS.md).
+
 Phase 4 runs beside casting (PLAN.md §9), so this round is open alongside Round 3. It asks one thing first: is the
 medium right? The style frames test the plan's one rule (§5): the world in ink wash on aged pulp paper, in warm greys
 and sepia, with colour only for energy, in the colours the text names. The ships, machines and people in them are
