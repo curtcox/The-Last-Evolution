@@ -1,0 +1,780 @@
+{
+ "summary": {
+  "pass": 0,
+  "stale": 0,
+  "open": 96,
+  "curt": 6,
+  "later": 3
+ },
+ "satisfied": false,
+ "checks": {
+  "verbatim": {
+   "state": "pass",
+   "detail": "verbatim check passed: 140 paragraphs, 6,707 words, all spoken, in order; 186 spoken lines: 62 quoted, 124 the narrator's"
+  },
+  "links": {
+   "state": "pass",
+   "detail": "1110 links in 34 pages, 0 broken"
+  },
+  "annotated": {
+   "state": "pass",
+   "detail": "current"
+  },
+  "voice": {
+   "state": "fail",
+   "detail": "still flagged, not yet heard: p014.1, p052.1"
+  },
+  "captions": {
+   "state": "pass",
+   "detail": "every spoken line has timed words"
+  },
+  "spend": {
+   "state": "pass",
+   "detail": "$0.59 of $10"
+  },
+  "refs": {
+   "state": "pass",
+   "detail": "refs: 53 sources, all cited, all answering; definitions written into 6 notes"
+  },
+  "loudness": {
+   "state": "fail",
+   "detail": "off: ch05 (-14.7 LUFS, peak -0.6 dBTP), ch03 (-14.3 LUFS, peak -0.7 dBTP), ch04 (-14.7 LUFS, peak -0.7 dBTP), ch06 (-14.4 LUFS, peak -0.9 dBTP), ch08 (-14.7 LUFS, peak -0.8 dBTP), ch10 (-14.5 LUFS, peak -0.4 dBTP)"
+  },
+  "phone": {
+   "state": "pass",
+   "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
+  },
+  "live": {
+   "state": "fail",
+   "detail": "review/quality/index.html (404)"
+  }
+ },
+ "curt": [
+  {
+   "id": "gate.voices",
+   "title": "Phase 3: the full voice pass, by ear",
+   "ask": "Listen to the full voice pass (Round 3, 4.4). Does every role sound right, and is anything misread?"
+  },
+  {
+   "id": "gate.look",
+   "title": "Phase 4: the designs and a QR layout",
+   "ask": "Are the model sheets and one of QR layouts A and B approved?"
+  },
+  {
+   "id": "gate.pilot",
+   "title": "Phase 5: chapter 5 as the standard",
+   "ask": "Is chapter 5, after its acting pass, the standard for the rest?"
+  },
+  {
+   "id": "gate.chapters",
+   "title": "Phase 6: every chapter",
+   "ask": "Is each chapter approved?"
+  },
+  {
+   "id": "gate.site",
+   "title": "Phase 7: the site, on desktop and phone",
+   "ask": "Is the site approved?"
+  },
+  {
+   "id": "curt.foreword",
+   "title": "the foreword's wording",
+   "ask": "The foreword says why this story, in your voice (DECISIONS.md, 2026-11-02). Is its wording yours?"
+  }
+ ],
+ "items": [
+  {
+   "id": "ch05.acting",
+   "area": "film",
+   "title": "Chapter 5: the acting",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch05.picture",
+   "area": "film",
+   "title": "Chapter 5: the picture",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch05.sync",
+   "area": "film",
+   "title": "Chapter 5: picture against sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch05.sound",
+   "area": "film",
+   "title": "Chapter 5: the sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch05.story",
+   "area": "film",
+   "title": "Chapter 5: the chapter as a story",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch05.draft",
+   "area": "film",
+   "title": "Chapter 5: its draft is newer than its sources",
+   "state": "open",
+   "note": "older than src/scenes/ch05.js, script/boards/ch05.yaml, src/core.js, src/kit.js, src/pulp.js, src/designs.js, script/sfx.yaml, render.mjs, studio.html"
+  },
+  {
+   "id": "ch00.acting",
+   "area": "film",
+   "title": "Chapter 0: the acting",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch00.picture",
+   "area": "film",
+   "title": "Chapter 0: the picture",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch00.sync",
+   "area": "film",
+   "title": "Chapter 0: picture against sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch00.sound",
+   "area": "film",
+   "title": "Chapter 0: the sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch00.story",
+   "area": "film",
+   "title": "Chapter 0: the chapter as a story",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch00.draft",
+   "area": "film",
+   "title": "Chapter 0: its draft is newer than its sources",
+   "state": "open",
+   "note": "older than src/scenes/ch00.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+  },
+  {
+   "id": "ch01.acting",
+   "area": "film",
+   "title": "Chapter 1: the acting",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch01.picture",
+   "area": "film",
+   "title": "Chapter 1: the picture",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch01.sync",
+   "area": "film",
+   "title": "Chapter 1: picture against sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch01.sound",
+   "area": "film",
+   "title": "Chapter 1: the sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch01.story",
+   "area": "film",
+   "title": "Chapter 1: the chapter as a story",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch01.draft",
+   "area": "film",
+   "title": "Chapter 1: its draft is newer than its sources",
+   "state": "open",
+   "note": "older than src/scenes/ch01.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+  },
+  {
+   "id": "ch02.acting",
+   "area": "film",
+   "title": "Chapter 2: the acting",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch02.picture",
+   "area": "film",
+   "title": "Chapter 2: the picture",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch02.sync",
+   "area": "film",
+   "title": "Chapter 2: picture against sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch02.sound",
+   "area": "film",
+   "title": "Chapter 2: the sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch02.story",
+   "area": "film",
+   "title": "Chapter 2: the chapter as a story",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch02.draft",
+   "area": "film",
+   "title": "Chapter 2: its draft is newer than its sources",
+   "state": "open",
+   "note": "older than src/scenes/ch02.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+  },
+  {
+   "id": "ch03.acting",
+   "area": "film",
+   "title": "Chapter 3: the acting",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch03.picture",
+   "area": "film",
+   "title": "Chapter 3: the picture",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch03.sync",
+   "area": "film",
+   "title": "Chapter 3: picture against sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch03.sound",
+   "area": "film",
+   "title": "Chapter 3: the sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch03.story",
+   "area": "film",
+   "title": "Chapter 3: the chapter as a story",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch03.draft",
+   "area": "film",
+   "title": "Chapter 3: its draft is newer than its sources",
+   "state": "open",
+   "note": "older than src/scenes/ch03.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+  },
+  {
+   "id": "ch04.acting",
+   "area": "film",
+   "title": "Chapter 4: the acting",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch04.picture",
+   "area": "film",
+   "title": "Chapter 4: the picture",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch04.sync",
+   "area": "film",
+   "title": "Chapter 4: picture against sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch04.sound",
+   "area": "film",
+   "title": "Chapter 4: the sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch04.story",
+   "area": "film",
+   "title": "Chapter 4: the chapter as a story",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch04.draft",
+   "area": "film",
+   "title": "Chapter 4: its draft is newer than its sources",
+   "state": "open",
+   "note": "older than src/scenes/ch04.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+  },
+  {
+   "id": "ch06.acting",
+   "area": "film",
+   "title": "Chapter 6: the acting",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch06.picture",
+   "area": "film",
+   "title": "Chapter 6: the picture",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch06.sync",
+   "area": "film",
+   "title": "Chapter 6: picture against sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch06.sound",
+   "area": "film",
+   "title": "Chapter 6: the sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch06.story",
+   "area": "film",
+   "title": "Chapter 6: the chapter as a story",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch06.draft",
+   "area": "film",
+   "title": "Chapter 6: its draft is newer than its sources",
+   "state": "open",
+   "note": "older than src/scenes/ch06.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+  },
+  {
+   "id": "ch07.acting",
+   "area": "film",
+   "title": "Chapter 7: the acting",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch07.picture",
+   "area": "film",
+   "title": "Chapter 7: the picture",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch07.sync",
+   "area": "film",
+   "title": "Chapter 7: picture against sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch07.sound",
+   "area": "film",
+   "title": "Chapter 7: the sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch07.story",
+   "area": "film",
+   "title": "Chapter 7: the chapter as a story",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch07.draft",
+   "area": "film",
+   "title": "Chapter 7: its draft is newer than its sources",
+   "state": "open",
+   "note": "older than src/scenes/ch07.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+  },
+  {
+   "id": "ch08.acting",
+   "area": "film",
+   "title": "Chapter 8: the acting",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch08.picture",
+   "area": "film",
+   "title": "Chapter 8: the picture",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch08.sync",
+   "area": "film",
+   "title": "Chapter 8: picture against sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch08.sound",
+   "area": "film",
+   "title": "Chapter 8: the sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch08.story",
+   "area": "film",
+   "title": "Chapter 8: the chapter as a story",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch08.draft",
+   "area": "film",
+   "title": "Chapter 8: its draft is newer than its sources",
+   "state": "open",
+   "note": "older than src/scenes/ch08.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+  },
+  {
+   "id": "ch09.acting",
+   "area": "film",
+   "title": "Chapter 9: the acting",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch09.picture",
+   "area": "film",
+   "title": "Chapter 9: the picture",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch09.sync",
+   "area": "film",
+   "title": "Chapter 9: picture against sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch09.sound",
+   "area": "film",
+   "title": "Chapter 9: the sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch09.story",
+   "area": "film",
+   "title": "Chapter 9: the chapter as a story",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch09.draft",
+   "area": "film",
+   "title": "Chapter 9: its draft is newer than its sources",
+   "state": "open",
+   "note": "older than src/scenes/ch09.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+  },
+  {
+   "id": "ch10.acting",
+   "area": "film",
+   "title": "Chapter 10: the acting",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch10.picture",
+   "area": "film",
+   "title": "Chapter 10: the picture",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch10.sync",
+   "area": "film",
+   "title": "Chapter 10: picture against sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch10.sound",
+   "area": "film",
+   "title": "Chapter 10: the sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch10.story",
+   "area": "film",
+   "title": "Chapter 10: the chapter as a story",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch10.draft",
+   "area": "film",
+   "title": "Chapter 10: its draft is newer than its sources",
+   "state": "open",
+   "note": "older than src/scenes/ch10.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+  },
+  {
+   "id": "ch11.acting",
+   "area": "film",
+   "title": "Chapter 11: the acting",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch11.picture",
+   "area": "film",
+   "title": "Chapter 11: the picture",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch11.sync",
+   "area": "film",
+   "title": "Chapter 11: picture against sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch11.sound",
+   "area": "film",
+   "title": "Chapter 11: the sound",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch11.story",
+   "area": "film",
+   "title": "Chapter 11: the chapter as a story",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "ch11.draft",
+   "area": "film",
+   "title": "Chapter 11: its draft is newer than its sources",
+   "state": "open",
+   "note": "older than src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+  },
+  {
+   "id": "work.sheets",
+   "area": "work",
+   "title": "the model sheets' second pass",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "work.title",
+   "area": "work",
+   "title": "the title page",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.home.content",
+   "area": "site",
+   "title": "The home page: what it says",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.home.look",
+   "area": "site",
+   "title": "The home page: how it looks and works",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.watch.content",
+   "area": "site",
+   "title": "The film page (annotated): what it says",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.watch.look",
+   "area": "site",
+   "title": "The film page (annotated): how it looks and works",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.read.content",
+   "area": "site",
+   "title": "The Read page: what it says",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.read.look",
+   "area": "site",
+   "title": "The Read page: how it looks and works",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.notes.content",
+   "area": "site",
+   "title": "The notes index: what it says",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.notes.look",
+   "area": "site",
+   "title": "The notes index: how it looks and works",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.science.content",
+   "area": "site",
+   "title": "The science notes: what it says",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.science.look",
+   "area": "site",
+   "title": "The science notes: how it looks and works",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.succession.content",
+   "area": "site",
+   "title": "The succession notes: what it says",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.succession.look",
+   "area": "site",
+   "title": "The succession notes: how it looks and works",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.history.content",
+   "area": "site",
+   "title": "The history notes: what it says",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.history.look",
+   "area": "site",
+   "title": "The history notes: how it looks and works",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.factcheck.content",
+   "area": "site",
+   "title": "The fact-check list: what it says",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.factcheck.look",
+   "area": "site",
+   "title": "The fact-check list: how it looks and works",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.about.content",
+   "area": "site",
+   "title": "The About page: what it says",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.about.look",
+   "area": "site",
+   "title": "The About page: how it looks and works",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.review.content",
+   "area": "site",
+   "title": "The Review page: what it says",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "site.review.look",
+   "area": "site",
+   "title": "The Review page: how it looks and works",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "later.qr",
+   "area": "later",
+   "title": "QR layouts A and B, with phone scan reports (Phase 4, after the sheets)",
+   "state": "later",
+   "note": ""
+  },
+  {
+   "id": "later.assembly",
+   "area": "later",
+   "title": "Phase 8: final renders, the joined film, chapter markers, YouTube text, thumbnail",
+   "state": "later",
+   "note": ""
+  },
+  {
+   "id": "later.qa",
+   "area": "later",
+   "title": "Phase 9: a phone scan of every code off a real screen; the typo pass on every lettered word",
+   "state": "later",
+   "note": ""
+  },
+  {
+   "id": "voice.p014.1",
+   "area": "voice",
+   "title": "Line p014.1: speech-to-text missed \"minds\"",
+   "state": "open",
+   "note": ""
+  },
+  {
+   "id": "voice.p052.1",
+   "area": "voice",
+   "title": "Line p052.1: speech-to-text missed \"roal\"",
+   "state": "open",
+   "note": ""
+  }
+ ],
+ "fresh": []
+}

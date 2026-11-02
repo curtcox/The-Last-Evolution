@@ -1,0 +1,108 @@
+# What "satisfied" means, item by item. QUALITY.md says how the loop uses it; tools/quality.mjs reads it.
+#
+# Every item is owned by Claude (Claude judges it and fixes it) or by Curt (a gate, or a call that's Curt's to make).
+# A judged item passes only with a note saying why it's right, and only while what was judged hasn't changed since:
+#   a chapter's items     its latest draft (site/review/round*/video/chNN-draft-<hash>.mp4); a new draft reopens them
+#   a site page's items   the built page (site/public/…); a change to the page reopens them
+#   a work item's items   the files in its `inputs`
+# The queue takes the film first (chapters in `order`), then the work items, then the site, each in the order written here.
+
+film:
+  # chapter 5 first: it's the pilot, and the acting pass starts there (Phase 6)
+  order: [5, 0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11]
+  criteria:
+    - key: acting
+      title: the acting
+      criteria: >-
+        Every figure who speaks or listens acts: a pose and a gesture that carry the line's intent, eyes and head on whoever
+        matters, a reaction to what's said to them. Nobody stands like a model sheet. The motion is between marks, not in cuts.
+    - key: picture
+      title: the picture
+      criteria: >-
+        Each shot shows what its words say, and a first-time viewer could tell what they're looking at. The look rule holds
+        (Round 6 §1): ink wash, colour only for energy; the settings hold still and only the figures and the energy boil.
+        Compositions read at phone size. Every lettered word (titles, labels) is spelled right and legible.
+    - key: sync
+      title: picture against sound
+      criteria: >-
+        Every cued event (an arrival, a blast, a gesture, a change of shot) lands on the word it's cued to, within a few
+        frames. Mouths and hands move only while their speaker is speaking. Nothing hangs on screen after its moment.
+    - key: sound
+      title: the sound
+      criteria: >-
+        Every word is clear over the music and effects (npm run ask -- hear N agrees with the script); the effects land on
+        their events and suit them; no clicks, cut-offs or jumps in level between lines.
+    - key: story
+      title: the chapter as a story
+      criteria: >-
+        A viewer new to the story follows the chapter: who's who, where they are, what just changed. The pacing lets the
+        big beats land without dragging (npm run ask -- watch N retells it without getting lost).
+
+site:
+  pages:
+    - { key: home, file: index.html, title: the home page }
+    - { key: watch, file: review/round7/annotated.html, title: the film page (annotated) }
+    - { key: read, file: read/index.html, title: the Read page }
+    - { key: notes, file: notes/index.html, title: the notes index }
+    - { key: science, file: notes/science/index.html, title: the science notes }
+    - { key: succession, file: notes/succession/index.html, title: the succession notes }
+    - { key: history, file: notes/history/index.html, title: the history notes }
+    - { key: factcheck, file: notes/factcheck/index.html, title: the fact-check list }
+    - { key: about, file: about/index.html, title: the About page }
+    - { key: review, file: review/index.html, title: the Review page }
+  criteria:
+    - key: content
+      title: what it says
+      criteria: >-
+        True, current and complete for what the page promises; every claim sourced (or sourced on the page it links to);
+        it says what a visitor needs next. No stale "coming soon" or wrong status. Plain and warm, in the site's voice.
+    - key: look
+      title: how it looks and works
+      criteria: >-
+        Looked at on desktop (1280) and phone (375) screenshots (npm run quality -- --check=phone): nothing overflows,
+        crowds or hides; type is readable; the controls work by touch and keyboard; images and video have text for
+        those who can't see or hear them.
+
+work:
+  # Phase 4's open deliverables, from PLAN.md §9
+  - id: work.sheets
+    title: the model sheets' second pass
+    inputs: [src/designs.js, src/scenes/models.js]
+    criteria: >-
+      Every design in PLAN.md §5 has a sheet that fixes its proportions, turnarounds and expressions well enough to draw it
+      the same way in any chapter, and the chapters' figures match their sheets.
+  - id: work.title
+    title: the title page
+    inputs: [src/scenes/lookdev.js]
+    criteria: >-
+      The film's title page: the title, Campbell's name, 1932 and Amazing Stories, in the look, legible at phone size.
+
+gates:
+  # Curt's to close. Claude can't pass these; Curt's word in chat does, quoted in the note.
+  - id: gate.voices
+    title: "Phase 3: the full voice pass, by ear"
+    ask: Listen to the full voice pass (Round 3, 4.4). Does every role sound right, and is anything misread?
+  - id: gate.look
+    title: "Phase 4: the designs and a QR layout"
+    ask: Are the model sheets and one of QR layouts A and B approved?
+  - id: gate.pilot
+    title: "Phase 5: chapter 5 as the standard"
+    ask: Is chapter 5, after its acting pass, the standard for the rest?
+  - id: gate.chapters
+    title: "Phase 6: every chapter"
+    ask: Is each chapter approved?
+  - id: gate.site
+    title: "Phase 7: the site, on desktop and phone"
+    ask: Is the site approved?
+  - id: curt.foreword
+    title: the foreword's wording
+    ask: The foreword says why this story, in your voice (DECISIONS.md, 2026-11-02). Is its wording yours?
+
+later:
+  # not yet: waiting on an earlier phase. Each comes off this list when its phase starts.
+  - id: later.qr
+    title: QR layouts A and B, with phone scan reports (Phase 4, after the sheets)
+  - id: later.assembly
+    title: "Phase 8: final renders, the joined film, chapter markers, YouTube text, thumbnail"
+  - id: later.qa
+    title: "Phase 9: a phone scan of every code off a real screen; the typo pass on every lettered word"

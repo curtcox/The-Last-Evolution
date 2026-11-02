@@ -77,6 +77,14 @@ Claude signs off on a gate only when:
 
 "It renders" isn't the bar. Claude says plainly when it thinks something is weak, even after Curt has approved it.
 
+### The quality loop
+[QUALITY.md](QUALITY.md) makes Claude's side measurable. [`quality/rubric.yaml`](quality/rubric.yaml) lists every item
+that has to pass: five per chapter, two per site page, the open work, and Curt's gates. `npm run quality` runs the checks,
+keeps each judgment with a fingerprint of what was judged (a judgment goes stale when that changes), and prints what's
+left. While `.quality-loop` exists, a Stop hook keeps Claude working through that queue, committing and pushing each
+item. The loop stops when nothing of Claude's is open and two fresh-eyes rounds in a row find nothing, or when only Curt's
+calls are left. Where it stands is published at [/review/quality/](https://curtcox.github.io/The-Last-Evolution/review/quality/).
+
 ---
 
 ## 3. Fidelity: what "verbatim" allows
@@ -299,6 +307,8 @@ tools/                      ported from axol-f and adapted:
   qr_check                  decodes every code from rendered frames
   check_refs                link checker: the notes' sources
   check_links               the built site's own links and anchors; the Pages workflow runs it before each deploy
+  quality                   the quality loop (QUALITY.md): every check, the rubric's judgments and what goes stale, the
+                            queue, and the Stop hook that works through it
   lint_chapter              per-chapter checks (holds, code timing, safe areas)
   serve / review / watch    the local review server, watch pages, notes and Claude's questions
   rebuild                   the overnight "regenerate everything" run

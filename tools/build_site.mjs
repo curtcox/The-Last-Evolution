@@ -243,10 +243,14 @@ sup a { text-decoration: none; color: var(--accent); }
 .tbl table { border-collapse: collapse; font-size: .8em; line-height: 1.4; min-width: 30em; }
 .tbl th, .tbl td { border-bottom: 1px solid var(--rule); padding: .35em .5em; text-align: left; vertical-align: top; }
 .tbl th { font-variant: small-caps; letter-spacing: .04em; }
+.q-pass { color: var(--accent); } .q-stale, .q-curt, .q-fail { color: #B4442C; font-weight: bold; } .q-open, .q-later { color: var(--ink2); }
 .src, footer { font-size: .85em; color: var(--ink2); }
 .next { margin-top: 2em; }
 footer { border-top: 3px double var(--rule); padding: .5em 16px 2em; text-align: center; }
 `;
+
+// the quality loop's scorecard (QUALITY.md; tools/quality.mjs writes quality/scorecard.json): where everything stands
+const card = existsSync('quality/scorecard.json') && JSON.parse(readFileSync('quality/scorecard.json', 'utf8'));
 
 // the review rounds: each sheet, whether it's open, and the pages to listen and pick on
 const rounds = readdirSync('review').map(f => f.match(/^round(\d+)\.md$/)?.[1]).filter(Boolean).map(Number).sort((a, b) => a - b).map(n => {
@@ -262,10 +266,41 @@ const review = page(1, 'Review · The Last Evolution', `
 recommendation, and where the choice is by ear or eye, a page to listen or look and pick on. Nothing goes ahead until
 both of us are satisfied (<a href="${REPO}/blob/main/PLAN.md">the plan</a>, §2); every decision is logged in
 <a href="${REPO}/blob/main/DECISIONS.md">DECISIONS.md</a>.</p>
+${card ? '<p><a href="quality/"><b>Where it stands</b></a>: every item of the film and the site against the quality rubric.</p>' : ''}
 ${rounds.slice().reverse().map(r => `<div class="round"><h2>${esc(r.title)}</h2>
 <p>${r.closed ? `Closed ${r.closed}.` : '<b>Open.</b>'} <a href="${REPO}/blob/main/review/round${r.n}.md">The decision sheet</a>.</p>
 ${r.pages.length ? `<ul>${r.pages.map(p => `<li><a href="${p.href}">${esc(p.title)}</a></li>`).join('')}</ul>` : ''}</div>`).join('\n')}
 `);
+
+// the scorecard's page
+const MARK = { pass: ['✓', 'passed'], fail: ['✗', 'fails'], stale: ['↻', 'changed since it passed'], open: ['·', 'open'], curt: ['?', "Curt's call"], later: ['–', 'later'] };
+const mark = i => i ? `<span class="q-${i.state}" title="${MARK[i.state][1]}${i.note ? ': ' + esc(i.note).replace(/"/g, '&quot;') : ''}">${MARK[i.state][0]}</span>` : '';
+const grid = (rows, cols, cell) => `<div class="tbl"><table><thead><tr><th></th>${cols.map(c => `<th>${c}</th>`).join('')}</tr></thead><tbody>${
+  rows.map(([label, key]) => `<tr><th>${label}</th>${cols.map(c => `<td>${mark(cell(key, c))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const cap = s => s[0].toUpperCase() + s.slice(1);
+const quality = card && (() => {
+  const by = Object.fromEntries(card.items.map(i => [i.id, i])), s = card.summary;
+  const film = ['acting', 'picture', 'sync', 'sound', 'story', 'draft'], site = [...new Set(card.items.filter(i => i.area === 'site').map(i => i.id.split('.')[1]))];
+  const other = card.items.filter(i => ['finding', 'voice', 'work', 'later'].includes(i.area));
+  return page(2, 'Quality: The Last Evolution', `
+<p class="kicker"><a href="../">Review</a></p>
+<h1>Where it stands</h1>
+<p class="lede">The film and the site are worked on until both of us are satisfied. Claude judges every item below against
+<a href="${REPO}/blob/main/quality/rubric.yaml">the rubric</a> and keeps going until none of its items is open; a judgment
+goes stale when what was judged changes. <a href="${REPO}/blob/main/QUALITY.md">How the loop works</a>.</p>
+<p>${s.pass} passed, ${s.stale} changed since passing, ${s.open} open, ${s.curt} waiting on Curt, ${s.later} for later.${card.satisfied ? ' <b>Claude is satisfied.</b>' : ''}</p>
+${card.curt.length ? `<h2>Curt's calls</h2><ul>${card.curt.map(c => `<li><b>${esc(cap(c.title))}.</b> ${esc(c.ask)}</li>`).join('')}</ul>` : ''}
+<h2>The film</h2>
+${grid(Array.from({ length: 12 }, (_, n) => [`Chapter ${n}`, String(n).padStart(2, '0')]), film, (nn, c) => by[`ch${nn}.${c}`])}
+<h2>The site</h2>
+${grid(site.map(k => [esc(by[`site.${k}.content`].title.split(':')[0]), k]), ['content', 'look'], (k, c) => by[`site.${k}.${c}`])}
+${other.length ? `<h2>Other items</h2><ul>${other.map(i => `<li>${mark(i)} ${esc(cap(i.title))}${i.note ? ` <span class="src">${esc(i.note)}</span>` : ''}</li>`).join('')}</ul>` : ''}
+<h2>The checks</h2>
+<ul>${Object.entries(card.checks).map(([n, c]) => `<li>${mark({ state: ['pass', 'fail', 'stale'].includes(c.state) ? c.state : 'open', note: c.detail })} <b>${n}</b>: ${c.state}${c.detail ? ` <span class="src">${esc(c.detail)}</span>` : ''}</li>`).join('')}</ul>
+${card.fresh.length ? `<h2>Fresh-eyes rounds</h2><ul>${card.fresh.map(f => `<li>${f.when}: ${f.found} found. ${esc(f.note)}</li>`).join('')}</ul>` : ''}
+<p class="src">${Object.values(MARK).map(([m, t]) => `${m} ${t}`).join(' · ')}</p>
+`, { description: 'Where the film and the site stand against the quality rubric: every item, its judgment, and the checks.' });
+})();
 
 rmSync(OUT, { recursive: true, force: true });
 for (const d of ['', 'watch', 'read', 'about', 'review', ...NOTES.map(n => `notes/${n}`)]) mkdirSync(`${OUT}/${d}`, { recursive: true });
@@ -279,6 +314,7 @@ writeFileSync(`${OUT}/notes/index.html`, notesIndex);
 for (const [name, html] of notePages) writeFileSync(`${OUT}/notes/${name}/index.html`, html);
 if (existsSync('site/review')) cpSync('site/review', `${OUT}/review`, { recursive: true });
 writeFileSync(`${OUT}/review/index.html`, review);
+if (quality) { mkdirSync(`${OUT}/review/quality`, { recursive: true }); writeFileSync(`${OUT}/review/quality/index.html`, quality); }
 writeFileSync(`${OUT}/style.css`, css);
 writeFileSync(`${OUT}/.nojekyll`, '');
 cpSync('site/img', `${OUT}/img`, { recursive: true });

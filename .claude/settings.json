@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && if [ -f .quality-loop ]; then node tools/quality.mjs --hook; fi",
+            "timeout": 120,
+            "statusMessage": "Checking the quality loop's queue"
+          }
+        ]
+      }
+    ]
+  }
+}

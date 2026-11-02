@@ -1,0 +1,4 @@
+# The quality loop's judgments (tools/quality.mjs writes this; QUALITY.md says how it works)
+items: {}
+fresh: []
+since_fresh: 0
