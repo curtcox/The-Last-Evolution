@@ -1,8 +1,8 @@
 {
  "summary": {
-  "pass": 1,
+  "pass": 3,
   "stale": 0,
-  "open": 94,
+  "open": 92,
   "curt": 7,
   "later": 3
  },
@@ -605,15 +605,15 @@
    "id": "site.home.content",
    "area": "site",
    "title": "The home page: what it says",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "True and current: the story, the three ways in (watch with notes, read with the 1932 readings restored, the notes), an honest draft warning, and now where things stand (the scorecard) and that the acting pass has begun with chapter 5."
   },
   {
    "id": "site.home.look",
    "area": "site",
    "title": "The home page: how it looks and works",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "Desktop 1280: masthead, title and lede read at a glance, the four ways in as a list, the status box below. Phone 375: the six nav links fit on one line; title, lede and status box read without crowding; nothing overflows."
   },
   {
    "id": "site.watch.content",

@@ -61,7 +61,7 @@ const draftOf = n => {   // a chapter's latest published draft
 };
 const files = list => list.flatMap(p => p.includes('*') ? (d => existsSync(d) ? readdirSync(d).filter(f => new RegExp(`^${p.split('/').pop().replace(/\./g, '\\.').replace('*', '.*')}$`).test(f)).map(f => `${d}/${f}`) : [])(p.split('/').slice(0, -1).join('/')) : existsSync(p) ? [p] : []);
 const fp = i => i.area === 'film' ? draftOf(i.chapter)?.split('/').pop() ?? null
-  : i.area === 'site' ? existsSync(`${PUB}/${i.file}`) ? sha(readFileSync(`${PUB}/${i.file}`)) : null
+  : i.area === 'site' ? existsSync(`${PUB}/${i.file}`) ? sha(readFileSync(`${PUB}/${i.file}`) + (i.id.endsWith('.look') ? readFileSync(`${PUB}/style.css`) : '')) : null   // how it looks is the stylesheet's too
   : i.area === 'voice' ? i.key
   : i.area === 'work' ? sha(files(i.inputs).map(f => f + sha(readFileSync(f))).join()) : undefined;
 
