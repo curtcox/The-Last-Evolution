@@ -58,9 +58,9 @@ notes:
     kind: science
     title: Ten billion in 2100
     body: >-
-      When Campbell wrote, the world held about two billion people. His peak, near ten billion around 2100, is close to
-      the UN's projection today: about 10.3 billion in the mid-2080s, then a slow fall
-      ([World Population Prospects 2024][un-wpp-2024]).
+      When Campbell wrote, the world held about two billion people; it passed two billion in 1927 ([World
+      population][wp-world-population]). His peak, near ten billion around 2100, is close to the UN's projection today:
+      about 10.3 billion in the mid-2080s, then a slow fall ([World Population Prospects 2024][un-wpp-2024]).
   - id: two-imaginations
     on: From any three facts they even then could have built
     kind: making
@@ -233,7 +233,7 @@ notes:
     body: >-
       The text names its own sounds, the whine of transmuted air, the welding's sputter, the generators' hum, and those
       are the effects here. No music plays under the voice. The theme at the chapter heads is led by a theremin, the
-      electronic instrument of the 1920s.
+      electronic instrument Leon Theremin invented in 1920 ([Theremin][wp-theremin]).
   - id: morey
     shot: 5.V
     kind: text

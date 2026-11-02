@@ -1,8 +1,9 @@
 # Fact-check list
 
 Each factual claim in the notes, the source it rests on, and how it was checked. "Read" means Claude read the source and
-found the claim in it on 2026-11-01. "Computed" means arithmetic from the story's own text. "General" means textbook
-knowledge with a reference given but not re-read; those are the ones most worth a second look.
+found the claim in it on 2026-11-01, or on 2026-11-02 for the last Round 7 additions. "Computed" means arithmetic from
+the story's own text. "General" means textbook knowledge with a reference given but not re-read; those are the ones most
+worth a second look.
 `npm run refs` confirms that every link answers.
 
 ## Campbell and the pulps ([history.md](history.md))
@@ -75,12 +76,12 @@ Claims these add beyond the notes above.
 | claim | source | check |
 |---|---|---|
 | Six centuries of machines before 2538, and the Ultimate Energy known for 600 years, both put the start near 1938 | the story | computed |
-| About two billion people in 1932 | | general |
+| About two billion people in 1932 (two billion passed in 1927) | wp-world-population | read |
 | UN projection: a peak of about 10.3 billion in the mid-2080s, then slowly falling | un-wpp-2024 | read (search summaries of the UN's 2024 release) |
 | *The War of the Worlds*, 1898 as a book; its Martians die of Earth's bacteria | wp-war-of-the-worlds | read |
-| Pluto found by Clyde Tombaugh, February 1930; counted a planet until 2006 | wp-pluto | general |
-| Hot bodies glow bluer and cooler ones redder; Wien's law, 1893 | wp-wien | general |
-| The theremin is an electronic instrument of the 1920s | | general |
+| Pluto found by Clyde Tombaugh, 18 February 1930; counted a planet until the IAU's 2006 definition | wp-pluto | read |
+| Hot bodies glow bluer and cooler ones redder; Wien derived his law in 1893 | wp-wien | read |
+| The theremin, invented by Leon Theremin in October 1920 | wp-theremin | read |
 | Of nearly ten thousand ships, 9,633 move on: fewer than four in a hundred lost | the story | computed |
 | *Mind Children* (1988) is 56 years after the story | wp-mind-children | computed |
 | Morey painted 71 covers for *Amazing* | sfe-morey | read (above) |

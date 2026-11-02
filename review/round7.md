@@ -164,9 +164,9 @@ natural set to choose from. Each code would open the annotated film at its note,
 - **New facts.**
   - These notes add a few claims that the Round 2 notes didn't make: Pluto (1930), the UN's population projection,
     Wien's law, the theremin, *The War of the Worlds* (1898), and some arithmetic.
-  - They're in the [fact-check list](../notes/factcheck.md). Four rest on textbook knowledge, with a reference but no
-    fresh reading. Wells was checked against the reference.
-  - The population figure was checked against the UN's 2024 projection.
+  - They're in the [fact-check list](../notes/factcheck.md), and each was checked against its source: Wikipedia for
+    Pluto, Wien, the theremin, Wells and the world's population in 1932, and the UN's 2024 release for the projection.
+    That turned up no errors, and the theremin note now gives the instrument's date: 1920.
 - **Notes about pictures may change with them.**
   - Four notes describe the draft's pictures: the lattice, the curl, the inside of the giant ship, and "Locked" (the
     flagship as the one drawing that doesn't boil).

@@ -37,6 +37,7 @@ Written by `tools/check_refs.mjs` on 2026-11-02. **All good.**
 | wp-schrodinger | 200 | reference | science.md | [Schrödinger equation (Wikipedia)](https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation) |
 | wp-singularity | 200 | reference | succession.md | [Technological singularity (Wikipedia)](https://en.wikipedia.org/wiki/Technological_singularity) |
 | wp-sloane | 200 | reference | history.md | [T. O'Conor Sloane (Wikipedia)](https://en.wikipedia.org/wiki/T._O'Conor_Sloane) |
+| wp-theremin | 200 | reference | annotations.yaml | [Theremin (Wikipedia)](https://en.wikipedia.org/wiki/Theremin) |
 | wp-transmutation | 200 | reference | science.md | [Nuclear transmutation (Wikipedia)](https://en.wikipedia.org/wiki/Nuclear_transmutation) |
 | wp-turing-machine | 200 | reference | science.md, annotations.yaml | [Turing machine (Wikipedia)](https://en.wikipedia.org/wiki/Turing_machine) |
 | wp-twilight | 200 | reference | afterword.md, history.md, succession.md | [Twilight (short story) (Wikipedia)](https://en.wikipedia.org/wiki/Twilight_(short_story)) |
@@ -45,3 +46,4 @@ Written by `tools/check_refs.mjs` on 2026-11-02. **All good.**
 | wp-who-goes-there | 200 | reference | history.md | [Who Goes There? (Wikipedia)](https://en.wikipedia.org/wiki/Who_Goes_There%3F) |
 | wp-wien | 200 | reference | annotations.yaml | [Wien's displacement law (Wikipedia)](https://en.wikipedia.org/wiki/Wien%27s_displacement_law) |
 | wp-williams-tube | 200 | reference | afterword.md, science.md | [Williams tube (Wikipedia)](https://en.wikipedia.org/wiki/Williams_tube) |
+| wp-world-population | 200 | reference | annotations.yaml | [World population (Wikipedia)](https://en.wikipedia.org/wiki/World_population) |
