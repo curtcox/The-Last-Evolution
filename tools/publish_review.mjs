@@ -13,6 +13,7 @@ import { fileURLToPath } from 'node:url';
 export function publishReview(round) {
   const src = `out/review/${round}`, dst = `site/review/${round}`;
   const dirs = ['audio', 'img', 'video'].filter(d => existsSync(`${src}/${d}`));
+  mkdirSync(dst, { recursive: true });
   for (const d of dirs) mkdirSync(`${dst}/${d}`, { recursive: true });
   const used = new Set(), pages = readdirSync(src).filter(f => f.endsWith('.html'));
   for (const page of pages) {

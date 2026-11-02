@@ -37,6 +37,9 @@ wp-schrodinger: {url: 'https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation',
 wp-unified: {url: 'https://en.wikipedia.org/wiki/Classical_unified_field_theories', title: 'Classical unified field theories (Wikipedia)', kind: reference}
 wp-transmutation: {url: 'https://en.wikipedia.org/wiki/Nuclear_transmutation', title: 'Nuclear transmutation (Wikipedia)', kind: reference}
 wp-northrup: {url: 'https://en.wikipedia.org/wiki/Edwin_Fitch_Northrup', title: 'Edwin Fitch Northrup (Wikipedia)', kind: reference}
+wp-pluto: {url: 'https://en.wikipedia.org/wiki/Pluto', title: 'Pluto (Wikipedia)', kind: reference}
+wp-wien: {url: "https://en.wikipedia.org/wiki/Wien%27s_displacement_law", title: "Wien's displacement law (Wikipedia)", kind: reference}
+un-wpp-2024: {url: 'https://www.un.org/en/node/219445', title: 'World Population Prospects 2024 (United Nations)', kind: primary}
 wp-great-year: {url: 'https://en.wikipedia.org/wiki/Great_year', title: 'Great year (Wikipedia)', kind: reference}
 
 # Machines as heirs

@@ -67,3 +67,19 @@ knowledge with a reference given but not re-read; those are the ones most worth 
 | Sutton, 26 September 2025: succession "inevitable"; voluntary; think positively | dwarkesh-sutton | read |
 | Statement on AI Risk, 2023; Hinton, Bengio and lab heads (incl. Anthropic's) among signatories | cais-statement | read. ("Hundreds" of signatories: general) |
 | Bostrom, *Superintelligence*, 2014 | wp-bostrom | general |
+
+## The margin notes, foreword and afterword ([annotations.yaml](annotations.yaml), Round 7)
+
+Claims these add beyond the notes above.
+
+| claim | source | check |
+|---|---|---|
+| Six centuries of machines before 2538, and the Ultimate Energy known for 600 years, both put the start near 1938 | the story | computed |
+| About two billion people in 1932 | | general |
+| UN projection: a peak of about 10.3 billion in the mid-2080s, then slowly falling | un-wpp-2024 | read (search summaries of the UN's 2024 release) |
+| Pluto found by Clyde Tombaugh, February 1930; counted a planet until 2006 | wp-pluto | general |
+| Hot bodies glow bluer and cooler ones redder; Wien's law, 1893 | wp-wien | general |
+| The theremin is an electronic instrument of the 1920s | | general |
+| Of nearly ten thousand ships, 9,633 move on: fewer than four in a hundred lost | the story | computed |
+| *Mind Children* (1988) is 56 years after the story | wp-mind-children | computed |
+| Morey painted 71 covers for *Amazing* | sfe-morey | read (above) |

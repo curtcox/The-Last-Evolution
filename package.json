@@ -31,7 +31,8 @@
     "save-cast": "node tools/save_cast.mjs",
     "publish-review": "node tools/publish_review.mjs",
     "film": "node tools/film.mjs",
-    "ask": "node tools/ask.mjs"
+    "ask": "node tools/ask.mjs",
+    "annotated": "node tools/annotated.mjs"
   },
   "dependencies": {
     "p5": "^2.3.3",

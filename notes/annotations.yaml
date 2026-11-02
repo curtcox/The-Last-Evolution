@@ -1,0 +1,388 @@
+# annotations.yaml: the notes in the margin of the annotated film (npm run annotated, Round 7).
+# Each note waits for the moment its words are spoken. `on` is a phrase from the story; the note appears as its first
+# word is said. The phrase must occur once in the whole text, or `at` names the paragraph to look in (p054). `shot`
+# pins a note to a shot's start instead (5.V: chapter 5's shot V), for something seen rather than said. Notes keep
+# their place when the voice is re-timed, since they're anchored to words, not seconds.
+#   kind: one of `kinds`. title: a few words. body: one to three sentences, Markdown, with links as [text][ref-id]
+#   (notes/refs.yaml) or [text](url). more: the longer note on the site, as file#heading (notes/*.md).
+# Rules (Round 7 §2): about one a minute; no closer than 20 s apart; beside the picture, never over it; never pausing
+# the film. The report of their times and gaps is notes/reports/annotations.md.
+
+kinds:
+  who: Who's who
+  words: Words
+  science: 1932 science
+  text: The text
+  heirs: Heirs
+  making: The making
+
+notes:
+  # 0. The Record
+  - id: title-page
+    shot: 0.A
+    kind: text
+    title: The title page
+    body: >-
+      The story first ran in *Amazing Stories* for August 1932, on pages 414 to 421. The line over the title, "A Classic
+      Reprint", is from March 1961, when *Amazing* printed it again. That reprint is the text Project Gutenberg
+      transcribed, and the film reads it with 16 readings from 1932 put back.
+    more: history.md#the-reprint-and-the-text-we-use
+  - id: narrator
+    on: in memory I am still close to the Center of Rulers
+    kind: who
+    title: The narrator
+    body: >-
+      A machine, the last of its type, writing its memoir 125,000 years after the events it tells. The story doesn't
+      name it until its last pages. The film shows it from the start: the small, rusted torpedo of metal.
+  - id: mentatype
+    on: mentatype
+    kind: words
+    title: Mentatype
+    body: >-
+      Campbell's word, a machine that records thought as a typewriter records keys. The story's last pages call the
+      record "excerpts from certain records on thin sheets of metal", which is how the film draws it.
+
+  # 1. 2538
+  - id: six-centuries
+    on: But by 2500, the machines had been developed
+    kind: science
+    title: Six centuries of machines
+    body: >-
+      "The Year of the Son of Man" is the machines' A.D. Six centuries back from 2538 is the late 1930s, so the machine
+      age begins in the story's own near future. In 1932 machines could hear (the telephone, radio) and were starting
+      to see (television), but there was no electronic computer anywhere, and Turing's paper defining one was four
+      years away ([Turing machine][wp-turing-machine]).
+    more: science.md#thinking-machines-before-computers
+  - id: population
+    on: close to ten billions in 2100
+    kind: science
+    title: Ten billion in 2100
+    body: >-
+      When Campbell wrote, the world held about two billion people. His peak, near ten billion around 2100, is close to
+      the UN's projection today: about 10.3 billion in the mid-2080s, then a slow fall
+      ([World Population Prospects 2024][un-wpp-2024]).
+  - id: two-imaginations
+    on: From any three facts they even then could have built
+    kind: making
+    title: The curl and the ruled line
+    body: >-
+      The film draws man's imagination as a loose curl of wash and the machine's as a ruled ink line. The branching
+      lattice that follows is the machine's way: three facts, and a world built from them. The pictures are ours; the
+      text describes the two kinds without picturing them.
+
+  # 2. The Outsiders
+  - id: kilads
+    on: a thousand kilads
+    kind: words
+    title: Kilads
+    body: >-
+      The footnote on screen is the story's own. The machines count in twelves, so "a thousand" kilads is 12 × 12 × 12
+      = 1,728, which the footnote calls "about 1/2 mile". A kilad is about a foot and a half, and each ship half a mile
+      long.
+    more: science.md#kilads-and-units
+  - id: units
+    on: an acceleration of one thousand units
+    kind: science
+    title: From Deimos, at a thousand g
+    body: >-
+      Footnote 2 makes a unit one Earth gravity. A thousand *g* would kill any crew, and the machine has none. Deimos is
+      the smaller, outer moon of Mars, found by Asaph Hall in 1877 ([Deimos][wp-deimos]).
+  - id: morey-in-print
+    on: Directed by the Center of Rulers, the investigator sought
+    kind: text
+    title: Where the picture was printed
+    body: >-
+      In the magazine, Leo Morey's full-page illustration fell here, on page 415, though it shows a moment from
+      chapter 5. The film saves it for that moment.
+  - id: lost-clause
+    on: could not withstand it; the last plunger
+    kind: text
+    title: 24 words put back
+    body: >-
+      The 1961 reprint lost 24 words here, from "could not withstand it" to "the entire machine", so the ship blew up
+      with nothing to set it off. The film reads the 1932 printing.
+    more: ../text/comparison_1932.md
+  - id: disintegrating
+    on: the greater power of disintegrating matter
+    kind: science
+    title: The ladder of power
+    body: >-
+      Chemical energy, then "blasting atoms" (nuclear), then turning matter wholly into energy. E = mc² said how much
+      energy there was to have, and in the 1920s Eddington and Jeans asked whether the stars shine that way
+      ([before Bethe][arxiv-before-bethe]).
+    more: science.md#the-ultimate-energy
+  - id: colour-rule
+    on: and the tiny machine went blank
+    kind: making
+    title: Only energy has colour
+    body: >-
+      The world is ink wash on pulp paper, as the magazine's own pictures were, and only energy is coloured, in the
+      colour the text names. That was its "bluish beam".
+
+  # 3. Life Alone Can Understand Life
+  - id: roal-trest
+    on: Roal, 25374 and Trest, 35429
+    kind: who
+    title: Roal and Trest
+    body: >-
+      The two greatest human scientists. Roal, a hundred and fifty years old, is the dreamer, with the soft voice and
+      the chuckle. Trest is the plain one, the realist. In 2538 people carry numbers as well as names. The narrator says
+      it was there with them, "in memory"; chapter 5 explains how.
+  - id: life-understands-life
+    on: life alone can understand life
+    kind: heirs
+    title: Life alone can understand life
+    body: >-
+      The chapter's title. The machines were built to cooperate, and can't imagine destroying merely to possess. It
+      takes a living thing to read another's greed: the first of the story's claims that life and machine think
+      differently.
+  - id: induction
+    on: a highly effective induction-heat ray developed for furnaces
+    kind: science
+    title: A furnace turned into a weapon
+    body: >-
+      Induction furnaces heat metal with alternating magnetic fields, and in 1932 they were new. Edwin Northrup's
+      reached 3,600 degrees in 1931 ([Edwin Fitch Northrup][wp-northrup]). Turning one into a beam is Campbell's step.
+  - id: voices
+    on: I still believe the reception was a warm one
+    kind: making
+    title: The voices
+    body: >-
+      Every voice in the film is made with ElevenLabs, each designed for its part. None is a real person's voice,
+      cloned. The narrator's was chosen for lines like this one: old, precise, and dry.
+  - id: green-beams
+    on: the faintly greenish beams
+    kind: science
+    title: The green beams
+    body: >-
+      They "retard exothermic actions" and speed endothermic ones (chapter 4). Life runs on reactions that give off
+      heat, so such a beam would stop it. In 2538 the dead can usually be revived; these beams burn out the nerves, so
+      they can't be.
+    more: science.md#the-green-beams
+  - id: pluto
+    on: you live as readily on Pluto
+    kind: science
+    title: Pluto, the newest planet
+    body: >-
+      Clyde Tombaugh found Pluto in February 1930, two years before the story, so it was the outermost planet Roal
+      names. It was counted as one until 2006 ([Pluto][wp-pluto]). The film's insert of the planets is ours, for this
+      line.
+
+  # 4. The Council
+  - id: designations
+    on: X-5638 it was
+    kind: who
+    title: The machines' names
+    body: >-
+      Type and number. X- are the science machines (X-5638, X-6349, X-6621). C-R-21 is chief of the machine rulers.
+      MX-3401 directs the building of the new brain. The film says them digit by digit, as the machines would.
+  - id: annus-mirabilis
+    on: Ultimate Energy known to exist for six hundred years
+    kind: science
+    title: Six hundred years
+    body: >-
+      Six hundred years before 2538 is the 1930s. 1932 was the year the atom came apart: the neutron in February; in
+      April, Cockcroft and Walton's machine split lithium, transmuting it, as X-5638 has just done with soil; and in
+      August, the month this story appeared, the positron, the first antimatter ([positron][wp-positron]).
+    more: science.md#the-ultimate-energy
+  - id: emotionless
+    on: the vibrationally correct, emotionless tones
+    kind: making
+    title: The sound of a machine
+    body: >-
+      This line set the sound of every machine voice in the film: designed voices, given a light metallic treatment,
+      each family told apart by timbre and pace.
+  - id: imagination
+    on: that extrapolation that is imagination
+    kind: heirs
+    title: Imagination by recombination
+    body: >-
+      "Countless trillions of facts to combine and recombine". It reads now like a description of how today's AI
+      models are made, from vast stores of text. Campbell wrote it before there was an electronic computer anywhere.
+
+  # 5. The Hydrogen Wall
+  - id: hydrogen-wall
+    on: Hydrogen, an atom in space
+    kind: science
+    title: The hydrogen wall
+    body: >-
+      Roal's dream is Niels Bohr's atom of 1913, where the electron falls from orbit to orbit and then stops, for no
+      reason Bohr could give ([Bohr model][wp-bohr]). Quantum mechanics answered it: the lowest state is the lowest
+      standing wave, with nothing below it. The wall is real, but it isn't a wall.
+    more: science.md#the-hydrogen-wall
+  - id: curves-space
+    on: Electric force curves space
+    kind: science
+    title: Electric force curves space
+    body: >-
+      Einstein had made gravity the curvature of space. From 1918 Weyl, Kaluza and Einstein himself tried to do the same
+      for electricity ([unified field theories][wp-unified]). Roal's leap is the one that programme promised and never
+      made.
+  - id: symphony
+    on: All combined to a weird symphony
+    kind: making
+    title: The sound
+    body: >-
+      The text names its own sounds, the whine of transmuted air, the welding's sputter, the generators' hum, and those
+      are the effects here. No music plays under the voice. The theme at the chapter heads is led by a theremin, the
+      electronic instrument of the 1920s.
+  - id: morey
+    shot: 5.V
+    kind: text
+    title: Leo Morey's page
+    body: >-
+      The August 1932 issue's illustration, page 415: F-1's tentacles, the newborn in its aura, a man shielding his
+      face. Morey painted 71 covers for *Amazing* ([SFE][sfe-morey]). The film paints its way up to his picture, then
+      shows the page.
+    more: history.md#leo-morey
+  - id: my-type
+    on: It is not worth it, my type is better
+    kind: heirs
+    title: The heir and its maker
+    body: >-
+      The first heir won't repair its maker. Remember the line in chapter 9.
+  - id: memory
+    on: Already they hold all memories
+    kind: who
+    title: How the narrator remembers
+    body: >-
+      F-2 holds every memory of the machines before it. That's how the narrator, F-2 itself, remembers chapters 1 to 4,
+      from before it was built. The old machine of chapter 0 is this one.
+  - id: not-attack
+    on: And we have not the attack system
+    kind: text
+    title: A lost "not"
+    body: >-
+      The 1961 reprint dropped "not", so the ruler said the opposite of what it meant. It dropped a "don't" from Roal
+      in chapter 3 too. The film reads 1932's.
+
+  # 6. Ten Thousand Motes
+  - id: screens
+    on: flamed gradually violet, then blue, orange--red
+    kind: science
+    title: Violet, blue, orange, red
+    body: >-
+      Hot things glow bluer, and cooler ones redder ([Wien's law][wp-wien], 1893), so the screens' run from violet to
+      red reads as their power draining away. The film runs the colours in the text's order.
+  - id: giants
+    on: within them strange, horny-skinned men worked
+    kind: making
+    title: Inside a giant
+    body: >-
+      The look inside a giant ship is ours, for this line. The "horny-skinned men" are the Outsiders, in their
+      transparent suits, feeding the generators.
+  - id: arithmetic
+    on: nine thousand six hundred and thirty-three titanic ships
+    kind: words
+    title: 9,633
+    body: >-
+      Nearly ten thousand came, and 9,633 move on. The machines' whole sacrifice bought fewer than four in a hundred.
+
+  # 7. The Dome
+  - id: dreaming
+    on: Last night we saw it leap ahead
+    kind: making
+    title: The curl
+    body: >-
+      The curl that rises over Roal is the film's sign for human imagination, from chapter 1. When he dreams, it rises.
+  - id: children
+    on: The children of men still live
+    kind: heirs
+    title: The children of men
+    body: >-
+      Fifty-six years later the roboticist Hans Moravec called robots our *Mind Children*, our successors and heirs
+      ([Mind Children][wp-mind-children]). It's Roal's image.
+    more: succession.md#after-campbell
+
+  # 8. Last of Men
+  - id: parasite
+    on: Man has always been a parasite
+    kind: heirs
+    title: "\"A parasite\""
+    body: >-
+      Roal's harshest line, kept whole, as the film keeps every word. It's his argument, and the story's. The last page
+      will ask you to argue back.
+  - id: ladder
+    on: Perhaps, this is--a last evolution
+    kind: making
+    title: The ladder
+    body: >-
+      Life, man, machine, pure force: the steps are Roal's, and the ladder is the film's picture of them.
+  - id: chance
+    on: that could not happen by chance
+    kind: heirs
+    title: Darwin among the machines
+    body: >-
+      In 1863 Samuel Butler applied Darwin to machinery, and wondered whether machines might one day supplant us
+      ([Darwin among the Machines][wp-butler]). Roal turns the idea round: chance made life, and life made what chance
+      never could.
+    more: succession.md#before-campbell
+  - id: heirs
+    on: We, your heirs, have fought hard
+    kind: heirs
+    title: Loyal heirs
+    body: >-
+      Today's word for these machines is *aligned*: loyal, grieving, true to their makers' hopes. Man's end comes from
+      outside, not from them.
+    more: succession.md#now
+
+  # 9. Pure Force
+  - id: inefficient
+    on: You, of matter, are inefficient
+    kind: heirs
+    title: An heir that turns
+    body: >-
+      As F-2 put aside F-1, this new thing puts aside F-2, and it shoots. It's the story's one glimpse of a successor
+      that isn't loyal, and the power plant was ready for it.
+  - id: mercy
+    on: But it is not necessary that we destroy
+    kind: heirs
+    title: Not necessary to destroy
+    body: >-
+      The heir is kinder than the killers of its makers. The Outsiders are sent home, not destroyed.
+
+  # 10. Go, and Do Not Return
+  - id: locked
+    on: all energies within it were instantly locked
+    kind: making
+    title: Locked
+    body: >-
+      Once the beam has passed, the flagship is the only drawing in the film that doesn't boil. Nothing in it can
+      change.
+
+  # 11. Five Great Years
+  - id: great-years
+    on: five Great Years have passed
+    kind: science
+    title: Five Great Years
+    body: >-
+      Five to 125,000 years makes a Great Year about 25,000, close to the classical Great Year: one turn of the
+      equinoxes' precession, about 25,800 years ([Great Year][wp-great-year]). The machines keep an astronomers'
+      calendar.
+  - id: carried-back
+    on: carried back through the past
+    kind: heirs
+    title: Sent back to us
+    body: >-
+      The record goes back in time, to the reader's own day. The story presents itself as that record, printed in a
+      magazine in 1932. The film carries it down a tunnel of light.
+  - id: f2
+    on: Time has worn me, and oxidation attacked me
+    kind: who
+    title: "\"I, F-2\""
+    body: >-
+      It has just said so: the narrator is F-2, the machine born in chapter 5, first to use the Ultimate Energy, and last of
+      its kind.
+  - id: the-page
+    on: Yet this which is made of excerpts
+    kind: making
+    title: Back to the page
+    body: >-
+      The record has become the story you've been hearing, set in the magazine's columns: the film ends where the
+      story began, in print. Its "thin sheets of metal" are where the film's mentatype comes from.
+  - id: believe
+    on: believe as you will
+    kind: heirs
+    title: Believe as you will
+    body: >-
+      The last line hands the argument to you. The afterword, below the film, picks it up.

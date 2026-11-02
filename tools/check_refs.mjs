@@ -1,5 +1,6 @@
 // check_refs.mjs: the notes' sources.   npm run refs
-//   1. every [text][id] in notes/*.md has its id in notes/refs.yaml, and every entry there is used
+//   1. every [text][id] in notes/*.md and in the film's margin notes (notes/annotations.yaml) has its id in
+//      notes/refs.yaml, and every entry there is used
 //   2. every URL answers (2xx or 3xx), fetched with a browser's user agent, since some sites turn tools away
 //   3. each note's link definitions are rewritten at its foot, between markers, so the notes render on GitHub
 // Writes notes/reports/links.md, and exits 1 if an id is missing or a link is dead.
@@ -20,6 +21,9 @@ for (const f of notes) {
   const defs = ids.filter(id => refs[id]).map(id => `[${id}]: ${refs[id].url.replace(/ /g, '%20')}`);
   writeFileSync(`notes/${f}`, md.trimEnd() + (defs.length ? `\n\n${START}\n${defs.join('\n')}\n${END}\n` : '\n'));
 }
+// the margin notes cite the same way; their links are resolved when the page is built, so nothing is written back
+for (const id of new Set([...readFileSync('notes/annotations.yaml', 'utf8').replace(/^\s*#.*$/gm, '').matchAll(/\]\[([a-z0-9-]+)\]/g)].map(m => m[1])))
+  if (!refs[id]) fails.push(`annotations.yaml: unknown reference "${id}"`); else used.set(id, [...(used.get(id) || []), 'annotations.yaml']);
 for (const id of Object.keys(refs)) if (!used.has(id)) fails.push(`refs.yaml: "${id}" isn't cited by any note`);
 
 const rows = [];
