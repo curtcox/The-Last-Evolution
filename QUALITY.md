@@ -18,9 +18,12 @@ it can say why each beat works. This file, [`quality/rubric.yaml`](quality/rubri
   fingerprint changes, the judgment goes **stale** and the item is back in the queue.
 - **The checks** in `npm run quality` do the measuring:
   - Every run: the verbatim check; the site build and its links; the annotated page rebuilt; no voice line still flagged;
-    captions for every spoken line; spend under the cap; each chapter's draft newer than its sources.
-  - On request, since they're slow or go to the network: the notes' sources (`refs`), each draft's loudness (−14 LUFS,
-    peaks under −1 dBTP), every page at phone and desktop width (`phone`), and the live site (`live`).
+    captions for every spoken line; spend under the cap.
+  - Every run, per chapter (its `draft` item): the draft is newer than its sources, it was made from frames that are too
+    (frame rendering skips frames already on disk), and it's at −14 LUFS with peaks under −1 dBTP (measured once per
+    draft).
+  - On request, since they're slow or go to the network: the notes' sources (`refs`), every page at phone and desktop
+    width (`phone`), and the live site (`live`).
     `npm run quality -- --full` runs them all; `--check=phone` runs one. A slow check whose inputs have changed goes back
     in the queue.
 - **The queue** is what `npm run quality` prints, in this order:

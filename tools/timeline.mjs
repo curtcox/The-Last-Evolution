@@ -5,7 +5,7 @@
 //                             cue in the storyboard resolved, and cue() for the scene code (studio.html?chapter=N)
 //   out/chNN/timeline.json    the same layout for the review tools, with each shot's board time
 //   out/chNN/mix.mp3          the chapter's sound: the voice laid out, the theme and effects of script/sfx.yaml under
-//                             it, ducked by the voice, at -14 LUFS and true peak -1 dBFS (mix.wav beside it)
+//                             it, ducked by the voice, at -14 LUFS and true peak -2 dBFS, under -1 once encoded (mix.wav beside it)
 // The layout: the voice starts at the storyboard's voice_at, with the voice pass's silences between lines (0.35 s) and
 // paragraphs (0.8 s) and 2.5 s at a scene break, plus the storyboard's holds, which add silence after a line or, before
 // a word inside one, cut the line in the pause there. The chapter ends `outro` seconds after its last word.
@@ -132,8 +132,9 @@ const g = [
   `[pre]atrim=0:${duration}[out]`,
 ];
 execFileSync('ffmpeg', ['-v', 'error', '-y', ...inputs, '-filter_complex', g.join(';'), '-map', '[out]', `${OUT}/pre.wav`], { maxBuffer: 1e8 });
-// loudness in two passes: measure, then a linear gain to -14 LUFS (with the limiter only where a peak needs it)
-const LN = 'loudnorm=I=-14:TP=-1:LRA=20';
+// loudness in two passes: measure, then a linear gain to -14 LUFS (with the limiter only where a peak needs it). The
+// peak is held to -2 here so it's still under -1 dBTP after the MP3 and the draft's AAC, which each push it up a little
+const LN = 'loudnorm=I=-14:TP=-2:LRA=20';
 const m = JSON.parse(spawnSync('ffmpeg', ['-hide_banner', '-nostats', '-i', `${OUT}/pre.wav`, '-af', `${LN}:print_format=json`, '-f', 'null', '-'], { encoding: 'utf8' }).stderr.match(/\{[\s\S]*\}/)[0]);
 execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', `${OUT}/pre.wav`, '-af', `${LN}:linear=true:measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset},${fmt}`, `${OUT}/mix.wav`]);
 execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', `${OUT}/mix.wav`, '-b:a', '160k', `${OUT}/mix.mp3`]);

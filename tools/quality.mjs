@@ -1,6 +1,6 @@
 // quality.mjs: the quality loop (QUALITY.md): what's left before Claude is satisfied with the film and the site.
 //   npm run quality                              runs the quick checks, prints the queue, writes quality/scorecard.json
-//   npm run quality -- --full                    also runs the slow checks (refs, loudness, phone, live); --check=NAME one
+//   npm run quality -- --full                    also runs the slow checks (refs, phone, live); --check=NAME one
 //   npm run quality -- pass ID --note="…"        records a judgment: why it's right (--evidence=path, optional)
 //   npm run quality -- open ID --note="…"        what's still wrong (a new ID, e.g. find.ch05-eyes, with --title, is a finding)
 //   npm run quality -- curt ID --note="…"        hands it to Curt, with the question
@@ -39,7 +39,7 @@ const saveStatus = () => writeFileSync(STATUS, '# The quality loop\'s judgments 
 const R = readYaml(RUBRIC), items = [];
 for (const n of R.film.order) {
   for (const c of R.film.criteria) items.push({ id: `ch${NN(n)}.${c.key}`, area: 'film', chapter: n, owner: 'claude', title: `Chapter ${n}: ${c.title}`, criteria: c.criteria });
-  items.push({ id: `ch${NN(n)}.draft`, area: 'film', chapter: n, owner: 'claude', auto: true, title: `Chapter ${n}: its draft is newer than its sources`, criteria: 'npm run timeline, render the frames, npm run draft' });
+  items.push({ id: `ch${NN(n)}.draft`, area: 'film', chapter: n, owner: 'claude', auto: true, title: `Chapter ${n}: its draft is current and at the right loudness`, criteria: 'The draft is newer than its sources and made from frames that are too; -14 LUFS (±1), peaks under -1 dBTP. npm run timeline -- N; delete out/frames/chNN; node render.mjs --chapter=N --frames --fps=12 --workers=6; npm run draft -- N' });
 }
 for (const w of R.work) items.push({ ...w, area: 'work', owner: 'claude' });
 for (const p of R.site.pages) for (const c of R.site.criteria) items.push({ id: `site.${p.key}.${c.key}`, area: 'site', file: p.file, owner: 'claude', title: `${p.title[0].toUpperCase() + p.title.slice(1)}: ${c.title}`, criteria: c.criteria });
@@ -70,10 +70,28 @@ const dirty = new Set(sh('git', ['status', '--porcelain', '-uall']).split('\n').
 const when = {}, changed = f => when[f] ??= dirty.has(f) ? statSync(f).mtimeMs / 1000 : +sh('git', ['log', '-1', '--format=%ct', '--', f]).trim() || statSync(f).mtimeMs / 1000;
 const SHARED = ['src/core.js', 'src/kit.js', 'src/pulp.js', 'src/energy.js', 'src/designs.js', 'src/config.js', 'src/timeline.js', 'script/sfx.yaml', 'render.mjs', 'studio.html'];
 const sources = n => [`src/scenes/ch${NN(n)}.js`, `src/gen/ch${NN(n)}.js`, `script/boards/ch${NN(n)}.yaml`, `script/align/ch${NN(n)}.json`, ...SHARED].filter(existsSync);
+// a chapter's draft: newer than its sources, made from frames that are too (render.mjs --frames skips frames already on
+// disk, so frames left from before a change would pass for new), and at -14 LUFS (±1) with peaks under -1 dBTP
+const LOUD = 'out/quality/loudness.json', loudCache = readJson(LOUD, {});
+function loud(d) {
+  const name = d.split('/').pop();
+  if (!loudCache[name]) {
+    const e = spawnSync('ffmpeg', ['-nostats', '-hide_banner', '-i', d, '-vn', '-af', 'ebur128=peak=true', '-f', 'null', '-'], { encoding: 'utf8', maxBuffer: 1 << 26 }).stderr;   // the summary is on stderr
+    loudCache[name] = { I: +[...e.matchAll(/I:\s+(-?[\d.]+) LUFS/g)].pop()?.[1], P: +[...e.matchAll(/Peak:\s+(-?[\d.]+) dBFS/g)].pop()?.[1] };
+    mkdirSync('out/quality', { recursive: true }); writeFileSync(LOUD, JSON.stringify(loudCache, null, 1));
+  }
+  return loudCache[name];
+}
 function draftCheck(n) {
   const d = draftOf(n); if (!d) return { ok: false, detail: 'no draft yet' };
-  const newer = sources(n).filter(f => changed(f) > changed(d));
-  return newer.length ? { ok: false, detail: `older than ${newer.join(', ')}` } : { ok: true, detail: d.split('/').pop() };
+  const src = sources(n), newer = src.filter(f => changed(f) > changed(d));
+  if (newer.length) return { ok: false, detail: `older than ${newer.join(', ')}` };
+  const F = `out/frames/ch${NN(n)}`, frames = existsSync(F) ? readdirSync(F).filter(f => f.endsWith('.jpg')) : [];
+  const oldest = Math.min(...frames.map(f => statSync(`${F}/${f}`).mtimeMs / 1000)), behind = frames.length ? src.filter(f => changed(f) > oldest) : [];
+  if (behind.length) return { ok: false, detail: `made from frames older than ${behind.join(', ')}: delete ${F} and render again` };
+  const { I, P } = loud(d);
+  if (!(Math.abs(I + 14) <= 1) || !(P <= -1)) return { ok: false, detail: `${I} LUFS, peak ${P} dBTP: wants -14 ±1 and under -1 (npm run timeline -- ${n}, then the draft)` };
+  return { ok: true, detail: `${d.split('/').pop()}, ${I} LUFS, peak ${P} dBTP` };
 }
 
 // ---- the checks: quick ones every run, slow ones on request (their results kept with the fingerprint of their inputs)
@@ -101,27 +119,11 @@ function quick() {
 
 const pages = (d = PUB) => readdirSync(d).flatMap(f => { const p = join(d, f); return statSync(p).isDirectory() ? pages(p) : p.endsWith('.html') ? [p.slice(PUB.length + 1)] : []; }).sort();
 const hashAll = list => sha(list.map(f => f + sha(readFileSync(f))).join());
-const drafts = () => R.film.order.map(draftOf).filter(Boolean).map(d => d.split('/').pop()).sort().join();
 const SLOWS = {
   refs: { fp: () => hashAll(files(['notes/*.md', 'notes/refs.yaml', 'notes/annotations.yaml'])), run: () => { const r = run('node', ['tools/check_refs.mjs']); return { ok: r.ok, detail: last(r.out) }; } },
-  loudness: { fp: drafts, run: loudness },
   phone: { fp: () => hashAll([...pages().filter(p => !p.startsWith('review/quality/')).map(p => `${PUB}/${p}`), `${PUB}/style.css`]), run: phone },   // not the scorecard, which changes with every judgment
   live: { fp: () => sh('git', ['rev-parse', 'HEAD']).trim().slice(0, 12), run: live, end: true },   // after the push
 };
-
-// each draft's loudness: −14 LUFS integrated (±1), true peak at or under −1 dBTP
-function loudness() {
-  const bad = [], rows = [];
-  for (const n of R.film.order) {
-    const d = draftOf(n); if (!d) continue;
-    const e = spawnSync('ffmpeg', ['-nostats', '-hide_banner', '-i', d, '-vn', '-af', 'ebur128=peak=true', '-f', 'null', '-'], { encoding: 'utf8', maxBuffer: 1 << 26 }).stderr;   // the summary is on stderr
-    const I = +[...e.matchAll(/I:\s+(-?[\d.]+) LUFS/g)].pop()?.[1], P = +[...e.matchAll(/Peak:\s+(-?[\d.]+) dBFS/g)].pop()?.[1];
-    rows.push(`ch${NN(n)} ${I} LUFS, peak ${P}`);
-    if (!(Math.abs(I + 14) <= 1) || !(P <= -1)) bad.push(`ch${NN(n)} (${I} LUFS, peak ${P} dBTP)`);
-  }
-  mkdirSync('out/quality', { recursive: true }); writeFileSync('out/quality/loudness.txt', rows.join('\n') + '\n');
-  return { ok: !bad.length, detail: bad.length ? `off: ${bad.join(', ')}` : `${rows.length} drafts at −14 ±1 LUFS, peaks under −1 dBTP` };
-}
 
 // every page at phone (375) and desktop (1280) width: nothing wider than the screen; screenshots for Claude to look at
 async function phone() {
