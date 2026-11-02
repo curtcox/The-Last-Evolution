@@ -22,7 +22,11 @@
     wash(rectPts(200, 100, 1520, 40), 2, { op: .5 * k });
     for (let i = 0; i < 5; i++) { const x = 420 + i * 270, s = 20 + (i % 2) * 4; if (i !== 2) DES.machine(x, 900, s, t, { arms: 3, d: 2, label: null, hover: 1.5 + .2 * wob(t, .2, i) }); }
     DES.cr21(960, 900, 26, t, { label: null });
-    DES.person(640, 960, 110, t, { who: 'roal' }); DES.person(1280, 960, 110, t, { who: 'trest' });
+    // Roal and Trest remembered in talk, turned to each other across the ruler: Roal's hand works as he speaks, slowly;
+    // Trest, listening, nods now and then
+    const P = DES.POSE, hipY = 960 - DES.HIP * 110, g = .5 + .5 * Math.sin(t * .9);
+    DES.personSide(640, hipY, 110, t, { who: 'roal', key: 'mr', look: .05, pose: { ...P.stand, torso: .04, up: lerp(.45, .85, g), fore: lerp(1.3, 1.95, g) }, lid: KIT.blink(t, 5), talk: .25 * Math.max(0, Math.sin(t * 5.3)) * g });
+    DES.personSide(1280, hipY, 110, t, { who: 'trest', key: 'mt', flip: true, look: -.08 * Math.max(0, Math.sin(t * .7)), pose: { ...P.stand, torso: .03, up: .2, fore: .5 }, lid: KIT.blink(t, 8) });
   }
   // the mentatype's sheets, and the lines F-2's beam rules on the nearest
   const SHEET = [1180, 470, 300, 380];

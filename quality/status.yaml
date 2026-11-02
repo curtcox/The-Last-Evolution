@@ -114,5 +114,10 @@ items:
     note: "Chapter 0 opens on it (0-12 s): the 1961 masthead 'A Classic Reprint from AMAZING STORIES, August, 1932' over a double rule, THE LAST EVOLUTION in spaced capitals, 'By JOHN W. CAMPBELL, Jr.', on the pulp paper, set in as the voice begins. Legible at 1920 and at a phone held sideways; held upright the masthead line is small, but the title and byline read."
     at: d9238021746c
     when: 2026-11-02 23:21
+  find.side-tunic:
+    state: open
+    note: "DES.personSide gives Trest, Kahsh and the citizens Roal's robe to the ankle; their designs (DES.person, the model sheets) wear tunics over legs. Every chapter draws Trest side-on (ch03, ch04, ch07, ch08, ch09, now ch00), so his costume changes with the camera. Belongs with the model sheets' second pass (work.sheets): give personSide the tunic and legs for who !== 'roal'."
+    title: The side-view figure draws every person in Roal's ankle robe
+    when: 2026-11-02 23:23
 fresh: []
 since_fresh: 25
