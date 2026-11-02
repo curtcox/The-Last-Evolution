@@ -101,13 +101,14 @@ main{max-width:1240px} .read{max-width:38em;margin:0 auto} .read h3{font:1.25em/
 .margin{position:sticky;top:0;max-height:100vh;overflow-y:auto;padding:.5em 0 30vh;font-size:.88em;line-height:1.45}
 .margin .empty{color:var(--ink2);font-style:italic}
 .note{border-left:3px solid var(--rule);padding:.1em 0 .1em .8em;margin:0 0 1em;opacity:.55;transition:opacity .4s}
-.note.on{opacity:1;border-color:var(--accent)} .note h4{margin:0;font-size:1em} .note h4 .k{font-weight:400;font-variant:small-caps;color:var(--ink2);margin-right:.4em;cursor:pointer}
+.note.on{opacity:1;border-color:var(--accent)} .note h4{margin:0;font-size:1em} .note h4 .k{font-weight:400;font-variant:small-caps;color:var(--ink2);margin-right:.4em}
+.note h4 a.nl{color:inherit;text-decoration:none} .note h4 a.nl:hover{text-decoration:underline}
 .note p{margin:.2em 0} .note .more{font-size:.9em}
 .card{display:none} .gone{display:none!important}
 @media (max-width:60em){.film{grid-template-columns:1fr}.player{position:static}.margin{display:none}.card{display:block;min-height:5.5em;font-size:.85em;line-height:1.4;border-top:1px solid var(--rule);padding-top:.3em}.card .note{opacity:1;margin:0}}
 .pin{display:flex;gap:.5em;margin-top:.3em} .pin input{flex:1;font:inherit;padding:.3em .5em;border:1px solid var(--rule);background:var(--paper2);color:var(--ink)}
 .pin button,.notesbar button{font:inherit;padding:.3em .8em;border:1px solid var(--rule);background:var(--paper2);color:var(--ink);cursor:pointer}
-ol.pins{padding-left:1.4em} ol.pins li{margin:.25em 0} .at{cursor:pointer;color:var(--accent);margin-right:.5em;font-variant-numeric:tabular-nums}
+ol.pins{padding-left:1.4em} ol.pins li{margin:.25em 0} .at{cursor:pointer;color:var(--accent);margin-right:.5em;font-variant-numeric:tabular-nums;text-decoration:none}
 ol.pins .x{cursor:pointer;color:var(--ink2);margin-left:.5em} .notesbar{display:flex;gap:.5em;align-items:center} .t{color:var(--ink2);font-size:.85em}
 .index h3{margin:1.2em 0 .3em} .index .note{opacity:1}
 </style></head><body><main>
@@ -137,7 +138,7 @@ ${fore.html}
 <h2 id="afterword">${esc(after.title)}</h2>
 ${after.html}
 <h2 id="all">All the notes</h2><div class="index">
-${chapters.map(c => { const ns = timed.filter(x => x.ch === c.n); return `<h3>${c.n}. <i>${esc(c.title)}</i></h3>` + ns.map(x => `<div class="note" data-k="${x.kind}"><h4><span class="at" data-t="${x.T.toFixed(2)}">${hms(x.T)}</span><span class="k">${esc(kinds[x.kind])}</span>${inline(x.title)}</h4><p>${inline(x.body.trim())}</p></div>`).join('\n'); }).join('\n')}
+${chapters.map(c => { const ns = timed.filter(x => x.ch === c.n); return `<h3>${c.n}. <i>${esc(c.title)}</i></h3>` + ns.map(x => `<div class="note" data-k="${x.kind}"><h4><a class="at" href="#t=${Math.round(x.T)}" data-t="${x.T.toFixed(2)}">${hms(x.T)}</a><span class="k">${esc(kinds[x.kind])}</span><a class="nl" href="#note=${x.id}" title="a link to this note in the film">${inline(x.title)}</a></h4><p>${inline(x.body.trim())}</p></div>`).join('\n'); }).join('\n')}
 </div></div>
 <script>
 const { CH, TOTAL, NOTES } = ${DATA}, KINDS = ${JSON.stringify(kinds)}, KEY = 'tle-annotated-notes', SHOWN = 'tle-annotated-kinds';
@@ -146,12 +147,14 @@ const hms = s => { s = Math.max(0, Math.round(s)); const h = Math.floor(s / 3600
 let cur = 0, want = null, scrubbing = false;
 const chAt = T => { let i = 0; while (i + 1 < CH.length && T >= CH[i + 1].at) i++; return i; };
 const filmTime = () => CH[cur].at + v.currentTime;
-function go(T, play = true) {
+const play = () => v.play().catch(() => {});  // refused until the viewer has touched the page
+function go(T, andPlay = true) {
   const i = chAt(T), t = T - CH[i].at;
-  if (i !== cur || !v.src) { cur = i; want = { t, play }; v.src = CH[i].src; v.load(); }
-  else { v.currentTime = t; if (play) v.play(); }
+  if (i !== cur || !v.src) { cur = i; want = { t, play: andPlay }; v.src = CH[i].src; v.load(); }
+  else if (want) want = { t, play: andPlay };  // still loading: the latest seek wins
+  else { v.currentTime = t; if (andPlay) play(); }
 }
-v.addEventListener('loadedmetadata', () => { if (want) { v.currentTime = want.t; if (want.play) v.play(); want = null; } });
+v.addEventListener('loadedmetadata', () => { if (want) { v.currentTime = want.t; if (want.play) play(); want = null; } });
 v.addEventListener('ended', () => { if (cur + 1 < CH.length) go(CH[cur + 1].at + .01); else document.getElementById('afterword').scrollIntoView({ behavior: 'smooth' }); });
 scrub.addEventListener('input', () => { scrubbing = true; document.getElementById('tnow').textContent = hms(+scrub.value); });
 scrub.addEventListener('change', () => { scrubbing = false; go(+scrub.value); });
@@ -169,7 +172,7 @@ document.querySelectorAll('#kinds button[data-k]').forEach(b => b.onclick = () =
 document.getElementById('none').onclick = () => { shown = shown.size ? new Set() : new Set(Object.keys(KINDS)); kindsChanged(); };
 // the margin: every shown note up to now, the latest lit while it's fresh; nothing ahead of the film is shown
 const noteEl = n => { const d = document.createElement('div'); d.className = 'note'; d.dataset.i = n; d.innerHTML = NOTES[n].html;
-  d.querySelector('h4').insertAdjacentHTML('afterbegin', '<span class="at" data-t="' + NOTES[n].T + '">' + hms(NOTES[n].T) + '</span><span class="k">' + KINDS[NOTES[n].kind] + '</span>'); return d; };
+  d.querySelector('h4').insertAdjacentHTML('afterbegin', '<a class="at" href="#note=' + NOTES[n].id + '" data-t="' + NOTES[n].T + '">' + hms(NOTES[n].T) + '</a><span class="k">' + KINDS[NOTES[n].kind] + '</span>'); return d; };
 let upto = -2, lit = null;
 function margins(T) {
   let k = -1; for (let i = 0; i < NOTES.length && NOTES[i].T <= T; i++) if (shown.has(NOTES[i].kind)) k = i;
@@ -196,10 +199,21 @@ function tick() {
   requestAnimationFrame(tick);
 }
 addEventListener('resize', () => { upto = -2; });  // the margin is hidden on a phone, so it's laid out again when it shows
-kindsChanged(); go(0, false); requestAnimationFrame(tick);
+// links into the film: #t=957 or #t=15:57 for a moment, #note=bacteria for a note (what a QR code would open)
+function fromHash() {
+  const h = decodeURIComponent(location.hash.slice(1)), m = h.match(/^t=(?:(\\d+):)?(\\d+(?:\\.\\d+)?)$/);
+  const n = h.startsWith('note=') && NOTES.find(x => x.id === h.slice(5));
+  if (n && !shown.has(n.kind)) { shown.add(n.kind); kindsChanged(); }
+  const T = n ? n.T + .05 : m ? 60 * (m[1] || 0) + +m[2] : null;
+  if (T === null) return;
+  go(Math.min(T, TOTAL - .1), false); document.getElementById('film').scrollIntoView();
+}
+addEventListener('hashchange', fromHash);
+kindsChanged(); go(0, false); fromHash(); requestAnimationFrame(tick);
 const seek = T => { go(Math.max(0, T - 1)); document.getElementById('film').scrollIntoView({ behavior: 'smooth' }); };
 document.getElementById('begin').onclick = () => seek(1);
-document.addEventListener('click', e => { const a = e.target.closest('.at[data-t]'); if (a) seek(+a.dataset.t); });
+document.addEventListener('click', e => { const a = e.target.closest('.at[data-t]'); if (!a) return;
+  e.preventDefault(); seek(+a.dataset.t); if (a.hash) history.replaceState(null, '', a.hash); });
 // your notes, kept in this browser only
 const load = () => { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; } };
 const save = ns => { try { localStorage.setItem(KEY, JSON.stringify(ns)); } catch (e) {} };
@@ -208,8 +222,8 @@ const near = T => { let n = null; for (const x of NOTES) if (x.T <= T + 5) n = x
 const where = T => 'ch ' + CH[chAt(T)].n + near(T);
 function show() {
   const ol = document.getElementById('pins'); ol.innerHTML = '';
-  pins.forEach((n, i) => { const li = document.createElement('li'), at = document.createElement('span'), x = document.createElement('span');
-    at.className = 'at'; at.dataset.t = n.t + 1; at.textContent = hms(n.t) + ' (' + where(n.t) + ')';
+  pins.forEach((n, i) => { const li = document.createElement('li'), at = document.createElement('a'), x = document.createElement('span');
+    at.className = 'at'; at.href = '#t=' + Math.round(n.t); at.dataset.t = n.t + 1; at.textContent = hms(n.t) + ' (' + where(n.t) + ')';
     x.className = 'x'; x.textContent = '×'; x.title = 'remove'; x.onclick = () => { pins.splice(i, 1); save(pins); show(); };
     li.append(at, document.createTextNode(n.text), x); ol.append(li); });
 }

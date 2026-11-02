@@ -10,6 +10,9 @@ site, or locally after `npm start` (http://localhost:8077/review/round7/annotate
   afterword. Every note is also listed by chapter at the foot of the page; click a time to watch from there.
 - **The controls:** buttons turn each kind of note on or off, or all of them off. The scrub bar marks each note with a
   dot.
+- **Links into the film:** `#note=bacteria` opens the film paused at that note, with the note showing. `#t=15:57` (or
+  `#t=957`) opens it at a moment. Every time on the page is such a link, and a note's title in the list at the foot
+  links to that note.
 - **On a phone:** the margin becomes a card under the video, showing the latest note.
 - **Your notes:** pin a note to any moment, as on the film page. *Copy* gives them back with the chapter and the
   nearest margin note.
@@ -150,7 +153,8 @@ weigh:
 **Curt:**
 
 **4.2 The QR codes.** PLAN.md §5 plans 30 to 60 QR codes in the film, each opening a page here. These 48 notes are the
-natural set to choose from. Each code would open the annotated film at its note.
+natural set to choose from. Each code would open the annotated film at its note, with a link of the form
+`annotated.html#note=bacteria`, which works now.
 
 *Recommend:* choose the codes from these notes when the QR layouts are made (Phase 4).
 **Curt:**
