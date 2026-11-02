@@ -115,13 +115,40 @@
   const mixPose = (a, b, k) => { const p = {}; for (const f in a) p[f] = lerp(a[f], b[f] ?? a[f], k); return p; };
   const LOOK = [[0, 0], [T0('D') + .4, .2, .6], [T0('D') + 1.4, .62], [tCome + 3, .45], [T0('H'), .6], [T0('M'), .55], [tRise, .1], [tRise2 + 2, .4], [C('p060.1:rolled back') + 5, -.15], [tGen, .3],
     [tFell + 2, .1], [C('p064.1:nor molecular'), .05], [C('p067.1'), .12], [C('p072.1:Let machines be made'), .3]];
+  // ---------- Roal's acting, from the voice and the story's beats ----------
+  // his own clauses (from one stop, ; . ? ! or a dash, to the next) each carry a gesture of the near hand; each clause
+  // said to him ends in a small nod; he starts at the work's violence and at the guinea pig's death; he shades his eyes
+  // from F-2's stream of light; and when his eyes dream (p057.2) his hand goes to his chin
+  function clausesOf(ids) { const out = []; for (const l of CHAPTER.lines) { if (!ids.includes(l.id)) continue; let a = null;
+    for (const w of l.words) { a ??= w[1]; if (/([.;?!—]|--)["”]?$/.test(w[0]) || w === l.words.at(-1)) { out.push([a, w[2]]); a = null; } } } return out; }
+  const MINE = clausesOf(['p053.2', 'p056.1', 'p057.1']), TOLD = clausesOf(['p054.1', 'p058.2', 'p064.1', 'p068.1']);
+  const GEST = [[.8, 1.9], [1.1, 2.4], [.6, 1.6]];   // the near arm (up, fore): an open hand forward, a lift, a small turn
+  const bump = (t, t0, rise = .15, fall = .8) => t < t0 ? 0 : Math.min(1, (t - t0) / rise) * Math.exp(-Math.max(0, t - t0 - rise) / fall);
+  const STARTS = [[tSudden, .6], [C('p059.1:sudden crashing arcs'), .8], [C('p059.1:blasting atoms'), .5], [tGen, .7], [tSnap, 1], [tFell, .8], [tDead, 1]];
+  function act(t, pose) {   // lays the acting over a pose; returns how it moves his head (look) and lids
+    let look = 0, lid = 0;
+    for (let i = 0; i < MINE.length; i++) { const [a, b] = MINE[i]; if (b - a < .9 || t < a - .3 || t > b + .9) continue;
+      const k = win(t, a - .2, b + .3, .5, .6), g = GEST[i % 3]; pose.up = lerp(pose.up, g[0], k); pose.fore = lerp(pose.fore, g[1], k); look += .05 * k * Math.sin((t - a) * 1.7); }
+    for (const [, b] of TOLD) look -= .1 * Math.sin(Math.PI * clamp((t - b - .1) / .7));
+    const chin = win(t, C('p057.2'), tRise - .1, 1.6, .7);
+    pose.torso += .22 * chin; pose.up = lerp(pose.up, 1.05, chin); pose.fore = lerp(pose.fore, 3.45, chin); look -= .12 * chin; lid += .1 * chin;
+    const s = STARTS.reduce((m, [t0, a]) => Math.max(m, bump(t, t0) * a), 0);
+    pose.torso -= .12 * s; pose.up += .45 * s; pose.fore += .9 * s; look += .1 * s; lid -= .3 * s;
+    const shade = win(t, C('p063.1:there broke a stream'), C('p063.1:In seconds') + 1, 1, 1.5);
+    pose.up = lerp(pose.up, 1.7, .8 * shade); pose.fore = lerp(pose.fore, 3.9, .8 * shade); pose.torso -= .06 * shade; lid += .25 * shade;
+    look -= .55 * win(t, tDead + .8, C('p072.1') + .5, 1, 1.5);   // down at the little animal, until F-2 speaks
+    lid += .2 * ez(t, C('p072.1:Let machines be made'), C('p072.1$'));   // and the war decided, his lids lower
+    return { look, lid };
+  }
   function roal(t) {
     const P = DES.POSE, look = steps(t, LOOK, 1), lidBase = steps(t, [[0, .3], [T0('D'), 0, .6], [T0('H'), .1], [T0('M'), .1], [C('p057.2'), .45, 4], [tRise, 0, .5]], 1);
-    const lid = Math.max(lidBase, blink(t, 3)), say = talk(t, 'roal');
+    const say = talk(t, 'roal');
     if (t < tRise) {   // on the couch
       const k = backOut(K(t, 'p053.1', 'p053.1+1.3')), pose = mixPose(P.lie, P.sitUp, k); pose.torso += .012 * wob(t, .22);
-      return DES.personSide(COUCH.x - 30 + k * 12, SEAT - .38 * RU, RS, t, { pose, look, lid, key: 'r', talk: say });
+      const a = act(t, pose), lid = clamp(Math.max(lidBase + a.lid, blink(t, 3)));
+      return DES.personSide(COUCH.x - 30 + k * 12, SEAT - .38 * RU, RS, t, { pose, look: look + a.look, lid, key: 'r', talk: say });
     }
+    let lid = Math.max(lidBase, blink(t, 3)), acted = 0;
     let hip, pose, flip = false, f = 1;
     if (t < tRise1) { const k = ease(seg(t, tRise, tRise1)); pose = mixPose(P.sitUp, P.sit, k); hip = [lerp(COUCH.x - 18, 505, k), lerp(SEAT - .38 * RU, SEAT - .2 * RU, k)]; }
     else if (t < tRise2) { const k = ease(seg(t, tRise1, tRise2)); pose = mixPose(P.sit, P.stand, k); pose.torso += .55 * Math.sin(Math.PI * k); hip = [lerp(505, 560, k), lerp(SEAT - .2 * RU, G - DES.HIP * RS, k)]; }
@@ -138,13 +165,14 @@
       }
       // walking away from the floor he turns to go, and turns back at the end (a quick squash of the profile)
       const w3 = WALKS[3]; f = 1 - 2 * ez(t, w3[0] - .1, w3[0] + .35) + 2 * ez(t, w3[1] - .1, w3[1] + .35); flip = f < 0;
+      const a = act(t, pose); acted = a.look; lid = clamp(Math.max(lidBase + a.lid, blink(t, 3)));
       // his arm up across his face in the birth's light (Morey's page), down again when F-1 has fallen
       const sh = ez(t, tAura, tAura + .5) * (1 - ez(t, tFell + 1.5, tFell + 2.8)); pose = mixPose(pose, P.shield, sh);
       // asking (p067): the near hand opens toward F-2
       const ask = win(t, C('p067.1'), C('p067.1$') + .6, .4, .8); pose.up = lerp(pose.up, .55, ask); pose.fore = lerp(pose.fore, 1.5, ask);
     }
     push(); translate(hip[0], 0); scale(Math.max(.2, Math.abs(f)), 1); translate(-hip[0], 0);
-    const r = DES.personSide(hip[0], hip[1], RS, t, { pose, flip, look: flip ? .05 : look, lid, key: 'rs', talk: say });
+    const r = DES.personSide(hip[0], hip[1], RS, t, { pose, flip, look: flip ? .05 : look + acted, lid, key: 'rs', talk: say });
     pop();
     return r;
   }
