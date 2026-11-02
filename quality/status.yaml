@@ -29,5 +29,55 @@ items:
     note: "Desktop: one readable column under clear section heads. Phone: the same column at 375 with no overflow; the nav on one line."
     at: acbc68aa3dee
     when: 2026-11-02 23:13
+  site.notes.content:
+    state: pass
+    note: The index says what the short and long notes are and lists the four, each with a true one-line description.
+    at: b4d24ff19350
+    when: 2026-11-02 23:17
+  site.notes.look:
+    state: pass
+    note: "A short page: lede and a list of four; fine at both widths."
+    at: 5fde5c19f6e3
+    when: 2026-11-02 23:17
+  site.science.content:
+    state: pass
+    note: "Read in full: each claim is in the fact-check list with its source; says what became of each 1932 idea (annihilation, Bohr's wall, unified fields); no stale status. The repo copy's 'Draft for Round 2' line now says approved."
+    at: adcf26150f08
+    when: 2026-11-02 23:17
+  site.science.look:
+    state: pass
+    note: Long single column; section heads and the paragraph links (¶3, ¶5…) read; phone fine; the 1932 list renders as a list.
+    at: 62738d91d214
+    when: 2026-11-02 23:17
+  site.succession.content:
+    state: pass
+    note: "Read in full: the story's own position quoted, the timeline before and after, both of today's camps described without taking sides, the utopia worry, and the project's own irony stated. Status line in the repo copy fixed."
+    at: b283c02ac18a
+    when: 2026-11-02 23:17
+  site.succession.look:
+    state: pass
+    note: "Phone and desktop: single column, dated entries scan well."
+    at: fcaa8a7b2ad5
+    when: 2026-11-02 23:17
+  site.history.content:
+    state: pass
+    note: Read in full; fixed a stale planning sentence ('The site's notes will present this as history' → 'These notes present it'). Dates, page numbers and the reprint account agree with the fact-check list.
+    at: cba27b88ba51
+    when: 2026-11-02 23:17
+  site.history.look:
+    state: pass
+    note: Single column; the editor's quotation set off; fine at both widths.
+    at: fd4d751ed470
+    when: 2026-11-02 23:17
+  site.factcheck.content:
+    state: pass
+    note: Section heads now name each note and link it, instead of showing repository file names; the Round 7 section links the margin notes, foreword and afterword. Claims and checks unchanged; refs check passes (53 sources answering).
+    at: eeef1b864a8e
+    when: 2026-11-02 23:17
+  site.factcheck.look:
+    state: pass
+    note: On a phone the table showed two of three columns behind a sideways scroll; it now wraps to fit, all three columns visible (checked at 375). Desktop unchanged.
+    at: 3042469b3369
+    when: 2026-11-02 23:17
 fresh: []
-since_fresh: 6
+since_fresh: 16

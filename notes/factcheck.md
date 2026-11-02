@@ -6,7 +6,7 @@ expanded Heirs notes and the utopia additions. "Computed"
 means arithmetic from the story's own text. No claim now rests on general knowledge alone.
 `npm run refs` confirms that every link answers.
 
-## Campbell and the pulps ([history.md](history.md))
+## [Campbell and the pulps](history.md)
 
 | claim | source | check |
 |---|---|---|
@@ -31,7 +31,7 @@ means arithmetic from the story's own text. No claim now rests on general knowle
 | Gutenberg transcribed the March 1961 reprint; no renewal found | gutenberg (transcriber's note) | read |
 | *Amazing*'s renewals begin with later issues | penn-renewals | read in Phase 0 |
 
-## The science of 1932 ([science.md](science.md))
+## [The science of 1932](science.md)
 
 | claim | source | check |
 |---|---|---|
@@ -56,7 +56,7 @@ means arithmetic from the story's own text. No claim now rests on general knowle
 | Exothermic gives off heat, endothermic absorbs it; respiration is exothermic | wp-exothermic | read |
 | Five Great Years ≈ 125,000 years gives 25,000; the precession cycle ≈ 25,800 years | the story; wp-great-year | computed; read |
 
-## Machines as heirs ([succession.md](succession.md))
+## [Heirs: when the machines inherit](succession.md)
 
 | claim | source | check |
 |---|---|---|
@@ -78,9 +78,10 @@ means arithmetic from the story's own text. No claim now rests on general knowle
 | "Twilight": humans have lost their curiosity and drive; all work done by machines | wp-twilight | read |
 | Bostrom, *Deep Utopia: Life and Meaning in a Solved World* (2024): what an ideal life would be after superintelligence, when machines outdo people at work and leisure | wp-nick-bostrom | read |
 
-## The margin notes, foreword and afterword ([annotations.yaml](annotations.yaml), Round 7)
+## The film's margin notes, foreword and afterword (Round 7)
 
-Claims these add beyond the notes above.
+Claims these add beyond the notes above ([the margin notes](annotations.yaml), [the foreword](foreword.md) and
+[the afterword](afterword.md)).
 
 | claim | source | check |
 |---|---|---|

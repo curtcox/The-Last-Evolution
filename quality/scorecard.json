@@ -1,8 +1,8 @@
 {
  "summary": {
-  "pass": 3,
-  "stale": 0,
-  "open": 92,
+  "pass": 13,
+  "stale": 2,
+  "open": 80,
   "curt": 7,
   "later": 3
  },
@@ -37,7 +37,7 @@
    "detail": "refs: 53 sources, all cited, all answering; definitions written into 6 notes"
   },
   "phone": {
-   "state": "stale",
+   "state": "pass",
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
@@ -612,8 +612,8 @@
    "id": "site.home.look",
    "area": "site",
    "title": "The home page: how it looks and works",
-   "state": "pass",
-   "note": "Desktop 1280: masthead, title and lede read at a glance, the four ways in as a list, the status box below. Phone 375: the six nav links fit on one line; title, lede and status box read without crowding; nothing overflows."
+   "state": "stale",
+   "note": "passed on 84df0ea7c19b; changed since. Desktop 1280: masthead, title and lede read at a glance, the four ways in as a list, the status box below. Phone 375: the six nav links fit on one line; title, lede and status box read without crowding; nothing overflows."
   },
   {
    "id": "site.watch.content",
@@ -647,85 +647,85 @@
    "id": "site.notes.content",
    "area": "site",
    "title": "The notes index: what it says",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "The index says what the short and long notes are and lists the four, each with a true one-line description."
   },
   {
    "id": "site.notes.look",
    "area": "site",
    "title": "The notes index: how it looks and works",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "A short page: lede and a list of four; fine at both widths."
   },
   {
    "id": "site.science.content",
    "area": "site",
    "title": "The science notes: what it says",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "Read in full: each claim is in the fact-check list with its source; says what became of each 1932 idea (annihilation, Bohr's wall, unified fields); no stale status. The repo copy's 'Draft for Round 2' line now says approved."
   },
   {
    "id": "site.science.look",
    "area": "site",
    "title": "The science notes: how it looks and works",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "Long single column; section heads and the paragraph links (¶3, ¶5…) read; phone fine; the 1932 list renders as a list."
   },
   {
    "id": "site.succession.content",
    "area": "site",
    "title": "The succession notes: what it says",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "Read in full: the story's own position quoted, the timeline before and after, both of today's camps described without taking sides, the utopia worry, and the project's own irony stated. Status line in the repo copy fixed."
   },
   {
    "id": "site.succession.look",
    "area": "site",
    "title": "The succession notes: how it looks and works",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "Phone and desktop: single column, dated entries scan well."
   },
   {
    "id": "site.history.content",
    "area": "site",
    "title": "The history notes: what it says",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "Read in full; fixed a stale planning sentence ('The site's notes will present this as history' → 'These notes present it'). Dates, page numbers and the reprint account agree with the fact-check list."
   },
   {
    "id": "site.history.look",
    "area": "site",
    "title": "The history notes: how it looks and works",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "Single column; the editor's quotation set off; fine at both widths."
   },
   {
    "id": "site.factcheck.content",
    "area": "site",
    "title": "The fact-check list: what it says",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "Section heads now name each note and link it, instead of showing repository file names; the Round 7 section links the margin notes, foreword and afterword. Claims and checks unchanged; refs check passes (53 sources answering)."
   },
   {
    "id": "site.factcheck.look",
    "area": "site",
    "title": "The fact-check list: how it looks and works",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "On a phone the table showed two of three columns behind a sideways scroll; it now wraps to fit, all three columns visible (checked at 375). Desktop unchanged."
   },
   {
    "id": "site.about.content",
    "area": "site",
    "title": "The About page: what it says",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "Checked each claim: first printing Aug 1932, reprint Mar 1961, Gutenberg #27462 and its no-renewal finding; the 16 readings now described as the 16 in text/emendations.yaml are (a clause, two negatives, a dozen slips: dropped and stray words, a wrong digit), matching the afterword and history notes; Morey's illustration from the August 1932 issue; voices, effects and music all ElevenLabs-generated (tools/sound_sampler.mjs); credits for p5.js, p5.brush, Heibel's base; corrections by GitHub issue."
   },
   {
    "id": "site.about.look",
    "area": "site",
    "title": "The About page: how it looks and works",
-   "state": "open",
-   "note": ""
+   "state": "stale",
+   "note": "passed on acbc68aa3dee; changed since. Desktop: one readable column under clear section heads. Phone: the same column at 375 with no overflow; the nav on one line."
   },
   {
    "id": "site.review.content",

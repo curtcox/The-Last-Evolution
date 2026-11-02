@@ -1,7 +1,8 @@
 # Campbell and the pulps
 
-*Draft for Round 2. The site's notes on who wrote the story, where it appeared, and what became of them. Sources are in
-[refs.yaml](refs.yaml).*
+*Approved in Round 2 (2026-11-01), its claims checked again since. The notes on who wrote the story, where it
+appeared, and what became of them; on the site at
+[/notes/history/](https://curtcox.github.io/The-Last-Evolution/notes/history/). Sources are in [refs.yaml](refs.yaml).*
 
 ## *Amazing Stories*
 Hugo Gernsback launched *Amazing Stories* in April 1926. It was the first magazine given entirely to what Gernsback
@@ -42,7 +43,7 @@ His later record is darker. He promoted pseudoscience, including psychic powers 
 was launched in *Astounding*. His editorials took a right-wing line, and in his later years he struggled to tolerate
 dissent ([SFE][sfe-campbell]). In August 2019 the writer Jeannette Ng, accepting the award then named for him, called
 him a fascist. That month the publisher of *Analog*, *Astounding*'s successor, renamed it the Astounding Award for Best
-New Writer ([Astounding Award][wp-astounding-award]). The site's notes will present this as history, alongside the
+New Writer ([Astounding Award][wp-astounding-award]). These notes present it as history, alongside the
 story, not instead of it.
 
 ## Leo Morey

@@ -1,8 +1,8 @@
 # The science of 1932
 
-*Draft for Round 2. Notes for the site's "1932 science" pages, each tied to the paragraphs it explains, so the site can
-show it beside the text as the film reaches them. Sources are in [refs.yaml](refs.yaml); `npm run refs` checks every
-link.*
+*Approved in Round 2 (2026-11-01) and expanded since. The notes on the 1932 science, each tied to the paragraphs it explains;
+they're on the site at [/notes/science/](https://curtcox.github.io/The-Last-Evolution/notes/science/). Sources are in
+[refs.yaml](refs.yaml); `npm run refs` checks every link.*
 
 Campbell was 22 and finishing a physics degree when this story ran. It's full of the physics of its moment, some of it
 right, some wrong, and some still open. 1932 was an extraordinary year to be writing about the atom.

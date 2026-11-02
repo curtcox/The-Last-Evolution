@@ -246,6 +246,7 @@ sup a { text-decoration: none; color: var(--accent); }
 .tbl table { border-collapse: collapse; font-size: .8em; line-height: 1.4; min-width: 30em; }
 .tbl th, .tbl td { border-bottom: 1px solid var(--rule); padding: .35em .5em; text-align: left; vertical-align: top; }
 .tbl th { font-variant: small-caps; letter-spacing: .04em; }
+@media (max-width: 30em) { .tbl table { min-width: 0; } .tbl td { overflow-wrap: anywhere; } }   /* a phone gets every column, wrapped, not a sideways scroll */
 .q-pass { color: var(--accent); } .q-stale, .q-curt, .q-fail { color: #B4442C; font-weight: bold; } .q-open, .q-later { color: var(--ink2); }
 .src, footer { font-size: .85em; color: var(--ink2); }
 .next { margin-top: 2em; }

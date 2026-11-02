@@ -1,7 +1,9 @@
 # Heirs: when the machines inherit
 
-*Draft for Round 2. The site's notes on how the story's central idea, that machines will succeed humanity, came before
-it and after it. These notes describe arguments; they don't take sides. Sources are in [refs.yaml](refs.yaml).*
+*Approved in Round 2 (2026-11-01) and expanded since. The notes on how the story's central idea, that machines will
+succeed humanity, came before it and after it; on the site at
+[/notes/succession/](https://curtcox.github.io/The-Last-Evolution/notes/succession/). These notes describe arguments; they
+don't take sides. Sources are in [refs.yaml](refs.yaml).*
 
 ## What the story says
 *p085, p100–p111, p136–p140 · chapters 7, 8, 11*
