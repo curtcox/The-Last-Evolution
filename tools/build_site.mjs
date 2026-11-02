@@ -138,11 +138,12 @@ const about = page(1, 'About: The Last Evolution', `
 reprinted there in March 1961. The text comes from <a href="https://www.gutenberg.org/ebooks/27462">Project Gutenberg
 eBook #27462</a>, whose transcribers found no evidence that its US copyright was renewed, so it is in the public domain
 in the United States. The repository keeps the Gutenberg file unmodified, with its licence and a checksum.</p>
-<p>Gutenberg transcribed the 1961 reprint, whose typesetter lost words that are in the 1932 first printing: a 24-word
-clause, two negatives, and a dozen smaller words. This site and the film restore those ${emendations.length} readings from
+<p>Gutenberg transcribed the 1961 reprint, whose typesetter lost a 24-word clause and two negatives that are in the 1932
+first printing, and made a dozen smaller slips: dropped words, stray ones, a wrong digit. This site and the film restore
+those ${emendations.length} readings from
 the 1932 scan, and the <a href="../read/#restored">Read page</a> marks each one
 (<a href="${REPO}/blob/main/text/comparison_1932.md">the comparison</a>).</p>
-<p>Leo Morey's illustration for the story, from the same issue, is on the <a href="../read/#illustration">Read
+<p>Leo Morey's illustration for the story, from the August 1932 issue, is on the <a href="../read/#illustration">Read
 page</a>. It is in the public domain in the US too.</p>
 <h2>The adaptation</h2>
 <p>A film of the whole story, word for word, voiced with AI-generated voices (ElevenLabs) and painted in code with
