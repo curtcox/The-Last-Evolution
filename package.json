@@ -29,7 +29,8 @@
     "board": "node tools/storyboard.mjs",
     "draft": "node tools/draft.mjs",
     "save-cast": "node tools/save_cast.mjs",
-    "publish-review": "node tools/publish_review.mjs"
+    "publish-review": "node tools/publish_review.mjs",
+    "film": "node tools/film.mjs"
   },
   "dependencies": {
     "p5": "^2.3.3",

@@ -218,11 +218,48 @@ Roal in the hall at the birth.
 **4.3 Next.** After your notes on the draft: the acting pass (a three-quarter head for the close shots, hands and weight),
 the painting brought up to the model sheets, then the final render at 24 frames a second with the effects from 2.2.
 *Recommend:* that order.
-**Curt:**
+**Curt:** Watched the draft. Two possible issues: "it's very monochrome" and "it's flickery". "Those might be the right
+calls. I want to see the whole thing before I decide." So the next step is drafts of the other eleven chapters (§5).
 
 **My concerns on the draft:**
 - **F-1's fall** has a lurch, a bounce and dust now, but it's still a big tilt more than a collapse.
 - **Fast moves at 12 frames a second** can step visibly. The fastest move is under 60 px a frame; 24 fps in the final
   render will smooth them.
 - **The investigator** is a small machine carrying the cage by one tentacle; at this size it reads, but only just.
+
+---
+
+## 5. Curt's notes on the draft, and the whole film
+
+**5.1 "It's very monochrome."** It is, by the rule in PLAN.md §5: the world is ink wash, and only energy has colour.
+Chapter 5 is the grey hall at night, so its colour is a few seconds of force shafts, the birth's lightning, C-R-U-1's
+dull gold and the first green beam. The rule is meant to work across the film, not in one chapter. The green death
+spreads in chapters 2–3, the screens go violet to red in 7, the golden sphere in 9 is the first warm colour that isn't
+a weapon, and chapter 11's frame is the only full-colour scene. Seeing the whole film is the right test of the rule.
+If it's still too grey, the cheapest change is to tint the wash itself: sepia for 2538, colder for the Outsiders'
+ships. The rule would stay.
+
+**5.2 "It's flickery."** Two causes:
+- **The boil.** The linework reseeds 12 times a second, and the draft runs at 12, so every frame redraws every stroke
+  differently. That includes the background's wash and blooms, not just the figures' lines. That's the hand-drawn look
+  the kit was built for, but here it's applied to the whole frame.
+- **The halftone.** The halftone dots follow the boil, so the grey areas shimmer.
+
+If it's too much, the fixes are cheap and don't touch the drawing:
+- hold the background steady and boil only the figures;
+- boil on twos (6 a second);
+- or both.
+
+The 24 fps final render would make it worse, not better, unless the boil stays at 12 or lower.
+
+**5.3 The whole film, as drafts.** The other eleven chapters, each made the way chapter 5 was:
+- a storyboard;
+- the timeline and mix from the voice pass;
+- the scene;
+- a 12 fps render.
+
+They're all built with the same boil and palette, so the whole is judged as it stands. Each chapter's draft page goes
+up as it's done. Then the whole film joins on one page, with chapter markers, about 55 minutes long.
+*Recommend:* build them in story order, and leave the look alone until you've watched the whole thing.
+**Curt:**
 

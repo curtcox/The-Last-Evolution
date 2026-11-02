@@ -1,0 +1,96 @@
+# ch10.yaml: chapter 10's storyboard, Go, and Do Not Return (PLAN.md §6). The format and the cue syntax are chapter
+# 5's (script/boards/ch05.yaml); src/scenes/ch10.js draws it.
+chapter: 10
+logline: >-
+  The golden sphere finds the Outsiders' fleet on its way to Mars, takes every weapon they have without moving, twists
+  their flagship inside out and back, locks every energy in it for all time, and sends them home.
+world: Deep space near Mars; the fleet a slow-wheeling cluster; the golden sphere at its centre.
+colour: >-
+  Every weapon the Outsiders have at once (green, heat, white, the projector's blue), swallowed by the gold; the
+  blankness round the flagship; the blue-white beam that locks it.
+motif: >-
+  Power held gently in check. The sphere could destroy them; it doesn't. The locked ship stops moving entirely, even
+  its linework: the only drawing in the film that doesn't boil.
+arc: From attack to awe to release; the threat ends without a death.
+draft: >-
+  One set: the fleet wheeling round the sphere. The flagship is twisted by redrawing it, bent and flipped; once the
+  blue-white beam locks it, its drawing stops boiling and holds still.
+voice_at: 6
+outro: 4
+holds:
+  - {at: 'p131.1$', s: 0.8}
+  - {at: 'p134.1$', s: 1.5, why: the locked ship}
+  - {at: 'p135.1$', s: 1.5, why: the fleet turning for home}
+
+shots:
+  - id: A
+    at: 0
+    title: The chapter's page
+    seen: The pulp page, Go, and Do Not Return, the opening words under a drop cap.
+    event: The theme's first phrase; the narrator begins.
+    camera: a slow push
+    out: the paper soaks into space
+
+  - id: B
+    at: p130.1
+    title: The fleet, headed for Mars
+    seen: Deep space; Mars far off; the Outsiders' fleet, a cluster wheeling slowly about its own centre as it drives on; a golden spark coming.
+    event: The spark comes on fast and stops at the cluster's centre.
+    camera: a slow push toward the cluster
+    reads:
+      - [0, the fleet wheeling]
+      - ['p130.1:the golden sphere found the Outsiders', the sphere arriving]
+
+  - id: C
+    at: p131.1
+    title: Every ray
+    seen: The golden sphere within the ring of ships.
+    event: Every ship turns its weapons on it at once, every ray and force they know; the sphere hangs steady and takes them all.
+    camera: holds the sphere at the centre of the beams
+    reads:
+      - ['p131.1:showering it', the beams]
+      - ['p131.1:Unmoved', the sphere steady]
+
+  - id: D
+    at: p132.1
+    title: Pure force am I
+    seen: The sphere, close; the ships beyond.
+    event: Its thought goes out in deep golden rings.
+    camera: in close on the sphere
+    reads:
+      - [0, its thought]
+
+  - id: E
+    at: 'p133.1:Go now to your home planet'
+    title: The flagship
+    seen: The greatest ship of the fleet.
+    event: The camera finds it; the sphere's light falls on it.
+    camera: moves from the sphere to the flagship
+    reads:
+      - [0, the flagship]
+
+  - id: F
+    at: p134.1
+    title: Twisted
+    seen: The flagship in the sphere's grip.
+    event: >-
+      It twists and bends like a toy, turns inside out, and is whole again; its screen of blankness comes out round it;
+      its curves straighten into lines. A blue-white beam passes through the screen and the ship, and everything in it
+      locks: even its drawing holds still.
+    camera: holds on the ship through it all
+    reads:
+      - ['p134.1:it twisted and bent', the twisting]
+      - ['p134.1:the ship turned inside out', inside out]
+      - ['p134.1:a beam of blue-white radiance', the beam]
+      - ['p134.1:All things were immovable', locked]
+
+  - id: G
+    at: p135.1
+    title: Go
+    seen: The sphere and the fleet.
+    event: The fleet turns, slowly, and draws away into the dark, the locked flagship with it.
+    camera: pulls back as they go
+    reads:
+      - [0, the command]
+      - [3, the fleet going]
+    out: brush wipe, at the scene break

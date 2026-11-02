@@ -1,0 +1,210 @@
+# ch04.yaml: chapter 4's storyboard, The Council (PLAN.md §6). The format and the cue syntax are chapter 5's
+# (script/boards/ch05.yaml); src/scenes/ch04.js draws it.
+chapter: 4
+logline: >-
+  The council in the hall: a new machine changes itself overnight and shrugs off the induction beam; the men and the
+  machines name the two problems, the beams and the Ultimate Energy; ten thousand ships are coming; and the machines
+  build a new brain, F-1, which wakes.
+world: >-
+  The Denver laboratory by day, the council gathered on its floor in a half-ring: the machines X-5638, X-6349, X-6621
+  and the chief ruler C-R-21; Roal, Trest and the Man-ruler Kahsh. Then the floor becomes the works where F-1 is built.
+colour: >-
+  Grey wash. The induction beam's heat and X-5638's screen flaring violet; the force-beams' cold white as F-1 is built;
+  the first light in its great lens.
+motif: >-
+  Change. The new machine changes itself in a night; man can't, in thousands of years. The chapter ends with a machine
+  made to change everything.
+arc: From talk to work, and from a council of many voices to one new mind waking.
+draft: >-
+  The council is staged as one half-ring on the hall's floor, and the camera moves from speaker to speaker; a
+  machine's lens lights with its words. F-1 is built on the same floor in steps, and wakes.
+voice_at: 6
+outro: 4
+holds:
+  - {at: 'p037.3$', s: 0.8, why: the beam falls harmless}
+  - {at: 'p046.4$', s: 1.2, why: ten thousand ships}
+  - {at: 'p049.1$', s: 0.8}
+  - {at: 'p050.1:It gazed about', s: 0.6}
+
+shots:
+  - id: A
+    at: 0
+    title: The chapter's page
+    seen: The pulp page, The Council, the opening words under a drop cap.
+    event: The theme's first phrase; the narrator begins.
+    camera: a slow push
+    out: the paper soaks into the hall
+
+  - id: B
+    at: p037.1
+    title: X-5638
+    seen: >-
+      The council in its half-ring on the hall floor: the machines and the men. X-5638, slim and light, the newest,
+      rises a little as it speaks.
+    event: Its lens lights with its words.
+    camera: from the ring, in to X-5638
+    reads:
+      - [0, the council]
+      - ['p037.2', the new machine speaking]
+
+  - id: C
+    at: 'p037.3:A small ray-machine'
+    title: The induction beam
+    seen: A small ray-machine lifting off the floor; X-5638 before it.
+    event: The ray-machine rises and trains its heat beam on X-5638; a screen of force flares violet round it and the beam falls harmless.
+    camera: holds the two of them
+    reads:
+      - ['p037.3:rose into the air', the ray-machine rising]
+      - ['p037.3:trained upon it', the beam]
+      - ['p037.3:for the ray fell harmless', the screen swallowing it]
+
+  - id: D
+    at: p038.1
+    title: Roal, softly
+    seen: Roal, close; X-5638 beyond his shoulder, its tentacles weaving.
+    event: He speaks softly, and gestures at the weaving tentacles.
+    camera: moves to Roal
+    reads:
+      - [0, Roal's quiet words]
+      - ['p039.1:I noticed your weaving tentacles', the tentacles]
+
+  - id: E
+    at: p040.1
+    title: Correct
+    seen: X-5638.
+    event: Its lens lights once.
+    camera: a quick move to X-5638
+    reads:
+      - [0, '"Correct."']
+
+  - id: F
+    at: p041.1
+    title: Still helpless
+    seen: Roal turning from the machine to the ring.
+    event: He asks them all.
+    camera: pulls back to take in the ring round him
+    reads:
+      - [0, the question to the council]
+
+  - id: G
+    at: p042.1
+    title: X-6349
+    seen: X-6349, squat, with its probing receptor.
+    event: Its probe lights with its words.
+    camera: moves along the ring to it
+    reads:
+      - [0, X-6349 answering]
+
+  - id: H
+    at: p043.1
+    title: Trest
+    seen: Trest, younger, standing forward.
+    event: He steps forward as he answers.
+    camera: moves to Trest
+    reads:
+      - [0, Trest]
+
+  - id: I
+    at: p044.1
+    title: Kahsh
+    seen: Kahsh-256799, a Man-ruler, in the tall fanned collar of his office.
+    event: He asks.
+    camera: moves to Kahsh
+    reads:
+      - [0, the Man-ruler]
+
+  - id: J
+    at: p045.1
+    title: X-6621
+    seen: X-6621, the chemist, its nozzles along its side.
+    event: It answers; a faint green glows in its lens at the life-beams.
+    camera: moves to X-6621
+    reads:
+      - [0, the chemist answering]
+
+  - id: K
+    at: p046.1
+    title: C-R-21
+    seen: C-R-21, the chief of the machine rulers, tall, with its crown of lenses, at the head of the ring.
+    event: It speaks; every lens in the ring turns to it.
+    camera: rises to C-R-21
+    reads:
+      - [0, the chief ruler]
+      - ['p046.3', the two problems]
+
+  - id: L
+    at: p046.4
+    title: Ten thousand ships
+    seen: The wall of screens, every one showing the same dark field of thousands of points.
+    event: The points crowd the screens.
+    camera: a push toward the screens
+    reads:
+      - [0, the reinforcements coming]
+
+  - id: M
+    at: p047.1
+    title: Three groups
+    seen: 'The hall''s floor: Roal''s small group round an atom plate, Trest''s round a beam on a bench, and the great gathering of machines in the middle.'
+    event: The groups fall to work.
+    camera: a wide move across the floor
+    reads:
+      - ['p047.1:under Roal', Roal's group]
+      - ['p047.1:under Trest', Trest's group]
+
+  - id: N
+    at: p048.1
+    title: The great plan
+    seen: In the middle of the floor, a framework; the machines round it under MX-3401's direction.
+    event: The drive and lifting units, then the vast dome-case rising in its frame, then the tentacles fitted one by one.
+    camera: a slow push in, rising with the dome-case
+    reads:
+      - ['p048.1:a vastly greater dome-case', the dome-case]
+      - ['p048.1:more tentacles', the tentacles]
+
+  - id: O
+    at: 'p048.1:Then all worked'
+    title: Memory
+    seen: Memory-units of the new type, small blocks, borne in force-beams into the dome-case; ruled lines from every science-machine feeding it.
+    event: The blocks stack in; the lines converge on it.
+    camera: holds the dome-case
+    reads:
+      - ['p048.1:there were stacked the memory-units', the memory going in]
+      - ['p048.1:all the sensation-ideas', every machine feeding it]
+
+  - id: P
+    at: p049.1
+    title: A new brain
+    seen: The dome-case's top; the greater sense-receptor, the great lens, lowered into place.
+    event: The lens settles into its mount.
+    camera: up to the lens
+    reads:
+      - [0, the great lens]
+
+  - id: Q
+    at: p050.1
+    title: A day
+    seen: The hall, the light through it going from day to night to day; the new machine whole.
+    event: The light turns; the machine stands finished.
+    camera: pulls back to the whole machine
+    reads:
+      - [0, a day passing]
+
+  - id: R
+    at: 'p050.1:Slowly the rhythm'
+    title: The quiver of consciousness
+    seen: F-1, the shining cylinder, its great lens dark.
+    event: A faint quiver of light in the lens; then a beating pulse of rings out from it, quicker and quicker; then they stop.
+    camera: a slow push to the lens
+    reads:
+      - ['p050.1:the slight quiver', the quiver]
+      - ['p050.1:the beating drum', the beat of rings]
+      - ['p050.1:the radiation ceased', the stillness]
+
+  - id: S
+    at: 'p050.1:It gazed about'
+    title: It gazed about it
+    seen: F-1's lens, lit.
+    event: It turns, looking round the hall; everything is known to it.
+    camera: pulls back as it turns
+    reads:
+      - [0, F-1 awake]

@@ -13,6 +13,11 @@ files:
   birth: assets/sound/birth.mp3            # p060: the generators roar, the aura, the lightning
   snap: assets/sound/snap.mp3              # p060: the dull snap and F-1's fall
   green-beam: assets/sound/green-beam.mp3  # the death beam's hum
+  violet-beam: assets/sound/violet-beam.mp3   # p095: the beam holding up the dome
+  power-plant: assets/sound/power-plant.mp3   # p115: the dull, drumming beat
+  storm: assets/sound/storm.mp3            # p117: the storm the machine raises
+  red-beam: assets/sound/red-beam.mp3      # p121: the great red beam
+  golden-sphere: assets/sound/golden-sphere.mp3   # p124: the golden sphere
 
 chapters:
   5:
@@ -24,3 +29,55 @@ chapters:
     # F-2 makes C-R-U-1: the symphony again, quieter, until "the whine of transmuted air died"
     - {fx: workshop, at: 'p065.1', until: 'p065.1:died', gain: -20, fade: [2, 1]}
     - {fx: green-beam, at: 'p071.1:came a pale-green beam-0.3', until: 'p071.1:fell dead', gain: -13, fade: [0.3, 1]}
+  0:
+    - {fx: theme-title, at: 0, gain: -8, fade: [0.5, 4]}
+  1:
+    - {fx: theme-head, at: 0, gain: -9}
+  2:
+    - {fx: theme-head, at: 0, gain: -9}
+    # the stored energies released: the birth's roar, short
+    - {fx: birth, at: 'p013.1:Instantly the vast energies-0.2', until: 'p013.1:Instantly the vast energies+3', gain: -12, fade: [0.05, 2]}
+    - {fx: snap, at: 'p016.1:A bluish beam', gain: -12}
+  3:
+    - {fx: theme-head, at: 0, gain: -9}
+    - {fx: birth, at: 'p021.1:fully half the fleet', until: 'p021.1:before the induction', gain: -18, fade: [0.5, 1.5]}
+    - {fx: green-beam, at: 'p024.1:Enormous, diffused beams-0.3', until: 'p024.1:Despite the fact', gain: -14, fade: [0.5, 1.5]}
+    - {fx: green-beam, at: 'p025.1', until: 'p026.1$+1', gain: -16, fade: [1, 2]}
+    - {fx: snap, at: 'p029.1-1', gain: -10}
+  4:
+    - {fx: theme-head, at: 0, gain: -9}
+    - {fx: workshop, at: 'p048.1', until: 'p050.1', gain: -21, fade: [2, 3]}
+    - {fx: power-plant, at: 'p050.1:the beating drum-0.5', gain: -12, fade: [0.5, 2]}
+  6:
+    - {fx: theme-head, at: 0, gain: -9}
+    - {fx: red-beam, at: 'p075.1:Then all the awful power', until: 'p075.1$+1', gain: -15, fade: [1, 2]}
+    - {fx: green-beam, at: 'p079.1:a new ray reached out-0.3', until: 'p079.1:a strange curtain', gain: -14, fade: [0.3, 1.5]}
+    - {fx: snap, at: 'p080.1:disappear-0.2', gain: -10}
+    - {fx: green-beam, at: 'p082.1:the pale green beams-0.5', until: 'p082.1$+3', gain: -15, fade: [1, 2]}
+  7:
+    - {fx: theme-head, at: 0, gain: -9}
+    - {fx: power-plant, at: 'p089.1:a deep-toned hum-0.3', gain: -14, fade: [0.5, 2]}
+    - {fx: green-beam, at: 'p094.1', until: 'p098.1:as light illumines', gain: -15, fade: [1, 2]}
+    - {fx: violet-beam, at: 'p095.1:a strange violet beam-0.3', until: 'p098.1$', gain: -14, fade: [0.5, 2]}
+  8:
+    - {fx: theme-head, at: 0, gain: -9}
+    - {fx: violet-beam, at: 'p100.1', until: 'p112.1', gain: -26, fade: [3, 3]}
+    - {fx: workshop, at: 'p112.1:he built a machine which grew', until: 'p113.1:were stopped', gain: -19, fade: [2, 2]}
+    - {fx: power-plant, at: 'p114.1:Suddenly, a livid beam-0.3', gain: -11, fade: [0.2, 2]}
+  9:
+    - {fx: theme-head, at: 0, gain: -9}
+    - {fx: power-plant, at: 'p115.1-0.3', gain: -9, fade: [0.2, 2]}
+    - {fx: storm, at: 'p117.1:The sky darkened', until: 'p119.1:it was gone', gain: -14, fade: [3, 1.5]}
+    - {fx: red-beam, at: 'p121.4:an enormously greater beam-0.3', until: 'p121.4:Then the sphere had vanished+0.5', gain: -11, fade: [0.2, 1]}
+    - {fx: storm, at: 'p122.1', until: 'p123.1:The forces died+2', gain: -17, fade: [2, 3]}
+    - {fx: golden-sphere, at: 'p123.1:an irregular globe-1', until: 'p129.1:fast as light', gain: -15, fade: [3, 0.5]}
+  10:
+    - {fx: theme-head, at: 0, gain: -9}
+    - {fx: golden-sphere, at: 'p130.1:the golden sphere found', until: 'p135.1$+2', gain: -18, fade: [2, 3]}
+    - {fx: red-beam, at: 'p131.1:showering it-0.3', until: 'p131.1:Unmoved+1', gain: -15, fade: [0.3, 1.5]}
+    - {fx: snap, at: 'p134.1:all energies within it', gain: -10}
+  11:
+    - {fx: theme-head, at: 0, gain: -9}
+    - {fx: golden-sphere, at: 'p136.1:things of pure force', until: 'p137.1', gain: -20, fade: [3, 3]}
+    # the theme over THE END, faded at the chapter's (and the film's) end
+    - {fx: theme, at: 'p140.1$-0.5', until: 'p140.1$+12', gain: -6, fade: [1, 4]}

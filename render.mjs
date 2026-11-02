@@ -9,7 +9,8 @@
 //     node render.mjs --stills=1.2,3.4 --out=out/stills                                     full-res PNGs
 //   Make the video:
 //     node render.mjs --clip [--range=0:4] --out=out/video.mp4                               straight to MP4 (one worker)
-//     node render.mjs --frames [--range=0:8] --workers=4                                     JPEG frames → out/frames (parallel, resumable)
+//     node render.mjs --frames [--range=0:8] --workers=4                                     JPEG frames → out/frames (parallel, resumable;
+//                                                                                            a chapter's go to out/frames/chNN)
 //     node render.mjs --encode --out=out/video.mp4                                           out/frames → MP4
 //   Standalone loops (LOOPS in the page): add --loop=<name> to any of the above (times are then loop times), or
 //     node render.mjs --loop=emotions --png --out=out/loop_emotions                          one cycle as PNGs (for GIFs)
@@ -36,7 +37,7 @@ function playwrightChromes() {
 }
 const CHROME = CHROMES.find(p => p && existsSync(p));
 if (!CHROME) { console.error('Chrome not found: pass --chrome=<path> or set CHROME_PATH'); process.exit(1); }
-const fps = +(args.fps || 24), FRAMES_DIR = 'out/frames';
+const fps = +(args.fps || 24), FRAMES_DIR = args.chapter !== undefined ? `out/frames/ch${String(args.chapter).padStart(2, '0')}` : 'out/frames';
 const run = (cmd, a) => new Promise((ok, bad) => { const p = spawn(cmd, a, { stdio: 'inherit' }); p.on('close', c => c ? bad(new Error(cmd + ' exited ' + c)) : ok()); });
 const times = s => String(s).split(',').map(Number);
 const span = s => String(s).split(':').map(Number);

@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Round 6: chapter 0's draft</title><link rel="stylesheet" href="../../style.css"><style>
+main{max-width:1100px} .player{position:sticky;top:0;background:var(--paper);padding:.5em 0;z-index:2;border-bottom:1px solid var(--rule)}
+.player video{width:100%;height:auto;display:block;aspect-ratio:16/9;background:#2A221B}
+.now{min-height:3.2em;font-size:.95em;margin:.3em 0 0} .now .who,.shotnow{font-variant:small-caps;color:var(--ink2);margin-right:.5em}
+.now .w{color:var(--ink2)} .now .w.said{color:var(--ink)}
+.pin{display:flex;gap:.5em;margin-top:.3em} .pin input{flex:1;font:inherit;padding:.3em .5em;border:1px solid var(--rule);background:var(--paper2);color:var(--ink)}
+.pin button,.notesbar button{font:inherit;padding:.3em .8em;border:1px solid var(--rule);background:var(--paper2);color:var(--ink);cursor:pointer}
+ol.notes{padding-left:1.4em} ol.notes li{margin:.25em 0} ol.notes .at{cursor:pointer;color:var(--accent);margin-right:.5em;font-variant-numeric:tabular-nums}
+ol.notes .x{cursor:pointer;color:var(--ink2);margin-left:.5em} .notesbar{display:flex;gap:.5em;align-items:center}
+.shot{display:grid;grid-template-columns:minmax(0,240px) 1fr;gap:1em;padding:.8em 0;border-top:1px solid var(--rule);cursor:pointer}
+.shot.on{background:var(--paper2)} .shot img{width:100%;height:auto;border:1px solid var(--rule)} .shot h3{margin:0 0 .2em} .shot p{margin:.2em 0}
+.shot .k{font-variant:small-caps;color:var(--ink2);margin-right:.4em} .t{color:var(--ink2);font-size:.85em}
+@media (max-width:700px){.shot{grid-template-columns:1fr}}
+</style></head><body><main>
+<p class="kicker"><a href="../">Review</a> · Round 6 · the chapters · <a href="film.html">the whole film</a></p><h1>Chapter 0: <i>The Record</i>, the draft</h1>
+<p>The first pass with motion, 0:58 at 12 drawings a second, over the same sound as the
+storyboard. The frame that opens the film: the title page, then the narrator in the far future. The beings of force are the only full colour in the film until chapter 11 comes back to them. The memories are drawn in the grey of 2538.</p>
+<p><b>Notes:</b> pause anywhere, type, and press Enter (or <i>Pin</i>) to pin a note to that moment. They stay in this
+browser. <i>Copy notes</i> puts them on the clipboard as text, timed and with their shot, for the
+<a href="https://github.com/curtcox/The-Last-Evolution/blob/main/review/round6.md">decision sheet</a> or a message.</p>
+<div class="player"><video id="v" controls preload="metadata" playsinline src="video/ch00-draft-adcc658f.mp4"></video>
+<p class="now" id="now"></p>
+<div class="pin"><input id="note" placeholder="A note at this moment…" aria-label="note"><button id="pinb">Pin</button></div></div>
+<h2>Notes</h2><div class="notesbar"><button id="copy">Copy notes</button><button id="clear">Clear</button><span id="msg" class="t"></span></div>
+<ol class="notes" id="notes"></ol>
+<h2>The shots</h2>
+<div class="shot" id="shot-A" data-t="0"><img src="img/ch00-A-505ca1b9.jpg" alt="shot A" loading="lazy"><div>
+<h3><span class="shotnow">A</span> The title page <span class="t">0:00–0:14</span></h3>
+<p><span class="k">seen</span>The magazine's page: &quot;A Classic Reprint from AMAZING STORIES, August, 1932&quot; over a double rule, THE LAST EVOLUTION in large capitals, and the byline.</p><p><span class="k">camera</span>a slow push to the title</p></div></div>
+<div class="shot" id="shot-B" data-t="14"><img src="img/ch00-B-f3841a79.jpg" alt="shot B" loading="lazy"><div>
+<h3><span class="shotnow">B</span> The last of its type <span class="t">0:14–0:27</span></h3>
+<p><span class="k">seen</span>Space, a hundred and twenty-five thousand years on. A small torpedo of metal, F-2, old, oxidised to brown, hangs alone. Far around it drift beings of force, soft lights in every colour.</p><p><span class="k">camera</span>pushes in from the wide to the old machine</p></div></div>
+<div class="shot" id="shot-C" data-t="26.56"><img src="img/ch00-C-df1dbaea.jpg" alt="shot C" loading="lazy"><div>
+<h3><span class="shotnow">C</span> Memory <span class="t">0:27–0:34</span></h3>
+<p><span class="k">seen</span>Around the old machine, grey ghosts of the past in wash: the fluted piers of the Denver hall, a ring of machines of 2538, the chief ruler with its crown of lenses, Roal and Trest standing.</p><p><span class="k">camera</span>pulls back to take in the ring of memories</p></div></div>
+<div class="shot" id="shot-D" data-t="34.22"><img src="img/ch00-D-8cff68bf.jpg" alt="shot D" loading="lazy"><div>
+<h3><span class="shotnow">D</span> It will pass <span class="t">0:34–0:51</span></h3>
+<p><span class="k">seen</span>The memories thin away. A being of force passes close, bright and silent; the old machine is dim beside it.</p><p><span class="k">camera</span>drifts with the passing light, then back to the machine</p></div></div>
+<div class="shot" id="shot-E" data-t="50.566"><img src="img/ch00-E-7437fdbe.jpg" alt="shot E" loading="lazy"><div>
+<h3><span class="shotnow">E</span> The mentatype <span class="t">0:51–0:58</span></h3>
+<p><span class="k">seen</span>Thin sheets of metal hang before the machine; a fine beam from its lens rules lines across the nearest.</p><p><span class="k">camera</span>a push into the sheet</p></div></div>
+<script>
+const D = {"shots":[{"id":"A","title":"The title page","t0":0,"t1":14},{"id":"B","title":"The last of its type","t0":14,"t1":26.56},{"id":"C","title":"Memory","t0":26.56,"t1":34.22},{"id":"D","title":"It will pass","t0":34.22,"t1":50.566},{"id":"E","title":"The mentatype","t0":50.566,"t1":57.846}],"lines":[{"who":"F-2, narrating","t0":14,"t1":48.966259,"words":[["I",14.18],["am",14.32],["the",14.52],["last",14.7],["of",15.18],["my",15.36],["type",15.62],["existing",16.46],["today",17.06],["in",17.56],["all",17.9],["the",18.2],["Solar",18.38],["System.",18.78],["I,",20.14],["too,",20.46],["am",20.9],["the",21.1],["last",21.26],["existing",21.68],["who,",22.72],["in",22.92],["memory,",23.12],["sees",23.84],["the",24.24],["struggle",24.52],["for",25.02],["this",25.18],["System,",25.42],["and",26.56],["in",26.94],["memory",27.14],["I",27.96],["am",28.02],["still",28.32],["close",28.7],["to",29.16],["the",29.3],["Center",29.5],["of",29.92],["Rulers,",30.1],["for",31.18],["mine",31.4],["was",31.9],["the",32.12],["ruling",32.28],["type",32.78],["then.",33.14],["But",34.22],["I",34.48],["will",34.58],["pass",34.82],["soon,",35.26],["and",36.2],["with",36.44],["me",36.74],["will",36.98],["pass",37.24],["the",37.66],["last",37.88],["of",38.28],["my",38.44],["kind,",38.72],["a",39.8],["poor",40.04],["inefficient",40.64],["type,",41.42],["but",42.22],["yet",42.42],["the",42.7],["creators",42.86],["of",43.62],["those",43.78],["who",44.18],["are",44.34],["now,",44.56],["and",45.26],["will",45.52],["be,",45.82],["long",46.54],["after",47.04],["I",47.48],["pass",47.68],["forever.",48.16]]},{"who":"F-2, narrating","t0":50.566258999999995,"t1":54.845715,"words":[["So",50.706],["I",51.286],["am",51.386],["setting",51.586],["down",52.006],["my",52.346],["record",52.626],["on",53.266],["the",53.446],["mentatype.",53.606]]}]}, v = document.getElementById('v'), now = document.getElementById('now'), KEY = 'tle-ch00-draft-notes';
+const mmss = s => Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0');
+const shotAt = t => D.shots.find(s => t >= s.t0 && t < s.t1) || D.shots[D.shots.length - 1];
+let shot = null, line = -1;
+function tick() {
+  const t = v.currentTime, s = shotAt(t), li = D.lines.findIndex(l => t >= l.t0 - .05 && t < l.t1 + .3);
+  if (s !== shot) { shot = s; document.querySelectorAll('.shot.on').forEach(e => e.classList.remove('on')); document.getElementById('shot-' + s.id).classList.add('on'); }
+  const L = D.lines[li], wi = L ? Math.max(0, L.words.findLastIndex(w => w[1] <= t)) : 0, a = Math.max(0, wi - 14), win = (L ? a : -1) + ':' + s.id;
+  if (li !== line || win !== now.dataset.win) { line = li; now.dataset.win = win; now.innerHTML = '<span class="shotnow">' + s.id + ' · ' + s.title.replace(/[<&]/g, '') + '</span>' + (!L ? '' : '<span class="who">' + L.who + '</span>' + (a ? '… ' : '') + L.words.slice(a, a + 34).map(w => '<span class="w" data-t="' + w[1] + '">' + w[0].replace(/[<&]/g, '') + '</span>').join(' ') + (a + 34 < L.words.length ? ' …' : '')); }
+  if (L) now.querySelectorAll('.w').forEach(e => e.classList.toggle('said', +e.dataset.t <= t));
+  requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+const seek = t => { v.currentTime = t; v.play(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+document.querySelectorAll('.shot').forEach(e => e.addEventListener('click', () => seek(+e.dataset.t + .01)));
+// notes, kept in this browser only
+const load = () => { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; } };
+const save = ns => { try { localStorage.setItem(KEY, JSON.stringify(ns)); } catch (e) {} };
+let notes = load();
+function show() {
+  const ol = document.getElementById('notes'); ol.innerHTML = '';
+  notes.forEach((n, i) => { const li = document.createElement('li'), at = document.createElement('span'), x = document.createElement('span');
+    at.className = 'at'; at.textContent = mmss(n.t) + ' ' + n.shot; at.onclick = () => seek(n.t);
+    x.className = 'x'; x.textContent = '×'; x.title = 'remove'; x.onclick = () => { notes.splice(i, 1); save(notes); show(); };
+    li.append(at, document.createTextNode(n.text), x); ol.append(li); });
+}
+function pin() { const box = document.getElementById('note'), text = box.value.trim(); if (!text) return; const t = v.currentTime;
+  notes.push({ t, shot: shotAt(t).id, text }); notes.sort((a, b) => a.t - b.t); save(notes); show(); box.value = ''; }
+document.getElementById('pinb').onclick = pin;
+document.getElementById('note').addEventListener('keydown', e => { if (e.key === 'Enter') pin(); });
+document.getElementById('copy').onclick = async () => {
+  const txt = 'Chapter 0 draft notes\n' + notes.map(n => '- ' + mmss(n.t) + ' (' + n.shot + ', ' + shotAt(n.t).title + '): ' + n.text).join('\n');
+  try { await navigator.clipboard.writeText(txt); document.getElementById('msg').textContent = 'copied ' + notes.length + (notes.length === 1 ? ' note' : ' notes'); }
+  catch (e) { prompt('Copy these notes:', txt); }
+};
+document.getElementById('clear').onclick = () => { if (notes.length && confirm('Remove all ' + notes.length + ' notes?')) { notes = []; save(notes); show(); } };
+show();
+</script>
+</main></body></html>

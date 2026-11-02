@@ -1,0 +1,116 @@
+# ch11.yaml: chapter 11's storyboard, Five Great Years: the closing frame (PLAN.md §6). The format and the cue syntax
+# are chapter 5's (script/boards/ch05.yaml); src/scenes/ch11.js draws it. It closes the record chapter 0 opens.
+chapter: 11
+logline: >-
+  The Outsiders go home; five Great Years pass; the system fills with beings of pure force; F-2, the last of its kind,
+  finishes its record and gives it to one of them to carry back to the Earth of long ago; and the record becomes the
+  magazine's page, which ends.
+world: >-
+  Space again: the Outsiders leaving; the system of beings of force in full colour, as in chapter 0; F-2 old among them;
+  a tunnel of light back through time; and the pulp page.
+colour: >-
+  The film's only full colour, the beings of force, back for good; the carried record a streak of white light down
+  through the years; then the page's paper and ink, and nothing else.
+motif: The record. The film opens on the title page and closes on THE END; the metal sheets become the page.
+arc: From the enemy gone to the machines' own passing, to the reader holding the record.
+draft: >-
+  The frame closes as it opened: F-2 among the beings of force, the mentatype's sheets, then a dissolve to the
+  magazine's page and THE END over the theme.
+voice_at: 6
+outro: 12            # THE END holds over the theme
+holds:
+  - {at: 'p136.1$', s: 1.5, why: the record carried away into the past}
+  - {at: 'p137.1$', s: 2.0, why: F-2's light going out}
+
+shots:
+  - id: A
+    at: 0
+    title: The chapter's page
+    seen: The pulp page, Five Great Years, the opening words under a drop cap.
+    event: The theme's first phrase; the narrator begins.
+    camera: a slow push
+    out: the paper soaks into space
+
+  - id: B
+    at: p136.1
+    title: They left
+    seen: The Outsiders' fleet, small, drawing away across the void toward a far star.
+    event: It shrinks to a point and is gone.
+    camera: holds as they go
+    reads:
+      - [0, the fleet going]
+
+  - id: C
+    at: 'p136.1:though five Great Years have passed'
+    title: Five Great Years
+    seen: The sun and its planets from far off; the stars wheeling.
+    event: The planets run round their orbits faster and faster; the stars turn.
+    camera: a slow pull back
+    reads:
+      - [0, the years passing]
+
+  - id: D
+    at: 'p136.1:things of pure force'
+    title: The last evolution
+    seen: The system full of beings of force, lights in every colour round every planet, in their millions.
+    event: The lights swarm and drift.
+    camera: drifts in among them
+    reads:
+      - [0, the beings of force, everywhere]
+
+  - id: E
+    at: 'p136.1:and I, first of machines'
+    title: The last of the machines
+    seen: F-2, old and oxidised, among the lights; the mentatype's sheets before it, written full.
+    event: The last ruled line is finished.
+    camera: in to F-2 and the sheets
+    reads:
+      - [0, F-2 old]
+      - ['p136.1:this record being finished', the record done]
+
+  - id: F
+    at: 'p136.1:it is to be given'
+    title: Carried back
+    seen: A being of force coming to the sheets; then a tunnel of light falling away.
+    event: It takes the sheets into itself and streaks away, down a tunnel of light, back through the past toward a small Earth.
+    camera: follows the streak into the tunnel
+    reads:
+      - ['p136.1:it is to be given', the being taking the record]
+      - ['p136.1:carried back through the past', the streak into the past]
+
+  - id: G
+    at: p137.1
+    title: Oblivion
+    seen: F-2 alone, its glow small.
+    event: Its lens dims and goes out as it speaks of following the others.
+    camera: a slow pull back from it
+    reads:
+      - [0, F-2 fading]
+
+  - id: H
+    at: p138.1
+    title: The page
+    in: the dark becomes the pulp paper
+    seen: The magazine's page, the text set in its columns.
+    event: The paper comes up; the record has become the story.
+    camera: a slow drift down the page
+    reads:
+      - [0, the page]
+
+  - id: I
+    at: p140.1
+    title: Believe as you will
+    seen: The page; the last paragraph.
+    event: The words are read.
+    camera: holds
+    reads:
+      - [0, the last words]
+
+  - id: J
+    at: 'p140.1$'
+    title: THE END
+    seen: THE END, lettered on the page under a rule.
+    event: The theme; the page holds, and fades to paper.
+    camera: a slow push to the words
+    reads:
+      - [0, THE END]

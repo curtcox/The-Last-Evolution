@@ -1,0 +1,164 @@
+# ch08.yaml: chapter 8's storyboard, Last of Men (PLAN.md §6). The format and the cue syntax are chapter 5's
+# (script/boards/ch05.yaml); src/scenes/ch08.js draws it.
+chapter: 8
+logline: >-
+  Under the dome, the last two men talk of the end of man; Roal names the last evolution, the machine of pure force;
+  F-2 answers in thought as man's heir, goes out into the sunlight, and builds the power plant through the day; at
+  night it sends the livid beam into it.
+world: >-
+  Inside the dome, dark, lit by the screens and the violet canopy; a science plate for Roal's vision of evolution; and
+  outside on the twisted rock, from clear sunlight to a crescent moon, where the power plant grows.
+colour: >-
+  The dome's violet overhead; Roal's vision in pale ink; F-2's forces cold white as it builds; the plant slightly
+  luminescent; and last the power plant's livid beam, "solid, livid flame".
+motif: >-
+  Heirs. Roal says the machine is better; F-2 promises to finish man's dreams. The plant is built "by the deadly logic
+  of the machine, inspired by the leaping intuition of man": the two lines of chapter 1, working as one.
+arc: From grief to acceptance to a promise, and to the first work done for man by his heirs alone.
+draft: >-
+  Under the dome the light is the screens' and the violet canopy's. Roal's long speech goes to a science plate, a
+  ladder from life to man to machine to pure force. Outside, the plant rises through one long camera move from noon
+  to night.
+voice_at: 6
+outro: 4
+holds:
+  - {at: 'p102.1$', s: 0.8}
+  - {at: 'p107.3$', s: 1.2, why: Roal is ready to go}
+  - {at: 'p111.2$', s: 1.0}
+  - {at: 'p113.1$', s: 1.0, why: the plant finished, under the moon}
+
+shots:
+  - id: A
+    at: 0
+    title: The chapter's page
+    seen: The pulp page, Last of Men, the opening words under a drop cap.
+    event: The theme's first phrase; the narrator begins.
+    camera: a slow push
+    out: the paper soaks dark into the inside of the dome
+
+  - id: B
+    at: p100.1
+    title: Alone
+    seen: Inside the black dome; Roal and Trest in the screens' light, F-2 floating beside them; the violet glow overhead.
+    event: Roal speaks softly, looking up at the dark.
+    camera: in slowly to the two men
+    reads:
+      - [0, the two men alone]
+
+  - id: C
+    at: p102.1
+    title: Is it worth it?
+    seen: Trest, close.
+    event: He asks it.
+    camera: moves to Trest
+    reads:
+      - [0, Trest's question]
+
+  - id: D
+    at: p103.1
+    title: A parasite
+    seen: Roal, his eyes dreaming; a loose curl of thought.
+    event: He speaks of man as a parasite, makeshift, mortal.
+    camera: a slow push on Roal
+    reads:
+      - [0, Roal]
+
+  - id: E
+    at: p104.1
+    title: A last evolution
+    in: his curl of thought becomes a science plate
+    seen: A plate in pale ink, a ladder up its middle; at the foot a cell and a plant, then a man, then a machine of the family form.
+    event: Each rung draws itself as he names it; at the top, unformed, a soft glow of pure force.
+    camera: rises up the ladder
+    reads:
+      - ['p104.1:man was the product of life', life and man]
+      - ['p104.1:Man built the machine', the machine]
+      - ['p104.1:but of pure, living force', the force at the top]
+
+  - id: F
+    at: p105.1
+    title: Not by chance
+    seen: The plate; drops of chemicals drifting and joining at random; beside them a small machine, F-2, making a copy of itself.
+    event: The chemicals join by chance; the machine can't, and makes itself.
+    camera: across the plate
+    reads:
+      - ['p105.1:Chemicals might mix', chance]
+      - ['p105.1:as is F-2 here', the machine making its duplicate]
+
+  - id: G
+    at: p106.1
+    title: The parasite removed
+    seen: The ladder again; the man's rung.
+    event: The man fades from the ladder; the machine stays.
+    camera: holds on the ladder
+    reads:
+      - ['p106.1:has removed the parasite', the man going]
+
+  - id: H
+    at: p107.1
+    title: Better
+    in: back to the dome
+    seen: Roal, dreaming, in the screens' light; Trest beside him.
+    event: He says they'd best go soon.
+    camera: close on Roal
+    reads:
+      - [0, Roal at peace]
+
+  - id: I
+    at: p108.1
+    title: We, your heirs
+    seen: F-2 before the two men; rings of thought going out from it.
+    event: It speaks in thought; the rings pulse with the words.
+    camera: holds F-2, the men listening
+    reads:
+      - [0, F-2's thought]
+      - ['p110.1', the promise]
+
+  - id: J
+    at: p111.1
+    title: I go
+    seen: F-2 turning to the dark wall of the dome.
+    event: It goes; the wall swallows it.
+    camera: follows F-2 to the wall
+    reads:
+      - ['p111.2', F-2 going]
+
+  - id: K
+    at: p112.1
+    title: The plane of force
+    in: through the black wall into clear sunlight
+    seen: Outside, the twisted, massed rocks under clear sunlight, the black dome behind; F-2 floating out.
+    event: F-2 lays a plane of force on the rocks, and they smooth flat under it.
+    camera: follows F-2 out and over the rocks
+    reads:
+      - [0, the sunlight, the rocks]
+      - ['p112.1:he laid a plane of force', the rocks smoothing]
+
+  - id: L
+    at: 'p112.1:he built a machine which grew'
+    title: The power plant grows
+    seen: The smoothed plane; F-2's forces arcing; the plant rising in rings of metal.
+    event: Ring by ring it grows, hour after hour; the sun crosses and sinks.
+    camera: pulls back and tilts up as it rises
+    reads:
+      - ['p112.1:It was a mighty power plant', the size of it]
+      - ['p112.1:the deadly logic', logic and intuition, the ruled line and the curl, in the forces]
+
+  - id: M
+    at: p113.1
+    title: Under a crescent moon
+    seen: Night; the power plant, five hundred feet, its blunt dome against the stars and a crescent moon, faintly luminescent.
+    event: The arcing forces stop; it stands.
+    camera: a slow tilt up its height
+    reads:
+      - [0, the plant finished]
+
+  - id: N
+    at: p114.1
+    title: The livid beam
+    seen: F-2 small at the plant's foot.
+    event: A livid beam of solid flame from F-2 through the wall into the plant.
+    camera: holds
+    reads:
+      - [0, the livid beam]
+    out: brush wipe, at the scene break

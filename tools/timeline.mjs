@@ -126,7 +126,7 @@ const ms = s => Math.round(s * 1000);
 const g = [
   ...parts.map((p, i) => `[${i}:a]atrim=${p.a.toFixed(3)}:${p.b.toFixed(3)},asetpts=PTS-STARTPTS,${fmt},adelay=${ms(p.at)}:all=1[v${i}]`),
   `${parts.map((_, i) => `[v${i}]`).join('')}amix=inputs=${parts.length}:normalize=0,apad=whole_dur=${duration}[voice]`,
-  '[voice]asplit=2[vmix][vkey]',
+  fx.length ? '[voice]asplit=2[vmix][vkey]' : '[voice]anull[vmix]',
   ...fx.map((f, i) => `[${parts.length + i}:a]atrim=0:${f.dur.toFixed(3)},asetpts=PTS-STARTPTS,${fmt},afade=t=in:d=${f.fi || .01},afade=t=out:st=${Math.max(0, f.dur - (f.fo || .01)).toFixed(3)}:d=${f.fo || .01},volume=${f.gain}dB,adelay=${ms(f.at)}:all=1[f${i}]`),
   fx.length ? `${fx.map((_, i) => `[f${i}]`).join('')}amix=inputs=${fx.length}:normalize=0,apad=whole_dur=${duration}[fx];[fx][vkey]sidechaincompress=threshold=0.02:ratio=5:attack=30:release=500[fxd];[vmix][fxd]amix=inputs=2:normalize=0[pre]` : '[vmix]anull[pre]',
   `[pre]atrim=0:${duration}[out]`,

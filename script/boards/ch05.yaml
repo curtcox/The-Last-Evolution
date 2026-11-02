@@ -34,6 +34,11 @@ arc: >-
   Stillness to speed. It opens on a man lying still, thinking, and ends on thousands of machines rising in hours. Roal
   goes from dreaming to awe (his arm up against the light, as in Morey's page) to a quiet question; the machines go
   from following him to not needing him.
+draft: >-
+  Following Round 5's notes, the hall is one continuous place: the camera pans and zooms from framing to framing in
+  place of cuts, and Roal, the machines and the light move from mark to mark. The other spaces (his eyes, F-1's lens,
+  the science plate, Morey's page, the rock) are reached by matched dissolves and pushes. It's a draft: the figures'
+  acting is still simple, and the painting is the blocking pass's.
 voice_at: 6          # the narrator begins over the chapter's page, six seconds into the theme's head
 outro: 5             # the last motes rise, then the page closes
 # Silence added for the pictures: after a line ($), or before a word inside one (the line is cut in the pause there).

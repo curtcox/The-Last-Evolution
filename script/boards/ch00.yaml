@@ -1,0 +1,82 @@
+# ch00.yaml: chapter 0's storyboard, The Record: the title page and the preamble (PLAN.md §6). The format and the cue
+# syntax are chapter 5's (script/boards/ch05.yaml); src/scenes/ch00.js draws it.
+chapter: 0
+logline: >-
+  The magazine's title page; then, a hundred and twenty-five thousand years on, the last machine of its type, old and
+  rusted among beings of pure force, begins its record.
+world: >-
+  The title page, on the pulp paper. Then space, far in the future: the narrator, F-2, small and oxidised, alone among
+  drifting beings of force; its memories as grey ghosts of the Denver hall; the mentatype's thin metal sheets.
+colour: >-
+  The frame is the film's only full-colour place (PLAN.md §5): the beings of force are light in every colour. The
+  memories are the pulp's grey wash, the colour of everything that comes after this chapter.
+motif: The record. The film opens on a page and closes on one (chapter 11); the mentatype's sheets are that page.
+arc: From the page into the far future, and back toward the past the record will tell.
+draft: >-
+  The frame that opens the film: the title page, then the narrator in the far future. The beings of force are the only
+  full colour in the film until chapter 11 comes back to them. The memories are drawn in the grey of 2538.
+voice_at: 14         # the title page holds for the theme's opening before the narrator begins
+outro: 3
+holds:
+  - {at: 'p001.1$', s: 0.8, why: the passing settles before the record begins}
+
+shots:
+  - id: A
+    at: 0
+    title: The title page
+    in: up from bare paper
+    seen: >-
+      The magazine's page: "A Classic Reprint from AMAZING STORIES, August, 1932" over a double rule, THE LAST
+      EVOLUTION in large capitals, and the byline.
+    event: The theme opens; the lettering settles on the page.
+    camera: a slow push to the title
+    reads:
+      - [0, the masthead]
+      - [4, the title and the byline]
+
+  - id: B
+    at: p001.1
+    title: The last of its type
+    in: the paper darkens into space
+    seen: >-
+      Space, a hundred and twenty-five thousand years on. A small torpedo of metal, F-2, old, oxidised to brown, hangs
+      alone. Far around it drift beings of force, soft lights in every colour.
+    event: The narrator's voice is its own; its lens glows a little with the words.
+    camera: pushes in from the wide to the old machine
+    reads:
+      - [0, the dark, and the coloured lights]
+      - ['p001.1:the last of my type', the small rusted machine at the centre]
+
+  - id: C
+    at: 'p001.1:and in memory I am still close'
+    title: Memory
+    seen: >-
+      Around the old machine, grey ghosts of the past in wash: the fluted piers of the Denver hall, a ring of machines
+      of 2538, the chief ruler with its crown of lenses, Roal and Trest standing.
+    event: They come up like ink soaking into wet paper.
+    camera: pulls back to take in the ring of memories
+    reads:
+      - [0, the grey shapes of another time]
+      - ['p001.1:Center of Rulers', the ruler at the centre of the memory]
+
+  - id: D
+    at: 'p001.1:But I will pass soon'
+    title: It will pass
+    seen: The memories thin away. A being of force passes close, bright and silent; the old machine is dim beside it.
+    event: The light passes, and the machine's own glow sinks.
+    camera: drifts with the passing light, then back to the machine
+    reads:
+      - [0, the ghosts going]
+      - ['p001.1:a poor inefficient type', the bright thing beside the dim one]
+
+  - id: E
+    at: p002.1
+    title: The mentatype
+    seen: >-
+      Thin sheets of metal hang before the machine; a fine beam from its lens rules lines across the nearest.
+    event: The ruled lines write themselves; the camera pushes into the sheet until its shine becomes paper.
+    camera: a push into the sheet
+    reads:
+      - [0, the sheets]
+      - ['p002.1:record', the lines writing]
+    out: the sheet's shine becomes the paper of chapter 1's page

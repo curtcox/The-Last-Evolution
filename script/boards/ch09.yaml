@@ -1,0 +1,183 @@
+# ch09.yaml: chapter 9's storyboard, Pure Force (PLAN.md §6). The format and the cue syntax are chapter 5's
+# (script/boards/ch05.yaml); src/scenes/ch09.js draws it.
+chapter: 9
+logline: >-
+  The power plant wakes; F-2 raises a storm with it and makes a globe of pure force, which calls matter inefficient
+  and strikes at it, and is destroyed by the plant's great red beam; F-2 tries again at sunrise, and makes the golden
+  sphere, which grows, promises to send the Outsiders home, and vanishes.
+world: >-
+  The bare rock round the power plant, from night through the storm to a red sunrise; the black dome at the edge.
+colour: >-
+  The storm's lightning blue; the first globe white; the plant's beam dull red, shrinking the globe and going orange,
+  then green. Then the golden sphere, the first warm colour in the film that isn't a weapon, with its deep violet halo
+  and the ruby flame within; and a red sunrise behind it.
+motif: >-
+  The second try. F-2 failed once, as F-1 made F-2 and was killed by it; now the thing it makes is better than it, and
+  doesn't kill.
+arc: From power to danger to grace; the colour warms as it goes.
+draft: >-
+  One place, the rock round the plant, and one long night into dawn. The first globe is white and the beam that kills
+  it runs red, orange, green; the golden sphere comes up with the sun.
+voice_at: 6
+outro: 4
+holds:
+  - {at: 'p116.2$', s: 0.8}
+  - {at: 'p119.1$', s: 1.2, why: the globe floating, the storm gone}
+  - {at: 'p121.4$', s: 1.5, why: the first sphere is gone}
+  - {at: 'p123.1$', s: 1.0, why: the golden sphere}
+  - {at: 'p126.1$', s: 1.2, why: the feeling of power}
+  - {at: 'p129.1$', s: 1.5, why: it's gone}
+
+shots:
+  - id: A
+    at: 0
+    title: The chapter's page
+    seen: The pulp page, Pure Force, the opening words under a drop cap.
+    event: The theme's first phrase; the narrator begins.
+    camera: a slow push
+    out: the paper soaks into the night
+
+  - id: B
+    at: p115.1
+    title: The drumming beat
+    seen: The power plant at night under its crescent moon, F-2 at its foot.
+    event: A light beats in the plant's wall, quickening into a steady glow, then sinks to a whisper.
+    camera: a slow push toward the plant
+    reads:
+      - [0, the beat]
+
+  - id: C
+    at: p116.1
+    title: Power ready
+    seen: The small brain's lens in the plant's wall.
+    event: It lights with the words.
+    camera: up to the lens
+    reads:
+      - [0, '"Power ready."']
+
+  - id: D
+    at: p117.1
+    title: The storm rises
+    seen: Heavy clouds gathering over the plant; F-2 small in the wind.
+    event: The clouds roll in and the wind tears at F-2; it holds its place, buffeted.
+    camera: pulls back as the sky darkens
+    reads:
+      - ['p117.1:The sky darkened', the clouds]
+      - ['p117.1:a howling wind', F-2 in the wind]
+
+  - id: E
+    at: p118.1
+    title: The volcano of energy
+    seen: Driving rain; lightning jabbing at the centre of the storm above the plant, where a tiny ball of white force pulses.
+    event: The ball jerks at each strike, held in the force-pools.
+    camera: up into the storm's centre
+    reads:
+      - ['p118.1:the lightnings', the lightning]
+      - ['p118.1:A tiny ball', the ball of force]
+
+  - id: F
+    at: p119.1
+    title: The globe
+    seen: The storm gone; a small globe of white light floating above the plant.
+    event: It floats.
+    camera: holds
+    reads:
+      - [0, the globe]
+
+  - id: G
+    at: p120.1
+    title: Probing
+    seen: F-2 before the globe.
+    event: Ruled lines of F-2's thought reach for it and are turned aside.
+    camera: on the two of them
+    reads:
+      - ['p120.1:seemed baffled', the thought turned aside]
+
+  - id: H
+    at: p121.1
+    title: Inefficient
+    seen: The globe.
+    event: Rings of white thought go out from it.
+    camera: closer on the globe
+    reads:
+      - [0, the globe's thought]
+
+  - id: I
+    at: p121.4
+    title: The red beam
+    seen: The globe, F-2, the plant.
+    event: >-
+      A blue-white beam stabs at where F-2 was; a vast dull red beam from the plant catches the globe; it strains,
+      spraying energy, and shrinks; the beam goes orange, then green; the globe is gone.
+    camera: pulls back to hold the plant, the beam and the globe
+    reads:
+      - ['p121.4:A stabbing beam', the stab, and F-2 gone from it]
+      - ['p121.4:an enormously greater beam of dull red', the red beam]
+      - ['p121.4:the beam became orange', orange, then green]
+      - ['p121.4:Then the sphere had vanished', gone]
+
+  - id: J
+    at: p122.1
+    title: Again, at sunrise
+    seen: The storm again; C-R-U-1 floating in beside F-2, its name glowing gold; behind them a red sun rising through the clouds.
+    event: The forces play; the sun comes up.
+    camera: a slow move round so the sunrise is behind them
+    reads:
+      - ['p122.1:C-R-U-1 joined him', C-R-U-1]
+      - ['p122.1:red glory of the sun', the sunrise]
+
+  - id: K
+    at: p123.1
+    title: The golden sphere
+    seen: The black dome parting; Roal and Trest coming out of it; above the plant, an irregular globe of golden light with a halo of deep violet.
+    event: The wind dies; the two men walk out and look up.
+    camera: from the men up to the sphere
+    reads:
+      - ['p123.1:Roal and Trest appeared', the men]
+      - ['p123.1:an irregular globe of golden light', the golden sphere]
+
+  - id: L
+    at: p125.1
+    title: I grow now
+    seen: The golden sphere, the watchers small below.
+    event: Deep golden rings of its thought go out.
+    camera: close on the sphere
+    reads:
+      - [0, its thought]
+
+  - id: M
+    at: p126.1
+    title: The ruby flame
+    seen: The sphere, a tiny ruby flame within it.
+    event: The flame waxes and wanes; at each waxing a wash of warm light goes over the watchers.
+    camera: from the sphere down to the men and machines bathed in it
+    reads:
+      - ['p126.1:a tiny ruby flame', the flame]
+      - ['p126.1:a feeling of rushing', the warmth]
+
+  - id: N
+    at: p127.1
+    title: Twice its size
+    seen: The sphere, grown.
+    event: It has doubled.
+    camera: pulls back to show it against the plant
+    reads:
+      - [0, its size]
+
+  - id: O
+    at: p128.1
+    title: They shall return
+    seen: The sphere above the watchers.
+    event: Its thought, gentle.
+    camera: holds
+    reads:
+      - [0, mercy]
+
+  - id: P
+    at: p129.1
+    title: Gone
+    seen: The sphere.
+    event: It's gone, fast as light, a streak into the sky.
+    camera: holds the empty sky
+    reads:
+      - [0, gone]

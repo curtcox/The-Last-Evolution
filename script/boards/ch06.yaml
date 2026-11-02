@@ -1,0 +1,147 @@
+# ch06.yaml: chapter 6's storyboard, Ten Thousand Motes (PLAN.md §6). The format and the cue syntax are chapter 5's
+# (script/boards/ch05.yaml); src/scenes/ch06.js draws it.
+chapter: 6
+logline: >-
+  At dawn ten thousand tiny machine-ships rise to meet ten thousand giants; they burn the giants' screens from violet
+  to red, kill crews with the green ray, and die against a curtain of blankness; the fleet moves on and sweeps the
+  Earth with green from pole to pole.
+world: >-
+  Denver's bare rock at dawn, where the motes rise (the end of chapter 5); then space under a far blue-white sun, one
+  battle set the camera moves through; a glimpse inside a giant ship; and last the Earth from high above.
+colour: >-
+  The film's most colour so far: the screens under fire run violet, blue, orange, red (the text's own sequence), and
+  die to a red so dull it's black; the green ray turned on the enemy; the white puffs of the motes' deaths. Then the
+  curtain of blankness, darker than the dark; and the green line across the Earth.
+motif: The tiny against the giant, again (chapter 2), and now the tiny nearly win.
+arc: From hope at dawn to a near victory to a loss, ending on the green line over the whole Earth.
+draft: >-
+  One battle set: the camera moves among the giants as the screens heat through their colours. The motes are drawn
+  small and many; the curtain of blankness is a dark, wavering veil.
+voice_at: 6
+outro: 4
+holds:
+  - {at: 'p075.1$', s: 1.0, why: the screens at red}
+  - {at: 'p080.1$', s: 1.5, why: the screens on Earth are blank}
+  - {at: 'p081.1$', s: 1.2}
+
+shots:
+  - id: A
+    at: 0
+    title: The chapter's page
+    seen: The pulp page, Ten Thousand Motes, the opening words under a drop cap.
+    event: The theme's first phrase; the narrator begins.
+    camera: a slow push
+    out: the paper soaks into the dawn sky
+
+  - id: B
+    at: 'p074.1:Dawn was breaking'
+    title: Dawn over Denver
+    seen: The bare rock at dawn, the great machine the motes built; the sky paling.
+    event: The tiny ships rise from it in a long stream, up and out.
+    camera: tilts up with the stream into the sky
+    reads:
+      - [0, dawn, the machine]
+      - ['p074.1:nearly ten thousand of the tiny ships', the motes rising]
+
+  - id: C
+    at: p075.1
+    title: Ten thousand giants
+    seen: Space under a far blue-white sun; rank behind rank of the giant ships, shining dully; the motes coming at them, darting.
+    event: The motes swarm in among the giants.
+    camera: a slow move in among the ranks
+    reads:
+      - [0, the giants]
+      - ['p075.1:ten thousand tiny, darting motes', the motes]
+
+  - id: D
+    at: 'p075.1:Tremendous induction beams'
+    title: Beams against screens
+    seen: A giant's screen of force, and the beams striking it.
+    event: The induction beams are thrown back; then the annihilating beams, and the screen reels.
+    camera: closes on one giant
+    reads:
+      - ['p075.1:to meet tremendous screens', the beams thrown back]
+      - ['p075.1:Then all the awful power', the great beams]
+
+  - id: E
+    at: 'p075.1:the screens of the ships from Outside flamed'
+    title: Violet, blue, orange, red
+    seen: The giant's screen under fire.
+    event: Its colour runs out from the hits, violet, then blue, orange, red, broadening as it weakens.
+    camera: holds as the colours spread
+    reads:
+      - ['p075.1:flamed gradually violet', violet]
+      - ['p075.1:then blue', blue]
+      - ['p075.1:orange', orange]
+      - ['p075.1:red', red]
+
+  - id: F
+    at: p076.1
+    title: Poor inefficient giants
+    seen: A mote hanging motionless beside a giant; then inside the giant, horny-skinned men feeding a great generator that glows hotter.
+    event: The Outsiders labour; the generator reddens; heat shimmers.
+    camera: from outside, a push through the hull to the men within
+    reads:
+      - ['p076.1:hung now so motionlessly grim', the mote beside the giant]
+      - ['p076.1:within them strange, horny-skinned men', the men at the generator]
+
+  - id: G
+    at: p077.1
+    title: The screens dying
+    seen: The giant's screen, orange dying to a dull red, with black flecks spreading.
+    event: The screen darkens; a greenish beam plays on the mote, and it clings on unharmed.
+    camera: pulls back
+    reads:
+      - ['p077.1:flecks and spots appeared', the screen going black]
+      - ['p077.1:The greenish beams', the green failing on the machine]
+
+  - id: H
+    at: p078.1
+    title: Puffs of vapour
+    seen: Free ships turning to help; motes caught by their beams.
+    event: One mote after another vanishes in a white puff.
+    camera: a slow pan across the fight
+    reads:
+      - ['p078.1:vanishing in puffs', the motes dying]
+
+  - id: I
+    at: p079.1
+    title: The green ray, turned
+    seen: The motes; from each, a ray of green radiance into a giant.
+    event: >-
+      Giant after giant goes dark and drifts; then a curtain of waving blankness spreads out from the fleet, and the
+      beams bend aside from it.
+    camera: holds, then pulls back as the curtain spreads
+    reads:
+      - ['p079.1:a new ray reached out', the green ray from the motes]
+      - ['p079.1:a strange curtain of waving blankness', the curtain]
+
+  - id: J
+    at: p080.1
+    title: The last charge
+    seen: The motes, their own screens flaming now.
+    event: All at once they dart at the giants, nearer, and vanish.
+    camera: rushes in with them; then the Denver hall's screens, blank
+    reads:
+      - ['p080.1:they darted suddenly', the charge]
+      - ['p080.1:the screens back on Earth went suddenly blank', the blank screens]
+
+  - id: K
+    at: p081.1
+    title: Moving majestically on
+    seen: The fleet, the curtain fading, moving on in its ranks.
+    event: The giants sail on.
+    camera: a slow track with them
+    reads:
+      - [0, the survivors moving on]
+
+  - id: L
+    at: p082.1
+    title: Pole to pole
+    seen: The Earth from high above; a line of ships across it from pole to pole; pale green beams down from each.
+    event: The line sweeps across the Earth, and the green behind it.
+    camera: holds the Earth
+    reads:
+      - [0, the line of ships]
+      - ['p082.1:the pale green beams', the green sweeping]
+    out: brush wipe, at the scene break

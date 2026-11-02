@@ -1,0 +1,185 @@
+# ch02.yaml: chapter 2's storyboard, The Outsiders (PLAN.md §6). The format and the cue syntax are chapter 5's
+# (script/boards/ch05.yaml); src/scenes/ch02.js draws it.
+chapter: 2
+logline: >-
+  The Outsiders come out of the dark; a three-inch investigator creeps into their ships, sees them, strikes one,
+  blows up a ship from inside, and is found and blanked by a bluish beam, while thousands more surround the fleet.
+world: >-
+  Two places. Space beyond the outermost planet, where the fleet, the transport and the investigators are; and the
+  inside of an Outsider ship, girders and curved plates, the power room with its plungers. The second ship (after
+  the scene break) is the same build, darker, and its heart is a chamber where matter dissolves.
+colour: >-
+  Grey wash, cold for space. The energies: the fusing ray's heat on the torn metal, the white of the stored energies
+  released, the white glow of disintegrating matter, and the projector's bluish beam. The Outsiders' horny coats are
+  brown, the one colour in them that isn't light (it's in the text).
+motif: >-
+  Small against vast. The investigator is three inches across, the ships a thousand kilads; the camera keeps finding
+  the tiny thing in the huge one.
+arc: From watching to acting to being found; one tiny machine dies, and thousands are left.
+draft: >-
+  Space is one set, with the camera following the fleet, the transport and the investigators; the Outsider ship is
+  another, tracked along from its broken hull to its power room. After the scene break, the second ship is the same
+  set, darker.
+voice_at: 6
+outro: 4
+holds:
+  - {at: 'p007.1$', s: 1.2, why: the fleet passes}
+  - {at: 'p010.1$', s: 1.0, why: the three eyes turn}
+  - {at: 'p013.1:Instantly the vast energies', s: 1.2, why: the plunger shuts and the ship goes up}
+  - {at: 'p016.1$', s: 1.5, why: the investigator is blank}
+
+shots:
+  - id: A
+    at: 0
+    title: The chapter's page
+    seen: The pulp page, The Outsiders, the opening words under a drop cap.
+    event: The theme's first phrase; the narrator begins.
+    camera: a slow push
+    out: the paper soaks into the dark of space
+
+  - id: B
+    at: 'p007.1:Then came the Outsiders'
+    title: From beyond the outermost planet
+    seen: The cold dark beyond the last planet, a dim far sun; a thin line of points of light coming in from it.
+    event: The points come on and grow, one after another, into a line of ships.
+    camera: a slow push toward the line
+    reads:
+      - [0, the dark and the far sun]
+      - ['p007.1:First a thin scoutline', the line of ships]
+
+  - id: C
+    at: 'p007.1:mighty torpedoes'
+    title: Torpedoes of the void
+    seen: 'The ships close: long hulls of riveted plates, blunt noses, turrets along their spines, sliding past.'
+    event: One passes huge across the frame, nose to stern.
+    camera: holds as the hull slides through
+    reads:
+      - [0, the size of them]
+
+  - id: D
+    at: p008.1
+    title: The transport
+    seen: >-
+      A transport machine, a long capsule of the machines' family, on its way from Mars to Earth; a thin ruled line of
+      its thought runs back toward Earth.
+    event: Its lens goes dark; the line of its thought breaks off.
+    camera: drifts alongside the transport
+    reads:
+      - [0, the transport, alive]
+      - ['p008.1:ceased to radiate', its light going out, the line breaking]
+
+  - id: E
+    at: 'p008.1:An investigation machine'
+    title: From Deimos
+    seen: Mars's little moon; a fleck of light streaking from it; then ten ships, one grappling the dead transport, its fore-section blasted away.
+    event: The fleck crosses at a thousand gravities; the camera turns with it onto the ships.
+    camera: whips with the fleck, then settles on the grappled transport
+    reads:
+      - [0, the moon, the fleck leaving]
+      - ['p008.1:They sighted ten huge ships', the ships and the transport in their grip]
+
+  - id: F
+    at: p009.1
+    title: Into the hull
+    in: the camera follows the fleck into the shattered fore-section
+    seen: Inside the broken hull, the torn plates still glowing at their edges; the investigator, a polished sphere three inches across, creeping in.
+    event: It creeps along a girder, its lens turning to the fused edges.
+    camera: tracks with the investigator, close
+    reads:
+      - [0, the investigator, tiny]
+      - ['p009.1:by a fusing ray', the fused edges]
+
+  - id: G
+    at: p010.1
+    title: The Outsiders
+    seen: Squat, armoured beings in transparent suits, crawling about the hull; one close, its horny brown coat and three eyes.
+    event: They crawl through; the close one's eyes turn every way, one of them toward the investigator.
+    camera: pushes in on one of them
+    reads:
+      - [0, the beings crawling]
+      - ['p010.1:Their eyes projected', the three eyes, moving]
+
+  - id: H
+    at: p011.1
+    title: The blow
+    seen: The investigator, an Outsider before it.
+    event: It hurls itself at him; the suit flexes; he goes end over end across the weightless ship, and rights himself unhurt.
+    camera: whips with the blow, then holds as he tumbles
+    reads:
+      - ['p011.1:hurled itself', the strike]
+      - ['p011.1:he fell end over end', the tumble]
+
+  - id: I
+    at: p012.1
+    title: Ahead of them
+    seen: The investigator darting along the hull toward the stern, the Outsiders clustering behind round their companion.
+    event: It leaves them behind.
+    camera: tracks fast toward the stern
+    reads:
+      - [0, the investigator going ahead]
+
+  - id: J
+    at: p013.1
+    title: The power room
+    seen: 'The power room: great plungers standing over their sockets; the ship-brain''s dome shattered; the investigator among the controls.'
+    event: >-
+      Thin ruled lines of the Rulers' signals run from it to the controls; the plungers shut one after another; the
+      last snaps home; light fills everything.
+    camera: holds on the plungers, a push on the last
+    reads:
+      - ['p013.1:relayed the control signals', the signals]
+      - ['p013.1:the last plunger snapped shut', the last plunger]
+      - ['p013.1:Instantly the vast energies', the light]
+
+  - id: K
+    at: 'p013.1:A second investigator'
+    title: The second investigator
+    in: out of the white, space again
+    seen: Where the transport was, a spreading cloud of wreckage; the nearest Outsider ship holed in its side; a second fleck arriving.
+    event: The fleck slips into the broken side.
+    camera: pulls back from the wreck to the holed ship, then follows the fleck in
+    reads:
+      - [0, the wreck]
+      - ['p013.1:entered the broken side', the second investigator going in]
+    out: brush wipe, at the scene break
+
+  - id: L
+    at: p014.1
+    title: Corridors
+    seen: The second ship's corridors, darker; the apparatus room, with few and simple machines.
+    event: The investigator flashes down the corridors and into the apparatus room.
+    camera: races along the corridor, then slows in the room
+    reads:
+      - [0, speed, the corridors]
+      - ['p014.1:practically unintelligent', the simple, dim machines]
+
+  - id: M
+    at: p015.1
+    title: Searching
+    seen: Outsiders hurrying, searching; the investigator hidden among pipes; behind it, the ship's heart, a chamber where a block of matter dissolves into light.
+    event: They search; the block wastes away into light, steadily.
+    camera: pans from the searchers to the heart of the ship
+    reads:
+      - ['p015.1:They searched', the search]
+      - ['p015.1:the greater power of disintegrating matter', matter dissolving into light]
+
+  - id: N
+    at: p016.1
+    title: The bluish beam
+    seen: An Outsider with a peculiar projector, the investigator found.
+    event: A bluish beam snaps out; the investigator's lens goes blank.
+    camera: close on the projector, then on the investigator
+    reads:
+      - ['p016.1:A bluish beam', the beam]
+      - ['p016.1:went blank', the lens dark]
+
+  - id: O
+    at: p017.1
+    title: Thousands
+    in: out of the blank lens to space
+    seen: The fleet, surrounded by thousands of tiny flecks of light.
+    event: The fleet turns, slowly, toward Earth.
+    camera: pulls back to take in the fleet and the swarm
+    reads:
+      - [0, the swarm]
+      - ['p017.1:they started at once for Earth', the fleet turning]

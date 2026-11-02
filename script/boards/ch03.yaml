@@ -1,0 +1,249 @@
+# ch03.yaml: chapter 3's storyboard, Life Alone Can Understand Life (PLAN.md §6). The format and the cue syntax are
+# chapter 5's (script/boards/ch05.yaml); src/scenes/ch03.js draws it.
+chapter: 3
+logline: >-
+  Roal tells the machines the Outsiders have come to invade; the machines fight them beyond the Moon and lose half
+  their torpedoes to a force-screen; the green beams kill every living thing in the colonies; the torpedoes bring the
+  last ship down; and Roal tells the machines they are man's defence, and the enemy's deadliest.
+world: >-
+  Three places. The Denver laboratory by day: the hall of piers and screens where Roal, Trest and the machines watch.
+  Space beyond the Moon, for the battle. And the Colorado settlement on Earth: green hills, trees, colony domes, and
+  people, until the beams come.
+colour: >-
+  The death beam's pale green arrives over the land: the first time the film's colour spreads across a whole place.
+  The battle has the volatilizing beams' white, the induction beams' heat and the force-screens' violet. The hall's
+  screens go green with what they show.
+motif: >-
+  Life and the machine. The green kills everything alive and leaves the machines standing; Roal, alive, explains it to
+  them, and the chapter ends with the machines turned to him.
+arc: From watching to war to understanding; the colour comes in, and Roal is the one who sees.
+draft: >-
+  The hall is one set, with the screens showing what the machines see. The battle and the settlement are reached
+  through the screens, pushed into and pulled back out of, so the watchers stay with what they watch.
+voice_at: 6
+outro: 4
+holds:
+  - {at: 'p018.1$', s: 0.8}
+  - {at: 'p025.1$', s: 1.5, why: nothing alive is left; let it be seen}
+  - {at: 'p026.1$', s: 1.2, why: the rays sweep on}
+  - {at: 'p029.1$', s: 1.2, why: the last ship down}
+  - {at: 'p035.1$', s: 1.0}
+
+shots:
+  - id: A
+    at: 0
+    title: The chapter's page
+    seen: The pulp page, Life Alone Can Understand Life, the opening words under a drop cap.
+    event: The theme's first phrase; the narrator begins.
+    camera: a slow push
+    out: the paper soaks into the hall
+
+  - id: B
+    at: 'p018.1:The science-investigators'
+    title: Roal and Trest
+    seen: >-
+      The Denver laboratory by day: the piers, the wall of screens showing the enemy fleet, science-machines floating in
+      tiers; Roal, old, robed, and Trest, younger, standing before the screens.
+    event: The two men watch; Trest turns to Roal as he's named.
+    camera: drifts in from the hall to the two of them
+    reads:
+      - [0, the hall and its screens]
+      - ['p018.1:Roal, 25374', Roal]
+      - ['p018.1:Trest, 35429', Trest]
+
+  - id: C
+    at: 'p018.1:Roal had quickly assured us'
+    title: Invasion
+    seen: Roal turned to the machines, his hand out to the fleet on the screens.
+    event: He tells them; the machines' lenses turn to him.
+    camera: a slow pan from Roal across the machines listening
+    reads:
+      - [0, Roal telling them]
+      - ['p018.1:It would have been easier', the machines not understanding]
+
+  - id: D
+    at: 'p018.1:But--life alone'
+    title: Life alone
+    seen: Roal close, in profile; a loose curl of thought rising from him.
+    event: He's believed; the lenses all brighten toward him at once.
+    camera: a push in on him
+    reads:
+      - [0, the man who understands]
+
+  - id: E
+    at: p019.1
+    title: Weapons
+    seen: 'The floor of the hall: torpedoes of the machines'' family taking shape in force-beams; small machines with heat-ray nozzles.'
+    event: Torpedoes are finished and rise in a line; a nozzle glows hot in a test.
+    camera: tracks along the line of new torpedoes
+    reads:
+      - [0, the torpedoes]
+      - ['p019.1:a highly effective induction-heat ray', the heat ray]
+
+  - id: F
+    at: p020.1
+    title: The slow approach
+    in: push into a screen, which becomes space
+    seen: Earth and its Moon; the Outsiders' fleet, a line of points, crawling toward them.
+    event: The points creep; they hardly move.
+    camera: holds wide
+    reads:
+      - [0, the fleet, slow]
+
+  - id: G
+    at: p021.1
+    title: Beyond Luna
+    seen: The great ships, the Moon behind; a swarm of torpedoes sailing at them.
+    event: >-
+      The torpedoes are thrown aside by an unseen field, curve back and come on; white beams volatilize some; the rest
+      strike, and ships break apart.
+    camera: moves through the battle with the torpedoes
+    reads:
+      - ['p021.1:They were thrown aside', the torpedoes swerving and coming back]
+      - ['p021.1:some beams reached out', the white beams]
+      - ['p021.1:fully half the fleet was destroyed', ships breaking]
+
+  - id: H
+    at: 'p021.1:before the induction beam fleet arrived'
+    title: The force-screen
+    seen: The surviving ships; the induction beams' heat reaching them.
+    event: Each beam lands on a screen of force round the ship that flares violet and swallows it; the ships sail on.
+    camera: holds on one ship under the beams
+    reads:
+      - ['p021.1:quite useless', the screen swallowing the beams]
+
+  - id: I
+    at: 'p021.1:Several investigator machines'
+    title: Investigators into the screen
+    seen: Investigators, flecks of light, diving at a screen; ruled lines of their signals running back.
+    event: Each one flares out as it hits; its signal line runs to the last moment.
+    camera: follows one in
+    reads:
+      - [0, the investigators diving]
+      - ['p021.1:send back signals', the signals to the last]
+
+  - id: J
+    at: p023.1
+    title: The signal beam
+    seen: From the fifty ships, a beam of signals running out into the dark; investigators speeding along it.
+    event: The flecks race out along the beam and away.
+    camera: turns to follow them out
+    reads:
+      - [0, the beam outward]
+
+  - id: K
+    at: p024.1
+    title: The Colorado settlement
+    seen: Green hills, trees, the colony's domes, people in the open; the ships settling overhead.
+    event: Enormous diffused beams come down, faintly green; the people in them fall.
+    camera: from high, settling down with the ships
+    reads:
+      - [0, the colony, alive]
+      - ['p024.1:Enormous, diffused beams', the green coming down]
+      - ['p024.1:were being killed instantly', the people falling]
+
+  - id: L
+    at: 'p024.1:Despite the fact'
+    title: On the screens
+    in: pull back out of a screen into the hall
+    seen: Roal and Trest before the screens, which are green.
+    event: They watch; Roal's hand drops.
+    camera: pulls back from the screens to the two men
+    reads:
+      - [0, the green on the screens, the men watching]
+
+  - id: M
+    at: p025.1
+    title: Nothing living
+    in: push back into the screen
+    seen: The settlement under the green light; the trees and grass gone grey and bare; machines still standing among them.
+    event: The green sweeps through; leaves fall, grass greys; the machines stand untouched.
+    camera: a slow pan across the dead land to the machines
+    reads:
+      - ['p025.1:Trees, grass', the living things going]
+      - ['p025.1:Only the machines remained', the machines standing]
+
+  - id: N
+    at: p026.1
+    title: The rays swept on
+    seen: Earth from high above, the settlements marked by green spots of light.
+    event: The green spreads to three more places.
+    camera: a slow pull back from the Earth
+    reads:
+      - ['p027.1:three more colonies', the green spreading]
+
+  - id: O
+    at: p028.1
+    title: The torpedoes again
+    seen: Over the dead land, the ships hanging low; torpedoes coming in from all sides.
+    event: The torpedoes strike; ship after ship tilts and falls.
+    camera: holds as the ships fall
+    reads:
+      - [0, the torpedoes driving in]
+      - ['p029.1:the last ship a crumpled wreck', the last one down]
+
+  - id: P
+    at: p030.1
+    title: The machines study them
+    seen: The crumpled wreck on the grey land; great transports landing; machines and tiny investigators going in.
+    event: Transports settle; investigators swarm into the wreck.
+    camera: a slow drift over the wreck
+    reads:
+      - [0, the wreck and the transports]
+      - ['p030.1:Tiny investigator spheres', the tiny spheres going in]
+
+  - id: Q
+    at: 'p030.1:Hour after hour'
+    title: Watching the screens
+    seen: The hall; the science-investigators watching the screens, pointing things out to each other.
+    event: Trest points; Roal leans to look.
+    camera: holds on the watchers
+    reads:
+      - [0, men and machines watching together]
+
+  - id: R
+    at: p031.1
+    title: Decay
+    seen: The screens show the Outsiders' bodies covered and carried away by machines.
+    event: Machines bear the covered forms off.
+    camera: a push toward the screens
+    reads:
+      - ['p031.1:demand their removal', the bodies carried off]
+
+  - id: S
+    at: p032.1
+    title: Roal speaks
+    seen: Roal in the middle of the floor, the machines round him in a ring, Trest at his side.
+    event: He speaks to them; his thought goes out in a curl.
+    camera: moves in to Roal among the machines
+    reads:
+      - [0, Roal in the ring of machines]
+      - ['p033.4:He gave vent', his chuckle]
+
+  - id: U
+    at: p034.1
+    title: Any place is a home-world
+    seen: Over Roal's speech, a science plate of the planets; a machine of the family form on each, from Mercury to Pluto.
+    event: The machines appear on world after world as he names them.
+    camera: tracks along the planets
+    reads:
+      - ['p034.1:you live as readily on Pluto', the machines on every world]
+
+  - id: V
+    at: p035.1
+    title: Attack
+    seen: Roal, his arm thrown up; the machines round him.
+    event: Every lens in the ring flares as he says it.
+    camera: a quick push on him
+    reads:
+      - [0, the command]
+
+  - id: W
+    at: p036.1
+    title: The force-screen's secret
+    seen: Roal turning back to the screens, where the enemy hangs.
+    event: He turns; the screens glow.
+    camera: pulls back to the hall
+    reads:
+      - [0, the problem ahead]
+    out: brush wipe, at the scene break

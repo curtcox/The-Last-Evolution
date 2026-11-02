@@ -1,0 +1,191 @@
+# ch07.yaml: chapter 7's storyboard, The Dome (PLAN.md §6). The format and the cue syntax are chapter 5's
+# (script/boards/ch05.yaml); src/scenes/ch07.js draws it.
+chapter: 7
+logline: >-
+  Roal and Trest watch the end of man on the screens, and Roal sees it as evolution going on; F-2 brings six machines
+  that raise a black dome over the two of them; the green beams press it in, F-2's violet beam holds it up, the fleet
+  is driven off, and the only life on Earth is under the dome.
+world: >-
+  The Denver hall at night, lit by its screens; the dome raised on its floor round the two men; and outside, the dead
+  plain under the green beams, the dome a black hill on it.
+colour: >-
+  The hall dim and blue-grey with screen-light; the blankness, blacker than any wash; the green beams pressing; the
+  violet beam (the text's) spreading across the inside of the canopy; the ground projectors' white.
+motif: >-
+  Shelter. The machines' screen of blankness, which beat the motes in chapter 6, is turned to protect the two last
+  men; man's child protects man.
+arc: From watching the end, to accepting it, to being saved without asking; the chapter ends on the loneliest image yet.
+draft: >-
+  The hall is one set at night; the dome rises on its floor round the two men. Inside it, a cut-away shows F-2's
+  violet beam holding the canopy; outside is the plain at night under the green.
+voice_at: 6
+outro: 4
+holds:
+  - {at: 'p085.3$', s: 1.0}
+  - {at: 'p086.1$', s: 1.5, why: they watch, silent}
+  - {at: 'p092.1$', s: 1.0, why: the dome closed}
+  - {at: 'p094.1$', s: 0.8}
+  - {at: 'p099.1$', s: 1.8, why: the only life on Earth}
+
+shots:
+  - id: A
+    at: 0
+    title: The chapter's page
+    seen: The pulp page, The Dome, the opening words under a drop cap.
+    event: The theme's first phrase; the narrator begins.
+    camera: a slow push
+    out: the paper soaks into the hall at night
+
+  - id: B
+    at: p083.1
+    title: Two humans watching
+    seen: The Denver hall at night, lit only by its screens; Roal and Trest before them. On the screens, ships falling.
+    event: Ship after ship falls on the screens.
+    camera: from the dark hall in toward the two men
+    reads:
+      - [0, the dark hall, the two men]
+      - ['p083.1:Ship after ship', the ships falling on the screens]
+
+  - id: C
+    at: p084.1
+    title: The end
+    seen: Trest, turning to Roal.
+    event: He says it quietly.
+    camera: moves to the two of them
+    reads:
+      - [0, Trest]
+
+  - id: D
+    at: p085.1
+    title: Not the end of evolution
+    seen: Roal, close, his eyes dreaming again; a loose curl of thought rising.
+    event: He speaks; on the screens behind him, the machines.
+    camera: a slow push on Roal through the speech
+    reads:
+      - ['p085.2', his eyes dreaming]
+      - ['p085.3:But not the end', the speech]
+      - ['p085.3:I have lived', the quiet of it]
+
+  - id: E
+    at: p086.1
+    title: Silently
+    seen: The two of them from behind, small before the flickering screens.
+    event: The screens flicker; they don't move.
+    camera: pulls back
+    reads:
+      - [0, silence]
+
+  - id: F
+    at: p087.1
+    title: F-2 and the six
+    seen: F-2, the small bluish torpedo, floating into the hall; six large machines following it.
+    event: Roal turns; they come down the hall to the two men.
+    camera: turns with Roal to the newcomers
+    reads:
+      - [0, Roal turning]
+      - ['p087.1:as six large machines', the six machines]
+
+  - id: G
+    at: p088.1
+    title: Two lives alone
+    seen: F-2 before the two men, its lens lit with its words; the six behind it.
+    event: It speaks.
+    camera: holds F-2 and the men
+    reads:
+      - [0, F-2 speaking]
+
+  - id: H
+    at: p089.1
+    title: The cloud of blankness
+    seen: The six ranged round the two men in a ring.
+    event: A deep hum; a cloud like smoke grows round them and thickens.
+    camera: pulls back as the cloud grows
+    reads:
+      - [0, the ring]
+      - ['p089.1:Gradually a cloud of blankness', the cloud]
+
+  - id: I
+    at: p090.1
+    title: Five minutes; two
+    seen: Trest inside the thickening cloud; F-2.
+    event: They speak quietly.
+    camera: close, through the cloud
+    reads:
+      - [0, the countdown]
+
+  - id: J
+    at: p092.1
+    title: The dome
+    seen: The cloud solidifying into a black canopy that arches over them and curves down to the floor.
+    event: It wavers, thins, spreads, and closes into a solid black dome.
+    camera: pulls back to the whole dome on the hall floor
+    reads:
+      - ['p092.1:it arched over them', the arch]
+      - ['p092.1:a solid, black dome', the dome]
+
+  - id: K
+    at: p093.1
+    title: Within
+    seen: Inside the dome, black; only the screens glowing, and the two faces in their light.
+    event: Nothing; the screens glow.
+    camera: holds
+    reads:
+      - [0, the dark inside]
+
+  - id: L
+    at: p094.1
+    title: The beams strike
+    seen: Outside, the dead plain at night; the black dome; the green beams drawing in on it.
+    event: The beams strike; the dome quivers and bellies inward.
+    camera: from wide in toward the dome
+    reads:
+      - ['p094.1:They struck', the strike]
+      - ['p094.1:bellied inward', the dome pressed in]
+
+  - id: M
+    at: p095.1
+    title: The violet beam
+    seen: A cut-away of the dome; inside, F-2 at work, a new machine taking shape under its lightning force-beams.
+    event: The machine is finished, and sends a violet beam up to the roof.
+    camera: holds the cut-away
+    reads:
+      - ['p095.1:A new machine', the new machine]
+      - ['p095.1:a strange violet beam', the violet beam]
+
+  - id: N
+    at: p096.1
+    title: More
+    seen: Outside; more green beams converging on the one point.
+    event: More and more of them.
+    camera: pulls back to take in the beams
+    reads:
+      - [0, more beams]
+
+  - id: O
+    at: p097.1
+    title: Holding
+    seen: The cut-away; the violet beam spreading across the canopy.
+    event: The violet spreads across the inside of the dome and holds it against the pressing green.
+    camera: holds
+    reads:
+      - [0, the violet holding]
+
+  - id: P
+    at: p098.1
+    title: Driven off
+    seen: Outside; on the ground, great ray projectors; the fleet overhead behind its curtains.
+    event: The projectors drive white light through the curtains; the fleet draws off.
+    camera: tilts up with the beams
+    reads:
+      - ['p098.1:Great ray projectors', the projectors]
+      - ['p098.1:as light illumines', the fleet driven off]
+
+  - id: Q
+    at: p099.1
+    title: The only life
+    seen: The whole dead plain, the black dome small in the middle of it.
+    event: Nothing moves.
+    camera: a long pull back
+    reads:
+      - [0, the dome alone]
+    out: brush wipe, at the scene break

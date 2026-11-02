@@ -1,0 +1,148 @@
+# ch01.yaml: chapter 1's storyboard, 2538 (PLAN.md §6). The format and the cue syntax are chapter 5's
+# (script/boards/ch05.yaml); src/scenes/ch01.js draws it.
+chapter: 1
+logline: >-
+  The world of 2538: six centuries of machines, from the Ear to the Brain; a city where the machines do the work and
+  two million people play; and the two kinds of imagination, man's leap and the machine's march, striding together.
+world: >-
+  Three places. A pulp science plate, ink diagrams on dark paper, for the history and for the mind. The city of 2538:
+  towers of the machines' own family form, machines floating at their work, people at their games. Space, for the
+  explorers.
+colour: >-
+  Grey wash throughout, warm for the city by day. Energy is only the pale force of the machines' work and the mock
+  battles' harmless flashes. No colour that kills yet: that's chapter 2's.
+motif: >-
+  The two lines. Man's thought is a loose curl of wash, the machine's a ruled ink line (as in chapter 5); here they're
+  introduced, set side by side, and end walking together.
+arc: From the first machines to a world at peace, and from the two imaginations apart to the two of them in step.
+draft: >-
+  The history is a science plate; the city is one set, panned across from the machines at work to the people at
+  play. The mind is the plate again, with man's loose curl and the machine's ruled line, which end walking together.
+voice_at: 6
+outro: 4
+holds:
+  - {at: 'p003.1$', s: 1.0, why: the mock battles get a moment before the numbers}
+  - {at: 'p004.1$', s: 1.0, why: the last few lights}
+  - {at: 'p005.1$', s: 0.8}
+
+shots:
+  - id: A
+    at: 0
+    title: The chapter's page
+    in: up from bare paper
+    seen: The pulp page, 2538, and the opening words under a drop cap.
+    event: The theme's first phrase; the narrator begins.
+    camera: a slow push
+    out: the paper soaks dark into the science plate
+
+  - id: B
+    at: 'p003.1:For six centuries'
+    title: Six centuries of machines
+    seen: >-
+      A science plate: a ruled line runs across it, the centuries. Along it the inventions appear in turn: the Ear, a
+      receiver of nested horns; the Eye, a lens in a ringed mount; the Brain, a dome-case.
+    event: Each draws itself as it's named; then the three slide together into one machine of the family form.
+    camera: tracks along the line, left to right
+    reads:
+      - ['p003.1:The Ear-apparatus', the Ear]
+      - ['p003.1:The Eye came later', the Eye]
+      - ['p003.1:the Brain', the Brain]
+      - ['p003.1:But by twenty-five hundred', they join into one machine]
+
+  - id: C
+    at: 'p003.1:to think, and act'
+    title: The city of 2538
+    in: the new machine lifts off the plate and the push carries into the city, where it floats
+    seen: >-
+      The city by day: towers of the family form, domed, rising behind; machines floating at their work, carrying and
+      building; people at ease below.
+    event: The machines work on their paths; a man takes a crate a machine hands him, and goes on his way.
+    camera: a slow pan right along the city
+    reads:
+      - [0, the city, the machines at work]
+      - ['p003.1:Man lived on the products', the people living on what the machines make]
+
+  - id: D
+    at: 'p003.1:Most of mankind'
+    title: Games
+    seen: People at their games on the plaza; runners racing; two lines of men fighting a mock battle with harmless flashes.
+    event: The runners cross; the mock battle's flashes go back and forth, and nobody falls.
+    camera: carries on right to the plaza, a little closer
+    reads:
+      - ['p003.1:But games', the runners]
+      - ['p003.1:mock battles', the mock battle]
+
+  - id: E
+    at: p004.1
+    title: The numbers
+    in: dissolve to the plate
+    seen: A field of small lights on the dark plate, one for every many millions; a ruled curve over them, the years.
+    event: The lights multiply as the curve climbs to 2100, then go out, one by one, until only a scatter is left.
+    camera: holds the field, easing in on the last few
+    reads:
+      - [0, the field of lights filling]
+      - ['p004.1:but from that time on', the lights going out]
+      - ['p004.1:a scant two millions', the few left]
+
+  - id: F
+    at: p005.1
+    title: Other worlds
+    seen: Space; the Earth below; a small ship of the machines rising away toward a far planet.
+    event: The ship arcs out and away, its drive a faint thread.
+    camera: follows the ship out
+    reads:
+      - [0, the Earth and the ship]
+      - ['p005.1:of other worlds', the far planet]
+
+  - id: G
+    at: 'p005.1:But fewer still'
+    title: The unseen places of the mind
+    in: the far planet becomes the plate's dark, and a head in profile
+    seen: The plate. At the left, a man's head in profile, a loose curl of wash rising from it; at the right, a machine's lens, a ruled line from it.
+    event: Each kind of thought draws itself as it's named.
+    camera: settles on the two
+    reads:
+      - ['p005.1:the unseen places', the man's curl]
+      - ['p005.1:Machines', the machine's ruled line]
+
+  - id: H
+    at: 'p005.1:From any three facts'
+    title: Three facts, the Universe
+    seen: Three points of light; ruled lines from them branch and branch into a lattice the shape of a world, then of a galaxy.
+    event: The lattice builds itself outward from the three facts.
+    camera: pulls back as it grows
+    reads:
+      - [0, three points]
+      - ['p005.1:built in mind all the Universe', a whole built from them]
+
+  - id: I
+    at: 'p005.1:But Man had imagination'
+    title: Two imaginations
+    seen: The head and the lens again; far to the right, a point of light, the conclusion.
+    event: >-
+      The man's curl leaps to near the point at once, but lands soft and blurred beside it; the machine's ruled line
+      climbs to it in steps, slowly, and touches it exactly.
+    camera: holds wide enough for both paths and the point
+    reads:
+      - ['p005.1:sees the future result vaguely', the curl leaping, landing near]
+      - ['p005.1:but the machine always reached', the ruled line arriving exactly]
+
+  - id: J
+    at: 'p005.1:By leaps and bounds'
+    title: Leaps and steps
+    seen: The two lines run on across the plate, the curl in long arcs, the ruled line in even steps.
+    event: Both advance to the right, the camera with them.
+    camera: tracks right with them
+    reads:
+      - ['p005.1:By leaps and bounds', the leaps]
+      - ['p005.1:By steady', the steps]
+
+  - id: K
+    at: p006.1
+    title: Together
+    in: the two lines become a man and a machine, walking
+    seen: The city's edge; a man and a machine walking side by side toward the towers.
+    event: They walk in step to the right.
+    camera: tracks with them, then lets them go into the city
+    reads:
+      - [0, man and machine, together]
