@@ -297,7 +297,8 @@ tools/                      ported from axol-f and adapted:
   timeline                  lays each chapter's lines end to end → src/gen/chNN.js (word times, loudness envelope)
   sfx / mix                 effects, the motif, the chapter mixes, loudness
   qr_check                  decodes every code from rendered frames
-  check_refs                link checker
+  check_refs                link checker: the notes' sources
+  check_links               the built site's own links and anchors; the Pages workflow runs it before each deploy
   lint_chapter              per-chapter checks (holds, code timing, safe areas)
   serve / review / watch    the local review server, watch pages, notes and Claude's questions
   rebuild                   the overnight "regenerate everything" run

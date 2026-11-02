@@ -27,6 +27,7 @@ jobs:
       - run: node tools/build_script.mjs
       - run: node tools/verbatim_check.mjs
       - run: node tools/build_site.mjs
+      - run: node tools/check_links.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site/public
