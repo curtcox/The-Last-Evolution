@@ -33,11 +33,11 @@ Written by `tools/check_refs.mjs` on 2026-11-02. **All good.**
 | wp-neutron | 200 | reference | foreword.md, science.md | [Discovery of the neutron (Wikipedia)](https://en.wikipedia.org/wiki/Discovery_of_the_neutron) |
 | wp-northrup | 200 | reference | science.md, annotations.yaml | [Edwin Fitch Northrup (Wikipedia)](https://en.wikipedia.org/wiki/Edwin_Fitch_Northrup) |
 | wp-pluto | 200 | reference | annotations.yaml | [Pluto (Wikipedia)](https://en.wikipedia.org/wiki/Pluto) |
-| wp-positron | 200 | reference | afterword.md, science.md, annotations.yaml | [Positron (Wikipedia)](https://en.wikipedia.org/wiki/Positron) |
+| wp-positron | 200 | reference | afterword.md, foreword.md, science.md, annotations.yaml | [Positron (Wikipedia)](https://en.wikipedia.org/wiki/Positron) |
 | wp-proton-decay | 200 | reference | science.md | [Proton decay (Wikipedia)](https://en.wikipedia.org/wiki/Proton_decay) |
 | wp-rur | 200 | reference | succession.md | [R.U.R. (Wikipedia)](https://en.wikipedia.org/wiki/R.U.R.) |
 | wp-schrodinger | 200 | reference | science.md | [Schrödinger equation (Wikipedia)](https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation) |
-| wp-singularity | 200 | reference | succession.md | [Technological singularity (Wikipedia)](https://en.wikipedia.org/wiki/Technological_singularity) |
+| wp-singularity | 200 | reference | afterword.md, succession.md | [Technological singularity (Wikipedia)](https://en.wikipedia.org/wiki/Technological_singularity) |
 | wp-sloane | 200 | reference | history.md | [T. O'Conor Sloane (Wikipedia)](https://en.wikipedia.org/wiki/T._O'Conor_Sloane) |
 | wp-theremin | 200 | reference | annotations.yaml | [Theremin (Wikipedia)](https://en.wikipedia.org/wiki/Theremin) |
 | wp-transmutation | 200 | reference | science.md | [Nuclear transmutation (Wikipedia)](https://en.wikipedia.org/wiki/Nuclear_transmutation) |

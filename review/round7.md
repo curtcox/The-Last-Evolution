@@ -167,6 +167,11 @@ natural set to choose from. Each code would open the annotated film at its note,
   - They're in the [fact-check list](../notes/factcheck.md), and each was checked against its source: Wikipedia for
     Pluto, Wien, the theremin, Wells and the world's population in 1932, and the UN's 2024 release for the projection.
     That turned up no errors, and the theremin note now gives the instrument's date: 1920.
+  - Checking the older notes' textbook claims the same way corrected two: Rutherford knocked protons out of nitrogen in
+    1919, but it was Blackett in 1925 who showed the nitrogen had become oxygen; and *R.U.R.* gave us "robot", but the
+    source doesn't call it the first story of made workers replacing humanity, as the notes had. The science note now
+    also cites Dirac's 1930 paper "On the Annihilation of Electrons and Protons", to show that Roal's guess was a
+    physicist's guess too. Every claim in the list now rests on a source read for it.
 - **Notes about pictures may change with them.**
   - Four notes describe the draft's pictures: the lattice, the curl, the inside of the giant ship, and "Locked" (the
     flagship as the one drawing that doesn't boil).

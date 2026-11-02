@@ -12,10 +12,10 @@ it came to be, and what came after mankind.
 
 ## When it was written
 
-Campbell was 22 and finishing a physics degree ([SFE][sfe-campbell]). 1932 was the year the atom came apart: the
-neutron was found in February, the first atom split by a machine in April, and the positron, the first antimatter,
-photographed on 2 August, the month this story was on the stands ([discovery of the neutron][wp-neutron]). There was no
-electronic computer anywhere. When the story says "machine", it's imagining something no one had built.
+Campbell was 22 and finishing a physics degree ([SFE][sfe-campbell]). 1932 was the year the atom came apart: the neutron
+was found in February, the first atom split by a machine in April, and the positron, the first antimatter, photographed
+on 2 August, the month this story was on the stands ([discovery of the neutron][wp-neutron], [positron][wp-positron]).
+There was no electronic computer anywhere. When the story says "machine", it's imagining something no one had built.
 
 ## How to watch
 
@@ -47,4 +47,5 @@ inheriting the Earth is an irony we'd rather name than hide.
 <!-- refs: written by tools/check_refs.mjs -->
 [sfe-campbell]: https://sf-encyclopedia.com/entry/campbell_john_w_jr
 [wp-neutron]: https://en.wikipedia.org/wiki/Discovery_of_the_neutron
+[wp-positron]: https://en.wikipedia.org/wiki/Positron
 <!-- /refs -->

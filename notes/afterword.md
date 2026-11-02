@@ -30,8 +30,9 @@ state: there's nothing below it to fall to ([Bohr model][wp-bohr]). The first el
 
 Campbell wasn't first. Samuel Butler wondered in 1863 whether machines might evolve to supplant us
 ([Darwin among the Machines][wp-butler]). After him came Turing in 1951, expecting that the machines would "take
-control" ([Quote Investigator][qi-turing]); I. J. Good's "intelligence explosion" in 1965; and Hans Moravec's *Mind
-Children* in 1988, robots as humanity's heirs ([Mind Children][wp-mind-children]).
+control" ([Quote Investigator][qi-turing]); I. J. Good's "intelligence explosion" in 1965 ([technological
+singularity][wp-singularity]); and Hans Moravec's *Mind Children* in 1988, robots as humanity's heirs ([Mind
+Children][wp-mind-children]).
 
 Today the argument has two camps. One says succession is coming and needn't be feared; in 2025 the AI pioneer Richard
 Sutton called it inevitable ([Dwarkesh Podcast][dwarkesh-sutton]). The other says it's a risk to be prevented; in 2023
@@ -69,6 +70,7 @@ printing's copyright was renewed, so the story and Morey's picture are free for 
 [wp-williams-tube]: https://en.wikipedia.org/wiki/Williams_tube
 [wp-butler]: https://en.wikipedia.org/wiki/Darwin_among_the_Machines
 [qi-turing]: https://quoteinvestigator.com/2022/01/06/outstrip/
+[wp-singularity]: https://en.wikipedia.org/wiki/Technological_singularity
 [wp-mind-children]: https://en.wikipedia.org/wiki/Mind_Children
 [dwarkesh-sutton]: https://www.dwarkesh.com/p/richard-sutton
 [cais-statement]: https://www.safe.ai/work/statement-on-ai-risk
