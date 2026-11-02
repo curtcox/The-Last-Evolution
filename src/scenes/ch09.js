@@ -78,8 +78,10 @@
     if (t > tJ + 1 && t < tK) for (let i = 0; i < 4; i++) glow(ORB[0] + 200 * Math.sin(t * 2 + i), ORB[1] + 120 * Math.cos(t * 1.7 + i), 80, [FORCE, NRG.gold, NRG.violet, FORCE][i], .4 * storm(t));
     // K on: the golden sphere; Roal and Trest out of the dome; the warmth of the ruby flame
     const gk = ez(t, tGold - 1, tGold + 2) * (t < tVanish ? 1 : 0), grow = ez(t, C('p126.1') + 2, tN + 1);
-    if (t > tK) { stander(t, 100, RG + 40, 30, [[C('p123.1:Roal and Trest appeared'), C('p123.1:Roal and Trest appeared') + 5, 0, 420]], { who: 'roal', key: 'roal9', seed: 3, look: .6 });
-      stander(t, 0, RG + 46, 31, [[C('p123.1:Roal and Trest appeared') + .4, C('p123.1:Roal and Trest appeared') + 5.6, -120, 540]], { who: 'trest', key: 'trest9', seed: 7, look: .55 }); }
+    // they stand looking up at the sphere; when the ruby flame warms them, their hands lift toward it, open
+    const warm = win(t, tRuby + .5, tN - .5, 1.5, 1), wp = k => ({ up: lerp(.12, .9, k), fore: lerp(.3, 1.7, k) });
+    if (t > tK) { stander(t, 100, RG + 40, 30, [[C('p123.1:Roal and Trest appeared'), C('p123.1:Roal and Trest appeared') + 5, 0, 420]], { who: 'roal', key: 'roal9', seed: 3, look: .6, pose: wp(warm) });
+      stander(t, 0, RG + 46, 31, [[C('p123.1:Roal and Trest appeared') + .4, C('p123.1:Roal and Trest appeared') + 5.6, -120, 540]], { who: 'trest', key: 'trest9', seed: 7, look: .55, pose: wp(.8 * win(t, tRuby + 1.2, tN - .5, 1.5, 1)) }); }
     if (gk > 0) { sphereGold(t, 90 * gk * (1 + grow)); thoughtRings(...ORB, t, T0('L'), C('p125.1$'), { r1: 600, col: NRG.gold }); thoughtRings(...ORB, t, T0('O'), C('p128.1$'), { r1: 600, col: NRG.gold });
       const ruby = t > tRuby ? Math.max(0, Math.sin((t - tRuby) * 2.2)) * (1 - ez(t, tN - 1, tN)) : 0; if (ruby > 0 || (t > tRuby && t < tN)) { glow(...ORB, 22, NRG.ruby, .5 + .5 * ruby); glow(...ORB, 900, '#FFC780', .3 * ruby); } }
     if (t > tVanish - .1 && t < tVanish + .6) { const q = seg(t, tVanish - .1, tVanish + .6); beam(ORB[0], ORB[1], ORB[0] + 400, -3000, 60 * (1 - q), 10, NRG.gold, 1, { washOp: 60 * (1 - q), a: 1 - q, splash: false }); }
