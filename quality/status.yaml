@@ -109,5 +109,10 @@ items:
     note: "Desktop: the header aligns with the wide player and its margin; prose in a reading column; the note list below. Phone: the margin becomes a card under the video (Round 7), the draft notice and foreword read at 375 without overflow."
     at: 1f317229cafa
     when: 2026-11-02 23:20
+  work.title:
+    state: pass
+    note: "Chapter 0 opens on it (0-12 s): the 1961 masthead 'A Classic Reprint from AMAZING STORIES, August, 1932' over a double rule, THE LAST EVOLUTION in spaced capitals, 'By JOHN W. CAMPBELL, Jr.', on the pulp paper, set in as the voice begins. Legible at 1920 and at a phone held sideways; held upright the masthead line is small, but the title and byline read."
+    at: d9238021746c
+    when: 2026-11-02 23:21
 fresh: []
-since_fresh: 24
+since_fresh: 25

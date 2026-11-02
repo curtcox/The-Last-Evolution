@@ -73,7 +73,7 @@ work:
       the same way in any chapter, and the chapters' figures match their sheets.
   - id: work.title
     title: the title page
-    inputs: [src/scenes/lookdev.js]
+    inputs: [src/scenes/ch00.js, src/pulp.js]   # the film opens on it: chapter 0's first shot
     criteria: >-
       The film's title page: the title, Campbell's name, 1932 and Amazing Stories, in the look, legible at phone size.
 
