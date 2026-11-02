@@ -48,7 +48,7 @@ story, not instead of it.
 
 ## Leo Morey
 The illustration is by Leo Morey, the working name of Leopoldo Morey y Peña, born in Lima, Peru, on 24 October 1889
-([SFE][sfe-morey]). He studied engineering at Louisiana State University and drew for newspapers before Sloane hired him
+(some sources give 1899) ([SFE][sfe-morey]). He studied engineering at Louisiana State University and drew for newspapers before Sloane hired him
 in 1929. Sloane needed a replacement for Frank R. Paul, who had left with Gernsback. Morey painted 71 covers for
 *Amazing* and 12 for *Amazing Stories Quarterly*, and later worked for other pulps and for comics. He died in 1965.
 
@@ -60,7 +60,7 @@ in the film at that moment.
 *Amazing* reprinted the story in March 1961 as "A Classic Reprint", under the editor Cele Goldsmith ([Amazing
 Stories][wp-amazing], [scan][archive-1961]). Project Gutenberg transcribed that reprint ([eBook #27462][gutenberg]), and
 the film reads it with 16 readings from the 1932 printing restored. Comparing the three texts turned up a 24-word clause
-and two negatives lost in 1961, a dozen smaller typesetting slips, and a misprint from 1932 that Gutenberg corrected:
+and two negatives lost in 1961, thirteen smaller typesetting slips, and a misprint from 1932 that Gutenberg corrected:
 F-2 for F-1, three times ([the comparison](../text/comparison_1932.md)).
 
 Neither printing's copyright was renewed: *Amazing*'s renewals begin with later issues

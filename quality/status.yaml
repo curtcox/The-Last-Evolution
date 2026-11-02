@@ -11,24 +11,24 @@ items:
     when: 2026-11-02 23:03
   site.home.content:
     state: pass
-    note: "True and current: the story, the three ways in (watch with notes, read with the 1932 readings restored, the notes), an honest draft warning, and now where things stand (the scorecard) and that the acting pass has begun with chapter 5."
-    at: eabf5aa88d63
-    when: 2026-11-02 23:11
+    note: "Re-judged after the fresh-eyes round: the kicker now reads 'From Amazing Stories, August 1932' instead of the 1961 reprint's header; the rest as judged."
+    at: "895426790833"
+    when: 2026-11-02 23:47
   site.home.look:
     state: pass
-    note: "Re-judged after the stylesheet change: it only lets tables wrap on a phone, and neither page has a table; the fresh phone and desktop screenshots look as before, nav on one line."
-    at: 9de049592842
-    when: 2026-11-02 23:18
+    note: Re-checked at 375 and 1280 after the kicker and stylesheet changes; nav on one line, no overflow.
+    at: 58658503b961
+    when: 2026-11-02 23:47
   site.about.content:
     state: pass
-    note: "Checked each claim: first printing Aug 1932, reprint Mar 1961, Gutenberg #27462 and its no-renewal finding; the 16 readings now described as the 16 in text/emendations.yaml are (a clause, two negatives, a dozen slips: dropped and stray words, a wrong digit), matching the afterword and history notes; Morey's illustration from the August 1932 issue; voices, effects and music all ElevenLabs-generated (tools/sound_sampler.mjs); credits for p5.js, p5.brush, Heibel's base; corrections by GitHub issue."
-    at: abb201a4eab3
-    when: 2026-11-02 23:13
+    note: "Re-judged: 'thirteen smaller slips' instead of 'a dozen'; the rest as judged."
+    at: f19a72da68a9
+    when: 2026-11-02 23:47
   site.about.look:
     state: pass
-    note: "Re-judged after the stylesheet change: it only lets tables wrap on a phone, and neither page has a table; the fresh phone and desktop screenshots look as before, nav on one line."
-    at: 7f66b403fc8b
-    when: 2026-11-02 23:18
+    note: Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged.
+    at: 269d0979f6c1
+    when: 2026-11-02 23:47
   site.notes.content:
     state: pass
     note: The index says what the short and long notes are and lists the four, each with a true one-line description.
@@ -36,19 +36,19 @@ items:
     when: 2026-11-02 23:17
   site.notes.look:
     state: pass
-    note: "A short page: lede and a list of four; fine at both widths."
-    at: 5fde5c19f6e3
-    when: 2026-11-02 23:17
+    note: Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged.
+    at: f4953dc302a6
+    when: 2026-11-02 23:47
   site.science.content:
     state: pass
-    note: "Read in full: each claim is in the fact-check list with its source; says what became of each 1932 idea (annihilation, Bohr's wall, unified fields); no stale status. The repo copy's 'Draft for Round 2' line now says approved."
-    at: adcf26150f08
-    when: 2026-11-02 23:17
+    note: "Re-judged: only change is that the 3,600 degrees now says its source gives no scale."
+    at: 52bdfb65142b
+    when: 2026-11-02 23:47
   site.science.look:
     state: pass
-    note: Long single column; section heads and the paragraph links (¶3, ¶5…) read; phone fine; the 1932 list renders as a list.
-    at: 62738d91d214
-    when: 2026-11-02 23:17
+    note: Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged.
+    at: 6ab5e49b25d8
+    when: 2026-11-02 23:47
   site.succession.content:
     state: pass
     note: "Read in full: the story's own position quoted, the timeline before and after, both of today's camps described without taking sides, the utopia worry, and the project's own irony stated. Status line in the repo copy fixed."
@@ -56,29 +56,29 @@ items:
     when: 2026-11-02 23:17
   site.succession.look:
     state: pass
-    note: "Phone and desktop: single column, dated entries scan well."
-    at: fcaa8a7b2ad5
-    when: 2026-11-02 23:17
+    note: Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged.
+    at: 349b894a4519
+    when: 2026-11-02 23:47
   site.history.content:
     state: pass
-    note: Read in full; fixed a stale planning sentence ('The site's notes will present this as history' → 'These notes present it'). Dates, page numbers and the reprint account agree with the fact-check list.
-    at: cba27b88ba51
-    when: 2026-11-02 23:17
+    note: "Re-judged: 'thirteen smaller typesetting slips' (exact: 16 restorations less the clause and two negatives) and Morey's birth year noted as 1899 in some sources, as the fact-check list records."
+    at: 0ffdf6e61421
+    when: 2026-11-02 23:47
   site.history.look:
     state: pass
-    note: Single column; the editor's quotation set off; fine at both widths.
-    at: fd4d751ed470
-    when: 2026-11-02 23:17
+    note: Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged.
+    at: 2dbbfdf6340c
+    when: 2026-11-02 23:47
   site.factcheck.content:
     state: pass
-    note: Section heads now name each note and link it, instead of showing repository file names; the Round 7 section links the margin notes, foreword and afterword. Claims and checks unchanged; refs check passes (53 sources answering).
-    at: eeef1b864a8e
-    when: 2026-11-02 23:17
+    note: "Re-judged: the intro is plain (who checked, when, what 'computed' means); 'read in Phase 0' is 'read'; the Round 7 heading drops the round; sources show their titles."
+    at: 7b83632c5f5d
+    when: 2026-11-02 23:47
   site.factcheck.look:
     state: pass
-    note: On a phone the table showed two of three columns behind a sideways scroll; it now wraps to fit, all three columns visible (checked at 375). Desktop unchanged.
-    at: 3042469b3369
-    when: 2026-11-02 23:17
+    note: "Re-checked at 375: source titles wrap within their column, all three columns visible, no sideways scroll."
+    at: 955eb34c5a33
+    when: 2026-11-02 23:47
   site.read.content:
     state: pass
     note: "The whole story with its masthead, the 16 restored readings marked in place and listed with scan links, Morey's illustration, and a true colophon (Gutenberg #27462, 1961 reprint, 16 readings from 1932). The verbatim check passes."
@@ -86,29 +86,29 @@ items:
     when: 2026-11-02 23:20
   site.read.look:
     state: pass
-    note: "Desktop: a justified, hyphenated reading column with paragraph numbers in the margin. Phone: the same column at 375, numbers hidden, no overflow, nav on one line."
-    at: 092127242e7d
-    when: 2026-11-02 23:20
+    note: Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged.
+    at: 77f6ebfa5bfe
+    when: 2026-11-02 23:47
   site.review.content:
     state: pass
-    note: Every round with its sheet, its closed date and its pages, newest first; the rounds' closed lines match the sheets; links the scorecard.
-    at: 430dd0a03a83
-    when: 2026-11-02 23:20
+    note: "Re-judged: 'both Curt Cox, who is making it, and Claude, the AI model helping' instead of an unnamed 'both of us'."
+    at: bbff28914db2
+    when: 2026-11-02 23:47
   site.review.look:
     state: pass
-    note: A plain list page; fine at both widths.
-    at: 7d4d78b0b4dc
-    when: 2026-11-02 23:20
+    note: Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged.
+    at: 47f74ad2d24b
+    when: 2026-11-02 23:47
   site.watch.content:
     state: pass
-    note: The draft notice said the notes 'are being reviewed (Round 7)'; Round 7 closed today. It now says the acting is being redone chapter by chapter (linking where it stands) and that the notes were reviewed in Round 7. Foreword, how-to-watch, margin notes and afterword are as Round 7 approved them (the foreword's wording is Curt's call, curt.foreword).
-    at: 6fc70d552a17
-    when: 2026-11-02 23:20
+    note: "Re-judged after the fresh-eyes round: framed for visitors ('Watch: the film in draft, with notes', not 'Review · Round 7'); the bar says it counts the whole film and the player the chapter; draft notice current."
+    at: 2d3eb27b1fe0
+    when: 2026-11-02 23:47
   site.watch.look:
     state: pass
-    note: "Desktop: the header aligns with the wide player and its margin; prose in a reading column; the note list below. Phone: the margin becomes a card under the video (Round 7), the draft notice and foreword read at 375 without overflow."
-    at: 1f317229cafa
-    when: 2026-11-02 23:20
+    note: Now has the site's masthead, nav and footer; the title sits in the text column; checked at 1280 and 375; scrubber steps 5 s by keyboard and reads '15:00 of 57:03'; no console errors.
+    at: 262526f363af
+    when: 2026-11-02 23:47
   work.title:
     state: pass
     note: "Re-judged: since the last pass ch00.js changed only in memories() (Roal and Trest side-on, 26-34 s); the title page (0-14 s) and pulp.js are unchanged, so the masthead, title and byline stand as judged."
@@ -132,5 +132,54 @@ items:
     note: "The drafts are committed under site/review so Pages can serve them. The repository is 356 MB; re-rendering all twelve chapters adds about 220 MB of history each time, and GitHub warns at 1 GB, so the loop can afford two or three full cycles, not ten. My recommendation: keep committing drafts for this cycle, then move draft videos out of git (GitHub Release assets, or YouTube unlisted) so the site links them without growing the history. Which would you like?"
     title: Each full re-render adds about 220 MB of draft video to the repository
     when: 2026-11-02 23:36
-fresh: []
-since_fresh: 27
+  find.scorecard-visitors:
+    state: pass
+    note: It now opens with a plain summary for visitors (how far the film and site have come, what's next, what each column means), with Curt's questions, the checks and every judgment in a collapsed 'For the makers' section; the duplicates under Other items are gone.
+    title: The scorecard page spoke to the makers, though visitors are sent to it
+    when: 2026-11-02 23:47
+  find.scorecard-stale:
+    state: pass
+    note: The checks now have their own count ('n of m pass') in the makers' section, apart from the items' summary.
+    title: The scorecard said '0 changed since passing' beside a stale check
+    when: 2026-11-02 23:47
+  find.scorecard-tooltips:
+    state: pass
+    note: Each mark now carries its state in words for screen readers (visually hidden), and every judgment's reason is listed in the makers' section, readable by touch.
+    title: The scorecard's marks explained themselves only in hover tooltips
+    when: 2026-11-02 23:47
+  find.film-scrubber:
+    state: pass
+    note: Its step is now 5 s and it reads out e.g. '15:00 of 57:03' (aria-valuetext), checked in the browser.
+    title: The film's scrubber moved 0.1 s per key press and read out raw seconds
+    when: 2026-11-02 23:47
+  find.film-clocks:
+    state: pass
+    note: The bar's line now says 'of the whole film, 57:03 (the player's own clock counts the chapter)'.
+    title: The film page showed two clocks, the chapter's and the whole film's
+    when: 2026-11-02 23:47
+  find.film-masthead:
+    state: pass
+    note: "It now has the site's masthead, nav and footer; the kicker reads 'Watch: the film in draft, with notes'; the title sits in the text column."
+    title: The film page lacked the site's masthead and framed itself as a review exhibit
+    when: 2026-11-02 23:47
+  find.factcheck-makers:
+    state: pass
+    note: The intro says plainly who checked what and when; 'read in Phase 0' is 'read'; sources show their titles (e.g. 'Amazing Stories (Wikipedia)') instead of keys.
+    title: The fact-check list's intro and sources were written for the makers
+    when: 2026-11-02 23:47
+  find.home-kicker:
+    state: pass
+    note: The home kicker is now 'From Amazing Stories, August 1932'; the Read page keeps the 1961 masthead, which is part of the text it prints.
+    title: The home page opened with the 1961 reprint's header as if it were the site's
+    when: 2026-11-02 23:47
+  find.nits-round1:
+    state: pass
+    note: The Review page names Curt Cox and Claude; About, history and afterword say thirteen smaller slips (16 restorations less the clause and two negatives); Morey's birth year notes that some sources give 1899; the 3,600 degrees says its source gives no scale.
+    title: "Nits: an unnamed 'us', 'a dozen' for thirteen, Morey's disputed birth year, a degree with no scale"
+    when: 2026-11-02 23:47
+fresh:
+  - when: 2026-11-02 23:47
+    found: 13
+    note: "Site only (the drafts were mid-render): a subagent with no context reviewed every page and its screenshots against the rubric. 1 major (the scorecard page spoke to makers), 7 minor, 5 nits; all fixed and recorded as find.* items. A film round follows when the drafts are done."
+    state: 2a2f1d1970ac
+since_fresh: 0

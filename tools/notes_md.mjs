@@ -34,7 +34,7 @@ function table(rows, up) {
   const cells = r => r.replace(/^\|/, '').replace(/\|$/, '').split('|').map(c => c.trim());
   let inA = false;   // only text outside tags and links
   const cell = c => inline(c, up).split(/(<[^>]+>)/).map(t => t.startsWith('<') ? (inA = /^<a\b/.test(t) || (inA && !/^<\/a>/.test(t)), t)
-    : inA ? t : t.replace(/\b[a-z0-9]+(?:-[a-z0-9]+)*\b/g, id => refs[id] ? `<a href="${esc(refs[id].url)}">${id}</a>` : id)).join('');
+    : inA ? t : t.replace(/\b[a-z0-9]+(?:-[a-z0-9]+)*\b/g, id => refs[id] ? `<a href="${esc(refs[id].url)}">${esc(refs[id].title)}</a>` : id)).join('');
   const [head, , ...body] = rows.map(cells);
   return `<div class="tbl"><table><thead><tr>${head.map(c => `<th>${inline(c, up)}</th>`).join('')}</tr></thead><tbody>${
     body.map(r => `<tr>${r.map(c => `<td>${cell(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;

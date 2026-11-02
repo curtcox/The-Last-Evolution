@@ -1,10 +1,9 @@
 # Fact-check list
 
-Each factual claim in the notes, the source it rests on, and how it was checked. "Read" means Claude read the source and
-found the claim in it on 2026-11-01, or on 2026-11-02 for the last Round 7 additions, the textbook claims, the
-expanded Heirs notes and the utopia additions. "Computed"
-means arithmetic from the story's own text. No claim now rests on general knowledge alone.
-`npm run refs` confirms that every link answers.
+Each factual claim in the notes, the source it rests on, and how it was checked. "Read" means Claude, the AI model
+helping to make this film, found the claim in the source itself, on 1 or 2 November 2026. "Computed" means worked out
+from the story's own numbers. No claim rests on general knowledge alone, and every source's link is checked to make sure
+it still answers.
 
 ## [Campbell and the pulps](history.md)
 
@@ -29,7 +28,7 @@ means arithmetic from the story's own text. No claim now rests on general knowle
 | Morey: Leopoldo Morey y Peña, born Lima 24 October 1889, LSU engineering, newspaper art, hired 1929 to replace Frank R. Paul; 71 *Amazing* covers, 12 *Quarterly*; died 1965 | sfe-morey | read. (Some sources give 1899; SFE says 1889.) |
 | March 1961 "Classic Reprint"; Cele Goldsmith editor 1958–1965 | wp-amazing, archive-1961 | read |
 | Gutenberg transcribed the March 1961 reprint; no renewal found | gutenberg (transcriber's note) | read |
-| *Amazing*'s renewals begin with later issues | penn-renewals | read in Phase 0 |
+| *Amazing*'s renewals begin with later issues | penn-renewals | read |
 
 ## [The science of 1932](science.md)
 
@@ -78,7 +77,7 @@ means arithmetic from the story's own text. No claim now rests on general knowle
 | "Twilight": humans have lost their curiosity and drive; all work done by machines | wp-twilight | read |
 | Bostrom, *Deep Utopia: Life and Meaning in a Solved World* (2024): what an ideal life would be after superintelligence, when machines outdo people at work and leisure | wp-nick-bostrom | read |
 
-## The film's margin notes, foreword and afterword (Round 7)
+## The film's margin notes, foreword and afterword
 
 Claims these add beyond the notes above ([the margin notes](annotations.yaml), [the foreword](foreword.md) and
 [the afterword](afterword.md)).

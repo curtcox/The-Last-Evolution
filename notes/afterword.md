@@ -56,7 +56,7 @@ stale. What it asks is the question Roal answers and F-2 hands back: if the heir
 
 *Amazing* reprinted the story in March 1961, and that's the text Project Gutenberg transcribed
 ([eBook #27462][gutenberg]). Setting it beside the 1932 pages turned up a 24-word clause and two negatives lost in 1961,
-and a dozen smaller slips. The film reads the 1932 readings, and [the Read page](https://curtcox.github.io/The-Last-Evolution/read/) marks each one. Neither
+and thirteen smaller slips. The film reads the 1932 readings, and [the Read page](https://curtcox.github.io/The-Last-Evolution/read/) marks each one. Neither
 printing's copyright was renewed, so the story and Morey's picture are free for anyone to use in the US
 ([first periodical renewals][penn-renewals]).
 

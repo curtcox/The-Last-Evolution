@@ -101,7 +101,8 @@ machines do, is still fiction.
 
 The machines' first weapon is "a highly effective induction-heat ray developed for furnaces". Induction furnaces, which
 heat metal by alternating magnetic fields, were new industrial machines in 1932. Edwin Northrup's high-frequency furnace
-reached 3,600 degrees in 1931 ([Edwin Fitch Northrup][wp-northrup]). Turning one into a beam is Campbell's step.
+reached 3,600 degrees in 1931; the source doesn't say on which scale ([Edwin Fitch Northrup][wp-northrup]). Turning one
+into a beam is Campbell's step.
 
 ## The green beams
 *p024, p045 · chapters 2–4*

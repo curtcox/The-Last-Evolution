@@ -33,9 +33,12 @@ main{max-width:1240px} .read{max-width:38em;margin:0 auto} .read h3{font:1.25em/
 ol.pins{padding-left:1.4em} ol.pins li{margin:.25em 0} .at{cursor:pointer;color:var(--accent);margin-right:.5em;font-variant-numeric:tabular-nums;text-decoration:none}
 ol.pins .x{cursor:pointer;color:var(--ink2);margin-left:.5em} .notesbar{display:flex;gap:.5em;align-items:center} .t{color:var(--ink2);font-size:.85em}
 .index h3{margin:1.2em 0 .3em} .index .note{opacity:1}
-</style></head><body><main>
-<p class="kicker"><a href="../../">The Last Evolution</a> · <a href="../">Review</a> · Round 7</p><h1>The Last Evolution, annotated</h1>
+</style></head><body>
+<header class="mast"><a href="../../" class="name">The Last Evolution</a>
+<nav><a href="../../watch/">Watch</a><a href="../../read/">Read</a><a href="../../notes/">Notes</a><a href="../../about/">About</a><a href="../../review/">Review</a><a href="https://github.com/curtcox/The-Last-Evolution">Source</a></nav></header>
+<main>
 <div class="read">
+<p class="kicker">Watch: the film in draft, with notes</p><h1>The Last Evolution, annotated</h1>
 <p class="draft"><b>A draft.</b> Every word of the story is here, voiced, but the paintings are still rough: the finished
 film will be painted again in full, and the acting is being redone chapter by chapter (<a href="../quality/">where it
 stands</a>). The notes were reviewed in <a href="https://github.com/curtcox/The-Last-Evolution/blob/main/review/round7.md">Round 7</a>; if you spot a mistake,
@@ -62,8 +65,8 @@ stands</a>). The notes were reviewed in <a href="https://github.com/curtcox/The-
 <div class="film" id="film"><div>
 <div class="player"><video id="v" controls preload="metadata" playsinline aria-label="the film"></video>
 <div class="bar"><div class="ticks"><span style="left:1.69%"></span><span style="left:8.18%"></span><span style="left:17.31%"></span><span style="left:31.51%"></span><span style="left:40.75%"></span><span style="left:56.62%"></span><span style="left:64.84%"></span><span style="left:72.60%"></span><span style="left:81.88%"></span><span style="left:90.90%"></span><span style="left:95.55%"></span><i data-k="text" style="left:0.00%"></i><i data-k="who" style="left:0.79%"></i><i data-k="words" style="left:1.57%"></i><i data-k="science" style="left:2.45%"></i><i data-k="heirs" style="left:3.37%"></i><i data-k="science" style="left:5.02%"></i><i data-k="making" style="left:6.33%"></i><i data-k="words" style="left:9.06%"></i><i data-k="science" style="left:9.91%"></i><i data-k="text" style="left:12.85%"></i><i data-k="text" style="left:13.48%"></i><i data-k="science" style="left:15.98%"></i><i data-k="making" style="left:16.58%"></i><i data-k="who" style="left:17.88%"></i><i data-k="heirs" style="left:19.02%"></i><i data-k="science" style="left:19.62%"></i><i data-k="making" style="left:20.44%"></i><i data-k="science" style="left:23.54%"></i><i data-k="science" style="left:27.97%"></i><i data-k="science" style="left:30.06%"></i><i data-k="who" style="left:32.16%"></i><i data-k="science" style="left:33.79%"></i><i data-k="making" style="left:35.93%"></i><i data-k="heirs" style="left:38.73%"></i><i data-k="science" style="left:42.40%"></i><i data-k="science" style="left:44.32%"></i><i data-k="making" style="left:47.31%"></i><i data-k="text" style="left:48.82%"></i><i data-k="heirs" style="left:50.26%"></i><i data-k="who" style="left:51.90%"></i><i data-k="text" style="left:54.19%"></i><i data-k="science" style="left:58.70%"></i><i data-k="making" style="left:59.87%"></i><i data-k="words" style="left:64.05%"></i><i data-k="heirs" style="left:66.00%"></i><i data-k="making" style="left:66.59%"></i><i data-k="heirs" style="left:73.92%"></i><i data-k="making" style="left:74.69%"></i><i data-k="heirs" style="left:76.34%"></i><i data-k="heirs" style="left:77.36%"></i><i data-k="making" style="left:80.18%"></i><i data-k="heirs" style="left:85.68%"></i><i data-k="heirs" style="left:90.44%"></i><i data-k="making" style="left:94.76%"></i><i data-k="science" style="left:95.92%"></i><i data-k="heirs" style="left:97.36%"></i><i data-k="who" style="left:98.07%"></i><i data-k="making" style="left:98.69%"></i><i data-k="heirs" style="left:99.47%"></i></div>
-<input id="scrub" type="range" min="0" max="3423.0" step="0.1" value="0" aria-label="the whole film"></div>
-<div class="time"><span id="tnow">0:00</span><span>the whole film, 57:03</span></div>
+<input id="scrub" type="range" min="0" max="3423.0" step="5" value="0" aria-label="the whole film" aria-valuetext="0:00 of 57:03"></div>
+<div class="time"><span id="tnow">0:00</span><span>of the whole film, 57:03 (the player's own clock counts the chapter)</span></div>
 <p class="now" id="now"></p>
 <div class="card" id="card"></div><p class="sr" id="say" aria-live="polite"></p>
 <div class="kinds" id="kinds"><span class="t">Notes:</span><button data-k="who" aria-pressed="true">Who's who</button><button data-k="words" aria-pressed="true">Words</button><button data-k="science" aria-pressed="true">1932 science</button><button data-k="text" aria-pressed="true">The text</button><button data-k="heirs" aria-pressed="true">Heirs</button><button data-k="making" aria-pressed="true">The making</button><button id="none" aria-pressed="false">None</button></div>
@@ -86,7 +89,7 @@ stands</a>). The notes were reviewed in <a href="https://github.com/curtcox/The-
 <p>There's a third worry, older and quieter, and it was Campbell's own: not that the machines fail us, but that they succeed. In 1930 John Maynard Keynes guessed that &quot;the economic problem may be solved&quot; within a hundred years. Then, he wrote, man would face &quot;his real, his permanent problem&quot;: how to use his freedom. He thought &quot;with dread&quot; of how the ordinary man would adjust (<a href="https://www.marxists.org/reference/subject/economics/keynes/1930/our-grandchildren.htm">Keynes</a>). Campbell's Stuart stories gave the same dread a shape: in &quot;Twilight&quot; and the three Machine stories of 1935, machines provide everything, and mankind loses its curiosity and drive (<a href="https://en.wikipedia.org/wiki/Twilight_(short_story)">Twilight</a>, <a href="https://sf-encyclopedia.com/entry/campbell_john_w_jr">SFE</a>, <a href="https://www.blackgate.com/?p=226361">Black Gate</a>). In 2024 Nick Bostrom's <i>Deep Utopia</i> took up the question for an age of AI: if machines do everything better, what makes a life worth living (<a href="https://en.wikipedia.org/wiki/Nick_Bostrom">Nick Bostrom</a>)?</p>
 <p>Campbell's story fits none of these neatly. Its machines are loyal, they grieve, and they fight for their makers, and mankind is killed from outside. Even its utopia, the idle world of its first chapter, ends by invasion before it can go stale. What it asks is the question Roal answers and F-2 hands back: if the heirs are better, should we mind?</p>
 <h3 id="what-became-of-the-text">What became of the text</h3>
-<p><i>Amazing</i> reprinted the story in March 1961, and that's the text Project Gutenberg transcribed (<a href="https://www.gutenberg.org/ebooks/27462">eBook #27462</a>). Setting it beside the 1932 pages turned up a 24-word clause and two negatives lost in 1961, and a dozen smaller slips. The film reads the 1932 readings, and <a href="../../read/">the Read page</a> marks each one. Neither printing's copyright was renewed, so the story and Morey's picture are free for anyone to use in the US (<a href="https://onlinebooks.library.upenn.edu/cce/firstperiod.html">first periodical renewals</a>).</p>
+<p><i>Amazing</i> reprinted the story in March 1961, and that's the text Project Gutenberg transcribed (<a href="https://www.gutenberg.org/ebooks/27462">eBook #27462</a>). Setting it beside the 1932 pages turned up a 24-word clause and two negatives lost in 1961, and thirteen smaller slips. The film reads the 1932 readings, and <a href="../../read/">the Read page</a> marks each one. Neither printing's copyright was renewed, so the story and Morey's picture are free for anyone to use in the US (<a href="https://onlinebooks.library.upenn.edu/cce/firstperiod.html">first periodical renewals</a>).</p>
 <h3 id="where-next">Where next</h3>
 <ul><li><a href="../../read/">Read the story</a>, with the footnotes and Leo Morey's illustration.</li><li>The longer notes: <a href="../../notes/science/">the science of 1932</a>, <a href="../../notes/succession/">machines as heirs</a>, and <a href="../../notes/history/">Campbell and the pulps</a>.</li><li><a href="../../review/">How it was made</a>, round by round.</li></ul>
 <h2 id="all">All the notes</h2><div class="index">
@@ -172,7 +175,8 @@ function go(T, andPlay = true) {
 }
 v.addEventListener('loadedmetadata', () => { if (want) { v.currentTime = want.t; if (want.play) play(); want = null; } });
 v.addEventListener('ended', () => { if (cur + 1 < CH.length) go(CH[cur + 1].at + .01); else document.getElementById('afterword').scrollIntoView({ behavior: 'smooth' }); });
-scrub.addEventListener('input', () => { scrubbing = true; document.getElementById('tnow').textContent = hms(+scrub.value); });
+const at = x => { document.getElementById('tnow').textContent = hms(x); scrub.setAttribute('aria-valuetext', hms(x) + ' of ' + hms(TOTAL)); };
+scrub.addEventListener('input', () => { scrubbing = true; at(+scrub.value); });
 scrub.addEventListener('change', () => { scrubbing = false; go(+scrub.value); });
 // which kinds are shown, remembered in this browser
 let shown; try { shown = new Set(JSON.parse(localStorage.getItem(SHOWN))); } catch (e) {}
@@ -208,7 +212,7 @@ function margins(T) {
 let chOn = -1;
 function tick() {
   const c = CH[cur], t = v.currentTime, T = c.at + t;
-  if (!scrubbing) { scrub.value = T; document.getElementById('tnow').textContent = hms(T); }
+  if (!scrubbing) { scrub.value = T; at(T); }
   const L = c.lines.find(l => t >= l.t0 - .05 && t < l.t1 + .3);
   const wi = L ? Math.max(0, L.words.findLastIndex(w => w[1] <= t)) : 0, a = Math.max(0, wi - 14), win = cur + ':' + (L ? L.t0 + ':' + a : '');
   if (win !== now.dataset.win) { now.dataset.win = win; now.innerHTML = '<span class="chnow">' + c.n + ' · ' + c.title.replace(/[<&]/g, '') + '</span>' + (L && L.who ? '<span class="who">' + L.who.replace(/[<&]/g, '') + ':</span> ' : '') + (!L ? '' : (a ? '… ' : '') + L.words.slice(a, a + 34).map(w => '<span class="w" data-t="' + w[1] + '">' + w[0].replace(/[<&]/g, '') + '</span>').join(' ') + (a + 34 < L.words.length ? ' …' : '')); }
@@ -257,4 +261,7 @@ document.getElementById('copy').onclick = async () => {
 document.getElementById('clear').onclick = () => { if (pins.length && confirm('Remove all ' + pins.length + ' notes?')) { pins = []; save(pins); show(); } };
 show();
 </script>
-</main></body></html>
+</main>
+<footer><p>A story from 1932, read in full. Text in the public domain in the US; this site's code is MIT.
+<a href="https://github.com/curtcox/The-Last-Evolution">Source on GitHub</a>.</p></footer>
+</body></html>

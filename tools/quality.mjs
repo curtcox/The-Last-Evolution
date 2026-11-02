@@ -207,7 +207,7 @@ async function evaluate({ slow = [] } = {}) {
   const curt = items.filter(i => i.state === 'curt');
   const card = {
     summary: Object.fromEntries(['pass', 'stale', 'open', 'curt', 'later'].map(s => [s, items.filter(i => i.state === s).length])),
-    satisfied, checks: { ...Object.fromEntries(Object.entries(checks).map(([n, c]) => [n, { state: c.ok ? 'pass' : 'fail', detail: c.detail }])), ...slowState },
+    satisfied, next: queue.filter(q => q.kind === 'item').slice(0, 3).map(q => q.title), checks: { ...Object.fromEntries(Object.entries(checks).map(([n, c]) => [n, { state: c.ok ? 'pass' : 'fail', detail: c.detail }])), ...slowState },
     curt: curt.map(i => ({ id: i.id, title: i.title, ask: i.note || i.ask || '' })),
     items: items.filter(i => i.area !== 'gate').map(i => ({ id: i.id, area: i.area, title: i.title, state: i.state, note: i.note || '' })),
     fresh: status.fresh.slice(-3).map(({ when, found, note }) => ({ when, found, note })),

@@ -106,9 +106,12 @@ main{max-width:1240px} .read{max-width:38em;margin:0 auto} .read h3{font:1.25em/
 ol.pins{padding-left:1.4em} ol.pins li{margin:.25em 0} .at{cursor:pointer;color:var(--accent);margin-right:.5em;font-variant-numeric:tabular-nums;text-decoration:none}
 ol.pins .x{cursor:pointer;color:var(--ink2);margin-left:.5em} .notesbar{display:flex;gap:.5em;align-items:center} .t{color:var(--ink2);font-size:.85em}
 .index h3{margin:1.2em 0 .3em} .index .note{opacity:1}
-</style></head><body><main>
-<p class="kicker"><a href="${UP}">The Last Evolution</a> · <a href="../">Review</a> · Round 7</p><h1>The Last Evolution, annotated</h1>
+</style></head><body>
+<header class="mast"><a href="${UP}" class="name">The Last Evolution</a>
+<nav><a href="${UP}watch/">Watch</a><a href="${UP}read/">Read</a><a href="${UP}notes/">Notes</a><a href="${UP}about/">About</a><a href="${UP}review/">Review</a><a href="${REPO}">Source</a></nav></header>
+<main>
 <div class="read">
+<p class="kicker">Watch: the film in draft, with notes</p><h1>The Last Evolution, annotated</h1>
 <p class="draft"><b>A draft.</b> Every word of the story is here, voiced, but the paintings are still rough: the finished
 film will be painted again in full, and the acting is being redone chapter by chapter (<a href="../quality/">where it
 stands</a>). The notes were reviewed in <a href="${REPO}/blob/main/review/round7.md">Round 7</a>; if you spot a mistake,
@@ -121,8 +124,8 @@ ${fore.html}
 <div class="film" id="film"><div>
 <div class="player"><video id="v" controls preload="metadata" playsinline aria-label="the film"></video>
 <div class="bar"><div class="ticks">${chapters.slice(1).map(c => `<span style="left:${(100 * c.at / total).toFixed(2)}%"></span>`).join('')}${timed.map(x => `<i data-k="${x.kind}" style="left:${(100 * x.T / total).toFixed(2)}%"></i>`).join('')}</div>
-<input id="scrub" type="range" min="0" max="${total.toFixed(1)}" step="0.1" value="0" aria-label="the whole film"></div>
-<div class="time"><span id="tnow">0:00</span><span>the whole film, ${hms(total)}</span></div>
+<input id="scrub" type="range" min="0" max="${total.toFixed(1)}" step="5" value="0" aria-label="the whole film" aria-valuetext="0:00 of ${hms(total)}"></div>
+<div class="time"><span id="tnow">0:00</span><span>of the whole film, ${hms(total)} (the player's own clock counts the chapter)</span></div>
 <p class="now" id="now"></p>
 <div class="card" id="card"></div><p class="sr" id="say" aria-live="polite"></p>
 <div class="kinds" id="kinds"><span class="t">Notes:</span>${Object.entries(kinds).map(([k, label]) => `<button data-k="${k}" aria-pressed="true">${esc(label)}</button>`).join('')}<button id="none" aria-pressed="false">None</button></div>
@@ -169,7 +172,8 @@ function go(T, andPlay = true) {
 }
 v.addEventListener('loadedmetadata', () => { if (want) { v.currentTime = want.t; if (want.play) play(); want = null; } });
 v.addEventListener('ended', () => { if (cur + 1 < CH.length) go(CH[cur + 1].at + .01); else document.getElementById('afterword').scrollIntoView({ behavior: 'smooth' }); });
-scrub.addEventListener('input', () => { scrubbing = true; document.getElementById('tnow').textContent = hms(+scrub.value); });
+const at = x => { document.getElementById('tnow').textContent = hms(x); scrub.setAttribute('aria-valuetext', hms(x) + ' of ' + hms(TOTAL)); };
+scrub.addEventListener('input', () => { scrubbing = true; at(+scrub.value); });
 scrub.addEventListener('change', () => { scrubbing = false; go(+scrub.value); });
 // which kinds are shown, remembered in this browser
 let shown; try { shown = new Set(JSON.parse(localStorage.getItem(SHOWN))); } catch (e) {}
@@ -205,7 +209,7 @@ function margins(T) {
 let chOn = -1;
 function tick() {
   const c = CH[cur], t = v.currentTime, T = c.at + t;
-  if (!scrubbing) { scrub.value = T; document.getElementById('tnow').textContent = hms(T); }
+  if (!scrubbing) { scrub.value = T; at(T); }
   const L = c.lines.find(l => t >= l.t0 - .05 && t < l.t1 + .3);
   const wi = L ? Math.max(0, L.words.findLastIndex(w => w[1] <= t)) : 0, a = Math.max(0, wi - 14), win = cur + ':' + (L ? L.t0 + ':' + a : '');
   if (win !== now.dataset.win) { now.dataset.win = win; now.innerHTML = '<span class="chnow">' + c.n + ' · ' + c.title.replace(/[<&]/g, '') + '</span>' + (L && L.who ? '<span class="who">' + L.who.replace(/[<&]/g, '') + ':</span> ' : '') + (!L ? '' : (a ? '… ' : '') + L.words.slice(a, a + 34).map(w => '<span class="w" data-t="' + w[1] + '">' + w[0].replace(/[<&]/g, '') + '</span>').join(' ') + (a + 34 < L.words.length ? ' …' : '')); }
@@ -254,6 +258,9 @@ document.getElementById('copy').onclick = async () => {
 document.getElementById('clear').onclick = () => { if (pins.length && confirm('Remove all ' + pins.length + ' notes?')) { pins = []; save(pins); show(); } };
 show();
 </script>
-</main></body></html>`);
+</main>
+<footer><p>A story from 1932, read in full. Text in the public domain in the US; this site's code is MIT.
+<a href="${REPO}">Source on GitHub</a>.</p></footer>
+</body></html>`);
 console.log(`${OUT}/annotated.html: ${timed.length} notes over ${hms(total)}${close.length ? `, ${close.length} closer than ${GAP} s (notes/reports/annotations.md)` : ''}`);
 publishReview('round7');

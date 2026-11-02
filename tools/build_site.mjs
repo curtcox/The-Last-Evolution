@@ -77,7 +77,7 @@ const SCANS = `${REPO}/blob/main/assets/ref/1932`;
 const by = k => blocks.find(b => b.kind === k).text;
 
 const home = page(0, 'The Last Evolution', `
-<p class="kicker">${esc(by('masthead'))}</p>
+<p class="kicker">From <i>Amazing Stories</i>, August 1932</p>
 <h1>The Last Evolution</h1>
 <p class="byline">${esc(by('byline'))}</p>
 <p class="lede">A machine's memoir of the war in which mankind died and its machines inherited the Solar System: John W.
@@ -139,7 +139,7 @@ reprinted there in March 1961. The text comes from <a href="https://www.gutenber
 eBook #27462</a>, whose transcribers found no evidence that its US copyright was renewed, so it is in the public domain
 in the United States. The repository keeps the Gutenberg file unmodified, with its licence and a checksum.</p>
 <p>Gutenberg transcribed the 1961 reprint, whose typesetter lost a 24-word clause and two negatives that are in the 1932
-first printing, and made a dozen smaller slips: dropped words, stray ones, a wrong digit. This site and the film restore
+first printing, and made thirteen smaller slips: dropped words, stray ones, a wrong digit. This site and the film restore
 those ${emendations.length} readings from
 the 1932 scan, and the <a href="../read/#restored">Read page</a> marks each one
 (<a href="${REPO}/blob/main/text/comparison_1932.md">the comparison</a>).</p>
@@ -242,11 +242,13 @@ sup a { text-decoration: none; color: var(--accent); }
 .prose blockquote { margin: 1em 1.5em; font-style: italic; color: var(--ink2); }
 .prose code { font-size: .85em; }
 .where { font-size: .85em; color: var(--ink2); margin-top: -.2em; }
-.tbl { overflow-x: auto; margin: 1em 0; }
+.tbl { overflow-x: auto; margin: 1em 0; position: relative; }   /* relative: keeps the .sr labels inside it */
 .tbl table { border-collapse: collapse; font-size: .8em; line-height: 1.4; min-width: 30em; }
 .tbl th, .tbl td { border-bottom: 1px solid var(--rule); padding: .35em .5em; text-align: left; vertical-align: top; }
 .tbl th { font-variant: small-caps; letter-spacing: .04em; }
-@media (max-width: 30em) { .tbl table { min-width: 0; } .tbl td { overflow-wrap: anywhere; } }   /* a phone gets every column, wrapped, not a sideways scroll */
+@media (max-width: 30em) { .tbl table { min-width: 0; } .tbl td { overflow-wrap: anywhere; } .tbl th, .tbl td { padding: .35em .25em; } .tbl th { letter-spacing: 0; } }   /* a phone gets every column, wrapped, not a sideways scroll */
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.makers { margin-top: 2em; } .makers summary { cursor: pointer; }
 .q-pass { color: var(--accent); } .q-stale, .q-curt, .q-fail { color: #B4442C; font-weight: bold; } .q-open, .q-later { color: var(--ink2); }
 .src, footer { font-size: .85em; color: var(--ink2); }
 .next { margin-top: 2em; }
@@ -268,7 +270,7 @@ const review = page(1, 'Review · The Last Evolution', `
 <h1>Review</h1>
 <p class="lede">The film is made in rounds. Each round ends at a review gate: a decision sheet of questions, each with a
 recommendation, and where the choice is by ear or eye, a page to listen or look and pick on. Nothing goes ahead until
-both of us are satisfied (<a href="${REPO}/blob/main/PLAN.md">the plan</a>, §2); every decision is logged in
+both Curt Cox, who is making it, and Claude, the AI model helping, are satisfied (<a href="${REPO}/blob/main/PLAN.md">the plan</a>, §2); every decision is logged in
 <a href="${REPO}/blob/main/DECISIONS.md">DECISIONS.md</a>.</p>
 ${card ? '<p><a href="quality/"><b>Where it stands</b></a>: every item of the film and the site against the quality rubric.</p>' : ''}
 ${rounds.slice().reverse().map(r => `<div class="round"><h2>${esc(r.title)}</h2>
@@ -277,33 +279,55 @@ ${r.pages.length ? `<ul>${r.pages.map(p => `<li><a href="${p.href}">${esc(p.titl
 `);
 
 // the scorecard's page
-const MARK = { pass: ['✓', 'passed'], fail: ['✗', 'fails'], stale: ['↻', 'changed since it passed'], open: ['·', 'open'], curt: ['?', "Curt's call"], later: ['–', 'later'] };
-const mark = i => i ? `<span class="q-${i.state}" title="${MARK[i.state][1]}${i.note ? ': ' + esc(i.note).replace(/"/g, '&quot;') : ''}">${MARK[i.state][0]}</span>` : '';
-const grid = (rows, cols, cell) => `<div class="tbl"><table><thead><tr><th></th>${cols.map(c => `<th>${c}</th>`).join('')}</tr></thead><tbody>${
+const MARK = { pass: ['✓', 'done'], fail: ['✗', 'failing'], stale: ['↻', 'changed: to check again'], open: ['·', 'not yet'], curt: ['?', 'waiting on Curt'], later: ['–', 'later'] };
+// each mark says its state in words too, for touch and for screen readers; the judgment's note is in the makers' list
+const mark = i => i ? `<span class="q-${i.state}" aria-hidden="true">${MARK[i.state][0]}</span><span class="sr">${MARK[i.state][1]}</span>` : '';
+const grid = (rows, cols, cell, head = cols, corner = '') => `<div class="tbl"><table><thead><tr><th>${corner}</th>${head.map(c => `<th>${c}</th>`).join('')}</tr></thead><tbody>${
   rows.map(([label, key]) => `<tr><th>${label}</th>${cols.map(c => `<td>${mark(cell(key, c))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
 const cap = s => s[0].toUpperCase() + s.slice(1);
 const quality = card && (() => {
-  const by = Object.fromEntries(card.items.map(i => [i.id, i])), s = card.summary;
+  const by = Object.fromEntries(card.items.map(i => [i.id, i]));
   const film = ['acting', 'picture', 'sync', 'sound', 'story', 'draft'], site = [...new Set(card.items.filter(i => i.area === 'site').map(i => i.id.split('.')[1]))];
-  const other = card.items.filter(i => ['finding', 'voice', 'work', 'later'].includes(i.area));
-  return page(2, 'Quality: The Last Evolution', `
-<p class="kicker"><a href="../">Review</a></p>
+  const done = area => { const L = card.items.filter(i => i.area === area); return [L.filter(i => i.state === 'pass').length, L.length]; };
+  const [fd, fn] = done('film'), [sd, sn] = done('site');
+  const curtIds = new Set(card.curt.map(c => c.id)), other = card.items.filter(i => ['finding', 'voice', 'work', 'later'].includes(i.area) && !curtIds.has(i.id));
+  const judged = card.items.filter(i => i.note && ['film', 'site'].includes(i.area) && !/^ch\d\d\.draft$/.test(i.id));
+  const checksOk = Object.values(card.checks).filter(c => c.state === 'pass').length;
+  // what's next, with a shared "Chapter 5:" said once
+  const N = card.next || [], pre = N.length && N.every(t => t.split(': ')[0] === N[0].split(': ')[0]) ? N[0].split(': ')[0] : null;
+  const next = !N.length ? '' : pre ? `${pre}: ${N.map(t => t.split(': ').slice(1).join(': ')).join(', ')}` : N.join('; ');
+  return page(2, 'Where it stands: The Last Evolution', `
+<p class="kicker"><a href="../">How it's made</a></p>
 <h1>Where it stands</h1>
-<p class="lede">The film and the site are worked on until both of us are satisfied. Claude judges every item below against
-<a href="${REPO}/blob/main/quality/rubric.yaml">the rubric</a> and keeps going until none of its items is open; a judgment
-goes stale when what was judged changes. <a href="${REPO}/blob/main/QUALITY.md">How the loop works</a>.</p>
-<p>${s.pass} passed, ${s.stale} changed since passing, ${s.open} open, ${s.curt} waiting on Curt, ${s.later} for later.${card.satisfied ? ' <b>Claude is satisfied.</b>' : ''}</p>
-${card.curt.length ? `<h2>Curt's calls</h2><ul>${card.curt.map(c => `<li><b>${esc(cap(c.title))}.</b> ${esc(c.ask)}</li>`).join('')}</ul>` : ''}
-<h2>The film</h2>
-${grid(Array.from({ length: 12 }, (_, n) => [`Chapter ${n}`, String(n).padStart(2, '0')]), film, (nn, c) => by[`ch${nn}.${c}`])}
-<h2>The site</h2>
-${grid(site.map(k => [esc(by[`site.${k}.content`].title.split(':')[0]), k]), ['content', 'look'], (k, c) => by[`site.${k}.${c}`])}
-${other.length ? `<h2>Other items</h2><ul>${other.map(i => `<li>${mark(i)} ${esc(cap(i.title))}${i.note ? ` <span class="src">${esc(i.note)}</span>` : ''}</li>`).join('')}</ul>` : ''}
-<h2>The checks</h2>
-<ul>${Object.entries(card.checks).map(([n, c]) => `<li>${mark({ state: ['pass', 'fail', 'stale'].includes(c.state) ? c.state : 'open', note: c.detail })} <b>${n}</b>: ${c.state}${c.detail ? ` <span class="src">${esc(c.detail)}</span>` : ''}</li>`).join('')}</ul>
-${card.fresh.length ? `<h2>Fresh-eyes rounds</h2><ul>${card.fresh.map(f => `<li>${f.when}: ${f.found} found. ${esc(f.note)}</li>`).join('')}</ul>` : ''}
+<p class="lede">The whole film is drafted. Now each chapter is being acted and painted to its finished designs, and every
+chapter and every page of this site is checked against a written bar before it's called done.</p>
+<ul>
+<li><b>The film:</b> ${fd} of its ${fn} checks done (six for each of its twelve chapters).</li>
+<li><b>This site:</b> ${sd} of its ${sn} checks done (what each page says, and how it looks and works).</li>
+${next ? `<li><b>Next:</b> ${esc(next)}.</li>` : ''}
+</ul>
+${card.satisfied ? '<p><b>Everything is done.</b></p>' : ''}
+<h2>The film, chapter by chapter</h2>
+<p>Each chapter is checked for its <b>acting</b> (do the figures act their lines?), its <b>picture</b> (does each shot show
+what's said, and read on a phone?), its <b>sync</b> (do things happen on their words?), its <b>sound</b> (is every word
+clear?), whether it works as a <b>story</b> for someone new to it, and whether its <b>draft</b> is up to date and at the
+right loudness.</p>
+${grid(Array.from({ length: 12 }, (_, n) => [String(n), String(n).padStart(2, '0')]), film, (nn, c) => by[`ch${nn}.${c}`])}
+<h2>This site</h2>
+${grid(site.map(k => [esc(by[`site.${k}.content`].title.split(':')[0]), k]), ['content', 'look'], (k, c) => by[`site.${k}.${c}`], ['what it says', 'how it looks'])}
 <p class="src">${Object.values(MARK).map(([m, t]) => `${m} ${t}`).join(' · ')}</p>
-`, { description: 'Where the film and the site stand against the quality rubric: every item, its judgment, and the checks.' });
+<details class="makers"><summary><b>For the makers</b>: Curt's questions, the checks, and every judgment with its reason</summary>
+<p>Claude judges each item against <a href="${REPO}/blob/main/quality/rubric.yaml">the rubric</a> and keeps working until
+none of its items is open; a judgment goes stale when what was judged changes (<a href="${REPO}/blob/main/QUALITY.md">how
+the loop works</a>).</p>
+${card.curt.length ? `<h3>Curt's calls</h3><ul>${card.curt.map(c => `<li><b>${esc(cap(c.title))}.</b> ${esc(c.ask)}</li>`).join('')}</ul>` : ''}
+${other.length ? `<h3>Other items</h3><ul>${other.map(i => `<li>${mark(i)} ${esc(cap(i.title))}${i.note ? ` <span class="src">${esc(i.note)}</span>` : ''}</li>`).join('')}</ul>` : ''}
+<h3>The checks: ${checksOk} of ${Object.keys(card.checks).length} pass</h3>
+<ul>${Object.entries(card.checks).map(([n, c]) => `<li>${mark({ state: ['pass', 'fail', 'stale'].includes(c.state) ? c.state : 'open' })} <b>${n}</b>: ${c.state}${c.detail ? ` <span class="src">${esc(c.detail)}</span>` : ''}</li>`).join('')}</ul>
+${card.fresh.length ? `<h3>Fresh-eyes rounds</h3><ul>${card.fresh.map(f => `<li>${f.when}: ${f.found} found. ${esc(f.note)}</li>`).join('')}</ul>` : ''}
+${judged.length ? `<h3>Every judgment</h3><ul>${judged.map(i => `<li>${mark(i)} <b>${esc(cap(i.title))}</b> <span class="src">${esc(i.note)}</span></li>`).join('')}</ul>` : ''}
+</details>
+`, { description: 'Where the film and its site stand: every chapter and page checked against a written bar before it is called done.' });
 })();
 
 rmSync(OUT, { recursive: true, force: true });
