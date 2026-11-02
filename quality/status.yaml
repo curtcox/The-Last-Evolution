@@ -111,9 +111,9 @@ items:
     when: 2026-11-02 23:20
   work.title:
     state: pass
-    note: "Chapter 0 opens on it (0-12 s): the 1961 masthead 'A Classic Reprint from AMAZING STORIES, August, 1932' over a double rule, THE LAST EVOLUTION in spaced capitals, 'By JOHN W. CAMPBELL, Jr.', on the pulp paper, set in as the voice begins. Legible at 1920 and at a phone held sideways; held upright the masthead line is small, but the title and byline read."
-    at: d9238021746c
-    when: 2026-11-02 23:21
+    note: "Re-judged: since the last pass ch00.js changed only in memories() (Roal and Trest side-on, 26-34 s); the title page (0-14 s) and pulp.js are unchanged, so the masthead, title and byline stand as judged."
+    at: bf568a5aaf8c
+    when: 2026-11-02 23:37
   find.side-tunic:
     state: pass
     note: "DES.personSide now gives everyone but Roal a tunic to mid-thigh over two legs, the far one a little back when standing, as the front view and model sheets have. Checked side-on in ch00 (the memory) and ch08 (Trest talking): tunic, belt, legs and boots read; Roal keeps his robe."
@@ -133,4 +133,4 @@ items:
     title: Each full re-render adds about 220 MB of draft video to the repository
     when: 2026-11-02 23:36
 fresh: []
-since_fresh: 26
+since_fresh: 27

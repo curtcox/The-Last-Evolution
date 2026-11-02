@@ -7,6 +7,9 @@
 //   npm run quality -- later ID --note="…"       not yet: waits on an earlier phase
 //   npm run quality -- fresh --found=N --note="…"   logs a fresh-eyes round
 //   npm run quality -- loop on [--cap=40] | loop off   the Stop hook's flag (.quality-loop, not committed)
+//   npm run quality -- wait --pid=N --note="…"   background work the queue waits on (a render): while process N is
+//                                                alive the hook lets the turn end, rather than hand out items that
+//                                                can't move (and count them stuck)
 //   npm run quality -- --hook                    the Stop hook (.claude/settings.json): keeps the turn going while one of
 //                                                Claude's items is open, handing over the top one
 // The items are quality/rubric.yaml's; the judgments are kept in quality/status.yaml, each with a fingerprint of what was
@@ -21,7 +24,7 @@ import { readYaml } from './script_lib.mjs';
 import { SITE } from './notes_md.mjs';
 
 const RUBRIC = 'quality/rubric.yaml', STATUS = 'quality/status.yaml', CARD = 'quality/scorecard.json';
-const FLAG = '.quality-loop', LOOP = 'out/quality/loop.json', SLOW = 'out/quality/checks.json', PUB = 'site/public';
+const FLAG = '.quality-loop', LOOP = 'out/quality/loop.json', WAIT = 'out/quality/wait.json', SLOW = 'out/quality/checks.json', PUB = 'site/public';
 const CAP = 10, NEAR = 9.5, EVERY = 8, STUCK = 3;
 const args = process.argv.slice(2), opt = Object.fromEntries(args.filter(a => a.startsWith('--')).map(a => { const [k, ...v] = a.slice(2).split('='); return [k, v.length ? v.join('=') : true]; }));
 const [cmd, id] = args.filter(a => !a.startsWith('--'));
@@ -258,6 +261,8 @@ function instructions(q, left) {
 async function hook() {
   if (!existsSync(FLAG)) return;
   const flag = (() => { try { return JSON.parse(readFileSync(FLAG, 'utf8')); } catch { return {}; } })();
+  const wait = readJson(WAIT, null);
+  if (wait) { try { process.kill(wait.pid, 0); return console.log(JSON.stringify({ systemMessage: `Quality loop waiting: ${wait.note}` })); } catch { rmSync(WAIT, { force: true }); } }
   const loop = readJson(LOOP, { blocks: 0 }), stop = why => { rmSync(FLAG, { force: true }); console.log(JSON.stringify({ systemMessage: `Quality loop stopped: ${why}` })); };
   let r = await evaluate();
   if (r.checks.spend.spent >= NEAR) return stop(`model spend is ${r.checks.spend.detail}; that's Curt's call.`);
@@ -285,6 +290,10 @@ else if (cmd === 'fresh') {
   const r = await evaluate();
   status.fresh.push({ when: now(), found, note: note(), state: r.whole }); status.since_fresh = 0; saveStatus();
   console.log(`fresh-eyes round logged: ${found} found`);
+} else if (cmd === 'wait') {
+  if (!(+opt.pid > 0)) { console.error('which process? --pid=N'); process.exit(1); }
+  mkdirSync('out/quality', { recursive: true }); writeFileSync(WAIT, JSON.stringify({ pid: +opt.pid, note: note(), since: now() }));
+  console.log(`waiting on process ${opt.pid}: the hook lets turns end until it exits`);
 } else if (cmd === 'loop') {
   if (id === 'on') { writeFileSync(FLAG, JSON.stringify({ cap: +opt.cap || 40, since: now() })); mkdirSync('out/quality', { recursive: true }); writeFileSync(LOOP, JSON.stringify({ blocks: 0 })); console.log(`the loop is on: the Stop hook keeps going while Claude has items open (up to ${+opt.cap || 40} turns)`); }
   else if (id === 'off') { rmSync(FLAG, { force: true }); console.log('the loop is off'); }

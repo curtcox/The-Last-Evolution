@@ -61,6 +61,10 @@ is open, the hook keeps the turn going and hands over the top item. Each pass go
 
 `npm run quality -- loop off` deletes the flag. Without it, the hook does nothing.
 
+When the next items wait on background work, such as rendering the drafts, `npm run quality -- wait --pid=N --note="…"`
+lets turns end while process N is alive. Otherwise the hook would keep handing out items that can't move yet, and the
+stuck rule would send them to Curt. Claude is woken when the work finishes.
+
 ## Keeping Claude honest
 
 - **Fresh eyes.** After every 8 passes, and again once the queue is empty, the hook asks for a fresh-eyes round:

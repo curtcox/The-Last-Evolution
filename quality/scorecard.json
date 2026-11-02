@@ -1,9 +1,9 @@
 {
  "summary": {
-  "pass": 21,
+  "pass": 23,
   "stale": 0,
-  "open": 74,
-  "curt": 7,
+  "open": 73,
+  "curt": 8,
   "later": 3
  },
  "satisfied": false,
@@ -37,7 +37,7 @@
    "detail": "refs: 53 sources, all cited, all answering; definitions written into 6 notes"
   },
   "phone": {
-   "state": "stale",
+   "state": "pass",
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
@@ -80,6 +80,11 @@
    "id": "voice.p052.1",
    "title": "Line p052.1: speech-to-text missed \"roal\"",
    "ask": "Does F-1 say 'Roal' right in 'Roal--your thoughts' (p052.1, assets/voice/p052.1-t1-4553aff14c.mp3)? Two transcribers hear something extra: ElevenLabs 'Roald', Whisper 'Rohan' (and 'Roal' only when told the name). The narrator's 'Roal' is heard as one syllable, 'Rol', as Round 1 chose. The voice pass kept this as its best take. My recommendation: listen; if it sounds like 'Roald', voice this one line again (a few credits)."
+  },
+  {
+   "id": "find.repo-size",
+   "title": "Each full re-render adds about 220 MB of draft video to the repository",
+   "ask": "The drafts are committed under site/review so Pages can serve them. The repository is 356 MB; re-rendering all twelve chapters adds about 220 MB of history each time, and GitHub warns at 1 GB, so the loop can afford two or three full cycles, not ten. My recommendation: keep committing drafts for this cycle, then move draft videos out of git (GitHub Release assets, or YouTube unlisted) so the site links them without growing the history. Which would you like?"
   }
  ],
  "items": [
@@ -221,7 +226,7 @@
    "area": "film",
    "title": "Chapter 2: the picture",
    "state": "open",
-   "note": ""
+   "note": "From the acting-pass sheet (round 6 drafts): the Outsiders are dark grey wash on a dark grey hull (92-155 s, 245-288 s) and hard to read at sheet size; raise their contrast against the interior (lighter carapace, darker hull, or rim light from the glowing plate edges)."
   },
   {
    "id": "ch02.sync",
@@ -263,7 +268,7 @@
    "area": "film",
    "title": "Chapter 3: the picture",
    "state": "open",
-   "note": ""
+   "note": "From the acting-pass sheet: through Roal's speech (376-482 s) a near-ring machine stands in front of Trest, hiding his body; move that machine or Trest so he's clear."
   },
   {
    "id": "ch03.sync",
@@ -598,8 +603,8 @@
    "id": "work.title",
    "area": "work",
    "title": "the title page",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "Re-judged: since the last pass ch00.js changed only in memories() (Roal and Trest side-on, 26-34 s); the title page (0-14 s) and pulp.js are unchanged, so the masthead, title and byline stand as judged."
   },
   {
    "id": "site.home.content",
@@ -775,6 +780,20 @@
    "title": "Line p052.1: speech-to-text missed \"roal\"",
    "state": "curt",
    "note": "Does F-1 say 'Roal' right in 'Roal--your thoughts' (p052.1, assets/voice/p052.1-t1-4553aff14c.mp3)? Two transcribers hear something extra: ElevenLabs 'Roald', Whisper 'Rohan' (and 'Roal' only when told the name). The narrator's 'Roal' is heard as one syllable, 'Rol', as Round 1 chose. The voice pass kept this as its best take. My recommendation: listen; if it sounds like 'Roald', voice this one line again (a few credits)."
+  },
+  {
+   "id": "find.side-tunic",
+   "area": "finding",
+   "title": "The side-view figure draws every person in Roal's ankle robe",
+   "state": "pass",
+   "note": "DES.personSide now gives everyone but Roal a tunic to mid-thigh over two legs, the far one a little back when standing, as the front view and model sheets have. Checked side-on in ch00 (the memory) and ch08 (Trest talking): tunic, belt, legs and boots read; Roal keeps his robe."
+  },
+  {
+   "id": "find.repo-size",
+   "area": "finding",
+   "title": "Each full re-render adds about 220 MB of draft video to the repository",
+   "state": "curt",
+   "note": "The drafts are committed under site/review so Pages can serve them. The repository is 356 MB; re-rendering all twelve chapters adds about 220 MB of history each time, and GitHub warns at 1 GB, so the loop can afford two or three full cycles, not ten. My recommendation: keep committing drafts for this cycle, then move draft videos out of git (GitHub Release assets, or YouTube unlisted) so the site links them without growing the history. Which would you like?"
   }
  ],
  "fresh": []
