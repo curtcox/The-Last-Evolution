@@ -17,13 +17,13 @@
   function world(t) {
     const st = storm(t), dw = dawn(t);
     // the sky: night, storm-black, then a red dawn
-    boilSeed('sky9'); paint(rectPts(-2000, -2600, 6000, 3600), { wash: mixCol(mixCol('#1E1A16', '#100D0B', st), mixCol('#2A1E1A', '#7A3E2E', .45), dw), washOp: 255, fill: '#2A231D', fillOp: 70, ink: null });
+    stillSeed('sky9'); paint(rectPts(-2000, -2600, 6000, 3600), { wash: mixCol(mixCol('#1E1A16', '#100D0B', st), mixCol('#2A1E1A', '#7A3E2E', .45), dw), washOp: 255, fill: '#2A231D', fillOp: 70, ink: null });
     if (st < .8) for (let i = 0; i < 100; i++) glow(-1600 + hash(i * 3.1) * 5000, -2400 + hash(i * 7.7) * 3000, 5, '#F4EEDC', .5 * (1 - st) * (1 - dw) * hash(i));
     if (dw > 0) { glow(2300, RG - 40, 300, '#FF6A3A', .7 * dw); glow(2300, RG - 40, 900, '#FF9A6A', .35 * dw); }
-    if (st > 0) for (let i = 0; i < 9; i++) { boilSeed('cloud' + i); const x = -800 + i * 450 + 200 * Math.sin(t * .3 + i), y = -1400 + 200 * hash(i); paint(ellPts(x, y, 600, 260, 20, 40), { wash: '#141110', washOp: 200 * st, fill: '#0E0B09', fillOp: 120 * st, bleed: .4, ink: null }); }
-    boilSeed('rock9'); wash([[-2000, RG + 40], [6000, RG + 40], [6000, RG + 1600], [-2000, RG + 1600]], 3, { op: 1 });
-    boilSeed('plane9'); wash(rectPts(PX - 700, RG + 30, 1400, 30), 1, { ink: true, sw: .5 });
-    for (let i = 0; i < 16; i++) { const x = -1600 + i * 300 + 60 * hash(i); if (Math.abs(x - PX) < 750) continue; boilSeed('rk9' + i); const h = 60 + 120 * hash(i * 3); wash([[x - 70, RG + 50], [x - 30, RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]], 2 + (i % 2), { ink: true, sw: .5 }); }
+    if (st > 0) for (let i = 0; i < 9; i++) { stillSeed('cloud' + i); const x = -800 + i * 450 + 200 * Math.sin(t * .3 + i), y = -1400 + 200 * hash(i); paint(ellPts(x, y, 600, 260, 20, 40), { wash: '#141110', washOp: 200 * st, fill: '#0E0B09', fillOp: 120 * st, bleed: .4, ink: null }); }
+    stillSeed('rock9'); wash([[-2000, RG + 40], [6000, RG + 40], [6000, RG + 1600], [-2000, RG + 1600]], 3, { op: 1 });
+    stillSeed('plane9'); wash(rectPts(PX - 700, RG + 30, 1400, 30), 1, { ink: true, sw: .5 });
+    for (let i = 0; i < 16; i++) { const x = -1600 + i * 300 + 60 * hash(i); if (Math.abs(x - PX) < 750) continue; stillSeed('rk9' + i); const h = 60 + 120 * hash(i * 3); wash([[x - 70, RG + 50], [x - 30, RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]], 2 + (i % 2), { ink: true, sw: .5 }); }
     // the dome at the left; it parts for the men at K
     const part = ez(t, C('p123.1:Roal and Trest appeared') - 2, C('p123.1:Roal and Trest appeared') + 2);
     if (part < 1) DES.blackDome(-300, RG + 60, 320 * (1 - part * .9), t);

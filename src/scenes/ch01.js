@@ -33,7 +33,7 @@
   const G = 980;
   const TOWERS = [[-300, .55, 3], [250, .9, 2], [700, .6, 3], [1250, 1.1, 2], [1900, .75, 3], [2450, 1.2, 2], [3000, .65, 3], [3550, 1, 2], [4100, .8, 3], [4700, 1.15, 2]];
   function towers(t) {
-    for (const [x, s, d] of TOWERS) { boilSeed('tw' + x); const r = 75 * s * .9, h = 400 * s * 1.6, dh = 90 * s;
+    for (const [x, s, d] of TOWERS) { stillSeed('tw' + x); const r = 75 * s * .9, h = 400 * s * 1.6, dh = 90 * s;
       DES.dcase(x, G - 40, r, h, dh, d, { shine: d < 3, rings: [.1, .35, .6, .85] });
       for (let k = 0; k < 6; k++) glow(x - r * .5 + (k % 3) * r * .5, G - 40 - h * (.2 + .13 * Math.floor(k / 3) + .3 * hash(x + k)), 10, '#F4EEDC', .25); }
   }
@@ -45,9 +45,9 @@
   }
   function cityWorld(t) {
     ground(D[0], 255, 'citysky', { fill: '#FFFFFF', fillOp: 40 });
-    boilSeed('hills'); wash([[-800, G - 120], [0, G - 220], [900, G - 150], [1800, G - 240], [2900, G - 160], [3900, G - 230], [5200, G - 140], [5200, G], [-800, G]], 1, { op: .6 });
-    towers(t);
-    boilSeed('plaza'); wash(rectPts(-800, G - 30, 6000, 600), 1, { ink: false, op: .9 }); inkLine([[-800, G - 30], [5200, G - 30]], .6, D[3]);
+    stillSeed('hills'); wash([[-800, G - 120], [0, G - 220], [900, G - 150], [1800, G - 240], [2900, G - 160], [3900, G - 230], [5200, G - 140], [5200, G], [-800, G]], 1, { op: .6 });
+    steady(() => towers(t));
+    stillSeed('plaza'); wash(rectPts(-800, G - 30, 6000, 600), 1, { ink: false, op: .9 }); inkLine([[-800, G - 30], [5200, G - 30]], .6, D[3]);
     for (let k = 0; k < 24; k++) inkLine([[-800 + k * 260, G - 30], [-1500 + k * 340, G + 600]], .35, D[2]);
     workers(t);
     // C: a machine hands a man a crate; he walks on with it

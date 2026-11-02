@@ -14,10 +14,10 @@
     HALFTONE = .3;
     const t0 = T0('B'), up = ez(t, C('p074.1:nearly ten thousand') - 2, T1('B'));
     camBegin(W / 2, lerp(H / 2, -150, up), 1);
-    boilSeed('dsky'); paint(rectPts(-200, -900, W + 400, 1800), { wash: mixCol(D[2], D[0], .3 + .5 * seg(t, 0, T1('B'))), washOp: 255, fill: D[1], fillOp: 80, bleed: .3, ink: null });
+    stillSeed('dsky'); paint(rectPts(-200, -900, W + 400, 1800), { wash: mixCol(D[2], D[0], .3 + .5 * seg(t, 0, T1('B'))), washOp: 255, fill: D[1], fillOp: 80, bleed: .3, ink: null });
     blooms(-900, 500, 6, 1, 73, .4); shade(-900, 700, .55, .05, '#2A231D');
-    boilSeed('mtn'); wash([[-200, 700], [200, 520], [420, 600], [700, 470], [980, 590], [1300, 500], [1600, 610], [2100, 540], [2100, 760], [-200, 760]], 2, { ink: true, sw: .5 });
-    boilSeed('rock'); wash([[-200, 720], [2100, 700], [2100, 1300], [-200, 1300]], 3, { op: 1.1 });
+    stillSeed('mtn'); wash([[-200, 700], [200, 520], [420, 600], [700, 470], [980, 590], [1300, 500], [1600, 610], [2100, 540], [2100, 760], [-200, 760]], 2, { ink: true, sw: .5 });
+    stillSeed('rock'); wash([[-200, 720], [2100, 700], [2100, 1300], [-200, 1300]], 3, { op: 1.1 });
     // the great machine, finished, and the stream of motes rising from it
     for (let i = 0; i < 6; i++) { boilSeed('gm' + i); const s = 22, w = (9 - i) * s, y = 860 - i * s * 1.6; wash(rrPts(960 - w, y - s * 1.6, w * 2, s * 1.6, s * .3), 2 + (i % 2), { ink: true, sw: .6 }); }
     for (let i = 0; i < 160; i++) { const st = t0 - 3 + i * (T1('B') - t0) / 150, q = (t - st) / 7; if (q <= 0) continue;
@@ -99,7 +99,7 @@
     camBegin(800, 330, 1.6);
     DES.lab(-300, -150, 2520, 1300, t, { couch: false });
     for (let r = 0; r < 3; r++) for (let c = 0; c < 7; c++) { const x = 103 + c * 252, y = 110 + r * 208; boilSeed('bl' + c + r); paint(rectPts(x + 6, y + 6, 202, 157), { wash: '#1C1814', washOp: 235, ink: null }); }
-    boilSeed('night'); paint(rectPts(-500, -400, 3000, 1900), { wash: PULP.black, washOp: 120, ink: null });
+    stillSeed('night'); paint(rectPts(-500, -400, 3000, 1900), { wash: PULP.black, washOp: 120, ink: null });
     camEnd();
   }
   // L: the Earth, a line of ships across it from pole to pole, the green sweeping behind

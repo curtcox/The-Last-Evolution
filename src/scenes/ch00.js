@@ -17,7 +17,7 @@
   // the memories: the Denver hall's piers, a ring of machines, the chief ruler, Roal and Trest, in grey wash
   function memories(k, t) {
     if (k <= 0) return;
-    boilSeed('memhall');
+    stillSeed('memhall');
     for (let i = 0; i < 6; i++) { const x = 300 + i * 270; wash(rectPts(x - 26, 120, 52, 760), 1, { op: .55 * k }); for (let f = -1; f <= 1; f++) inkLine([[x + f * 12, 130], [x + f * 12, 870]], .4, D[2]); }
     wash(rectPts(200, 100, 1520, 40), 2, { op: .5 * k });
     for (let i = 0; i < 5; i++) { const x = 420 + i * 270, s = 20 + (i % 2) * 4; if (i !== 2) DES.machine(x, 900, s, t, { arms: 3, d: 2, label: null, hover: 1.5 + .2 * wob(t, .2, i) }); }

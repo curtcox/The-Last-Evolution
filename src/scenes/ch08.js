@@ -39,7 +39,7 @@
     const tE = T0('E'), tF = T0('F'), tG = T0('G'), tLife = C('p104.1:man was the product of life'), tMach = C('p104.1:Man built the machine'), tForce = C('p104.1:but of pure, living force');
     const c = cam(t, [[0, [LAD, 820, 1.3]], [tMach - 1, [LAD, 560, 1.3], 3], [tForce - 1, [LAD, 330, 1.3], 2.5], [tF, tt => [lerp(LAD - 200, LAD + 300, ez(tt, tF, tG)), 600, 1], 3], [tG, [LAD, 600, 1.05], 2.5]]);
     camBegin(...c);
-    boilSeed('lplate'); paint(rectPts(-800, -800, 3600, 2600), { wash: BG, washOp: 255, fill: '#3B322B', fillOp: 120, bleed: .25, tex: .5, ink: null });
+    stillSeed('lplate'); paint(rectPts(-800, -800, 3600, 2600), { wash: BG, washOp: 255, fill: '#3B322B', fillOp: 120, bleed: .25, tex: .5, ink: null });
     // the ladder's rails and rungs
     ruled([[LAD - 140, 1000], [LAD - 140, 120]], seg(t, tE - 1, tE + 3), D[1], 1); ruled([[LAD + 140, 1000], [LAD + 140, 120]], seg(t, tE - 1, tE + 3), D[1], 1);
     for (let i = 0; i < 4; i++) ruled([[LAD - 140, 920 - i * 230], [LAD + 140, 920 - i * 230]], seg(t, tE + i * .4, tE + 1 + i * .4), D[1], .8);
@@ -68,16 +68,16 @@
       [tM, tt => [PX, lerp(250, -150, ez(tt, tM, tN)), .6], 3], [tN, [PX - 200, 560, .85], 2.5]]);
     camBegin(...c);
     // the sky: clear day going to night
-    boilSeed('dsky8'); paint(rectPts(-2000, -2600, 6000, 3600), { wash: mixCol(D[0], '#1E1A16', night), washOp: 255, fill: mixCol(D[1], '#2A231D', night), fillOp: 70, ink: null });
+    stillSeed('dsky8'); paint(rectPts(-2000, -2600, 6000, 3600), { wash: mixCol(D[0], '#1E1A16', night), washOp: 255, fill: mixCol(D[1], '#2A231D', night), fillOp: 70, ink: null });
     if (night < .5) glow(lerp(-200, 3000, grow), lerp(-900, 300, grow * grow), 140, '#FFF6E8', .9 * (1 - night * 2));
-    if (night > 0) { for (let i = 0; i < 120; i++) glow(-1600 + hash(i * 3.1) * 5000, -2400 + hash(i * 7.7) * 3000, 5, '#F4EEDC', .5 * night * hash(i)); boilSeed('moon');
+    if (night > 0) { for (let i = 0; i < 120; i++) glow(-1600 + hash(i * 3.1) * 5000, -2400 + hash(i * 7.7) * 3000, 5, '#F4EEDC', .5 * night * hash(i)); stillSeed('moon');
       glow(1900, -900, 90, '#F4EEDC', .5 * night); wash([...Array(17)].map((_, i) => { const a = -Math.PI / 2 + i / 16 * Math.PI; return [1900 + Math.cos(a) * 60, -900 + Math.sin(a) * 60]; }).concat([...Array(17)].map((_, i) => { const a = Math.PI / 2 - i / 16 * Math.PI; return [1900 + Math.cos(a) * 30, -900 + Math.sin(a) * 60]; })), 0, { op: night }); }
     // the twisted, massed rocks; smoothed flat under the plane of force round the plant's place
-    boilSeed('rocks'); wash([[-2000, RG + 40], [6000, RG + 40], [6000, RG + 1600], [-2000, RG + 1600]], 3, { op: 1 });
+    stillSeed('rocks'); wash([[-2000, RG + 40], [6000, RG + 40], [6000, RG + 1600], [-2000, RG + 1600]], 3, { op: 1 });
     for (let i = 0; i < 40; i++) { const x = -1600 + i * 130 + 60 * hash(i), flat = Math.abs(x - PX) < 700 ? smooth : 0, h = (60 + 120 * hash(i * 3)) * (1 - flat);
-      if (h > 4) { boilSeed('rk' + i); wash([[x - 70, RG + 50], [x - 30 + 20 * hash(i), RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]], 2 + (i % 2), { ink: true, sw: .5 }); } }
+      if (h > 4) { stillSeed('rk' + i); wash([[x - 70, RG + 50], [x - 30 + 20 * hash(i), RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]], 2 + (i % 2), { ink: true, sw: .5 }); } }
     if (smooth > 0 && smooth < 1) { glow(PX, RG + 40, 700, FORCE, .3 * Math.sin(Math.PI * smooth)); }
-    if (smooth > .5) { boilSeed('plane'); wash(rectPts(PX - 700, RG + 30, 1400, 30), 1, { ink: true, sw: .5 }); }
+    if (smooth > .5) { stillSeed('plane'); wash(rectPts(PX - 700, RG + 30, 1400, 30), 1, { ink: true, sw: .5 }); }
     // the dome, behind at the left
     DES.blackDome(-300, RG + 60, 320, t);
     // the plant, rising ring by ring as F-2's forces arc round it; finished at night

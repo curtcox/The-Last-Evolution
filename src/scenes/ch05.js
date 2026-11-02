@@ -29,7 +29,7 @@
   // right, the working point between them, the tiers of science-machines floating in a ring behind and around
   const G = 1000, F1 = { x: 1420, g: 975, s: 50 }, WORK = [1000, 790], COUCH = { x: 420, s: 44 }, RS = 44, RU = RS * 6 / 7.4, FS = 30;
   const MAKE = [1330, 830], CRU = [1330, 810], CAGE = [760, G], SEAT = G - 1.72 * COUCH.s, F2HOV = (G - WORK[1]) / FS;
-  const night = op => { boilSeed('night'); paint(rectPts(-500, -400, 3000, 1900), { wash: PULP.black, washOp: 215 * op, fill: '#3B322B', fillOp: 60, bleed: .2, tex: .4, ink: null }); };
+  const night = op => { stillSeed('night'); paint(rectPts(-500, -400, 3000, 1900), { wash: PULP.black, washOp: 215 * op, fill: '#3B322B', fillOp: 60, bleed: .2, tex: .4, ink: null }); };
 
   // the moments everything keys to
   const tCome = C('p054.1'), tBack = C('p058.1') + .3, tSudden = C('p058.3:Suddenly'), tTent = C('p058.3:tentacles became');
@@ -463,7 +463,7 @@
   ];
   function plate(t) {
     HALFTONE = .3;
-    boilSeed('plate'); paint(rectPts(-200, -200, W + 400, H + 400), { wash: BG, washOp: 255, fill: '#3B322B', fillOp: 120, bleed: .25, tex: .5, ink: null }); blooms(0, H, 8, 4, 55, .5);
+    stillSeed('plate'); paint(rectPts(-200, -200, W + 400, H + 400), { wash: BG, washOp: 255, fill: '#3B322B', fillOp: 120, bleed: .25, tex: .5, ink: null }); blooms(0, H, 8, 4, 55, .5);
     const [cx, cy, z] = camPath(t, PLATECAM);
     camBegin(cx, cy, z);
     const [ax, ay] = AT, orbit = ez(t, tElec, tElec + 1) * (1 - ez(t, T0('L'), T0('L') + 2)), rings = ez(t, tPos, tPos + 2) * (1 - ez(t, T0('L'), T0('L') + 2));
@@ -499,11 +499,11 @@
 
   // ---------- AL, AM: outside, on the bare rock ----------
   function rockSky(t, dawn) {
-    boilSeed('sky'); paint(rectPts(-200, -1400, W + 400, 2300), { wash: mixCol(D[2], D[0], dawn), washOp: 255, fill: D[1], fillOp: 80, bleed: .3, ink: null });
+    stillSeed('sky'); paint(rectPts(-200, -1400, W + 400, 2300), { wash: mixCol(D[2], D[0], dawn), washOp: 255, fill: D[1], fillOp: 80, bleed: .3, ink: null });
     blooms(0, 600, 6, 1, 73, .4);
-    boilSeed('mtn'); wash([[-200, 700], [200, 520], [420, 600], [700, 470], [980, 590], [1300, 500], [1600, 610], [2100, 540], [2100, 760], [-200, 760]], 2, { ink: true, sw: .5 });
-    boilSeed('rock'); wash([[-200, 720], [2100, 700], [2100, 1300], [-200, 1300]], 3, { op: 1.1 });
-    for (let i = 0; i < 18; i++) { boilSeed('crack' + i); const x = hash(i * 3) * W, y = 760 + hash(i * 5) * 300; inkLine([[x, y], [x + 60 + 80 * hash(i), y + 10 * (hash(i * 7) - .5)]], .4, D[4]); }
+    stillSeed('mtn'); wash([[-200, 700], [200, 520], [420, 600], [700, 470], [980, 590], [1300, 500], [1600, 610], [2100, 540], [2100, 760], [-200, 760]], 2, { ink: true, sw: .5 });
+    stillSeed('rock'); wash([[-200, 720], [2100, 700], [2100, 1300], [-200, 1300]], 3, { op: 1.1 });
+    for (let i = 0; i < 18; i++) { stillSeed('crack' + i); const x = hash(i * 3) * W, y = 760 + hash(i * 5) * 300; inkLine([[x, y], [x + 60 + 80 * hash(i), y + 10 * (hash(i * 7) - .5)]], .4, D[4]); }
   }
   function greatMachine(x, g, k) {   // the great automatic machine, built in steps: k 0..1, each level easing up into place
     const s = 22;

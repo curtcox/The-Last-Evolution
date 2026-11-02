@@ -63,7 +63,7 @@ const KIT = (() => {
 
   // ---------- grounds ----------
   // a ground of wash over the whole frame (in screen space or under a camera, with a margin)
-  function ground(col, op = 255, key = 'ground', o = {}) { boilSeed(key); paint(rectPts(-800, -800, W + 1600, H + 1600), { wash: col, washOp: op, fill: o.fill || col, fillOp: o.fillOp ?? 60, bleed: .2, tex: .4, ink: null }); }
+  function ground(col, op = 255, key = 'ground', o = {}) { steady(() => { stillSeed(key); paint(rectPts(-800, -800, W + 1600, H + 1600), { wash: col, washOp: op, fill: o.fill || col, fillOp: o.fillOp ?? 60, bleed: .2, tex: .4, ink: null }); }); }
   // space: near-black wash with the paper showing through as stars; steady (hash), twinkling a little; n stars over a
   // field w x h centred on (cx, cy)
   function space(t, o = {}) {
@@ -73,13 +73,13 @@ const KIT = (() => {
       glow(x, y, 4 + 10 * b * b, o.star || '#F4EEDC', (.25 + .5 * b) * (.75 + .25 * Math.sin(t * (1 + 2 * hash(i)) + i))); }
   }
   // a planet or sun as a lit disc: d the wash, light from the upper left; o.glow a colour of light around it
-  function planet(x, y, r, d = 2, o = {}) {
-    boilSeed('pl' + (o.key || x));
+  function planet(x, y, r, d = 2, o = {}) { steady(() => {
+    stillSeed('pl' + (o.key || x));
     if (o.glow) glow(x, y, r * 1.8, o.glow, o.ga ?? .5);
     wash(ellPts(x, y, r, r, 40), d, { ink: true, sw: .7 });
     wash([...Array(20)].map((_, i) => { const a = -.3 + i / 19 * Math.PI; return [x + Math.cos(a) * r, y + Math.sin(a) * r]; }).concat([[x - r * .2, y + r * .4]]), Math.min(4, d + 2), { op: .7 });   // the night side
     if (o.bands) for (let i = -2; i <= 2; i++) inkLine([[x - r * .9 * Math.cos(i * .35), y + i * r * .3], [x + r * .9 * Math.cos(i * .35), y + i * r * .3 + 3]], .4, D[Math.min(4, d + 1)], 'inkfine');
-  }
+  }); }
 
   // ---------- a chapter's page: the magazine's header, the drop cap and the opening words ----------
   // From bare paper, a slow push; at its end the paper soaks dark with wash (o.soak, a colour) into the next space.

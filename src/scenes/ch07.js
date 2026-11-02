@@ -22,7 +22,7 @@
     return [lerp(lerp(2500, 1700 + i * 60, enter), MID + Math.cos(a) * 340, ring), lerp(lerp(600, 760, enter), G + 30 - Math.sin(a) * -40, ring) ]; };
   function inHall(t, o = {}) {
     DES.lab(-300, -150, 2520, 1300, t, { couch: false });
-    boilSeed('night'); paint(rectPts(-500, -400, 3000, 1900), { wash: PULP.black, washOp: 175, fill: '#1C2028', fillOp: 60, ink: null });
+    stillSeed('night'); paint(rectPts(-500, -400, 3000, 1900), { wash: PULP.black, washOp: 175, fill: '#1C2028', fillOp: 60, ink: null });
     screens(t);
     // F-2 floats in and stops before the men
     const f2k = ez(t, tF - .5, tF + 5), fx = lerp(2300, MID + 260, f2k), fy = lerp(560, 780, f2k);
@@ -38,7 +38,7 @@
     const cloud = ez(t, tCloud, tArch), arch = ez(t, tArch - 1, tSolid + 1);
     if (cloud > 0) for (let i = 0; i < 14; i++) { const a = i / 14 * TAU + t * .1, r = 260 + 60 * Math.sin(t * .7 + i); boilSeed('cl' + i); paint(ellPts(MID + Math.cos(a) * r, G - 160 + Math.sin(a) * r * .5, 140 * cloud, 90 * cloud, 14, 20), { fill: '#0E0B09', fillOp: 120 * cloud * (1 - arch * .5), bleed: .4, ink: null }); }
     if (arch > 0) { const r = 560, P = []; for (let i = 0; i <= 24; i++) { const a = Math.PI + i / 24 * Math.PI * Math.min(1, arch * 1.2), w = 1 + .05 * Math.sin(t * 4 + i) * (1 - arch); P.push([MID + Math.cos(a) * r * w, G + Math.sin(a) * r * .8 * w]); }
-      if (arch < 1) P.push([MID, G]); boilSeed('dome'); paint(P, { wash: PULP.black, washOp: 255 * Math.min(1, arch * 1.4), fill: PULP.black, fillOp: 200 * arch, bleed: .05, ink: INK, sw: 1 }); }
+      if (arch < 1) P.push([MID, G]); stillSeed('dome'); paint(P, { wash: PULP.black, washOp: 255 * Math.min(1, arch * 1.4), fill: PULP.black, fillOp: 200 * arch, bleed: .05, ink: INK, sw: 1 }); }
   }
   function hall(t) {
     HALFTONE = .3;
@@ -71,10 +71,10 @@
     const c = cam(t, [[0, tt => [960, lerp(500, 640, ez(tt, tL, tStruck)), lerp(.8, 1.4, ez(tt, tL, tStruck))]], [tN, tt => [960, 560, lerp(1.1, .8, ez(tt, tN, T1('N')))], 2.5],
       [tP, tt => [960, lerp(640, 300, ez(tt, tProj, tOff + 2)), lerp(1, .8, ez(tt, tP, T1('P')))], 2.5], [tQ, tt => [960, 620, lerp(.9, .35, ez(tt, tQ, DUR))], 3]]);
     withCam(c, () => {
-      boilSeed('osky'); paint(rectPts(-3000, -2400, 7000, 3300), { wash: '#1E1A16', washOp: 255, fill: '#2A231D', fillOp: 80, ink: null });
+      stillSeed('osky'); paint(rectPts(-3000, -2400, 7000, 3300), { wash: '#1E1A16', washOp: 255, fill: '#2A231D', fillOp: 80, ink: null });
       for (let i = 0; i < 120; i++) glow(-2600 + hash(i * 3.1) * 7000, -2200 + hash(i * 7.7) * 3000, 5, '#F4EEDC', .3 + .3 * hash(i));
-      boilSeed('oground'); paint(rectPts(-3000, OG - 20, 7000, 2600), { wash: D[3], washOp: 255, fill: '#1C1814', fillOp: 90, ink: null });
-      for (let i = 0; i < 30; i++) { boilSeed('dead' + i); const x = -2500 + hash(i * 3) * 6000, y = OG + 30 + hash(i * 5) * 500; inkLine([[x, y], [x + 4, y - 40 - 40 * hash(i)], [x + 16, y - 60 - 40 * hash(i)]], .6, INK); }   // the bare dead trees
+      stillSeed('oground'); paint(rectPts(-3000, OG - 20, 7000, 2600), { wash: D[3], washOp: 255, fill: '#1C1814', fillOp: 90, ink: null });
+      for (let i = 0; i < 30; i++) { stillSeed('dead' + i); const x = -2500 + hash(i * 3) * 6000, y = OG + 30 + hash(i * 5) * 500; inkLine([[x, y], [x + 4, y - 40 - 40 * hash(i)], [x + 16, y - 60 - 40 * hash(i)]], .6, INK); }   // the bare dead trees
       // the beams: in, striking, more of them; the dome pressed in under them
       const n = t < tN ? 4 : Math.min(12, 4 + Math.floor((t - tN) * 1.5)), bk = ez(t, tL, tStruck) * (1 - ez(t, tOff, tOff + 3)), press = (t > tStruck ? .1 + .06 * Math.sin(t * 3) : 0) * (1 - ez(t, tOff, tOff + 3));
       const rise = ez(t, tOff - 1, tOff + 6);
@@ -83,7 +83,7 @@
         if (bk > 0) beam(sx, sy + 40, DOME[0] + (i - n / 2) * 30, DOME[1] - DR * .78, 10, 60, GREEN, bk, { washOp: 50, a: .5 }); }
       // the dome, bellied in at its crown under the beams
       const P = []; for (let i = 0; i <= 32; i++) { const a = Math.PI + i / 32 * Math.PI, dent = press * Math.exp(-Math.pow((i - 16) / 6, 2)); P.push([DOME[0] + Math.cos(a) * DR, DOME[1] + Math.sin(a) * DR * .8 * (1 - dent)]); }
-      boilSeed('odome'); paint(P, { wash: PULP.black, washOp: 255, fill: PULP.black, fillOp: 230, bleed: .02, tex: .2, ink: INK, sw: 1 });
+      stillSeed('odome'); paint(P, { wash: PULP.black, washOp: 255, fill: PULP.black, fillOp: 230, bleed: .02, tex: .2, ink: INK, sw: 1 });
       if (bk > 0) glow(DOME[0], DOME[1] - DR * .7, 200, GREEN, .5 * bk);
       // P: the ground projectors driving white light up through the curtains
       if (t > tProj - 1) for (let i = 0; i < 5; i++) { const px = DOME[0] - 1400 + i * 700 + (i >= 2 ? 200 : 0), k = ez(t, tProj + i * .3, tProj + i * .3 + .6) * (1 - ez(t, tQ, tQ + 2));

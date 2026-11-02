@@ -22,8 +22,16 @@ const jit = a => (random() * 2 - 1) * a;
 // thing uses a different amount of randomness each frame, which shifts the stream for everything drawn after it and makes
 // that re-boil every frame (jitter). boilSeed(key) restarts the stream from the boil frame and a key (any string or
 // number) that's the same every frame: call it before each separate element. clawd() does this for itself and its parts.
-let BOILN = 0, CLAWD_N = 0;
-const boilSeed = key => { let h = 2166136261; for (const c of key + '|' + BOILN) h = Math.imul(h ^ c.charCodeAt(0), 16777619); randomSeed(h >>> 0); };
+let BOILN = 0, CLAWD_N = 0, BOIL_SHIFT = 0;   // BOIL_SHIFT: the next boil drawing at the same moment, for tools/boil_check.mjs
+const boilSeed = key => STEADY ? stillSeed(key) : seedOf(key + '|' + BOILN);
+// What's still holds still (Round 6 §1.2): grounds, skies, settings and anything else behind the action draw the same
+// drawing every frame, so only the figures and the energy boil. stillSeed(key) is boilSeed without the boil frame;
+// inside steady(draw), every boilSeed is a stillSeed. The kit's grounds and planets and the settings in designs.js
+// (the lab, the black dome, the power plant) hold themselves.
+let STEADY = 0, STEADY_N = 0;
+const seedOf = s => { let h = 2166136261; for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619); randomSeed(h >>> 0); };
+const stillSeed = key => seedOf(key + '|still');
+function steady(draw) { STEADY++; stillSeed('steady' + STEADY_N); try { return draw(); } finally { STEADY--; boilSeed('after' + STEADY_N++); } }
 
 // ---------- timing helpers (everything is a pure function of t; no state survives between frames) ----------
 const seg = (t, a, b) => clamp((t - a) / (b - a));                 // 0..1 progress of t through [a, b]
@@ -285,7 +293,7 @@ function draw() {
   if (!window.ready) return;
   LETTERS = []; CAM = LAST_CAM = null;
   push(); translate(-W / 2, -H / 2);
-  BOILN = Math.floor(T * BOIL); CLAWD_N = 0; boilSeed('frame'); noiseSeed(77);
+  BOILN = Math.floor(T * BOIL) + BOIL_SHIFT; CLAWD_N = 0; STEADY = STEADY_N = 0; boilSeed('frame'); noiseSeed(77);
   image(paperG, 0, 0);
   drawWorld(T);
   pop();

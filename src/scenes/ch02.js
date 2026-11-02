@@ -97,11 +97,11 @@
   // ---------- F to N: inside the ships ----------
   const FL = 880, CEIL = 200;
   function hull(second) {
-    boilSeed(second ? 'hull2' : 'hull1'); paint(rectPts(-800, -700, 6000, 2600), { wash: second ? '#2A231D' : D[3], washOp: 255, fill: '#1C1814', fillOp: 120, bleed: .2, tex: .4, ink: null });
-    boilSeed('walls' + second);
+    stillSeed(second ? 'hull2' : 'hull1'); paint(rectPts(-800, -700, 6000, 2600), { wash: second ? '#2A231D' : D[3], washOp: 255, fill: '#1C1814', fillOp: 120, bleed: .2, tex: .4, ink: null });
+    stillSeed('walls' + second);
     wash([[-400, CEIL - 300], [4600, CEIL - 300], [4600, CEIL], [-400, CEIL]], 4, { op: 1 });
     wash([[-400, FL], [4600, FL], [4600, 1400], [-400, 1400]], second ? 4 : 3, { op: 1 });
-    for (let x = -300; x < 4600; x += 420) { boilSeed('rib' + x + second); wash([[x - 40, CEIL], [x + 40, CEIL], [x + 60, FL], [x - 60, FL]], second ? 4 : 3, { ink: true, sw: .5, op: .9 }); inkLine([[x - 40, CEIL + 40], [x + 40, CEIL + 40]], .5, INK); }
+    for (let x = -300; x < 4600; x += 420) { stillSeed('rib' + x + second); wash([[x - 40, CEIL], [x + 40, CEIL], [x + 60, FL], [x - 60, FL]], second ? 4 : 3, { ink: true, sw: .5, op: .9 }); inkLine([[x - 40, CEIL + 40], [x + 40, CEIL + 40]], .5, INK); }
     for (let k = 0; k < 3; k++) inkLine([[-400, CEIL + 180 + k * 220], [4600, CEIL + 190 + k * 220]], .4, D[4]);
     inkLine([[-400, 760], [4600, 760]], 1.2, INK);   // the girder the investigator creeps along
   }

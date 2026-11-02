@@ -542,4 +542,6 @@ const DES = {};
     inkLine(through([[x - w * .15, ground - h - s * .06], [x, ground - h - s * .3], [x + w * .15, ground - h - s * .06]]), .8, INK, 'inkfine');   // the handle
     return [x, ground - h - s * .3];
   };
+  // the settings hold still: only what moves in front of them boils (core.js, steady)
+  for (const k of ['lab', 'blackDome', 'plant']) { const f = DES[k]; DES[k] = (...a) => steady(() => f(...a)); }
 })();

@@ -107,7 +107,7 @@
       screens(t);
       // Q: a day: the hall darkens to night and comes back
       const night = Math.sin(Math.PI * seg(t, T0('Q'), tR)) * .75;
-      if (night > 0) { boilSeed('day'); paint(rectPts(-400, -300, 2800, 1600), { wash: PULP.black, washOp: 200 * night, ink: null }); }
+      if (night > 0) { stillSeed('day'); paint(rectPts(-400, -300, 2800, 1600), { wash: PULP.black, washOp: 200 * night, ink: null }); }
       if (t < tShift + 5) {
         const x56 = council(t);
         // C: the ray-machine rises and trains its beam; X-5638's screen swallows it

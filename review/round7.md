@@ -36,14 +36,14 @@ site, or locally after `npm start` (http://localhost:8077/review/round7/annotate
   - a spoken commentary track would break the film's rule against commentary in the voice track (PLAN.md §1).
 
 *Recommend:* the margin.
-**Curt:**
+**Curt:** use your recommendations.
 
 **1.2 On or off to start.** Notes start on. The foreword suggests that a first-time viewer might turn them off and read
 them afterwards, as the story's first readers met it, with nothing in the margin. The alternative is to start with
 them off and let viewers turn them on.
 
 *Recommend:* on, with that suggestion in the foreword.
-**Curt:**
+**Curt:** use your recommendations.
 
 **1.3 How many.** There are 48 notes over 57 minutes, about one every 71 seconds, and none closer than 20 seconds to
 the one before.
@@ -60,7 +60,7 @@ the one before.
   lost "not".
 
 *Recommend:* keep the rule of about one a minute and at least 20 seconds apart.
-**Curt:**
+**Curt:** use your recommendations.
 
 **1.4 Six kinds.**
 
@@ -74,7 +74,7 @@ the one before.
 | The making | 11 | where the film pictures what the text leaves unsaid |
 
 *Recommend:* these six.
-**Curt:**
+**Curt:** use your recommendations.
 
 ## 2. Forewords and afterwords
 
@@ -93,7 +93,7 @@ the one before.
 
 *Recommend:* text. The film stays the story alone, and readers can skim. A voiced foreword can come later if the
 YouTube cut wants one.
-**Curt:**
+**Curt:** use your recommendations.
 
 **2.2 Chapter forewords.** I considered a line before each chapter, and didn't make them.
 - **The problem:** each line either gives away what's coming or repeats the chapter's own page, which already opens
@@ -102,13 +102,13 @@ YouTube cut wants one.
   machines" in chapter 1, "Roal and Trest" in chapter 3 and "The machines' names" in chapter 4.
 
 *Recommend:* no chapter forewords.
-**Curt:**
+**Curt:** use your recommendations.
 
 **2.3 YouTube.** The film's description there can carry a short form of the foreword (what it is, 1932, the AI
 disclosure) and the afterword's links, pointing to this page for the notes.
 
 *Recommend:* that, in Phase 8.
-**Curt:**
+**Curt:** use your recommendations.
 
 ## 3. The notes themselves
 
@@ -138,7 +138,9 @@ weigh:
   voice if the voice is re-timed. The build fails if a phrase is missing or occurs twice.
 
 *Recommend:* read and pin.
-**Curt:**
+**Curt:** use your recommendations.
+**Claude:** the notes stand as drafted. "Locked" is reworded for the steady backgrounds (Round 6 §1.2): the flagship
+is now the only ship in the film to go still.
 
 ## 4. Where it goes from here
 
@@ -150,14 +152,14 @@ weigh:
 - **What it keeps:** the notes, foreword and afterword carry over as they are.
 
 *Recommend:* that.
-**Curt:**
+**Curt:** use your recommendations.
 
 **4.2 The QR codes.** PLAN.md §5 plans 30 to 60 QR codes in the film, each opening a page here. These 48 notes are the
 natural set to choose from. Each code would open the annotated film at its note, with a link of the form
 `annotated.html#note=bacteria`, which works now.
 
 *Recommend:* choose the codes from these notes when the QR layouts are made (Phase 4).
-**Curt:**
+**Curt:** use your recommendations.
 
 ## Claude's open concerns
 
@@ -175,8 +177,8 @@ natural set to choose from. Each code would open the annotated film at its note,
 - **Notes about pictures may change with them.**
   - Four notes describe the draft's pictures: the lattice, the curl, the inside of the giant ship, and "Locked" (the
     flagship as the one drawing that doesn't boil).
-  - If the look changes (Round 6 §1.2 would stop the backgrounds boiling), "Locked" will need new words. The
-    flagship's stillness only stands out while everything else boils.
+  - Round 6 §1.2 has now stopped the backgrounds boiling, so "Locked" has new words: the flagship's stillness stands
+    out against the ships and energy that still boil, not against the whole picture.
 - **Long quiet stretches.** The power plant now has a note, but the storm and the globe of force (chapter 9) still go
   three minutes without one, as does the end of chapter 7. That's deliberate; either could take a note if you'd like
   more there.

@@ -28,10 +28,10 @@ function shade(y0, y1, k0, k1, col = PULP.w[4]) {
   push(); blendMode(MULTIPLY); image(g, -60, y0, W + 120, y1 - y0); blendMode(BLEND); pop();
 }
 // soft blooms of wash across a band, where the wash pooled as it dried: texture over shade()
-function blooms(y0, y1, n, d, seed = 1, op = .5) {
-  for (let i = 0; i < n; i++) { boilSeed('bl' + seed + i); const x = hash(i * 1.7 + seed) * W, y = lerp(y0, y1, hash(i * 2.9 + seed)), r = 140 + 260 * hash(i * 4.1 + seed);
+function blooms(y0, y1, n, d, seed = 1, op = .5) { steady(() => {
+  for (let i = 0; i < n; i++) { stillSeed('bl' + seed + i); const x = hash(i * 1.7 + seed) * W, y = lerp(y0, y1, hash(i * 2.9 + seed)), r = 140 + 260 * hash(i * 4.1 + seed);
     paint(ellPts(x, y, r, r * .45, 20, r * .08), { fill: PULP.w[d], fillOp: 70 * op, bleed: .35, tex: .25, border: .15, ink: null }); }
-}
+}); }
 
 // ---------- the paper: cheap pulp stock, yellowed, fibrous, foxed at the edges ----------
 makePaper = function () {

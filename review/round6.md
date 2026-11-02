@@ -40,7 +40,8 @@ How the colour runs through the film, as built:
 
 *Recommend:* keep the rule. If it's still too grey, tint the wash itself by place, as the cheapest change (sepia for
 2538, colder for space and the Outsiders), and leave colour for energy alone.
-**Curt:**
+**Curt:** use your recommendations.
+**Claude:** the rule stands: ink wash, with colour only for energy. The tint by place stays in reserve.
 
 **1.2 Flicker.** Is the boil right?
 - **Why it flickers:** every stroke is redrawn 12 times a second. That includes the backgrounds' wash and the
@@ -49,7 +50,12 @@ How the colour runs through the film, as built:
 - **Alternatives:** boil on twos (6 a second), or both.
 
 *Recommend:* the fix above. It keeps the hand-drawn life where the eye is, and loses the shimmer behind it.
-**Curt:**
+**Curt:** use your recommendations.
+**Claude:** done. The grounds, skies, rock, the hall, the city, the ship's hull, the trees, the dome and the plant now
+draw the same drawing every frame (`steady()` and `stillSeed()` in `src/core.js`), and the halftone over them holds
+with them. Only the figures and the energy boil. `node tools/boil_check.mjs` measures it: between one drawing and the
+next, the share of the frame that changes fell from 1.3% to 0.3% over the whole film, and in the hall (chapter 4)
+from 5.6% to 0.5%. The chapter drafts aren't re-rendered yet; the acting pass renders them anew.
 
 ## 2. The chapters
 
@@ -67,7 +73,8 @@ How the colour runs through the film, as built:
 - **Chapter 11.** The record carried back down a tunnel of light, and THE END over the theme.
 
 *Recommend:* note any of these on the film page where they don't serve the text.
-**Curt:**
+**Curt:** use your recommendations.
+**Claude:** none noted, so all eight stand.
 
 **2.2 What's next, after this round.** Settle the look (1.1, 1.2). Then:
 1. the acting pass and the painting brought up to the model sheets, chapter 5 first, as Round 5 4.3 planned;
@@ -75,7 +82,8 @@ How the colour runs through the film, as built:
 3. then the final render at 24 frames a second.
 
 *Recommend:* that order.
-**Curt:**
+**Curt:** use your recommendations.
+**Claude:** next is the acting pass and the painting, chapter 5 first.
 
 **2.3 Models that watch and listen.** These would let me put quick questions to the rendered sound and picture,
 covering sense, look, sync, board and continuity. The options, and what I need from you, are in a sheet of their own:

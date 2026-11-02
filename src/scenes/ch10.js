@@ -29,7 +29,7 @@
     if (straight > 0) for (let i = 0; i < 8; i++) { boilSeed('sl' + i); inkLine([[x - len * .5, y - 60 + i * 16], [x + len * .5, y - 60 + i * 16 + 40 * Math.sin(i) * (1 - straight)]], .8 * straight, '#EFE6D2', 'inkfine', 0); }
     const scr = ez(t, tScreen, tScreen + 1.5);
     if (scr > 0) { boilSeed('fscr'); paint([...Array(25)].map((_, i) => { const a = i / 24 * TAU; return [x + Math.cos(a) * len * .62, y + Math.sin(a) * len * .2]; }), { wash: '#0E0B09', washOp: 120 * scr, ink: '#3A3A44', sw: .8 }); }
-    if (locked) BOILN = Math.floor(T * BOIL);
+    if (locked) BOILN = Math.floor(T * BOIL) + BOIL_SHIFT;
   }
   function scene(t) {
     HALFTONE = .2;
