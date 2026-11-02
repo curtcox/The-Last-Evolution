@@ -72,8 +72,13 @@ async function openPage(tag = '') {
   const page = await browser.newPage();
   page.on('console', m => { if (['error', 'warn'].includes(m.type())) console.log(`[page${tag}]`, m.text()); });
   page.on('pageerror', e => console.log(`[page error${tag}]`, e.message));
-  await page.goto(pathToFileURL(resolve('studio.html')).href + '?render' + (args.chapter !== undefined ? `&chapter=${args.chapter}` : ''), { waitUntil: 'networkidle0' });
-  await page.waitForFunction('window.ready === true', { timeout: 60000 });
+  // patient, and tried again: six workers starting at once on a busy machine (or a slow font request) can take more
+  // than puppeteer's default 30 s to reach network idle, and one worker failing used to stop the whole render
+  const url = pathToFileURL(resolve('studio.html')).href + '?render' + (args.chapter !== undefined ? `&chapter=${args.chapter}` : '');
+  for (let k = 1; ; k++) {
+    try { await page.goto(url, { waitUntil: 'networkidle0', timeout: 120000 }); await page.waitForFunction('window.ready === true', { timeout: 120000 }); break; }
+    catch (e) { if (k === 3) throw e; console.log(`[page${tag}] ${e.message}; trying again (${k + 1} of 3)`); }
+  }
   if (args.loop) {
     const ok = await page.evaluate(name => { if (!LOOPS[name]) return false; window.LOOP = LOOPS[name]; return true; }, args.loop);
     if (!ok) { console.error(`no loop named "${args.loop}"`); process.exit(1); }
