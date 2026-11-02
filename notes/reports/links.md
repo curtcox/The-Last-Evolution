@@ -23,6 +23,7 @@ Written by `tools/check_refs.mjs` on 2026-11-02. **All good.**
 | wp-butler | 200 | reference | afterword.md, succession.md, annotations.yaml | [Darwin among the Machines (Wikipedia)](https://en.wikipedia.org/wiki/Darwin_among_the_Machines) |
 | wp-deimos | 200 | reference | science.md, annotations.yaml | [Deimos (Wikipedia)](https://en.wikipedia.org/wiki/Deimos_(moon)) |
 | wp-duodecimal | 200 | reference | science.md | [Duodecimal (Wikipedia)](https://en.wikipedia.org/wiki/Duodecimal) |
+| wp-exothermic | 200 | reference | science.md | [Exothermic process (Wikipedia)](https://en.wikipedia.org/wiki/Exothermic_process) |
 | wp-g-force | 200 | reference | science.md | [G-force (Wikipedia)](https://en.wikipedia.org/wiki/G-force) |
 | wp-golden-age | 200 | reference | afterword.md, history.md | [Golden Age of Science Fiction (Wikipedia)](https://en.wikipedia.org/wiki/Golden_Age_of_Science_Fiction) |
 | wp-great-year | 200 | reference | science.md, annotations.yaml | [Great year (Wikipedia)](https://en.wikipedia.org/wiki/Great_year) |

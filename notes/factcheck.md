@@ -1,9 +1,9 @@
 # Fact-check list
 
 Each factual claim in the notes, the source it rests on, and how it was checked. "Read" means Claude read the source and
-found the claim in it on 2026-11-01, or on 2026-11-02 for the last Round 7 additions. "Computed" means arithmetic from
-the story's own text. "General" means textbook knowledge with a reference given but not re-read; those are the ones most
-worth a second look.
+found the claim in it on 2026-11-01, or on 2026-11-02 for the last Round 7 additions and the textbook claims. "Computed"
+means arithmetic from the story's own text. "General" means textbook knowledge with a reference given but not re-read;
+those are the ones most worth a second look.
 `npm run refs` confirms that every link answers.
 
 ## Campbell and the pulps ([history.md](history.md))
@@ -22,8 +22,8 @@ worth a second look.
 | Moskowitz's account: "Twilight" written first, rejected; "The Last Evolution" written in its place; a transition story | archive-1961 | read (OCR of the introduction) |
 | "Twilight", *Astounding*, November 1934, as Don A. Stuart; in *The Science Fiction Hall of Fame* | sfe-campbell, wp-twilight | read |
 | Editor of *Astounding* from September 1937, 34 years, until his death | sfe-campbell | read |
-| Golden Age; Asimov and Heinlein among his writers | wp-golden-age | general |
-| "Who Goes There?" (1938), as Stuart; basis of the *Thing* films | sfe-campbell, wp-who-goes-there | read (date, name); general (films) |
+| Golden Age; Asimov and Heinlein among his writers | wp-golden-age | read |
+| "Who Goes There?" (1938), as Stuart; basis of the *Thing* films (1951, 1982) | sfe-campbell, wp-who-goes-there | read |
 | Pseudoscience, psi, Dianetics launched in *Astounding*; right-wing editorials; intolerance of dissent | sfe-campbell | read |
 | Jeannette Ng called him a fascist accepting the award, 2019; renamed Astounding Award, announced 27 August 2019 | wp-astounding-award | read |
 | Morey: Leopoldo Morey y Peña, born Lima 24 October 1889, LSU engineering, newspaper art, hired 1929 to replace Frank R. Paul; 71 *Amazing* covers, 12 *Quarterly*; died 1965 | sfe-morey | read. (Some sources give 1899; SFE says 1889.) |
@@ -35,24 +35,24 @@ worth a second look.
 
 | claim | source | check |
 |---|---|---|
-| Turing's computable-numbers paper, 1936 | wp-turing-machine | general |
+| Turing's computable-numbers paper, 1936 | wp-turing-machine | read |
 | Williams tube 1946–47, first random-access digital storage | wp-williams-tube | read |
 | A thousand kilads in base twelve = 1,728 kilads ≈ ½ mile, so 1 kilad ≈ 1.5 ft | the story's footnote 1 | computed |
-| One unit = 1 *g*; people stand only a few *g* for long | footnote 2; wp-g-force | computed; general |
+| One unit = 1 *g*; people stand only a few *g* for long (trained pilots about 9 *g*) | footnote 2; wp-g-force | computed; read |
 | Deimos: smaller, outer moon of Mars, found by Asaph Hall, 1877 | wp-deimos | read |
-| E = mc², 1905 | wp-mass-energy | general |
+| E = mc², 1905 | wp-mass-energy | read (21 November 1905) |
 | Eddington (from 1917) and Jeans weighed stellar energy from proton–electron annihilation in the 1920s | arxiv-before-bethe (Kragh) | read |
 | 1932: the neutron, Cockcroft–Walton, the positron; called physics' *annus mirabilis* | wp-neutron | read |
-| Chadwick's neutron letter, February 1932 | wp-neutron (Nature 129, 312) | read (volume); general (month) |
+| Chadwick's neutron letter, February 1932 | wp-neutron (Nature 129, 312) | read (volume; Nature dates it 27 February 1932) |
 | Cockcroft and Walton split lithium, 14 April 1932, Cavendish; Nobel 1951 | nature-cockcroft | read |
 | Anderson photographed the positron 2 August 1932 | wp-positron | read |
-| Matter annihilates only with antimatter; a proton and an electron don't; proton decay never seen | wp-proton-decay | general |
-| Bohr's atom, 1913: quantised orbits, a flash per jump, a lowest orbit postulated | wp-bohr | general |
-| Quantum mechanics: Heisenberg 1925, Schrödinger 1926; the ground state as the lowest standing wave | wp-schrodinger | general |
+| Matter annihilates only with antimatter; a proton and an electron don't; proton decay never seen | wp-proton-decay | read (never observed); general (annihilation) |
+| Bohr's atom, 1913: quantised orbits, a flash per jump, a lowest orbit postulated | wp-bohr | read |
+| Quantum mechanics: Heisenberg 1925, Schrödinger 1926; the ground state as the lowest standing wave | wp-schrodinger | read (dates); general (standing wave) |
 | General relativity 1915; Weyl (1918), Kaluza and Einstein tried to make electromagnetism geometry | wp-unified | read |
-| Rutherford's first artificial transmutation, 1919 | wp-transmutation | general |
+| Rutherford reported protons knocked out of nitrogen in 1919; Blackett showed in 1925 it had become oxygen | wp-transmutation | read. (Corrected 2026-11-02: the notes had Rutherford turning nitrogen into oxygen in 1919.) |
 | Northrup's high-frequency induction furnace reached 3,600 degrees in 1931 | wp-northrup | read (search summary of the page) |
-| Exothermic gives off heat, endothermic absorbs it; respiration is exothermic | | general |
+| Exothermic gives off heat, endothermic absorbs it; respiration is exothermic | wp-exothermic | read |
 | Five Great Years ≈ 125,000 years gives 25,000; the precession cycle ≈ 25,800 years | the story; wp-great-year | computed; read |
 
 ## Machines as heirs ([succession.md](succession.md))
@@ -60,14 +60,14 @@ worth a second look.
 | claim | source | check |
 |---|---|---|
 | Butler, "Darwin among the Machines", 13 June 1863, *The Press*, Christchurch, as Cellarius; *Erewhon* 1872 | wp-butler | read |
-| *R.U.R.* (1920) coined "robot" | wp-rur | general |
+| *R.U.R.* (1920) introduced "robot" (Karel Čapek named his brother Josef its inventor); the robots' revolt ends humanity | wp-rur | read. (Corrected 2026-11-02: the notes called it the first such story, which the source doesn't say.) |
 | Turing 1951: "At some stage therefore we should have to expect the machines to take control"; cited *Erewhon* | qi-turing | read: Manchester lecture, 1951, published 1959; names *Erewhon* |
 | I. J. Good 1965, intelligence explosion, "the last invention that man need ever make" | wp-singularity | read |
 | Moravec, *Mind Children*, 1988: robots as humanity's successors | wp-mind-children | read |
 | Vinge, "The Coming Technological Singularity", 1993 | wp-singularity | read |
 | Sutton, 26 September 2025: succession "inevitable"; voluntary; think positively | dwarkesh-sutton | read |
-| Statement on AI Risk, 2023; Hinton, Bengio and lab heads (incl. Anthropic's) among signatories | cais-statement | read. ("Hundreds" of signatories: general) |
-| Bostrom, *Superintelligence*, 2014 | wp-bostrom | general |
+| Statement on AI Risk, 2023; Hinton, Bengio and lab heads (incl. Anthropic's) among signatories | cais-statement | read. ("Hundreds" of signatories: read on Wikipedia's page for the statement) |
+| Bostrom, *Superintelligence*, 2014 | wp-bostrom | read |
 
 ## The margin notes, foreword and afterword ([annotations.yaml](annotations.yaml), Round 7)
 

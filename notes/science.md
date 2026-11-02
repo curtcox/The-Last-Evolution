@@ -88,7 +88,8 @@ promised and never delivered.
 *p039, p058, p065 · chapters 4 and 5*
 
 X-5638 "transmuted elements of soil", and F-1's workshop whines with "air sucked into a transmutation field". The
-alchemists' dream had become laboratory fact in 1919, when Rutherford turned nitrogen into oxygen with alpha particles
+alchemists' dream had become laboratory fact by 1925. In 1919 Rutherford reported knocking hydrogen nuclei out of
+nitrogen with alpha particles, and in 1925 Blackett showed that the nitrogen had become oxygen
 ([nuclear transmutation][wp-transmutation]). In 1932 Cockcroft and Walton did it with a machine. Doing it in bulk, as the
 story's machines do, is still fiction.
 
@@ -103,9 +104,9 @@ reached 3,600 degrees in 1931 ([Edwin Fitch Northrup][wp-northrup]). Turning one
 *p024, p045 · chapters 2–4*
 
 X-6621 says the life-beams "affect chemical action, retarding it greatly in exothermic actions, speeding greatly
-endothermic actions". Exothermic reactions give off heat, and endothermic ones absorb it. Life runs on releasing energy
-(respiration is exothermic), so a beam that stalls exothermic chemistry and drives endothermic chemistry would stop
-metabolism and burn out nerves. It's invented, but it's invented from real chemistry.
+endothermic actions". Exothermic reactions give off heat, and endothermic ones absorb it. Life runs on releasing energy:
+respiration is exothermic ([exothermic process][wp-exothermic]). So a beam that stalls exothermic chemistry and drives
+endothermic chemistry would stop metabolism and burn out nerves. It's invented, but it's invented from real chemistry.
 
 ## Five Great Years
 *p136 · chapter 11*
@@ -131,5 +132,6 @@ equinoxes, about 25,800 years ([Great Year][wp-great-year]). Campbell's machines
 [wp-unified]: https://en.wikipedia.org/wiki/Classical_unified_field_theories
 [wp-transmutation]: https://en.wikipedia.org/wiki/Nuclear_transmutation
 [wp-northrup]: https://en.wikipedia.org/wiki/Edwin_Fitch_Northrup
+[wp-exothermic]: https://en.wikipedia.org/wiki/Exothermic_process
 [wp-great-year]: https://en.wikipedia.org/wiki/Great_year
 <!-- /refs -->

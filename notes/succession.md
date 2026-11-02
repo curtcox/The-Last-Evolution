@@ -23,8 +23,8 @@ change your belief." The story makes its case, and then asks the reader to argue
 - **1863.** Samuel Butler, writing as "Cellarius" in a Christchurch newspaper, applies Darwin to machinery. He describes
   machines as evolving "mechanical life" that may one day supplant us. He worked the idea into "The Book of the
   Machines" in *Erewhon* (1872) ([Darwin among the Machines][wp-butler]).
-- **1920.** Karel Čapek's play *R.U.R.* gave the world the word *robot*, and the first story of manufactured workers who
-  replace humanity ([R.U.R.][wp-rur]).
+- **1920.** Karel Čapek's play *R.U.R.* gave the world the word *robot* (Čapek credited his brother Josef with it): a
+  story of manufactured workers who rise up and replace humanity ([R.U.R.][wp-rur]).
 
 ## After Campbell
 - **1934.** Campbell himself, as Don A. Stuart, returned to the theme in "Twilight": a far future in which humanity has

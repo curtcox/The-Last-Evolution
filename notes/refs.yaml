@@ -37,6 +37,7 @@ wp-bohr: {url: 'https://en.wikipedia.org/wiki/Bohr_model', title: 'Bohr model (W
 wp-schrodinger: {url: 'https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation', title: 'Schrödinger equation (Wikipedia)', kind: reference}
 wp-unified: {url: 'https://en.wikipedia.org/wiki/Classical_unified_field_theories', title: 'Classical unified field theories (Wikipedia)', kind: reference}
 wp-transmutation: {url: 'https://en.wikipedia.org/wiki/Nuclear_transmutation', title: 'Nuclear transmutation (Wikipedia)', kind: reference}
+wp-exothermic: {url: 'https://en.wikipedia.org/wiki/Exothermic_process', title: 'Exothermic process (Wikipedia)', kind: reference}
 wp-northrup: {url: 'https://en.wikipedia.org/wiki/Edwin_Fitch_Northrup', title: 'Edwin Fitch Northrup (Wikipedia)', kind: reference}
 wp-pluto: {url: 'https://en.wikipedia.org/wiki/Pluto', title: 'Pluto (Wikipedia)', kind: reference}
 wp-wien: {url: "https://en.wikipedia.org/wiki/Wien%27s_displacement_law", title: "Wien's displacement law (Wikipedia)", kind: reference}
