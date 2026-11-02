@@ -1,8 +1,8 @@
 {
  "summary": {
-  "pass": 15,
+  "pass": 21,
   "stale": 0,
-  "open": 80,
+  "open": 74,
   "curt": 7,
   "later": 3
  },
@@ -14,7 +14,7 @@
   },
   "links": {
    "state": "pass",
-   "detail": "1111 links in 34 pages, 0 broken"
+   "detail": "1112 links in 34 pages, 0 broken"
   },
   "annotated": {
    "state": "pass",
@@ -37,7 +37,7 @@
    "detail": "refs: 53 sources, all cited, all answering; definitions written into 6 notes"
   },
   "phone": {
-   "state": "pass",
+   "state": "stale",
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
@@ -619,29 +619,29 @@
    "id": "site.watch.content",
    "area": "site",
    "title": "The film page (annotated): what it says",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "The draft notice said the notes 'are being reviewed (Round 7)'; Round 7 closed today. It now says the acting is being redone chapter by chapter (linking where it stands) and that the notes were reviewed in Round 7. Foreword, how-to-watch, margin notes and afterword are as Round 7 approved them (the foreword's wording is Curt's call, curt.foreword)."
   },
   {
    "id": "site.watch.look",
    "area": "site",
    "title": "The film page (annotated): how it looks and works",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "Desktop: the header aligns with the wide player and its margin; prose in a reading column; the note list below. Phone: the margin becomes a card under the video (Round 7), the draft notice and foreword read at 375 without overflow."
   },
   {
    "id": "site.read.content",
    "area": "site",
    "title": "The Read page: what it says",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "The whole story with its masthead, the 16 restored readings marked in place and listed with scan links, Morey's illustration, and a true colophon (Gutenberg #27462, 1961 reprint, 16 readings from 1932). The verbatim check passes."
   },
   {
    "id": "site.read.look",
    "area": "site",
    "title": "The Read page: how it looks and works",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "Desktop: a justified, hyphenated reading column with paragraph numbers in the margin. Phone: the same column at 375, numbers hidden, no overflow, nav on one line."
   },
   {
    "id": "site.notes.content",
@@ -731,15 +731,15 @@
    "id": "site.review.content",
    "area": "site",
    "title": "The Review page: what it says",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "Every round with its sheet, its closed date and its pages, newest first; the rounds' closed lines match the sheets; links the scorecard."
   },
   {
    "id": "site.review.look",
    "area": "site",
    "title": "The Review page: how it looks and works",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "A plain list page; fine at both widths."
   },
   {
    "id": "later.qr",

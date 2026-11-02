@@ -79,5 +79,35 @@ items:
     note: On a phone the table showed two of three columns behind a sideways scroll; it now wraps to fit, all three columns visible (checked at 375). Desktop unchanged.
     at: 3042469b3369
     when: 2026-11-02 23:17
+  site.read.content:
+    state: pass
+    note: "The whole story with its masthead, the 16 restored readings marked in place and listed with scan links, Morey's illustration, and a true colophon (Gutenberg #27462, 1961 reprint, 16 readings from 1932). The verbatim check passes."
+    at: 762172936a25
+    when: 2026-11-02 23:20
+  site.read.look:
+    state: pass
+    note: "Desktop: a justified, hyphenated reading column with paragraph numbers in the margin. Phone: the same column at 375, numbers hidden, no overflow, nav on one line."
+    at: 092127242e7d
+    when: 2026-11-02 23:20
+  site.review.content:
+    state: pass
+    note: Every round with its sheet, its closed date and its pages, newest first; the rounds' closed lines match the sheets; links the scorecard.
+    at: 430dd0a03a83
+    when: 2026-11-02 23:20
+  site.review.look:
+    state: pass
+    note: A plain list page; fine at both widths.
+    at: 7d4d78b0b4dc
+    when: 2026-11-02 23:20
+  site.watch.content:
+    state: pass
+    note: The draft notice said the notes 'are being reviewed (Round 7)'; Round 7 closed today. It now says the acting is being redone chapter by chapter (linking where it stands) and that the notes were reviewed in Round 7. Foreword, how-to-watch, margin notes and afterword are as Round 7 approved them (the foreword's wording is Curt's call, curt.foreword).
+    at: 6fc70d552a17
+    when: 2026-11-02 23:20
+  site.watch.look:
+    state: pass
+    note: "Desktop: the header aligns with the wide player and its margin; prose in a reading column; the note list below. Phone: the margin becomes a card under the video (Round 7), the draft notice and foreword read at 375 without overflow."
+    at: 1f317229cafa
+    when: 2026-11-02 23:20
 fresh: []
-since_fresh: 18
+since_fresh: 24

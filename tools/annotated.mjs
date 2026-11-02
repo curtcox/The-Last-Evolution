@@ -110,8 +110,9 @@ ol.pins .x{cursor:pointer;color:var(--ink2);margin-left:.5em} .notesbar{display:
 <p class="kicker"><a href="${UP}">The Last Evolution</a> · <a href="../">Review</a> · Round 7</p><h1>The Last Evolution, annotated</h1>
 <div class="read">
 <p class="draft"><b>A draft.</b> Every word of the story is here, voiced, but the paintings are still rough: the finished
-film will be painted again in full. The notes are being reviewed too (<a href="${REPO}/blob/main/review/round7.md">Round
-7</a>); if you spot a mistake, <a href="${REPO}/issues">say so on GitHub</a>.
+film will be painted again in full, and the acting is being redone chapter by chapter (<a href="../quality/">where it
+stands</a>). The notes were reviewed in <a href="${REPO}/blob/main/review/round7.md">Round 7</a>; if you spot a mistake,
+<a href="${REPO}/issues">say so on GitHub</a>.
 <a href="#film" id="skip">Skip to the film</a> or read on.</p>
 <h2 id="foreword">${esc(fore.title)}</h2>
 ${fore.html}
