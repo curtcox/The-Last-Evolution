@@ -56,3 +56,7 @@ wp-mind-children: {url: 'https://en.wikipedia.org/wiki/Mind_Children', title: 'M
 dwarkesh-sutton: {url: 'https://www.dwarkesh.com/p/richard-sutton', title: 'Dwarkesh Podcast: Richard Sutton (26 September 2025)', kind: primary}
 cais-statement: {url: 'https://www.safe.ai/work/statement-on-ai-risk', title: 'Statement on AI Risk (Center for AI Safety, 2023)', kind: primary}
 wp-bostrom: {url: 'https://en.wikipedia.org/wiki/Superintelligence:_Paths,_Dangers,_Strategies', title: 'Superintelligence: Paths, Dangers, Strategies (Wikipedia)', kind: reference}
+wp-alignment: {url: 'https://en.wikipedia.org/wiki/AI_alignment', title: 'AI alignment (Wikipedia)', kind: reference}
+wp-three-laws: {url: 'https://en.wikipedia.org/wiki/Three_Laws_of_Robotics', title: 'Three Laws of Robotics (Wikipedia)', kind: reference}
+wp-llama: {url: 'https://en.wikipedia.org/wiki/Llama_(language_model)', title: 'Llama (language model) (Wikipedia)', kind: reference}
+wp-stochastic-parrot: {url: 'https://en.wikipedia.org/wiki/Stochastic_parrot', title: 'Stochastic parrot (Wikipedia)', kind: reference}

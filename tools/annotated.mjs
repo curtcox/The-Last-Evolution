@@ -76,7 +76,8 @@ writeFileSync('notes/reports/annotations.md', ['# The margin notes', '', `Writte
   ...timed.map((x, i) => `| ${hms(x.T)} | ${x.ch} | ${x.title.replace(/\|/g, '/')} (\`${x.id}\`) | ${kinds[x.kind]} | ${i ? Math.round(x.T - timed[i - 1].T) + ' s' + (x.T - timed[i - 1].T < GAP ? ' ⚠' : '') : ''} |`), ''].join('\n'));
 
 const fore = md('notes/foreword.md'), after = md('notes/afterword.md');
-const noteHtml = x => `<h4>${inline(x.title)}</h4><p>${inline(x.body.trim())}</p>${x.more ? `<p class="more"><a href="${REPO}/blob/main/notes/${x.more}">More</a></p>` : ''}`;
+const paras = s => s.trim().split(/\n+/).map(p => `<p>${inline(p)}</p>`).join('');   // a blank line in a body starts a new paragraph
+const noteHtml = x => `<h4>${inline(x.title)}</h4>${paras(x.body)}${x.more ? `<p class="more"><a href="${REPO}/blob/main/notes/${x.more}">More</a></p>` : ''}`;
 const DATA = JSON.stringify({ CH: chapters.map(({ shots, ...c }) => ({ ...c, lines: c.lines.map(({ id, ...l }) => l) })), TOTAL: total,
   NOTES: timed.map(x => ({ id: x.id, T: +x.T.toFixed(2), kind: x.kind, ch: x.ch, html: noteHtml(x) })) }).replace(/</g, '\\u003c');
 
@@ -138,7 +139,7 @@ ${fore.html}
 <h2 id="afterword">${esc(after.title)}</h2>
 ${after.html}
 <h2 id="all">All the notes</h2><div class="index">
-${chapters.map(c => { const ns = timed.filter(x => x.ch === c.n); return `<h3>${c.n}. <i>${esc(c.title)}</i></h3>` + ns.map(x => `<div class="note" data-k="${x.kind}"><h4><a class="at" href="#t=${Math.round(x.T)}" data-t="${x.T.toFixed(2)}">${hms(x.T)}</a><span class="k">${esc(kinds[x.kind])}</span><a class="nl" href="#note=${x.id}" title="a link to this note in the film">${inline(x.title)}</a></h4><p>${inline(x.body.trim())}</p></div>`).join('\n'); }).join('\n')}
+${chapters.map(c => { const ns = timed.filter(x => x.ch === c.n); return `<h3>${c.n}. <i>${esc(c.title)}</i></h3>` + ns.map(x => `<div class="note" data-k="${x.kind}"><h4><a class="at" href="#t=${Math.round(x.T)}" data-t="${x.T.toFixed(2)}">${hms(x.T)}</a><span class="k">${esc(kinds[x.kind])}</span><a class="nl" href="#note=${x.id}" title="a link to this note in the film">${inline(x.title)}</a></h4>${paras(x.body)}</div>`).join('\n'); }).join('\n')}
 </div></div>
 <script>
 const { CH, TOTAL, NOTES } = ${DATA}, KINDS = ${JSON.stringify(kinds)}, KEY = 'tle-annotated-notes', SHOWN = 'tle-annotated-kinds';

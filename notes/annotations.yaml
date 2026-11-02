@@ -3,7 +3,8 @@
 # word is said. The phrase must occur once in the whole text, or `at` names the paragraph to look in (p054). `shot`
 # pins a note to a shot's start instead (5.V: chapter 5's shot V), for something seen rather than said. Notes keep
 # their place when the voice is re-timed, since they're anchored to words, not seconds.
-#   kind: one of `kinds`. title: a few words. body: one to three sentences, Markdown, with links as [text][ref-id]
+#   kind: one of `kinds`. title: a few words. body: one to three sentences, a few short paragraphs where a note
+#   earns it (a blank line between them), Markdown, with links as [text][ref-id]
 #   (notes/refs.yaml) or [text](url). more: the longer note on the site, as file#heading (notes/*.md).
 # Rules (Round 7 §2): about one a minute; no closer than 20 s apart; beside the picture, never over it; never pausing
 # the film. The report of their times and gaps is notes/reports/annotations.md.
@@ -205,8 +206,18 @@ notes:
     kind: heirs
     title: Imagination by recombination
     body: >-
-      "Countless trillions of facts to combine and recombine". It reads now like a description of how today's AI
-      models are made, from vast stores of text. Campbell wrote it before there was an electronic computer anywhere.
+      "Countless trillions of facts to combine and recombine". Chapter 1 drew the line this machine is meant to cross:
+      machines had "imagination of the ideal sort", sure steps from fact to conclusion, and man the "illogical,
+      brilliant" kind that leaps. F-2 is built to imagine by sheer quantity, fed everything its makers knew.
+
+      It reads now like a description of how today's AI models are made. Meta's Llama 3, in 2024, learned from about
+      15 trillion tokens, fragments of words ([Llama][wp-llama]). Campbell wrote it before there was an electronic
+      computer anywhere.
+
+      Whether recombination on that scale is imagination is still argued. In 2021 four researchers called such models
+      "stochastic parrots", stitching together forms they'd seen without reference to meaning; others point to what
+      the models work out that was never in the text ([Stochastic parrot][wp-stochastic-parrot]). The story keeps both
+      sides: F-2 is more than anything before it, and in chapter 8 it still needs Roal's leap.
 
   # 5. The Hydrogen Wall
   - id: hydrogen-wall
@@ -330,8 +341,16 @@ notes:
     kind: heirs
     title: Loyal heirs
     body: >-
-      Today's word for these machines is *aligned*: loyal, grieving, true to their makers' hopes. Man's end comes from
+      Today's word for these machines is *aligned*: an AI is aligned if it advances the objectives its makers intended
+      ([AI alignment][wp-alignment]). Today's researchers call that an open problem. Campbell takes it for granted. His
+      machines are loyal, they grieve, and they promise to complete "the dreams you dreamt". Man's end comes from
       outside, not from them.
+
+      Eight years later Campbell helped write the rules for such machines. Asimov credited him with the Three Laws of
+      Robotics, from a talk between them on 23 December 1940; Campbell said Asimov had them in mind already, and only
+      needed to state them. They first appeared together in "Runaround", in 1942 ([Three Laws][wp-three-laws]).
+
+      Not every heir here is loyal: wait for chapter 9.
     more: succession.md#now
   - id: logic-intuition
     on: the deadly logic of the machine

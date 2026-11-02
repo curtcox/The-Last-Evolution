@@ -1,7 +1,8 @@
 # Fact-check list
 
 Each factual claim in the notes, the source it rests on, and how it was checked. "Read" means Claude read the source and
-found the claim in it on 2026-11-01, or on 2026-11-02 for the last Round 7 additions and the textbook claims. "Computed"
+found the claim in it on 2026-11-01, or on 2026-11-02 for the last Round 7 additions, the textbook claims and the
+expanded Heirs notes. "Computed"
 means arithmetic from the story's own text. No claim now rests on general knowledge alone.
 `npm run refs` confirms that every link answers.
 
@@ -68,6 +69,8 @@ means arithmetic from the story's own text. No claim now rests on general knowle
 | Sutton, 26 September 2025: succession "inevitable"; voluntary; think positively | dwarkesh-sutton | read |
 | Statement on AI Risk, 2023; Hinton, Bengio and lab heads (incl. Anthropic's) among signatories | cais-statement | read. ("Hundreds" of signatories: read on Wikipedia's page for the statement) |
 | Bostrom, *Superintelligence*, 2014 | wp-bostrom | read |
+| Campbell and Asimov's talk of 23 December 1940; Asimov credited Campbell with the Three Laws, Campbell said Asimov had them in mind; first together in "Runaround" (1942) | wp-three-laws | read |
+| An AI is aligned if it advances its makers' intended objectives; alignment is an open problem | wp-alignment | read |
 
 ## The margin notes, foreword and afterword ([annotations.yaml](annotations.yaml), Round 7)
 
@@ -85,3 +88,5 @@ Claims these add beyond the notes above.
 | Of nearly ten thousand ships, 9,633 move on: fewer than four in a hundred lost | the story | computed |
 | *Mind Children* (1988) is 56 years after the story | wp-mind-children | computed |
 | Morey painted 71 covers for *Amazing* | sfe-morey | read (above) |
+| Llama 3 (Meta, April 2024) pretrained on about 15 trillion tokens | wp-llama | read |
+| "Stochastic parrots": Bender, Gebru, McMillan-Major and Mitchell, 2021; forms stitched together without reference to meaning; counter-evidence of world models and new proofs | wp-stochastic-parrot | read |

@@ -16,6 +16,7 @@ Written by `tools/check_refs.mjs` on 2026-11-02. **All good.**
 | sfe-campbell | 200 | reference | afterword.md, foreword.md, history.md | [Campbell, John W, Jr (SFE)](https://sf-encyclopedia.com/entry/campbell_john_w_jr) |
 | sfe-morey | 200 | reference | history.md, annotations.yaml | [Morey, Leo (SFE)](https://sf-encyclopedia.com/entry/morey_leo) |
 | un-wpp-2024 | 200 | primary | annotations.yaml | [World Population Prospects 2024 (United Nations)](https://www.un.org/en/node/219445) |
+| wp-alignment | 200 | reference | succession.md, annotations.yaml | [AI alignment (Wikipedia)](https://en.wikipedia.org/wiki/AI_alignment) |
 | wp-amazing | 200 | reference | history.md | [Amazing Stories (Wikipedia)](https://en.wikipedia.org/wiki/Amazing_Stories) |
 | wp-annihilation | 200 | reference | afterword.md, science.md | [Annihilation (Wikipedia)](https://en.wikipedia.org/wiki/Annihilation) |
 | wp-astounding-award | 200 | reference | afterword.md, history.md | [Astounding Award for Best New Writer (Wikipedia)](https://en.wikipedia.org/wiki/Astounding_Award_for_Best_New_Writer) |
@@ -28,6 +29,7 @@ Written by `tools/check_refs.mjs` on 2026-11-02. **All good.**
 | wp-g-force | 200 | reference | science.md | [G-force (Wikipedia)](https://en.wikipedia.org/wiki/G-force) |
 | wp-golden-age | 200 | reference | afterword.md, history.md | [Golden Age of Science Fiction (Wikipedia)](https://en.wikipedia.org/wiki/Golden_Age_of_Science_Fiction) |
 | wp-great-year | 200 | reference | science.md, annotations.yaml | [Great year (Wikipedia)](https://en.wikipedia.org/wiki/Great_year) |
+| wp-llama | 200 | reference | annotations.yaml | [Llama (language model) (Wikipedia)](https://en.wikipedia.org/wiki/Llama_(language_model)) |
 | wp-mass-energy | 200 | reference | science.md | [Mass–energy equivalence (Wikipedia)](https://en.wikipedia.org/wiki/Mass%E2%80%93energy_equivalence) |
 | wp-mind-children | 200 | reference | afterword.md, succession.md, annotations.yaml | [Mind Children (Wikipedia)](https://en.wikipedia.org/wiki/Mind_Children) |
 | wp-neutron | 200 | reference | foreword.md, science.md | [Discovery of the neutron (Wikipedia)](https://en.wikipedia.org/wiki/Discovery_of_the_neutron) |
@@ -39,7 +41,9 @@ Written by `tools/check_refs.mjs` on 2026-11-02. **All good.**
 | wp-schrodinger | 200 | reference | science.md | [Schrödinger equation (Wikipedia)](https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation) |
 | wp-singularity | 200 | reference | afterword.md, succession.md | [Technological singularity (Wikipedia)](https://en.wikipedia.org/wiki/Technological_singularity) |
 | wp-sloane | 200 | reference | history.md | [T. O'Conor Sloane (Wikipedia)](https://en.wikipedia.org/wiki/T._O'Conor_Sloane) |
+| wp-stochastic-parrot | 200 | reference | annotations.yaml | [Stochastic parrot (Wikipedia)](https://en.wikipedia.org/wiki/Stochastic_parrot) |
 | wp-theremin | 200 | reference | annotations.yaml | [Theremin (Wikipedia)](https://en.wikipedia.org/wiki/Theremin) |
+| wp-three-laws | 200 | reference | succession.md, annotations.yaml | [Three Laws of Robotics (Wikipedia)](https://en.wikipedia.org/wiki/Three_Laws_of_Robotics) |
 | wp-transmutation | 200 | reference | science.md | [Nuclear transmutation (Wikipedia)](https://en.wikipedia.org/wiki/Nuclear_transmutation) |
 | wp-turing-machine | 200 | reference | science.md, annotations.yaml | [Turing machine (Wikipedia)](https://en.wikipedia.org/wiki/Turing_machine) |
 | wp-twilight | 200 | reference | afterword.md, history.md, succession.md | [Twilight (short story) (Wikipedia)](https://en.wikipedia.org/wiki/Twilight_(short_story)) |

@@ -139,6 +139,19 @@ weigh:
 
 *Recommend:* read and pin.
 **Curt:** use your recommendations.
+**Curt:** I would expand the two Heirs notes. Make any changes you see fit.
+**Claude:** both are now three short paragraphs, and the margin takes paragraphs. They come 125 and 97 seconds before
+the next note, so there's time to read them.
+- *Imagination by recombination* now sets F-2 against chapter 1's two kinds of imagination. It gives a figure for
+  today's models, Llama 3's 15 trillion tokens (2024), and both sides of the argument over whether recombination is
+  imagination: the "stochastic parrots" paper (2021), and the evidence against it. It ends with F-2 still needing Roal's
+  leap in chapter 8.
+- *Loyal heirs* now defines *aligned*, says the field counts it an open problem that Campbell takes for granted, and
+  adds Campbell's own sequel: the Three Laws of Robotics, which Asimov credited to a talk with Campbell on 23 December
+  1940. It points ahead to chapter 9's disloyal heir. The Three Laws are also in [the longer Heirs
+  notes](../notes/succession.md).
+- The four new sources are in the [fact-check list](../notes/factcheck.md), each read for its claim.
+
 **Claude:** the notes stand as drafted. "Locked" is reworded for the steady backgrounds (Round 6 §1.2): the flagship
 is now the only ship in the film to go still.
 

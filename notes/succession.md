@@ -30,6 +30,9 @@ change your belief." The story makes its case, and then asks the reader to argue
 - **1934.** Campbell himself, as Don A. Stuart, returned to the theme in "Twilight": a far future in which humanity has
   dwindled into apathy while its machines run on, perfectly, without purpose ([Twilight][wp-twilight]). Where "The Last
   Evolution" is triumphant, "Twilight" is elegiac. See also [Campbell and the pulps](history.md).
+- **1940.** Campbell and the young Isaac Asimov work out the Three Laws of Robotics in a talk on 23 December. Asimov
+  credited Campbell with them; Campbell said Asimov had them in mind already. They first appeared together in
+  "Runaround" (1942): machines made loyal by rule ([Three Laws of Robotics][wp-three-laws]).
 - **1951.** Alan Turing, in a lecture: "At some stage therefore we should have to expect the machines to take control."
   He cited *Erewhon* ([Quote Investigator][qi-turing]).
 - **1965.** I. J. Good describes an "intelligence explosion": a machine able to design better machines. He wrote that
@@ -51,10 +54,11 @@ Today, two camps argue over the question the story raises.
   included Geoffrey Hinton, Yoshua Bengio and the heads of the major AI labs ([Statement on AI Risk][cais-statement]).
   Nick Bostrom's *Superintelligence* (2014) set out the case at book length ([Superintelligence][wp-bostrom]).
 
-Campbell's story fits neither camp neatly. Its machines are what today's researchers call *aligned*: loyal, grieving,
-true to their makers' dreams ("fulfilling the promise you saw, and completing the dreams you dreamt"). Humanity's end
-comes from outside. The story's real question is the one Roal answers and F-2 hands back to the reader: if the
-successors are better, should we mind?
+Campbell's story fits neither camp neatly. Its machines are what today's researchers call *aligned*, advancing the
+objectives their makers intended, which the field counts an open problem ([AI alignment][wp-alignment]). They're loyal,
+grieving, true to their makers' dreams ("fulfilling the promise you saw, and completing the dreams you dreamt").
+Humanity's end comes from outside. The story's real question is the one Roal answers and F-2 hands back to the reader:
+if the successors are better, should we mind?
 
 ## This film
 This adaptation was made with an AI model, Claude, made by Anthropic. Anthropic's chief executive is among the
@@ -65,10 +69,12 @@ the project doesn't hide. The [making-of page](../PLAN.md#7-the-companion-site) 
 [wp-butler]: https://en.wikipedia.org/wiki/Darwin_among_the_Machines
 [wp-rur]: https://en.wikipedia.org/wiki/R.U.R.
 [wp-twilight]: https://en.wikipedia.org/wiki/Twilight_(short_story)
+[wp-three-laws]: https://en.wikipedia.org/wiki/Three_Laws_of_Robotics
 [qi-turing]: https://quoteinvestigator.com/2022/01/06/outstrip/
 [wp-singularity]: https://en.wikipedia.org/wiki/Technological_singularity
 [wp-mind-children]: https://en.wikipedia.org/wiki/Mind_Children
 [dwarkesh-sutton]: https://www.dwarkesh.com/p/richard-sutton
 [cais-statement]: https://www.safe.ai/work/statement-on-ai-risk
 [wp-bostrom]: https://en.wikipedia.org/wiki/Superintelligence:_Paths,_Dangers,_Strategies
+[wp-alignment]: https://en.wikipedia.org/wiki/AI_alignment
 <!-- /refs -->
