@@ -79,8 +79,13 @@ How the colour runs through the film, as built:
 
 **2.3 Models that watch and listen.** These would let me put quick questions to the rendered sound and picture,
 covering sense, look, sync, board and continuity. The options, and what I need from you, are in a sheet of their own:
-[models.md](models.md). To start, I need a paid Gemini key (§4.1 there).
-**Curt:**
+[models.md](models.md).
+- **Built and tried on the whole film:** measurements, Whisper and Jev ([§5 there](models.md#5-the-trial-2026-11-02)).
+  The mix is clear throughout. A few close shots aren't close, and a few figures are too small to read.
+- **Still to do:** "Does it make sense?" needs Gemini, and the key's project needs billing turned on first (§4.1
+  there).
+
+**Curt:** keys added 2026-11-02.
 
 ## Claude's open concerns
 

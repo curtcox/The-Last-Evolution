@@ -2,7 +2,8 @@
 
 Curt asked for models I can use to put quick questions to the rendered audio and video. Today I can look at still
 frames, but I can't hear anything and I can't see motion. This sheet sets out every kind of model that could fill that
-gap, matches them to the questions Curt picked, and says what I need to set them up. Written 2026-11-01.
+gap, matches them to the questions Curt picked, and says what I need to set them up. Written 2026-11-01. The trial
+on 2026-11-02, with what worked and what didn't, is [§5](#5-the-trial-2026-11-02).
 
 **Curt's answers so far:**
 - **Questions that matter:** does it make sense; the look (colour, flicker); sync and clarity; picture against board;
@@ -114,34 +115,125 @@ A full pass of everything comes to roughly $2 to $3 now, mostly Gemini. That's w
 
 ## 4. What I need
 
-**4.1 A Gemini key.** The Keychain item `gemini` (account `antigravity`) is rejected by the Gemini API. It's probably
-for something else, so I won't touch it.
-- **What's needed:** a key from AI Studio on a project with billing turned on.
-- **Where it goes:** a new Keychain item, `gemini-api`. Running this prompts for the key, so it never appears on screen:
+**4.1 Billing on the Gemini key's project.** The key is saved as `gemini-api`, but it's on Google's free tier: its
+project has no billing. On the free tier the calls hit tight limits, and Google may use what's sent to train its
+models (§5.5).
+- **What's needed:** in AI Studio, open the project the key belongs to and set up billing. The key itself stays the
+  same.
+- **Then:** I run chapter 5 through Gemini first, about $0.15, and the whole film after, about $1.
 
-```bash
-security add-generic-password -s gemini-api -a curt -w
-```
+**Curt:** added the key, 2026-11-02. Billing: waiting.
 
-**Curt:**
+**4.2 An OpenRouter key, for Jev.** **Done** (saved as `openrouter`, 2026-11-02).
 
-**4.2 An OpenRouter key, for Jev.** This is optional, and only needed for the hosted cross-check. Save it the same way,
-as `openrouter`.
-**Curt:**
+**4.3 Downloading d1-Omni-2B.** **Done.** It's 4.1 GB, in the Hugging Face cache. I read the LFM Open License v1.0
+first:
+- It's free to use, commercially too, for anyone under $10 million a year in revenue.
+- It says nothing about what the model's answers are used for, so checking a film for YouTube is fine.
+- It asks for its notices to be kept if the model is passed on, and we don't pass it on.
 
-**4.3 Downloading d1-Omni-2B.** It's 2.7 to 4 GB. The disk has 17 GB free, and the film's frames take much of that. I'd
-download it after the renders finish. I'll read the LFM Open License first and report anything in it that touches a film
-on YouTube.
-**Curt:**
+I also read the model's bundled Python code (it runs with `trust_remote_code`): it makes no network, shell or file
+calls. The tool loads that exact revision from the cache, offline.
+
+## 5. The trial, 2026-11-02
+
+**What's built:** `npm run ask`, in `tools/ask.mjs`, with `tools/hear.py` (Whisper) and `tools/d1.py` (d1).
+- **Commands:** `total`, `measure N`, `hear N`, `board N`, `frame N`, `clips N` and `watch N`. The header of
+  `tools/ask.mjs` says what each does.
+- **Answers:** they land in `out/ask/`, which isn't committed.
+- **The ledger:** every paid call goes through it. It estimates the call first, refuses one that would pass $10, then
+  records what the call cost.
+
+**Spent: $0.23 of $10.**
+- **Jev:** $0.05, for about 700 questions over the whole film.
+- **Gemini:** $0.18. That's one call that timed out on my side, logged at its estimate in case it was billed. Since the
+  key turned out to be on the free tier, it probably cost nothing.
+
+Every check below has run on all twelve chapters.
+
+**5.1 Measurements: they work, as a ruler.** They give loudness, colour and boil per shot; the boil is the change
+between frames that shows at full size but not when the frame is shrunk to a thumbnail. By chapter, weighted by time:
+
+| ch | loudness | colour | vivid colour | boil |
+|---|---|---|---|---|
+| 0 | −14.4 LUFS | 9.3 | 11.6 | 0.98 |
+| 1 | −14.4 | 11.8 | 13.3 | 1.26 |
+| 2 | −14.4 | 6.7 | 8.4 | 0.83 |
+| 3 | −14.3 | 12.9 | 15.4 | 1.88 |
+| 4 | −14.7 | **15.3** | **19.0** | **2.69** |
+| 5 | −14.7 | 8.8 | 13.3 | 1.58 |
+| 6 | −14.4 | 8.3 | 15.2 | 0.87 |
+| 7 | −14.6 | 6.9 | 9.0 | 1.12 |
+| 8 | −14.7 | 8.4 | 10.2 | 0.48 |
+| 9 | −14.5 | 9.1 | 11.7 | 0.59 |
+| 10 | −14.5 | 4.8 | 9.7 | 0.78 |
+| 11 | −14.4 | 11.3 | 13.4 | 0.95 |
+
+- **Loudness:** level across the film, within half a decibel.
+- **Colour:** mostly the paper's warmth. "Vivid" is the colour of the most saturated tenth of each frame.
+- **What it shows:** chapter 4 (the council) is the most colourful and boils the most; chapters 8 and 9 boil least.
+- **What it's for:** the before-and-after for the boil fix in Round 6 §1.2.
+
+**5.2 Whisper: it works, heard line by line.**
+- **The first run went wrong.** Over a whole chapter at once, Whisper dropped whole sentences: up to a third of
+  chapters 1, 3 and 11. I first took that for the mix burying the voice.
+- **What fixed it:** each of those lines, heard on its own, came back clean. So it now hears each line in pieces of at
+  most 15 seconds, and is told the story's names.
+- **The mix is clear throughout:** 0 to 3% of words go unheard in every chapter, and those are names, numbers and
+  spellings ("10,000" against "ten thousand", "mentatype").
+- **Sync holds:** Whisper's word starts sit 0.12 to 0.15 s before the alignment's in every chapter. That gap is the
+  same everywhere, so it's how the two measure, not drift.
+
+**5.3 Jev, picture against board: it works for whole shots, asked as a choice.**
+- **How it's asked:** a yes/no score runs low on long descriptions, so each shot's description is put against three
+  decoys from shots elsewhere in the chapter. The check fails where a decoy wins.
+- **Calibration:** given one frame and two descriptions, Jev picked its own shot's for 38 of 39 frames in chapter 5.
+- **Over the film:** 150 of 187 shots are recognised from their own board frame.
+- **The misses:** I looked at 19 of the 37, and 11 are real:
+  - close shots that aren't close at the board's time: chapter 5's C (F-1's lenses cut off at the top), M, S and AB,
+    and chapter 8's C;
+  - figures too small to read: the games on chapter 1's plaza, and chapter 6's motes;
+  - a count or scale the board names but the frame doesn't show: chapter 7's six machines (two are seen), and chapter
+    9's "sphere, grown".
+- **False alarms:** the rest match on a look, for example Kahsh's collar (chapter 4) and the magazine page (chapter
+  11).
+- **The reads:** checked one by one, they're too terse ("F-2", "the second"), and the decoys are often true as well.
+  About 60% are recognised, and the misses don't tell much.
+- **Cost:** about a cent a chapter.
+
+**5.4 d1-Omni-2B: it runs here, but it isn't a useful judge yet.**
+- **How it runs:** on the Mac's GPU. It loads in 14 s and answers in about a second. A chapter's 150 or so questions
+  take 4 minutes. It takes a clip's frames and its sound in one question.
+- **Is the voice clear?** It ranks windows sensibly, but its scores sit between 0.56 and 0.83, and it finds nothing
+  that Whisper misses.
+- **Flicker:** it follows the measured boil only loosely (a rank correlation of 0.44 over 187 shots). The measurement
+  is the better ruler.
+- **Does the shot show what's said?** No signal: 0.5 to 0.6 everywhere, and unrelated to Jev's shot check (0.02).
+- **For now:** parked. It's there for a question about movement that a still can't answer, tested on a known case
+  first.
+
+**5.5 Gemini: not run yet.**
+- **Why:** the key is on the free tier (§4.1).
+- **The first attempt:** it uploaded chapter 5's draft, and timed out on my side before an answer came. It may have
+  been processed under free-tier terms. The upload is deleted.
+- **What the tool does now:** it stops as soon as it sees a free-tier key, and deletes its upload even after an
+  error.
+- **Retrying:** 3.8 Flash was also refusing calls for high demand much of the morning. The tool retries those, which
+  aren't billed.
+
+**Where that leaves §3:** the working set is the measurements, Whisper and Jev's shot check. Together they cost about
+$0.15 for the whole film. Gemini follows once billing is on, for "does it make sense"; nothing here answers that yet.
 
 ## Claude's open concerns
 
-- **This is all from reading.** It comes from vendor pages, one paper and model cards, and I haven't run any of these
-  models yet. The decision-model rankings I found are partly promotional. The first job is a small trial on chapter 5,
-  with questions whose answers I already know.
+- **Five of the trial's findings are about the film, not the tools:** the close shots that aren't close, small figures,
+  and two counts. They belong with the acting and framing pass (Round 6 §2.2).
+- **Gemini sees the unreleased film, and may already have, on the free tier.** I'll send nothing more until billing is
+  on.
+- **§1 to §3 were from reading.** §5 corrects them where the trial disagreed. In particular, Jev's numbers need asking
+  as choices, and d1 is weaker than its card suggests.
 - **The models are judges, not taste.** They'll give a steady ruler for colour and flicker, but whether the look is
   right is still Curt's call.
-- **Gemini sees the unreleased film.** That's the cost of the one model that can say whether it makes sense.
 
 Sources: [OpenRouter on Jev](https://openrouter.ai/blog/insights/what-is-jev/),
 [decision-model rankings](https://benchlm.ai/decision-models), [JEVQA](https://arxiv.org/pdf/2609.24395),
