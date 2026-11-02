@@ -56,8 +56,14 @@
     const man = stander(t, 1450, G, 26, walkOff, { seed: 2, key: 'cman', pose: hk > .5 ? { up: .9, fore: 1.6 } : {} });
     boilSeed('hcrate'); const cx = hk < 1 ? lerp(1610, 1470, hk) : man.hand[0], cy = hk < 1 ? lerp(G - 120, G - 95, hk) : man.hand[1];
     wash(rrPts(cx - 22, cy - 18, 44, 34, 4), 2, { ink: true, sw: .5 });
-    // people at ease
-    for (let i = 0; i < 7; i++) { const x = 300 + i * 330 + 40 * hash(i); if (Math.abs(x - 1500) < 200) continue; DES.person(x, G + 20 + 30 * hash(i * 3), 22 + 5 * hash(i * 5), t, { who: 'citizen', flip: i % 2 }); }
+    // people at ease: pairs in talk, the talking passing back and forth (the speaker's hand works, the other listens and
+    // nods), and strollers crossing the plaza
+    for (let i = 0; i < 7; i++) { const x = 300 + i * 330 + 40 * hash(i), y = G + 20 + 30 * hash(i * 3), s = 22 + 5 * hash(i * 5); if (Math.abs(x - 1500) < 200) continue;
+      if (i % 3 === 2) { stander(t, x - 200, y, s, [[26 + 4 * i, 52 + 4 * i, x - 200, x + 260]], { seed: 40 + i, key: 'st' + i, look: .05, flip: i % 2 > 0 }); continue; }
+      const turn = Math.floor((t + 8 * hash(i * 9)) / 4.5) % 2;
+      for (const sd of [0, 1]) { const g = (turn === sd) * (.5 + .5 * Math.sin(t * (1.6 + .3 * hash(i)) + i));
+        stander(t, x + (sd ? 30 : -30) * s / 24, y, s, [], { seed: 50 + i * 2 + sd, key: 'pr' + i + sd, flip: sd > 0, look: turn === sd ? .05 : -.06 * Math.max(0, Math.sin(t * .8 + i)),
+          pose: { up: lerp(.12, .8, g), fore: lerp(.3, 1.8, g) }, talk: turn === sd ? .3 * Math.max(0, Math.sin(t * 6 + i)) : 0 }); } }
     // D: the runners cross the plaza; the mock battle beyond them
     const tRun = C('p003.1:But games');
     for (let i = 0; i < 3; i++) stander(t, 2500, G + 40 + i * 30, 27 + i * 2, [[tRun + i * .3, tRun + 5 + i * .4, 2500 - i * 60, 3900 - i * 120]], { seed: 10 + i, key: 'run' + i, pose: { torso: .15 } });
