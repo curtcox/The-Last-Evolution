@@ -411,7 +411,8 @@ const DES = {};
   // a set of angles (radians): torso from upright (+ leans forward, -π/2 lies back), thigh and shin from hanging straight
   // down (+ forward), and the near arm's upper and fore arm from hanging (+ forward and up). Standing, the hip is
   // DES.HIP feet above the ground. o.lid 0..1 closes the eye; o.look tilts the head (+ up); o.talk 0..1 opens the mouth.
-  // Walking adds the far leg (farThigh, farShin), whose boot steps under the hem. Roal's robe to the ankle.
+  // Walking adds the far leg (farThigh, farShin), whose boot steps under the hem. Roal's robe to the ankle; everyone else
+  // a tunic to mid-thigh over legs, as in the front view.
   DES.HIP = 3.1;
   DES.POSE = {
     stand: { torso: 0, thigh: 0, shin: 0, up: .12, fore: .3, farUp: .05, farFore: .15 },
@@ -435,11 +436,17 @@ const DES = {};
     // walking (P.farThigh, P.farShin): the far boot, stepping under the hem
     if (P.farThigh != null) { const fk = add(hip, Math.PI - P.farThigh, 1.6), fa = add(fk, Math.PI - P.farShin, 1.5), fA = Math.PI / 2 - P.farShin, ft = add(fa, fA, .5);
       wash([add(fa, fA + Math.PI, .2), add(add(fa, Math.PI - P.farShin, -.25), fA, .1), ft, add(ft, Math.PI - P.farShin, .2), add(fa, Math.PI - P.farShin, .22)], 4, { ink: true, sw: .4, curv: .3, op: .9 }); }
+    // under a tunic (everyone but Roal), the legs show below the hem: the far one, then the near one
+    const robe = who === 'roal';
+    if (!robe) for (const [th, sn, d] of [[P.farThigh ?? P.thigh - .07, P.farShin ?? P.shin - .07, cloth + 2], [P.thigh, P.shin, cloth + 1]]) {   // standing, the far leg a little back
+      const k = add(hip, Math.PI - th, 1.6), a = add(k, Math.PI - sn, 1.5); wash(ribbon([add(hip, P.torso, .4), k, a], .55 * u, .4 * u), dk(d), { ink: true, sw: .4 }); }
     // the boot's toe, before the hem covers its heel
     const footA = Math.PI / 2 - P.shin, toe = add(ank, footA, .5);
     wash([add(ank, footA + Math.PI, .2), add(add(ank, Math.PI - P.shin, -.25), footA, .1), toe, add(toe, Math.PI - P.shin, .2), add(ank, Math.PI - P.shin, .22)], 4, { ink: true, sw: .4, curv: .3 });
-    // the body as one shape: a spine from the neck to the hem, offset to its front and its back by the robe's depth
-    const spine = [neck, sh, waist, hip, knee, ank], fw = [.2, .5, .44, .5, .42, .58], bw = [.24, .52, .44, .62, .46, .52];
+    // the body as one shape: a spine from the neck to the hem, offset to its front and its back by the robe's depth (a
+    // tunic's hem is halfway down the thigh, as from the front)
+    const spine = robe ? [neck, sh, waist, hip, knee, ank] : [neck, sh, waist, hip, [lerp(hip[0], knee[0], .42), lerp(hip[1], knee[1], .42)]];
+    const fw = robe ? [.2, .5, .44, .5, .42, .58] : [.2, .5, .44, .5, .52], bw = robe ? [.24, .52, .44, .62, .46, .52] : [.24, .52, .44, .62, .6];
     const N = spine.map((p, i) => { const a = spine[Math.max(0, i - 1)], b = spine[Math.min(spine.length - 1, i + 1)], L = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1;
       const tx = (b[0] - a[0]) / L, ty = (b[1] - a[1]) / L; return [ty * f, -tx * f]; });
     const miter = i => { if (i === 0 || i === spine.length - 1) return 1; const a = spine[i - 1], b = spine[i], L = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1, n0 = [(b[1] - a[1]) / L * f, -(b[0] - a[0]) / L * f]; return 1 / Math.max(.55, n0[0] * N[i][0] + n0[1] * N[i][1]); };
@@ -449,7 +456,7 @@ const DES = {};
     wash([...front, ...back.reverse()], cloth, { ink: true, sw: .6, curv: .25 });
     back.reverse();
     wash([...spine.slice(1, 4).map((p, i) => [lerp(p[0], back[i + 1][0], .45), lerp(p[1], back[i + 1][1], .45)]), ...back.slice(1, 4).reverse()], dk(cloth + 1), { op: .5, curv: .3 });   // the shadow down the back
-    for (const k of [.3, .65]) inkLine([[lerp(knee[0], ank[0], k) + N[5][0] * .3 * u, lerp(knee[1], ank[1], k) + N[5][1] * .3 * u], [lerp(knee[0], ank[0], k + .3) + N[5][0] * .4 * u, lerp(knee[1], ank[1], k + .3) + N[5][1] * .4 * u]], .4, D[3]);   // the robe's folds
+    if (robe) for (const k of [.3, .65]) inkLine([[lerp(knee[0], ank[0], k) + N[5][0] * .3 * u, lerp(knee[1], ank[1], k) + N[5][1] * .3 * u], [lerp(knee[0], ank[0], k + .3) + N[5][0] * .4 * u, lerp(knee[1], ank[1], k + .3) + N[5][1] * .4 * u]], .4, D[3]);   // the robe's folds
     inkLine([front[2], back[2]], 1.1, INK);                                                                               // the belt
     // the standing collar, rising behind the head
     wash([add(neck, P.torso - Math.PI / 2, .22), add(add(neck, P.torso, .78), P.torso - Math.PI / 2, .45), add(add(neck, P.torso, .82), P.torso - Math.PI / 2, .26), add(neck, P.torso + Math.PI / 2, .14)], dk(cloth + 1), { ink: true, sw: .45 });
