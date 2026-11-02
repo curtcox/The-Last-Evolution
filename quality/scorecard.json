@@ -1,9 +1,9 @@
 {
  "summary": {
-  "pass": 0,
+  "pass": 1,
   "stale": 0,
-  "open": 96,
-  "curt": 6,
+  "open": 94,
+  "curt": 7,
   "later": 3
  },
  "satisfied": false,
@@ -21,8 +21,8 @@
    "detail": "current"
   },
   "voice": {
-   "state": "fail",
-   "detail": "still flagged, not yet heard: p014.1, p052.1"
+   "state": "pass",
+   "detail": "every flagged line heard; p052.1 put to Curt"
   },
   "captions": {
    "state": "pass",
@@ -75,6 +75,11 @@
    "id": "curt.foreword",
    "title": "the foreword's wording",
    "ask": "The foreword says why this story, in your voice (DECISIONS.md, 2026-11-02). Is its wording yours?"
+  },
+  {
+   "id": "voice.p052.1",
+   "title": "Line p052.1: speech-to-text missed \"roal\"",
+   "ask": "Does F-1 say 'Roal' right in 'Roal--your thoughts' (p052.1, assets/voice/p052.1-t1-4553aff14c.mp3)? Two transcribers hear something extra: ElevenLabs 'Roald', Whisper 'Rohan' (and 'Roal' only when told the name). The narrator's 'Roal' is heard as one syllable, 'Rol', as Round 1 chose. The voice pass kept this as its best take. My recommendation: listen; if it sounds like 'Roald', voice this one line again (a few credits)."
   }
  ],
  "items": [
@@ -761,15 +766,15 @@
    "id": "voice.p014.1",
    "area": "voice",
    "title": "Line p014.1: speech-to-text missed \"minds\"",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "Whisper (small.en, no hints) hears 'remembered by the memory minds back on Earth': every word right. ElevenLabs' speech-to-text heard 'mines'; the voice says 'minds'."
   },
   {
    "id": "voice.p052.1",
    "area": "voice",
    "title": "Line p052.1: speech-to-text missed \"roal\"",
-   "state": "open",
-   "note": ""
+   "state": "curt",
+   "note": "Does F-1 say 'Roal' right in 'Roal--your thoughts' (p052.1, assets/voice/p052.1-t1-4553aff14c.mp3)? Two transcribers hear something extra: ElevenLabs 'Roald', Whisper 'Rohan' (and 'Roal' only when told the name). The narrator's 'Roal' is heard as one syllable, 'Rol', as Round 1 chose. The voice pass kept this as its best take. My recommendation: listen; if it sounds like 'Roald', voice this one line again (a few credits)."
   }
  ],
  "fresh": []

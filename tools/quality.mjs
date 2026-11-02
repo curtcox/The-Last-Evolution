@@ -104,8 +104,9 @@ function quick() {
   const A = 'site/review/round7/annotated.html', before = existsSync(A) && sha(readFileSync(A));
   r = run('node', ['tools/annotated.mjs']);
   c.annotated = { ok: r.ok, detail: !r.ok ? last(r.out) : before === sha(readFileSync(A)) ? 'current' : 'had fallen behind; rebuilt now' };
-  const flagged = items.filter(i => i.area === 'voice' && !(status.items[i.id]?.state === 'pass' && status.items[i.id].at === i.key)).map(i => i.id.slice(6));
-  c.voice = { ok: !flagged.length, detail: flagged.length ? `still flagged, not yet heard: ${flagged.join(', ')}` : 'every flagged line heard and right' };
+  const heard = i => status.items[i.id]?.at === i.key || status.items[i.id]?.state === 'curt', vs = items.filter(i => i.area === 'voice');
+  const flagged = vs.filter(i => !heard(i)).map(i => i.id.slice(6)), withCurt = vs.filter(i => status.items[i.id]?.state === 'curt').map(i => i.id.slice(6));
+  c.voice = { ok: !flagged.length, detail: flagged.length ? `still flagged, not yet heard: ${flagged.join(', ')}` : `every flagged line heard${withCurt.length ? `; ${withCurt.join(', ')} put to Curt` : ' and right'}` };
   const script = readYaml('script/script.yaml'), gaps = [];
   for (const ch of script.chapters) {
     const al = readJson(`script/align/ch${NN(ch.n)}.json`, {});

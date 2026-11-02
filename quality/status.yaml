@@ -1,4 +1,13 @@
 # The quality loop's judgments (tools/quality.mjs writes this; QUALITY.md says how it works)
-items: {}
+items:
+  voice.p014.1:
+    state: pass
+    note: "Whisper (small.en, no hints) hears 'remembered by the memory minds back on Earth': every word right. ElevenLabs' speech-to-text heard 'mines'; the voice says 'minds'."
+    at: eb2e313b49
+    when: 2026-11-02 23:03
+  voice.p052.1:
+    state: curt
+    note: "Does F-1 say 'Roal' right in 'Roal--your thoughts' (p052.1, assets/voice/p052.1-t1-4553aff14c.mp3)? Two transcribers hear something extra: ElevenLabs 'Roald', Whisper 'Rohan' (and 'Roal' only when told the name). The narrator's 'Roal' is heard as one syllable, 'Rol', as Round 1 chose. The voice pass kept this as its best take. My recommendation: listen; if it sounds like 'Roald', voice this one line again (a few credits)."
+    when: 2026-11-02 23:03
 fresh: []
-since_fresh: 0
+since_fresh: 1
