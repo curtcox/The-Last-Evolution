@@ -159,6 +159,14 @@ notes:
       heat, so such a beam would stop it. In 2538 the dead can usually be revived; these beams burn out the nerves, so
       they can't be.
     more: science.md#the-green-beams
+  - id: bacteria
+    on: The foreign bacteria were already at work
+    kind: science
+    title: Wells's lesson
+    body: >-
+      In H. G. Wells's *The War of the Worlds* (1898), the Martians conquer Earth and then die of its germs ([The War
+      of the Worlds][wp-war-of-the-worlds]). Campbell's Outsiders come prepared: their beams kill every living thing
+      down to the microbes, and their own bodies' quick rot shows the machines why.
   - id: pluto
     on: you live as readily on Pluto
     kind: science
@@ -325,6 +333,14 @@ notes:
       Today's word for these machines is *aligned*: loyal, grieving, true to their makers' hopes. Man's end comes from
       outside, not from them.
     more: succession.md#now
+  - id: logic-intuition
+    on: the deadly logic of the machine
+    kind: making
+    title: Logic and intuition
+    body: >-
+      "The deadly logic of the machine, inspired by the leaping intuition of man": the ruled line and the curl from
+      chapter 1, together for the first time, in the forces that build the plant. It's what Roal's hint gives F-2, a
+      leap it couldn't have made alone.
 
   # 9. Pure Force
   - id: inefficient
@@ -371,8 +387,8 @@ notes:
     kind: who
     title: "\"I, F-2\""
     body: >-
-      It has just said so: the narrator is F-2, the machine born in chapter 5, first to use the Ultimate Energy, and last of
-      its kind.
+      It has just said so: the narrator is F-2, the machine born in chapter 5, first to use the Ultimate Energy, and
+      last of its kind.
   - id: the-page
     on: Yet this which is made of excerpts
     kind: making

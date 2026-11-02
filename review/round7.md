@@ -42,10 +42,16 @@ them off and let viewers turn them on.
 *Recommend:* on, with that suggestion in the foreword.
 **Curt:**
 
-**1.3 How many.** There are 46 notes over 57 minutes, about one every 74 seconds, and none closer than 20 seconds to
+**1.3 How many.** There are 48 notes over 57 minutes, about one every 71 seconds, and none closer than 20 seconds to
 the one before.
-- **The rule:** notes stay sparse where the story is busiest. The battle, Roal's speech in chapter 8 and the
-  force-sphere in chapter 9 each run four or five minutes with only a note or two.
+- **The rule:** notes stay sparse where the story is busiest. The battle, the end of chapter 7 and the globe of force
+  in chapter 9 each run two to four minutes without a note.
+- **Added since the first pass:** two notes in the longest quiet stretches.
+  - *Wells's lesson* (chapter 3, 15:57): the Outsiders kill down to the microbes because, unlike Wells's Martians,
+    they know what Earth's germs would do.
+  - *Logic and intuition* (chapter 8, 45:45): the power plant built from "the deadly logic of the machine, inspired by
+    the leaping intuition of man", the ruled line and the curl together, as the boards draw it.
+  These shorten the longest gaps from 223 and 285 seconds to 152 and 188 seconds.
 - **What it cost:** a first draft had 53 notes. To meet the rule I merged or dropped seven, among them notes on Sirius
   and Alpha Centauri, the control in Chicago and the lost "don't". The lost "don't" is now folded into the note on the
   lost "not".
@@ -59,10 +65,10 @@ the one before.
 |---|---|---|
 | Who's who | 5 | the people and machines, their numbers, and who the narrator is |
 | Words | 3 | the story's own terms and numbers: mentatype, kilads, 9,633 |
-| 1932 science | 12 | what Campbell knew, and what we know now |
+| 1932 science | 13 | what Campbell knew, and what we know now |
 | The text | 5 | the two printings, the footnotes, Morey's picture |
 | Heirs | 11 | the idea that machines might inherit from us, before Campbell and since |
-| The making | 10 | where the film pictures what the text leaves unsaid |
+| The making | 11 | where the film pictures what the text leaves unsaid |
 
 *Recommend:* these six.
 **Curt:**
@@ -143,7 +149,7 @@ weigh:
 *Recommend:* that.
 **Curt:**
 
-**4.2 The QR codes.** PLAN.md §5 plans 30 to 60 QR codes in the film, each opening a page here. These 46 notes are the
+**4.2 The QR codes.** PLAN.md §5 plans 30 to 60 QR codes in the film, each opening a page here. These 48 notes are the
 natural set to choose from. Each code would open the annotated film at its note.
 
 *Recommend:* choose the codes from these notes when the QR layouts are made (Phase 4).
@@ -153,16 +159,17 @@ natural set to choose from. Each code would open the annotated film at its note.
 
 - **New facts.**
   - These notes add a few claims that the Round 2 notes didn't make: Pluto (1930), the UN's population projection,
-    Wien's law, the theremin, and some arithmetic.
+    Wien's law, the theremin, *The War of the Worlds* (1898), and some arithmetic.
   - They're in the [fact-check list](../notes/factcheck.md). Four rest on textbook knowledge, with a reference but no
-    fresh reading.
+    fresh reading. Wells was checked against the reference.
   - The population figure was checked against the UN's 2024 projection.
 - **Notes about pictures may change with them.**
   - Four notes describe the draft's pictures: the lattice, the curl, the inside of the giant ship, and "Locked" (the
     flagship as the one drawing that doesn't boil).
   - If the look changes (Round 6 §1.2 would stop the backgrounds boiling), "Locked" will need new words. The
     flagship's stillness only stands out while everything else boils.
-- **Long quiet stretches.** Chapters 8 and 9 each go four to five minutes without a note. That's deliberate, but
-  chapter 9's storm and the power plant could take one, if you'd like more there.
+- **Long quiet stretches.** The power plant now has a note, but the storm and the globe of force (chapter 9) still go
+  three minutes without one, as does the end of chapter 7. That's deliberate; either could take a note if you'd like
+  more there.
 - **It's on the draft.** The video is Round 6's at 12 drawings a second, so the notes are being judged against
   unfinished pictures.

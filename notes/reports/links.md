@@ -41,6 +41,7 @@ Written by `tools/check_refs.mjs` on 2026-11-02. **All good.**
 | wp-turing-machine | 200 | reference | science.md, annotations.yaml | [Turing machine (Wikipedia)](https://en.wikipedia.org/wiki/Turing_machine) |
 | wp-twilight | 200 | reference | afterword.md, history.md, succession.md | [Twilight (short story) (Wikipedia)](https://en.wikipedia.org/wiki/Twilight_(short_story)) |
 | wp-unified | 200 | reference | science.md, annotations.yaml | [Classical unified field theories (Wikipedia)](https://en.wikipedia.org/wiki/Classical_unified_field_theories) |
+| wp-war-of-the-worlds | 200 | reference | annotations.yaml | [The War of the Worlds (Wikipedia)](https://en.wikipedia.org/wiki/The_War_of_the_Worlds) |
 | wp-who-goes-there | 200 | reference | history.md | [Who Goes There? (Wikipedia)](https://en.wikipedia.org/wiki/Who_Goes_There%3F) |
 | wp-wien | 200 | reference | annotations.yaml | [Wien's displacement law (Wikipedia)](https://en.wikipedia.org/wiki/Wien%27s_displacement_law) |
 | wp-williams-tube | 200 | reference | afterword.md, science.md | [Williams tube (Wikipedia)](https://en.wikipedia.org/wiki/Williams_tube) |

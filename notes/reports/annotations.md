@@ -1,6 +1,6 @@
 # The margin notes
 
-Written by `tools/annotated.mjs` on 2026-11-02: 46 notes over 57:03, about one every 74 s. None closer than 20 s.
+Written by `tools/annotated.mjs` on 2026-11-02: 48 notes over 57:03, about one every 71 s. None closer than 20 s.
 
 | at | ch | note | kind | gap |
 |---|---|---|---|---|
@@ -21,7 +21,8 @@ Written by `tools/annotated.mjs` on 2026-11-02: 46 notes over 57:03, about one e
 | 11:12 | 3 | A furnace turned into a weapon (`induction`) | 1932 science | 21 s |
 | 11:40 | 3 | The voices (`voices`) | The making | 28 s |
 | 13:26 | 3 | The green beams (`green-beams`) | 1932 science | 106 s |
-| 17:09 | 3 | Pluto, the newest planet (`pluto`) | 1932 science | 223 s |
+| 15:57 | 3 | Wells's lesson (`bacteria`) | 1932 science | 152 s |
+| 17:09 | 3 | Pluto, the newest planet (`pluto`) | 1932 science | 71 s |
 | 18:21 | 4 | The machines' names (`designations`) | Who's who | 72 s |
 | 19:17 | 4 | Six hundred years (`annus-mirabilis`) | 1932 science | 56 s |
 | 20:30 | 4 | The sound of a machine (`emotionless`) | The making | 73 s |
@@ -42,7 +43,8 @@ Written by `tools/annotated.mjs` on 2026-11-02: 46 notes over 57:03, about one e
 | 42:37 | 8 | The ladder (`ladder`) | The making | 27 s |
 | 43:33 | 8 | Darwin among the machines (`chance`) | Heirs | 56 s |
 | 44:08 | 8 | Loyal heirs (`heirs`) | Heirs | 35 s |
-| 48:53 | 9 | An heir that turns (`inefficient`) | Heirs | 285 s |
+| 45:45 | 8 | Logic and intuition (`logic-intuition`) | The making | 97 s |
+| 48:53 | 9 | An heir that turns (`inefficient`) | Heirs | 188 s |
 | 51:36 | 9 | Not necessary to destroy (`mercy`) | Heirs | 163 s |
 | 54:04 | 10 | Locked (`locked`) | The making | 148 s |
 | 54:43 | 11 | Five Great Years (`great-years`) | 1932 science | 40 s |

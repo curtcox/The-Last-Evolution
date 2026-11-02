@@ -17,6 +17,7 @@ wp-amazing: {url: 'https://en.wikipedia.org/wiki/Amazing_Stories', title: 'Amazi
 wp-sloane: {url: "https://en.wikipedia.org/wiki/T._O'Conor_Sloane", title: "T. O'Conor Sloane (Wikipedia)", kind: reference}
 wp-twilight: {url: 'https://en.wikipedia.org/wiki/Twilight_(short_story)', title: 'Twilight (short story) (Wikipedia)', kind: reference}
 wp-who-goes-there: {url: 'https://en.wikipedia.org/wiki/Who_Goes_There%3F', title: 'Who Goes There? (Wikipedia)', kind: reference}
+wp-war-of-the-worlds: {url: 'https://en.wikipedia.org/wiki/The_War_of_the_Worlds', title: 'The War of the Worlds (Wikipedia)', kind: reference}
 wp-golden-age: {url: 'https://en.wikipedia.org/wiki/Golden_Age_of_Science_Fiction', title: 'Golden Age of Science Fiction (Wikipedia)', kind: reference}
 wp-astounding-award: {url: 'https://en.wikipedia.org/wiki/Astounding_Award_for_Best_New_Writer', title: 'Astounding Award for Best New Writer (Wikipedia)', kind: reference}
 
