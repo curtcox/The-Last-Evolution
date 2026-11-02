@@ -260,7 +260,19 @@ Not changed, for later:
   skip link now gets returning visitors past it. *Recommend:* keep it as it is.
 - **The older review pages** (the Round 5 and 6 drafts) still show the respellings, until they're rebuilt. They're the
   record of their rounds, so I left them.
-- **The "More" links** still open the long notes on GitHub, until Phase 7 makes them pages of their own.
+
+**Later, 2026-11-02.** Curt: "Make any changes you see fit." The live site checked out: /watch/ forwards with its
+`#note=` kept, and the 404 page and tab icon serve. Then the last item above that didn't need the film:
+- **The longer notes are pages of the site now**, under [Notes](https://curtcox.github.io/The-Last-Evolution/notes/):
+  the science of 1932, machines as heirs, Campbell and the pulps, and the fact-check list. Every menu has *Notes*, and
+  the front page offers them.
+- The film's *More* links, the afterword's and the About page's go to those pages, at the same sections, instead of
+  to GitHub.
+- The science note's paragraph lists ("¶15, ¶41 · chapters 2, 4") link to the paragraphs on the Read page. The
+  fact-check list's source ids link to their sources.
+- One renderer (`tools/notes_md.mjs`) now makes the notes for both the film page and the site.
+- The menu wraps on a narrow phone instead of running off the page.
+- A check of every link on the built site: 1,086 internal links and anchors, none broken.
 
 ## Claude's open concerns
 

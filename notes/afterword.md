@@ -63,9 +63,8 @@ printing's copyright was renewed, so the story and Morey's picture are free for 
 ## Where next
 
 - [Read the story](/read/), with the footnotes and Leo Morey's illustration.
-- The longer notes: [the science of 1932](https://github.com/curtcox/The-Last-Evolution/blob/main/notes/science.md),
-  [machines as heirs](https://github.com/curtcox/The-Last-Evolution/blob/main/notes/succession.md), and
-  [Campbell and the pulps](https://github.com/curtcox/The-Last-Evolution/blob/main/notes/history.md).
+- The longer notes: [the science of 1932](science.md), [machines as heirs](succession.md), and
+  [Campbell and the pulps](history.md).
 - [How it was made](/review/), round by round.
 
 <!-- refs: written by tools/check_refs.mjs -->

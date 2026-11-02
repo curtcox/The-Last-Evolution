@@ -10,31 +10,18 @@
 import { readdirSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { readYaml, respeller, storyWords, PATHS } from './script_lib.mjs';
 import { publishReview } from './publish_review.mjs';
+import { markdown, inline as mdInline, link, esc, REPO } from './notes_md.mjs';
 
-const OUT = 'out/review/round7', REPO = 'https://github.com/curtcox/The-Last-Evolution', UP = '../../', GAP = 20;
+const OUT = 'out/review/round7', UP = '../../', GAP = 20;
 const cast = readYaml('script/cast.yaml'), who = id => id === 'narrator' ? '' : (s => s[0].toUpperCase() + s.slice(1))(cast[id].name.split(',')[0]);
-const say = respeller(readYaml(PATHS.pronounce)), refs = readYaml('notes/refs.yaml'), { kinds, notes } = readYaml('notes/annotations.yaml');
-const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const say = respeller(readYaml(PATHS.pronounce)), { kinds, notes } = readYaml('notes/annotations.yaml');
 const hms = s => { const d = Math.round(s), h = Math.floor(d / 3600), m = Math.floor(d % 3600 / 60); return (h ? h + ':' + String(m).padStart(2, '0') : m) + ':' + String(d % 60).padStart(2, '0'); };
 // words compared as their letters and digits, split at anything else ("Sirius--Alpha", "X-5638", "don't"), the same way
 // for the phrase and the voice, so a phrase matches however the voice's words were joined
 const bits = s => s.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
 
-// Markdown, as much as the notes use: ## headings, paragraphs, - lists, *italic*, **bold**, [text][ref-id], [text](url).
-// A link to /path is the site's own page, made relative to this one.
-const inline = s => esc(s).replace(/\[([^\]]+)\]\[([a-z0-9-]+)\]/g, (m, t, id) => { if (!refs[id]) throw new Error(`unknown reference ${id}`); return `<a href="${esc(refs[id].url)}">${t}</a>`; })
-  .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, t, u) => `<a href="${u.startsWith('/') ? UP + u.slice(1) : u}">${t}</a>`)
-  .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/\*([^*]+)\*/g, '<i>$1</i>');
-// a note file: its title and the italic line under it are for the repo, not the page; so are the link definitions
-function md(file) {
-  const src = readFileSync(file, 'utf8').replace(/<!-- refs:[\s\S]*?<!-- \/refs -->/, '');
-  const blocks = src.split(/\n\s*\n/).map(b => b.trim()).filter(Boolean);
-  const title = blocks.shift().replace(/^#\s*/, '');
-  if (/^\*[^*]/.test(blocks[0])) blocks.shift();
-  return { title, html: blocks.map(b => b.startsWith('## ') ? `<h3>${inline(b.slice(3))}</h3>`
-    : b.startsWith('- ') ? `<ul>${b.split(/\n(?=- )/).map(li => `<li>${inline(li.slice(2).replace(/\s*\n\s*/g, ' '))}</li>`).join('')}</ul>`
-    : `<p>${inline(b.replace(/\s*\n\s*/g, ' '))}</p>`).join('\n') };
-}
+// the notes' Markdown (tools/notes_md.mjs), with links made from this page, two folders down
+const inline = s => mdInline(s, UP), md = file => markdown(file, { up: UP, h: 3 });
 
 // the chapters, as the film page plays them: Round 6's published drafts, and the pilot's from Round 5
 const published = dir => readdirSync(`site/review/${dir}/video`);
@@ -79,7 +66,7 @@ writeFileSync('notes/reports/annotations.md', ['# The margin notes', '', `Writte
 
 const fore = md('notes/foreword.md'), after = md('notes/afterword.md');
 const paras = s => s.trim().split(/\n+/).map(p => `<p>${inline(p)}</p>`).join('');   // a blank line in a body starts a new paragraph
-const noteHtml = x => `<h4>${inline(x.title)}</h4>${paras(x.body)}${x.more ? `<p class="more"><a href="${REPO}/blob/main/notes/${x.more}">More</a></p>` : ''}`;
+const noteHtml = x => `<h4>${inline(x.title)}</h4>${paras(x.body)}${x.more ? `<p class="more"><a href="${link(x.more, UP)}">More</a></p>` : ''}`;
 const DATA = JSON.stringify({ CH: chapters.map(({ shots, ...c }) => ({ ...c, lines: c.lines.map(({ id, ...l }) => l) })), TOTAL: total,
   NOTES: timed.map(x => ({ id: x.id, T: +x.T.toFixed(2), kind: x.kind, ch: x.ch, html: noteHtml(x) })) }).replace(/</g, '\\u003c');
 

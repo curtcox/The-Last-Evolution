@@ -52,7 +52,7 @@ in 1929. Sloane needed a replacement for Frank R. Paul, who had left with Gernsb
 *Amazing* and 12 for *Amazing Stories Quarterly*, and later worked for other pulps and for comics. He died in 1965.
 
 His picture for this story shows the moment of F-2's birth: F-1's tentacles, the small torpedo of metal in its aura, and
-a man shielding his eyes. It's on [the Read page](https://curtcox.github.io/The-Last-Evolution/read/#illustration), and
+a man shielding his eyes. It's on [the Read page](/read/#illustration), and
 in the film at that moment.
 
 ## The reprint, and the text we use

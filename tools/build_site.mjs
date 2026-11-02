@@ -4,15 +4,18 @@
 //                #t= link, so links shared today still work when the watch page takes its place (Phase 7)
 //   read/        the story in full, from text/story.json: a printable page with an anchor per paragraph (#p001…), each
 //                reading restored from the 1932 printing marked and listed (text/emendations.yaml)
+//   notes/       the longer notes (notes/science.md, succession.md, history.md, factcheck.md), a page each, so the film's
+//                "More" links and the About page stay on the site (tools/notes_md.mjs)
 //   about/       sources, credits, licences
 //   review/      each review round: its decision sheet (review/roundN.md, on GitHub) and its decision pages, copied from
 //                site/review/ (put there by tools/publish_review.mjs, with their audio)
 //   img/         site/img/, copied as is (Morey's illustration, sized for the web from assets/ref/)
 //   404.html     for a mistyped or outdated link; favicon.svg, the tab's icon
 // Links are relative, so the same files work at http://localhost:8077/ and at curtcox.github.io/The-Last-Evolution/.
-// Later phases add the film beside the synced text, the notes and the r/NAME/ forwarding pages (PLAN.md §7).
+// Later phases add the film beside the synced text and the r/NAME/ forwarding pages (PLAN.md §7).
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, existsSync, readdirSync } from 'node:fs';
 import YAML from 'yaml';
+import { markdown, NOTES } from './notes_md.mjs';
 
 const OUT = 'site/public';
 const REPO = 'https://github.com/curtcox/The-Last-Evolution', SITE = 'https://curtcox.github.io/The-Last-Evolution/';
@@ -43,7 +46,7 @@ function page(depth, title, body, { wide = false, abs = false } = {}) {
 </head>
 <body>
 <header class="mast"><a href="${up}" class="name">The Last Evolution</a>
-<nav><a href="${up}watch/">Watch</a><a href="${up}read/">Read</a><a href="${up}about/">About</a><a href="${up}review/">Review</a><a href="${REPO}">Source</a></nav></header>
+<nav><a href="${up}watch/">Watch</a><a href="${up}read/">Read</a><a href="${up}notes/">Notes</a><a href="${up}about/">About</a><a href="${up}review/">Review</a><a href="${REPO}">Source</a></nav></header>
 <main${wide ? ' class="wide"' : ''}>
 ${body}
 </main>
@@ -86,6 +89,8 @@ science, the text, and the idea at its heart, that machines might inherit from u
 and the paintings are still rough.</li>
 <li><a href="read/"><b>Read</b></a> the story (${story.words.toLocaleString()} words, about half an hour), with the
 words the 1961 reprint lost put back from the first printing.</li>
+<li><a href="notes/"><b>Read the notes</b></a>: the science of 1932, machines as heirs, Campbell and the pulps, each
+claim with its source.</li>
 <li><a href="review/"><b>See how it's made</b></a>, round by round: every choice, and why.</li>
 </ul>
 <div class="status"><h2>In production</h2>
@@ -146,16 +151,35 @@ Curt Cox with Claude, Anthropic's AI model, in Claude Code. <a href="../watch/">
 <p>The voices, sound effects and music in the film are AI-generated. Each voice was designed for its part, and none is a
 real person's. Every on-screen design is original.</p>
 <h2>The notes</h2>
-<p>The notes beside the film, and the longer ones on <a href="${REPO}/blob/main/notes/science.md">the science of
-1932</a>, <a href="${REPO}/blob/main/notes/succession.md">machines as heirs</a> and
-<a href="${REPO}/blob/main/notes/history.md">Campbell and the pulps</a>, cite their sources. Each claim was checked in
-its source, or worked out from the story's own numbers, as <a href="${REPO}/blob/main/notes/factcheck.md">the fact-check
-list</a> records.</p>
+<p>The notes beside the film, and the longer ones on <a href="../notes/science/">the science of 1932</a>,
+<a href="../notes/succession/">machines as heirs</a> and <a href="../notes/history/">Campbell and the pulps</a>, cite
+their sources. Each claim was checked in its source, or worked out from the story's own numbers, as
+<a href="../notes/factcheck/">the fact-check list</a> records.</p>
 <h2>Corrections</h2>
 <p>If you find a mistake in the text, the film or the notes, please <a href="${REPO}/issues">open an issue on
 GitHub</a>.</p>
 <h2>The code</h2>
 <p>Everything is on <a href="${REPO}">GitHub</a> under the MIT licence.</p>
+`);
+
+// notes/: a page for each longer note, and a page listing them
+const ABOUT = { science: 'What Campbell knew in 1932, the year the atom came apart, and what became of it.',
+  succession: 'The idea at the story\'s heart, that machines might inherit from us: before Campbell, and since.',
+  history: 'The magazine, the young writer who became the field\'s great editor, the illustrator, and the text.',
+  factcheck: 'Every claim in the notes, the source it rests on, and how it was checked.' };
+const notes = NOTES.map(name => ({ name, ...markdown(`notes/${name}.md`, { up: '../../' }) }));
+const notePages = notes.map(n => [n.name, page(2, `${esc(n.title)}: The Last Evolution`, `
+<p class="kicker"><a href="../">Notes</a></p>
+<h1>${esc(n.title)}</h1>
+<div class="prose">${n.html}</div>
+<p class="src">Each claim's source and check: <a href="../factcheck/">the fact-check list</a>. Found a mistake?
+<a href="${REPO}/issues">Say so on GitHub</a>.</p>`)]);
+const notesIndex = page(1, 'Notes: The Last Evolution', `
+<p class="kicker">Beside the story</p>
+<h1>Notes</h1>
+<p class="lede">The short notes appear beside <a href="../watch/">the film</a> as it reaches the words they're about.
+These are the longer ones, with their sources.</p>
+<ul class="ways">${notes.map(n => `<li><a href="${n.name}/"><b>${esc(n.title)}</b></a>. ${ABOUT[n.name]}</li>`).join('\n')}</ul>
 `);
 
 // watch/: forwards to the film, with any #note= or #t= link kept
@@ -183,7 +207,7 @@ a { color: inherit; text-decoration-color: var(--accent); text-underline-offset:
 a:hover { color: var(--accent); }
 .mast { display: flex; flex-wrap: wrap; gap: .5em 1.5em; align-items: baseline; justify-content: space-between; padding: .8em 16px; border-bottom: 3px double var(--rule); background: var(--paper2); }
 .mast .name { font: 1.6em/1 "Bebas Neue", Impact, sans-serif; letter-spacing: .04em; text-decoration: none; }
-.mast nav { display: flex; gap: 1.2em; font-size: .9em; }
+.mast nav { display: flex; flex-wrap: wrap; gap: .2em 1.2em; font-size: .9em; }
 main { max-width: 38em; margin: 0 auto; padding: 1.5em 16px 3em; }
 h1 { font: 3.2em/1 "Bebas Neue", Impact, sans-serif; letter-spacing: .03em; margin: .2em 0 .1em; }
 h1 i { font-style: normal; }
@@ -209,6 +233,14 @@ h2 { font: 1.6em/1.1 "Bebas Neue", Impact, sans-serif; letter-spacing: .04em; ma
 .em-list li { margin-bottom: .4em; }
 .notes-h { font-size: 1.2em; }
 sup a { text-decoration: none; color: var(--accent); }
+.prose h2[id], .prose h3[id] { scroll-margin-top: 1em; }
+.prose blockquote { margin: 1em 1.5em; font-style: italic; color: var(--ink2); }
+.prose code { font-size: .85em; }
+.where { font-size: .85em; color: var(--ink2); margin-top: -.2em; }
+.tbl { overflow-x: auto; margin: 1em 0; }
+.tbl table { border-collapse: collapse; font-size: .8em; line-height: 1.4; min-width: 30em; }
+.tbl th, .tbl td { border-bottom: 1px solid var(--rule); padding: .35em .5em; text-align: left; vertical-align: top; }
+.tbl th { font-variant: small-caps; letter-spacing: .04em; }
 .src, footer { font-size: .85em; color: var(--ink2); }
 footer { border-top: 3px double var(--rule); padding: .5em 16px 2em; text-align: center; }
 `;
@@ -233,16 +265,18 @@ ${r.pages.length ? `<ul>${r.pages.map(p => `<li><a href="${p.href}">${esc(p.titl
 `);
 
 rmSync(OUT, { recursive: true, force: true });
-for (const d of ['', 'watch', 'read', 'about', 'review']) mkdirSync(`${OUT}/${d}`, { recursive: true });
+for (const d of ['', 'watch', 'read', 'about', 'review', ...NOTES.map(n => `notes/${n}`)]) mkdirSync(`${OUT}/${d}`, { recursive: true });
 writeFileSync(`${OUT}/index.html`, home);
 writeFileSync(`${OUT}/watch/index.html`, watch);
 writeFileSync(`${OUT}/404.html`, notFound);
 writeFileSync(`${OUT}/favicon.svg`, favicon);
 writeFileSync(`${OUT}/read/index.html`, read);
 writeFileSync(`${OUT}/about/index.html`, about);
+writeFileSync(`${OUT}/notes/index.html`, notesIndex);
+for (const [name, html] of notePages) writeFileSync(`${OUT}/notes/${name}/index.html`, html);
 if (existsSync('site/review')) cpSync('site/review', `${OUT}/review`, { recursive: true });
 writeFileSync(`${OUT}/review/index.html`, review);
 writeFileSync(`${OUT}/style.css`, css);
 writeFileSync(`${OUT}/.nojekyll`, '');
 cpSync('site/img', `${OUT}/img`, { recursive: true });
-console.log(`${OUT}: home, read (${blocks.filter(b => b.kind === 'para').length} paragraphs), about, review (${rounds.length} rounds, ${rounds.reduce((a, r) => a + r.pages.length, 0)} pages)`);
+console.log(`${OUT}: home, read (${blocks.filter(b => b.kind === 'para').length} paragraphs), notes (${notes.length}), about, review (${rounds.length} rounds, ${rounds.reduce((a, r) => a + r.pages.length, 0)} pages)`);

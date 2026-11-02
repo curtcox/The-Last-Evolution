@@ -76,7 +76,7 @@ if the successors are better, should we mind?
 ## This film
 This adaptation was made with an AI model, Claude, made by Anthropic. Anthropic's chief executive is among the
 signatories of the statement above. An AI helping to adapt a 1932 story about machines inheriting the Earth is an irony
-the project doesn't hide. The [making-of page](../PLAN.md#7-the-companion-site) will show how it was done.
+the project doesn't hide. The [review pages](/review/) show how it was made, round by round.
 
 <!-- refs: written by tools/check_refs.mjs -->
 [wp-butler]: https://en.wikipedia.org/wiki/Darwin_among_the_Machines
