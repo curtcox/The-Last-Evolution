@@ -2,7 +2,7 @@
 // voice (src/gen/ch03.js). Three places: the Denver hall (Roal, Trest and the machines, the screens), space beyond the
 // Moon for the battle, and the Colorado settlement, where the green comes; the screens join them.
 (() => {
-  const { D, INK, ez, win, steps, path, talk, ground, cam, withCam, ruled, dreamCurl, page, closing, planet, stander, thoughtRings } = KIT;
+  const { D, INK, ez, win, steps, path, talk, clauses, gesture, nod, ground, cam, withCam, ruled, dreamCurl, page, closing, planet, stander, thoughtRings } = KIT;
   const S = CHAPTER.shots, C = cue, T0 = id => S[id][0], T1 = id => S[id][1];
   const K = (t, a, b) => seg(t, C(a), C(b));
   const HEAT = '#FFB070', GREEN = NRG.death, VIOLET = NRG.support;
@@ -32,12 +32,15 @@
   }
   // Roal: walks to the middle of the floor when he speaks; Trest beside him
   const ROALW = [[T0('S') - 2, T0('S') + 1.5, ROAL, 960]], TRESTW = [[T0('S') - 1.5, T0('S') + 2, TREST, 1160]];
+  const SPEECH = clauses(['p033.1', 'p033.3', 'p033.5', 'p034.1']);   // his speech to the machines: a gesture to each clause; Trest nods
+
   function people(t) {
     const tPoint = C('p018.1:Roal had quickly assured us'), out = win(t, tPoint, C('p018.1:But--life alone'), .6, 1), arm = win(t, T0('V') - .2, T0('W') + .5, .25, 1);
     const pose = { up: lerp(.12, 1.5, Math.max(out, arm)), fore: lerp(.3, arm ? 2.6 : 1.6, Math.max(out, arm)) };
-    const roal = stander(t, ROAL, G, 44, ROALW, { who: 'roal', key: 'roal', seed: 3, look: t < T0('S') ? .5 : .15, pose, talk: talk(t, 'roal'), flip: false });
+    const gl = arm ? 0 : gesture(t, pose, SPEECH);
+    const roal = stander(t, ROAL, G, 44, ROALW, { who: 'roal', key: 'roal', seed: 3, look: (t < T0('S') ? .5 : .15) + gl, pose, talk: talk(t, 'roal'), flip: false });
     const point = win(t, T0('Q'), T1('Q'), .5, .5);
-    stander(t, TREST, G + 10, 46, TRESTW, { who: 'trest', key: 'trest', seed: 7, look: .45, flip: t < T0('S') + 2 || t > T0('W'), pose: { up: lerp(.12, 1.7, point), fore: lerp(.3, 1.2, point) } });
+    stander(t, TREST, G + 10, 46, TRESTW, { who: 'trest', key: 'trest', seed: 7, look: .45 + nod(t, SPEECH), flip: t < T0('S') + 2 || t > T0('W'), pose: { up: lerp(.12, 1.7, point), fore: lerp(.3, 1.2, point) } });
     return roal;
   }
   function hall(t) {

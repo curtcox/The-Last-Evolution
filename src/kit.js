@@ -19,6 +19,23 @@ const KIT = (() => {
     return 0;
   }
   const blink = (t, seed) => { const p = frac(t / 3.9 + hash(seed)); return p < .04 ? Math.sin(Math.PI * p / .04) : 0; };
+  // acting on the words (the pilot's acting pass): a speaker's clauses, [start, end] from one stop (. ; ? ! or a dash)
+  // to the next, for a who or a list of line ids
+  function clauses(sel) { const out = [];
+    for (const l of (window.CHAPTER ? CHAPTER.lines : [])) { if (Array.isArray(sel) ? !sel.includes(l.id) : l.who !== sel) continue; let a = null;
+      for (const w of l.words) { a ??= w[1]; if (/([.;?!—]|--)["”]?$/.test(w[0]) || w === l.words.at(-1)) { out.push([a, w[2]]); a = null; } } }
+    return out;
+  }
+  // each clause longer than .9 s carries a gesture of the near hand, laid over the pose; returns a small movement of the
+  // head to add to its look
+  const GEST = [[.8, 1.9], [1.1, 2.4], [.6, 1.6]];   // the near arm (up, fore): an open hand forward, a lift, a small turn
+  function gesture(t, pose, cl) {
+    for (let i = 0; i < cl.length; i++) { const [a, b] = cl[i]; if (b - a < .9 || t < a - .3 || t > b + .9) continue;
+      const k = win(t, a - .2, b + .3, .5, .6), g = GEST[i % 3]; pose.up = lerp(pose.up ?? .12, g[0], k); pose.fore = lerp(pose.fore ?? .3, g[1], k); return .05 * k * Math.sin((t - a) * 1.7); }
+    return 0;
+  }
+  // a listener's small nod as each clause said to it ends: add to its look
+  const nod = (t, cl) => -.1 * cl.reduce((n, [, b]) => Math.max(n, Math.sin(Math.PI * clamp((t - b - .1) / .7))), 0);
   const mixPose = (a, b, k) => { const p = {}; for (const f in a) p[f] = lerp(a[f], b[f] ?? a[f], k); return p; };
   // a walk laid over a standing pose: q 0..1 through the walk, d the distance covered so far, ru the figure's head unit
   function walking(pose, hip, q, d, ru) {
@@ -109,5 +126,5 @@ const KIT = (() => {
   }
   const withCam = (c, draw) => { camBegin(c[0], c[1], c[2]); draw(); camEnd(); };
 
-  return { D, INK, ez, win, lerpP, steps, path, talk, blink, mixPose, walking, stander, dreamCurl, ruled, thoughtRings, ground, space, planet, page, closing, cam, withCam };
+  return { D, INK, ez, win, lerpP, steps, path, talk, blink, clauses, gesture, nod, mixPose, walking, stander, dreamCurl, ruled, thoughtRings, ground, space, planet, page, closing, cam, withCam };
 })();

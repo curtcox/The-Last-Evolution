@@ -119,5 +119,13 @@ items:
     note: "DES.personSide now gives everyone but Roal a tunic to mid-thigh over two legs, the far one a little back when standing, as the front view and model sheets have. Checked side-on in ch00 (the memory) and ch08 (Trest talking): tunic, belt, legs and boots read; Roal keeps his robe."
     title: The side-view figure draws every person in Roal's ankle robe
     when: 2026-11-02 23:24
+  ch02.picture:
+    state: open
+    note: "From the acting-pass sheet (round 6 drafts): the Outsiders are dark grey wash on a dark grey hull (92-155 s, 245-288 s) and hard to read at sheet size; raise their contrast against the interior (lighter carapace, darker hull, or rim light from the glowing plate edges)."
+    when: 2026-11-02 23:27
+  ch03.picture:
+    state: open
+    note: "From the acting-pass sheet: through Roal's speech (376-482 s) a near-ring machine stands in front of Trest, hiding his body; move that machine or Trest so he's clear."
+    when: 2026-11-02 23:28
 fresh: []
 since_fresh: 26
