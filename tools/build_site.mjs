@@ -94,9 +94,10 @@ claim with its source.</li>
 <li><a href="review/"><b>See how it's made</b></a>, round by round: every choice, and why.</li>
 </ul>
 <div class="status"><h2>In production</h2>
-<p>The whole film is drafted. Next, its people and machines are acted and painted to their finished designs, chapter by
-chapter, and then it's rendered in full and posted to YouTube with captions. <a href="${REPO}/blob/main/PLAN.md">The
-plan</a> says how.</p></div>
+<p>The whole film is drafted. Now its people and machines are being acted and painted to their finished designs, chapter
+by chapter, starting with chapter 5; then it's rendered in full and posted to YouTube with captions.
+<a href="review/quality/">Where it stands</a> shows every chapter and page against the bar it has to meet, and
+<a href="${REPO}/blob/main/PLAN.md">the plan</a> says how.</p></div>
 `);
 
 const body = blocks.map(b => {
@@ -210,6 +211,7 @@ a:hover { color: var(--accent); }
 .mast { display: flex; flex-wrap: wrap; gap: .5em 1.5em; align-items: baseline; justify-content: space-between; padding: .8em 16px; border-bottom: 3px double var(--rule); background: var(--paper2); }
 .mast .name { font: 1.6em/1 "Bebas Neue", Impact, sans-serif; letter-spacing: .04em; text-decoration: none; }
 .mast nav { display: flex; flex-wrap: wrap; gap: .2em 1.2em; font-size: .9em; }
+@media (max-width: 30em) { .mast nav { gap: .2em .7em; } }   /* the six links on one line at a phone's width */
 main { max-width: 38em; margin: 0 auto; padding: 1.5em 16px 3em; }
 h1 { font: 3.2em/1 "Bebas Neue", Impact, sans-serif; letter-spacing: .03em; margin: .2em 0 .1em; }
 h1 i { font-style: normal; }

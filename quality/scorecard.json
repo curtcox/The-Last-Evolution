@@ -14,7 +14,7 @@
   },
   "links": {
    "state": "pass",
-   "detail": "1110 links in 34 pages, 0 broken"
+   "detail": "1111 links in 34 pages, 0 broken"
   },
   "annotated": {
    "state": "pass",
@@ -37,7 +37,7 @@
    "detail": "refs: 53 sources, all cited, all answering; definitions written into 6 notes"
   },
   "phone": {
-   "state": "pass",
+   "state": "stale",
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {

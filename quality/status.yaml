@@ -9,5 +9,15 @@ items:
     state: curt
     note: "Does F-1 say 'Roal' right in 'Roal--your thoughts' (p052.1, assets/voice/p052.1-t1-4553aff14c.mp3)? Two transcribers hear something extra: ElevenLabs 'Roald', Whisper 'Rohan' (and 'Roal' only when told the name). The narrator's 'Roal' is heard as one syllable, 'Rol', as Round 1 chose. The voice pass kept this as its best take. My recommendation: listen; if it sounds like 'Roald', voice this one line again (a few credits)."
     when: 2026-11-02 23:03
+  site.home.content:
+    state: pass
+    note: "True and current: the story, the three ways in (watch with notes, read with the 1932 readings restored, the notes), an honest draft warning, and now where things stand (the scorecard) and that the acting pass has begun with chapter 5."
+    at: eabf5aa88d63
+    when: 2026-11-02 23:11
+  site.home.look:
+    state: pass
+    note: "Desktop 1280: masthead, title and lede read at a glance, the four ways in as a list, the status box below. Phone 375: the six nav links now fit on one line (they wrapped 'Source' alone onto a second); title, lede and status box read without crowding; nothing overflows."
+    at: eabf5aa88d63
+    when: 2026-11-02 23:12
 fresh: []
-since_fresh: 1
+since_fresh: 3
