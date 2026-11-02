@@ -115,14 +115,11 @@ A full pass of everything comes to roughly $2 to $3 now, mostly Gemini. That's w
 
 ## 4. What I need
 
-**4.1 Billing on the Gemini key's project.** The key is saved as `gemini-api`, but it's on Google's free tier: its
-project has no billing. On the free tier the calls hit tight limits, and Google may use what's sent to train its
-models (§5.5).
-- **What's needed:** in AI Studio, open the project the key belongs to and set up billing. The key itself stays the
-  same.
-- **Then:** I run chapter 5 through Gemini first, about $0.15, and the whole film after, about $1.
+**4.1 Billing on the Gemini key's project.** **Done** (2026-11-02). The key is saved as `gemini-api`. It was first on
+Google's free tier, where Google may use what's sent to train its models (§5.5); billing is on now, and the whole film
+has run through it.
 
-**Curt:** added the key, 2026-11-02. Billing: waiting.
+**Curt:** added the key, then turned billing on, 2026-11-02.
 
 **4.2 An OpenRouter key, for Jev.** **Done** (saved as `openrouter`, 2026-11-02).
 
@@ -144,10 +141,11 @@ calls. The tool loads that exact revision from the cache, offline.
 - **The ledger:** every paid call goes through it. It estimates the call first, refuses one that would pass $10, then
   records what the call cost.
 
-**Spent: $0.23 of $10.**
+**Spent: $0.59 of $10.**
 - **Jev:** $0.05, for about 700 questions over the whole film.
-- **Gemini:** $0.18. That's one call that timed out on my side, logged at its estimate in case it was billed. Since the
-  key turned out to be on the free tier, it probably cost nothing.
+- **Gemini:** $0.36 for the whole film, watched chapter by chapter (§5.5).
+- **A call that probably cost nothing:** $0.18 more is one call that timed out on my side while the key was on the free
+  tier. It's logged at its estimate in case it was billed.
 
 Every check below has run on all twelve chapters.
 
@@ -212,24 +210,59 @@ between frames that shows at full size but not when the frame is shrunk to a thu
 - **For now:** parked. It's there for a question about movement that a still can't answer, tested on a known case
   first.
 
-**5.5 Gemini: not run yet.**
-- **Why:** the key is on the free tier (§4.1).
-- **The first attempt:** it uploaded chapter 5's draft, and timed out on my side before an answer came. It may have
-  been processed under free-tier terms. The upload is deleted.
-- **What the tool does now:** it stops as soon as it sees a free-tier key, and deletes its upload even after an
-  error.
-- **Retrying:** 3.8 Flash was also refusing calls for high demand much of the morning. The tool retries those, which
-  aren't billed.
+**5.5 Gemini: it works, and it answers "does it make sense".**
+- **How it's asked:** 3.8 Flash watches each chapter's draft, with its sound, as a first-time viewer. It retells the
+  chapter as timed beats, says what it's about, and lists where it was lost and anything wrong with the sound.
+- **Cost:** $0.36 for all twelve chapters, about 3 cents a chapter. It counts about 90 tokens a second of film, a
+  third of my estimate.
+- **It hears as well as sees.** Its beats quote the lines word for word (C-R-U-1's "Half of half of the beams of
+  Death…"), at the right times. Chapter 5's retelling is right beat for beat.
+- **Sync:** it found nothing out of step anywhere, which agrees with Whisper.
+- **Its upload:** deleted after every call.
+- **The first attempt:** while the key was on the free tier, it uploaded chapter 5's draft and timed out on my side
+  before an answer came. It may have been processed under free-tier terms; that upload was deleted too. The tool now
+  stops if it ever sees a free-tier key.
 
-**Where that leaves §3:** the working set is the measurements, Whisper and Jev's shot check. Together they cost about
-$0.15 for the whole film. Gemini follows once billing is on, for "does it make sense"; nothing here answers that yet.
+**What it was lost by,** sorted by what's real:
+- **Roal and Trest can't be told apart.** It said so in four chapters on its own (3, 4, 7 and 8); in chapter 4 Kahsh
+  too. The two are told apart only by voice and by the narrator naming them.
+- **Inserts with nothing to set them up:**
+  - chapter 5's magazine plate in the birth (4:36; it's really there, in shot V);
+  - chapter 1's circuit diagram (2:39);
+  - chapter 3's planets (7:05);
+  - chapter 11's turn to the page (1:36), which comes with no change of voice. The narrator is F-2 throughout, by
+    design.
+- **The picture doesn't carry the words:**
+  - chapter 3's human investigators aren't seen at the wreck (5:18);
+  - chapter 6's "horny-skinned men" in the ships read as suited astronauts (1:51);
+  - chapter 6's Earth reads as the Moon, grey and cratered (4:22);
+  - chapter 10's flagship turned inside out reads as paper sliding (1:33);
+  - in chapter 4 it took a labelled machine for the new brain (3:20), so it couldn't tell which one was MX-3401.
+- **The thought curl** over Roal's head reads as smoke or vapour (chapters 7 and 8). It's the pilot's motif, but a
+  first viewer doesn't know it.
+- **Not real:** names it didn't know because it watched one chapter alone (F-2 in chapter 9, "the Outsiders",
+  "beams of death" in chapter 5).
+
+**What it said about the sound:**
+- **The machine voices:** their processing makes some words "slightly" hard to make out, in chapters 4, 8, 9 and 10.
+  Whisper heard all of them, so this is a matter of taste, not lost words.
+- **C-R-U-1's voice** stands apart from the other machines (chapter 5).
+- **Chapter 7's beam crackle** is harsh against the narration (3:26).
+
+**Where that leaves §3:**
+- **The working set:** the measurements, Whisper, Jev's shot check, and Gemini Flash's watch. Together they cost
+  about 50 cents for the whole film.
+- **Pro:** not needed yet. Flash's retellings are good enough to work from.
+- **d1:** stays parked.
 
 ## Claude's open concerns
 
-- **Five of the trial's findings are about the film, not the tools:** the close shots that aren't close, small figures,
-  and two counts. They belong with the acting and framing pass (Round 6 §2.2).
-- **Gemini sees the unreleased film, and may already have, on the free tier.** I'll send nothing more until billing is
-  on.
+- **Many of the trial's findings are about the film, not the tools:**
+  - from Jev: the close shots that aren't close, the small figures, and the two counts;
+  - from Gemini: Roal and Trest alike, the unannounced inserts, and the places the picture doesn't carry the words.
+  They belong with the acting and framing pass (Round 6 §2.2).
+- **Gemini sees the unreleased film.** It's on paid terms now, and every upload is deleted after its call. Chapter 5
+  may have been seen once under free-tier terms.
 - **§1 to §3 were from reading.** §5 corrects them where the trial disagreed. In particular, Jev's numbers need asking
   as choices, and d1 is weaker than its card suggests.
 - **The models are judges, not taste.** They'll give a steady ruler for colour and flicker, but whether the look is

@@ -80,12 +80,14 @@ How the colour runs through the film, as built:
 **2.3 Models that watch and listen.** These would let me put quick questions to the rendered sound and picture,
 covering sense, look, sync, board and continuity. The options, and what I need from you, are in a sheet of their own:
 [models.md](models.md).
-- **Built and tried on the whole film:** measurements, Whisper and Jev ([§5 there](models.md#5-the-trial-2026-11-02)).
-  The mix is clear throughout. A few close shots aren't close, and a few figures are too small to read.
-- **Still to do:** "Does it make sense?" needs Gemini, and the key's project needs billing turned on first (§4.1
-  there).
+- **Built and tried on the whole film:** measurements, Whisper, Jev and Gemini
+  ([§5 there](models.md#5-the-trial-2026-11-02)). The whole pass costs about 50 cents.
+- **What they found:**
+  - the mix is clear and in sync throughout;
+  - a few close shots aren't close, and a few figures are too small to read;
+  - a first-time viewer can't tell Roal from Trest, and a few inserts come with nothing to set them up.
 
-**Curt:** keys added 2026-11-02.
+**Curt:** keys added, and billing on, 2026-11-02.
 
 ## Claude's open concerns
 
