@@ -160,7 +160,7 @@ const DES = {};
 
   // ---------- people of 2538: drawn as the pulps drew the future, tunics and high collars (§5) ----------
   // A standing figure, front view, s px to the foot (six feet tall). o: who: 'roal' | 'trest' | 'kahsh' | 'citizen';
-  // shield: an arm raised across the face; flip
+  // shield: an arm raised across the face; gest 0..1: the near hand lifted forward, open, as in speech; flip
   DES.person = (x, ground, s, t = 0, o = {}) => {
     const who = o.who || 'citizen', f = o.flip ? -1 : 1, u = s * 6 / 7.4;   // u: one head of a 7.4-head figure
     const stoop = who === 'roal' ? .14 : 0, X = (v, y = 0) => x + (v + stoop * Math.max(0, y - 4) / 3.4) * u * f, Y = v => ground - v * u;
@@ -192,8 +192,8 @@ const DES = {};
     }
     // sleeves from the shoulder, hands; or one arm raised across the face
     for (const sd of [-1, 1]) {
-      const raise = o.shield && sd === 1;
-      const P = raise ? [pt(.88, 5.85), pt(1.4, 6.2), pt(.55, 7.0)] : [pt(sd * .86, 5.86), pt(sd * 1.02, 4.85), pt(sd * 1.06, 3.8)];
+      const raise = o.shield && sd === 1, g = sd === 1 ? o.gest || 0 : 0, rest = [[sd * .86, 5.86], [sd * 1.02, 4.85], [sd * 1.06, 3.8]], lift = [[.88, 5.85], [1.3, 4.95], [1.62, 5.7]];
+      const P = raise ? [pt(.88, 5.85), pt(1.4, 6.2), pt(.55, 7.0)] : rest.map(([v, y], j) => pt(lerp(v, lift[j][0], g), lerp(y, lift[j][1], g)));
       wash(ribbon(P, .4 * u, .3 * u), cloth, { ink: true, sw: .45 });
       const [hx, hy] = P[2]; wash(ellPts(hx, hy + (raise ? 0 : .2 * u), .14 * u, .2 * u, 12), 0, { ink: true, sw: .4 });
     }

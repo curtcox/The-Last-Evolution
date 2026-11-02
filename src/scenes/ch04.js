@@ -2,7 +2,7 @@
 // (src/gen/ch04.js). One place: the Denver hall, the council in a half-ring on its floor, then the floor as the works
 // where F-1 is built and wakes.
 (() => {
-  const { D, INK, ez, win, steps, path, talk, ground, cam, withCam, ruled, page, closing, stander, thoughtRings } = KIT;
+  const { D, INK, ez, win, steps, path, talk, clauses, gesture, nod, ground, cam, withCam, ruled, page, closing, stander, thoughtRings } = KIT;
   const S = CHAPTER.shots, C = cue, T0 = id => S[id][0], T1 = id => S[id][1];
   const K = (t, a, b) => seg(t, C(a), C(b));
   const HEAT = '#FFB070', VIOLET = NRG.support, FORCE = '#CFE0FF', G = 1000;
@@ -28,14 +28,19 @@
   }
   // who is speaking now, as an x on the floor (the others' lenses turn to it)
   const SPEAK = [['x5638', 'p037.1'], ['roal', 'p038.1'], ['x5638', 'p040.1'], ['roal', 'p041.1'], ['x6349', 'p042.1'], ['trest', 'p043.1'], ['kahsh', 'p044.1'], ['x6621', 'p045.1'], ['cr21', 'p046.1']];
+  // acting on the words: Roal's hand on his clauses; he nods to X-5638, who speaks to him; Trest nods to Roal; Kahsh's
+  // hand lifts as he speaks
+  const ROALC = clauses('roal'), TO_ROAL = clauses('x5638'), TRESTC = clauses('trest'), KAHSH = clauses('kahsh');
   const K_SPEAK = t => { let x = null; for (const [w, c] of SPEAK) if (t >= C(c) - .3) x = P[w]; return t > T0('L') ? null : x; };
   function men(t) {
     const fan = ez(t, tShift - 1, tShift + 4), sp = K_SPEAK(t) ?? 1000;
     const pt = win(t, C('p039.1:I noticed'), T0('E'), .5, .8);
-    stander(t, P.roal, G, 44, [[tShift, tShift + 4, P.roal, 380]], { who: 'roal', key: 'roal', seed: 3, flip: sp < P.roal || t > tShift + 4, look: .1, talk: talk(t, 'roal'), pose: { up: lerp(.12, 1.4, pt), fore: lerp(.3, 1.6, pt) } });
-    const step = ez(t, T0('H'), T0('H') + 1) * (1 - ez(t, T0('I'), T0('I') + 1));
-    stander(t, P.trest, G + 10, 46, [[T0('H'), T0('H') + 1, P.trest, P.trest + 50], [T0('I'), T0('I') + 1, P.trest + 50, P.trest], [tShift + .5, tShift + 5, P.trest, 1640]], { who: 'trest', key: 'trest', seed: 7, flip: sp < P.trest && t < tShift, look: .05, talk: talk(t, 'trest') });
-    if (fan < 1) { push(); translate(P.kahsh, G + 20); scale(1, 1); translate(-P.kahsh, -(G + 20)); DES.person(P.kahsh, G + 20, 44, t, { who: 'kahsh' }); pop(); }
+    const rp = { up: lerp(.12, 1.4, pt), fore: lerp(.3, 1.6, pt) }, gl = pt > .1 ? 0 : gesture(t, rp, ROALC);
+    stander(t, P.roal, G, 44, [[tShift, tShift + 4, P.roal, 380]], { who: 'roal', key: 'roal', seed: 3, flip: sp < P.roal || t > tShift + 4, look: .1 + gl + nod(t, TO_ROAL), talk: talk(t, 'roal'), pose: rp });
+    const step = ez(t, T0('H'), T0('H') + 1) * (1 - ez(t, T0('I'), T0('I') + 1)), tp = {}, tl = gesture(t, tp, TRESTC);
+    if (tp.up) { tp.up = .12 + (tp.up - .12) * .5; tp.fore = .3 + (tp.fore - .3) * .55; }   // he's stepped up close to Kahsh: a small gesture, in his own space
+    stander(t, P.trest, G + 10, 46, [[T0('H'), T0('H') + 1, P.trest, P.trest + 50], [T0('I'), T0('I') + 1, P.trest + 50, P.trest], [tShift + .5, tShift + 5, P.trest, 1640]], { who: 'trest', key: 'trest', seed: 7, flip: sp < P.trest && t < tShift, look: .05 + tl + nod(t, ROALC), talk: talk(t, 'trest'), pose: tp });
+    if (fan < 1) { push(); translate(P.kahsh, G + 20); scale(1, 1); translate(-P.kahsh, -(G + 20)); DES.person(P.kahsh, G + 20, 44, t, { who: 'kahsh', gest: KAHSH.reduce((m, [a, b]) => Math.max(m, win(t, a - .4, b + .8, .4, .7)), 0) }); pop(); }
   }
   // the council's seats and the hall's floor; the screens, and the ten thousand on them (L)
   function screens(t) {
