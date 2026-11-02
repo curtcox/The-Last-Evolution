@@ -1,7 +1,7 @@
 {
  "summary": {
-  "pass": 13,
-  "stale": 2,
+  "pass": 15,
+  "stale": 0,
   "open": 80,
   "curt": 7,
   "later": 3
@@ -612,8 +612,8 @@
    "id": "site.home.look",
    "area": "site",
    "title": "The home page: how it looks and works",
-   "state": "stale",
-   "note": "passed on 84df0ea7c19b; changed since. Desktop 1280: masthead, title and lede read at a glance, the four ways in as a list, the status box below. Phone 375: the six nav links fit on one line; title, lede and status box read without crowding; nothing overflows."
+   "state": "pass",
+   "note": "Re-judged after the stylesheet change: it only lets tables wrap on a phone, and neither page has a table; the fresh phone and desktop screenshots look as before, nav on one line."
   },
   {
    "id": "site.watch.content",
@@ -724,8 +724,8 @@
    "id": "site.about.look",
    "area": "site",
    "title": "The About page: how it looks and works",
-   "state": "stale",
-   "note": "passed on acbc68aa3dee; changed since. Desktop: one readable column under clear section heads. Phone: the same column at 375 with no overflow; the nav on one line."
+   "state": "pass",
+   "note": "Re-judged after the stylesheet change: it only lets tables wrap on a phone, and neither page has a table; the fresh phone and desktop screenshots look as before, nav on one line."
   },
   {
    "id": "site.review.content",

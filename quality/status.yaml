@@ -16,9 +16,9 @@ items:
     when: 2026-11-02 23:11
   site.home.look:
     state: pass
-    note: "Desktop 1280: masthead, title and lede read at a glance, the four ways in as a list, the status box below. Phone 375: the six nav links fit on one line; title, lede and status box read without crowding; nothing overflows."
-    at: 84df0ea7c19b
-    when: 2026-11-02 23:12
+    note: "Re-judged after the stylesheet change: it only lets tables wrap on a phone, and neither page has a table; the fresh phone and desktop screenshots look as before, nav on one line."
+    at: 9de049592842
+    when: 2026-11-02 23:18
   site.about.content:
     state: pass
     note: "Checked each claim: first printing Aug 1932, reprint Mar 1961, Gutenberg #27462 and its no-renewal finding; the 16 readings now described as the 16 in text/emendations.yaml are (a clause, two negatives, a dozen slips: dropped and stray words, a wrong digit), matching the afterword and history notes; Morey's illustration from the August 1932 issue; voices, effects and music all ElevenLabs-generated (tools/sound_sampler.mjs); credits for p5.js, p5.brush, Heibel's base; corrections by GitHub issue."
@@ -26,9 +26,9 @@ items:
     when: 2026-11-02 23:13
   site.about.look:
     state: pass
-    note: "Desktop: one readable column under clear section heads. Phone: the same column at 375 with no overflow; the nav on one line."
-    at: acbc68aa3dee
-    when: 2026-11-02 23:13
+    note: "Re-judged after the stylesheet change: it only lets tables wrap on a phone, and neither page has a table; the fresh phone and desktop screenshots look as before, nav on one line."
+    at: 7f66b403fc8b
+    when: 2026-11-02 23:18
   site.notes.content:
     state: pass
     note: The index says what the short and long notes are and lists the four, each with a true one-line description.
@@ -80,4 +80,4 @@ items:
     at: 3042469b3369
     when: 2026-11-02 23:17
 fresh: []
-since_fresh: 16
+since_fresh: 18
