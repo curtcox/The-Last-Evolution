@@ -56,16 +56,16 @@ stale. What it asks is the question Roal answers and F-2 hands back: if the heir
 
 *Amazing* reprinted the story in March 1961, and that's the text Project Gutenberg transcribed
 ([eBook #27462][gutenberg]). Setting it beside the 1932 pages turned up a 24-word clause and two negatives lost in 1961,
-and a dozen smaller slips. The film reads the 1932 readings, and [the Read page](/read/) marks each one. Neither
+and a dozen smaller slips. The film reads the 1932 readings, and [the Read page](https://curtcox.github.io/The-Last-Evolution/read/) marks each one. Neither
 printing's copyright was renewed, so the story and Morey's picture are free for anyone to use in the US
 ([first periodical renewals][penn-renewals]).
 
 ## Where next
 
-- [Read the story](/read/), with the footnotes and Leo Morey's illustration.
+- [Read the story](https://curtcox.github.io/The-Last-Evolution/read/), with the footnotes and Leo Morey's illustration.
 - The longer notes: [the science of 1932](science.md), [machines as heirs](succession.md), and
   [Campbell and the pulps](history.md).
-- [How it was made](/review/), round by round.
+- [How it was made](https://curtcox.github.io/The-Last-Evolution/review/), round by round.
 
 <!-- refs: written by tools/check_refs.mjs -->
 [wp-twilight]: https://en.wikipedia.org/wiki/Twilight_(short_story)

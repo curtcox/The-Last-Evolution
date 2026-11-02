@@ -274,6 +274,15 @@ Not changed, for later:
 - The menu wraps on a narrow phone instead of running off the page.
 - A check of every link on the built site: 1,086 internal links and anchors, none broken.
 
+**Later still.** Curt again: "Make any changes you see fit." The notes pages serve on the live site, anchors and all.
+Then:
+- The notes' links to the Read and review pages now give the site's full address, so they work when a note is read
+  on GitHub as well. The site's build turns them back into relative links.
+- Each notes page ends with a link to the next, and the last one leads back to the film.
+- Each notes page has its own description for search results and link previews.
+- The fact-check page no longer points readers to itself.
+- 1,089 links, none broken.
+
 ## Claude's open concerns
 
 - **New facts.**

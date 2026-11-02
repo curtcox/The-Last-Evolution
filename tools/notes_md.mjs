@@ -1,12 +1,13 @@
 // notes_md.mjs: the notes' Markdown as HTML, for the film page (tools/annotated.mjs) and the site's notes pages
 // (tools/build_site.mjs). As much as the notes use: ## headings, with GitHub's anchors so a link into a section works on
 // both; paragraphs; - lists; > quotes; | tables; *italic*, **bold**, `code`; [text][ref-id] (notes/refs.yaml) and
-// [text](url). Links are made to work from a page `up` from the site's root: /path is the site's own page, another
-// note (science.md#…) is that note's page on the site, and any other file in the repository is shown on GitHub.
+// [text](url). Links are made to work from a page `up` from the site's root: the site's own address (or /path) is a
+// relative link, another note (science.md#…) is that note's page on the site, and any other file in the repository is
+// shown on GitHub. The notes write the site's full address, so the link works on GitHub too.
 import { readFileSync } from 'node:fs';
 import YAML from 'yaml';
 
-export const REPO = 'https://github.com/curtcox/The-Last-Evolution';
+export const REPO = 'https://github.com/curtcox/The-Last-Evolution', SITE = 'https://curtcox.github.io/The-Last-Evolution/';
 export const NOTES = ['science', 'succession', 'history', 'factcheck'];   // the notes with pages of their own: notes/NAME/
 const refs = YAML.parse(readFileSync('notes/refs.yaml', 'utf8'));
 export const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -17,6 +18,7 @@ const note = new RegExp(`^(?:${REPO}/blob/main/notes/)?(${NOTES.join('|')})\\.md
 export function link(u, up) {
   const m = u.match(note);
   if (m) return `${up}notes/${m[1]}/${m[2] || ''}`;
+  if (u.startsWith(SITE)) return up + u.slice(SITE.length);
   if (/^[a-z]+:/.test(u)) return u;
   if (u.startsWith('/')) return up + u.slice(1);
   const at = new URL(u, 'https://repo/notes/');   // a file in the repository, as GitHub shows it

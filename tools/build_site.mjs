@@ -15,10 +15,10 @@
 // Later phases add the film beside the synced text and the r/NAME/ forwarding pages (PLAN.md §7).
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, existsSync, readdirSync } from 'node:fs';
 import YAML from 'yaml';
-import { markdown, NOTES } from './notes_md.mjs';
+import { markdown, NOTES, SITE } from './notes_md.mjs';
 
 const OUT = 'site/public';
-const REPO = 'https://github.com/curtcox/The-Last-Evolution', SITE = 'https://curtcox.github.io/The-Last-Evolution/';
+const REPO = 'https://github.com/curtcox/The-Last-Evolution';
 const WATCH = 'review/round7/annotated.html';   // what watch/ forwards to, until the watch page is built
 const story = JSON.parse(readFileSync('text/story.json', 'utf8'));
 const emendations = YAML.parse(readFileSync('text/emendations.yaml', 'utf8'));
@@ -28,7 +28,7 @@ const typeset = s => esc(s).replace(/--/g, '—').replace(/_([^_]+)_/g, '<i>$1</
   .replace(/\[(\d)\]/g, (m, n) => `<sup><a href="#fn${n}" id="ref${n}">${n}</a></sup>`);
 
 const DESCRIPTION = "The Last Evolution, John W. Campbell, Jr.'s 1932 story, read in full: a voiced, painted film and its companion site.";
-function page(depth, title, body, { wide = false, abs = false } = {}) {
+function page(depth, title, body, { wide = false, abs = false, description = DESCRIPTION } = {}) {
   const up = abs ? '/The-Last-Evolution/' : '../'.repeat(depth);
   return `<!doctype html>
 <html lang="en">
@@ -36,8 +36,8 @@ function page(depth, title, body, { wide = false, abs = false } = {}) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${title}</title>
-<meta name="description" content="${DESCRIPTION}">
-<meta property="og:title" content="${title}"><meta property="og:description" content="${DESCRIPTION}">
+<meta name="description" content="${description}">
+<meta property="og:title" content="${title}"><meta property="og:description" content="${description}">
 <meta property="og:image" content="${SITE}img/morey_1932_p415.jpg">
 <link rel="icon" href="${up}favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -168,12 +168,14 @@ const ABOUT = { science: 'What Campbell knew in 1932, the year the atom came apa
   history: 'The magazine, the young writer who became the field\'s great editor, the illustrator, and the text.',
   factcheck: 'Every claim in the notes, the source it rests on, and how it was checked.' };
 const notes = NOTES.map(name => ({ name, ...markdown(`notes/${name}.md`, { up: '../../' }) }));
-const notePages = notes.map(n => [n.name, page(2, `${esc(n.title)}: The Last Evolution`, `
+const notePages = notes.map((n, i) => [n.name, page(2, `${esc(n.title)}: The Last Evolution`, `
 <p class="kicker"><a href="../">Notes</a></p>
 <h1>${esc(n.title)}</h1>
 <div class="prose">${n.html}</div>
-<p class="src">Each claim's source and check: <a href="../factcheck/">the fact-check list</a>. Found a mistake?
-<a href="${REPO}/issues">Say so on GitHub</a>.</p>`)]);
+<p class="src">${n.name === 'factcheck' ? '' : `Each claim's source and check: <a href="../factcheck/">the fact-check list</a>. `}Found a
+mistake? <a href="${REPO}/issues">Say so on GitHub</a>.</p>
+<p class="next">${notes[i + 1] ? `Next: <a href="../${notes[i + 1].name}/">${esc(notes[i + 1].title)}</a>`
+  : `Back to <a href="../../watch/">the film</a>`}</p>`, { description: ABOUT[n.name] })]);
 const notesIndex = page(1, 'Notes: The Last Evolution', `
 <p class="kicker">Beside the story</p>
 <h1>Notes</h1>
@@ -242,6 +244,7 @@ sup a { text-decoration: none; color: var(--accent); }
 .tbl th, .tbl td { border-bottom: 1px solid var(--rule); padding: .35em .5em; text-align: left; vertical-align: top; }
 .tbl th { font-variant: small-caps; letter-spacing: .04em; }
 .src, footer { font-size: .85em; color: var(--ink2); }
+.next { margin-top: 2em; }
 footer { border-top: 3px double var(--rule); padding: .5em 16px 2em; text-align: center; }
 `;
 
