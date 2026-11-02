@@ -6,9 +6,9 @@ it and after it. These notes describe arguments; they don't take sides. Sources 
 ## What the story says
 *p085, p100–p111, p136–p140 · chapters 7, 8, 11*
 
-Campbell's machines don't overthrow anyone. Humanity is killed by the Outsiders, an alien invasion. The machines fight to
-save their makers, and they fail: "We, your heirs, have fought hard, and with all our powers to aid you, Last of Men, and
-we fought to save your race." They inherit because there's no one left.
+Campbell's machines don't overthrow anyone. Humanity is killed by the Outsiders, an alien invasion. The machines fight
+to save their makers, and they fail: "We, your heirs, have fought hard, and with all our powers to aid you, Last of Men,
+and we fought to save your race." They inherit because there's no one left.
 
 It's Roal, the last scientist, who turns the loss into a philosophy. Machines are "the children of men", "a flesh that
 knows no sickness, and no decay". Man was a stage that "would hold back the machines". His harshest line is "Man has
@@ -46,11 +46,10 @@ Today, two camps argue over the question the story raises.
 - **Succession is coming, and needn't be feared.** In 2025 the reinforcement-learning pioneer Richard Sutton called
   succession to digital intelligence or augmented humans "inevitable", and urged that it be thought about positively and
   happen voluntarily ([Dwarkesh Podcast][dwarkesh-sutton]). Roal would recognise the argument.
-- **Succession is a risk to be prevented.** In 2023 hundreds of AI researchers and industry leaders signed a one-sentence
-  statement that "mitigating the risk of extinction from AI should be a global priority". The signatories included
-  Geoffrey Hinton, Yoshua Bengio and the heads of the major AI labs ([Statement on AI Risk][cais-statement]). Nick
-  Bostrom's *Superintelligence* (2014) set out the case at book length
-  ([Superintelligence][wp-bostrom]).
+- **Succession is a risk to be prevented.** In 2023 hundreds of AI researchers and industry leaders signed a
+  one-sentence statement that "mitigating the risk of extinction from AI should be a global priority". The signatories
+  included Geoffrey Hinton, Yoshua Bengio and the heads of the major AI labs ([Statement on AI Risk][cais-statement]).
+  Nick Bostrom's *Superintelligence* (2014) set out the case at book length ([Superintelligence][wp-bostrom]).
 
 Campbell's story fits neither camp neatly. Its machines are what today's researchers call *aligned*: loyal, grieving,
 true to their makers' dreams ("fulfilling the promise you saw, and completing the dreams you dreamt"). Humanity's end
@@ -58,9 +57,9 @@ comes from outside. The story's real question is the one Roal answers and F-2 ha
 successors are better, should we mind?
 
 ## This film
-This adaptation was made with an AI model, Claude, made by Anthropic. Anthropic's chief executive is among the signatories
-of the statement above. An AI helping to adapt a 1932 story about machines inheriting the Earth is an irony the project
-doesn't hide. The [making-of page](../PLAN.md#7-the-companion-site) will show how it was done.
+This adaptation was made with an AI model, Claude, made by Anthropic. Anthropic's chief executive is among the
+signatories of the statement above. An AI helping to adapt a 1932 story about machines inheriting the Earth is an irony
+the project doesn't hide. The [making-of page](../PLAN.md#7-the-companion-site) will show how it was done.
 
 <!-- refs: written by tools/check_refs.mjs -->
 [wp-butler]: https://en.wikipedia.org/wiki/Darwin_among_the_Machines

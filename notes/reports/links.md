@@ -17,6 +17,7 @@ Written by `tools/check_refs.mjs` on 2026-11-02. **All good.**
 | sfe-morey | 200 | reference | history.md, annotations.yaml | [Morey, Leo (SFE)](https://sf-encyclopedia.com/entry/morey_leo) |
 | un-wpp-2024 | 200 | primary | annotations.yaml | [World Population Prospects 2024 (United Nations)](https://www.un.org/en/node/219445) |
 | wp-amazing | 200 | reference | history.md | [Amazing Stories (Wikipedia)](https://en.wikipedia.org/wiki/Amazing_Stories) |
+| wp-annihilation | 200 | reference | afterword.md, science.md | [Annihilation (Wikipedia)](https://en.wikipedia.org/wiki/Annihilation) |
 | wp-astounding-award | 200 | reference | afterword.md, history.md | [Astounding Award for Best New Writer (Wikipedia)](https://en.wikipedia.org/wiki/Astounding_Award_for_Best_New_Writer) |
 | wp-bohr | 200 | reference | afterword.md, science.md, annotations.yaml | [Bohr model (Wikipedia)](https://en.wikipedia.org/wiki/Bohr_model) |
 | wp-bostrom | 200 | reference | succession.md | [Superintelligence: Paths, Dangers, Strategies (Wikipedia)](https://en.wikipedia.org/wiki/Superintelligence:_Paths,_Dangers,_Strategies) |

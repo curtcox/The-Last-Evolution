@@ -2,8 +2,7 @@
 
 Each factual claim in the notes, the source it rests on, and how it was checked. "Read" means Claude read the source and
 found the claim in it on 2026-11-01, or on 2026-11-02 for the last Round 7 additions and the textbook claims. "Computed"
-means arithmetic from the story's own text. "General" means textbook knowledge with a reference given but not re-read;
-those are the ones most worth a second look.
+means arithmetic from the story's own text. No claim now rests on general knowledge alone.
 `npm run refs` confirms that every link answers.
 
 ## Campbell and the pulps ([history.md](history.md))
@@ -46,12 +45,13 @@ those are the ones most worth a second look.
 | Chadwick's neutron letter, February 1932 | wp-neutron (Nature 129, 312) | read (volume; Nature dates it 27 February 1932) |
 | Cockcroft and Walton split lithium, 14 April 1932, Cavendish; Nobel 1951 | nature-cockcroft | read |
 | Anderson photographed the positron 2 August 1932 | wp-positron | read |
-| Matter annihilates only with antimatter; a proton and an electron don't; proton decay never seen | wp-proton-decay | read (never observed); general (annihilation) |
+| Matter annihilates only with antimatter; a proton and an electron don't; proton decay never seen | wp-annihilation, wp-proton-decay | read |
+| Dirac's 1930 paper "On the Annihilation of Electrons and Protons", before he saw his positive states were anti-electrons | wp-annihilation | read |
 | Bohr's atom, 1913: quantised orbits, a flash per jump, a lowest orbit postulated | wp-bohr | read |
-| Quantum mechanics: Heisenberg 1925, Schrödinger 1926; the ground state as the lowest standing wave | wp-schrodinger | read (dates); general (standing wave) |
+| Quantum mechanics: Heisenberg 1925, Schrödinger 1926; the ground state as the lowest standing wave | wp-schrodinger | read (dates; stationary states are standing waves) |
 | General relativity 1915; Weyl (1918), Kaluza and Einstein tried to make electromagnetism geometry | wp-unified | read |
 | Rutherford reported protons knocked out of nitrogen in 1919; Blackett showed in 1925 it had become oxygen | wp-transmutation | read. (Corrected 2026-11-02: the notes had Rutherford turning nitrogen into oxygen in 1919.) |
-| Northrup's high-frequency induction furnace reached 3,600 degrees in 1931 | wp-northrup | read (search summary of the page) |
+| Northrup's high-frequency induction furnace reached 3,600 degrees in 1931 | wp-northrup | read (the page cites the *New York Times* obituary; no unit given) |
 | Exothermic gives off heat, endothermic absorbs it; respiration is exothermic | wp-exothermic | read |
 | Five Great Years ≈ 125,000 years gives 25,000; the precession cycle ≈ 25,800 years | the story; wp-great-year | computed; read |
 
@@ -77,7 +77,7 @@ Claims these add beyond the notes above.
 |---|---|---|
 | Six centuries of machines before 2538, and the Ultimate Energy known for 600 years, both put the start near 1938 | the story | computed |
 | About two billion people in 1932 (two billion passed in 1927) | wp-world-population | read |
-| UN projection: a peak of about 10.3 billion in the mid-2080s, then slowly falling | un-wpp-2024 | read (search summaries of the UN's 2024 release) |
+| UN projection: a peak of about 10.3 billion in the mid-2080s, then slowly falling | un-wpp-2024 | read (the UN's release of 11 July 2024) |
 | *The War of the Worlds*, 1898 as a book; its Martians die of Earth's bacteria | wp-war-of-the-worlds | read |
 | Pluto found by Clyde Tombaugh, 18 February 1930; counted a planet until the IAU's 2006 definition | wp-pluto | read |
 | Hot bodies glow bluer and cooler ones redder; Wien derived his law in 1893 | wp-wien | read |

@@ -22,9 +22,9 @@ Award ([Astounding Award][wp-astounding-award]). That history sits alongside the
 
 The positron was photographed the month the story appeared, and it settled Roal's question the other way. Matter
 annihilates only with antimatter, an electron with a positron, and a proton and an electron never do
-([positron][wp-positron]). The hydrogen "wall" turned out to be the atom's lowest state: there's nothing below it to
-fall to ([Bohr model][wp-bohr]). The first electronic memories came in the late 1940s ([Williams tube][wp-williams-tube]),
-and the machines that think are still being argued about.
+([positron][wp-positron], [annihilation][wp-annihilation]). The hydrogen "wall" turned out to be the atom's lowest
+state: there's nothing below it to fall to ([Bohr model][wp-bohr]). The first electronic memories came in the late 1940s
+([Williams tube][wp-williams-tube]), and the machines that think are still being argued about.
 
 ## What became of the idea
 
@@ -64,6 +64,7 @@ printing's copyright was renewed, so the story and Morey's picture are free for 
 [sfe-campbell]: https://sf-encyclopedia.com/entry/campbell_john_w_jr
 [wp-astounding-award]: https://en.wikipedia.org/wiki/Astounding_Award_for_Best_New_Writer
 [wp-positron]: https://en.wikipedia.org/wiki/Positron
+[wp-annihilation]: https://en.wikipedia.org/wiki/Annihilation
 [wp-bohr]: https://en.wikipedia.org/wiki/Bohr_model
 [wp-williams-tube]: https://en.wikipedia.org/wiki/Williams_tube
 [wp-butler]: https://en.wikipedia.org/wiki/Darwin_among_the_Machines

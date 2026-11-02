@@ -32,6 +32,7 @@ arxiv-before-bethe: {url: 'https://arxiv.org/abs/2209.00072', title: "Before Bet
 wp-neutron: {url: 'https://en.wikipedia.org/wiki/Discovery_of_the_neutron', title: 'Discovery of the neutron (Wikipedia)', kind: reference}
 nature-cockcroft: {url: 'https://www.nature.com/articles/129649a0', title: 'Cockcroft and Walton, "Disintegration of Lithium by Swift Protons", Nature 129, 649 (1932)', kind: primary}
 wp-positron: {url: 'https://en.wikipedia.org/wiki/Positron', title: 'Positron (Wikipedia)', kind: reference}
+wp-annihilation: {url: 'https://en.wikipedia.org/wiki/Annihilation', title: 'Annihilation (Wikipedia)', kind: reference}
 wp-proton-decay: {url: 'https://en.wikipedia.org/wiki/Proton_decay', title: 'Proton decay (Wikipedia)', kind: reference}
 wp-bohr: {url: 'https://en.wikipedia.org/wiki/Bohr_model', title: 'Bohr model (Wikipedia)', kind: reference}
 wp-schrodinger: {url: 'https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation', title: 'Schrödinger equation (Wikipedia)', kind: reference}

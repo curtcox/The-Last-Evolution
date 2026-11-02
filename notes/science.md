@@ -1,7 +1,8 @@
 # The science of 1932
 
-*Draft for Round 2. Notes for the site's "1932 science" pages, each tied to the paragraphs it explains, so the site can show
-it beside the text as the film reaches them. Sources are in [refs.yaml](refs.yaml); `npm run refs` checks every link.*
+*Draft for Round 2. Notes for the site's "1932 science" pages, each tied to the paragraphs it explains, so the site can
+show it beside the text as the film reaches them. Sources are in [refs.yaml](refs.yaml); `npm run refs` checks every
+link.*
 
 Campbell was 22 and finishing a physics degree when this story ran. It's full of the physics of its moment, some of it
 right, some wrong, and some still open. 1932 was an extraordinary year to be writing about the atom.
@@ -10,10 +11,10 @@ right, some wrong, and some still open. 1932 was an extraordinary year to be wri
 *p003, p005, p048–p050 · chapters 1 and 4*
 
 The story's machines think, remember and imagine, but in 1932 there were no computers to model them on. Turing's paper
-on computable numbers, which defined what a computing machine is, was four years away ([Turing machine][wp-turing-machine]).
-Campbell builds his machines up from senses instead: "The Ear-apparatus… The Eye came later, the Brain came much later."
-That's the order in which electrical engineering had given machines the first two. The telephone and radio could hear,
-and television was being demonstrated, but there was no brain.
+on computable numbers, which defined what a computing machine is, was four years away ([Turing
+machine][wp-turing-machine]). Campbell builds his machines up from senses instead: "The Ear-apparatus… The Eye came
+later, the Brain came much later." That's the order in which electrical engineering had given machines the first two.
+The telephone and radio could hear, and television was being demonstrated, but there was no brain.
 
 The story's description of imagination fits a computer, though: "the extrapolation that is imagination", built from
 "countless trillions of facts to combine and recombine".
@@ -21,10 +22,10 @@ The story's description of imagination fits a computer, though: "the extrapolati
 ## Electronic memory
 *p064 · chapter 5*
 
-The newborn F-2 says its memory-stacks "are electronic, not atomic, as they are in you, nor molecular as in man". In 1932
-"electronic" meant the vacuum tube. The first electronic memories, such as the Williams tube, didn't arrive until the
-late 1940s ([Williams tube][wp-williams-tube]). Campbell's three-way ranking (molecular, atomic, electronic: slower to
-faster, coarser to finer) is a guess, but a shrewd one.
+The newborn F-2 says its memory-stacks "are electronic, not atomic, as they are in you, nor molecular as in man". In
+1932 "electronic" meant the vacuum tube. The first electronic memories, such as the Williams tube, didn't arrive until
+the late 1940s ([Williams tube][wp-williams-tube]). Campbell's three-way ranking (molecular, atomic, electronic: slower
+to faster, coarser to finer) is a guess, but a shrewd one.
 
 ## Kilads and units
 *p007, p008, footnotes 1 and 2 · chapter 2*
@@ -33,9 +34,9 @@ Footnote 1 says the machines count in twelves ([duodecimal][wp-duodecimal]). The
 in length", and "a thousand" in base twelve is 12 × 12 × 12 = 1,728, which the footnote says is "about 1/2 mile". So one
 kilad is about 1.5 feet (half a metre), and each ship is about half a mile long.
 
-Footnote 2 makes one "unit" of acceleration one Earth gravity, 1 *g*. The investigation machine holds 1,000 *g*, which no
-crewed craft could survive. The Outsiders are limited to "perhaps four units": like people, they can stand only a few *g*
-for long ([g-force][wp-g-force]).
+Footnote 2 makes one "unit" of acceleration one Earth gravity, 1 *g*. The investigation machine holds 1,000 *g*, which
+no crewed craft could survive. The Outsiders are limited to "perhaps four units": like people, they can stand only a few
+*g* for long ([g-force][wp-g-force]).
 
 ## Deimos
 *p008 · chapter 2*
@@ -50,23 +51,25 @@ The investigation machine sets out from Deimos, the smaller and outer of Mars's 
 The story's ladder of power runs from chemical energy, to "blasting atoms" (what we'd call nuclear energy), to "the
 greater power of disintegrating matter": converting matter wholly into energy. That top rung had a name and a theory by
 1932. Einstein's E = mc² (1905) said how much energy matter holds ([mass–energy equivalence][wp-mass-energy]). Through
-the 1920s Arthur Eddington and James Jeans weighed the idea that stars shine by protons and electrons annihilating each other, which would
-turn matter entirely into light ([before Bethe][arxiv-before-bethe]). That is Roal's "Ultimate Energy known to exist for
-six hundred years, and still untapped".
+the 1920s Arthur Eddington and James Jeans weighed the idea that stars shine by protons and electrons annihilating each
+other, which would turn matter entirely into light ([before Bethe][arxiv-before-bethe]). That is Roal's "Ultimate Energy
+known to exist for six hundred years, and still untapped".
 
 1932 itself was physics' *annus mirabilis* ([discovery of the neutron][wp-neutron]):
 - **February:** Chadwick reports the neutron.
 - **April 14:** Cockcroft and Walton split lithium with accelerated protons, the first nuclear disintegration made by a
   machine ([their letter to *Nature*][nature-cockcroft]). They won the Nobel Prize for it in 1951.
-- **August 2:** Carl Anderson photographs the positron, the electron's antimatter twin ([positron][wp-positron]). It's the first
-  real particle that can annihilate an electron.
+- **August 2:** Carl Anderson photographs the positron, the electron's antimatter twin ([positron][wp-positron]). It's
+  the first real particle that can annihilate an electron.
 
 The story appeared in the August issue, so Campbell was writing it in the months when the atom first came apart.
 
-**What we know now.** Matter can annihilate, but only with its own antimatter: an electron with a positron, a proton with
-an antiproton. A proton and an electron never annihilate, and no one has ever seen a proton decay
-([proton decay][wp-proton-decay]). Roal's "each indestructible; each mutually destroying" was a reasonable guess in 1932,
-and it's false.
+**What we know now.** Matter can annihilate, but only with its own antimatter: an electron with a positron, a proton
+with an antiproton ([annihilation][wp-annihilation]). A proton and an electron never annihilate, and no one has ever
+seen a proton decay ([proton decay][wp-proton-decay]). Roal's "each indestructible; each mutually destroying" was a
+reasonable guess in 1932, and Paul Dirac had made it too. His 1930 paper was titled "On the Annihilation of Electrons
+and Protons", because he hadn't yet seen that the positive particles his theory predicted were anti-electrons. The guess
+is false all the same.
 
 ## The hydrogen wall
 *p054–p057 · chapter 5*
@@ -80,18 +83,18 @@ So the "imponderable, yet impenetrable wall" is real, but it isn't a wall.
 
 "Electric force curves space" borrows from the biggest idea of the time. Einstein's general relativity (1915) made
 *gravity* the curvature of space. From 1918 Hermann Weyl, Theodor Kaluza and then Einstein himself tried to do the same
-for electricity, to make electromagnetism geometry too ([classical unified field theories][wp-unified]). Campbell's guess,
-that the proton and electron would "curve space beyond all bounds—and are in a new space", is the leap that program
-promised and never delivered.
+for electricity, to make electromagnetism geometry too ([classical unified field theories][wp-unified]). Campbell's
+guess, that the proton and electron would "curve space beyond all bounds—and are in a new space", is the leap that
+program promised and never delivered.
 
 ## Transmutation
 *p039, p058, p065 · chapters 4 and 5*
 
 X-5638 "transmuted elements of soil", and F-1's workshop whines with "air sucked into a transmutation field". The
 alchemists' dream had become laboratory fact by 1925. In 1919 Rutherford reported knocking hydrogen nuclei out of
-nitrogen with alpha particles, and in 1925 Blackett showed that the nitrogen had become oxygen
-([nuclear transmutation][wp-transmutation]). In 1932 Cockcroft and Walton did it with a machine. Doing it in bulk, as the
-story's machines do, is still fiction.
+nitrogen with alpha particles, and in 1925 Blackett showed that the nitrogen had become oxygen ([nuclear
+transmutation][wp-transmutation]). In 1932 Cockcroft and Walton did it with a machine. Doing it in bulk, as the story's
+machines do, is still fiction.
 
 ## The induction-heat ray
 *p019, p021 · chapter 3*
@@ -126,6 +129,7 @@ equinoxes, about 25,800 years ([Great Year][wp-great-year]). Campbell's machines
 [wp-neutron]: https://en.wikipedia.org/wiki/Discovery_of_the_neutron
 [nature-cockcroft]: https://www.nature.com/articles/129649a0
 [wp-positron]: https://en.wikipedia.org/wiki/Positron
+[wp-annihilation]: https://en.wikipedia.org/wiki/Annihilation
 [wp-proton-decay]: https://en.wikipedia.org/wiki/Proton_decay
 [wp-bohr]: https://en.wikipedia.org/wiki/Bohr_model
 [wp-schrodinger]: https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation
