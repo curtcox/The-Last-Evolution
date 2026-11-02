@@ -2,13 +2,14 @@
 // (src/gen/ch08.js). Inside the dome (dark, the screens and the violet canopy); Roal's vision as a science plate; and
 // outside on the twisted rock, from clear sunlight to a crescent moon, where F-2 builds the power plant.
 (() => {
-  const { D, INK, ez, win, steps, path, talk, ground, cam, withCam, ruled, dreamCurl, page, stander, thoughtRings, planet } = KIT;
+  const { D, INK, ez, win, steps, path, talk, clauses, gesture, nod, ground, cam, withCam, ruled, dreamCurl, page, stander, thoughtRings, planet } = KIT;
   const S = CHAPTER.shots, C = cue, T0 = id => S[id][0], T1 = id => S[id][1];
   const K = (t, a, b) => seg(t, C(a), C(b));
   const VIOLET = NRG.support, FORCE = '#CFE0FF', G = 1000, FS = 26, PALE = '#EFE6D2', BG = '#2E2620';
 
   // ---------- B to D, H to J: inside the dome ----------
   const ROALX = 820, TRESTX = 1000, F2P = [1240, 760];
+  const ROALC = clauses('roal'), TRESTC = clauses('trest'), F2C = clauses('f2'), TO_ROAL = [...TRESTC, ...F2C], TO_TREST = [...ROALC, ...F2C];
   function dome(t) {
     HALFTONE = .2;
     const tJ = T0('J'), go = ez(t, C('p111.2') - .5, T1('J') - .3);
@@ -16,8 +17,12 @@
       [T0('H') - .5, [ROALX + 40, 770, 2.6], .01], [T0('I'), tt => [lerp(1040, 1120, ez(tt, T0('I'), tJ)), 740, 1.6], 2.5], [tJ, tt => [lerp(1200, 1700, go), 720, 1.8], 2]]);
     camBegin(...c);
     const f2x = lerp(F2P[0], 1900, go * go), f2y = F2P[1] - 40 * go;
-    const roal = stander(t, ROALX, G, 44, [], { who: 'roal', key: 'roal', seed: 3, flip: false, look: steps(t, [[0, .5], [T0('C'), .1], [T0('D'), .2], [T0('I'), 0]]), talk: talk(t, 'roal'), lid: Math.max(win(t, T0('D'), T0('E'), 1, 1), win(t, T0('H'), T0('I'), 1, 1)) * .45 });
-    stander(t, TRESTX, G + 10, 46, [], { who: 'trest', key: 'trest', seed: 7, flip: t < T0('I'), look: .1, talk: talk(t, 'trest') });
+    // each gestures on his own clauses (Roal's smaller while his eyes dream) and nods as the other, or F-2, speaks to him
+    const dream = Math.max(win(t, T0('D'), T0('E'), 1, 1), win(t, T0('H'), T0('I'), 1, 1));
+    const rp = {}, rl = gesture(t, rp, ROALC); if (rp.up) { rp.up = lerp(rp.up, .12 + (rp.up - .12) * .55, dream); rp.fore = lerp(rp.fore, .3 + (rp.fore - .3) * .6, dream); }
+    const roal = stander(t, ROALX, G, 44, [], { who: 'roal', key: 'roal', seed: 3, flip: false, look: steps(t, [[0, .5], [T0('C'), .1], [T0('D'), .2], [T0('I'), 0]]) + rl + nod(t, TO_ROAL), pose: rp, talk: talk(t, 'roal'), lid: dream * .45 });
+    const tp = {}, tl = gesture(t, tp, TRESTC);
+    stander(t, TRESTX, G + 10, 46, [], { who: 'trest', key: 'trest', seed: 7, flip: t < T0('I'), look: .1 + tl + nod(t, TO_TREST), pose: tp, talk: talk(t, 'trest') });
     push(); translate(f2x, f2y); scale(go > .02 ? 1 : -1, 1); translate(-f2x, -f2y); DES.f2(f2x, f2y + 2.4 * FS, FS, t, { view: 'side' }); pop();
     camEnd();
     shade(-100, H + 100, .62, .78, PULP.black);

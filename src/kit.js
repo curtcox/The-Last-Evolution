@@ -26,11 +26,11 @@ const KIT = (() => {
       for (const w of l.words) { a ??= w[1]; if (/([.;?!—]|--)["”]?$/.test(w[0]) || w === l.words.at(-1)) { out.push([a, w[2]]); a = null; } } }
     return out;
   }
-  // each clause longer than .9 s carries a gesture of the near hand, laid over the pose; returns a small movement of the
+  // each clause longer than .6 s carries a gesture of the near hand, laid over the pose; returns a small movement of the
   // head to add to its look
   const GEST = [[.8, 1.9], [1.1, 2.4], [.6, 1.6]];   // the near arm (up, fore): an open hand forward, a lift, a small turn
   function gesture(t, pose, cl) {
-    for (let i = 0; i < cl.length; i++) { const [a, b] = cl[i]; if (b - a < .9 || t < a - .3 || t > b + .9) continue;
+    for (let i = 0; i < cl.length; i++) { const [a, b] = cl[i]; if (b - a < .6 || t < a - .3 || t > b + .9) continue;
       const k = win(t, a - .2, b + .3, .5, .6), g = GEST[i % 3]; pose.up = lerp(pose.up ?? .12, g[0], k); pose.fore = lerp(pose.fore ?? .3, g[1], k); return .05 * k * Math.sin((t - a) * 1.7); }
     return 0;
   }

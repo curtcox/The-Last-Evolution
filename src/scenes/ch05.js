@@ -127,7 +127,7 @@
   const STARTS = [[tSudden, .6], [C('p059.1:sudden crashing arcs'), .8], [C('p059.1:blasting atoms'), .5], [tGen, .7], [tSnap, 1], [tFell, .8], [tDead, 1]];
   function act(t, pose) {   // lays the acting over a pose; returns how it moves his head (look) and lids
     let look = 0, lid = 0;
-    for (let i = 0; i < MINE.length; i++) { const [a, b] = MINE[i]; if (b - a < .9 || t < a - .3 || t > b + .9) continue;
+    for (let i = 0; i < MINE.length; i++) { const [a, b] = MINE[i]; if (b - a < .6 || t < a - .3 || t > b + .9) continue;
       const k = win(t, a - .2, b + .3, .5, .6), g = GEST[i % 3]; pose.up = lerp(pose.up, g[0], k); pose.fore = lerp(pose.fore, g[1], k); look += .05 * k * Math.sin((t - a) * 1.7); }
     for (const [, b] of TOLD) look -= .1 * Math.sin(Math.PI * clamp((t - b - .1) / .7));
     const chin = win(t, C('p057.2'), tRise - .1, 1.6, .7);
