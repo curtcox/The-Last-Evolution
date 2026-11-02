@@ -2,7 +2,7 @@
 // The Denver hall at night; the dome raised on its floor round Roal and Trest; a cut-away of it with F-2's violet
 // beam; and outside, the dead plain under the green.
 (() => {
-  const { D, INK, ez, win, steps, path, talk, ground, cam, withCam, dreamCurl, page, stander } = KIT;
+  const { D, INK, ez, win, steps, path, talk, clauses, gesture, nod, ground, cam, withCam, dreamCurl, page, stander } = KIT;
   const S = CHAPTER.shots, C = cue, T0 = id => S[id][0], T1 = id => S[id][1];
   const K = (t, a, b) => seg(t, C(a), C(b));
   const GREEN = NRG.death, VIOLET = NRG.support, G = 1000, MID = 1000, FS = 30;
@@ -29,10 +29,14 @@
     if (t > tF - 1) { push(); translate(fx, fy); scale(-1, 1); translate(-fx, -fy); DES.f2(fx, fy + 2.4 * FS, FS, t, { view: 'side' }); pop(); glow(fx - 50, fy, 30, '#E6EEFF', .3 + .5 * talk(t, 'f2')); }
     for (let i = 0; i < 6; i++) if (t > tSix - 1) { const [x, g] = sixAt(t, i); const m = DES.machine(x, g, 22, t, { arms: 3, d: 1 + (i % 2), hover: 1.5 + .1 * wob(t, .3, i), face: clamp((MID - x) / 300, -1, 1), lit: .3, label: null });
       if (t > tCloud - 1) glow(m.eye[0], m.eye[1], 30, '#E6EEFF', .4); }
-    // Roal and Trest before the screens; Roal turns when the machines come
-    const turn = t > tF + .3;
-    const roal = stander(t, MID - 70, G, 44, [], { who: 'roal', key: 'roal', seed: 3, flip: !turn && t > T0('C') && t < T0('E') ? false : !turn, look: turn ? .05 : .45, talk: talk(t, 'roal'), lid: win(t, C('p085.2'), T1('D'), 1, 1) * .45 });
-    stander(t, MID + 70, G + 10, 46, [], { who: 'trest', key: 'trest', seed: 7, flip: t < T0('C') || (t > T0('E') && t < tF), look: .1, talk: talk(t, 'trest') });
+    // Roal and Trest before the screens; Roal turns when the machines come. Each gestures on his own clauses (Roal's
+    // smaller while his eyes dream) and nods as the other, or F-2, speaks to him
+    const turn = t > tF + .3, dream = win(t, C('p085.2'), T1('D'), 1, 1);
+    const rp = {}, rl = gesture(t, rp, ROALC); if (rp.up) { rp.up = lerp(rp.up, .12 + (rp.up - .12) * .55, dream); rp.fore = lerp(rp.fore, .3 + (rp.fore - .3) * .6, dream); }
+    const roal = stander(t, MID - 70, G, 44, [], { who: 'roal', key: 'roal', seed: 3, flip: !turn && t > T0('C') && t < T0('E') ? false : !turn, look: (turn ? .05 : .45) + rl + nod(t, TO_ROAL), pose: rp, talk: talk(t, 'roal'), lid: dream * .45 });
+    const tp = {}, tl = gesture(t, tp, TRESTC);
+    stander(t, MID + 70, G + 10, 46, [], { who: 'trest', key: 'trest', seed: 7, flip: t < tF,   // toward Roal, at his left, until F-2 comes from the right
+      look: .1 + tl + nod(t, TO_TREST), pose: tp, talk: talk(t, 'trest') });
     dreamCurl(roal.head[0] - 20, roal.head[1] - 40, K(t, 'p085.2', 'p085.3:I have lived'), t, .5 * (1 - ez(t, C('p085.3:I have lived'), C('p085.3:I have lived') + 2)), 'rc');
     // the cloud of blankness, thickening; then the canopy arching and closing into the dome
     const cloud = ez(t, tCloud, tArch), arch = ez(t, tArch - 1, tSolid + 1);
@@ -40,6 +44,7 @@
     if (arch > 0) { const r = 560, P = []; for (let i = 0; i <= 24; i++) { const a = Math.PI + i / 24 * Math.PI * Math.min(1, arch * 1.2), w = 1 + .05 * Math.sin(t * 4 + i) * (1 - arch); P.push([MID + Math.cos(a) * r * w, G + Math.sin(a) * r * .8 * w]); }
       if (arch < 1) P.push([MID, G]); stillSeed('dome'); paint(P, { wash: PULP.black, washOp: 255 * Math.min(1, arch * 1.4), fill: PULP.black, fillOp: 200 * arch, bleed: .05, ink: INK, sw: 1 }); }
   }
+  const ROALC = clauses('roal'), TRESTC = clauses('trest'), F2C = clauses('f2'), TO_ROAL = [...TRESTC, ...F2C], TO_TREST = [...ROALC, ...F2C];
   function hall(t) {
     HALFTONE = .3;
     const c = cam(t, [[0, tt => [lerp(900, MID, ez(tt, T0('B'), T0('C'))), lerp(560, 760, ez(tt, T0('B'), T0('C'))), lerp(.95, 1.4, ez(tt, T0('B'), T0('C')))]], [T0('C'), [MID + 60, 780, 2.2], 2],
