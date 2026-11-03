@@ -197,9 +197,34 @@ items:
     note: "At 6:29 (p064, as F-2 finishes) Roal turns to walk away by squashing his profile through 20% of its width, so two frames show him as a vertical line. Now never thinner than 60%: rendered at 388.75-389.17 s, he narrows and flips. Re-rendering chapter 5."
     title: "Chapter 5: Roal's turn to go squashes him to a sliver for two frames"
     when: 2026-11-03 22:01
+  ch00.acting:
+    state: pass
+    note: F-2 drifts, then the memory of Roal offering and Trest standing apart (0:26-0:34) holds still, as a memory should; nothing acts against the words.
+    at: ch00-draft-4f6aa2f9.mp4
+    when: 2026-11-03 22:02
+  ch00.picture:
+    state: pass
+    note: "Header now reads AMAZING STORIES · August, 1932. Title page, space, the memory and the mentatype sheets all read; the galaxies over the memory are dimmed to 40% by design (ch00.js: 1 - .6*mem)."
+    at: ch00-draft-4f6aa2f9.mp4
+    when: 2026-11-03 22:02
+  ch00.sync:
+    state: pass
+    note: The memory opens on 'in memory I am still close' and the passing light crosses on 'But I will pass soon'; the sheets come in with the record (E). Whisper's words sit 0.14 s from the alignment's (median).
+    at: ch00-draft-4f6aa2f9.mp4
+    when: 2026-11-03 22:02
+  ch00.sound:
+    state: pass
+    note: "-14.4 LUFS, range 4.2 LU, shots -14.6 to -17.4. Whisper missed 2 of 95 words: 'menta type', which it heard as 'mentatype', the right word."
+    at: ch00-draft-4f6aa2f9.mp4
+    when: 2026-11-03 22:02
+  ch00.story:
+    state: pass
+    note: "58 s: the title, the old machine alone in space, the memory of man, and why it sets down its record. Sets up the film without explaining it away."
+    at: ch00-draft-4f6aa2f9.mp4
+    when: 2026-11-03 22:02
 fresh:
   - when: 2026-11-02 23:47
     found: 13
     note: "Site only (the drafts were mid-render): a subagent with no context reviewed every page and its screenshots against the rubric. 1 major (the scorecard page spoke to makers), 7 minor, 5 nits; all fixed and recorded as find.* items. A film round follows when the drafts are done."
     state: 2a2f1d1970ac
-since_fresh: 5
+since_fresh: 10
