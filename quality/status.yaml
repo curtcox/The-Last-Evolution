@@ -262,6 +262,11 @@ items:
     note: "5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
     at: ch04-draft-eb5af70e.mp4
     when: 2026-11-03 22:11
+  find.ch06-feeders:
+    state: open
+    note: Inside the giant ship (F, 1:52-2:08) the four stood at 460, 600, 1460 and 1620, less than a body's width apart, so each pair read as one figure drawn twice. Now at 320, 570, 1370 and 1620. Rendered at 118 and 126 s. Re-rendering chapter 6.
+    title: "Chapter 6: the Outsiders feeding the generators stand in overlapped pairs"
+    when: 2026-11-03 22:13
 fresh:
   - when: 2026-11-02 23:47
     found: 13

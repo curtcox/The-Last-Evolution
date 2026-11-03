@@ -88,7 +88,9 @@
     camBegin(960, 560, lerp(1.1, 1.25, seg(t, tIn - 2, T1('F'))));
     boilSeed('gen'); wash(rrPts(760, 220, 420, 640, 30), 3, { ink: true, sw: .9 }); for (let k = 0; k < 6; k++) inkLine([[780, 300 + k * 90], [1160, 300 + k * 90]], .6, INK);
     glow(970, 540, 260, mixCol(HEAT, '#FF4A3A', hot), .3 + .5 * hot); glow(970, 540, 100, NRG.white, .3);
-    for (let i = 0; i < 4; i++) { const x = 460 + i * (i < 2 ? 140 : 0) + (i >= 2 ? 1000 + (i - 2) * 160 : 0), bob = Math.abs(Math.sin(t * 2.5 + i)) * 20;
+    // four feeding the generators, two each side, a body's width and more apart (at 140, each pair read as one drawn twice)
+    const FEED = [320, 570, 1370, 1620];
+    for (let i = 0; i < 4; i++) { const x = FEED[i], bob = Math.abs(Math.sin(t * 2.5 + i)) * 20;
       push(); translate(x, 900); rotate((i < 2 ? .25 : -.25) * Math.abs(Math.sin(t * 2.5 + i))); translate(-x, -900); DES.outsider(x, 900 - bob, 56, t, { view: 'side', turn: .1 * Math.sin(t + i) }); pop(); }
     for (let i = 0; i < 6; i++) { const q = frac(t * .4 + i / 6); glow(800 + 340 * hash(i), 860 - q * 600, 30, HEAT, .3 * (1 - q) * hot); }
     camEnd();
