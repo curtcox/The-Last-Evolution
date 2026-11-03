@@ -172,7 +172,8 @@
         pose.thigh = .32 * sn * m; pose.shin = (.32 * sn - .35 * Math.max(0, cs)) * m; pose.farThigh = -.32 * sn * m; pose.farShin = (-.32 * sn - .35 * Math.max(0, -cs)) * m;
         pose.up = .12 - .28 * sn * m; pose.farUp = .05 + .28 * sn * m; pose.torso += .06 * m; hip[1] -= 3 * Math.abs(cs) * m;
       }
-      // walking away from the floor he turns to go, and turns back at the end (a quick squash of the profile)
+      // walking away from the floor he turns to go, and turns back at the end (a quick squash of the profile, never thinner than
+      // .6 of it: thinner, the two frames mid-turn read as a sliver, not a man turning)
       const w3 = WALKS[3]; f = 1 - 2 * ez(t, w3[0] - .1, w3[0] + .35) + 2 * ez(t, w3[1] - .1, w3[1] + .35); flip = f < 0;
       const a = act(t, pose); acted = a.look; lid = clamp(Math.max(lidBase + a.lid, blink(t, 3)));
       // his arm up across his face in the birth's light (Morey's page), down again when F-1 has fallen
@@ -180,7 +181,7 @@
       // asking (p067): the near hand opens toward F-2
       const ask = win(t, C('p067.1'), C('p067.1$') + .6, .4, .8); pose.up = lerp(pose.up, .55, ask); pose.fore = lerp(pose.fore, 1.5, ask);
     }
-    push(); translate(hip[0], 0); scale(Math.max(.2, Math.abs(f)), 1); translate(-hip[0], 0);
+    push(); translate(hip[0], 0); scale(Math.max(.6, Math.abs(f)), 1); translate(-hip[0], 0);
     const r = DES.personSide(hip[0], hip[1], RS, t, { pose, flip, look: flip ? .05 : look + acted, lid, key: 'rs', talk: say });
     pop();
     return r;

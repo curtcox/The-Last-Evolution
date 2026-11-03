@@ -192,6 +192,11 @@ items:
     note: "Seven sheets cover every design in PLAN.md section 5 (people, machines, F-2 and C-R-U-1, the Outsiders, ships, investigators and motes, places, and the pilot's props). Second pass: the Outsiders solid as the film now draws them; sheet 7 adds Roal and Trest side on, in talk, the way the chapters draw them."
     at: 0fb59795b7d6
     when: 2026-11-03 11:13
+  find.ch05-turn:
+    state: open
+    note: "At 6:29 (p064, as F-2 finishes) Roal turns to walk away by squashing his profile through 20% of its width, so two frames show him as a vertical line. Now never thinner than 60%: rendered at 388.75-389.17 s, he narrows and flips. Re-rendering chapter 5."
+    title: "Chapter 5: Roal's turn to go squashes him to a sliver for two frames"
+    when: 2026-11-03 22:01
 fresh:
   - when: 2026-11-02 23:47
     found: 13

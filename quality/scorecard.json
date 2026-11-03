@@ -1,8 +1,8 @@
 {
  "summary": {
-  "pass": 37,
+  "pass": 46,
   "stale": 2,
-  "open": 69,
+  "open": 60,
   "curt": 7,
   "later": 3
  },
@@ -253,8 +253,8 @@
    "id": "ch02.draft",
    "area": "film",
    "title": "Chapter 2: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch02.js, src/designs.js, tools/timeline.mjs"
+   "state": "pass",
+   "note": "ch02-draft-b721108b.mp4, -14.4 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch03.acting",
@@ -295,8 +295,8 @@
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch03.js, src/designs.js, tools/timeline.mjs"
+   "state": "pass",
+   "note": "ch03-draft-a1e2d8a0.mp4, -14.4 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch04.acting",
@@ -337,8 +337,8 @@
    "id": "ch04.draft",
    "area": "film",
    "title": "Chapter 4: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/designs.js, tools/timeline.mjs"
+   "state": "pass",
+   "note": "ch04-draft-eb5af70e.mp4, -14.4 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch06.acting",
@@ -379,8 +379,8 @@
    "id": "ch06.draft",
    "area": "film",
    "title": "Chapter 6: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/designs.js, tools/timeline.mjs"
+   "state": "pass",
+   "note": "ch06-draft-4f3fa0fa.mp4, -14.4 LUFS, peak -2.3 dBTP"
   },
   {
    "id": "ch07.acting",
@@ -421,8 +421,8 @@
    "id": "ch07.draft",
    "area": "film",
    "title": "Chapter 7: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch07.js, src/designs.js, tools/timeline.mjs"
+   "state": "pass",
+   "note": "ch07-draft-c5349d60.mp4, -14.5 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch08.acting",
@@ -463,8 +463,8 @@
    "id": "ch08.draft",
    "area": "film",
    "title": "Chapter 8: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/designs.js, tools/timeline.mjs"
+   "state": "pass",
+   "note": "ch08-draft-8b38d4c1.mp4, -14.5 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch09.acting",
@@ -505,8 +505,8 @@
    "id": "ch09.draft",
    "area": "film",
    "title": "Chapter 9: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/designs.js, tools/timeline.mjs"
+   "state": "pass",
+   "note": "ch09-draft-5ccf383e.mp4, -14.5 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch10.acting",
@@ -547,8 +547,8 @@
    "id": "ch10.draft",
    "area": "film",
    "title": "Chapter 10: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/designs.js, tools/timeline.mjs"
+   "state": "pass",
+   "note": "ch10-draft-c0362cbb.mp4, -14.4 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch11.acting",
@@ -589,8 +589,8 @@
    "id": "ch11.draft",
    "area": "film",
    "title": "Chapter 11: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch11.js, src/designs.js, tools/timeline.mjs"
+   "state": "pass",
+   "note": "ch11-draft-2866872d.mp4, -14.4 LUFS, peak -2.3 dBTP"
   },
   {
    "id": "work.sheets",
