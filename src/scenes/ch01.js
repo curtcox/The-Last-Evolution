@@ -44,7 +44,9 @@
       boilSeed('crate' + i); wash(rrPts(x - s * 1.2, m.dy + s * .8, s * 2.4, s * 1.6, s * .2), 2, { ink: true, sw: .5 }); inkLine([[x - s * .6, m.arm], [x - s * .6, m.dy + s * .8]], .5, INK); inkLine([[x + s * .6, m.arm], [x + s * .6, m.dy + s * .8]], .5, INK); }
   }
   function cityWorld(t) {
-    ground(D[0], 255, 'citysky', { fill: '#FFFFFF', fillOp: 40 });
+    // the sky as kit's ground() lays it, but across the whole city: ground() stops at x = W + 800, and the camera goes
+    // to the far towers
+    steady(() => { stillSeed('citysky'); paint(rectPts(-1600, -800, 7600, H + 1600), { wash: D[0], washOp: 255, fill: '#FFFFFF', fillOp: 40, bleed: .2, tex: .4, ink: null }); });
     stillSeed('hills'); wash([[-800, G - 120], [0, G - 220], [900, G - 150], [1800, G - 240], [2900, G - 160], [3900, G - 230], [5200, G - 140], [5200, G], [-800, G]], 1, { op: .6 });
     steady(() => towers(t));
     stillSeed('plaza'); wash(rectPts(-800, G - 30, 6000, 600), 1, { ink: false, op: .9 }); inkLine([[-800, G - 30], [5200, G - 30]], .6, D[3]);
