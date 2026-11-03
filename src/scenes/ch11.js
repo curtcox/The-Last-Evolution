@@ -65,15 +65,19 @@
     planet(960, 540, 30 + 60 * q, 1, { key: 'oldearth', glow: '#F4EEDC', ga: .3 });
     glow(960, 540 - 300 * (1 - q), 30, '#FFE08A', .9); glow(960, 540 - 300 * (1 - q), 100, '#FFE08A', .4);
   }
-  // H to J: the page, and THE END
-  function pageEnd(t, last = true) {
+  // H to J: the page, and THE END. Its paragraph is the one being read: p138, then p139 (which it used to sit through
+  // still showing p138), then the last
+  const PARAS = ['This I have treated as fictitious. Better so—for man is an animal to whom hope is as necessary as food and air. Yet this which is made of excerpts from certain records on thin sheets of metal is no fiction.',
+    'It seems now, when I know this that is to be, that it must be so, for machines are indeed better than man, whether being of Metal, or being of Force.',
+    'So, you who have read, believe as you will. Then think—and maybe, you will change your belief.'];
+  function pageEnd(t, para = 2) {
     HALFTONE = 0;
     const tH = T0('H'), tJ = T0('J'), k = seg(t, tH, DUR);
     camBegin(W / 2, lerp(H / 2 - 40, H / 2 + 60, ease(k)), lerp(1, 1.08, ease(k)));
     const fade = 1 - ez(t, tJ - 1, tJ + .5);
     letter('THE LAST EVOLUTION', W / 2, 150, 28, INK, { ink: false, font: `700 28px ${SERIF}`, spacing: 4, alpha: .8 * fade });
     rule(560, 180, 800, INK, 1);
-    dropCapPara(last ? 'So, you who have read, believe as you will. Then think—and maybe, you will change your belief.' : 'This I have treated as fictitious. Better so—for man is an animal to whom hope is as necessary as food and air. Yet this which is made of excerpts from certain records on thin sheets of metal is no fiction.', 460, 380, 1000, { size: 44, lines: 6, screen: false });
+    dropCapPara(PARAS[para], 460, 380, 1000, { size: 44, lines: 6, screen: false });
     const e = ez(t, tJ, tJ + 2);
     letter('THE END', W / 2, 760, 90, INK, { ink: false, font: `700 90px ${SERIF}`, spacing: 10, alpha: e });
     if (e > 0) rule(810, 830, 300, INK, e);
@@ -91,10 +95,12 @@
     if (t < tG - .5) return tunnel(t);
     if (t < tG + .5) return dissolve(seg(t, tG - .5, tG + .5), () => tunnel(t), () => frame(t));
     if (t < tH - 1.5) return frame(t);
-    if (t < tH + .5) return dissolve(seg(t, tH - 1.5, tH + .5), () => frame(t), () => pageEnd(t, false));
-    const tI = T0('I');
-    if (t < tI - .8) return pageEnd(t, false);
-    if (t < tI + .4) return dissolve(seg(t, tI - .8, tI + .4), () => pageEnd(t, false), () => pageEnd(t));
+    if (t < tH + .5) return dissolve(seg(t, tH - 1.5, tH + .5), () => frame(t), () => pageEnd(t, 0));
+    const tI = T0('I'), tP = C('p139.1');
+    if (t < tP - .8) return pageEnd(t, 0);
+    if (t < tP + .4) return dissolve(seg(t, tP - .8, tP + .4), () => pageEnd(t, 0), () => pageEnd(t, 1));
+    if (t < tI - .8) return pageEnd(t, 1);
+    if (t < tI + .4) return dissolve(seg(t, tI - .8, tI + .4), () => pageEnd(t, 1), () => pageEnd(t));
     pageEnd(t);
     if (t > DUR - 2) flash(seg(t, DUR - 2, DUR), PULP.paper);
   }
