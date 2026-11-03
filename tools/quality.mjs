@@ -73,7 +73,9 @@ const dirty = new Set(sh('git', ['status', '--porcelain', '-uall']).split('\n').
 const when = {}, changed = f => when[f] ??= dirty.has(f) ? statSync(f).mtimeMs / 1000 : +sh('git', ['log', '-1', '--format=%ct', '--', f]).trim() || statSync(f).mtimeMs / 1000;
 const SHARED = ['src/core.js', 'src/kit.js', 'src/pulp.js', 'src/energy.js', 'src/designs.js', 'src/config.js', 'src/timeline.js', 'script/sfx.yaml', 'render.mjs', 'studio.html'];
 const sources = n => [`src/scenes/ch${NN(n)}.js`, `src/gen/ch${NN(n)}.js`, `script/boards/ch${NN(n)}.yaml`, `script/align/ch${NN(n)}.json`, ...SHARED].filter(existsSync);
-// a chapter's draft: newer than its sources, made from frames that are too (render.mjs --frames skips frames already on
+// what makes the sound but not the picture: the draft must be newer than these, its frames needn't be
+const SOUND = ['tools/timeline.mjs', 'tools/script_lib.mjs', 'script/casting.yaml', 'script/reports/voice.json'];
+// a chapter's draft: newer than its sources and what makes its sound, made from frames newer than its sources (render.mjs --frames skips frames already on
 // disk, so frames left from before a change would pass for new), and at -14 LUFS (±1) with peaks under -1 dBTP
 const LOUD = 'out/quality/loudness.json', loudCache = readJson(LOUD, {});
 function loud(d) {
@@ -87,7 +89,7 @@ function loud(d) {
 }
 function draftCheck(n) {
   const d = draftOf(n); if (!d) return { ok: false, detail: 'no draft yet' };
-  const src = sources(n), newer = src.filter(f => changed(f) > changed(d));
+  const src = sources(n), newer = [...src, ...SOUND.filter(existsSync)].filter(f => changed(f) > changed(d));
   if (newer.length) return { ok: false, detail: `older than ${newer.join(', ')}` };
   const F = `out/frames/ch${NN(n)}`, frames = existsSync(F) ? readdirSync(F).filter(f => f.endsWith('.jpg')) : [];
   const oldest = Math.min(...frames.map(f => statSync(`${F}/${f}`).mtimeMs / 1000)), behind = frames.length ? src.filter(f => changed(f) > oldest) : [];

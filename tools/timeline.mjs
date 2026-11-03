@@ -114,7 +114,22 @@ writeFileSync(`${OUT}/timeline.json`, JSON.stringify({ n, title: chapter.title, 
   lines: voiced.map(l => ({ id: l.id, who: l.who, mode: l.mode, text: l.text, t0: l.at, t1: l.end, words: l.words })) }));
 
 // the mix
-const parts = voiced.flatMap(l => l.parts.map(([at, a, b]) => ({ file: l.file, at, a, b })));
+// each line at one loudness. The takes come from ElevenLabs at their own levels and the treatments take more off: the
+// machines' flanger and filters left them near -31 LUFS against the people's -18, so a machine answering Trest all
+// but vanished. Each take is measured (cached by file) and brought to LINE_LUFS; one too short to measure takes its
+// speaker's median gain in this chapter.
+const LINE_LUFS = -20, LUFS_CACHE = 'out/quality/line_lufs.json';
+const lufsCache = existsSync(LUFS_CACHE) ? JSON.parse(readFileSync(LUFS_CACHE, 'utf8')) : {};
+const lufsOf = f => {
+  if (!(f in lufsCache)) { const e = spawnSync('ffmpeg', ['-hide_banner', '-nostats', '-i', f, '-af', 'ebur128', '-f', 'null', '-'], { encoding: 'utf8' }).stderr;
+    const m = e.match(/Summary:[\s\S]*?I:\s+(-?[\d.]+) LUFS/); lufsCache[f] = m && +m[1] > -70 ? +m[1] : null; }
+  return lufsCache[f];
+};
+for (const l of voiced) { const u = l.secs >= .5 ? lufsOf(l.file) : null; l.gain = u == null ? null : Math.max(-12, Math.min(18, LINE_LUFS - u)); }
+const median = a => { const b = [...a].sort((x, y) => x - y); return b.length ? b[b.length >> 1] : 0; };
+for (const l of voiced) if (l.gain == null) l.gain = median(voiced.filter(o => o.who === l.who && o.gain != null).map(o => o.gain));
+mkdirSync('out/quality', { recursive: true }); writeFileSync(LUFS_CACHE, JSON.stringify(lufsCache, null, 1));
+const parts = voiced.flatMap(l => l.parts.map(([at, a, b]) => ({ file: l.file, at, a, b, gain: l.gain })));
 const fx = (sfx.chapters[n] || []).map(f => {
   const file = sfx.files[f.fx], len = seconds(file), at = cue(f.at), until = f.until !== undefined ? cue(f.until) : at + len;
   const [fi, fo] = Array.isArray(f.fade) ? f.fade : [f.fade ?? 0, f.fade ?? 0];
@@ -124,7 +139,7 @@ const inputs = [...parts.map(p => ['-i', p.file]), ...fx.map(f => [...(f.loop ? 
 const fmt = 'aformat=sample_rates=48000:channel_layouts=stereo';
 const ms = s => Math.round(s * 1000);
 const g = [
-  ...parts.map((p, i) => `[${i}:a]atrim=${p.a.toFixed(3)}:${p.b.toFixed(3)},asetpts=PTS-STARTPTS,${fmt},adelay=${ms(p.at)}:all=1[v${i}]`),
+  ...parts.map((p, i) => `[${i}:a]atrim=${p.a.toFixed(3)}:${p.b.toFixed(3)},asetpts=PTS-STARTPTS,${fmt},volume=${p.gain.toFixed(2)}dB,adelay=${ms(p.at)}:all=1[v${i}]`),
   `${parts.map((_, i) => `[v${i}]`).join('')}amix=inputs=${parts.length}:normalize=0,apad=whole_dur=${duration}[voice]`,
   fx.length ? '[voice]asplit=2[vmix][vkey]' : '[voice]anull[vmix]',
   ...fx.map((f, i) => `[${parts.length + i}:a]atrim=0:${f.dur.toFixed(3)},asetpts=PTS-STARTPTS,${fmt},afade=t=in:d=${f.fi || .01},afade=t=out:st=${Math.max(0, f.dur - (f.fo || .01)).toFixed(3)}:d=${f.fo || .01},volume=${f.gain}dB,adelay=${ms(f.at)}:all=1[f${i}]`),
