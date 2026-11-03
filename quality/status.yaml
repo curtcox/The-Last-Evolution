@@ -111,9 +111,9 @@ items:
     when: 2026-11-02 23:47
   work.title:
     state: pass
-    note: "Re-judged: since the last pass ch00.js changed only in memories() (Roal and Trest side-on, 26-34 s); the title page (0-14 s) and pulp.js are unchanged, so the masthead, title and byline stand as judged."
-    at: bf568a5aaf8c
-    when: 2026-11-02 23:37
+    note: The header now names the 1932 issue ('AMAZING STORIES · August, 1932') instead of the 1961 reprint's 'A Classic Reprint from…', its rules fitted to it (out/check/ch00_title.jpg).
+    at: 7ddc037a438b
+    when: 2026-11-03 11:14
   find.side-tunic:
     state: pass
     note: "DES.personSide now gives everyone but Roal a tunic to mid-thigh over two legs, the far one a little back when standing, as the front view and model sheets have. Checked side-on in ch00 (the memory) and ch08 (Trest talking): tunic, belt, legs and boots read; Roal keeps his robe."
@@ -178,13 +178,23 @@ items:
     title: "Nits: an unnamed 'us', 'a dozen' for thirteen, Morey's disputed birth year, a degree with no scale"
     when: 2026-11-02 23:47
   find.pig-slump:
-    state: open
-    note: "DES.cage rotates the pig 81 degrees about its feet, so its head swings down through the boards (498 s). Fix: flatten it instead, scale(1 + .08*dead, 1 - .42*dead) in place of the rotate. It's in src/designs.js, shared by every chapter, so it waits for the batch of shared changes with work.sheets and one full re-render."
+    state: pass
+    note: "DES.cage flattens the pig onto its side when it dies; checked at 499 and 503 s (out/check/ch05_pig.jpg): it lies inside the cage."
     title: "Chapter 5: the dead guinea pig turns through the cage floor"
-    when: 2026-11-03 10:44
+    when: 2026-11-03 11:13
+  find.outsider-opaque:
+    state: pass
+    note: "Each plate on an opaque brown fill; checked in ch02 at 125 and 290 s and ch06 at 115 and 125 s, and on sheet 4: solid figures that stay separate where they overlap."
+    title: The Outsiders are drawn in see-through wash
+    when: 2026-11-03 11:13
+  work.sheets:
+    state: pass
+    note: "Seven sheets cover every design in PLAN.md section 5 (people, machines, F-2 and C-R-U-1, the Outsiders, ships, investigators and motes, places, and the pilot's props). Second pass: the Outsiders solid as the film now draws them; sheet 7 adds Roal and Trest side on, in talk, the way the chapters draw them."
+    at: 0fb59795b7d6
+    when: 2026-11-03 11:13
 fresh:
   - when: 2026-11-02 23:47
     found: 13
     note: "Site only (the drafts were mid-render): a subagent with no context reviewed every page and its screenshots against the rubric. 1 major (the scorecard page spoke to makers), 7 minor, 5 nits; all fixed and recorded as find.* items. A film round follows when the drafts are done."
     state: 2a2f1d1970ac
-since_fresh: 0
+since_fresh: 4
