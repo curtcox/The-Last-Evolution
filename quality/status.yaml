@@ -237,9 +237,34 @@ items:
     note: The ring was centred at 1000, so one of its far half stood at 1192, just behind Trest (1160), from 6:12 to 7:04. Centred between them (1060) now, every far machine is 90 px or more from both and no near one is in front. In the worlds (U), evenly spaced planets let Jupiter and Saturn overlap and show through each other; they're spaced by size now, 90 apart edge to edge. Rendered at 372-420 and 430-468 s. Re-rendering chapter 3.
     title: "Chapter 3: a machine stands at Trest's back through Roal's speech; Jupiter and Saturn overlap"
     when: 2026-11-03 22:10
+  ch04.acting:
+    state: pass
+    note: "The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
+    at: ch04-draft-eb5af70e.mp4
+    when: 2026-11-03 22:11
+  ch04.picture:
+    state: pass
+    note: "Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
+    at: ch04-draft-eb5af70e.mp4
+    when: 2026-11-03 22:11
+  ch04.sync:
+    state: pass
+    note: Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median).
+    at: ch04-draft-eb5af70e.mp4
+    when: 2026-11-03 22:11
+  ch04.sound:
+    state: pass
+    note: "-14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
+    at: ch04-draft-eb5af70e.mp4
+    when: 2026-11-03 22:11
+  ch04.story:
+    state: pass
+    note: "5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
+    at: ch04-draft-eb5af70e.mp4
+    when: 2026-11-03 22:11
 fresh:
   - when: 2026-11-02 23:47
     found: 13
     note: "Site only (the drafts were mid-render): a subagent with no context reviewed every page and its screenshots against the rubric. 1 major (the scorecard page spoke to makers), 7 minor, 5 nits; all fixed and recorded as find.* items. A film round follows when the drafts are done."
     state: 2a2f1d1970ac
-since_fresh: 10
+since_fresh: 15
