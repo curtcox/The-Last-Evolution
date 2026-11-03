@@ -232,6 +232,11 @@ items:
     note: The three searchers swayed ±140 px round spots 160 apart, so at 4:12-4:15 two stood almost wholly over each other, and at 4:36 the one with the projector landed on the middle one. Now they sway ±25 round 2290, 2500 and 2990, leaving a gap at 2750 for the projector. Rendered at 243-290 s. Re-rendering chapter 2.
     title: "Chapter 2: the Outsiders searching ship 2 walk through each other"
     when: 2026-11-03 22:07
+  find.ch03-ring:
+    state: open
+    note: The ring was centred at 1000, so one of its far half stood at 1192, just behind Trest (1160), from 6:12 to 7:04. Centred between them (1060) now, every far machine is 90 px or more from both and no near one is in front. In the worlds (U), evenly spaced planets let Jupiter and Saturn overlap and show through each other; they're spaced by size now, 90 apart edge to edge. Rendered at 372-420 and 430-468 s. Re-rendering chapter 3.
+    title: "Chapter 3: a machine stands at Trest's back through Roal's speech; Jupiter and Saturn overlap"
+    when: 2026-11-03 22:10
 fresh:
   - when: 2026-11-02 23:47
     found: 13

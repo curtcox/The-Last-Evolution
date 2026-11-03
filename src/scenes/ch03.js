@@ -22,11 +22,12 @@
     }
   }
   // the machines in the hall: floating in tiers at first; gathered in a ring round Roal when he speaks (S), the near
-  // half wider so none stands in front of Roal or Trest
+  // half wider so none stands in front of Roal or Trest, the ring centred between them (1060) so none of the far half
+  // stands just behind either (centred at 1000, one stood at Trest's back through the whole speech)
   function hallMachines(t, near) {
     const ring = ez(t, T0('S') - 2, T0('S') + 3), flare = Math.max(win(t, C('p018.1:so Roal was believed'), C('p018.1:so Roal was believed') + 3, .3, 2), win(t, T0('V'), T0('V') + 2.5, .2, 2));
     for (let i = 0; i < 10; i++) { const z = Math.sin(i / 10 * TAU), isNear = z > 0; if (isNear !== near) continue;
-      const tx = 1000 + Math.cos(i / 10 * TAU) * 900, ty = 420 + z * 60, rx = 1000 + Math.cos(i / 10 * TAU) * (near ? 1000 : 620), ry = G - 40 + z * 60;
+      const tx = 1000 + Math.cos(i / 10 * TAU) * 900, ty = 420 + z * 60, rx = 1060 + Math.cos(i / 10 * TAU) * (near ? 1000 : 620), ry = G - 40 + z * 60;
       const x = lerp(tx, rx, ring) + 8 * wob(t, .07, i), g = lerp(ty + 160, ry, ring), s = (near ? 22 : 15) + 3 * hash(i), look = clamp((ROAL - x) / 600, -1, 1);
       const m = DES.machine(x, g, s, t, { arms: 3, d: 1 + (i % 3), hover: lerp(3, 1.6, ring), face: look * .9, lit: .3 + .7 * flare, label: null });
       if (flare > 0) glow(m.eye[0], m.eye[1], s * 2.5, NRG.white, .5 * flare); }
@@ -177,8 +178,11 @@
     ground('#2E2620', 255, 'worlds', { fill: '#3B322B', fillOp: 120 });
     const t0 = T0('U'), c = [lerp(600, 2300, ez(t, t0, T1('U'))), 540, 1];
     withCam(c, () => {
-      [['mercury', 60], ['venus', 90], ['earth', 95], ['mars', 70], ['jupiter', 220], ['saturn', 180], ['uranus', 120], ['neptune', 115], ['pluto', 40]].forEach(([k, r], i) => {
-        const x = 300 + i * 340, y = 600; planet(x, y, r, 1 + (i % 3), { key: 'w' + k, bands: r > 150 });
+      // spaced by their sizes, 90 apart edge to edge (evenly spaced, Jupiter and Saturn overlapped and showed through each other)
+      let x = 260;
+      [['mercury', 60], ['venus', 90], ['earth', 95], ['mars', 70], ['jupiter', 220], ['saturn', 180], ['uranus', 120], ['neptune', 115], ['pluto', 40]].forEach(([k, r], i, all) => {
+        if (i) x += all[i - 1][1] + 90 + r;
+        const y = 600; planet(x, y, r, 1 + (i % 3), { key: 'w' + k, bands: r > 150 });
         const on = ez(t, t0 + i * 1.2, t0 + i * 1.2 + 1); if (on > 0) DES.machine(x, y - r + 4, 16 * on, t, { arms: 3, d: 1, label: null }); });
     });
   }
