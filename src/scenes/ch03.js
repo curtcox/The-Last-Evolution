@@ -21,11 +21,12 @@
       if (t > T0('R') - 1 && r === 1 && c > 1 && c < 5) { boilSeed('bod' + c); const q = frac((t - T0('R')) * .08 + c * .3); DES.machine(lerp(x + 20, x + w - 20, q), y + h - 20, 7, t, { arms: 2, label: null, hover: 1.2 }); wash(ellPts(lerp(x + 20, x + w - 20, q), y + h - 60, 24, 10, 10), 2, { ink: true, sw: .4 }); }
     }
   }
-  // the machines in the hall: floating in tiers at first; gathered in a ring round Roal when he speaks (S)
+  // the machines in the hall: floating in tiers at first; gathered in a ring round Roal when he speaks (S), the near
+  // half wider so none stands in front of Roal or Trest
   function hallMachines(t, near) {
     const ring = ez(t, T0('S') - 2, T0('S') + 3), flare = Math.max(win(t, C('p018.1:so Roal was believed'), C('p018.1:so Roal was believed') + 3, .3, 2), win(t, T0('V'), T0('V') + 2.5, .2, 2));
     for (let i = 0; i < 10; i++) { const z = Math.sin(i / 10 * TAU), isNear = z > 0; if (isNear !== near) continue;
-      const tx = 1000 + Math.cos(i / 10 * TAU) * 900, ty = 420 + z * 60, rx = 1000 + Math.cos(i / 10 * TAU) * 620, ry = G - 40 + z * 60;
+      const tx = 1000 + Math.cos(i / 10 * TAU) * 900, ty = 420 + z * 60, rx = 1000 + Math.cos(i / 10 * TAU) * (near ? 1000 : 620), ry = G - 40 + z * 60;
       const x = lerp(tx, rx, ring) + 8 * wob(t, .07, i), g = lerp(ty + 160, ry, ring), s = (near ? 22 : 15) + 3 * hash(i), look = clamp((ROAL - x) / 600, -1, 1);
       const m = DES.machine(x, g, s, t, { arms: 3, d: 1 + (i % 3), hover: lerp(3, 1.6, ring), face: look * .9, lit: .3 + .7 * flare, label: null });
       if (flare > 0) glow(m.eye[0], m.eye[1], s * 2.5, NRG.white, .5 * flare); }
