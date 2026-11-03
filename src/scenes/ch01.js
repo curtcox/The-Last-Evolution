@@ -37,9 +37,12 @@
       DES.dcase(x, G - 40, r, h, dh, d, { shine: d < 3, rings: [.1, .35, .6, .85] });
       for (let k = 0; k < 6; k++) glow(x - r * .5 + (k % 3) * r * .5, G - 40 - h * (.2 + .13 * Math.floor(k / 3) + .3 * hash(x + k)), 10, '#F4EEDC', .25); }
   }
-  // the machines at work: each carries a crate along its own loop above the city
+  // the machines at work: each carries a crate along its own loop above the city, at its own height (LANE, 25 px apart)
+  // and starting a ninth of the loop from the next (START). With random heights and starts two flew stacked for 12 s,
+  // like one machine drawn twice; these were searched so no two in near lanes overlap for more than 3 s in the chapter.
+  const LANE = [1, 5, 6, 3, 2, 4, 8, 7, 0], START = [4, 0, 8, 1, 3, 7, 5, 2, 6];
   function workers(t) {
-    for (let i = 0; i < 9; i++) { const ph = t * (.05 + .02 * hash(i)) + hash(i * 3), x = -200 + frac(ph) * 5200, y = 380 + 200 * hash(i * 5) + 30 * Math.sin(t * .6 + i), s = 16 + 8 * hash(i * 7);
+    for (let i = 0; i < 9; i++) { const ph = t * (.05 + .02 * hash(i)) + START[i] / 9, x = -200 + frac(ph) * 5200, y = 380 + 25 * LANE[i] + 30 * Math.sin(t * .6 + i), s = 16 + 8 * hash(i * 7);
       const m = DES.machine(x, y + 2.5 * s, s, t, { arms: 2, d: 1 + (i % 2), hover: 2.5, face: .6, label: null });
       boilSeed('crate' + i); wash(rrPts(x - s * 1.2, m.dy + s * .8, s * 2.4, s * 1.6, s * .2), 2, { ink: true, sw: .5 }); inkLine([[x - s * .6, m.arm], [x - s * .6, m.dy + s * .8]], .5, INK); inkLine([[x + s * .6, m.arm], [x + s * .6, m.dy + s * .8]], .5, INK); }
   }

@@ -222,6 +222,11 @@ items:
     note: "58 s: the title, the old machine alone in space, the memory of man, and why it sets down its record. Sets up the film without explaining it away."
     at: ch00-draft-4f6aa2f9.mp4
     when: 2026-11-03 22:02
+  find.ch01-workers:
+    state: open
+    note: Workers 7 and 8 had near-equal speeds, heights 18 px apart and near-equal random starts, so from about 0:57 to 1:09 they flew one over the other. Now each has its own lane (25 px apart) and starts a ninth of the loop from the next, searched so no two in near lanes overlap more than 3 s. Rendered at 50-140 s. Re-rendering chapter 1.
+    title: "Chapter 1: two worker machines fly stacked for 12 s, like one drawn twice"
+    when: 2026-11-03 22:04
 fresh:
   - when: 2026-11-02 23:47
     found: 13
