@@ -27,7 +27,7 @@
   // ---------- the hall: one set ----------
   // world layout (px): the floor's back edge at 864, figures stand at G; Roal's couch at the left, F-1's place at the
   // right, the working point between them, the tiers of science-machines floating in a ring behind and around
-  const G = 1000, F1 = { x: 1420, g: 975, s: 50 }, WORK = [1000, 790], COUCH = { x: 420, s: 44 }, RS = 44, RU = RS * 6 / 7.4, FS = 30;
+  const G = 1000, F1 = { x: 1420, g: 975, s: 50 }, F1R = 3.4 * 50 * 1.2, WORK = [1000, 790], COUCH = { x: 420, s: 44 }, RS = 44, RU = RS * 6 / 7.4, FS = 30;
   const MAKE = [1330, 830], CRU = [1330, 810], CAGE = [760, G], SEAT = G - 1.72 * COUCH.s, F2HOV = (G - WORK[1]) / FS;
   const night = op => { stillSeed('night'); paint(rectPts(-500, -400, 3000, 1900), { wash: PULP.black, washOp: 215 * op, fill: '#3B322B', fillOp: 60, bleed: .2, tex: .4, ink: null }); };
 
@@ -35,7 +35,7 @@
   const tCome = C('p054.1'), tBack = C('p058.1') + .3, tSudden = C('p058.3:Suddenly'), tTent = C('p058.3:tentacles became');
   const tStraight = C('p060.1:straightened'), tRolled = C('p060.1:rolled back') + 1, tThree = C('p060.1:but three beams'), tSmall = C('p060.1:It was a small thing');
   const tGen = C('p060.1:Suddenly the generators'), tAura = C('p060.1:An enormous aura'), tShot = C('p060.1:shot through');
-  const tCrack = C('p060.1:Lightning cracked'), tHit = C('p060.1:to one machine'), tSnap = C('p060.1:dull snap'), tFell = C('p060.1:fell heavily');
+  const tCrack = C('p060.1:Lightning cracked'), tHit = C('p060.1:to one machine'), tSnap = C('p060.1:dull snap'), tFell = C('p060.1:fell heavily'), tLand = tFell + 1.3;
   const tMake = C('p064.1:I shall make others'), tCage = C('p071.1'), tHeld = C('p071.1:which held'), tPig = C('p071.1:a guinea pig') + 1;
   const tGreen = C('p071.1:came a pale-green beam'), tDead = C('p071.1:fell dead');
 
@@ -56,7 +56,9 @@
     for (let r = 0; r < 2; r++) for (let i = 0; i < 12; i++) {
       const th = (i + .5 * r) / 12 * TAU + .03 * wob(t, .015, r), z = Math.sin(th);
       if ((z > 0) !== near || (near && Math.abs(Math.cos(th)) < .6)) continue;
-      const x = 1150 + Math.cos(th) * (1000 + r * 90) + 10 * wob(t, .07, i), y = 430 + r * 130 + z * (90 + r * 30) + 6 * wob(t, .11, i * .7);
+      const x = 1150 + Math.cos(th) * (1000 + r * 90) + 10 * wob(t, .07, i);
+      // the near machines over the floor where F-1 falls lift clear of it as it comes down (else one seems to ride it)
+      const y = 430 + r * 130 + z * (90 + r * 30) + 6 * wob(t, .11, i * .7) - (near && x > F1.x + 100 ? 170 * ez(t, tSnap, tLand + .4) : 0);
       const l = lit * (.5 + .5 * hash(i + r * 12 + Math.floor(t * 6))), look = clamp((WORK[0] - x) / 900, -1, 1);
       if (!near) farMachine(x, y, (12 + r * 3) * (1 + .35 * z), z < -.5 ? 3 : 2, l, r * 12 + i, look);
       else { const s = 13 + r * 3; DES.machine(x, G, s, t, { r: 1.5, h: 3, dh: 1, d: 2 + r, arms: 3, reach: 3, hover: (G - y) / s, face: look * .9, lit: l, label: null }); glow(x + look * s * .8, y - s * 4.6, s * (1 + 1.6 * l), NRG.white, .2 + .5 * l); }
@@ -82,13 +84,19 @@
       return p;
     });
   }
+  // how far past upright a machine of radius r and case height h (in its s) lies on its side: DES.machine's base disc
+  // is 1.2 r wide and its framework .7 tall
+  const lieTilt = (r, h) => Math.atan(.2 * r / (.7 + h));
   function f1(t, o) {
-    const x = f1X(t), g = F1.g, s = F1.s, fall = o.fall || 0, land = tFell + .5;
+    const x = f1X(t), g = F1.g, s = F1.s, fall = o.fall || 0, tip = o.tip || 0;
     if (o.gone >= 1) return;
-    // the fall has weight: a lurch back as the snap takes it, the drop, a bounce on landing, and settling
-    const lurch = -.05 * Math.sin(Math.PI * seg(t, tSnap, tFell + .1)), bounce = t > land ? spring(t, land, 5, 14) : 0;
-    push(); translate(x, g); rotate(lurch + fall * .3 - .06 * bounce); if (o.gone) scale(1, 1 - o.gone); translate(-x, -g);
-    const reach = reachAt(t, x), m = DES.f1(x, g, s, t, { arms: reach ? 0 : 8, hover: lerp(f1Hov(t), .2, easeIn(fall)) + .5 * Math.abs(bounce), lit: o.lit, dark: o.dark, face: f1Face(t) });
+    // the fall has weight: a lurch back as the snap takes it, the drop out of its hover, then it topples over its far rim
+    // onto its side, rocks once on landing and lies still (a cylinder left leaning would hang there unsupported). It
+    // turns on its base disc's rim and comes to rest on that rim and its case's shoulder, the dome end a little down.
+    const lurch = -.05 * Math.sin(Math.PI * seg(t, tSnap, tFell + .1)), bounce = t > tLand ? spring(t, tLand, 5, 14) : 0;
+    const px = x + F1R, py = g - .2 * s, lie = HALF_PI + lieTilt(3.4, 7.5);
+    push(); translate(px, py); rotate(lurch + tip * lie - .04 * bounce); if (o.gone) scale(1, 1 - o.gone); translate(-px, -py);
+    const reach = reachAt(t, x), m = DES.f1(x, g, s, t, { arms: reach || tip > .05 ? 0 : 8, hover: lerp(f1Hov(t), .2, easeIn(fall)), lit: o.lit, dark: o.dark, face: f1Face(t) });
     if (reach) reach.forEach((p, i) => { const sx = x + (i - 2.5) * s * 1.1, sy = m.arm, w = o.writhe || 0;
       const mx = lerp(sx, p[0], .5) + s * 2.2 * wob(t, .9 + .4 * w, i * .37) * (.3 + w), my = lerp(sy, p[1], .5) + s * 1.5 * wob(t, .7 + .5 * w, i * .21) * (.3 + w);
       DES.tentacle([[sx, sy], [lerp(sx, mx, .5), lerp(sy, my, .6) + s], [mx, my], [lerp(mx, p[0], .6), lerp(my, p[1], .6)], p], .34 * s, .16 * s, 4); });
@@ -99,8 +107,9 @@
   // the science-machine that drifts too close in the birth and is struck (p060); it falls beside F-1
   function stray(t) {
     const k = ez(t, tGen - 3, tGen + 8), fall = easeIn(seg(t, tFell + .1, tFell + .7)), x = lerp(1760, 1210, k), g = lerp(905, 990, k);
-    push(); translate(x, g); rotate(-fall * .5); translate(-x, -g);
-    DES.machine(x, g + fall * 12, 16, t, { r: 1.6, h: 3, d: 2, arms: 3, dark: t > tHit + .3, label: null, hover: lerp(1.5, .1, fall) });
+    const rx = x - 1.6 * 16 * 1.2;   // it tips over its base disc's near rim and lies on its side, as F-1 does
+    push(); translate(rx, g); rotate(-fall * (HALF_PI + lieTilt(1.6, 3))); translate(-rx, -g);
+    DES.machine(x, g, 16, t, { r: 1.6, h: 3, d: 2, arms: fall > .05 ? 0 : 3, dark: t > tHit + .3, label: null, hover: lerp(1.5, .1, fall) });
     pop();
     if (t > tHit && t < tHit + 2.5) glow(x, g - 90, 160 * (1 - seg(t, tHit, tHit + 2.5) * .5), NRG.lightning, .7 * (1 - seg(t, tHit, tHit + 2.5)));
     return [x, g - 100];
@@ -232,13 +241,13 @@
     DES.couch(COUCH.x, G, COUCH.s);
 
     // F-1: talking, humming, working; struck dead by its own child's birth; unmade by it
-    const fall = easeIn(K(t, 'p060.1:fell heavily', 'p060.1:fell heavily+.5')), gone = ease(K(t, 'p063.1:float back along it', 'p063.1:In seconds+.8'));
+    const fall = easeIn(K(t, 'p060.1:fell heavily', 'p060.1:fell heavily+.5')), tip = easeIn(K(t, 'p060.1:fell heavily+.35', 'p060.1:fell heavily+1.3')), gone = ease(K(t, 'p063.1:float back along it', 'p063.1:In seconds+.8'));
     const hum = snapped ? 0 : Math.max(win(t, T0('N'), tSudden + 1, 1, 1) * (.4 + .3 * Math.abs(wob(t, 1.7))), tSudden < t ? .5 * (1 - ez(t, tStraight, tRolled)) : 0,
       K(t, 'p058.3:the hum', 'p058.3:waxed') * win(t, T0('P'), T0('Q'), .5, .5) * (.3 + .7 * (.5 + .5 * Math.sin(t * 2.2))), sym.lit, roar, win(t, T0('W'), tSnap, .2, .1));
     const writhe = ez(t, tTent, tTent + 1) * (1 - ez(t, tStraight, tRolled)) + .2 * ez(t, tGen, tGen + 1);
-    f1(t, { fall, gone, dark: snapped, hum, writhe, lit: snapped ? 0 : steps(t, [[0, .15], [T0('C'), .3], [tSudden, .5], [tGen, 1, .8]]) + .7 * talk(t, 'f1') });
+    f1(t, { fall, tip, gone, dark: snapped, hum, writhe, lit: snapped ? 0 : steps(t, [[0, .15], [T0('C'), .3], [tSudden, .5], [tGen, 1, .8]]) + .7 * talk(t, 'f1') });
     const st = stray(t);
-    if (t > tFell + .5) { const d = seg(t, tFell + .5, tFell + 3.5); if (d < 1) { boilSeed('dust'); paint(ellPts(F1.x, F1.g, 260 + 200 * d, 50 + 30 * d, 20, 20), { fill: D[1], fillOp: 90 * (1 - d), bleed: .4, ink: null }); } }
+    if (t > tLand) { const d = seg(t, tLand, tLand + 3); if (d < 1) { boilSeed('dust'); paint(ellPts(F1.x + F1R + 260, F1.g, 260 + 200 * d, 50 + 30 * d, 20, 20), { fill: D[1], fillOp: 90 * (1 - d), bleed: .4, ink: null }); } }
 
     // B: his thought rises as a curl; F-1's ruled line follows it, and is wiped when the scene moves on
     const head0 = [COUCH.x - 10, SEAT - 120];
@@ -297,17 +306,30 @@
     const core = K(t, 'p064.1:The Ultimate Energy', 'p064.1:is generated') * (1 - ez(t, T0('AD'), T0('AD') + 2));
     if (core > 0) { glow(...WORK, 90 + 40 * core, NRG.white, .4 * core); glow(WORK[0] + 10, WORK[1], 40, NRG.white, .7 * core); }
     const mem = K(t, 'p064.1:Already they hold', 'p064.1:known and seen') * (1 - K(t, 'p064.1:I shall make others', 'p064.1$'));
+    // each memory a small remembered picture in a pale round of light: the towers of 2538, an Outsiders' torpedo in the
+    // void, a green beam striking the ground
     if (mem > 0) for (let i = 0; i < 5; i++) {
-      const a = i / 5 * TAU + t * .15, x = WORK[0] + Math.cos(a) * 260, y = WORK[1] + Math.sin(a) * 150, op = mem * .8;
+      const a = i / 5 * TAU + t * .15, x = WORK[0] + Math.cos(a) * 260, y = WORK[1] + Math.sin(a) * 150, op = mem * .8, R = 58;
+      const ink = mixCol('#2A231D', D[0], 1 - op);
       boilSeed('mem' + i);
-      if (i % 3 === 0) { for (let k = 0; k < 3; k++) wash(rectPts(x - 30 + k * 22, y - 30 - 25 * hash(k + i), 14, 50 + 25 * hash(k + i)), 0, { op }); }
-      else if (i % 3 === 1) wash(ellPts(x, y, 50, 10, 14), 0, { op });
-      else glow(x, y, 40, NRG.death, .5 * op);
+      glow(x, y, R * 1.3, '#F4EEDC', .25 * op);
+      paint(ellPts(x, y, R, R * .8, 24), { wash: mixCol(D[0], '#F4EEDC', .5), washOp: 110 * op, fill: D[1], fillOp: 30 * op, bleed: .2, ink: null });
+      if (i % 3 === 0) {
+        inkLine([[x - 40, y + 26], [x + 40, y + 26]], .5, ink);
+        [[-24, 10, 52], [-4, 13, 70], [18, 9, 44]].forEach(([dx, w, h]) => wash([[x + dx - w / 2, y + 26], [x + dx - w / 2, y + 26 - h], [x + dx, y + 26 - h - 12], [x + dx + w / 2, y + 26 - h], [x + dx + w / 2, y + 26]], 2, { op, ink: true, sw: .4 }));
+      } else if (i % 3 === 1) {
+        wash([[x - 42, y - 7], [x + 26, y - 9], [x + 44, y], [x + 26, y + 9], [x - 42, y + 7]], 3, { op, ink: true, sw: .4, curv: .3 });
+        for (let k = 0; k < 4; k++) glow(x - 30 + 17 * hash(i * 9 + k) * 4, y - 30 + 60 * hash(i * 5 + k), 3, '#F4EEDC', .8 * op);
+      } else {
+        inkLine([[x - 40, y + 24], [x + 40, y + 24]], .5, ink);
+        beam(x - 30, y - 34, x + 14, y + 22, 6, 12, NRG.death, 1, { washOp: 120 * op, a: op, splash: false });
+        glow(x + 14, y + 22, 16, NRG.death, .6 * op);
+      }
     }
     // AA: the stream of light that unmakes F-1, its sections floating back along it
     const flood = K(t, 'p063.1:From the floating machine', 'p063.1:down a straight channel+1'), streamA = 1 - ez(t, C('p063.1:In seconds') + .8, C('p063.1$'));
     if (flood > 0 && streamA > 0) {
-      const tx = F1.x, ty = F1.g - 120, ex = lerp(WORK[0], tx, flood), ey = lerp(WORK[1], ty, flood);
+      const tx = F1.x + F1R + 120, ty = F1.g - .2 * F1.s - F1R, ex = lerp(WORK[0], tx, flood), ey = lerp(WORK[1], ty, flood);
       beam(WORK[0] + 40, WORK[1], ex, ey, 30, 160, '#F4EEDC', 1, { washOp: 40 * streamA, a: .45 * streamA, splash: flood >= 1 && gone < 1 });
       if (gone > 0 && gone < 1) for (let i = 0; i < 14; i++) { const q = frac(hash(i) + (t - C('p063.1:float back along it')) * .5); boilSeed('sec' + i); const x = lerp(tx, WORK[0] + 60, q), y = lerp(ty, WORK[1], q) + (hash(i * 3) - .5) * 80 * (1 - q); wash(rectPts(x - 8, y - 6, 16, 12), 1, { ink: true, sw: .4, op: 1 - q }); glow(x, y, 18, '#F4EEDC', .3); }
     }
@@ -390,9 +412,9 @@
   ];
   // shake: the force shafts' arrival, the symphony's arcs, the roar, the strikes, F-1 landing
   function shake(t) {
-    const land = tFell + .5, sym = symphony(t);
+    const drop = tFell + .5, sym = symphony(t);
     return Math.max(t > tSudden && t < tSudden + .4 ? 8 : 0, sym.fl > .8 && t < T0('R') ? 5 * sym.env : 0, 4 * roarAt(t), t > T0('W') && t < tSnap ? 2 : 0,
-      (t > tCrack && t < tCrack + .4) || (t > tHit && t < tHit + .4) ? 9 : 0, t > land && t < land + .5 ? 12 * (1 - seg(t, land, land + .5)) : 0);
+      (t > tCrack && t < tCrack + .4) || (t > tHit && t < tHit + .4) ? 9 : 0, t > drop && t < drop + .3 ? 5 * (1 - seg(t, drop, drop + .3)) : 0, t > tLand && t < tLand + .5 ? 12 * (1 - seg(t, tLand, tLand + .5)) : 0);
   }
   function hall(t) {
     HALFTONE = .3;

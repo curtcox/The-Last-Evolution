@@ -177,6 +177,11 @@ items:
     note: The Review page names Curt Cox and Claude; About, history and afterword say thirteen smaller slips (16 restorations less the clause and two negatives); Morey's birth year notes that some sources give 1899; the 3,600 degrees says its source gives no scale.
     title: "Nits: an unnamed 'us', 'a dozen' for thirteen, Morey's disputed birth year, a degree with no scale"
     when: 2026-11-02 23:47
+  find.pig-slump:
+    state: open
+    note: "DES.cage rotates the pig 81 degrees about its feet, so its head swings down through the boards (498 s). Fix: flatten it instead, scale(1 + .08*dead, 1 - .42*dead) in place of the rotate. It's in src/designs.js, shared by every chapter, so it waits for the batch of shared changes with work.sheets and one full re-render."
+    title: "Chapter 5: the dead guinea pig turns through the cage floor"
+    when: 2026-11-03 10:44
 fresh:
   - when: 2026-11-02 23:47
     found: 13
