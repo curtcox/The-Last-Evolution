@@ -141,17 +141,24 @@
   };
   // 7. The pilot's poses: Roal in profile, lying, sitting up, standing and shielding his face; his eyes; the cage
   LOOPS.model7 = t => {
-    HALFTONE = .3; head(7, 'Roal acting, and the pilot\'s props');
+    HALFTONE = 0; head(7, 'Roal and Trest acting, and the pilot\'s props');
     const g = 900, s = 52, u = s * 6 / 7.4;
+    // side on, in talk, as most chapters draw them: Roal's hand works as he speaks; Trest, in his tunic, listens
+    const g2 = 560, s2 = 44, P = DES.POSE;
+    DES.personSide(300, g2 - DES.HIP * s2, s2, t, { who: 'roal', pose: { ...P.stand, torso: .04, up: .85, fore: 1.95 }, talk: .2, key: 'e' });
+    DES.personSide(560, g2 - DES.HIP * s2, s2, t, { who: 'trest', flip: true, look: -.08, pose: { ...P.stand, torso: .03, up: .2, fore: .5 }, key: 'f' });
+    label('in talk', 'Roal speaking, Trest listening', 430, 620);
+    DES.personSide(820, g2 - DES.HIP * s2, s2, t, { who: 'trest', pose: { ...P.stand, up: 1.7, fore: 1.2 }, key: 'g' });
+    label('Trest, side on', 'tunic to mid-thigh, two legs', 820, 620);
     const c = DES.couch(370, g, s);
-    DES.personSide(330, c.seat - .35 * u, s, t, { pose: DES.POSE.lie, lid: .5, key: 'a' });
+    DES.personSide(330, c.seat - .35 * u, s, t, { pose: DES.POSE.lie, lid: .5, who: 'roal', key: 'a' });
     label('lying', 'p051: thinking deeply', 370, 960);
     const c2 = DES.couch(880, g, s * .8);
-    DES.personSide(860, c2.seat - .4 * u * .8, s * .8, t, { pose: DES.POSE.sit, look: .5, key: 'b' });
+    DES.personSide(860, c2.seat - .4 * u * .8, s * .8, t, { pose: DES.POSE.sit, look: .5, who: 'roal', key: 'b' });
     label('sitting up', 'p053', 880, 960);
-    DES.personSide(1230, g - DES.HIP * s, s, t, { pose: DES.POSE.stand, key: 'c' });
+    DES.personSide(1230, g - DES.HIP * s, s, t, { pose: DES.POSE.stand, who: 'roal', key: 'c' });
     label('standing', null, 1230, 960);
-    DES.personSide(1480, g - DES.HIP * s, s, t, { pose: DES.POSE.shield, flip: true, key: 'd' });
+    DES.personSide(1480, g - DES.HIP * s, s, t, { pose: DES.POSE.shield, flip: true, who: 'roal', key: 'd' });
     label('shielding his face', 'p060', 1480, 960);
     DES.cage(1740, g, 110, t); label('the cage', 'p071', 1740, 960);
     DES.eyes(1450, 300, 520, t, { old: true, far: true });

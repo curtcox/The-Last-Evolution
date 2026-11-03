@@ -237,11 +237,16 @@ const DES = {};
   // equal distances apart", in "flexible, transparent suits". About four feet tall and nearly as broad. Their eyes
   // stand around the crown of the head at a third of a turn apart, so one always looks behind.
   //   view 'front' | 'side' (facing right); o.suit  the transparent suit (default on); o.turn  the head's turn, in turns
+  // a plain opaque fill under the brush's washes (which never cover): the strokes queued so far are put down first, so
+  // it lands in drawing order
+  const solidFill = (P, col) => { flushBrush(); push(); noStroke(); fill(col); beginShape(); for (const q of P) vertex(q[0], q[1]); endShape(CLOSE); pop(); };
   DES.outsider = (x, ground, s, t = 0, o = {}) => {
     const u = s, side = o.view === 'side', B = 3, Bd = 4, turn = (o.turn ?? 0) * TAU, G = v => ground - v * u;
     boilSeed('os' + x + o.view);
     paint(ellPts(x, ground, 1.8 * u, .22 * u, 14), { fill: D[3], fillOp: 70, bleed: .3, ink: null });
-    const plate = (P, d = B, o2 = {}) => wash(P, d, { ink: true, sw: .6, curv: .3, ...o2 });
+    // each plate on an opaque underpaint of the exoskeleton's brown: washes alone let the floor and one another show
+    // through, so two that overlapped merged into one shape
+    const plate = (P, d = B, o2 = {}) => { solidFill(P, o.under || '#A08566'); wash(P, d, { ink: true, sw: .6, curv: .3, ...o2 }); };
     // legs: short, bowed, armoured, on broad three-clawed feet
     for (const sd of side ? [1] : [-1, 1]) {
       const lx = x + (side ? -.1 : sd * .72) * u, kx = lx + (side ? .35 : sd * .28) * u;
@@ -534,7 +539,8 @@ const DES = {};
     wash(rectPts(x - w / 2, ground - s * .08, w, s * .08), 3, { ink: true, sw: .5 });
     // the guinea pig: a round brown body, a blunt head, a small ear and a dark eye
     const px = x - w * .05, py = ground - s * .08, b = s * .32, dead = o.dead || 0;
-    push(); translate(px, py); rotate(dead * Math.PI * .5 * .9); translate(-px, -py);
+    // dead, it slumps on the cage floor, flattened onto its side (turned on its feet, its head went through the boards)
+    push(); translate(px, py); scale(1 + .08 * dead, 1 - .42 * dead); translate(-px, -py);
     wash(ellPts(px, py - b * .55, b, b * .55, 18), 2, { ink: true, sw: .5 });
     wash(ellPts(px + b * .75, py - b * .6, b * .45, b * .4, 14), 2, { ink: true, sw: .5 });
     wash([[px - b * .6, py - b * .9], [px - b * .1, py - b * 1.05], [px + b * .3, py - b * .85], [px - b * .2, py - b * .75]], 0, { op: .7, curv: .5 });   // a pale patch
