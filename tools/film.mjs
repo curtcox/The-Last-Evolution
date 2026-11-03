@@ -3,18 +3,18 @@
 //                                 played in order as one film: a scrub bar for the whole film with its chapter marks,
 //                                 the line being said under it, notes pinned to a moment (kept in the browser, copied out
 //                                 as text with the chapter and shot), and the chapters listed, click to start there.
-// The chapters stay separate files (no second copy of an hour of video in the repo); the page plays them back to back.
+// The chapters stay separate files (no second copy of an hour of video on the release); the page plays them back to back.
 // First: each chapter's npm run draft -- N.
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { readYaml, respeller, storyWords, PATHS } from './script_lib.mjs';
-import { publishReview } from './publish_review.mjs';
+import { publishReview, publishedVideo } from './publish_review.mjs';
 
 const OUT = 'out/review/round6', cast = readYaml('script/cast.yaml'), say = respeller(readYaml(PATHS.pronounce));
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const hms = s => { const d = Math.round(s), h = Math.floor(d / 3600), m = Math.floor(d % 3600 / 60); return (h ? h + ':' + String(m).padStart(2, '0') : m) + ':' + String(d % 60).padStart(2, '0'); };
 const who = l => cast[l.who === 'narrator' ? 'narrator' : l.who].name + (l.mode === 'thought' ? ' (thought)' : '');
-// the pilot's video is Round 5's, already on the site under its content-hashed name
-const pilot = () => { const f = readdirSync('site/review/round5/video').find(f => /^ch05-draft-[0-9a-f]{8}\.mp4$/.test(f)); return f && `../round5/video/${f}`; };
+// the pilot's video is Round 5's, already published under its content-hashed name
+const pilot = () => publishedVideo('round5', '05');
 let at = 0;
 const chapters = [], missing = [];
 for (let n = 0; n <= 11; n++) {
@@ -64,12 +64,14 @@ const CH = ${JSON.stringify(chapters.map(({ logline, page, ...c }) => c))}, TOTA
 const v = document.getElementById('v'), scrub = document.getElementById('scrub'), now = document.getElementById('now');
 const hms = s => { s = Math.max(0, Math.round(s)); const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60); return (h ? h + ':' + String(m).padStart(2, '0') : m) + ':' + String(s % 60).padStart(2, '0'); };
 let cur = 0, want = null, scrubbing = false;
+// the chapter playing: a <source> that names the type, since the release serves the videos as octet-stream (Safari won't play them otherwise)
+const so = Object.assign(document.createElement('source'), { type: 'video/mp4' }); v.prepend(so);
 const chAt = T => { let i = 0; while (i + 1 < CH.length && T >= CH[i + 1].at) i++; return i; };
 const filmTime = () => CH[cur].at + v.currentTime;
 // play the film from T: load the chapter it falls in, seek inside it
 function go(T, play = true) {
   const i = chAt(T), t = T - CH[i].at;
-  if (i !== cur || !v.src) { cur = i; want = { t, play }; v.src = CH[i].src; v.load(); }
+  if (i !== cur || !so.src) { cur = i; want = { t, play }; so.src = CH[i].src; v.load(); }
   else { v.currentTime = t; if (play) v.play(); }
 }
 v.addEventListener('loadedmetadata', () => { if (want) { v.currentTime = want.t; if (want.play) v.play(); want = null; } });

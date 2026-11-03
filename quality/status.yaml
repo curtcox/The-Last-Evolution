@@ -128,10 +128,10 @@ items:
     note: "From the acting-pass sheet: through Roal's speech (376-482 s) a near-ring machine stands in front of Trest, hiding his body; move that machine or Trest so he's clear."
     when: 2026-11-02 23:28
   find.repo-size:
-    state: curt
-    note: "The drafts are committed under site/review so Pages can serve them. The repository is 356 MB; re-rendering all twelve chapters adds about 220 MB of history each time, and GitHub warns at 1 GB, so the loop can afford two or three full cycles, not ten. My recommendation: keep committing drafts for this cycle, then move draft videos out of git (GitHub Release assets, or YouTube unlisted) so the site links them without growing the history. Which would you like?"
+    state: pass
+    note: "Curt chose GitHub Release files. Chapter drafts now go to the repo's drafts release (publish_review.mjs uploads them under content-hashed names), and the pages play them from there with a source element typed video/mp4, which Safari needs because GitHub serves release files as octet-stream. Checked in Chromium and Safari: a draft page, and the annotated film jumping to chapter 7. The old videos stay in git history (about 530 MB); removing them would mean rewriting history and a force push."
     title: Each full re-render adds about 220 MB of draft video to the repository
-    when: 2026-11-02 23:36
+    when: 2026-11-03 12:57
   find.scorecard-visitors:
     state: pass
     note: It now opens with a plain summary for visitors (how far the film and site have come, what's next, what each column means), with Curt's questions, the checks and every judgment in a collapsed 'For the makers' section; the duplicates under Other items are gone.
@@ -197,4 +197,4 @@ fresh:
     found: 13
     note: "Site only (the drafts were mid-render): a subagent with no context reviewed every page and its screenshots against the rubric. 1 major (the scorecard page spoke to makers), 7 minor, 5 nits; all fixed and recorded as find.* items. A film round follows when the drafts are done."
     state: 2a2f1d1970ac
-since_fresh: 4
+since_fresh: 5

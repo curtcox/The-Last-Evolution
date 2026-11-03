@@ -3,3 +3,4 @@ out/
 .DS_Store
 site/public/
 .quality-loop
+site/review/*/video/

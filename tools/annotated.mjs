@@ -9,7 +9,7 @@
 // Notes are anchored to words, not seconds, so re-timing the voice moves them with it. First: npm run film (Round 6).
 import { readdirSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { readYaml, respeller, storyWords, PATHS } from './script_lib.mjs';
-import { publishReview } from './publish_review.mjs';
+import { publishReview, publishedVideo } from './publish_review.mjs';
 import { markdown, inline as mdInline, link, esc, REPO } from './notes_md.mjs';
 
 const OUT = 'out/review/round7', UP = '../../', GAP = 20;
@@ -24,14 +24,13 @@ const bits = s => s.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
 const inline = s => mdInline(s, UP), md = file => markdown(file, { up: UP, h: 3 });
 
 // the chapters, as the film page plays them: Round 6's published drafts, and the pilot's from Round 5
-const published = dir => readdirSync(`site/review/${dir}/video`);
 let at = 0;
 const chapters = [];
 for (let n = 0; n <= 11; n++) {
   const NN = String(n).padStart(2, '0'), TL = JSON.parse(readFileSync(`out/ch${NN}/timeline.json`, 'utf8'));
-  const round = n === 5 ? 'round5' : 'round6', file = published(round).find(f => new RegExp(`^ch${NN}-draft-[0-9a-f]{8}\\.mp4$`).test(f));
-  if (!file) throw new Error(`chapter ${n} has no published draft; run npm run film first`);
-  chapters.push({ n, title: TL.title, src: `../${round}/video/${file}`, at, dur: TL.duration, shots: TL.shots.map(s => ({ id: s.id, t0: s.t0 })),
+  const src = publishedVideo(n === 5 ? 'round5' : 'round6', NN);
+  if (!src) throw new Error(`chapter ${n} has no published draft; run npm run film first`);
+  chapters.push({ n, title: TL.title, src, at, dur: TL.duration, shots: TL.shots.map(s => ({ id: s.id, t0: s.t0 })),
     lines: TL.lines.map(l => ({ id: l.id, who: who(l.who), t0: l.t0, t1: l.t1, words: storyWords(l, say) })) });
   at += TL.duration;
 }
@@ -145,6 +144,8 @@ const { CH, TOTAL, NOTES } = ${DATA}, KINDS = ${JSON.stringify(kinds)}, KEY = 't
 const v = document.getElementById('v'), scrub = document.getElementById('scrub'), now = document.getElementById('now'), margin = document.getElementById('margin'), card = document.getElementById('card');
 const hms = s => { s = Math.max(0, Math.round(s)); const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60); return (h ? h + ':' + String(m).padStart(2, '0') : m) + ':' + String(s % 60).padStart(2, '0'); };
 let cur = 0, want = null, scrubbing = false;
+// the chapter playing: a <source> that names the type, since the release serves the videos as octet-stream (Safari won't play them otherwise)
+const so = Object.assign(document.createElement('source'), { type: 'video/mp4' }); v.prepend(so);
 const chAt = T => { let i = 0; while (i + 1 < CH.length && T >= CH[i + 1].at) i++; return i; };
 const filmTime = () => CH[cur].at + v.currentTime;
 const play = () => v.play().catch(() => {});  // refused until the viewer has touched the page
@@ -166,7 +167,7 @@ function captions(i) {
 }
 function go(T, andPlay = true) {
   const i = chAt(T), t = T - CH[i].at;
-  if (i !== cur || !v.src) { cur = i; want = { t, play: andPlay }; v.src = CH[i].src; captions(i); v.load(); }
+  if (i !== cur || !so.src) { cur = i; want = { t, play: andPlay }; so.src = CH[i].src; captions(i); v.load(); }
   else if (want) want = { t, play: andPlay };  // still loading: the latest seek wins
   else { v.currentTime = t; if (andPlay) play(); }
 }

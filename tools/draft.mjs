@@ -56,7 +56,7 @@ ${existsSync(`${OUT}/ch${NN}.html`) ? `<a href="ch${NN}.html">storyboard</a>` : 
 <p><b>Notes:</b> pause anywhere, type, and press Enter (or <i>Pin</i>) to pin a note to that moment. They stay in this
 browser. <i>Copy notes</i> puts them on the clipboard as text, timed and with their shot, for the
 <a href="https://github.com/curtcox/The-Last-Evolution/blob/main/review/${ROUND}.md">decision sheet</a> or a message.</p>
-<div class="player"><video id="v" controls preload="metadata" playsinline src="video/ch${NN}-draft.mp4"></video>
+<div class="player"><video id="v" controls preload="metadata" playsinline><source src="video/ch${NN}-draft.mp4" type="video/mp4"></video>
 <p class="now" id="now"></p>
 <div class="pin"><input id="note" placeholder="A note at this moment…" aria-label="note"><button id="pinb">Pin</button></div></div>
 <h2>Notes</h2><div class="notesbar"><button id="copy">Copy notes</button><button id="clear">Clear</button><span id="msg" class="t"></span></div>

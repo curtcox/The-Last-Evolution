@@ -22,6 +22,7 @@ import { join, extname } from 'node:path';
 import YAML from 'yaml';
 import { readYaml } from './script_lib.mjs';
 import { SITE } from './notes_md.mjs';
+import { publishedVideo } from './publish_review.mjs';
 
 const RUBRIC = 'quality/rubric.yaml', STATUS = 'quality/status.yaml', CARD = 'quality/scorecard.json';
 const FLAG = '.quality-loop', LOOP = 'out/quality/loop.json', WAIT = 'out/quality/wait.json', SLOW = 'out/quality/checks.json', PUB = 'site/public';
@@ -56,14 +57,14 @@ for (const [fid, r] of Object.entries(status.items)) if (!known.has(fid) && fid.
 const byId = Object.fromEntries(items.map(i => [i.id, i]));
 
 // ---- fingerprints: what a judgment was made on
-const draftOf = n => {   // a chapter's latest published draft
+const draftOf = n => {   // a chapter's latest published draft: its page, and the address it plays on the drafts release
   for (const r of readdirSync('site/review').map(d => +d.match(/^round(\d+)$/)?.[1]).filter(Boolean).sort((a, b) => b - a)) {
-    const dir = `site/review/round${r}/video`, f = existsSync(dir) && readdirSync(dir).find(f => f.startsWith(`ch${NN(n)}-draft-`));
-    if (f) return `${dir}/${f}`;
+    const url = publishedVideo(`round${r}`, NN(n));
+    if (url) return { page: `site/review/round${r}/ch${NN(n)}-draft.html`, url, name: url.split('/').pop(), local: `out/review/round${r}/video/ch${NN(n)}-draft.mp4` };
   }
 };
 const files = list => list.flatMap(p => p.includes('*') ? (d => existsSync(d) ? readdirSync(d).filter(f => new RegExp(`^${p.split('/').pop().replace(/\./g, '\\.').replace('*', '.*')}$`).test(f)).map(f => `${d}/${f}`) : [])(p.split('/').slice(0, -1).join('/')) : existsSync(p) ? [p] : []);
-const fp = i => i.area === 'film' ? draftOf(i.chapter)?.split('/').pop() ?? null
+const fp = i => i.area === 'film' ? draftOf(i.chapter)?.name ?? null
   : i.area === 'site' ? existsSync(`${PUB}/${i.file}`) ? sha(readFileSync(`${PUB}/${i.file}`) + (i.id.endsWith('.look') ? readFileSync(`${PUB}/style.css`) : '')) : null   // how it looks is the stylesheet's too
   : i.area === 'voice' ? i.key
   : i.area === 'work' ? sha(files(i.inputs).map(f => f + sha(readFileSync(f))).join()) : undefined;
@@ -78,25 +79,28 @@ const SOUND = ['tools/timeline.mjs', 'tools/script_lib.mjs', 'script/casting.yam
 // a chapter's draft: newer than its sources and what makes its sound, made from frames newer than its sources (render.mjs --frames skips frames already on
 // disk, so frames left from before a change would pass for new), and at -14 LUFS (±1) with peaks under -1 dBTP
 const LOUD = 'out/quality/loudness.json', loudCache = readJson(LOUD, {});
-function loud(d) {
-  const name = d.split('/').pop();
+function loud(d) {   // measured on the local draft if it's the one published (its hash is in the name), else from the release
+  const name = d.name;
   if (!loudCache[name]) {
-    const e = spawnSync('ffmpeg', ['-nostats', '-hide_banner', '-i', d, '-vn', '-af', 'ebur128=peak=true', '-f', 'null', '-'], { encoding: 'utf8', maxBuffer: 1 << 26 }).stderr;   // the summary is on stderr
+    const src = existsSync(d.local) && name.includes(`-${sha(readFileSync(d.local)).slice(0, 8)}.`) ? d.local : d.url;
+    const e = spawnSync('ffmpeg', ['-nostats', '-hide_banner', '-i', src, '-vn', '-af', 'ebur128=peak=true', '-f', 'null', '-'], { encoding: 'utf8', maxBuffer: 1 << 26 }).stderr;   // the summary is on stderr
     loudCache[name] = { I: +[...e.matchAll(/I:\s+(-?[\d.]+) LUFS/g)].pop()?.[1], P: +[...e.matchAll(/Peak:\s+(-?[\d.]+) dBFS/g)].pop()?.[1] };
     mkdirSync('out/quality', { recursive: true }); writeFileSync(LOUD, JSON.stringify(loudCache, null, 1));
   }
   return loudCache[name];
 }
+// when a draft was made: the commit that first put its address in its page (the page changes for other reasons too), else the disk
+const made = d => +sh('git', ['log', '--format=%ct', '-S', d.name, '--', d.page]).trim().split('\n').pop() || (existsSync(d.local) ? statSync(d.local).mtimeMs / 1000 : Date.now() / 1000);
 function draftCheck(n) {
   const d = draftOf(n); if (!d) return { ok: false, detail: 'no draft yet' };
-  const src = sources(n), newer = [...src, ...SOUND.filter(existsSync)].filter(f => changed(f) > changed(d));
+  const src = sources(n), newer = [...src, ...SOUND.filter(existsSync)].filter(f => changed(f) > made(d));
   if (newer.length) return { ok: false, detail: `older than ${newer.join(', ')}` };
   const F = `out/frames/ch${NN(n)}`, frames = existsSync(F) ? readdirSync(F).filter(f => f.endsWith('.jpg')) : [];
   const oldest = Math.min(...frames.map(f => statSync(`${F}/${f}`).mtimeMs / 1000)), behind = frames.length ? src.filter(f => changed(f) > oldest) : [];
   if (behind.length) return { ok: false, detail: `made from frames older than ${behind.join(', ')}: delete ${F} and render again` };
   const { I, P } = loud(d);
   if (!(Math.abs(I + 14) <= 1) || !(P <= -1)) return { ok: false, detail: `${I} LUFS, peak ${P} dBTP: wants -14 ±1 and under -1 (npm run timeline -- ${n}, then the draft)` };
-  return { ok: true, detail: `${d.split('/').pop()}, ${I} LUFS, peak ${P} dBTP` };
+  return { ok: true, detail: `${d.name}, ${I} LUFS, peak ${P} dBTP` };
 }
 
 // ---- the checks: quick ones every run, slow ones on request (their results kept with the fingerprint of their inputs)
