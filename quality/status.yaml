@@ -227,6 +227,11 @@ items:
     note: Workers 7 and 8 had near-equal speeds, heights 18 px apart and near-equal random starts, so from about 0:57 to 1:09 they flew one over the other. Now each has its own lane (25 px apart) and starts a ninth of the loop from the next, searched so no two in near lanes overlap more than 3 s. Rendered at 50-140 s. Re-rendering chapter 1.
     title: "Chapter 1: two worker machines fly stacked for 12 s, like one drawn twice"
     when: 2026-11-03 22:04
+  find.ch02-searchers:
+    state: open
+    note: The three searchers swayed ±140 px round spots 160 apart, so at 4:12-4:15 two stood almost wholly over each other, and at 4:36 the one with the projector landed on the middle one. Now they sway ±25 round 2290, 2500 and 2990, leaving a gap at 2750 for the projector. Rendered at 243-290 s. Re-rendering chapter 2.
+    title: "Chapter 2: the Outsiders searching ship 2 walk through each other"
+    when: 2026-11-03 22:07
 fresh:
   - when: 2026-11-02 23:47
     found: 13

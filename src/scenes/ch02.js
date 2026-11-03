@@ -172,8 +172,11 @@
       // the searchers (M); the one with the projector (N)
       lamp(2560, 560); lamp(2720, 420, .6);
       const tSearch = C('p015.1:They searched');
-      for (let i = 0; i < 3; i++) if (t > tL + 5) crawler(2400 + 160 * i + 140 * Math.sin((t - tSearch) * .4 + i * 2), t, 10 + i, { s: 34, view: 'front', turn: .1 * t + i * .3 });
-      if (t > tN - 2) { const ox = 2720, aim = ez(t, tN, tBeam - .3);
+      // three searching, each swaying ±25 round its own spot, with a gap at 2750 where the one with the projector comes
+      // (swaying wider round closer spots, they walked through each other and read as one drawn twice)
+      const SPOT = [2290, 2500, 2990];
+      for (let i = 0; i < 3; i++) if (t > tL + 5) crawler(SPOT[i] + 25 * Math.sin((t - tSearch) * .4 + i * 2), t, 10 + i, { s: 34, view: 'front', turn: .1 * t + i * .3 });
+      if (t > tN - 2) { const ox = 2750, aim = ez(t, tN, tBeam - .3);
         DES.outsider(ox, FL, 66, t, { view: 'side', turn: .5 }); boilSeed('proj'); push(); translate(ox - 40, FL - 110); rotate(-.35 * aim - .3); wash(rrPts(-70, -10, 80, 20, 6), 4, { ink: true, sw: .6 }); pop();
         const bk = seg(t, tBeam, tBeam + .25) * (1 - seg(t, tBlank + 1, tBlank + 1.5));
         if (bk > 0) beam(ox - 100, FL - 140, HIDE[0], HIDE[1], 6, 14, NRG.projector, bk, { washOp: 60 }); }
