@@ -105,6 +105,8 @@
     for (let k = 0; k < 3; k++) inkLine([[-400, CEIL + 180 + k * 220], [4600, CEIL + 190 + k * 220]], .4, D[4]);
     inkLine([[-400, 760], [4600, 760]], 1.2, INK);   // the girder the investigator creeps along
   }
+  // a pool of light from the hull's lamps, behind and under the Outsiders so their grey wash reads against it
+  function lamp(x, r, k = 1) { glow(x, FL - 260, r, '#E8DCC4', .3 * k); glow(x, FL - 40, r * .6, '#E8DCC4', .25 * k); stillSeed('pool' + x); paint(ellPts(x, FL + 10, r * .9, r * .12, 20), { wash: '#C9BCA4', washOp: 70 * k, ink: null, bleed: .3 }); }
   // the investigator, its lens dark once it's blanked
   function inv(x, y, t, blank = 0) { DES.investigator(x, y, 20, t); if (blank < 1) glow(x + 2, y - 5, 18, NRG.white, .5 * (1 - blank)); }
   function crawler(x, t, i, o = {}) { const bob = 4 * Math.abs(Math.sin(t * 3 + i)); push(); translate(x, FL - bob); rotate(o.rot || 0); translate(-x, -(FL - bob)); DES.outsider(x, FL - bob, (o.s || 34) * 1.6, t, { view: o.view || 'side', turn: o.turn ?? .08 * Math.sin(t * .7 + i) }); pop(); }
@@ -122,8 +124,10 @@
       boilSeed('fore'); const P = [[-400, CEIL - 100], [120, CEIL - 100], [60, 380], [160, 520], [40, 700], [140, FL + 80], [-400, FL + 80]]; paint(P, { wash: '#1C1814', washOp: 255, ink: INK, sw: 1 });
       P.slice(1, 6).forEach(([x, y], i) => glow(x, y, 40, HEAT, .4 + .2 * Math.sin(t * 2 + i)));
       for (let i = 0; i < 40; i++) glow(-300 + hash(i) * 380, CEIL + hash(i * 3) * 700, 4, '#F4EEDC', .5);
-      // the Outsiders crawling through (G), one close; the one struck tumbling end over end (H), unhurt
-      for (let i = 0; i < 3; i++) crawler(900 + i * 260 + 120 * Math.sin(t * .05 + i), t, i, { s: 30 });
+      // the Outsiders crawling through (G), one close; the one struck tumbling end over end (H), unhurt; spaced so each
+      // reads on its own, in the lamps' light
+      lamp(950, 520); lamp(1650, 620);
+      for (let i = 0; i < 3; i++) crawler(700 + i * 230 + 70 * Math.sin(t * .05 + i), t, i, { s: 30 });
       const tum = seg(t, tTumble - .6, tTumble + 4), struck = t > tHit;
       const sx = struck ? lerp(1400, 1820, ease(tum)) : 1400, rot = struck ? -TAU * 1.5 * easeOut(tum) : 0, lift = struck ? 160 * Math.sin(Math.PI * tum) : 0;
       push(); translate(sx, FL - 80 - lift); rotate(rot); translate(-sx, -(FL - 80 - lift));
@@ -131,7 +135,7 @@
       pop();
       if (t > tHit && t < tHit + .3) glow(1360, 720, 120, NRG.white, 1 - seg(t, tHit, tHit + .3));
       // the others clustering round him (I)
-      for (let i = 0; i < 2; i++) if (t > tI - 1) crawler(lerp(1100, 1700 + i * 120, ez(t, tI - 1, tI + 4)), t, 5 + i, { s: 32 });
+      for (let i = 0; i < 2; i++) if (t > tI - 1) crawler(lerp(1100, i ? 2080 : 1560, ez(t, tI - 1, tI + 4)), t, 5 + i, { s: 32 });
       // J: the power room: the plungers over their sockets, the ship-brain shattered; the signals; the plungers shutting
       boilSeed('brain'); wash(ellPts(3720, 520, 120, 90, 18, 30), 3, { ink: true, sw: .7 }); for (let k = 0; k < 6; k++) inkLine([[3720, 520], [3720 + Math.cos(k) * 120, 520 + Math.sin(k) * 90]], .6, INK);
       const tSig = C('p013.1:relayed the control signals');
@@ -163,6 +167,7 @@
       const bh = 200 * (1 - melt * .5); wash(rectPts(3240, 620 - bh / 2, 120, bh), 2, { ink: true, sw: .5 });
       glow(3300, 620, 200, NRG.white, .4 + .1 * Math.sin(t * 5)); for (let i = 0; i < 10; i++) { const q = frac(t * .5 + i / 10); glow(3300 + (hash(i) - .5) * 120, 620 - bh / 2 - q * 180, 12 * (1 - q), NRG.white, .8 * (1 - q)); }
       // the searchers (M); the one with the projector (N)
+      lamp(2560, 560); lamp(2720, 420, .6);
       const tSearch = C('p015.1:They searched');
       for (let i = 0; i < 3; i++) if (t > tL + 5) crawler(2400 + 160 * i + 140 * Math.sin((t - tSearch) * .4 + i * 2), t, 10 + i, { s: 34, view: 'front', turn: .1 * t + i * .3 });
       if (t > tN - 2) { const ox = 2720, aim = ez(t, tN, tBeam - .3);
