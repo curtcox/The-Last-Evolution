@@ -328,8 +328,11 @@ const DES = {};
       wash(ribbon([[bx, by - h * .22], [bx + len * .05, by - h * .26]], h * .07, h * .05), 4, { ink: true, sw: .4 }); }
     for (const sd of [-1, 1]) { const by = y + sd * h * .3;   // the drive bells astern
       wash([[x - len * .45, by - sd * h * .06], [x - len * .45, by + sd * h * .1], [x - len * .52, by + sd * h * .3], [x - len * .53, by - sd * h * .2]], 4, { ink: true, sw: .6, curv: .3 }); }
+    // the hull solid under its washes, so a ship behind doesn't show through it
+    const hull = [...ks.map(k => [x + k * len, y - hh(k)]), ...ks.slice().reverse().map(k => [x + k * len, y + hh(k)])];
+    solidFill(hull, o.under || D[Math.min(D.length - 1, d)]);
     band(-1, -.55, Math.max(0, d - 2), .9); band(-.55, .35, d); band(.35, 1, d + 1);
-    paint([...ks.map(k => [x + k * len, y - hh(k)]), ...ks.slice().reverse().map(k => [x + k * len, y + hh(k)])], { ink: INK, sw: 1, br: 'inkfine' });
+    paint(hull, { ink: INK, sw: 1, br: 'inkfine' });
     inkLine(ks.filter(k => k > -.4 && k < .38).map(k => [x + k * len, y - hh(k) * .55]), .4, D[2], 'inkfine', 0);                        // the dull shine's edge
     for (let k = 1; k < 10; k++) { const kk = -.42 + k * .08, X0 = x + kk * len; inkLine([[X0, y - hh(kk) * .98], [X0 + len * .004, y], [X0, y + hh(kk) * .98]], .45, D[4], 'inkfine'); }   // the plates
     inkLine([[x + .36 * len, y - h * .98], [x + .345 * len, y], [x + .36 * len, y + h * .98]], .6, INK, 'inkfine');                          // the nose cap's seam

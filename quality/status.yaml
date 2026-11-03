@@ -322,6 +322,11 @@ items:
     note: "5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
     at: ch09-draft-5ccf383e.mp4
     when: 2026-11-03 22:17
+  find.ship-opaque:
+    state: open
+    note: "In chapter 10 (2:18) the flagship's ribs showed through an escort crossing it, and the dense fleets of chapters 2, 3 and 6 show the same. The hull now has a solid base under its washes (designs.js: solidFill, as the Outsiders got). Rendered in chapters 10 (138 s), 6 (64, 80 s) and 2 (36, 60 s). Shared, so all twelve drafts re-render."
+    title: "The Outsiders' ships are see-through: a ship behind shows through one in front"
+    when: 2026-11-03 22:21
 fresh:
   - when: 2026-11-02 23:47
     found: 13
