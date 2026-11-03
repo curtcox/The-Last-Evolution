@@ -1,16 +1,16 @@
 {
  "summary": {
-  "pass": 29,
-  "stale": 3,
-  "open": 75,
-  "curt": 8,
+  "pass": 37,
+  "stale": 2,
+  "open": 69,
+  "curt": 7,
   "later": 3
  },
  "satisfied": false,
  "next": [
-  "Chapter 5: the dead guinea pig turns through the cage floor",
-  "The Outsiders are drawn in see-through wash",
-  "Chapter 5: the acting"
+  "Chapter 5: the acting",
+  "Chapter 5: the picture",
+  "Chapter 5: picture against sound"
  ],
  "checks": {
   "verbatim": {
@@ -19,7 +19,7 @@
   },
   "links": {
    "state": "pass",
-   "detail": "1116 links in 34 pages, 0 broken"
+   "detail": "1104 links in 34 pages, 0 broken"
   },
   "annotated": {
    "state": "pass",
@@ -42,7 +42,7 @@
    "detail": "refs: 53 sources, all cited, all answering; definitions written into 6 notes"
   },
   "phone": {
-   "state": "pass",
+   "state": "stale",
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
@@ -85,11 +85,6 @@
    "id": "voice.p052.1",
    "title": "Line p052.1: speech-to-text missed \"roal\"",
    "ask": "Does F-1 say 'Roal' right in 'Roal--your thoughts' (p052.1, assets/voice/p052.1-t1-4553aff14c.mp3)? Two transcribers hear something extra: ElevenLabs 'Roald', Whisper 'Rohan' (and 'Roal' only when told the name). The narrator's 'Roal' is heard as one syllable, 'Rol', as Round 1 chose. The voice pass kept this as its best take. My recommendation: listen; if it sounds like 'Roald', voice this one line again (a few credits)."
-  },
-  {
-   "id": "find.repo-size",
-   "title": "Each full re-render adds about 220 MB of draft video to the repository",
-   "ask": "The drafts are committed under site/review so Pages can serve them. The repository is 356 MB; re-rendering all twelve chapters adds about 220 MB of history each time, and GitHub warns at 1 GB, so the loop can afford two or three full cycles, not ten. My recommendation: keep committing drafts for this cycle, then move draft videos out of git (GitHub Release assets, or YouTube unlisted) so the site links them without growing the history. Which would you like?"
   }
  ],
  "items": [
@@ -132,8 +127,8 @@
    "id": "ch05.draft",
    "area": "film",
    "title": "Chapter 5: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch05.js, tools/timeline.mjs"
+   "state": "pass",
+   "note": "ch05-draft-110292ca.mp4, -14.5 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch00.acting",
@@ -174,8 +169,8 @@
    "id": "ch00.draft",
    "area": "film",
    "title": "Chapter 0: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch00.js, tools/timeline.mjs"
+   "state": "pass",
+   "note": "ch00-draft-4f6aa2f9.mp4, -14.4 LUFS, peak -2.4 dBTP"
   },
   {
    "id": "ch01.acting",
@@ -216,8 +211,8 @@
    "id": "ch01.draft",
    "area": "film",
    "title": "Chapter 1: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch01.js, tools/timeline.mjs"
+   "state": "pass",
+   "note": "ch01-draft-cbc83b82.mp4, -14.4 LUFS, peak -2.2 dBTP"
   },
   {
    "id": "ch02.acting",
@@ -259,7 +254,7 @@
    "area": "film",
    "title": "Chapter 2: its draft is current and at the right loudness",
    "state": "open",
-   "note": "older than src/scenes/ch02.js, tools/timeline.mjs"
+   "note": "older than src/scenes/ch02.js, src/designs.js, tools/timeline.mjs"
   },
   {
    "id": "ch03.acting",
@@ -301,7 +296,7 @@
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
    "state": "open",
-   "note": "older than src/scenes/ch03.js, tools/timeline.mjs"
+   "note": "older than src/scenes/ch03.js, src/designs.js, tools/timeline.mjs"
   },
   {
    "id": "ch04.acting",
@@ -343,7 +338,7 @@
    "area": "film",
    "title": "Chapter 4: its draft is current and at the right loudness",
    "state": "open",
-   "note": "older than tools/timeline.mjs"
+   "note": "older than src/designs.js, tools/timeline.mjs"
   },
   {
    "id": "ch06.acting",
@@ -385,7 +380,7 @@
    "area": "film",
    "title": "Chapter 6: its draft is current and at the right loudness",
    "state": "open",
-   "note": "older than tools/timeline.mjs"
+   "note": "older than src/designs.js, tools/timeline.mjs"
   },
   {
    "id": "ch07.acting",
@@ -427,7 +422,7 @@
    "area": "film",
    "title": "Chapter 7: its draft is current and at the right loudness",
    "state": "open",
-   "note": "older than tools/timeline.mjs"
+   "note": "older than src/scenes/ch07.js, src/designs.js, tools/timeline.mjs"
   },
   {
    "id": "ch08.acting",
@@ -469,7 +464,7 @@
    "area": "film",
    "title": "Chapter 8: its draft is current and at the right loudness",
    "state": "open",
-   "note": "older than tools/timeline.mjs"
+   "note": "older than src/designs.js, tools/timeline.mjs"
   },
   {
    "id": "ch09.acting",
@@ -511,7 +506,7 @@
    "area": "film",
    "title": "Chapter 9: its draft is current and at the right loudness",
    "state": "open",
-   "note": "older than tools/timeline.mjs"
+   "note": "older than src/designs.js, tools/timeline.mjs"
   },
   {
    "id": "ch10.acting",
@@ -553,7 +548,7 @@
    "area": "film",
    "title": "Chapter 10: its draft is current and at the right loudness",
    "state": "open",
-   "note": "older than tools/timeline.mjs"
+   "note": "older than src/designs.js, tools/timeline.mjs"
   },
   {
    "id": "ch11.acting",
@@ -595,21 +590,21 @@
    "area": "film",
    "title": "Chapter 11: its draft is current and at the right loudness",
    "state": "open",
-   "note": "older than tools/timeline.mjs"
+   "note": "older than src/scenes/ch11.js, src/designs.js, tools/timeline.mjs"
   },
   {
    "id": "work.sheets",
    "area": "work",
    "title": "the model sheets' second pass",
-   "state": "open",
-   "note": ""
+   "state": "pass",
+   "note": "Seven sheets cover every design in PLAN.md section 5 (people, machines, F-2 and C-R-U-1, the Outsiders, ships, investigators and motes, places, and the pilot's props). Second pass: the Outsiders solid as the film now draws them; sheet 7 adds Roal and Trest side on, in talk, the way the chapters draw them."
   },
   {
    "id": "work.title",
    "area": "work",
    "title": "the title page",
-   "state": "stale",
-   "note": "passed on bf568a5aaf8c; changed since. Re-judged: since the last pass ch00.js changed only in memories() (Roal and Trest side-on, 26-34 s); the title page (0-14 s) and pulp.js are unchanged, so the masthead, title and byline stand as judged."
+   "state": "pass",
+   "note": "The header now names the 1932 issue ('AMAZING STORIES · August, 1932') instead of the 1961 reprint's 'A Classic Reprint from…', its rules fitted to it (out/check/ch00_title.jpg)."
   },
   {
    "id": "site.home.content",
@@ -797,8 +792,8 @@
    "id": "find.repo-size",
    "area": "finding",
    "title": "Each full re-render adds about 220 MB of draft video to the repository",
-   "state": "curt",
-   "note": "The drafts are committed under site/review so Pages can serve them. The repository is 356 MB; re-rendering all twelve chapters adds about 220 MB of history each time, and GitHub warns at 1 GB, so the loop can afford two or three full cycles, not ten. My recommendation: keep committing drafts for this cycle, then move draft videos out of git (GitHub Release assets, or YouTube unlisted) so the site links them without growing the history. Which would you like?"
+   "state": "pass",
+   "note": "Curt chose GitHub Release files. Chapter drafts now go to the repo's drafts release (publish_review.mjs uploads them under content-hashed names), and the pages play them from there with a source element typed video/mp4, which Safari needs because GitHub serves release files as octet-stream. Checked in Chromium and Safari: a draft page, and the annotated film jumping to chapter 7. The old videos stay in git history (about 530 MB); removing them would mean rewriting history and a force push."
   },
   {
    "id": "find.scorecard-visitors",
@@ -867,15 +862,15 @@
    "id": "find.pig-slump",
    "area": "finding",
    "title": "Chapter 5: the dead guinea pig turns through the cage floor",
-   "state": "open",
-   "note": "DES.cage rotates the pig 81 degrees about its feet, so its head swings down through the boards (498 s). Fix: flatten it instead, scale(1 + .08*dead, 1 - .42*dead) in place of the rotate. It's in src/designs.js, shared by every chapter, so it waits for the batch of shared changes with work.sheets and one full re-render."
+   "state": "pass",
+   "note": "DES.cage flattens the pig onto its side when it dies; checked at 499 and 503 s (out/check/ch05_pig.jpg): it lies inside the cage."
   },
   {
    "id": "find.outsider-opaque",
    "area": "finding",
    "title": "The Outsiders are drawn in see-through wash",
-   "state": "open",
-   "note": "DES.outsider's washes are translucent: the floor's light shows through their bodies and two that overlap merge into one shape (ch02 125 s, 290 s). Give the body an opaque underpaint in the hull's colour so each reads as a solid figure. Shared (src/designs.js): goes in the batch with work.sheets and find.pig-slump."
+   "state": "pass",
+   "note": "Each plate on an opaque brown fill; checked in ch02 at 125 and 290 s and ch06 at 115 and 125 s, and on sheet 4: solid figures that stay separate where they overlap."
   }
  ],
  "fresh": [
