@@ -49,17 +49,17 @@
   }
   function voidWorld(t) {
     HALFTONE = .2;
-    const tK = T0('K'), boom = t > tK - 1.5;
+    const tK = T0('K');
     const c = cam(t, [[0, tt => [lerp(1100, 950, ez(tt, T0('D'), tDead)), 560, 1.15]], [tGo - .5, [DEIMOS[0] + 300, DEIMOS[1] + 100, 1], 1.4],
       [tGo + 2.2, tt => [lerp(DEIMOS[0] + 300, TR[0] + 300, ez(tt, tGo + 2.2, tSight)), lerp(400, 520, ez(tt, tGo + 2.2, tSight)), .9], .01], [tSight, [TR[0] + 500, 480, .75], 2.5],
-      [tK - 1.5, [TR[0] + 400, 520, .8], .01], [C('p013.1:The Outsider\'s ship nearest'), [TR[0] + 900, 460, 1.3], 4], [T0('O') - 1, tt => [1700, 520, lerp(1, .65, ez(tt, T0('O'), T1('O')))], .01]]);
+      [tOut, [TR[0] + 400, 520, .8], .01], [C('p013.1:The Outsider\'s ship nearest'), [TR[0] + 900, 460, 1.3], 4], [T0('O') - 1, tt => [1700, 520, lerp(1, .65, ez(tt, T0('O'), T1('O')))], .01]]);
     dark('void');
     stars(c[0] * .3, c[1] * .3, 160, 7, 1);
     withCam(c, () => {
       if (t < T0('O') - 1) {
         // Earth, far off to the left; the transport's thought running back to it, until it breaks
         glow(-2600, 700, 40, '#F4EEDC', .8);
-        if (t < tK - 1.5) {
+        if (t < tOut) {
           const tx = transport(t), br = seg(t, tDead, tDead + .3);
           if (t > T0('D') - 1) { const P = []; for (let i = 0; i <= 12; i++) P.push([tx - 260 - i * 260, TR[1] - 10 + (i % 2) * 18]); ruled(P, seg(t, T0('D') - 1, T0('D') + 2), FORCE, .8, br); }
           // the ships: one closing on the transport and grappling it, the others hanging beyond
@@ -74,7 +74,7 @@
           if (g >= 1 && t < T0('F')) glow(TR[0] - 200, TR[1] - 20, 10, NRG.white, .8);
         } else {
           // K: the wreck spreading where the transport was; the nearest ship holed; the second investigator going in
-          const age = t - (tK - 1.5);
+          const age = t - tOut;
           for (let i = 0; i < 40; i++) { const a = hash(i) * TAU, r = (60 + 400 * hash(i * 3)) * Math.min(1, age / 12 + .2), x = TR[0] + 300 + Math.cos(a) * r * 1.4, y = TR[1] + Math.sin(a) * r * .8;
             boilSeed('deb' + i); push(); translate(x, y); rotate(age * (hash(i * 5) - .5)); wash(rectPts(-10 - 20 * hash(i), -6, 20 + 40 * hash(i), 12 + 10 * hash(i * 7)), 2 + (i % 3), { ink: true, sw: .4 }); pop(); }
           glow(TR[0] + 300, TR[1], 300, NRG.white, .3 * (1 - seg(age, 0, 6)));
@@ -111,6 +111,9 @@
   function inv(x, y, t, blank = 0) { DES.investigator(x, y, 20, t); if (blank < 1) glow(x + 2, y - 5, 18, NRG.white, .5 * (1 - blank)); }
   function crawler(x, t, i, o = {}) { const bob = 4 * Math.abs(Math.sin(t * 3 + i)); push(); translate(x, FL - bob); rotate(o.rot || 0); translate(-x, -(FL - bob)); DES.outsider(x, FL - bob, (o.s || 34) * 1.6, t, { view: o.view || 'side', turn: o.turn ?? .08 * Math.sin(t * .7 + i) }); pop(); }
   const tJ = T0('J'), tLast = C('p013.1:the last plunger snapped shut'), tBoom = C('p013.1:Instantly the vast energies');
+  // out of the white, outside: the transport blowing apart while the narrator says so (the white held 8 s when it
+  // waited for K)
+  const tOut = tBoom + 1.2;
   function ship1(t) {
     HALFTONE = .3;
     const tH = T0('H'), tHit = C('p011.1:crashing against'), tTumble = C('p011.1:he fell end over end'), tI = T0('I');
@@ -187,8 +190,8 @@
     if (t < tD + .6) return dissolve(seg(t, tD - .6, tD + .6), () => passing(t), () => voidWorld(t));
     if (t < tF - .6) return voidWorld(t);
     if (t < tF + .6) return dissolve(seg(t, tF - .6, tF + .6), () => voidWorld(t), () => ship1(t));
-    if (t < tK - 1.5) return ship1(t);
-    if (t < tK) { voidWorld(t); flash(1 - seg(t, tK - 1.5, tK), '#FFF6E8'); return; }
+    if (t < tOut) return ship1(t);
+    if (t < tOut + 1.5) { voidWorld(t); flash(1 - seg(t, tOut, tOut + 1.5), '#FFF6E8'); return; }
     if (t < tL - .3) { voidWorld(t); if (t > tL - .6) brushWipe((t - (tL - .6)) / .6, [PULP.w[4], PULP.w[3]]); return; }
     if (t < tO - .6) { ship2(t); if (t < tL + .3) brushWipe(.5 + (t - (tL - .3)) / .6, [PULP.w[4], PULP.w[3]]); return; }
     if (t < tO + .6) return dissolve(seg(t, tO - .6, tO + .6), () => ship2(t), () => voidWorld(t));
