@@ -272,9 +272,34 @@ items:
     note: On 'it arched over them' (2:42) the canopy swept round from the left as a slice pinned to the floor at the centre, so for its first seconds it drew a thin black wedge with a wavy edge, then a lopsided blob. Now the whole arch spreads across and rises from a low canopy to the dome. Rendered at 162.5-167 s. Re-rendering chapter 7.
     title: "Chapter 7: the dome starts as a stray triangle"
     when: 2026-11-03 22:15
+  ch08.acting:
+    state: pass
+    note: Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be.
+    at: ch08-draft-8b38d4c1.mp4
+    when: 2026-11-03 22:16
+  ch08.picture:
+    state: pass
+    note: The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light.
+    at: ch08-draft-8b38d4c1.mp4
+    when: 2026-11-03 22:16
+  ch08.sync:
+    state: pass
+    note: The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median).
+    at: ch08-draft-8b38d4c1.mp4
+    when: 2026-11-03 22:16
+  ch08.sound:
+    state: pass
+    note: "-14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
+    at: ch08-draft-8b38d4c1.mp4
+    when: 2026-11-03 22:16
+  ch08.story:
+    state: pass
+    note: "5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
+    at: ch08-draft-8b38d4c1.mp4
+    when: 2026-11-03 22:16
 fresh:
   - when: 2026-11-02 23:47
     found: 13
     note: "Site only (the drafts were mid-render): a subagent with no context reviewed every page and its screenshots against the rubric. 1 major (the scorecard page spoke to makers), 7 minor, 5 nits; all fixed and recorded as find.* items. A film round follows when the drafts are done."
     state: 2a2f1d1970ac
-since_fresh: 15
+since_fresh: 20
