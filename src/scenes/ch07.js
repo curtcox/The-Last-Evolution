@@ -42,8 +42,11 @@
     // the cloud of blankness, thickening; then the canopy arching and closing into the dome
     const cloud = ez(t, tCloud, tArch), arch = ez(t, tArch - 1, tSolid + 1);
     if (cloud > 0) for (let i = 0; i < 14; i++) { const a = i / 14 * TAU + t * .1, r = 260 + 60 * Math.sin(t * .7 + i); boilSeed('cl' + i); paint(ellPts(MID + Math.cos(a) * r, G - 160 + Math.sin(a) * r * .5, 140 * cloud, 90 * cloud, 14, 20), { fill: '#0E0B09', fillOp: 120 * cloud * (1 - arch * .5), bleed: .4, ink: null }); }
-    if (arch > 0) { const r = 560, P = []; for (let i = 0; i <= 24; i++) { const a = Math.PI + i / 24 * Math.PI * Math.min(1, arch * 1.2), w = 1 + .05 * Math.sin(t * 4 + i) * (1 - arch); P.push([MID + Math.cos(a) * r * w, G + Math.sin(a) * r * .8 * w]); }
-      if (arch < 1) P.push([MID, G]); stillSeed('dome'); paint(P, { wash: PULP.black, washOp: 255 * Math.min(1, arch * 1.4), fill: PULP.black, fillOp: 200 * arch, bleed: .05, ink: INK, sw: 1 }); }
+    // (the whole arch at once, spreading across and rising from a low canopy to the dome; swept round from one side as a
+    // slice pinned to the floor, its first seconds drew a thin wedge, like a stray triangle)
+    if (arch > 0) { const r = 560, wide = .55 + .45 * easeOut(Math.min(1, arch * 1.3)), high = easeOut(arch), P = [];
+      for (let i = 0; i <= 24; i++) { const a = Math.PI + i / 24 * Math.PI, w = 1 + .05 * Math.sin(t * 4 + i) * (1 - arch); P.push([MID + Math.cos(a) * r * wide * w, G + Math.sin(a) * r * .8 * high * w]); }
+      stillSeed('dome'); paint(P, { wash: PULP.black, washOp: 255 * Math.min(1, arch * 1.4), fill: PULP.black, fillOp: 200 * arch, bleed: .05, ink: INK, sw: 1 }); }
   }
   const ROALC = clauses('roal'), TRESTC = clauses('trest'), F2C = clauses('f2'), TO_ROAL = [...TRESTC, ...F2C], TO_TREST = [...ROALC, ...F2C];
   function hall(t) {

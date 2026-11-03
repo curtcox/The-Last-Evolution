@@ -267,6 +267,11 @@ items:
     note: Inside the giant ship (F, 1:52-2:08) the four stood at 460, 600, 1460 and 1620, less than a body's width apart, so each pair read as one figure drawn twice. Now at 320, 570, 1370 and 1620. Rendered at 118 and 126 s. Re-rendering chapter 6.
     title: "Chapter 6: the Outsiders feeding the generators stand in overlapped pairs"
     when: 2026-11-03 22:13
+  find.ch07-canopy:
+    state: open
+    note: On 'it arched over them' (2:42) the canopy swept round from the left as a slice pinned to the floor at the centre, so for its first seconds it drew a thin black wedge with a wavy edge, then a lopsided blob. Now the whole arch spreads across and rises from a low canopy to the dome. Rendered at 162.5-167 s. Re-rendering chapter 7.
+    title: "Chapter 7: the dome starts as a stray triangle"
+    when: 2026-11-03 22:15
 fresh:
   - when: 2026-11-02 23:47
     found: 13
