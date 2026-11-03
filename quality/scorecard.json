@@ -1,8 +1,8 @@
 {
  "summary": {
-  "pass": 32,
-  "stale": 0,
-  "open": 73,
+  "pass": 42,
+  "stale": 2,
+  "open": 61,
   "curt": 8,
   "later": 3
  },
@@ -42,7 +42,7 @@
    "detail": "refs: 53 sources, all cited, all answering; definitions written into 6 notes"
   },
   "phone": {
-   "state": "pass",
+   "state": "stale",
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
@@ -132,8 +132,8 @@
    "id": "ch05.draft",
    "area": "film",
    "title": "Chapter 5: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch05.js, script/boards/ch05.yaml, src/core.js, src/kit.js, src/pulp.js, src/designs.js, script/sfx.yaml, render.mjs, studio.html"
+   "state": "pass",
+   "note": "ch05-draft-a4a1aba0.mp4, -14.9 LUFS, peak -1.3 dBTP"
   },
   {
    "id": "ch00.acting",
@@ -174,8 +174,8 @@
    "id": "ch00.draft",
    "area": "film",
    "title": "Chapter 0: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch00.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+   "state": "pass",
+   "note": "ch00-draft-075c7827.mp4, -14.4 LUFS, peak -2.4 dBTP"
   },
   {
    "id": "ch01.acting",
@@ -216,8 +216,8 @@
    "id": "ch01.draft",
    "area": "film",
    "title": "Chapter 1: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch01.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+   "state": "pass",
+   "note": "ch01-draft-b88ab3a7.mp4, -14.5 LUFS, peak -2.2 dBTP"
   },
   {
    "id": "ch02.acting",
@@ -258,8 +258,8 @@
    "id": "ch02.draft",
    "area": "film",
    "title": "Chapter 2: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch02.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+   "state": "pass",
+   "note": "ch02-draft-73b00d30.mp4, -14.5 LUFS, peak -1.8 dBTP"
   },
   {
    "id": "ch03.acting",
@@ -300,8 +300,8 @@
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch03.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+   "state": "pass",
+   "note": "ch03-draft-df5a41c1.mp4, -14.4 LUFS, peak -1.1 dBTP"
   },
   {
    "id": "ch04.acting",
@@ -342,8 +342,8 @@
    "id": "ch04.draft",
    "area": "film",
    "title": "Chapter 4: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch04.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+   "state": "pass",
+   "note": "ch04-draft-4df77945.mp4, -14.8 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch06.acting",
@@ -384,8 +384,8 @@
    "id": "ch06.draft",
    "area": "film",
    "title": "Chapter 6: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch06.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+   "state": "pass",
+   "note": "ch06-draft-c8ba553b.mp4, -14.5 LUFS, peak -1.2 dBTP"
   },
   {
    "id": "ch07.acting",
@@ -426,8 +426,8 @@
    "id": "ch07.draft",
    "area": "film",
    "title": "Chapter 7: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch07.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+   "state": "pass",
+   "note": "ch07-draft-c6f5bb89.mp4, -14.8 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch08.acting",
@@ -468,8 +468,8 @@
    "id": "ch08.draft",
    "area": "film",
    "title": "Chapter 8: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch08.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+   "state": "pass",
+   "note": "ch08-draft-2e87a810.mp4, -15 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch09.acting",
@@ -510,8 +510,8 @@
    "id": "ch09.draft",
    "area": "film",
    "title": "Chapter 9: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch09.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+   "state": "pass",
+   "note": "ch09-draft-0669eb24.mp4, -14.5 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch10.acting",
@@ -552,8 +552,8 @@
    "id": "ch10.draft",
    "area": "film",
    "title": "Chapter 10: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch10.js, src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+   "state": "pass",
+   "note": "ch10-draft-4085e2e2.mp4, -14.6 LUFS, peak -1.9 dBTP"
   },
   {
    "id": "ch11.acting",
@@ -594,8 +594,8 @@
    "id": "ch11.draft",
    "area": "film",
    "title": "Chapter 11: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/core.js, src/kit.js, src/pulp.js, src/designs.js"
+   "state": "pass",
+   "note": "ch11-draft-e5e9c65a.mp4, -14.4 LUFS, peak -2.3 dBTP"
   },
   {
    "id": "work.sheets",
@@ -629,15 +629,15 @@
    "id": "site.watch.content",
    "area": "site",
    "title": "The film page (annotated): what it says",
-   "state": "pass",
-   "note": "Re-judged after the fresh-eyes round: framed for visitors ('Watch: the film in draft, with notes', not 'Review · Round 7'); the bar says it counts the whole film and the player the chapter; draft notice current."
+   "state": "stale",
+   "note": "passed on 2d3eb27b1fe0; changed since. Re-judged after the fresh-eyes round: framed for visitors ('Watch: the film in draft, with notes', not 'Review · Round 7'); the bar says it counts the whole film and the player the chapter; draft notice current."
   },
   {
    "id": "site.watch.look",
    "area": "site",
    "title": "The film page (annotated): how it looks and works",
-   "state": "pass",
-   "note": "Now has the site's masthead, nav and footer; the title sits in the text column; checked at 1280 and 375; scrubber steps 5 s by keyboard and reads '15:00 of 57:03'; no console errors."
+   "state": "stale",
+   "note": "passed on 262526f363af; changed since. Now has the site's masthead, nav and footer; the title sits in the text column; checked at 1280 and 375; scrubber steps 5 s by keyboard and reads '15:00 of 57:03'; no console errors."
   },
   {
    "id": "site.read.content",
