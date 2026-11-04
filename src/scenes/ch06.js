@@ -66,7 +66,9 @@
         const [mx, my] = motePos(s, t * .3 + s.i), dartK = ez(t, tDart, tVanish), x = lerp(lerp(-400, mx, arrive), s.x - s.len * .45, dartK), y = lerp(lerp(1400, my, arrive), s.y, dartK);
         if (!gone && arrive > 0) { DES.mote(x, y, 34, t, { ang: 0, drive: true });
           if (t > T0('D') && t < tGreen && hash(Math.floor(t * 4) + s.i) > .5) beam(x + 14, y, s.x - s.len * .55, s.y, 2, 8, NRG.white, 1, { washOp: 30, a: .5 });
-          if (t > tGreen && t < tCurtain + 1) beam(x + 14, y, s.x - s.len * .3, s.y, 2, 10, GREEN, ez(t, tGreen, tGreen + .5), { washOp: 40, a: .5 });
+          // the death ray turned on the giants: the chapter's turn, so wide and green enough to read (at 2-10 px and 40 it
+          // showed as a faint grey thread)
+          if (t > tGreen && t < tCurtain + 1) { const gk = ez(t, tGreen, tGreen + .5); beam(x + 14, y, s.x - s.len * .3, s.y, 5, 20, GREEN, gk, { washOp: 110, a: .85 }); if (gk >= 1) glow(s.x - s.len * .3, s.y, 70, GREEN, .5); }
           if (t > tJ - 1) glow(x, y, 50, ramp(SCREEN, .5 + .3 * Math.sin(t * 6)), .5); }
         if (gone && t < (t > tVanish ? tVanish + .8 : puff + .8)) { const pk = seg(t, t > tVanish ? tVanish : puff, (t > tVanish ? tVanish : puff) + .8); glow(x, y, 30 + 80 * pk, NRG.white, 1 - pk); glow(x, y, 20 + 40 * pk, HEAT, .6 * (1 - pk)); }
       }

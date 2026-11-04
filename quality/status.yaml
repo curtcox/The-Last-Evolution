@@ -342,6 +342,11 @@ items:
     note: "On the new draft: Roal's curl in D (0:58-1:05) was the palest wash on a light wall, so it never showed; in P (5:06-5:37) two of the three downed ships vanished without a cut while a second, larger wreck was drawn over the third, the landing transports sat on the standing machines' heads (one on the wreck itself), and the machines, nearer than the hulls, were drawn behind them. Fixed: dreamCurl takes a tone and Roal's is the darkest; the three downed ships stay, the middle one studied; the machines draw over the hulls; the transports land small on the far ground between them. Stills at 0:59-1:03 and 4:10-5:32 confirm; awaits the re-render."
     title: "Chapter 3: Roal's thought is invisible, and the wreck scene stages things into each other"
     when: 2026-11-04 09:14
+  find.ch06-green:
+    state: open
+    note: "On the new draft, 3:07-3:31 (I): the motes' green rays into the giants, the chapter's turn, drew 2-10 px wide at wash 40 and read as faint grey threads. Widened to 5-20 px at 110 with a green glow where each strikes; stills 3:14-3:28 show them plainly; awaits the re-render."
+    title: "Chapter 6: the motes' turned death ray barely shows"
+    when: 2026-11-04 09:17
 fresh:
   - when: 2026-11-02 23:47
     found: 13
