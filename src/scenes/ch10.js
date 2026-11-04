@@ -24,9 +24,17 @@
     push(); translate(x, y);
     rotate(.25 * Math.sin(t * 2.3) * tw); scale(lerp(1, -1, inside) * (1 - .15 * tw * Math.abs(Math.sin(t * 3))), 1 + .4 * tw * Math.sin(t * 1.7)); shearX(.6 * Math.sin(t * 1.9) * tw);
     translate(-x, -y);
-    ship(x, y, len, t, -1, { d: 2 });
+    ship(x, y, len, t, -1, { d: inside > .5 ? 4 : 2 });
+    // inside out: the hull goes dark and its ribs stand out from it, pale, the inside turned outward
+    if (inside > 0) for (let i = 0; i < 14; i++) { const u = (i + .5) / 14 - .5, rx = x + u * len * .9, out = (60 + 90 * hash(i)) * inside, sd = i % 2 ? 1 : -1; boilSeed('rib' + i);
+      inkLine([[rx, y + sd * 50], [rx + 20 * Math.sin(t * 2 + i), y + sd * (50 + out)], [rx + 10 * sd, y + sd * (60 + out * 1.4)]], 1.2 * inside, '#EFE6D2', 'inkfine', 0); }
     pop();
-    if (straight > 0) for (let i = 0; i < 8; i++) { boilSeed('sl' + i); inkLine([[x - len * .5, y - 60 + i * 16], [x + len * .5, y - 60 + i * 16 + 40 * Math.sin(i) * (1 - straight)]], .8 * straight, '#EFE6D2', 'inkfine', 0); }
+    // curves that were lines, acute angles that were straight: bent and kinked strokes across the hull drawn straight,
+    // and the round-ended hull ruled into an angular one
+    if (straight > 0) { for (let i = 0; i < 12; i++) { const yy = y - 88 + i * 16, kink = (i % 2 ? 1 : -1) * 70 * (1 - straight) * (1 + Math.sin(t * 1.3 + i)) * .5; boilSeed('sl' + i);
+        inkLine(i % 3 ? [[x - len * .5, yy], [x + len * .5, yy + 40 * Math.sin(i) * (1 - straight)]] : [[x - len * .5, yy], [x + (hash(i) - .5) * 300, yy + kink], [x + len * .5, yy]], 1.6 * straight, '#EFE6D2', 'inkfine', 0); }
+      const ang = [[x - len * .5, y], [x - len * .42, y - 100], [x + len * .42, y - 100], [x + len * .5, y], [x + len * .42, y + 100], [x - len * .42, y + 100], [x - len * .5, y]];
+      boilSeed('angl'); inkLine(ang, 1.4 * straight, '#EFE6D2', 'inkfine', 0); }
     const scr = ez(t, tScreen, tScreen + 1.5);
     if (scr > 0) { boilSeed('fscr'); paint([...Array(25)].map((_, i) => { const a = i / 24 * TAU; return [x + Math.cos(a) * len * .62, y + Math.sin(a) * len * .2]; }), { wash: '#0E0B09', washOp: 120 * scr, ink: '#3A3A44', sw: .8 }); }
     if (locked) BOILN = Math.floor(T * BOIL) + BOIL_SHIFT;
