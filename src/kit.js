@@ -55,10 +55,10 @@ const KIT = (() => {
   }
 
   // thought, drawn two ways: a man's as a loose curl of pale wash, a machine's as ruled ink
-  function dreamCurl(x, y, k, t, op = .6, key = 'curl') {
+  function dreamCurl(x, y, k, t, op = .6, key = 'curl', d = 0) {   // d: the wash's tone; the palest (0) vanishes on light paper
     if (k <= 0 || op <= 0) return;
     const P = []; for (let i = 0; i <= 14 * k; i++) { const u = i / 14; P.push([x + u * 160 + 70 * Math.sin(u * 7 + t * .6), y - (u * 300 + 30 * Math.sin(u * 5 + t * .4))]); }
-    if (P.length > 2) { boilSeed(key); wash(ribbon(P, 26, 6), 0, { op }); }
+    if (P.length > 2) { boilSeed(key); wash(ribbon(P, 26, 6), d, { op }); }
   }
   function ruled(P, k, col = '#EFE6D2', sw = 1, k0 = 0) {   // a ruled ink path, drawn from fraction k0 to k of its length
     if (k <= k0) return;

@@ -65,8 +65,8 @@
         const hot = K(t, 'p019.1:a highly effective induction-heat ray', 'p019.1:in some small machines');
         DES.machine(1450, G, 18, t, { arms: 2, nozzles: true, d: 2, label: null }); if (hot > 0) glow(1450, G - 60, 40 + 40 * hot, HEAT, .7 * Math.sin(Math.PI * hot)); }
       const roal = people(t);
-      // D: his thought, the curl; S: rings as he speaks
-      dreamCurl(roal.head[0] + 20, roal.head[1] - 40, K(t, 'p018.1:But--life alone', 'p018.1:so Roal was believed'), t, .55 * (1 - ez(t, T0('E') - 1, T0('E'))), 'roalcurl');
+      // D: his thought, the curl, in the darkest tone (the palest and mid washes vanished against the hall's light wall); S: rings as he speaks
+      dreamCurl(roal.head[0] + 20, roal.head[1] - 40, K(t, 'p018.1:But--life alone', 'p018.1:so Roal was believed'), t, .8 * (1 - ez(t, T0('E') - 1, T0('E'))), 'roalcurl', 4);
       hallMachines(t, true);
     });
   }
@@ -144,21 +144,24 @@
       for (let i = 0; i < 9; i++) { const x = 380 + i * 160 + 50 * hash(i), y = LG + 120 + 60 * hash(i * 3), fall = ez(t, tKill + i * .25, tKill + i * .25 + .6);
         if (fall < 1) { push(); translate(x, y); rotate(fall * Math.PI / 2 * (i % 2 ? 1 : -1)); translate(-x, -y); DES.person(x, y, 18, t, { who: 'citizen', flip: i % 2 }); pop(); }
         else { boilSeed('fallen' + i); wash(rrPts(x - 54 * (i % 2 ? -1 : 1) - 50, y - 14, 100, 20, 8), 2, { ink: true, sw: .4 }); } }
-      // the machines, untouched
-      for (let i = 0; i < 3; i++) DES.machine(600 + i * 520, LG + 160, 22, t, { arms: 3, d: 1, label: null, face: .3 * Math.sin(t * .3 + i) });
+      // P: the transports come down on the far ground between the downed ships, behind them (at 600-1600 one landed on the
+      // wreck and each sat on a standing machine's head, reading as one thing)
+      if (t >= tP) for (let i = 0; i < 2; i++) { const k = ez(t, tP + i * 1.5, tP + 4 + i * 1.5); DES.mote(i ? 1330 : 790, lerp(-300, LG - 205, k), 150, t, { ang: Math.PI, drive: k < 1 }); }
       // the ships overhead and their great diffused beams
       const settle = ez(t, tK, tK + 6), fall2 = i => t > tO ? ez(t, tO + 2 + i * 1.6, tO + 3.5 + i * 1.6) : 0;
       for (let i = 0; i < 3; i++) { const sx = 500 + i * 560, sy = lerp(-400, 120 + 40 * i, settle) + fall2(i) * (LG - 60 - 120 - 40 * i), rot = fall2(i) * (i % 2 ? .4 : -.3);
-        if (t < tP - .5 || i === 1) { push(); translate(sx, sy); rotate(rot); translate(-sx, -sy); ship(sx, sy, 520, t, -1, { d: 2 }); pop(); }
+        push(); translate(sx, sy); rotate(rot); translate(-sx, -sy); ship(sx, sy, 520, t, -1, { d: 2 }); pop();
         if (green > 0 && fall2(i) < .1) { boilSeed('gb' + i); paint([[sx - 60, sy + 50], [sx + 60, sy + 50], [sx + 420, LG + 400], [sx - 420, LG + 400]], { wash: GREEN, washOp: 60 * green, ink: null }); glow(sx, LG + 100, 500, GREEN, .35 * green); } }
       if (green > 0) shade(-200, 1400, .0, .18 * green, GREEN);
+      // the machines, untouched, standing nearer than the downed ships (drawn first, the hulls covered them)
+      for (let i = 0; i < 3; i++) DES.machine(600 + i * 520, LG + 160, 22, t, { arms: 3, d: 1, label: null, face: .3 * Math.sin(t * .3 + i) });
       // O: torpedoes driving in from every side
       if (t > tO && t < tP) for (let i = 0; i < 12; i++) { const st = tO + i * .55, q = seg(t, st, st + 2.2); if (q <= 0 || q >= 1) continue; const tg = 500 + (i % 3) * 560, sx = i % 2 ? -400 : 2400, x = lerp(sx, tg, q), y = lerp(100 + 300 * hash(i), 140, q);
         push(); translate(x, y); rotate(i % 2 ? 0 : Math.PI); translate(-x, -y); DES.mote(x, y, 50, t, { ang: 0, drive: true }); pop(); if (q > .9) glow(tg, 140, 120, NRG.white, (q - .9) * 8); }
-      // P: the crumpled wreck; transports landing; tiny spheres going in
-      if (t > tP - .5) { boilSeed('wreck'); push(); translate(1100, LG + 40); rotate(.25); translate(-1100, -(LG + 40)); ship(1100, LG + 40, 700, t, -1, { d: 3 }); pop();
-        for (let i = 0; i < 3; i++) { const k = ez(t, tP + i * 1.5, tP + 4 + i * 1.5); DES.mote(400 + i * 500 + 200, lerp(-300, LG - 20, k), 260, t, { ang: Math.PI, drive: k < 1 }); }
-        for (let i = 0; i < 14; i++) { const q = frac((t - C('p030.1:Tiny investigator spheres')) * .3 + i / 14); if (t < C('p030.1:Tiny investigator spheres')) break; glow(lerp(600 + 60 * i, 1100, q), lerp(LG - 50, LG + 30, q), 7, NRG.white, .8 * (1 - q)); } }
+      // P: the downed ships stay where they fell, the middle one the wreck the machines study (a separate wreck was drawn
+      // over them, and two of them vanished at P without a cut); the tiny spheres worm into it
+      const tSph = C('p030.1:Tiny investigator spheres');
+      if (t >= tSph) for (let i = 0; i < 14; i++) { const q = frac((t - tSph) * .3 + i / 14); glow(lerp(600 + 60 * i, 1060, q), lerp(LG + 60, LG - 60, q), 7, NRG.white, .8 * (1 - q)); }
     });
   }
   // N: Earth from above, the green spreading
