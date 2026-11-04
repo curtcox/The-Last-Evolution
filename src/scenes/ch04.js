@@ -116,10 +116,10 @@
       if (t < tShift + 5) {
         const x56 = council(t);
         // C: the ray-machine rises and trains its beam; X-5638's screen swallows it
-        const up = ez(t, tRay - .5, tRay + 1.5), rx = P.x5638 + 300, ry = G - 200 * up;
-        if (t < T0('D') + 2) { DES.machine(rx, G, 12, t, { arms: 0, nozzles: true, d: 3, hover: 1 + 200 * up / 12, face: -.8, label: null });
+        const up = ez(t, tRay - .5, tRay + 1.5), rx = P.x5638 + 170, ry = G - 330 * up;   // in the gap before Roal, above the heads, so the ray is plainly its own
+        if (t < T0('D') + 2) { DES.machine(rx, G, 12, t, { arms: 0, nozzles: true, d: 3, hover: 1 + 330 * up / 12, face: -.8, label: null });
           const bk = win(t, tTrain, T0('D'), .3, .5);
-          if (bk > 0) { beam(rx - 20, ry - 50, x56.eye[0] + 40, x56.eye[1] + 60, 5, 18, HEAT, bk, { washOp: 50, splash: false });
+          if (bk > 0) { beam(rx - 20, ry - 50, x56.eye[0] + 40, x56.eye[1] + 60, 7, 22, HEAT, bk, { washOp: 90, splash: false });
             const sc = ez(t, tHarm - 1, tHarm); boilSeed('x56scr'); inkLine([...Array(33)].map((_, i) => { const a = i / 32 * TAU; return [P.x5638 + Math.cos(a) * 90, G - 120 + Math.sin(a) * 150]; }), 1.2 * bk, mixCol(D[3], VIOLET, .8), 'inkfine', .5); glow(P.x5638 + 70, G - 150, 80, VIOLET, .5 * bk * (.6 + .4 * sc)); } }
         men(t);
       }
