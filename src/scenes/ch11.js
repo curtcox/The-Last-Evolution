@@ -73,10 +73,10 @@
   function pageEnd(t, para = 2) {
     HALFTONE = 0;
     const tH = T0('H'), tJ = T0('J'), k = seg(t, tH, DUR);
-    camBegin(W / 2, lerp(H / 2 - 40, H / 2 + 60, ease(k)), lerp(1, 1.08, ease(k)));
+    camBegin(W / 2, lerp(H / 2 - 40, H / 2 + 10, ease(k)), lerp(1, 1.08, ease(k)));   // the push keeps the running head in frame
     const fade = 1 - ez(t, tJ - 1, tJ + .5);
     letter('THE LAST EVOLUTION', W / 2, 150, 28, INK, { ink: false, font: `700 28px ${SERIF}`, spacing: 4, alpha: .8 * fade });
-    rule(560, 180, 800, INK, 1);
+    if (fade > 0) rule(560, 180, 800, INK, fade);   // the head's rule goes with it, not left orphaned
     dropCapPara(PARAS[para], 460, 380, 1000, { size: 44, lines: 6, screen: false });
     const e = ez(t, tJ, tJ + 2);
     letter('THE END', W / 2, 760, 90, INK, { ink: false, font: `700 90px ${SERIF}`, spacing: 10, alpha: e });
