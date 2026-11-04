@@ -80,7 +80,7 @@
     const tN = T0('N'), tMem = C('p048.1:there were stacked the memory-units'), tFeed = C('p048.1:all the sensation-ideas'), tQ = T0('Q');
     const busy = win(t, tN, tQ + 1, 1.5, 2);
     for (let i = 0; i < 8; i++) { const a = Math.PI + i / 7 * Math.PI, x = FX + Math.cos(a) * 520, g = G - 20 + Math.sin(a) * -40, y = G - 300 - 160 * Math.sin(a + Math.PI);
-      const mm = DES.machine(x, G + 10 * (i % 2), 18, t, { arms: 3, d: 1 + (i % 2), hover: (G - y) / 18, face: clamp((FX - x) / 500, -1, 1) * .9, label: i === 3 ? 'MX-3401' : null, lit: .3 + .4 * busy });
+      const mm = DES.machine(x, G + 10 * (i % 2), 18, t, { arms: 3, d: 1 + (i % 2), hover: (G - y) / 18, face: clamp((FX - x) / 500, -1, 1) * .9, label: i === 1 ? 'MX-3401' : null, lit: .3 + .4 * busy });
       if (busy > 0 && hash(Math.floor(t * 3) + i) > .4) beam(mm.eye[0], mm.eye[1], FX + (hash(i) - .5) * 200, G - 200 - 400 * ez(t, tN, tQ), 3, 8, FORCE, 1, { washOp: 30 * busy, a: .4 * busy, splash: true }); }
     const m = f1Build(t);
     // O: the memory-units borne in; the ruled lines from every science-machine converging on the dome-case
