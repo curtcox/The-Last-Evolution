@@ -1,16 +1,16 @@
 {
  "summary": {
-  "pass": 53,
-  "stale": 3,
-  "open": 59,
+  "pass": 52,
+  "stale": 23,
+  "open": 40,
   "curt": 7,
   "later": 3
  },
  "satisfied": false,
  "next": [
-  "Chapter 5: Roal's turn to go squashes him to a sliver for two frames",
-  "Chapter 1: two worker machines fly stacked for 12 s, like one drawn twice",
-  "Chapter 2: the Outsiders searching ship 2 walk through each other"
+  "Chapter 5: the acting",
+  "Chapter 5: the picture",
+  "Chapter 5: picture against sound"
  ],
  "checks": {
   "verbatim": {
@@ -42,7 +42,7 @@
    "detail": "refs: 53 sources, all cited, all answering; definitions written into 6 notes"
   },
   "phone": {
-   "state": "pass",
+   "state": "stale",
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
@@ -127,50 +127,50 @@
    "id": "ch05.draft",
    "area": "film",
    "title": "Chapter 5: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch05.js, src/designs.js"
+   "state": "pass",
+   "note": "ch05-draft-556b2f4b.mp4, -14.5 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch00.acting",
    "area": "film",
    "title": "Chapter 0: the acting",
-   "state": "pass",
-   "note": "F-2 drifts, then the memory of Roal offering and Trest standing apart (0:26-0:34) holds still, as a memory should; nothing acts against the words."
+   "state": "stale",
+   "note": "passed on ch00-draft-4f6aa2f9.mp4; changed since. F-2 drifts, then the memory of Roal offering and Trest standing apart (0:26-0:34) holds still, as a memory should; nothing acts against the words."
   },
   {
    "id": "ch00.picture",
    "area": "film",
    "title": "Chapter 0: the picture",
-   "state": "pass",
-   "note": "Header now reads AMAZING STORIES · August, 1932. Title page, space, the memory and the mentatype sheets all read; the galaxies over the memory are dimmed to 40% by design (ch00.js: 1 - .6*mem)."
+   "state": "stale",
+   "note": "passed on ch00-draft-4f6aa2f9.mp4; changed since. Header now reads AMAZING STORIES · August, 1932. Title page, space, the memory and the mentatype sheets all read; the galaxies over the memory are dimmed to 40% by design (ch00.js: 1 - .6*mem)."
   },
   {
    "id": "ch00.sync",
    "area": "film",
    "title": "Chapter 0: picture against sound",
-   "state": "pass",
-   "note": "The memory opens on 'in memory I am still close' and the passing light crosses on 'But I will pass soon'; the sheets come in with the record (E). Whisper's words sit 0.14 s from the alignment's (median)."
+   "state": "stale",
+   "note": "passed on ch00-draft-4f6aa2f9.mp4; changed since. The memory opens on 'in memory I am still close' and the passing light crosses on 'But I will pass soon'; the sheets come in with the record (E). Whisper's words sit 0.14 s from the alignment's (median)."
   },
   {
    "id": "ch00.sound",
    "area": "film",
    "title": "Chapter 0: the sound",
-   "state": "pass",
-   "note": "-14.4 LUFS, range 4.2 LU, shots -14.6 to -17.4. Whisper missed 2 of 95 words: 'menta type', which it heard as 'mentatype', the right word."
+   "state": "stale",
+   "note": "passed on ch00-draft-4f6aa2f9.mp4; changed since. -14.4 LUFS, range 4.2 LU, shots -14.6 to -17.4. Whisper missed 2 of 95 words: 'menta type', which it heard as 'mentatype', the right word."
   },
   {
    "id": "ch00.story",
    "area": "film",
    "title": "Chapter 0: the chapter as a story",
-   "state": "pass",
-   "note": "58 s: the title, the old machine alone in space, the memory of man, and why it sets down its record. Sets up the film without explaining it away."
+   "state": "stale",
+   "note": "passed on ch00-draft-4f6aa2f9.mp4; changed since. 58 s: the title, the old machine alone in space, the memory of man, and why it sets down its record. Sets up the film without explaining it away."
   },
   {
    "id": "ch00.draft",
    "area": "film",
    "title": "Chapter 0: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/designs.js"
+   "state": "pass",
+   "note": "ch00-draft-c858f044.mp4, -14.4 LUFS, peak -2.4 dBTP"
   },
   {
    "id": "ch01.acting",
@@ -211,8 +211,8 @@
    "id": "ch01.draft",
    "area": "film",
    "title": "Chapter 1: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch01.js, src/designs.js"
+   "state": "pass",
+   "note": "ch01-draft-d7f9b3ec.mp4, -14.4 LUFS, peak -2.2 dBTP"
   },
   {
    "id": "ch02.acting",
@@ -253,8 +253,8 @@
    "id": "ch02.draft",
    "area": "film",
    "title": "Chapter 2: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch02.js, src/designs.js"
+   "state": "pass",
+   "note": "ch02-draft-d17f9b25.mp4, -14.4 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch03.acting",
@@ -295,50 +295,50 @@
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch03.js, src/designs.js"
+   "state": "pass",
+   "note": "ch03-draft-6f7aa3f3.mp4, -14.4 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch04.acting",
    "area": "film",
    "title": "Chapter 4: the acting",
-   "state": "pass",
-   "note": "The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
+   "state": "stale",
+   "note": "passed on ch04-draft-eb5af70e.mp4; changed since. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
   },
   {
    "id": "ch04.picture",
    "area": "film",
    "title": "Chapter 4: the picture",
-   "state": "pass",
-   "note": "Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
+   "state": "stale",
+   "note": "passed on ch04-draft-eb5af70e.mp4; changed since. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
   },
   {
    "id": "ch04.sync",
    "area": "film",
    "title": "Chapter 4: picture against sound",
-   "state": "pass",
-   "note": "Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
+   "state": "stale",
+   "note": "passed on ch04-draft-eb5af70e.mp4; changed since. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
   },
   {
    "id": "ch04.sound",
    "area": "film",
    "title": "Chapter 4: the sound",
-   "state": "pass",
-   "note": "-14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
+   "state": "stale",
+   "note": "passed on ch04-draft-eb5af70e.mp4; changed since. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
   },
   {
    "id": "ch04.story",
    "area": "film",
    "title": "Chapter 4: the chapter as a story",
-   "state": "pass",
-   "note": "5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
+   "state": "stale",
+   "note": "passed on ch04-draft-eb5af70e.mp4; changed since. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
   },
   {
    "id": "ch04.draft",
    "area": "film",
    "title": "Chapter 4: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/designs.js"
+   "state": "pass",
+   "note": "ch04-draft-c3cdfa13.mp4, -14.4 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch06.acting",
@@ -379,8 +379,8 @@
    "id": "ch06.draft",
    "area": "film",
    "title": "Chapter 6: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch06.js, src/designs.js"
+   "state": "pass",
+   "note": "ch06-draft-ffa0bd48.mp4, -14.4 LUFS, peak -2.3 dBTP"
   },
   {
    "id": "ch07.acting",
@@ -421,92 +421,92 @@
    "id": "ch07.draft",
    "area": "film",
    "title": "Chapter 7: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch07.js, src/designs.js"
+   "state": "pass",
+   "note": "ch07-draft-30de0173.mp4, -14.5 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch08.acting",
    "area": "film",
    "title": "Chapter 8: the acting",
-   "state": "pass",
-   "note": "Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be."
+   "state": "stale",
+   "note": "passed on ch08-draft-8b38d4c1.mp4; changed since. Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be."
   },
   {
    "id": "ch08.picture",
    "area": "film",
    "title": "Chapter 8: the picture",
-   "state": "pass",
-   "note": "The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light."
+   "state": "stale",
+   "note": "passed on ch08-draft-8b38d4c1.mp4; changed since. The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light."
   },
   {
    "id": "ch08.sync",
    "area": "film",
    "title": "Chapter 8: picture against sound",
-   "state": "pass",
-   "note": "The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median)."
+   "state": "stale",
+   "note": "passed on ch08-draft-8b38d4c1.mp4; changed since. The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median)."
   },
   {
    "id": "ch08.sound",
    "area": "film",
    "title": "Chapter 8: the sound",
-   "state": "pass",
-   "note": "-14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
+   "state": "stale",
+   "note": "passed on ch08-draft-8b38d4c1.mp4; changed since. -14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
   },
   {
    "id": "ch08.story",
    "area": "film",
    "title": "Chapter 8: the chapter as a story",
-   "state": "pass",
-   "note": "5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
+   "state": "stale",
+   "note": "passed on ch08-draft-8b38d4c1.mp4; changed since. 5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
   },
   {
    "id": "ch08.draft",
    "area": "film",
    "title": "Chapter 8: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/designs.js"
+   "state": "pass",
+   "note": "ch08-draft-b0b4c323.mp4, -14.5 LUFS, peak -1.9 dBTP"
   },
   {
    "id": "ch09.acting",
    "area": "film",
    "title": "Chapter 9: the acting",
-   "state": "pass",
-   "note": "F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
+   "state": "stale",
+   "note": "passed on ch09-draft-5ccf383e.mp4; changed since. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
   },
   {
    "id": "ch09.picture",
    "area": "film",
    "title": "Chapter 9: the picture",
-   "state": "pass",
-   "note": "Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
+   "state": "stale",
+   "note": "passed on ch09-draft-5ccf383e.mp4; changed since. Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
   },
   {
    "id": "ch09.sync",
    "area": "film",
    "title": "Chapter 9: picture against sound",
-   "state": "pass",
-   "note": "The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
+   "state": "stale",
+   "note": "passed on ch09-draft-5ccf383e.mp4; changed since. The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
   },
   {
    "id": "ch09.sound",
    "area": "film",
    "title": "Chapter 9: the sound",
-   "state": "pass",
-   "note": "-14.5 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
+   "state": "stale",
+   "note": "passed on ch09-draft-5ccf383e.mp4; changed since. -14.5 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
   },
   {
    "id": "ch09.story",
    "area": "film",
    "title": "Chapter 9: the chapter as a story",
-   "state": "pass",
-   "note": "5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
+   "state": "stale",
+   "note": "passed on ch09-draft-5ccf383e.mp4; changed since. 5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
   },
   {
    "id": "ch09.draft",
    "area": "film",
    "title": "Chapter 9: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/designs.js"
+   "state": "pass",
+   "note": "ch09-draft-bc3276e7.mp4, -14.5 LUFS, peak -2.2 dBTP"
   },
   {
    "id": "ch10.acting",
@@ -547,8 +547,8 @@
    "id": "ch10.draft",
    "area": "film",
    "title": "Chapter 10: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/designs.js"
+   "state": "pass",
+   "note": "ch10-draft-e2cd8db4.mp4, -14.4 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch11.acting",
@@ -589,8 +589,8 @@
    "id": "ch11.draft",
    "area": "film",
    "title": "Chapter 11: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/designs.js"
+   "state": "pass",
+   "note": "ch11-draft-70ee6196.mp4, -14.4 LUFS, peak -2.3 dBTP"
   },
   {
    "id": "work.sheets",
@@ -876,50 +876,50 @@
    "id": "find.ch05-turn",
    "area": "finding",
    "title": "Chapter 5: Roal's turn to go squashes him to a sliver for two frames",
-   "state": "open",
-   "note": "At 6:29 (p064, as F-2 finishes) Roal turns to walk away by squashing his profile through 20% of its width, so two frames show him as a vertical line. Now never thinner than 60%: rendered at 388.75-389.17 s, he narrows and flips. Re-rendering chapter 5."
+   "state": "pass",
+   "note": "New draft, 6:28-6:30 at 6 fps: Roal narrows to about 60% at the turn's middle and reads as a man turning, never a sliver."
   },
   {
    "id": "find.ch01-workers",
    "area": "finding",
    "title": "Chapter 1: two worker machines fly stacked for 12 s, like one drawn twice",
-   "state": "open",
-   "note": "Workers 7 and 8 had near-equal speeds, heights 18 px apart and near-equal random starts, so from about 0:57 to 1:09 they flew one over the other. Now each has its own lane (25 px apart) and starts a ninth of the loop from the next, searched so no two in near lanes overlap more than 3 s. Rendered at 50-140 s. Re-rendering chapter 1."
+   "state": "pass",
+   "note": "New draft, 0:55-1:11 every 2 s: workers cross now and then but part within a few seconds; no pair flies stacked."
   },
   {
    "id": "find.ch02-searchers",
    "area": "finding",
    "title": "Chapter 2: the Outsiders searching ship 2 walk through each other",
-   "state": "open",
-   "note": "The three searchers swayed ±140 px round spots 160 apart, so at 4:12-4:15 two stood almost wholly over each other, and at 4:36 the one with the projector landed on the middle one. Now they sway ±25 round 2290, 2500 and 2990, leaving a gap at 2750 for the projector. Rendered at 243-290 s. Re-rendering chapter 2."
+   "state": "pass",
+   "note": "New draft, 4:03-4:51 every 6 s: the three searchers stand apart at their own spots, shoulder to shoulder at closest, and the projector Outsider has its own space; none walks through another."
   },
   {
    "id": "find.ch03-ring",
    "area": "finding",
    "title": "Chapter 3: a machine stands at Trest's back through Roal's speech; Jupiter and Saturn overlap",
-   "state": "open",
-   "note": "The ring was centred at 1000, so one of its far half stood at 1192, just behind Trest (1160), from 6:12 to 7:04. Centred between them (1060) now, every far machine is 90 px or more from both and no near one is in front. In the worlds (U), evenly spaced planets let Jupiter and Saturn overlap and show through each other; they're spaced by size now, 90 apart edge to edge. Rendered at 372-420 and 430-468 s. Re-rendering chapter 3."
+   "state": "pass",
+   "note": "New draft, 6:12-7:08: the nearest ring machine stands beside Trest, clear of his back; 7:08-7:24: the worlds sit apart, Jupiter clear of Saturn."
   },
   {
    "id": "find.ch06-feeders",
    "area": "finding",
    "title": "Chapter 6: the Outsiders feeding the generators stand in overlapped pairs",
-   "state": "open",
-   "note": "Inside the giant ship (F, 1:52-2:08) the four stood at 460, 600, 1460 and 1620, less than a body's width apart, so each pair read as one figure drawn twice. Now at 320, 570, 1370 and 1620. Rendered at 118 and 126 s. Re-rendering chapter 6."
+   "state": "pass",
+   "note": "New draft, 1:52-2:08: the four feeders stand as two clear pairs flanking the generator, a gap between each."
   },
   {
    "id": "find.ch07-canopy",
    "area": "finding",
    "title": "Chapter 7: the dome starts as a stray triangle",
-   "state": "open",
-   "note": "On 'it arched over them' (2:42) the canopy swept round from the left as a slice pinned to the floor at the centre, so for its first seconds it drew a thin black wedge with a wavy edge, then a lopsided blob. Now the whole arch spreads across and rises from a low canopy to the dome. Rendered at 162.5-167 s. Re-rendering chapter 7."
+   "state": "pass",
+   "note": "New draft, 2:41-2:49 every second: the canopy rises from a line along the floor as a whole low dome to the full arch; no stray triangle."
   },
   {
    "id": "find.ship-opaque",
    "area": "finding",
    "title": "The Outsiders' ships are see-through: a ship behind shows through one in front",
-   "state": "open",
-   "note": "In chapter 10 (2:18) the flagship's ribs showed through an escort crossing it, and the dense fleets of chapters 2, 3 and 6 show the same. The hull now has a solid base under its washes (designs.js: solidFill, as the Outsiders got). Rendered in chapters 10 (138 s), 6 (64, 80 s) and 2 (36, 60 s). Shared, so all twelve drafts re-render."
+   "state": "pass",
+   "note": "New draft, ch10 2:14-2:22: the flagship's hull hides the ships behind it; no ribs or bands show through."
   }
  ],
  "fresh": [

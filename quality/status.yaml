@@ -193,143 +193,143 @@ items:
     at: 0fb59795b7d6
     when: 2026-11-03 11:13
   find.ch05-turn:
-    state: open
-    note: "At 6:29 (p064, as F-2 finishes) Roal turns to walk away by squashing his profile through 20% of its width, so two frames show him as a vertical line. Now never thinner than 60%: rendered at 388.75-389.17 s, he narrows and flips. Re-rendering chapter 5."
+    state: pass
+    note: "New draft, 6:28-6:30 at 6 fps: Roal narrows to about 60% at the turn's middle and reads as a man turning, never a sliver."
     title: "Chapter 5: Roal's turn to go squashes him to a sliver for two frames"
-    when: 2026-11-03 22:01
+    when: 2026-11-04 09:00
   ch00.acting:
     state: pass
-    note: F-2 drifts, then the memory of Roal offering and Trest standing apart (0:26-0:34) holds still, as a memory should; nothing acts against the words.
-    at: ch00-draft-4f6aa2f9.mp4
-    when: 2026-11-03 22:02
+    note: "Re-checked on the new draft: same length, SSIM 0.997 against the passed one, the only differences the paper wash (audio identical); no source for this chapter changed. F-2 drifts, then the memory of Roal offering and Trest standing apart (0:26-0:34) holds still, as a memory should; nothing acts against the words."
+    at: ch00-draft-c858f044.mp4
+    when: 2026-11-04 09:03
   ch00.picture:
     state: pass
-    note: "Header now reads AMAZING STORIES · August, 1932. Title page, space, the memory and the mentatype sheets all read; the galaxies over the memory are dimmed to 40% by design (ch00.js: 1 - .6*mem)."
-    at: ch00-draft-4f6aa2f9.mp4
-    when: 2026-11-03 22:02
+    note: "Re-checked on the new draft: same length, SSIM 0.997 against the passed one, the only differences the paper wash (audio identical); no source for this chapter changed. Header now reads AMAZING STORIES · August, 1932. Title page, space, the memory and the mentatype sheets all read; the galaxies over the memory are dimmed to 40% by design (ch00.js: 1 - .6*mem)."
+    at: ch00-draft-c858f044.mp4
+    when: 2026-11-04 09:03
   ch00.sync:
     state: pass
-    note: The memory opens on 'in memory I am still close' and the passing light crosses on 'But I will pass soon'; the sheets come in with the record (E). Whisper's words sit 0.14 s from the alignment's (median).
-    at: ch00-draft-4f6aa2f9.mp4
-    when: 2026-11-03 22:02
+    note: "Re-checked on the new draft: same length, SSIM 0.997 against the passed one, the only differences the paper wash (audio identical); no source for this chapter changed. The memory opens on 'in memory I am still close' and the passing light crosses on 'But I will pass soon'; the sheets come in with the record (E). Whisper's words sit 0.14 s from the alignment's (median)."
+    at: ch00-draft-c858f044.mp4
+    when: 2026-11-04 09:03
   ch00.sound:
     state: pass
-    note: "-14.4 LUFS, range 4.2 LU, shots -14.6 to -17.4. Whisper missed 2 of 95 words: 'menta type', which it heard as 'mentatype', the right word."
-    at: ch00-draft-4f6aa2f9.mp4
-    when: 2026-11-03 22:02
+    note: "Re-checked on the new draft: same length, SSIM 0.997 against the passed one, the only differences the paper wash (audio identical); no source for this chapter changed. -14.4 LUFS, range 4.2 LU, shots -14.6 to -17.4. Whisper missed 2 of 95 words: 'menta type', which it heard as 'mentatype', the right word."
+    at: ch00-draft-c858f044.mp4
+    when: 2026-11-04 09:03
   ch00.story:
     state: pass
-    note: "58 s: the title, the old machine alone in space, the memory of man, and why it sets down its record. Sets up the film without explaining it away."
-    at: ch00-draft-4f6aa2f9.mp4
-    when: 2026-11-03 22:02
+    note: "Re-checked on the new draft: same length, SSIM 0.997 against the passed one, the only differences the paper wash (audio identical); no source for this chapter changed. 58 s: the title, the old machine alone in space, the memory of man, and why it sets down its record. Sets up the film without explaining it away."
+    at: ch00-draft-c858f044.mp4
+    when: 2026-11-04 09:03
   find.ch01-workers:
-    state: open
-    note: Workers 7 and 8 had near-equal speeds, heights 18 px apart and near-equal random starts, so from about 0:57 to 1:09 they flew one over the other. Now each has its own lane (25 px apart) and starts a ninth of the loop from the next, searched so no two in near lanes overlap more than 3 s. Rendered at 50-140 s. Re-rendering chapter 1.
+    state: pass
+    note: "New draft, 0:55-1:11 every 2 s: workers cross now and then but part within a few seconds; no pair flies stacked."
     title: "Chapter 1: two worker machines fly stacked for 12 s, like one drawn twice"
-    when: 2026-11-03 22:04
+    when: 2026-11-04 09:00
   find.ch02-searchers:
-    state: open
-    note: The three searchers swayed ±140 px round spots 160 apart, so at 4:12-4:15 two stood almost wholly over each other, and at 4:36 the one with the projector landed on the middle one. Now they sway ±25 round 2290, 2500 and 2990, leaving a gap at 2750 for the projector. Rendered at 243-290 s. Re-rendering chapter 2.
+    state: pass
+    note: "New draft, 4:03-4:51 every 6 s: the three searchers stand apart at their own spots, shoulder to shoulder at closest, and the projector Outsider has its own space; none walks through another."
     title: "Chapter 2: the Outsiders searching ship 2 walk through each other"
-    when: 2026-11-03 22:07
+    when: 2026-11-04 09:00
   find.ch03-ring:
-    state: open
-    note: The ring was centred at 1000, so one of its far half stood at 1192, just behind Trest (1160), from 6:12 to 7:04. Centred between them (1060) now, every far machine is 90 px or more from both and no near one is in front. In the worlds (U), evenly spaced planets let Jupiter and Saturn overlap and show through each other; they're spaced by size now, 90 apart edge to edge. Rendered at 372-420 and 430-468 s. Re-rendering chapter 3.
+    state: pass
+    note: "New draft, 6:12-7:08: the nearest ring machine stands beside Trest, clear of his back; 7:08-7:24: the worlds sit apart, Jupiter clear of Saturn."
     title: "Chapter 3: a machine stands at Trest's back through Roal's speech; Jupiter and Saturn overlap"
-    when: 2026-11-03 22:10
+    when: 2026-11-04 09:00
   ch04.acting:
     state: pass
-    note: "The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
-    at: ch04-draft-eb5af70e.mp4
-    when: 2026-11-03 22:11
+    note: "Re-checked on the new draft: same length, SSIM 0.983 against the passed one, the only differences the paper wash and render noise in the audio near -50 dB; no source for this chapter changed. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
+    at: ch04-draft-c3cdfa13.mp4
+    when: 2026-11-04 09:03
   ch04.picture:
     state: pass
-    note: "Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
-    at: ch04-draft-eb5af70e.mp4
-    when: 2026-11-03 22:11
+    note: "Re-checked on the new draft: same length, SSIM 0.983 against the passed one, the only differences the paper wash and render noise in the audio near -50 dB; no source for this chapter changed. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
+    at: ch04-draft-c3cdfa13.mp4
+    when: 2026-11-04 09:03
   ch04.sync:
     state: pass
-    note: Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median).
-    at: ch04-draft-eb5af70e.mp4
-    when: 2026-11-03 22:11
+    note: "Re-checked on the new draft: same length, SSIM 0.983 against the passed one, the only differences the paper wash and render noise in the audio near -50 dB; no source for this chapter changed. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
+    at: ch04-draft-c3cdfa13.mp4
+    when: 2026-11-04 09:03
   ch04.sound:
     state: pass
-    note: "-14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
-    at: ch04-draft-eb5af70e.mp4
-    when: 2026-11-03 22:11
+    note: "Re-checked on the new draft: same length, SSIM 0.983 against the passed one, the only differences the paper wash and render noise in the audio near -50 dB; no source for this chapter changed. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
+    at: ch04-draft-c3cdfa13.mp4
+    when: 2026-11-04 09:03
   ch04.story:
     state: pass
-    note: "5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
-    at: ch04-draft-eb5af70e.mp4
-    when: 2026-11-03 22:11
+    note: "Re-checked on the new draft: same length, SSIM 0.983 against the passed one, the only differences the paper wash and render noise in the audio near -50 dB; no source for this chapter changed. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
+    at: ch04-draft-c3cdfa13.mp4
+    when: 2026-11-04 09:03
   find.ch06-feeders:
-    state: open
-    note: Inside the giant ship (F, 1:52-2:08) the four stood at 460, 600, 1460 and 1620, less than a body's width apart, so each pair read as one figure drawn twice. Now at 320, 570, 1370 and 1620. Rendered at 118 and 126 s. Re-rendering chapter 6.
+    state: pass
+    note: "New draft, 1:52-2:08: the four feeders stand as two clear pairs flanking the generator, a gap between each."
     title: "Chapter 6: the Outsiders feeding the generators stand in overlapped pairs"
-    when: 2026-11-03 22:13
+    when: 2026-11-04 09:00
   find.ch07-canopy:
-    state: open
-    note: On 'it arched over them' (2:42) the canopy swept round from the left as a slice pinned to the floor at the centre, so for its first seconds it drew a thin black wedge with a wavy edge, then a lopsided blob. Now the whole arch spreads across and rises from a low canopy to the dome. Rendered at 162.5-167 s. Re-rendering chapter 7.
+    state: pass
+    note: "New draft, 2:41-2:49 every second: the canopy rises from a line along the floor as a whole low dome to the full arch; no stray triangle."
     title: "Chapter 7: the dome starts as a stray triangle"
-    when: 2026-11-03 22:15
+    when: 2026-11-04 09:00
   ch08.acting:
     state: pass
-    note: Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be.
-    at: ch08-draft-8b38d4c1.mp4
-    when: 2026-11-03 22:16
+    note: "Re-checked on the new draft: same length, SSIM 0.993 against the passed one, the only differences the paper wash and render noise in the audio near -50 dB; no source for this chapter changed. Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be."
+    at: ch08-draft-b0b4c323.mp4
+    when: 2026-11-04 09:03
   ch08.picture:
     state: pass
-    note: The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light.
-    at: ch08-draft-8b38d4c1.mp4
-    when: 2026-11-03 22:16
+    note: "Re-checked on the new draft: same length, SSIM 0.993 against the passed one, the only differences the paper wash and render noise in the audio near -50 dB; no source for this chapter changed. The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light."
+    at: ch08-draft-b0b4c323.mp4
+    when: 2026-11-04 09:03
   ch08.sync:
     state: pass
-    note: The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median).
-    at: ch08-draft-8b38d4c1.mp4
-    when: 2026-11-03 22:16
+    note: "Re-checked on the new draft: same length, SSIM 0.993 against the passed one, the only differences the paper wash and render noise in the audio near -50 dB; no source for this chapter changed. The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median)."
+    at: ch08-draft-b0b4c323.mp4
+    when: 2026-11-04 09:03
   ch08.sound:
     state: pass
-    note: "-14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
-    at: ch08-draft-8b38d4c1.mp4
-    when: 2026-11-03 22:16
+    note: "Re-checked on the new draft: same length, SSIM 0.993 against the passed one, the only differences the paper wash and render noise in the audio near -50 dB; no source for this chapter changed. -14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
+    at: ch08-draft-b0b4c323.mp4
+    when: 2026-11-04 09:03
   ch08.story:
     state: pass
-    note: "5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
-    at: ch08-draft-8b38d4c1.mp4
-    when: 2026-11-03 22:16
+    note: "Re-checked on the new draft: same length, SSIM 0.993 against the passed one, the only differences the paper wash and render noise in the audio near -50 dB; no source for this chapter changed. 5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
+    at: ch08-draft-b0b4c323.mp4
+    when: 2026-11-04 09:03
   ch09.acting:
     state: pass
-    note: F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge.
-    at: ch09-draft-5ccf383e.mp4
-    when: 2026-11-03 22:17
+    note: "Re-checked on the new draft: same length, SSIM 0.994 against the passed one, the only differences the paper wash and render noise in the audio near -50 dB; no source for this chapter changed. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
+    at: ch09-draft-bc3276e7.mp4
+    when: 2026-11-04 09:03
   ch09.picture:
     state: pass
-    note: Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown.
-    at: ch09-draft-5ccf383e.mp4
-    when: 2026-11-03 22:17
+    note: "Re-checked on the new draft: same length, SSIM 0.994 against the passed one, the only differences the paper wash and render noise in the audio near -50 dB; no source for this chapter changed. Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
+    at: ch09-draft-bc3276e7.mp4
+    when: 2026-11-04 09:03
   ch09.sync:
     state: pass
-    note: The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median).
-    at: ch09-draft-5ccf383e.mp4
-    when: 2026-11-03 22:17
+    note: "Re-checked on the new draft: same length, SSIM 0.994 against the passed one, the only differences the paper wash and render noise in the audio near -50 dB; no source for this chapter changed. The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
+    at: ch09-draft-bc3276e7.mp4
+    when: 2026-11-04 09:03
   ch09.sound:
     state: pass
-    note: "-14.5 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
-    at: ch09-draft-5ccf383e.mp4
-    when: 2026-11-03 22:17
+    note: "Re-checked on the new draft: same length, SSIM 0.994 against the passed one, the only differences the paper wash and render noise in the audio near -50 dB; no source for this chapter changed. -14.5 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
+    at: ch09-draft-bc3276e7.mp4
+    when: 2026-11-04 09:03
   ch09.story:
     state: pass
-    note: "5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
-    at: ch09-draft-5ccf383e.mp4
-    when: 2026-11-03 22:17
+    note: "Re-checked on the new draft: same length, SSIM 0.994 against the passed one, the only differences the paper wash and render noise in the audio near -50 dB; no source for this chapter changed. 5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
+    at: ch09-draft-bc3276e7.mp4
+    when: 2026-11-04 09:03
   find.ship-opaque:
-    state: open
-    note: "In chapter 10 (2:18) the flagship's ribs showed through an escort crossing it, and the dense fleets of chapters 2, 3 and 6 show the same. The hull now has a solid base under its washes (designs.js: solidFill, as the Outsiders got). Rendered in chapters 10 (138 s), 6 (64, 80 s) and 2 (36, 60 s). Shared, so all twelve drafts re-render."
+    state: pass
+    note: "New draft, ch10 2:14-2:22: the flagship's hull hides the ships behind it; no ribs or bands show through."
     title: "The Outsiders' ships are see-through: a ship behind shows through one in front"
-    when: 2026-11-03 22:21
+    when: 2026-11-04 09:00
 fresh:
   - when: 2026-11-02 23:47
     found: 13
     note: "Site only (the drafts were mid-render): a subagent with no context reviewed every page and its screenshots against the rubric. 1 major (the scorecard page spoke to makers), 7 minor, 5 nits; all fixed and recorded as find.* items. A film round follows when the drafts are done."
     state: 2a2f1d1970ac
-since_fresh: 25
+since_fresh: 52
