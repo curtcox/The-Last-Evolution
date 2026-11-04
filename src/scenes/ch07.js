@@ -27,9 +27,10 @@
     screens(t);
     // F-2 floats in and stops before the men
     const f2k = ez(t, tF - .5, tF + 5), fx = lerp(2300, MID + 260, f2k), fy = lerp(560, 780, f2k);
-    if (t > tF - 1) { push(); translate(fx, fy); scale(-1, 1); translate(-fx, -fy); DES.f2(fx, fy + 2.4 * FS, FS, t, { view: 'side' }); pop(); glow(fx - 50, fy, 30, '#E6EEFF', .3 + .5 * talk(t, 'f2')); }
     for (let i = 0; i < 6; i++) if (t > tSix - 1) { const [x, g] = sixAt(t, i); const m = DES.machine(x, g, 22, t, { arms: 3, d: 1 + (i % 2), hover: 1.5 + .1 * wob(t, .3, i), face: clamp((MID - x) / 300, -1, 1), lit: .3, label: null });
       if (t > tCloud - 1) glow(m.eye[0], m.eye[1], 30, '#E6EEFF', .4); }
+    // F-2 in front of the six (drawn before them, one passed over it as they came in)
+    if (t > tF - 1) { push(); translate(fx, fy); scale(-1, 1); translate(-fx, -fy); DES.f2(fx, fy + 2.4 * FS, FS, t, { view: 'side' }); pop(); glow(fx - 50, fy, 30, '#E6EEFF', .3 + .5 * talk(t, 'f2')); }
     // Roal and Trest before the screens; Roal turns when the machines come. Each gestures on his own clauses (Roal's
     // smaller while his eyes dream) and nods as the other, or F-2, speaks to him
     const turn = t > tF + .3, dream = win(t, C('p085.2'), T1('D'), 1, 1);
@@ -86,6 +87,10 @@
       stillSeed('osky'); paint(rectPts(-3000, -2400, 7000, 3300), { wash: '#1E1A16', washOp: 255, fill: '#2A231D', fillOp: 80, ink: null });
       for (let i = 0; i < 120; i++) glow(-2600 + hash(i * 3.1) * 7000, -2200 + hash(i * 7.7) * 3000, 5, '#F4EEDC', .3 + .3 * hash(i));
       stillSeed('oground'); paint(rectPts(-3000, OG - 20, 7000, 2600), { wash: D[3], washOp: 255, fill: '#1C1814', fillOp: 90, ink: null });
+      // what's left of the hall round the dome: its floor and its broken piers (the dome was made inside it, 2:45)
+      stillSeed('ofloor'); wash(rectPts(DOME[0] - DR - 700, OG - 10, 2 * DR + 1400, 40), 2, { ink: true, sw: .5 });
+      for (let i = 0; i < 8; i++) { const side = i < 4 ? -1 : 1, k = i % 4, x = DOME[0] + side * (DR + 160 + k * 170), h = 140 + 360 * hash(i * 7.3), w = 70;
+        stillSeed('opier' + i); wash([[x - w / 2, OG], [x - w / 2, OG - h], [x - w / 6, OG - h - 40 * hash(i)], [x + w / 6, OG - h + 30], [x + w / 2, OG - h - 20 * hash(i * 3)], [x + w / 2, OG]], 3, { ink: true, sw: .6 }); }
       for (let i = 0; i < 30; i++) { stillSeed('dead' + i); const x = -2500 + hash(i * 3) * 6000, y = OG + 30 + hash(i * 5) * 500; inkLine([[x, y], [x + 4, y - 40 - 40 * hash(i)], [x + 16, y - 60 - 40 * hash(i)]], .6, INK); }   // the bare dead trees
       // the beams: in, striking, more of them; the dome pressed in under them
       const n = t < tN ? 4 : Math.min(12, 4 + Math.floor((t - tN) * 1.5)), bk = ez(t, tL, tStruck) * (1 - ez(t, tOff, tOff + 3)), press = (t > tStruck ? .1 + .06 * Math.sin(t * 3) : 0) * (1 - ez(t, tOff, tOff + 3));
