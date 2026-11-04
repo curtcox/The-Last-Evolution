@@ -109,7 +109,7 @@
   function lamp(x, r, k = 1) { glow(x, FL - 260, r, '#E8DCC4', .3 * k); glow(x, FL - 40, r * .6, '#E8DCC4', .25 * k); stillSeed('pool' + x); paint(ellPts(x, FL + 10, r * .9, r * .12, 20), { wash: '#C9BCA4', washOp: 70 * k, ink: null, bleed: .3 }); }
   // the investigator, its lens dark once it's blanked
   function inv(x, y, t, blank = 0) { DES.investigator(x, y, 20, t); if (blank < 1) glow(x + 2, y - 5, 18, NRG.white, .5 * (1 - blank)); }
-  function crawler(x, t, i, o = {}) { const bob = 4 * Math.abs(Math.sin(t * 3 + i)); push(); translate(x, FL - bob); rotate(o.rot || 0); translate(-x, -(FL - bob)); DES.outsider(x, FL - bob, (o.s || 34) * 1.6, t, { view: o.view || 'side', turn: o.turn ?? .08 * Math.sin(t * .7 + i) }); pop(); }
+  function crawler(x, t, i, o = {}) { const g = o.g ?? FL, bob = 4 * Math.abs(Math.sin(t * 3 + i)); push(); translate(x, g - bob); rotate(o.rot || 0); translate(-x, -(g - bob)); DES.outsider(x, g - bob, (o.s || 34) * 1.6, t, { view: o.view || 'side', turn: o.turn ?? .08 * Math.sin(t * .7 + i) }); pop(); }
   const tJ = T0('J'), tLast = C('p013.1:the last plunger snapped shut'), tBoom = C('p013.1:Instantly the vast energies');
   // out of the white, outside: the transport blowing apart while the narrator says so (the white held 8 s when it
   // waited for K)
@@ -130,15 +130,17 @@
       // the Outsiders crawling through (G), one close; the one struck tumbling end over end (H), unhurt; spaced so each
       // reads on its own, in the lamps' light (the third, swaying to 1230, walked into the close one's arm at 1400)
       lamp(950, 520); lamp(1650, 620);
-      for (let i = 0; i < 3; i++) crawler(620 + i * 220 + 45 * Math.sin(t * .05 + i), t, i, { s: 30 });
+      // depth: the three on the far floor, the close one on the near, so his size reads as nearness, not as a giant
+      const FAR = FL - 50, NEAR = FL + 50;
+      for (let i = 0; i < 3; i++) crawler(620 + i * 220 + 45 * Math.sin(t * .05 + i), t, i, { s: 30, g: FAR });
       const tum = seg(t, tTumble - .6, tTumble + 4), struck = t > tHit;
       const sx = struck ? lerp(1400, 1820, ease(tum)) : 1400, rot = struck ? -TAU * 1.5 * easeOut(tum) : 0, lift = struck ? 160 * Math.sin(Math.PI * tum) : 0;
-      push(); translate(sx, FL - 80 - lift); rotate(rot); translate(-sx, -(FL - 80 - lift));
-      DES.outsider(sx, FL - lift, 66, t, { view: struck && tum < 1 ? 'side' : 'front', turn: steps(t, [[0, 0], [C('p010.1:Their eyes projected'), .33, 1.2], [C('p010.1:capable of movement'), .66, 1.2], [C('p010.1:and there were three'), 1, 1.2]]) });
+      push(); translate(sx, NEAR - 80 - lift); rotate(rot); translate(-sx, -(NEAR - 80 - lift));
+      DES.outsider(sx, NEAR - lift, 66, t, { view: struck && tum < 1 ? 'side' : 'front', turn: steps(t, [[0, 0], [C('p010.1:Their eyes projected'), .33, 1.2], [C('p010.1:capable of movement'), .66, 1.2], [C('p010.1:and there were three'), 1, 1.2]]) });
       pop();
       if (t > tHit && t < tHit + .3) glow(1360, 720, 120, NRG.white, 1 - seg(t, tHit, tHit + .3));
       // the others clustering round him (I)
-      for (let i = 0; i < 2; i++) if (t > tI - 1) crawler(lerp(1100, i ? 2080 : 1560, ez(t, tI - 1, tI + 4)), t, 5 + i, { s: 32 });
+      for (let i = 0; i < 2; i++) if (t > tI - 1) crawler(lerp(1100, i ? 2080 : 1560, ez(t, tI - 1, tI + 4)), t, 5 + i, { s: 32, g: NEAR - 25 });
       // J: the power room: the plungers over their sockets, the ship-brain shattered; the signals; the plungers shutting
       boilSeed('brain'); wash(ellPts(3720, 520, 120, 90, 18, 30), 3, { ink: true, sw: .7 }); for (let k = 0; k < 6; k++) inkLine([[3720, 520], [3720 + Math.cos(k) * 120, 520 + Math.sin(k) * 90]], .6, INK);
       const tSig = C('p013.1:relayed the control signals');
