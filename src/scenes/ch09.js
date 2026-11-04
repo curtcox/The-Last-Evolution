@@ -43,18 +43,26 @@
     return [p[0] + gust, p[1] + gust * .4];
   }
   function sphereGold(t, r) {   // irregular, golden, a deep violet halo; the ruby flame within
-    glow(...ORB, r * 2.2, NRG.violet, .35); glow(...ORB, r * 1.6, '#9A6AE0', .25);
+    glow(...ORB, r * 2.6, NRG.violet, .55); glow(...ORB, r * 1.9, '#9A6AE0', .4);   // the halo, wide of the gold so it shows
     for (let i = 0; i < 7; i++) { const a = i / 7 * TAU + t * .4, rr = r * (.5 + .25 * Math.sin(t * 1.3 + i * 2)); glow(ORB[0] + Math.cos(a) * rr * .9, ORB[1] + Math.sin(a) * rr * .7, r * 1.1, NRG.violet, .16); }
-    boilSeed('gold'); paint(ellPts(...ORB, r * .8, r * .72, 20, r * .12), { wash: '#E0A030', washOp: 160, ink: null }); glow(...ORB, r * 1.5, '#FFB830', .6); glow(...ORB, r * .9, NRG.gold, .7); glow(ORB[0] + r * .1 * Math.sin(t), ORB[1], r * .35, '#FFE6A0', .5);
+    boilSeed('gold'); paint(ellPts(...ORB, r * .8, r * .72, 20, r * .12), { wash: '#E0A030', washOp: 160, ink: null }); glow(...ORB, r * 1.15, '#FFB830', .55); glow(...ORB, r * .9, NRG.gold, .7); glow(ORB[0] + r * .1 * Math.sin(t), ORB[1], r * .35, '#FFE6A0', .5);
     for (let i = 0; i < 5; i++) { const a = i * 1.3 + t * .7; glow(ORB[0] + Math.cos(a) * r * .55, ORB[1] + Math.sin(a) * r * .45, r * .55, NRG.gold, .4); }
+  }
+  // the ruby flame within the sphere: a teardrop of deep red, flickering, waxing and waning with k (0..1)
+  function rubyFlame(t, r, k) {
+    const h = r * (.3 + .25 * k), w = h * .45, P = [];
+    for (let i = 0; i <= 24; i++) { const q = i / 24 * TAU, tip = (1 - Math.cos(q)) / 2; P.push([ORB[0] + w * Math.sin(q) * Math.sin(q / 2) + .3 * w * Math.sin(t * 9) * (1 - tip), ORB[1] + h * .35 - h * Math.cos(q)]); }
+    glow(ORB[0], ORB[1] + h * .1, h * 1.6, NRG.ruby, .35 + .35 * k);
+    boilSeed('ruby' + Math.floor(t * 12)); paint(P, { wash: '#B01828', washOp: 150 + 90 * k, fill: '#D02436', fillOp: 120 + 80 * k, bleed: .05, ink: null });
+    glow(ORB[0], ORB[1] + h * .3, h * .45, '#FF7A6A', .4 + .4 * k);
   }
   function scene(t) {
     HALFTONE = .25;
     const tC = T0('C'), tE = T0('E'), tG = T0('G'), tH = T0('H'), tL = T0('L'), tM = T0('M'), tP = T0('P');
     const c = cam(t, [[0, tt => [PX - 100, lerp(560, 420, ez(tt, T0('B'), tC)), lerp(.75, .85, ez(tt, T0('B'), tC))]], [tC, [PX + 40, RG - 380, 2.2], 2], [tD, tt => [PX - 200, lerp(500, 200, ez(tt, tD, tE)), lerp(1.2, .7, ez(tt, tD, tE))], 3],
       [tE, [PX, ORB[1] + 120, 1.1], 3], [tF, [PX - 100, ORB[1] + 200, .9], 3], [tG, [PX - 160, ORB[1] + 60, 1.5], 2.5], [tH, [PX, ORB[1], 2.2], 2.5], [tI, tt => [PX - 200, lerp(ORB[1] + 200, 300, ez(tt, tI, tGone)), lerp(1.4, .6, ez(tt, tStab, tRed + 2))], 2],
-      [tJ, tt => [lerp(PX, PX + 400, ez(tt, tJ, tK)), 400, .65], 3], [tK, tt => [lerp(350, PX, ez(tt, C('p123.1:Roal and Trest appeared') + 2, tGold + 2)), lerp(800, ORB[1] + 200, ez(tt, tGold - 1, tGold + 3)), lerp(1.2, .9, ez(tt, tK, tGold + 3))], 3],
-      [tL, [PX, ORB[1], 1.8], 2.5], [tM, tt => [PX - 100, lerp(ORB[1], 600, ez(tt, tRuby + 2, tN)), lerp(1.8, .8, ez(tt, tRuby + 2, tN))], 3], [tN, [PX, 200, .7], 2.5], [tP, [PX, -100, .7], 2]]);
+      [tJ, tt => [lerp(PX, PX + 400, ez(tt, tJ, tK)), 400, .65], 3], [tK, tt => [lerp(350, PX, ez(tt, C('p123.1:Roal and Trest appeared') + 2, tGold + 2)), lerp(800, ORB[1] + 200, ez(tt, tGold - 1, tGold + 3)), lerp(1.2, .9, ez(tt, tK, tGold + 3)) * lerp(1, 1.5, ez(tt, tGold + 3, tL))], 3],   // then a slow push in to the sphere
+      [tL, tt => [PX, ORB[1], lerp(1.5, 1.9, ez(tt, tL, tM))], 2.5], [tM, tt => [PX - 100, lerp(ORB[1], 300, ez(tt, tRuby + 2, tN)), lerp(1.9, .7, ez(tt, tRuby + 2, lerp(tRuby + 2, tN, .5)))], 3], [tN, [PX, 200, .7], 2.5], [tP, [PX, -100, .7], 2]]);
     camBegin(...c);
     const { st } = world(t);
     // E: the ball of white force at the storm's centre, jerking at the lightning's touch
@@ -87,7 +95,7 @@
       // the dome again, in front: the men are inside it until they walk out
       if (domePart(t) < 1) for (let i = 0; i < 2; i++) DES.blackDome(-300, RG + 60, 320 * (1 - domePart(t) * .9), t); }   // twice: one coat lets the figures show through
     if (gk > 0) { sphereGold(t, 90 * gk * (1 + grow)); thoughtRings(...ORB, t, T0('L'), C('p125.1$'), { r1: 600, col: NRG.gold }); thoughtRings(...ORB, t, T0('O'), C('p128.1$'), { r1: 600, col: NRG.gold });
-      const ruby = t > tRuby ? Math.max(0, Math.sin((t - tRuby) * 2.2)) * (1 - ez(t, tN - 1, tN)) : 0; if (ruby > 0 || (t > tRuby && t < tN)) { glow(...ORB, 22, NRG.ruby, .5 + .5 * ruby); glow(...ORB, 900, '#FFC780', .3 * ruby); } }
+      const ruby = t > tRuby ? Math.max(0, Math.sin((t - tRuby) * 2.2)) * (1 - ez(t, tN - 1, tN)) : 0; if (ruby > 0 || (t > tRuby && t < tN)) { rubyFlame(t, 90 * gk * (1 + grow), ruby); glow(...ORB, 900, '#FFC780', .3 * ruby); } }
     if (t > tVanish - .1 && t < tVanish + .6) { const q = seg(t, tVanish - .1, tVanish + .6); beam(ORB[0], ORB[1], ORB[0] + 400, -3000, 60 * (1 - q), 10, NRG.gold, 1, { washOp: 60 * (1 - q), a: 1 - q, splash: false }); }
     camEnd();
   }
