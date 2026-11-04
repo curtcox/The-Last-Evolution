@@ -22,16 +22,18 @@
     const rp = {}, rh = listen(t, rp, TO_ROAL, 1), rl = rh + gesture(t, rp, ROALC); if (rp.up) { rp.up = lerp(rp.up, .12 + (rp.up - .12) * .55, dream); rp.fore = lerp(rp.fore, .3 + (rp.fore - .3) * .6, dream); }
     const roal = stander(t, ROALX, G, 44, [], { who: 'roal', key: 'roal', seed: 3, flip: false, look: steps(t, [[0, .5], [T0('C'), .1], [T0('D'), .2], [T0('I'), 0]]) + rl + nod(t, TO_ROAL), pose: rp, talk: talk(t, 'roal'), lid: dream * .45 });
     const tp = {}, th = listen(t, tp, TO_TREST, 2), tl = th + gesture(t, tp, TRESTC);
-    stander(t, TRESTX, G + 10, 46, [], { who: 'trest', key: 'trest', seed: 7, flip: t < T0('I'), look: .1 + tl + nod(t, TO_TREST), pose: tp, talk: talk(t, 'trest') });
-    push(); translate(f2x, f2y); scale(go > .02 ? 1 : -1, 1); translate(-f2x, -f2y); DES.f2(f2x, f2y + 2.4 * FS, FS, t, { view: 'side' }); pop();
+    const trest = stander(t, TRESTX, G + 10, 46, [], { who: 'trest', key: 'trest', seed: 7, flip: t < T0('I'), look: .1 + tl + nod(t, TO_TREST), pose: tp, talk: talk(t, 'trest') });
     camEnd();
     shade(-100, H + 100, .62, .78, PULP.black);
     camBegin(...c);
+    // over the shade: F-2 (silver, as in the hall) and the two faces in the screens' light
+    push(); translate(f2x, f2y); scale(go > .02 ? 1 : -1, 1); translate(-f2x, -f2y); DES.f2(f2x, f2y + 2.4 * FS, FS, t, { view: 'side' }); pop();
+    for (const p of [roal, trest]) p.redrawHead();
     // the light: the violet canopy overhead, the screens' glow, F-2's own
     for (let i = 0; i < 9; i++) { const a = Math.PI + (.15 + i / 8 * .7) * Math.PI; glow(1000 + Math.cos(a) * 900, 1100 + Math.sin(a) * 800, 260, VIOLET, .3); }
     for (let c2 = 0; c2 < 4; c2++) { const x = 560 + c2 * 240, y = 420; boilSeed('ds' + c2); paint(rectPts(x, y, 180, 120), { wash: '#BFC8D2', washOp: 140 + 50 * hash(c2 + Math.floor(t * 3)), ink: INK, sw: .6 }); glow(x + 90, y + 60, 120, '#DDE6F0', .3); }
     glow(f2x, f2y, 90, '#E6EEFF', .25 + .3 * talk(t, 'f2'));
-    glow(roal.head[0], roal.head[1], 70, '#DDE6F0', .2);
+    for (const p of [roal, trest]) glow(...p.head, 70, '#DDE6F0', .2);
     dreamCurl(roal.head[0] + 20, roal.head[1] - 40, K(t, 'p103.1', 'p103.1$'), t, .5 * (1 - ez(t, T0('E') - 1.5, T0('E'))), 'rc');
     thoughtRings(f2x, f2y, t, T0('I'), C('p111.1$'), { r1: 420 });
     camEnd();
