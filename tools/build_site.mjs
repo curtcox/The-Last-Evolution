@@ -94,15 +94,16 @@ claim with its source.</li>
 <li><a href="review/"><b>See how it's made</b></a>, round by round: every choice, and why.</li>
 </ul>
 <div class="status"><h2>In production</h2>
-<p>The whole film is drafted. Now its people and machines are being acted and painted to their finished designs, chapter
-by chapter, starting with chapter 5; then it's rendered in full and posted to YouTube with captions.
+<p>The whole film is drafted, and every chapter has been acted and painted to its finished designs. Now each draft is
+being watched and fixed until it meets its bar; then the film is rendered in full and posted to YouTube with captions.
 <a href="review/quality/">Where it stands</a> shows every chapter and page against the bar it has to meet, and
 <a href="${REPO}/blob/main/PLAN.md">the plan</a> says how.</p></div>
 `);
 
 const body = blocks.map(b => {
   switch (b.kind) {
-    case 'masthead': return `<p class="kicker">${esc(b.text)}</p>`;
+    // the reprint's own header ('A Classic Reprint from …, 1932') would pair 1961's words with 1932's date: say both plainly
+    case 'masthead': return `<p class="kicker">From <i>Amazing Stories</i>, August 1932, in the text of its March 1961 reprint</p>`;
     case 'title': return `<h1>${typeset(b.text)}</h1>`;
     case 'byline': return `<p class="byline">${esc(b.text)}</p>`;
     case 'para': return `<p id="${b.id}"><a class="pid" href="#${b.id}" aria-label="paragraph ${+b.id.slice(1)}">${+b.id.slice(1)}</a>${emend(b, typeset(b.text))}</p>`;
