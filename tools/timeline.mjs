@@ -144,7 +144,10 @@ const g = [
   fx.length ? '[voice]asplit=2[vmix][vkey]' : '[voice]anull[vmix]',
   ...fx.map((f, i) => `[${parts.length + i}:a]atrim=0:${f.dur.toFixed(3)},asetpts=PTS-STARTPTS,${fmt},afade=t=in:d=${f.fi || .01},afade=t=out:st=${Math.max(0, f.dur - (f.fo || .01)).toFixed(3)}:d=${f.fo || .01},volume=${f.gain}dB,adelay=${ms(f.at)}:all=1[f${i}]`),
   fx.length ? `${fx.map((_, i) => `[f${i}]`).join('')}amix=inputs=${fx.length}:normalize=0,apad=whole_dur=${duration}[fx];[fx][vkey]sidechaincompress=threshold=0.02:ratio=5:attack=30:release=500[fxd];[vmix][fxd]amix=inputs=2:normalize=0[pre]` : '[vmix]anull[pre]',
-  `[pre]atrim=0:${duration}[out]`,
+  // a room tone under everything, far below the voice: without it each pause with no cue fell to digital silence,
+  // which reads as a dropout (brown noise, low-passed, about -55 dBFS: under loudness's gate, so it doesn't move the -14)
+  `anoisesrc=d=${duration}:c=brown:r=48000:a=0.004:s=${n + 1},lowpass=f=600,${fmt}[room]`,
+  `[pre][room]amix=inputs=2:normalize=0,atrim=0:${duration}[out]`,
 ];
 execFileSync('ffmpeg', ['-v', 'error', '-y', ...inputs, '-filter_complex', g.join(';'), '-map', '[out]', `${OUT}/pre.wav`], { maxBuffer: 1e8 });
 // loudness in two passes: measure, then a linear gain to -14 LUFS (with the limiter only where a peak needs it). The
