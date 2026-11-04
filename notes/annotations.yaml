@@ -24,9 +24,9 @@ notes:
     kind: text
     title: The title page
     body: >-
-      The story first ran in *Amazing Stories* for August 1932, on pages 414 to 421. The line over the title, "A Classic
-      Reprint", is from March 1961, when *Amazing* printed it again. That reprint is the text Project Gutenberg
-      transcribed, and the film reads it with 16 readings from 1932 put back.
+      The line over the title names the issue the story first ran in: *Amazing Stories* for August 1932, pages 414 to
+      421. The words come from March 1961, when *Amazing* printed it again as "A Classic Reprint". That reprint is the
+      text Project Gutenberg transcribed, and the film reads it with 16 readings from 1932 put back.
     more: history.md#the-reprint-and-the-text-we-use
   - id: narrator
     on: in memory I am still close to the Center of Rulers

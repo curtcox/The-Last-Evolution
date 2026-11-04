@@ -184,7 +184,7 @@
     });
   }
 
-  function film(t) {
+  function scenes(t) {
     const tB = T0('B'), tC = T0('C'), tD = T0('D'), tF = T0('F'), tK = T0('K'), tL = T0('L'), tO = T0('O');
     if (t < tB) return page(t, 'The Outsiders', 'Then came the Outsiders. Whence they came, neither machine nor man ever learned.', tB, { soak: '#1C1814' });
     if (t < tC - .6) return approach(t);
@@ -200,5 +200,17 @@
     if (t < tO + .6) return dissolve(seg(t, tO - .6, tO + .6), () => ship2(t), () => voidWorld(t));
     voidWorld(t); closing(t);
   }
+  // the story's own footnotes (PLAN.md §5), lettered at the foot of the frame for 5 s from the word that carries the mark
+  const NOTES = [['p007.1:kill-ads', '1', ['Kilad\u2014unit introduced by the machines. Based on the duodecimal system, similarly introduced, as',
+    'more logical, and more readily used. Thus we would have said 1728 kilads, about 1/2 mile.']],
+    ['p008.1:thousand units', '2', ['One unit was equal to one earth-gravity.']]];
+  function footnotes(t) {
+    for (const [at, n, lines] of NOTES) { const t0 = C(at) + .5, a = win(t, t0, t0 + 5, .4, .6); if (a <= 0) continue;
+      const y = H - 60 - 34 * lines.length;
+      rule(120, y - 26, 220, '#EFE6D2', 1.2);
+      letter(n, 128, y - 6, 18, '#EFE6D2', { screen: true, align: 'left', font: `700 18px ${SERIF}`, alpha: a });
+      lines.forEach((l, i) => letter(l, 148, y + i * 34, 26, '#EFE6D2', { screen: true, align: 'left', font: `26px ${SERIF}`, alpha: a })); }
+  }
+  function film(t) { scenes(t); footnotes(t); }
   shots([[0, film]]);
 })();
