@@ -128,9 +128,9 @@
       P.slice(1, 6).forEach(([x, y], i) => glow(x, y, 40, HEAT, .4 + .2 * Math.sin(t * 2 + i)));
       for (let i = 0; i < 40; i++) glow(-300 + hash(i) * 380, CEIL + hash(i * 3) * 700, 4, '#F4EEDC', .5);
       // the Outsiders crawling through (G), one close; the one struck tumbling end over end (H), unhurt; spaced so each
-      // reads on its own, in the lamps' light
+      // reads on its own, in the lamps' light (the third, swaying to 1230, walked into the close one's arm at 1400)
       lamp(950, 520); lamp(1650, 620);
-      for (let i = 0; i < 3; i++) crawler(700 + i * 230 + 70 * Math.sin(t * .05 + i), t, i, { s: 30 });
+      for (let i = 0; i < 3; i++) crawler(620 + i * 220 + 45 * Math.sin(t * .05 + i), t, i, { s: 30 });
       const tum = seg(t, tTumble - .6, tTumble + 4), struck = t > tHit;
       const sx = struck ? lerp(1400, 1820, ease(tum)) : 1400, rot = struck ? -TAU * 1.5 * easeOut(tum) : 0, lift = struck ? 160 * Math.sin(Math.PI * tum) : 0;
       push(); translate(sx, FL - 80 - lift); rotate(rot); translate(-sx, -(FL - 80 - lift));

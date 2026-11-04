@@ -332,6 +332,11 @@ items:
     note: "On the new draft: the leap's 'vague result' (3:00-3:25) was a wash that dried into a hard grey lump like a stone; in K (3:28-3:42) the companion machine led the man by 270 px and passed through the crate-hander parked at 1650, the crate man stood inside a talking pair at 2300 and stroller 5 ended against it. Fixed in code: a soft haze for the result; the hander rises back to work; the crate man walks on to 2900; strollers stop short; the machine keeps pace at the man's shoulder. Stills at 3:03-3:40 confirm; awaits the chapter's re-render."
     title: "Chapter 1: the close loses its pair, and the leap lands as a blot"
     when: 2026-11-04 09:06
+  find.ch02-close:
+    state: open
+    note: "On the new draft, 1:48-2:06 (G): the third crawler swayed to x 1230 and stood in the close Outsider's arm at 1400, same floor line, so they were drawn into each other. Fixed: the three crawl at 620/840/1060 with a ±45 sway. Stills 1:30-2:26 show four clear figures; awaits the re-render."
+    title: "Chapter 2: a crawler walks into the close Outsider's arm"
+    when: 2026-11-04 09:08
 fresh:
   - when: 2026-11-02 23:47
     found: 13
