@@ -62,13 +62,15 @@
     HALFTONE = .2;
     const z = lerp(1.4, 1.5, seg(t, T0('K'), T1('K')));
     camBegin(960, 560, z);
-    stander(t, 860, G, 44, [], { who: 'roal', key: 'roalw', seed: 3, flip: true, look: .35 });
-    stander(t, 1060, G + 10, 46, [], { who: 'trest', key: 'trestw', seed: 7, flip: true, look: .3 });
+    const faces = [stander(t, 860, G, 44, [], { who: 'roal', key: 'roalw', seed: 3, flip: true, look: .35 }),
+      stander(t, 1060, G + 10, 46, [], { who: 'trest', key: 'trestw', seed: 7, flip: true, look: .3 })];
     camEnd();
     shade(-100, H + 100, .82, .9, PULP.black);   // black all round; only the screens give light
     camBegin(960, 560, z);
     for (let c = 0; c < 5; c++) { const x = 420 + c * 230, y = 240; boilSeed('ws' + c); paint(rectPts(x, y, 190, 140), { wash: '#BFC8D2', washOp: 150 + 60 * hash(c + Math.floor(t * 3)), ink: INK, sw: .6 }); glow(x + 95, y + 70, 120, '#DDE6F0', .35); }
-    glow(860, G - 250, 60, '#DDE6F0', .2); glow(1060, G - 250, 60, '#DDE6F0', .2);
+    // the faces in the screens' light: drawn again over the dark (under the shade, with glows of .2 at a guessed height,
+    // they were dark grey)
+    for (const p of faces) { p.redrawHead(); glow(...p.head, 70, '#DDE6F0', .2); }
     camEnd();
   }
 

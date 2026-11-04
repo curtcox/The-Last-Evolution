@@ -347,6 +347,11 @@ items:
     note: "On the new draft, 3:07-3:31 (I): the motes' green rays into the giants, the chapter's turn, drew 2-10 px wide at wash 40 and read as faint grey threads. Widened to 5-20 px at 110 with a green glow where each strikes; stills 3:14-3:28 show them plainly; awaits the re-render."
     title: "Chapter 6: the motes' turned death ray barely shows"
     when: 2026-11-04 09:17
+  find.ch07-faces:
+    state: open
+    note: "On the new draft, 2:55-3:04 (K, 'the two faces in their light'): the shade that blacks the dome's inside covered the men, and glows of .2 at a guessed height left their faces dark grey. personSide now returns redrawHead(); the scene draws both faces again over the dark, in the screens' light. Stills at 2:59 and 3:03 show lit faces on dark figures; awaits the re-render."
+    title: "Chapter 7: inside the dome the two faces are dark"
+    when: 2026-11-04 09:19
 fresh:
   - when: 2026-11-02 23:47
     found: 13

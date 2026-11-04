@@ -468,10 +468,11 @@ const DES = {};
     inkLine([front[2], back[2]], 1.1, INK);                                                                               // the belt
     // the standing collar, rising behind the head
     wash([add(neck, P.torso - Math.PI / 2, .22), add(add(neck, P.torso, .78), P.torso - Math.PI / 2, .45), add(add(neck, P.torso, .82), P.torso - Math.PI / 2, .26), add(neck, P.torso + Math.PI / 2, .14)], dk(cloth + 1), { ink: true, sw: .45 });
-    const hc = add(neck, P.torso + (o.look || 0) * .3, .52);
-    DES.headSide(hc[0], hc[1], u, who, { rot: (P.torso - (o.look || 0) * .5) * f, flip: o.flip, lid: o.lid, hide: o.shieldFace, smile: o.smile, talk: o.talk });
+    const hc = add(neck, P.torso + (o.look || 0) * .3, .52), headO = { rot: (P.torso - (o.look || 0) * .5) * f, flip: o.flip, lid: o.lid, hide: o.shieldFace, smile: o.smile, talk: o.talk };
+    DES.headSide(hc[0], hc[1], u, who, headO);
     const hand = arm(P.up, P.fore, cloth, 1);
-    return { hip, sh, knee, ank, hand, head: hc };
+    // the head again on its own (a scene that darkens the figure can draw the face back in its light)
+    return { hip, sh, knee, ank, hand, head: hc, redrawHead: () => DES.headSide(hc[0], hc[1], u, who, headO) };
   };
   // A head in profile facing right, u px to the head's height, rotated by o.rot about its centre.
   DES.headSide = (x, y, u, who = 'roal', o = {}) => {
