@@ -146,11 +146,15 @@
         else { boilSeed('fallen' + i); wash(rrPts(x - 54 * (i % 2 ? -1 : 1) - 50, y - 14, 100, 20, 8), 2, { ink: true, sw: .4 }); } }
       // P: the transports come down on the far ground between the downed ships, behind them (at 600-1600 one landed on the
       // wreck and each sat on a standing machine's head, reading as one thing)
-      if (t >= tP) for (let i = 0; i < 2; i++) { const k = ez(t, tP + i * 1.5, tP + 4 + i * 1.5); DES.mote(i ? 1330 : 790, lerp(-300, LG - 205, k), 150, t, { ang: Math.PI, drive: k < 1 }); }
+      // 'scores of great transports': two near, three smaller on the farther ground, coming down one after another
+      if (t >= tP) for (const [i, x, sz, y] of [[0, 790, 150, LG - 205], [1, 1330, 150, LG - 205], [2, 260, 90, LG - 245], [3, 1060, 90, LG - 250], [4, 1780, 90, LG - 240]]) {
+        const k = ez(t, tP + i * 1.5, tP + 4 + i * 1.5); if (k > 0) DES.mote(x, lerp(-300, y, k), sz, t, { ang: Math.PI, drive: k < 1 }); }
       // the ships overhead and their great diffused beams
-      const settle = ez(t, tK, tK + 6), fall2 = i => t > tO ? ez(t, tO + 2 + i * 1.6, tO + 3.5 + i * 1.6) : 0;
+      const settle = ez(t, tK, tK + 6), tDown = C('p029.1:The last of the Outsiders was down');
+      const fall2 = i => { const a = lerp(tO + 2, tDown - 1.4, i / 2); return t > tO ? ez(t, a, a + 1.5) : 0; };   // the last lands on its line
       for (let i = 0; i < 3; i++) { const sx = 500 + i * 560, sy = lerp(-400, 120 + 40 * i, settle) + fall2(i) * (LG - 60 - 120 - 40 * i), rot = fall2(i) * (i % 2 ? .4 : -.3);
         push(); translate(sx, sy); rotate(rot); translate(-sx, -sy); ship(sx, sy, 520, t, -1, { d: 2 }); pop();
+        if (fall2(i) >= 1) for (let k = 0; k < 4; k++) { const q = frac(t * .12 + k / 4 + hash(i)); boilSeed('smoke' + i + k); paint(ellPts(sx + 60 * Math.sin(k + t * .2) + q * 80, sy - 40 - q * 420, 50 + 90 * q, 30 + 50 * q, 12, 20), { wash: D[4], washOp: 170 * (1 - q) * Math.min(1, q * 6), ink: null, bleed: .3 }); }   // the wrecks smoulder
         if (green > 0 && fall2(i) < .1) { boilSeed('gb' + i); paint([[sx - 60, sy + 50], [sx + 60, sy + 50], [sx + 420, LG + 400], [sx - 420, LG + 400]], { wash: GREEN, washOp: 60 * green, ink: null }); glow(sx, LG + 100, 500, GREEN, .35 * green); } }
       if (green > 0) shade(-200, 1400, .0, .18 * green, GREEN);
       // the machines, untouched, standing nearer than the downed ships (drawn first, the hulls covered them)
