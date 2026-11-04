@@ -544,9 +544,88 @@ items:
     note: "On the re-rendered draft (this round's fixes in). The coda: the machines go out to the stars, F-2 sets down the record on metal, and the narrator's closing words leave the reader to believe as they will. The film ends where the story does."
     at: ch11-draft-6a576c20.mp4
     when: 2026-11-04 20:09
+  find.ch09-roal-pop:
+    state: open
+    note: "Fresh eyes, 3:21-3:28: Roal's stander waits at its start (x 100) from tK, visible before 'Roal and Trest appeared', vanishes at ~205 s and walks back in from the edge; the dome they leave isn't seen and they cross the rock, not past it. Major."
+    title: "Chapter 9: Roal pops out and back in at the dome"
+    when: 2026-11-04 20:26
+  find.ch04-label:
+    state: open
+    note: "Fresh eyes, 3:50-5:16: builder i=3 carries the MX-3401 label (ch04.js:83); it stands behind the new machine, so the label prints across F-1's hull at its birth. Major."
+    title: "Chapter 4: the new machine reads as MX-3401"
+    when: 2026-11-04 20:26
+  find.listeners:
+    state: open
+    note: "Fresh eyes: ch08 2:43-3:37 (F-2's 54 s 'Last of Men' speech) and ch07 1:37-2:01: the two men are stock-still in profile (frame difference ~2 grey levels, the boil); 'Roal turned' (ch07 89.7 s) has no turn. Fails acting at the emotional peak. Major."
+    title: "Chapters 7 and 8: Roal and Trest stand still through F-2's speeches"
+    when: 2026-11-04 20:26
+  find.watch-notes:
+    state: open
+    note: "Fresh eyes: the 0:00 note says the line over the title is 'A Classic Reprint' (1961), but the title page reads 'AMAZING STORIES · August, 1932'; the 5:10 and 5:39 notes speak of the story's footnotes on screen, but chapter 2 draws none. Major."
+    title: The film page's notes describe things the film doesn't show
+    when: 2026-11-04 20:26
+  find.ch09-ruby:
+    state: open
+    note: "Fresh eyes, 4:07-4:30: no red at 253-257 s, the sphere a flat yellow blob, the violet halo a faint pink rim; at 262 s the sphere is cut by the frame top; 3:30-3:56 a near-static sphere for 26 s. Minor."
+    title: "Chapter 9: the ruby flame doesn't read"
+    when: 2026-11-04 20:26
+  find.silence:
+    state: open
+    note: "Fresh eyes: about a dozen ~2 s spans of true silence (peak -inf), e.g. ch02 3:33, ch05 5:00, ch05 2:00/2:28/5:55/8:19, ch06 4:11, ch07 1:28, ch09 2:53, ch11 1:07/1:34; room tone and music stop dead and can sound like a dropout. Minor."
+    title: "Sound: the mix drops to digital silence for ~2 s at holds"
+    when: 2026-11-04 20:26
+  find.ch03-fifty:
+    state: open
+    note: "Fresh eyes, 4:46-5:06: all ships down by ~4:50, 'The last of the Outsiders was down' at 4:58 then a static ~15 s; three ships for 'the remaining fifty'; two or three capsules for 'scores of great transports'. Minor."
+    title: "Chapter 3: the last Outsiders fall before the line, and fifty read as three"
+    when: 2026-11-04 20:26
+  find.ch04-ray:
+    state: open
+    note: "Fresh eyes, 0:21-0:38: the ray-machine hovers touching Roal's head and its pink beam starts behind his shoulder. Minor."
+    title: "Chapter 4: the ray seems to come from Roal"
+    when: 2026-11-04 20:26
+  find.ch01-curve:
+    state: open
+    note: "Fresh eyes, 1:49-1:58: as the camera eases in the curve's peak is cut by the frame top and the rest is empty dark. Minor."
+    title: "Chapter 1: the population curve's peak leaves the frame"
+    when: 2026-11-04 20:26
+  find.ch02-giant:
+    state: open
+    note: "Fresh eyes, 1:28-2:08: drawn twice the size on the same floor line, so he reads as bigger, not nearer. Minor."
+    title: "Chapter 2: the close Outsider reads as a giant"
+    when: 2026-11-04 20:26
+  find.ch07-continuity:
+    state: open
+    note: "Fresh eyes: 2:45-2:52 the dome is inside the hall, from 3:05 on open ground under black sky; at 2:02 an arriving machine passes over F-2; F-2 pale silver in ch07, dark slate in ch08. Minor."
+    title: "Chapter 7: the dome leaves the hall between shots; F-2 hidden and recoloured"
+    when: 2026-11-04 20:26
+  find.ch10-inside-out:
+    state: open
+    note: "Fresh eyes, 1:28-2:32: a tilt and a bend for ~6 s, then a near-static 64 s shot. Minor."
+    title: "Chapter 10: 'turned inside out, curves were lines' is undersold"
+    when: 2026-11-04 20:26
+  find.site-wording:
+    state: open
+    note: "Fresh eyes: home says acting 'chapter by chapter, starting with chapter 5' and the film banner 'the acting is being redone chapter by chapter', now done; the Read masthead pairs 'A Classic Reprint' (1961) with 'August, 1932'; 'Curt Cox … What stayed with them' reads oddly. Minor."
+    title: "Site: stale status wording and the Read masthead's date"
+    when: 2026-11-04 20:26
+  find.ch11-end:
+    state: open
+    note: "Fresh eyes, 2:20 on: the camera push takes the running head off the top and leaves its rule orphaned. Nit."
+    title: "Chapter 11: the last push cuts the running head"
+    when: 2026-11-04 20:26
+  find.ch08-dark:
+    state: open
+    note: "Fresh eyes: the figures are dark grey on dark brown (mean luma ~72); they read, but faint on a phone. Nit."
+    title: "Chapter 8: low contrast inside the dome"
+    when: 2026-11-04 20:26
 fresh:
   - when: 2026-11-02 23:47
     found: 13
     note: "Site only (the drafts were mid-render): a subagent with no context reviewed every page and its screenshots against the rubric. 1 major (the scorecard page spoke to makers), 7 minor, 5 nits; all fixed and recorded as find.* items. A film round follows when the drafts are done."
     state: 2a2f1d1970ac
-since_fresh: 120
+  - when: 2026-11-04 20:26
+    found: 15
+    note: "Film and site: a subagent with no context watched all twelve drafts (whole-chapter sheets, close sheets at key beats, loudness, transcripts) and checked every page and the phone screenshots. 4 major (ch09 Roal pops, ch04 label on F-1, still listeners in ch07/ch08, film-page notes describing what isn't shown), 9 minor, 2 nits; recorded as find.* items."
+    state: 7624f1141953
+since_fresh: 0

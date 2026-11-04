@@ -2,12 +2,16 @@
  "summary": {
   "pass": 120,
   "stale": 0,
-  "open": 0,
+  "open": 15,
   "curt": 7,
   "later": 3
  },
  "satisfied": false,
- "next": [],
+ "next": [
+  "Chapter 9: Roal pops out and back in at the dome",
+  "Chapter 4: the new machine reads as MX-3401",
+  "Chapters 7 and 8: Roal and Trest stand still through F-2's speeches"
+ ],
  "checks": {
   "verbatim": {
    "state": "pass",
@@ -42,8 +46,8 @@
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
-   "state": "stale",
-   "detail": "review/quality/index.html (404)"
+   "state": "pass",
+   "detail": "33 pages live, the deploy is this commit"
   }
  },
  "curt": [
@@ -951,6 +955,111 @@
    "title": "Chapter 7: inside the dome the two faces are dark",
    "state": "pass",
    "note": "On the re-rendered draft, 2:55-3:04 (K): under the five lit screens both men's faces are redrawn above the shade and glow pale, the two faces in their light; the bodies stay dark."
+  },
+  {
+   "id": "find.ch09-roal-pop",
+   "area": "finding",
+   "title": "Chapter 9: Roal pops out and back in at the dome",
+   "state": "open",
+   "note": "Fresh eyes, 3:21-3:28: Roal's stander waits at its start (x 100) from tK, visible before 'Roal and Trest appeared', vanishes at ~205 s and walks back in from the edge; the dome they leave isn't seen and they cross the rock, not past it. Major."
+  },
+  {
+   "id": "find.ch04-label",
+   "area": "finding",
+   "title": "Chapter 4: the new machine reads as MX-3401",
+   "state": "open",
+   "note": "Fresh eyes, 3:50-5:16: builder i=3 carries the MX-3401 label (ch04.js:83); it stands behind the new machine, so the label prints across F-1's hull at its birth. Major."
+  },
+  {
+   "id": "find.listeners",
+   "area": "finding",
+   "title": "Chapters 7 and 8: Roal and Trest stand still through F-2's speeches",
+   "state": "open",
+   "note": "Fresh eyes: ch08 2:43-3:37 (F-2's 54 s 'Last of Men' speech) and ch07 1:37-2:01: the two men are stock-still in profile (frame difference ~2 grey levels, the boil); 'Roal turned' (ch07 89.7 s) has no turn. Fails acting at the emotional peak. Major."
+  },
+  {
+   "id": "find.watch-notes",
+   "area": "finding",
+   "title": "The film page's notes describe things the film doesn't show",
+   "state": "open",
+   "note": "Fresh eyes: the 0:00 note says the line over the title is 'A Classic Reprint' (1961), but the title page reads 'AMAZING STORIES · August, 1932'; the 5:10 and 5:39 notes speak of the story's footnotes on screen, but chapter 2 draws none. Major."
+  },
+  {
+   "id": "find.ch09-ruby",
+   "area": "finding",
+   "title": "Chapter 9: the ruby flame doesn't read",
+   "state": "open",
+   "note": "Fresh eyes, 4:07-4:30: no red at 253-257 s, the sphere a flat yellow blob, the violet halo a faint pink rim; at 262 s the sphere is cut by the frame top; 3:30-3:56 a near-static sphere for 26 s. Minor."
+  },
+  {
+   "id": "find.silence",
+   "area": "finding",
+   "title": "Sound: the mix drops to digital silence for ~2 s at holds",
+   "state": "open",
+   "note": "Fresh eyes: about a dozen ~2 s spans of true silence (peak -inf), e.g. ch02 3:33, ch05 5:00, ch05 2:00/2:28/5:55/8:19, ch06 4:11, ch07 1:28, ch09 2:53, ch11 1:07/1:34; room tone and music stop dead and can sound like a dropout. Minor."
+  },
+  {
+   "id": "find.ch03-fifty",
+   "area": "finding",
+   "title": "Chapter 3: the last Outsiders fall before the line, and fifty read as three",
+   "state": "open",
+   "note": "Fresh eyes, 4:46-5:06: all ships down by ~4:50, 'The last of the Outsiders was down' at 4:58 then a static ~15 s; three ships for 'the remaining fifty'; two or three capsules for 'scores of great transports'. Minor."
+  },
+  {
+   "id": "find.ch04-ray",
+   "area": "finding",
+   "title": "Chapter 4: the ray seems to come from Roal",
+   "state": "open",
+   "note": "Fresh eyes, 0:21-0:38: the ray-machine hovers touching Roal's head and its pink beam starts behind his shoulder. Minor."
+  },
+  {
+   "id": "find.ch01-curve",
+   "area": "finding",
+   "title": "Chapter 1: the population curve's peak leaves the frame",
+   "state": "open",
+   "note": "Fresh eyes, 1:49-1:58: as the camera eases in the curve's peak is cut by the frame top and the rest is empty dark. Minor."
+  },
+  {
+   "id": "find.ch02-giant",
+   "area": "finding",
+   "title": "Chapter 2: the close Outsider reads as a giant",
+   "state": "open",
+   "note": "Fresh eyes, 1:28-2:08: drawn twice the size on the same floor line, so he reads as bigger, not nearer. Minor."
+  },
+  {
+   "id": "find.ch07-continuity",
+   "area": "finding",
+   "title": "Chapter 7: the dome leaves the hall between shots; F-2 hidden and recoloured",
+   "state": "open",
+   "note": "Fresh eyes: 2:45-2:52 the dome is inside the hall, from 3:05 on open ground under black sky; at 2:02 an arriving machine passes over F-2; F-2 pale silver in ch07, dark slate in ch08. Minor."
+  },
+  {
+   "id": "find.ch10-inside-out",
+   "area": "finding",
+   "title": "Chapter 10: 'turned inside out, curves were lines' is undersold",
+   "state": "open",
+   "note": "Fresh eyes, 1:28-2:32: a tilt and a bend for ~6 s, then a near-static 64 s shot. Minor."
+  },
+  {
+   "id": "find.site-wording",
+   "area": "finding",
+   "title": "Site: stale status wording and the Read masthead's date",
+   "state": "open",
+   "note": "Fresh eyes: home says acting 'chapter by chapter, starting with chapter 5' and the film banner 'the acting is being redone chapter by chapter', now done; the Read masthead pairs 'A Classic Reprint' (1961) with 'August, 1932'; 'Curt Cox … What stayed with them' reads oddly. Minor."
+  },
+  {
+   "id": "find.ch11-end",
+   "area": "finding",
+   "title": "Chapter 11: the last push cuts the running head",
+   "state": "open",
+   "note": "Fresh eyes, 2:20 on: the camera push takes the running head off the top and leaves its rule orphaned. Nit."
+  },
+  {
+   "id": "find.ch08-dark",
+   "area": "finding",
+   "title": "Chapter 8: low contrast inside the dome",
+   "state": "open",
+   "note": "Fresh eyes: the figures are dark grey on dark brown (mean luma ~72); they read, but faint on a phone. Nit."
   }
  ],
  "fresh": [
