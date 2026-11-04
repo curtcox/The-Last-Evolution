@@ -13,6 +13,8 @@
 
   // the storm: 0..1; up from D, gone at F; up again at J, gone at K
   const storm = t => Math.max(win(t, tDark - 1, tF, 3, 2), win(t, tJ, tK + 1, 3, 2));
+  // the dome parts once the men are out of it (they walk from inside, hidden, from 'appeared')
+  const domePart = t => ez(t, C('p123.1:Roal and Trest appeared') + 1.5, C('p123.1:Roal and Trest appeared') + 4.5);
   const dawn = t => ez(t, C('p122.1:red glory of the sun') - 3, tK + 6);
   function world(t) {
     const st = storm(t), dw = dawn(t);
@@ -25,7 +27,7 @@
     stillSeed('plane9'); wash(rectPts(PX - 700, RG + 30, 1400, 30), 1, { ink: true, sw: .5 });
     for (let i = 0; i < 16; i++) { const x = -1600 + i * 300 + 60 * hash(i); if (Math.abs(x - PX) < 750) continue; stillSeed('rk9' + i); const h = 60 + 120 * hash(i * 3); wash([[x - 70, RG + 50], [x - 30, RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]], 2 + (i % 2), { ink: true, sw: .5 }); }
     // the dome at the left; it parts for the men at K
-    const part = ez(t, C('p123.1:Roal and Trest appeared') - 2, C('p123.1:Roal and Trest appeared') + 2);
+    const part = domePart(t);
     if (part < 1) DES.blackDome(-300, RG + 60, 320 * (1 - part * .9), t);
     // the plant: its beat (B), its lens (C)
     const beat = t > T0('B') ? Math.max(0, Math.sin((t - T0('B')) * (2 + 6 * seg(t, T0('B'), T0('B') + 5)) )) * win(t, T0('B'), C('p115.1:Then it quieted') + 1, .2, 1) : 0;
@@ -51,7 +53,7 @@
     const tC = T0('C'), tE = T0('E'), tG = T0('G'), tH = T0('H'), tL = T0('L'), tM = T0('M'), tP = T0('P');
     const c = cam(t, [[0, tt => [PX - 100, lerp(560, 420, ez(tt, T0('B'), tC)), lerp(.75, .85, ez(tt, T0('B'), tC))]], [tC, [PX + 40, RG - 380, 2.2], 2], [tD, tt => [PX - 200, lerp(500, 200, ez(tt, tD, tE)), lerp(1.2, .7, ez(tt, tD, tE))], 3],
       [tE, [PX, ORB[1] + 120, 1.1], 3], [tF, [PX - 100, ORB[1] + 200, .9], 3], [tG, [PX - 160, ORB[1] + 60, 1.5], 2.5], [tH, [PX, ORB[1], 2.2], 2.5], [tI, tt => [PX - 200, lerp(ORB[1] + 200, 300, ez(tt, tI, tGone)), lerp(1.4, .6, ez(tt, tStab, tRed + 2))], 2],
-      [tJ, tt => [lerp(PX, PX + 400, ez(tt, tJ, tK)), 400, .65], 3], [tK, tt => [lerp(PX - 300, PX, ez(tt, tK, tGold + 2)), lerp(800, ORB[1] + 200, ez(tt, tGold - 1, tGold + 3)), lerp(1.2, .9, ez(tt, tK, tGold + 3))], 3],
+      [tJ, tt => [lerp(PX, PX + 400, ez(tt, tJ, tK)), 400, .65], 3], [tK, tt => [lerp(350, PX, ez(tt, C('p123.1:Roal and Trest appeared') + 2, tGold + 2)), lerp(800, ORB[1] + 200, ez(tt, tGold - 1, tGold + 3)), lerp(1.2, .9, ez(tt, tK, tGold + 3))], 3],
       [tL, [PX, ORB[1], 1.8], 2.5], [tM, tt => [PX - 100, lerp(ORB[1], 600, ez(tt, tRuby + 2, tN)), lerp(1.8, .8, ez(tt, tRuby + 2, tN))], 3], [tN, [PX, 200, .7], 2.5], [tP, [PX, -100, .7], 2]]);
     camBegin(...c);
     const { st } = world(t);
@@ -80,8 +82,10 @@
     const gk = ez(t, tGold - 1, tGold + 2) * (t < tVanish ? 1 : 0), grow = ez(t, C('p126.1') + 2, tN + 1);
     // they stand looking up at the sphere; when the ruby flame warms them, their hands lift toward it, open
     const warm = win(t, tRuby + .5, tN - .5, 1.5, 1), wp = k => ({ up: lerp(.12, .9, k), fore: lerp(.3, 1.7, k) });
-    if (t > tK) { stander(t, 100, RG + 40, 30, [[C('p123.1:Roal and Trest appeared'), C('p123.1:Roal and Trest appeared') + 5, 0, 420]], { who: 'roal', key: 'roal9', seed: 3, look: .6, pose: wp(warm) });
-      stander(t, 0, RG + 46, 31, [[C('p123.1:Roal and Trest appeared') + .4, C('p123.1:Roal and Trest appeared') + 5.6, -120, 540]], { who: 'trest', key: 'trest9', seed: 7, look: .55, pose: wp(.8 * win(t, tRuby + 1.2, tN - .5, 1.5, 1)) }); }
+    if (t > tK) { stander(t, -260, RG + 40, 30, [[C('p123.1:Roal and Trest appeared'), C('p123.1:Roal and Trest appeared') + 5, -260, 420]], { who: 'roal', key: 'roal9', seed: 3, look: .6, pose: wp(warm) });
+      stander(t, -340, RG + 46, 31, [[C('p123.1:Roal and Trest appeared') + .4, C('p123.1:Roal and Trest appeared') + 5.6, -340, 540]], { who: 'trest', key: 'trest9', seed: 7, look: .55, pose: wp(.8 * win(t, tRuby + 1.2, tN - .5, 1.5, 1)) });
+      // the dome again, in front: the men are inside it until they walk out
+      if (domePart(t) < 1) for (let i = 0; i < 2; i++) DES.blackDome(-300, RG + 60, 320 * (1 - domePart(t) * .9), t); }   // twice: one coat lets the figures show through
     if (gk > 0) { sphereGold(t, 90 * gk * (1 + grow)); thoughtRings(...ORB, t, T0('L'), C('p125.1$'), { r1: 600, col: NRG.gold }); thoughtRings(...ORB, t, T0('O'), C('p128.1$'), { r1: 600, col: NRG.gold });
       const ruby = t > tRuby ? Math.max(0, Math.sin((t - tRuby) * 2.2)) * (1 - ez(t, tN - 1, tN)) : 0; if (ruby > 0 || (t > tRuby && t < tN)) { glow(...ORB, 22, NRG.ruby, .5 + .5 * ruby); glow(...ORB, 900, '#FFC780', .3 * ruby); } }
     if (t > tVanish - .1 && t < tVanish + .6) { const q = seg(t, tVanish - .1, tVanish + .6); beam(ORB[0], ORB[1], ORB[0] + 400, -3000, 60 * (1 - q), 10, NRG.gold, 1, { washOp: 60 * (1 - q), a: 1 - q, splash: false }); }
