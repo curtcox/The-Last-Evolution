@@ -56,15 +56,17 @@
     for (let k = 0; k < 24; k++) inkLine([[-800 + k * 260, G - 30], [-1500 + k * 340, G + 600]], .35, D[2]);
     workers(t);
     // C: a machine hands a man a crate; he walks on with it
-    const tHand = C('p003.1:Man lived on the products'), hk = ez(t, tHand - 1, tHand + 1.5), walkOff = [[tHand + 1.8, tHand + 7, 1500, 2300]];
-    DES.machine(1650, G - 10 - 20 * hk, 18, t, { arms: 3, d: 1, hover: 2, face: -.6, label: null });
+    // then the machine rises back to its work, and the man walks on to clear ground between the pairs and the runners
+    // (stopping at 2300 he stood inside a talking pair for the rest of the chapter, and the machine stayed in K's path)
+    const tHand = C('p003.1:Man lived on the products'), hk = ez(t, tHand - 1, tHand + 1.5), walkOff = [[tHand + 1.8, tHand + 12, 1500, 2900]], rise = ez(t, tHand + 3, tHand + 9);
+    if (rise < 1) DES.machine(1650 + 300 * rise, G - 10 - 20 * hk - 1100 * rise, 18, t, { arms: 3, d: 1, hover: 2, face: -.6, label: null });
     const man = stander(t, 1450, G, 26, walkOff, { seed: 2, key: 'cman', pose: hk > .5 ? { up: .9, fore: 1.6 } : {} });
     boilSeed('hcrate'); const cx = hk < 1 ? lerp(1610, 1470, hk) : man.hand[0], cy = hk < 1 ? lerp(G - 120, G - 95, hk) : man.hand[1];
     wash(rrPts(cx - 22, cy - 18, 44, 34, 4), 2, { ink: true, sw: .5 });
     // people at ease: pairs in talk, the talking passing back and forth (the speaker's hand works, the other listens and
     // nods), and strollers crossing the plaza
     for (let i = 0; i < 7; i++) { const x = 300 + i * 330 + 40 * hash(i), y = G + 20 + 30 * hash(i * 3), s = 22 + 5 * hash(i * 5); if (Math.abs(x - 1500) < 200) continue;
-      if (i % 3 === 2) { stander(t, x - 200, y, s, [[26 + 4 * i, 52 + 4 * i, x - 200, x + 260]], { seed: 40 + i, key: 'st' + i, look: .05, flip: i % 2 > 0 }); continue; }
+      if (i % 3 === 2) { stander(t, x - 200, y, s, [[26 + 4 * i, 52 + 4 * i, x - 200, x + 130]], { seed: 40 + i, key: 'st' + i, look: .05, flip: i % 2 > 0 }); continue; }
       const turn = Math.floor((t + 8 * hash(i * 9)) / 4.5) % 2;
       for (const sd of [0, 1]) { const g = (turn === sd) * (.5 + .5 * Math.sin(t * (1.6 + .3 * hash(i)) + i));
         stander(t, x + (sd ? 30 : -30) * s / 24, y, s, [], { seed: 50 + i * 2 + sd, key: 'pr' + i + sd, flip: sd > 0, look: turn === sd ? .05 : -.06 * Math.max(0, Math.sin(t * .8 + i)),
@@ -81,9 +83,10 @@
   }
   // K: a man and a machine walking side by side toward the towers
   function together(t) {
-    const t0 = T0('K'), x = lerp(900, 2400, ease(seg(t, t0 - .5, DUR + 2) * .9));
-    stander(t, x - 20, G + 60, 30, [[t0 - 1, DUR + 3, 900, 2300]], { seed: 31, key: 'walker', look: .2 });
-    DES.machine(lerp(1050, 2450, ease(seg(t, t0 - .5, DUR + 2) * .9)) + 120, G + 50, 18, t, { arms: 3, d: 1, hover: 2 + .2 * wob(t, .9), face: -.3, label: null });
+    // the machine keeps pace at the man's shoulder, a step behind in depth (it led him by 270 px and didn't read as a pair)
+    const t0 = T0('K'), x = lerp(900, 2300, ease(seg(t, t0 - 1, DUR + 3)));
+    DES.machine(x + 75, G + 35, 18, t, { arms: 3, d: 1, hover: 2 + .2 * wob(t, .9), face: -.3, label: null });
+    stander(t, 900, G + 60, 30, [[t0 - 1, DUR + 3, 900, 2300]], { seed: 31, key: 'walker', look: .2 });
   }
   function city(t) {
     HALFTONE = .3;
@@ -158,7 +161,8 @@
         if (t > tI) { boilSeed('headI'); DES.headSide(HEAD[0], HEAD[1], 240, 'citizen'); DES.lens(LENS[0] + 40, LENS[1], 80, { lit: .5 }); glow(...GOAL, 30, NRG.white, .8 * ik); }
         const tLeap = C('p005.1:sees the future result vaguely'), leap = ez(t, tLeap - .5, tLeap + 1.2), tMarch = C('p005.1:but the machine always reached');
         if (leap > 0) { const P = []; for (let q = 0; q <= leap; q += .05) P.push([lerp(HEAD[0] + 130, GOAL[0] - 60, q), lerp(HEAD[1] - 60, GOAL[1] - 90, q) - 260 * Math.sin(Math.PI * q)]);
-          if (P.length > 2) { boilSeed('leap'); wash(ribbon(P, 18, 30), 0, { op: .6 }); } if (leap >= 1) { boilSeed('blur'); wash(ellPts(GOAL[0] - 60, GOAL[1] - 90, 70, 50, 20, 10), 0, { op: .5 }); } }
+          if (P.length > 2) { boilSeed('leap'); wash(ribbon(P, 18, 30), 0, { op: .6 }); } // the result seen vaguely: a soft haze where the leap lands (a wash dried there into a hard-edged blot, like a stone)
+          if (leap >= 1) { const h = seg(t, tLeap + 1.2, tLeap + 2.5); glow(GOAL[0] - 60, GOAL[1] - 90, 80, PALE, .3 * h); glow(GOAL[0] - 40, GOAL[1] - 80, 45, PALE, .25 * h); } }
         const march = [[LENS[0] + 130, LENS[1]]]; for (let i = 0; i < 10; i++) { const [x, y] = march.at(-1); march.push([x + (GOAL[0] - LENS[0] - 130) / 10, y], [x + (GOAL[0] - LENS[0] - 130) / 10, y - (LENS[1] - GOAL[1]) / 10]); }
         ruled(march, seg(t, tI + 2, tMarch + 1.5), PALE, 1.1);
         if (t > tMarch + 1.5) glow(...GOAL, 60, NRG.white, .7 * (1 - seg(t, tMarch + 1.5, tMarch + 3)));

@@ -327,6 +327,11 @@ items:
     note: "New draft, ch10 2:14-2:22: the flagship's hull hides the ships behind it; no ribs or bands show through."
     title: "The Outsiders' ships are see-through: a ship behind shows through one in front"
     when: 2026-11-04 09:00
+  find.ch01-close:
+    state: open
+    note: "On the new draft: the leap's 'vague result' (3:00-3:25) was a wash that dried into a hard grey lump like a stone; in K (3:28-3:42) the companion machine led the man by 270 px and passed through the crate-hander parked at 1650, the crate man stood inside a talking pair at 2300 and stroller 5 ended against it. Fixed in code: a soft haze for the result; the hander rises back to work; the crate man walks on to 2900; strollers stop short; the machine keeps pace at the man's shoulder. Stills at 3:03-3:40 confirm; awaits the chapter's re-render."
+    title: "Chapter 1: the close loses its pair, and the leap lands as a blot"
+    when: 2026-11-04 09:06
 fresh:
   - when: 2026-11-02 23:47
     found: 13
