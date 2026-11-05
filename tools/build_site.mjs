@@ -103,7 +103,7 @@ being watched and fixed until it meets its bar; then the film is rendered in ful
 const body = blocks.map(b => {
   switch (b.kind) {
     // the reprint's own header ('A Classic Reprint from …, 1932') would pair 1961's words with 1932's date: say both plainly
-    case 'masthead': return `<p class="kicker">From <i>Amazing Stories</i>, August 1932, in the text of its March 1961 reprint</p>`;
+    case 'masthead': return `<p class="kicker">From <i>Amazing Stories</i>, August 1932 · the text of its 1961 reprint</p>`;
     case 'title': return `<h1>${typeset(b.text)}</h1>`;
     case 'byline': return `<p class="byline">${esc(b.text)}</p>`;
     case 'para': return `<p id="${b.id}"><a class="pid" href="#${b.id}" aria-label="paragraph ${+b.id.slice(1)}">${+b.id.slice(1)}</a>${emend(b, typeset(b.text))}</p>`;
@@ -218,7 +218,7 @@ main { max-width: 38em; margin: 0 auto; padding: 1.5em 16px 3em; }
 h1 { font: 3.2em/1 "Bebas Neue", Impact, sans-serif; letter-spacing: .03em; margin: .2em 0 .1em; }
 h1 i { font-style: normal; }
 h2 { font: 1.6em/1.1 "Bebas Neue", Impact, sans-serif; letter-spacing: .04em; margin: 1.6em 0 .3em; }
-.kicker { font-variant: small-caps; letter-spacing: .06em; color: var(--ink2); margin: 0; }
+.kicker { font-variant: small-caps; letter-spacing: .06em; color: var(--ink2); margin: 0; text-align: left; hyphens: none; }
 .byline { font-variant: small-caps; letter-spacing: .05em; margin: 0 0 1.5em; }
 .lede { font-size: 1.15em; }
 .ways { padding-left: 1.2em; } .ways li { margin: 0 0 .7em; }
