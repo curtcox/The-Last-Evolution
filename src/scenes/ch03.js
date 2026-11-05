@@ -29,7 +29,7 @@
   function hallMachines(t, near) {
     const ring = ez(t, T0('S') - 2, T0('S') + 3), flare = Math.max(win(t, C('p018.1:so Roal was believed'), C('p018.1:so Roal was believed') + 3, .3, 2), win(t, T0('V'), T0('V') + 2.5, .2, 2));
     for (let i = 0; i < 10; i++) { const z = Math.sin(i / 10 * TAU), isNear = z > 0; if (isNear !== near) continue;
-      const tx = 1000 + Math.cos(i / 10 * TAU) * 900, ty = 420 + z * 60, rx = 1060 + Math.cos(i / 10 * TAU) * (near ? 1000 : 620), ry = G - 40 + z * 60;
+      const tx = 1000 + Math.cos(i / 10 * TAU) * 900 + (isNear ? 0 : 120), ty = 420 + z * 60, rx = 1060 + Math.cos(i / 10 * TAU) * (near ? 1000 : 620), ry = G - 40 + z * 60;   // the far tier half a step over: each near one had a twin straight behind it
       const x = lerp(tx, rx, ring) + 8 * wob(t, .07, i), g = lerp(ty + 160, ry, ring), s = (near ? 22 : 15) + 3 * hash(i), look = clamp((ROAL - x) / 600, -1, 1);
       const m = DES.machine(x, g, s, t, { arms: 3, d: 1 + (i % 3), hover: lerp(3, 1.6, ring), face: look * .9, lit: .3 + .7 * flare, label: null });
       if (flare > 0) glow(m.eye[0], m.eye[1], s * 2.5, NRG.white, .5 * flare); }
@@ -67,7 +67,8 @@
       // E: the weapons taking shape on the floor
       const ew = win(t, tE - 1, T1('E') + .5, 1, 1);
       if (ew > 0) { for (let i = 0; i < 6; i++) { const x = 400 + i * 220, made = ez(t, tE + i * .8, tE + i * .8 + 2), up = ez(t, tE + 6 + i * .5, tE + 9 + i * .5);
-          if (made > 0) { glow(x, G - 80, 60, '#CFE0FF', .4 * (1 - made)); DES.mote(x, G - 70 - 200 * up, 150 * made, t, { ang: -Math.PI / 2 * up, drive: up > .1 }); } }
+          const off = ez(t, tE + 10 + i * .45, tE + 11.5 + i * .45);   // level as they rise, then away one after another (turned upright, hanging in a row, they read as lamps)
+          if (made > 0 && off < 1) { glow(x, G - 80, 60, '#CFE0FF', .4 * (1 - made)); DES.mote(x - 1800 * off * off, G - 70 - 200 * up, 150 * made, t, { ang: 0, drive: up > .1 }); } }
         const hot = K(t, 'p019.1:a highly effective induction-heat ray', 'p019.1:in some small machines');
         DES.machine(1450, G, 18, t, { arms: 2, nozzles: true, d: 2, label: null }); if (hot > 0) glow(1450, G - 60, 40 + 40 * hot, HEAT, .7 * Math.sin(Math.PI * hot)); }
       const roal = people(t);
