@@ -236,7 +236,7 @@
     const dark = steps(t, [[0, .85], [T0('H'), .8], [T0('M'), .89], [T0('N'), .84], [T0('P'), .86], [T0('Q'), .93], [T0('R'), .91], [T0('S'), .89], [T0('U'), .9], [T0('W'), .78], [T0('X'), .55], [tSnap, .82, .25],
       [T0('Y'), .91], [T0('Z'), .9], [T0('AA'), .91], [T0('AC'), .93], [T0('AE'), .92], [T0('AF'), .87], [T0('AG'), .9], [T0('AH'), .87], [T0('AI'), .86]]) + .35 * up - .4 * sym.lit - .3 * roar;
     const lit = Math.max(steps(t, [[0, 0], [tSudden, .4, .3], [T0('S') + 2, .1], [T0('W'), .8, .3], [tSnap, .1, .3], [T0('Z'), .3], [T0('AE'), .15], [T0('AK'), .3]]), sym.lit, roar);
-    DES.lab(-300, -150, 2520, 1300, t, { couch: false });
+    DES.lab(-300, -150, 2520, 1300, t, { couch: false, ext: 1200 });
     night(dark);
     tierRing(t, lit, false);
     DES.couch(COUCH.x, G, COUCH.s);

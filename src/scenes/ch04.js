@@ -108,7 +108,7 @@
       [T0('Q'), tt => [FX, lerp(420, 560, ez(tt, T0('Q'), tR)), lerp(1.8, 1.05, ez(tt, T0('Q'), tR))], 3], [tR, tt => [FX, lerp(620, 480, ez(tt, tR, T0('S'))), lerp(1.4, 2.2, ez(tt, tR, T0('S')))], 3],
       [T0('S'), tt => [FX, lerp(480, 600, ez(tt, T0('S'), DUR)), lerp(2.2, 1.2, ez(tt, T0('S'), DUR))], 2]]);
     withCam(c, () => {
-      DES.lab(-300, -150, 2520, 1300, t, { couch: false });
+      DES.lab(-300, -150, 2520, 1300, t, { couch: false, ext: 1200 });
       screens(t);
       // Q: a day: the hall darkens to night and comes back
       const night = Math.sin(Math.PI * seg(t, T0('Q'), tR)) * .75;

@@ -101,7 +101,7 @@
   function blank(t) {
     HALFTONE = .3;
     camBegin(800, 330, 1.6);
-    DES.lab(-300, -150, 2520, 1300, t, { couch: false });
+    DES.lab(-300, -150, 2520, 1300, t, { couch: false, ext: 1200 });
     for (let r = 0; r < 3; r++) for (let c = 0; c < 7; c++) { const x = 103 + c * 252, y = 110 + r * 208; boilSeed('bl' + c + r); paint(rectPts(x + 6, y + 6, 202, 157), { wash: '#1C1814', washOp: 235, ink: null }); }
     stillSeed('night'); paint(rectPts(-500, -400, 3000, 1900), { wash: PULP.black, washOp: 120, ink: null });
     camEnd();

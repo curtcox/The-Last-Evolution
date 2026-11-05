@@ -22,7 +22,7 @@
   const sixAt = (t, i) => { const ring = ez(t, T0('H') - .5, T0('H') + 3), enter = ez(t, tSix - 1 + i * .3, tSix + 5 + i * .3), k = i < 3 ? 2 - i : i - 3, side = i < 3 ? -1 : 1;
     return [lerp(lerp(2500, 1700 + i * 60, enter), MID + side * (230 + k * 150), ring), lerp(lerp(600, 760, enter), G + 30 - 15 * k, ring)]; };
   function inHall(t, o = {}) {
-    DES.lab(-300, -150, 2520, 1300, t, { couch: false });
+    DES.lab(-300, -150, 2520, 1300, t, { couch: false, ext: 1200 });
     stillSeed('night'); paint(rectPts(-500, -400, 3000, 1900), { wash: PULP.black, washOp: 175, fill: '#1C2028', fillOp: 60, ink: null });
     screens(t);
     // F-2 floats in and stops before the men

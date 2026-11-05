@@ -398,11 +398,14 @@ const DES = {};
   // changing screens": tall fluted piers, a gallery, a wall of screens, and the floor where the machines are built.
   DES.lab = (x0, y0, w, h, t = 0, o = {}) => {
     boilSeed('lab');
-    wash(rectPts(x0, y0, w, h), 3, { op: .9 });
+    // o.ext: the wall and floor washes carried that far past the set on every side, so a close or low camera never
+    // finds the paper beyond it (in chapter 4 a 60 px band of bare paper showed under the floor)
+    const e = o.ext || 0;
+    wash(rectPts(x0 - e, y0 - e, w + 2 * e, h + e), 3, { op: .9 });
     const fy = y0 + h * .78;
-    wash([[x0, fy], [x0 + w, fy], [x0 + w, y0 + h], [x0, y0 + h]], 2, { op: 1.1 });
+    wash([[x0 - e, fy], [x0 + w + e, fy], [x0 + w + e, y0 + h + e], [x0 - e, y0 + h + e]], 2, { op: 1.1 });
     for (let k = 0; k < 9; k++) inkLine([[x0 + w / 2 + (k - 4) * w * .06, fy], [x0 + w / 2 + (k - 4) * w * .16, y0 + h]], .4, D[3]);   // the floor's lines run to us
-    inkLine([[x0, fy], [x0 + w, fy]], .8, INK);
+    inkLine([[x0 - e, fy], [x0 + w + e, fy]], .8, INK);
     // the wall of screens, each a pale rectangle of light: some flashing, one dark
     for (let r = 0; r < 3; r++) for (let c = 0; c < 7; c++) { const sx = x0 + w * .16 + c * w * .1, sy = y0 + h * .2 + r * h * .16, k = hash(c * 7 + r * 3 + Math.floor(t * 2));
       wash(rectPts(sx, sy, w * .085, h * .13), 4, { ink: true, sw: .5 }); if (k > .15) paint(rectPts(sx + 4, sy + 4, w * .085 - 8, h * .13 - 8), { wash: '#F1E9D3', washOp: 120 + 100 * k, ink: null }); }

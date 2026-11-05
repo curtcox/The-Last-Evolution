@@ -55,7 +55,7 @@
       [T0('S'), tt => [lerp(1000, 980, ez(tt, T0('S'), T0('U'))), lerp(720, 790, ez(tt, T0('S'), T0('U'))), lerp(1.2, 1.8, ez(tt, T0('S'), T0('U')))], 3],
       [T0('V') - .3, [980, 760, 2.2], .6], [T0('W'), tt => [lerp(980, 960, ez(tt, T0('W'), DUR)), 600, lerp(2.2, 1.1, ez(tt, T0('W'), DUR))], 2]]);
     withCam(c, () => {
-      DES.lab(-300, -150, 2520, 1300, t, { couch: false });
+      DES.lab(-300, -150, 2520, 1300, t, { couch: false, ext: 1200 });
       screens(t);
       hallMachines(t, false);
       // E: the weapons taking shape on the floor
