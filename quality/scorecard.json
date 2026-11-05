@@ -1,13 +1,17 @@
 {
  "summary": {
-  "pass": 151,
+  "pass": 150,
   "stale": 0,
-  "open": 0,
+  "open": 15,
   "curt": 7,
   "later": 3
  },
  "satisfied": false,
- "next": [],
+ "next": [
+  "Chapter 6: the Outsiders inside the giant don't feed the machines",
+  "Chapter 2: the investigator is never hidden",
+  "Chapter 2: the bluish beam is neither visible nor blue"
+ ],
  "checks": {
   "verbatim": {
    "state": "pass",
@@ -42,7 +46,7 @@
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
-   "state": "pass",
+   "state": "stale",
    "detail": "33 pages live (not compared: HEAD has changes not pushed)"
   }
  },
@@ -899,9 +903,9 @@
   {
    "id": "find.ch06-feeders",
    "area": "finding",
-   "title": "Chapter 6: the Outsiders feeding the generators stand in overlapped pairs",
-   "state": "pass",
-   "note": "New draft, 1:52-2:08: the four feeders stand as two clear pairs flanking the generator, a gap between each."
+   "title": "Chapter 6: the Outsiders inside the giant don't feed the machines",
+   "state": "open",
+   "note": "Fresh eyes 3, 1:33-2:18 (F): four identical Outsiders rock in place, two with their backs to the generator, none touching it, under 'worked and slaved, as they fed giant machines'; the film page's note says they feed the generators. Minor."
   },
   {
    "id": "find.ch07-canopy",
@@ -1168,6 +1172,104 @@
    "title": "The phone check doesn't test the real 404 page",
    "state": "pass",
    "note": "On the re-rendered draft: out/quality/phone/404.jpg now shows the site's faces and a one-line nav; the check waits for document.fonts.ready."
+  },
+  {
+   "id": "find.ch02-hide",
+   "area": "finding",
+   "title": "Chapter 2: the investigator is never hidden",
+   "state": "open",
+   "note": "Fresh eyes 3, 3:57-4:36 (M): it sits in plain view on the middle Outsider's head in the spotlight while 'they searched for the tiny bit of metal... for some time'; HIDE=[2520,600] is above the middle searcher and the pipes are dim bars behind them. Major."
+  },
+  {
+   "id": "find.ch02-beam",
+   "area": "finding",
+   "title": "Chapter 2: the bluish beam is neither visible nor blue",
+   "state": "open",
+   "note": "Fresh eyes 3, 4:45 (N): a faint run of near-white dots (washOp 60) from the Outsider's head, not the projector rod, which points away; the film page's note at 9:27 points at it. Major."
+  },
+  {
+   "id": "find.ch02-struck",
+   "area": "finding",
+   "title": "Chapter 2: the struck Outsider stays upside down",
+   "state": "open",
+   "note": "Fresh eyes 3, 2:21-2:39: he lands inverted and lies still through 'despite the blow, he was not hurt' and the next shot; the board has him right himself. Minor."
+  },
+  {
+   "id": "find.ch09-leap",
+   "area": "finding",
+   "title": "Chapter 9: the red beam catches the sphere before it leaps",
+   "state": "open",
+   "note": "Fresh eyes 3, 2:27: the beam has the sphere by 2:27.5, ~4 s before 'The sphere leaped forward--the beam caught it' (2:31-2:36), and the sphere already sits on the plant, so 'leaped' shows nothing. Minor."
+  },
+  {
+   "id": "find.ch09-twice",
+   "area": "finding",
+   "title": "Chapter 9: 'twice its former size' doesn't land",
+   "state": "open",
+   "note": "Fresh eyes 3, 4:29-4:44: the sphere grows gradually from 3:29 to 4:41 and the camera widens at ~4:20, so its screen size barely changes on the word. Minor."
+  },
+  {
+   "id": "find.dome-continuity",
+   "area": "finding",
+   "title": "Chapters 7 and 8: the six machines, the violet box and a screen vanish between shots",
+   "state": "open",
+   "note": "Fresh eyes 3: the six inside the dome at ch07 2:45-2:52 are gone from the cut-away at 3:16 and all of ch08; the violet-beam machine disappears between chapters; 5 screens inside the dome in ch07, 4 in ch08; and at 2:45-2:52 the dome's edge cuts through the end machines. Minor."
+  },
+  {
+   "id": "find.ch03-loop",
+   "area": "finding",
+   "title": "Chapter 3: Roal's long speech reads as a loop, and the ring isn't there",
+   "state": "open",
+   "note": "Fresh eyes 3, 6:19-7:53: Roal alternates the same forward-arm pose and Trest the same hand-to-chest; the board's 'machines round him in a ring' is a static two-shot. Minor."
+  },
+  {
+   "id": "find.small-lettering",
+   "area": "finding",
+   "title": "Chapters 4 and 5: machine lettering too small for a phone",
+   "state": "open",
+   "note": "Fresh eyes 3: X-5638, X-6349, X-6621 ~9 px in a 1280 frame (~3 px on a phone); C-R-U-1's gold lettering, the beat itself at ch05 7:50, ~10 px. Minor."
+  },
+  {
+   "id": "find.ch01-still",
+   "area": "finding",
+   "title": "Chapter 1: the crate man stands against a tower; the mock battle stands still",
+   "state": "open",
+   "note": "Fresh eyes 3, 0:53-1:33: a man holding a crate pressed to a tower ~45 s, the crate merging into it; the mock-battle lines stand arms out, unmoving, ~25 s until the flashes at 1:27. Minor."
+  },
+  {
+   "id": "find.round6-pages",
+   "area": "finding",
+   "title": "Site: the Round 6 pages describe an older film",
+   "state": "open",
+   "note": "Fresh eyes 3: review/round6/film.html plays the current drafts but says 'the figures' acting is simple, and the painting is a blocking pass'; the chapter pages say 'the first pass with motion... over the same sound as the storyboard'; the home page and scorecard say every chapter is acted and painted. Minor."
+  },
+  {
+   "id": "find.ch11-page",
+   "area": "finding",
+   "title": "Chapter 11: the lettered page stops short of the voice, and its note misdescribes it",
+   "state": "open",
+   "note": "Fresh eyes 3, 1:37-1:57: the page ends '...is no fiction.' while the voice goes on '..., and it seems I must so say'; the film page's note says the text is 'set in the magazine's columns', but it's one centred column. Nit."
+  },
+  {
+   "id": "find.ch03-capsules",
+   "area": "finding",
+   "title": "Chapter 3: the torpedoes read as lamps; machines overlap in pairs",
+   "state": "open",
+   "note": "Fresh eyes 3, 1:05-1:30 the finished torpedoes are upright glass capsules in a row, reading as lamps; 3:50 floating machines overlap in pairs and look drawn twice. Nit."
+  },
+  {
+   "id": "find.ch02-fn-time",
+   "area": "finding",
+   "title": "Chapter 2: footnote 1 is up too briefly to read",
+   "state": "open",
+   "note": "Fresh eyes 3, 0:30-0:35: 33 words fully visible for ~4.5 s. Nit."
+  },
+  {
+   "id": "find.read-kicker",
+   "area": "finding",
+   "title": "Read: the kicker calls it the 1961 text, though 16 readings are from 1932",
+   "state": "open",
+   "note": "Fresh eyes 3: 'the text of its 1961 reprint', but the page restores 16 readings from 1932. Nit."
   }
  ],
  "fresh": [
