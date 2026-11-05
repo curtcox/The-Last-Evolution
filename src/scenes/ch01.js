@@ -62,8 +62,9 @@
     workers(t);
     // C: a machine hands a man a crate; he walks on with it
     // then the machine rises back to its work, and the man walks on to clear ground between the pairs and the runners
-    // (stopping at 2300 he stood inside a talking pair for the rest of the chapter, and the machine stayed in K's path)
-    const tHand = C('p003.1:Man lived on the products'), hk = ez(t, tHand - 1, tHand + 1.5), walkOff = [[tHand + 1.8, tHand + 12, 1500, 2900]], rise = ez(t, tHand + 3, tHand + 9);
+    // (stopping at 2300 he stood inside a talking pair for the rest of the chapter, and the machine stayed in K's path;
+    // walking right to 2900 he stood pressed to a tower through D: he goes off left, out of the later shots)
+    const tHand = C('p003.1:Man lived on the products'), hk = ez(t, tHand - 1, tHand + 1.5), walkOff = [[tHand + 1.8, tHand + 12, 1450, 300]], rise = ez(t, tHand + 3, tHand + 9);
     if (rise < 1) DES.machine(1650 + 300 * rise, G - 10 - 20 * hk - 1100 * rise, 18, t, { arms: 3, d: 1, hover: 2, face: -.6, label: null });
     const man = stander(t, 1450, G, 26, walkOff, { seed: 2, key: 'cman', pose: hk > .5 ? { up: .9, fore: 1.6 } : {} });
     boilSeed('hcrate'); const cx = hk < 1 ? lerp(1610, 1470, hk) : man.hand[0], cy = hk < 1 ? lerp(G - 120, G - 95, hk) : man.hand[1];
@@ -81,7 +82,8 @@
     for (let i = 0; i < 3; i++) stander(t, 2500, G + 40 + i * 30, 27 + i * 2, [[tRun + i * .3, tRun + 5 + i * .4, 2500 - i * 60, 3900 - i * 120]], { seed: 10 + i, key: 'run' + i, pose: { torso: .15 } });
     const tMock = C('p003.1:mock battles') - 3;
     for (let sd = -1; sd <= 1; sd += 2) for (let i = 0; i < 3; i++) { const x = 3550 + sd * (260 + i * 60), y = G + 10 + i * 40;
-      stander(t, x, y, 27, [], { seed: 20 + i + sd, key: 'mb' + sd + i, flip: sd > 0, pose: { up: 1.4, fore: 1.6, torso: .08 } }); }
+      // drilling while they wait: arms levelled and raised in turn, a little step in place (they stood frozen 25 s)
+      const dr = .5 + .5 * Math.sin(t * 1.3 + i * 1.1 + sd); stander(t, x + 6 * Math.sin(t * 2.6 + i), y, 27, [], { seed: 20 + i + sd, key: 'mb' + sd + i, flip: sd > 0, pose: { up: lerp(.5, 1.5, dr), fore: lerp(.6, 1.6, dr), torso: .04 + .06 * dr } }); }
     if (t > tMock) for (let k = 0; k < 3; k++) { const n = Math.floor((t - tMock) * 3 + k * 7.3); if (hash(n) < .45) continue; const i = n % 3, sd = hash(n * 3) > .5 ? 1 : -1;
       const a = [3550 - sd * (260 + i * 60) + sd * 40, G + 10 + i * 40 - 90], b = [3550 + sd * (260 + ((i + 1) % 3) * 60) - sd * 40, G + 10 + ((i + 1) % 3) * 40 - 90];
       beam(a[0], a[1], b[0], b[1], 7, 16, FORCE, 1, { washOp: 70, a: .8 }); glow(...b, 50, NRG.white, .7); }   // bolder, a flash where it strikes
