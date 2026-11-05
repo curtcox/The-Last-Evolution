@@ -12,10 +12,15 @@
 
   // ---------- the hall at night ----------
   // the screens: ships falling (B), the machines (D); flickering
+  // the part of a screen [x, x + w] that the hall's piers (DES.lab's, x -199 + 479k, 126 wide) leave in view
+  const SEEN = (x, w) => { let a = x + 8, b = x + w - 8; for (let k = 0; k < 6; k++) { const p0 = -199.2 + 478.8 * k, p1 = p0 + 126; if (p1 > a && p0 < b) { if (p0 - a > b - p1) b = p0 - 8; else a = p1 + 8; } } return [a, b]; };
   function screens(t) {
     for (let r = 0; r < 3; r++) for (let c = 0; c < 7; c++) { const x = 103 + c * 252, y = 110 + r * 208, k = .6 + .4 * hash(c * 7 + r * 3 + Math.floor(t * 3)), mid = [x + 107, y + 85];
       glow(...mid, 160, '#DDE6F0', .25 * k);
-      if ((c + r) % 2 === 0) { const q = frac((t - T0('B')) * .15 + hash(c + r * 7)); boilSeed('fs' + c + r); push(); translate(mid[0], y + 30 + q * 120); rotate(q * .6); translate(-mid[0], -(y + 30 + q * 120)); ship(mid[0], y + 30 + q * 120, 110, t, -1, { d: 3 }); pop(); } }
+      // a ship falling on the screen, kept to the part of it no pier hides, and inside its frame (it slid over frames and
+      // piers, flying in the room rather than on the screen)
+      if ((c + r) % 2 === 0) { const [a, b] = SEEN(x, 214), cx = (a + b) / 2, len = Math.min(90, (b - a) * .62), q = frac((t - T0('B')) * .15 + hash(c + r * 7)), fy = y + 40 + q * 85;
+        boilSeed('fs' + c + r); push(); translate(cx, fy); rotate(q * .35); translate(-cx, -fy); ship(cx, fy, len, t, -1, { d: 3 }); pop(); } }
   }
   // the six machines: in after F-2, then ranged round the men
   // they close round the two men three to a side, clear of them (a half-ring put the middle two in front of Roal and Trest)

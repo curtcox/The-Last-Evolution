@@ -12,12 +12,14 @@
 
   // ---------- the hall ----------
   const G = 1000, ROAL = 760, TREST = 1020, SCR = (c, r) => [103 + c * 252, 110 + r * 208, 214, 169];
+  // the part of a screen [x, x + w] that the hall's piers (DES.lab's, x -199 + 479k, 126 wide) leave in view
+  const SEEN = (x, w) => { let a = x + 8, b = x + w - 8; for (let k = 0; k < 6; k++) { const p0 = -199.2 + 478.8 * k, p1 = p0 + 126; if (p1 > a && p0 < b) { if (p0 - a > b - p1) b = p0 - 8; else a = p1 + 8; } } return [a, b]; };
   const tGreenOn = C('p024.1:Enormous, diffused beams');
   // what the screens show: the fleet; then green; then the bodies carried off
   function screens(t) {
     for (let r = 0; r < 3; r++) for (let c = 0; c < 7; c++) { const [x, y, w, h] = SCR(c, r), mid = [x + w / 2, y + h / 2];
       if (t > tGreenOn && t < T0('P')) { paint(rectPts(x + 6, y + 6, w - 12, h - 12), { wash: mixCol('#F1E9D3', GREEN, .5), washOp: 200, ink: null }); glow(...mid, 90, GREEN, .5); continue; }
-      if ((c + r) % 3 === 0 && t < tGreenOn) { boilSeed('scr' + c + r); ship(mid[0] + 30 * wob(t, .03, c), mid[1], 140, t, -1, { d: 3 }); }
+      if ((c + r) % 3 === 0 && t < tGreenOn) { const [a, b] = SEEN(x, w), len = Math.min(110, (b - a) * .62); boilSeed('scr' + c + r); ship((a + b) / 2 + .1 * (b - a) * wob(t, .03, c), mid[1], len, t, -1, { d: 3 }); }   // on the screen, clear of the piers
       if (t > T0('R') - 1 && r === 1 && c > 1 && c < 5) { boilSeed('bod' + c); const q = frac((t - T0('R')) * .08 + c * .3); DES.machine(lerp(x + 20, x + w - 20, q), y + h - 20, 7, t, { arms: 2, label: null, hover: 1.2 }); wash(ellPts(lerp(x + 20, x + w - 20, q), y + h - 60, 24, 10, 10), 2, { ink: true, sw: .4 }); }
     }
   }
