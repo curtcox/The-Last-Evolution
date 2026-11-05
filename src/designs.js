@@ -92,7 +92,7 @@ const DES = {};
     dcase(x, yb, r, h, dh, d, { shine: o.shine, rings: o.rings || [.32, .72] });
     for (let i = 0; i < n; i++) arm(i, true);
     // the band, lettered with its designation where it faces us
-    if (o.label) letter(o.label, x - face * r * .3, yb - h * .52, Math.min(r * .32, 30), INK, { ink: false, font: `700 ${Math.min(r * .32, 30)}px ${SERIF}`, spacing: 2 });
+    if (o.label) { const ls = Math.min(r * .44, 40); letter(o.label, x - face * r * .3, yb - h * .52, ls, INK, { ink: false, font: `700 ${ls}px ${SERIF}`, spacing: 1 }); }   // as large as the hull allows (at .32 it was ~3 px on a phone)
     const rx = x + Math.sin(face) * r * .55, top = yb - h - dh, lo = { lit: o.lit, dark: o.dark };
     if (o.receptor === 'crown') for (let i = -2; i <= 2; i++) lens(x + i * r * .36, yb - h - dh * .45 * (1 - Math.abs(i) * .25), r * .13, lo);
     else if (o.receptor === 'great') { lens(rx, yb - h - dh * .42, r * .3, lo); lens(rx - r * .5, yb - h - dh * .2, r * .13, lo); lens(rx + r * .5, yb - h - dh * .2, r * .13, lo); }
@@ -118,10 +118,10 @@ const DES = {};
     dcase(x, yb, r, h, dh, 1, { shine: true, rings: [.15, .85] });
     lens(x, yb - h - dh * .45, r * .22, { lit: o.lit });
     // its name, glowing on (o.glowK 0..1; o.unlit: not yet, p069)
-    const L = yb - h * .5, sz = r * .42, k = o.unlit ? 0 : o.glowK ?? 1;
+    const L = yb - h * .5, sz = r * .52, k = o.unlit ? 0 : o.glowK ?? 1;
     if (k <= 0) return;
     glow(x, L, r * 1.2, NRG.gold, .3 * k);
-    letter('C-R-U-1', x, L, sz, NRG.gold, { ink: false, font: `700 ${sz}px ${SERIF}`, spacing: 1, stroke: '#6B4A14', alpha: k });
+    letter('C-R-U-1', x, L, sz, NRG.gold, { ink: false, font: `700 ${sz}px ${SERIF}`, spacing: 0, stroke: '#6B4A14', alpha: k });
   };
 
   // F-2: "the small torpedo of metal", "glowing, bluish metal", "three thin tentacles of the same bluish metal" (p060).
