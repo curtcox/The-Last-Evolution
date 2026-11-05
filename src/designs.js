@@ -278,9 +278,11 @@ const DES = {};
     const eyes = [0, 1, 2].map(i => { const a = (side ? 0 : Math.PI) + i * TAU / 3 + turn; return side ? { x: Math.cos(a), z: Math.sin(a) } : { x: Math.sin(a), z: Math.cos(a) }; });
     const turret = (e, front) => {
       if ((e.z > -.3) !== front) return;
-      const bx = x + e.x * hw * .62 * u, by = hy - .3 * u, tx = bx + e.x * .32 * u, ty = by - .38 * u + Math.max(0, -e.z) * .05 * u;
+      // a turret behind the head stands taller, so its eye shows over the ridge: three eyes, not two and a nub
+      const bx = x + e.x * hw * .62 * u, by = hy - .3 * u, tx = bx + e.x * .32 * u, ty = by - .38 * u - Math.max(0, -e.z) * .3 * u;
       plate([[bx - .2 * u, by], [tx - .17 * u, ty], [tx + .17 * u, ty], [bx + .2 * u, by]], Bd);                          // the horny wall
       plate(ellPts(tx, ty, .2 * u, .1 * u + .08 * u * Math.max(0, e.z), 12), Bd);
+      if (e.z <= -.3) { wash(ellPts(tx, ty - .03 * u, .12 * u, .06 * u, 12), 0, { ink: true, sw: .45 }); glow(tx, ty - .04 * u, .08 * u, NRG.white, .3); }   // its lens, seen from behind
       if (e.z > -.3) { const k = .4 + .6 * Math.max(0, e.z);
         wash(ellPts(tx + e.x * .04 * u, ty, .13 * u, .1 * u * k + .02 * u, 12), 0, { ink: true, sw: .5 });
         paint(ellPts(tx + e.x * .07 * u, ty, .06 * u, .06 * u * k + .01 * u, 8), { fill: INK, fillOp: 220, bleed: 0, ink: null }); glow(tx, ty - .04 * u, .1 * u, NRG.white, .4); }

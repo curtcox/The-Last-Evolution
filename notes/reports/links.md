@@ -1,6 +1,6 @@
 # Links
 
-Written by `tools/check_refs.mjs` on 2026-11-02. **All good.**
+Written by `tools/check_refs.mjs` on 2026-11-05. **All good.**
 
 | id | status | kind | cited in | title |
 |---|---|---|---|---|
