@@ -61,7 +61,7 @@
     const tC = T0('C'), tE = T0('E'), tG = T0('G'), tH = T0('H'), tL = T0('L'), tM = T0('M'), tP = T0('P');
     const c = cam(t, [[0, tt => [PX - 100, lerp(560, 420, ez(tt, T0('B'), tC)), lerp(.75, .85, ez(tt, T0('B'), tC))]], [tC, [PX + 40, RG - 380, 2.2], 2], [tD, tt => [PX - 200, lerp(500, 200, ez(tt, tD, tE)), lerp(1.2, .7, ez(tt, tD, tE))], 3],
       [tE, [PX, ORB[1] + 120, 1.1], 3], [tF, [PX - 100, ORB[1] + 200, .9], 3], [tG, [PX - 160, ORB[1] + 60, 1.5], 2.5], [tH, [PX, ORB[1], 2.2], 2.5], [tI, tt => [PX - 200, lerp(ORB[1] + 200, 300, ez(tt, tI, tGone)), lerp(1.4, .6, ez(tt, tStab, tRed + 2))], 2],
-      [tJ, tt => [lerp(PX, PX + 400, ez(tt, tJ, tK)), 400, .65], 3], [tK, tt => [lerp(350, PX, ez(tt, C('p123.1:Roal and Trest appeared') + 2, tGold + 2)), lerp(800, ORB[1] + 200, ez(tt, tGold - 1, tGold + 3)), lerp(1.2, .9, ez(tt, tK, tGold + 3)) * lerp(1, 1.5, ez(tt, tGold + 3, tL))], 3],   // then a slow push in to the sphere
+      [tJ, tt => [lerp(PX, PX + 400, ez(tt, tJ, tK)), 400, .65], 3], [tK, tt => [lerp(350, PX, ez(tt, C('p123.1:Roal and Trest appeared') + 2, tGold + 2)), lerp(800, ORB[1] + 260, ez(tt, tGold - 2.5, tGold + 1)), lerp(1.2, .75, ez(tt, tK, tGold + .5)) * lerp(1, 1.5, ez(tt, tGold + 3, tL))], 3],   // up and wide, so the globe is in frame as it's named; then a slow push in
       [tL, tt => [PX, ORB[1], lerp(1.5, 1.9, ez(tt, tL, tM))], 2.5], [tM, tt => [PX - 100, lerp(ORB[1], 300, ez(tt, tRuby + 2, tN)), lerp(1.9, .7, ez(tt, tRuby + 2, lerp(tRuby + 2, tN, .5)))], 3], [tN, [PX, 200, .7], 2.5], [tP, [PX, -100, .7], 2]]);
     camBegin(...c);
     const { st } = world(t);
@@ -87,7 +87,7 @@
     // J: the forces at play again
     if (t > tJ + 1 && t < tK) for (let i = 0; i < 4; i++) glow(ORB[0] + 200 * Math.sin(t * 2 + i), ORB[1] + 120 * Math.cos(t * 1.7 + i), 80, [FORCE, NRG.gold, NRG.violet, FORCE][i], .4 * storm(t));
     // K on: the golden sphere; Roal and Trest out of the dome; the warmth of the ruby flame
-    const gk = ez(t, tGold - 1, tGold + 2) * (t < tVanish ? 1 : 0), grow = ez(t, C('p126.1') + 2, tN + 1);
+    const gk = ez(t, tGold - 2.2, tGold + .5) * (t < tVanish ? 1 : 0), grow = ez(t, C('p126.1') + 2, tN + 1);
     // they stand looking up at the sphere; when the ruby flame warms them, their hands lift toward it, open
     const warm = win(t, tRuby + .5, tN - .5, 1.5, 1), wp = k => ({ up: lerp(.12, .9, k), fore: lerp(.3, 1.7, k) });
     if (t > tK) { stander(t, -260, RG + 40, 30, [[C('p123.1:Roal and Trest appeared'), C('p123.1:Roal and Trest appeared') + 5, -260, 420]], { who: 'roal', key: 'roal9', seed: 3, look: .6, pose: wp(warm) });
