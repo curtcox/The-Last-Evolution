@@ -71,9 +71,12 @@
       if (hash(Math.floor(t * 6)) > .45) { boilSeed('lt' + Math.floor(t * 12)); lightning(b[0] + 600 * (hash(n * 7) - .5), -1300, b[0], b[1], NRG.lightning, { amp: .18, r: 60 }); }
       beam(PX, TOP + 10, b[0], b[1], 30, 20, FORCE, 1, { washOp: 30, a: .5 * st, splash: false }); }
     // F to I: the white globe; F-2's probing; the stab; the red beam, shrinking it through orange and green
-    const g1 = t > tF - 1 && t < tGone + .3, shrink = 1 - .9 * ez(t, tRed, tGone);
-    if (g1) { const r = 40 * shrink * (t < tF ? seg(t, tF - 1, tF) : 1); glow(...ORB, r * 3, NRG.white, .6); glow(...ORB, r * 1.4, '#FFFDF6', .9);
-      if (t > tRed) for (let i = 0; i < 6; i++) { const a = hash(Math.floor(t * 8) + i) * TAU; boilSeed('spray' + i + Math.floor(t * 12)); lightning(...ORB, ORB[0] + Math.cos(a) * 300, ORB[1] + Math.sin(a) * 300, '#FFE2B0', { amp: .2, r: 30 }); } }
+    // after its stab the globe draws back, up and away; the red beam reaches for where it was, and on 'The sphere leaped
+    // forward' it leaps back into the beam, which catches it (the beam had it 4 s early, sitting on the plant)
+    const tLeap = C('p121.4:The sphere leaped'), back = ez(t, tStab + .3, tStab + 1.6) * (1 - ez(t, tLeap - .1, tLeap + .35)), orb = [ORB[0] + 330 * back, ORB[1] - 150 * back];
+    const g1 = t > tF - 1 && t < tGone + .3, shrink = 1 - .9 * ez(t, tLeap, tGone);
+    if (g1) { const r = 40 * shrink * (t < tF ? seg(t, tF - 1, tF) : 1); glow(...orb, r * 3, NRG.white, .6); glow(...orb, r * 1.4, '#FFFDF6', .9);
+      if (t > tLeap) for (let i = 0; i < 6; i++) { const a = hash(Math.floor(t * 8) + i) * TAU; boilSeed('spray' + i + Math.floor(t * 12)); lightning(...orb, orb[0] + Math.cos(a) * 300, orb[1] + Math.sin(a) * 300, '#FFE2B0', { amp: .2, r: 30 }); } }
     if (t > tH && t < tStab + .5) thoughtRings(...ORB, t, tH, C('p121.3$'), { r1: 400, col: '#FFFDF6' });
     const f2 = f2At(t);
     if (t > C('p120.1') && t < tH) for (let i = 0; i < 5; i++) { const k = seg(t, C('p120.1') + i * .8, C('p120.1') + i * .8 + 1.2), d = [ORB[0] - 80, ORB[1] + 40 * (i - 2)], turn = t > C('p120.1:seemed baffled') ? 1 : 0;
@@ -87,7 +90,7 @@
     // J: the forces at play again
     if (t > tJ + 1 && t < tK) for (let i = 0; i < 4; i++) glow(ORB[0] + 200 * Math.sin(t * 2 + i), ORB[1] + 120 * Math.cos(t * 1.7 + i), 80, [FORCE, NRG.gold, NRG.violet, FORCE][i], .4 * storm(t));
     // K on: the golden sphere; Roal and Trest out of the dome; the warmth of the ruby flame
-    const gk = ez(t, tGold - 2.2, tGold + .5) * (t < tVanish ? 1 : 0), grow = ez(t, C('p126.1') + 2, tN + 1);
+    const gk = ez(t, tGold - 2.2, tGold + .5) * (t < tVanish ? 1 : 0), tTwice = C('p127.1:twice'), grow = .25 * ez(t, C('p126.1') + 2, tTwice - .3) + .75 * ez(t, tTwice - .3, tTwice + 1);   // most of it on 'twice its former size'
     // they stand looking up at the sphere; when the ruby flame warms them, their hands lift toward it, open
     const warm = win(t, tRuby + .5, tN - .5, 1.5, 1), wp = k => ({ up: lerp(.12, .9, k), fore: lerp(.3, 1.7, k) });
     if (t > tK) { stander(t, -260, RG + 40, 30, [[C('p123.1:Roal and Trest appeared'), C('p123.1:Roal and Trest appeared') + 5, -260, 420]], { who: 'roal', key: 'roal9', seed: 3, look: .6, pose: wp(warm) });
