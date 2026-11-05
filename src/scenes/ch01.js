@@ -23,6 +23,11 @@
       plateGround();
       ruled([[0, LY + 120], [JOIN + 600, LY + 120]], seg(t, T0('B') - 1, T0('B') + 4), D[1], 1.1);
       for (let i = 0; i < 7; i++) { const x = 200 + i * 400; ruled([[x, LY + 105], [x, LY + 135]], seg(t, T0('B') + i * .5, T0('B') + i * .5 + .4), D[1], .8); }
+      // 'six centuries developing machines': a gear-wheel over each tick as the line draws, each with more teeth, turning
+      for (let i = 0; i < 6; i++) { const k = backOut(seg(t, T0('B') + i * .5 + .2, T0('B') + i * .5 + .9)) * (1 - ez(t, tEar - 1.5, tEar)); if (k <= 0) continue;
+        const gx = 200 + i * 400, gy = LY - 10, r = (44 + 10 * i) * k, n = 6 + 2 * i, rot = t * (.6 - .08 * i) * (i % 2 ? -1 : 1), P = [];
+        for (let q = 0; q <= n * 4; q++) { const a = rot + q / (n * 4) * TAU, tooth = (q % 4 < 2) ? 1.22 : 1; P.push([gx + Math.cos(a) * r * tooth, gy + Math.sin(a) * r * tooth]); }
+        const gc = mixCol(D[1], '#EFE6D2', .6); boilSeed('gear' + i); inkLine(P, 1.6, gc, 'inkfine', 0); inkLine([...Array(13)].map((_, q) => [gx + Math.cos(q / 12 * TAU) * r * .35, gy + Math.sin(q / 12 * TAU) * r * .35]), 1.2, gc, 'inkfine', 0); }
       if (j < 1) { ear(lerp(EAR, JOIN - 90, j), LY - 20, backOut(seg(t, tEar, tEar + .8)) * (1 - j * .6)); eye(lerp(EYE, JOIN, j), LY - 40, backOut(seg(t, tEye, tEye + .8)) * (1 - j * .6)); brain(lerp(BRAIN, JOIN, j), LY - 180 + 60 * j, backOut(seg(t, tBrain, tBrain + .8)) * (1 - j * .4)); }
       if (j > .6) { const a = seg(j, .6, 1); glow(JOIN, LY - 80, 200 * (1 - a), NRG.white, .6 * (1 - a));
         DES.machine(JOIN, LY + 110, 34, t, { arms: 3, d: 1, hover: 1 + 2.5 * up, face: .2 * wob(t, .2), lit: .4 + .4 * up, label: null }); }
@@ -79,7 +84,7 @@
       stander(t, x, y, 27, [], { seed: 20 + i + sd, key: 'mb' + sd + i, flip: sd > 0, pose: { up: 1.4, fore: 1.6, torso: .08 } }); }
     if (t > tMock) for (let k = 0; k < 3; k++) { const n = Math.floor((t - tMock) * 3 + k * 7.3); if (hash(n) < .45) continue; const i = n % 3, sd = hash(n * 3) > .5 ? 1 : -1;
       const a = [3550 - sd * (260 + i * 60) + sd * 40, G + 10 + i * 40 - 90], b = [3550 + sd * (260 + ((i + 1) % 3) * 60) - sd * 40, G + 10 + ((i + 1) % 3) * 40 - 90];
-      beam(a[0], a[1], b[0], b[1], 4, 10, FORCE, 1, { washOp: 30, a: .6 }); }
+      beam(a[0], a[1], b[0], b[1], 7, 16, FORCE, 1, { washOp: 70, a: .8 }); glow(...b, 50, NRG.white, .7); }   // bolder, a flash where it strikes
   }
   // K: a man and a machine walking side by side toward the towers
   function together(t) {
@@ -90,7 +95,7 @@
   }
   function city(t) {
     HALFTONE = .3;
-    const c = cam(t, [[0, tt => [lerp(900, 1700, ez(tt, T0('C') - 2, T1('C'))), 600, .85]], [T0('D') - .5, tt => [lerp(2800, 3500, ez(tt, T0('D'), T1('D'))), 680, 1], 3],
+    const c = cam(t, [[0, tt => [lerp(900, 1700, ez(tt, T0('C') - 2, T1('C'))), 600, .85]], [T0('D') - .5, tt => [lerp(2900, 3500, ez(tt, T0('D'), T1('D'))), lerp(680, 800, ez(tt, T0('D'), T1('D'))), lerp(1.15, 1.6, ez(tt, T0('D'), T1('D')))], 3],   // in on the runners and the mock battle
       [T0('K') - 2, tt => [lerp(1100, 2300, ez(tt, T0('K'), DUR + 1)), 850, 1.6], .01]]);
     withCam(c, () => { cityWorld(t); if (t > T0('K') - 2) together(t); });
   }
