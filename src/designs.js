@@ -129,7 +129,7 @@ const DES = {};
   //   view  'side' | 'front' | 'top'; o.age 0 new … 1 the old narrator, oxidised (p137); o.newborn  the birth's aura
   DES.f2 = (x, ground, s, t = 0, o = {}) => {
     const len = 4.2 * s, rad = .65 * s, age = o.age ?? 0, view = o.view || 'side', y = ground - (o.hover ?? 2.4) * s + 3 * wob(t, .25);
-    const metal = mixCol(mixCol(D[1], '#7F9BD0', .38), '#8A6A50', age), dark = mixCol(metal, INK, .45);
+    const metal = mixCol(mixCol(D[1], '#7F9BD0', .62), '#8A6A50', age), dark = mixCol(metal, INK, .45);
     if (o.newborn) { aura(x, y, len * .75, NRG.white, .9, t); glow(x, y, len * 1.6, NRG.lightning, .4); }
     boilSeed('f2sh'); if (o.hover !== 0 && !o.newborn) paint(ellPts(x, ground, len * .45, len * .05, 16), { fill: D[3], fillOp: 60, bleed: .3, ink: null });
     // a thin tentacle curling from (sx, sy) out along dir (a unit vector), its tip turned back in a hook
