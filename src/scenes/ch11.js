@@ -67,7 +67,7 @@
   }
   // H to J: the page, and THE END. Its paragraph is the one being read: p138, then p139 (which it used to sit through
   // still showing p138), then the last
-  const PARAS = ['This I have treated as fictitious. Better so—for man is an animal to whom hope is as necessary as food and air. Yet this which is made of excerpts from certain records on thin sheets of metal is no fiction.',
+  const PARAS = ['This I have treated as fictitious. Better so—for man is an animal to whom hope is as necessary as food and air. Yet this which is made of excerpts from certain records on thin sheets of metal is no fiction, and it seems I must so say.',
     'It seems now, when I know this that is to be, that it must be so, for machines are indeed better than man, whether being of Metal, or being of Force.',
     'So, you who have read, believe as you will. Then think—and maybe, you will change your belief.'];
   function pageEnd(t, para = 2) {
