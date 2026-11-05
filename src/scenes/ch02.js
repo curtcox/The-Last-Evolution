@@ -211,7 +211,7 @@
     'Thus we would have said 1728 kilads, about 1/2 mile.']],
     ['p008.1:thousand units', '2', ['One unit was equal to one earth-gravity.']]];
   function footnotes(t) {
-    for (const [at, n, lines] of NOTES) { const t0 = C(at) + .5, a = win(t, t0, t0 + 5, .4, .6); if (a <= 0) continue;
+    for (const [at, n, lines] of NOTES) { const t0 = C(at) + .5, a = win(t, t0, t0 + 1.8 + .22 * lines.join(' ').split(' ').length, .4, .6); if (a <= 0) continue;   // long enough to read: ~9 s for footnote 1's 33 words
       const y = H - 50 - 50 * lines.length;   // 40 px: read in a phone-width player (at 26 it was ~9 px caps at 720p)
       stillSeed('fnband' + n); paint(rectPts(90, y - 60, 1380, 50 * lines.length + 50), { wash: '#141110', washOp: 190 * a, ink: null, bleed: .05 });   // a dark band, so the note reads over a pale hull
       rule(120, y - 36, 260, '#EFE6D2', 1.4);
