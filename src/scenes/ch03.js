@@ -2,7 +2,7 @@
 // voice (src/gen/ch03.js). Three places: the Denver hall (Roal, Trest and the machines, the screens), space beyond the
 // Moon for the battle, and the Colorado settlement, where the green comes; the screens join them.
 (() => {
-  const { D, INK, ez, win, steps, path, talk, clauses, gesture, nod, ground, cam, withCam, ruled, dreamCurl, page, closing, planet, stander, thoughtRings } = KIT;
+  const { D, INK, ez, win, steps, path, talk, clauses, gesture, nod, listen, ground, cam, withCam, ruled, dreamCurl, page, closing, planet, stander, thoughtRings } = KIT;
   const S = CHAPTER.shots, C = cue, T0 = id => S[id][0], T1 = id => S[id][1];
   const K = (t, a, b) => seg(t, C(a), C(b));
   const HEAT = '#FFB070', GREEN = NRG.death, VIOLET = NRG.support;
@@ -42,9 +42,11 @@
     const tPoint = C('p018.1:Roal had quickly assured us'), out = win(t, tPoint, C('p018.1:But--life alone'), .6, 1), arm = win(t, T0('V') - .2, T0('W') + .5, .25, 1);
     const pose = { up: lerp(.12, 1.5, Math.max(out, arm)), fore: lerp(.3, arm ? 2.6 : 1.6, Math.max(out, arm)) };
     const gl = arm ? 0 : gesture(t, pose, SPEECH);
-    const roal = stander(t, ROAL, G, 44, ROALW, { who: 'roal', key: 'roal', seed: 3, look: (t < T0('S') ? .5 : .15) + gl, pose, talk: talk(t, 'roal'), flip: false });
-    const point = win(t, T0('Q'), T1('Q'), .5, .5);
-    stander(t, TREST, G + 10, 46, TRESTW, { who: 'trest', key: 'trest', seed: 7, look: .45 + nod(t, SPEECH), flip: t < T0('S') + 2 || t > T0('W'), pose: { up: lerp(.12, 1.7, point), fore: lerp(.3, 1.2, point) } });
+    // 'that little chuckle': his head goes back a little, a smile, the shoulders bobbing
+    const ch = win(t, C('p033.4'), C('p033.4') + 2.2, .3, .6); if (ch > 0) pose.torso = (pose.torso ?? 0) - .05 * ch * Math.abs(Math.sin(t * 15));
+    const roal = stander(t, ROAL, G, 44, ROALW, { who: 'roal', key: 'roal', seed: 3, look: (t < T0('S') ? .5 : .15) + gl - .15 * ch, pose, talk: talk(t, 'roal'), smile: ch, flip: false });
+    const point = win(t, T0('Q'), T1('Q'), .5, .5), tp = {}, tl = t > T0('S') + 2 ? listen(t, tp, SPEECH, 2) : 0;   // through the speech Trest listens
+    stander(t, TREST, G + 10, 46, TRESTW, { who: 'trest', key: 'trest', seed: 7, look: .45 + tl + nod(t, SPEECH), flip: t < T0('S') + 2 || t > T0('W'), pose: point > 0 ? { up: lerp(.12, 1.7, point), fore: lerp(.3, 1.2, point) } : tp });
     return roal;
   }
   function hall(t) {
@@ -54,7 +56,8 @@
       [T0('C'), tt => [lerp(800, 1250, ez(tt, T0('C') + 1, T0('D'))), 760, 1.4], 2.5], [T0('D'), tt => [ROAL + 40, 760, lerp(2.4, 2.9, ez(tt, T0('D'), tE))], 2.5],
       [tE - .5, tt => [lerp(500, 1500, ez(tt, tE, T1('E'))), 820, 1.6], 2.5], [T0('L') - 1, tt => [lerp(900, 880, ez(tt, T0('L'), T1('L'))), lerp(400, 700, ez(tt, T0('L') - 1, T0('L') + 3)), lerp(2.2, 1.15, ez(tt, T0('L') - 1, T0('L') + 3))], .01],
       [T0('Q') - 1, [900, 740, 1.3], .01], [T0('R'), tt => [lerp(900, 800, ez(tt, T0('R'), T1('R'))), lerp(560, 330, ez(tt, T0('R'), T1('R'))), lerp(1.2, 2, ez(tt, T0('R'), T1('R')))], 2.5],
-      [T0('S'), tt => [lerp(1000, 980, ez(tt, T0('S'), T0('U'))), lerp(720, 790, ez(tt, T0('S'), T0('U'))), lerp(1.2, 1.8, ez(tt, T0('S'), T0('U')))], 3],
+      [T0('S'), tt => [lerp(1000, 1060, ez(tt, T0('S') + 2, T0('S') + 12)), lerp(720, 770, ez(tt, T0('S') + 2, T0('S') + 12)), lerp(1.2, 2.4, ez(tt, T0('S') + 2, T0('S') + 12))], 3],   // in close enough to read the faces
+      [C('p034.1:And--most dangerous') - .6, [1060, 770, 2.3], .01],
       [T0('V') - .3, [980, 760, 2.2], .6], [T0('W'), tt => [lerp(980, 960, ez(tt, T0('W'), DUR)), 600, lerp(2.2, 1.1, ez(tt, T0('W'), DUR))], 2]]);
     withCam(c, () => {
       DES.lab(-300, -150, 2520, 1300, t, { couch: false, ext: 1200 });
@@ -217,8 +220,10 @@
     if (t < tQ + .6) return dissolve(seg(t, tQ - .8, tQ + .6), () => land(t), () => hall(t));
     if (t < tU - .6) return hall(t);
     if (t < tU + .6) return dissolve(seg(t, tU - .6, tU + .6), () => hall(t), () => worlds(t));
-    if (t < tV - .6) return worlds(t);
-    if (t < tV + .3) return dissolve(seg(t, tV - .6, tV + .3), () => worlds(t), () => hall(t));
+    // the planets while he names the worlds; back to him for the rest (49 s of planets dragged)
+    const tBack = C('p034.1:And--most dangerous');
+    if (t < tBack - .6) return worlds(t);
+    if (t < tBack + .6) return dissolve(seg(t, tBack - .6, tBack + .6), () => worlds(t), () => hall(t));
     hall(t);
     if (t > DUR - .6) brushWipe(seg(t, DUR - .6, DUR + .6), [PULP.w[3], PULP.w[2]]);
   }

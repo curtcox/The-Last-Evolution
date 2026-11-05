@@ -65,7 +65,7 @@ const KIT = (() => {
     pose.torso += .015 * wob(t, .22, o.seed || 0) + .02 * wob(t, .05, .3 + (o.seed || 0)); hip[1] += 1.5 * wob(t, .22, o.seed || 0);
     if (walk) walking(pose, hip, walk.q, walk.d, s * 6 / 7.4);
     const flip = walk ? walk.d < 0 : !!o.flip;
-    return DES.personSide(hip[0], hip[1], s, t, { pose, flip, look: o.look || 0, lid: Math.max(o.lid || 0, blink(t, o.seed || 1)), key: o.key || 'p' + x0, talk: o.talk || 0, who: o.who || 'citizen' });
+    return DES.personSide(hip[0], hip[1], s, t, { pose, flip, look: o.look || 0, lid: Math.max(o.lid || 0, blink(t, o.seed || 1)), key: o.key || 'p' + x0, talk: o.talk || 0, smile: o.smile || 0, who: o.who || 'citizen' });
   }
 
   // thought, drawn two ways: a man's as a loose curl of pale wash, a machine's as ruled ink
