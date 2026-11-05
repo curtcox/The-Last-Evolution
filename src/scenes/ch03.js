@@ -57,6 +57,7 @@
       [tE - .5, tt => [lerp(500, 1500, ez(tt, tE, T1('E'))), 820, 1.6], 2.5], [T0('L') - 1, tt => [lerp(900, 880, ez(tt, T0('L'), T1('L'))), lerp(400, 700, ez(tt, T0('L') - 1, T0('L') + 3)), lerp(2.2, 1.15, ez(tt, T0('L') - 1, T0('L') + 3))], .01],
       [T0('Q') - 1, [900, 740, 1.3], .01], [T0('R'), tt => [lerp(900, 800, ez(tt, T0('R'), T1('R'))), lerp(560, 330, ez(tt, T0('R'), T1('R'))), lerp(1.2, 2, ez(tt, T0('R'), T1('R')))], 2.5],
       [T0('S'), tt => [lerp(1000, 1060, ez(tt, T0('S') + 2, T0('S') + 12)), lerp(720, 770, ez(tt, T0('S') + 2, T0('S') + 12)), lerp(1.2, 2.4, ez(tt, T0('S') + 2, T0('S') + 12))], 3],   // in close enough to read the faces
+      [C('p033.5') - .5, [1060, 660, 1.25], 3],   // out to the ring of machines he's speaking to
       [C('p034.1:And--most dangerous') - .6, [1060, 770, 2.3], .01],
       [T0('V') - .3, [980, 760, 2.2], .6], [T0('W'), tt => [lerp(980, 960, ez(tt, T0('W'), DUR)), 600, lerp(2.2, 1.1, ez(tt, T0('W'), DUR))], 2]]);
     withCam(c, () => {

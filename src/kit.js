@@ -28,10 +28,10 @@ const KIT = (() => {
   }
   // each clause longer than .6 s carries a gesture of the near hand, laid over the pose; returns a small movement of the
   // head to add to its look
-  const GEST = [[.8, 1.9], [1.1, 2.4], [.6, 1.6]];   // the near arm (up, fore): an open hand forward, a lift, a small turn
+  const GEST = [[.8, 1.9], [1.1, 2.4], [.6, 1.6], [1.6, 1.1], [.35, 2.7]];   // the near arm (up, fore): an open hand forward, a lift, a small turn, a hand raised high, a hand at the chest (three read as a loop in a long speech)
   function gesture(t, pose, cl) {
     for (let i = 0; i < cl.length; i++) { const [a, b] = cl[i]; if (b - a < .6 || t < a - .3 || t > b + .9) continue;
-      const k = win(t, a - .2, b + .3, .5, .6), g = GEST[i % 3]; pose.up = lerp(pose.up ?? .12, g[0], k); pose.fore = lerp(pose.fore ?? .3, g[1], k); return .05 * k * Math.sin((t - a) * 1.7); }
+      const k = win(t, a - .2, b + .3, .5, .6), g = GEST[(i * 3 + (i >> 2)) % GEST.length]; pose.up = lerp(pose.up ?? .12, g[0], k); pose.fore = lerp(pose.fore ?? .3, g[1], k); return .05 * k * Math.sin((t - a) * 1.7); }
     return 0;
   }
   // a listener's small nod as each clause said to it ends: add to its look
