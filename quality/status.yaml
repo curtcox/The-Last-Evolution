@@ -769,6 +769,16 @@ items:
     note: "Fresh eyes 3: 'the text of its 1961 reprint', but the page restores 16 readings from 1932. Nit."
     title: "Read: the kicker calls it the 1961 text, though 16 readings are from 1932"
     when: 2026-11-05 19:56
+  find.voice-forcescreen:
+    state: curt
+    note: From the third fresh-eyes round's transcript check. Voicing is yours to judge by ear.
+    title: Does 'force-screen' sound right in ch04 0:12 (p037.2)? Whisper hears 'fourth'.
+    when: 2026-11-05 19:57
+  find.voice-lastofmen:
+    state: curt
+    note: From the third fresh-eyes round's transcript check. Voicing is yours to judge by ear.
+    title: Does 'Last of Men' sound right in ch08 2:49 (p108.1)? Whisper hears 'blessed'.
+    when: 2026-11-05 19:57
 fresh:
   - when: 2026-11-02 23:47
     found: 13
