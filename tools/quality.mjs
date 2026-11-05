@@ -156,6 +156,7 @@ async function phone() {
       for (const [w, width, height] of [['phone', 375, 812], ['desktop', 1280, 800]]) {
         await page.setViewport({ width, height });
         await page.goto(`http://localhost:${port}${BASE}${p}`, { waitUntil: 'load', timeout: 30000 }).catch(() => {});
+        await page.evaluate(() => document.fonts.ready).catch(() => {});   // the web fonts, or a page shot early shows the fallbacks (the 404 did)
         if (w === 'phone') {
           const over = await page.evaluate(() => { const W = innerWidth, wide = [...document.querySelectorAll('body *')].filter(e => e.getBoundingClientRect().right > W + 1 && getComputedStyle(e).position !== 'fixed');
             return document.documentElement.scrollWidth > W + 1 ? wide.slice(0, 3).map(e => e.tagName.toLowerCase() + (e.className && typeof e.className === 'string' ? '.' + e.className.split(' ')[0] : '')) : null; });
