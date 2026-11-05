@@ -37,7 +37,7 @@
   const heatAt = t => t < tV ? 0 : t < tDie ? .75 * ez(t, tV, tRed + 1) : lerp(.75, 1, ez(t, tDie, tBlack + 3));
   function screen(x, y, len, heat, t, hits, key) {
     if (heat <= 0) return;
-    const col = ramp(SCREEN, heat), rx = len * .62, ry = len * .2;
+    const col = heat < .06 ? '#C9C6BE' : ramp(SCREEN, heat), rx = len * .62, ry = len * .2;   // not yet struck: a colourless shimmer (it was violet before 'flamed gradually violet')
     boilSeed('scr' + key); inkLine([...Array(41)].map((_, i) => { const a = i / 40 * TAU; return [x + Math.cos(a) * rx, y + Math.sin(a) * ry * (1 + .04 * Math.sin(t * 5 + i))]; }), 1.5, col, 'inkfine', .5);
     for (let i = 0; i < 10; i++) { const a = i / 10 * TAU; glow(x + Math.cos(a) * rx, y + Math.sin(a) * ry, len * .2, col, heat > .9 ? .25 : .45); }
     for (const [hx, hy] of hits) { glow(hx, hy, len * .3, col, .6); glow(hx, hy, len * .1, NRG.white, .5); }
