@@ -51,7 +51,7 @@ ol.notes .x{cursor:pointer;color:var(--ink2);margin-left:.5em} .notesbar{display
 @media (max-width:700px){.shot{grid-template-columns:1fr}}
 </style></head><body><main>
 <p class="kicker"><a href="../">Review</a> · Round ${RN} · ${STAGE}${RN === 6 ? ' · <a href="film.html">the whole film</a>' : ''}</p><h1>Chapter ${n}: <i>${esc(TL.title)}</i>, the draft</h1>
-<p>The first pass with motion, ${mmss(TL.duration)} at 12 drawings a second, over the same sound as the
+<p>The latest draft, acted and painted, ${mmss(TL.duration)} at 12 drawings a second, over the same sound as the
 ${existsSync(`${OUT}/ch${NN}.html`) ? `<a href="ch${NN}.html">storyboard</a>` : 'storyboard'}.${board.draft ? ' ' + esc(board.draft.trim()) : ''}</p>
 <p><b>Notes:</b> pause anywhere, type, and press Enter (or <i>Pin</i>) to pin a note to that moment. They stay in this
 browser. <i>Copy notes</i> puts them on the clipboard as text, timed and with their shot, for the

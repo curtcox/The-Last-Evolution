@@ -103,7 +103,7 @@ being watched and fixed until it meets its bar; then the film is rendered in ful
 const body = blocks.map(b => {
   switch (b.kind) {
     // the reprint's own header ('A Classic Reprint from …, 1932') would pair 1961's words with 1932's date: say both plainly
-    case 'masthead': return `<p class="kicker">From <i>Amazing Stories</i>, August 1932 · the text of its 1961 reprint</p>`;
+    case 'masthead': return `<p class="kicker">From <i>Amazing Stories</i>, August 1932 · the 1961 reprint's text, 16 readings from 1932 restored</p>`;
     case 'title': return `<h1>${typeset(b.text)}</h1>`;
     case 'byline': return `<p class="byline">${esc(b.text)}</p>`;
     case 'para': return `<p id="${b.id}"><a class="pid" href="#${b.id}" aria-label="paragraph ${+b.id.slice(1)}">${+b.id.slice(1)}</a>${emend(b, typeset(b.text))}</p>`;
