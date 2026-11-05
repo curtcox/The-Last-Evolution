@@ -154,8 +154,8 @@
   }
   function ship2(t) {
     HALFTONE = .3;
-    const tL = T0('L'), tM = T0('M'), tN = T0('N'), tBeam = C('p016.1:A bluish beam'), tBlank = C('p016.1:went blank'), HIDE = [2520, 600];
-    const ip = path(t, [[0, [-200, 700]], [tL, [1900, 700], 3.5], [C('p014.1:It was soon seen') - 1, [2150, 640], 2], [tM, HIDE, 2]]);
+    const tL = T0('L'), tM = T0('M'), tN = T0('N'), tBeam = C('p016.1:A bluish beam'), tBlank = C('p016.1:went blank'), HIDE = [2520, 472], FOUND = [2520, 548];   // in among the overhead pipes, then just under them
+    const ip = path(t, [[0, [-200, 700]], [tL, [1900, 700], 3.5], [C('p014.1:It was soon seen') - 1, [2150, 640], 2], [tM, HIDE, 2], [tN - 1.5, FOUND, 1.2]]);
     const c = cam(t, [[0, tt => [lerp(0, 1900, ez(tt, tL, tL + 3.5)), 640, 1.3]], [C('p014.1:It was soon seen') - 1.5, [2150, 620, 1.2], 2], [tM, tt => [lerp(2350, 2900, ez(tt, C('p015.1:And in the meantime'), C('p015.1:disintegrating') + 1)), 620, 1.15], 2.5],
       [tN, tt => [lerp(2700, 2560, ez(tt, tN, tBeam)), 620, lerp(1.6, 2.6, ez(tt, tBeam, tBlank))], 2]]);
     withCam(c, () => {
@@ -164,8 +164,8 @@
       if (t < tL + 4) for (let i = 0; i < 8; i++) { boilSeed('spd' + i); const y = 300 + i * 70; inkLine([[ip[0] - 300 - 200 * hash(i), y], [ip[0] - 60, y]], .5, D[1], 'inkfine', 0); }
       // the apparatus room: a few dim, simple machines
       for (let i = 0; i < 4; i++) { const x = 1950 + i * 150; boilSeed('app' + i); wash(rrPts(x - 50, FL - 160, 100, 160, 8), 3, { ink: true, sw: .6 }); glow(x, FL - 120, 10, '#F4EEDC', .25 + .15 * Math.sin(t + i)); }
-      // pipes, where it hides
-      for (let k = 0; k < 4; k++) inkLine([[2300, 560 + k * 22], [2800, 560 + k * 22]], 2, D[4], 'ink', 0);
+      // pipes, where it hides: a bundle of overhead conduits, drawn over it (below) so it's hidden till it's found
+      const pipes = () => { for (let k = 0; k < 4; k++) { stillSeed('pipe' + k); const P = rrPts(2280, 436 + k * 19, 560, 19, 8); paint(P, { wash: D[0], washOp: 255, ink: null }); wash(P, 3 + (k % 2), { ink: true, sw: .6 }); } };   // an opaque base: a wash alone let it show through
       // the heart of the ship: a block of matter wasting away into light
       const melt = .2 + .7 * seg(t, tM - 10, DUR);
       boilSeed('heart'); wash(rrPts(3150, 380, 300, 460, 20), 4, { ink: true, sw: .8 });
@@ -179,10 +179,14 @@
       const SPOT = [2290, 2500, 2990];
       for (let i = 0; i < 3; i++) if (t > tL + 5) crawler(SPOT[i] + 25 * Math.sin((t - tSearch) * .4 + i * 2), t, 10 + i, { s: 34, view: 'front', turn: .1 * t + i * .3 });
       if (t > tN - 2) { const ox = 2750, aim = ez(t, tN, tBeam - .3);
-        DES.outsider(ox, FL, 66, t, { view: 'side', turn: .5 }); boilSeed('proj'); push(); translate(ox - 40, FL - 110); rotate(-.35 * aim - .3); wash(rrPts(-70, -10, 80, 20, 6), 4, { ink: true, sw: .6 }); pop();
+        // the projector swings up to the investigator, and the beam runs from its tip (it pointed down, away, and the
+        // beam was a run of near-white dots from his chest)
+        const pa = lerp(-.3, Math.atan2(FL - 110 - FOUND[1], ox - 40 - FOUND[0]), aim), tip = [ox - 40 - 70 * Math.cos(pa), FL - 110 - 70 * Math.sin(pa)];
+        DES.outsider(ox, FL, 66, t, { view: 'side', turn: .5 }); boilSeed('proj'); push(); translate(ox - 40, FL - 110); rotate(pa); wash(rrPts(-70, -10, 80, 20, 6), 4, { ink: true, sw: .6 }); pop();
         const bk = seg(t, tBeam, tBeam + .25) * (1 - seg(t, tBlank + 1, tBlank + 1.5));
-        if (bk > 0) beam(ox - 100, FL - 140, HIDE[0], HIDE[1], 6, 14, NRG.projector, bk, { washOp: 60 }); }
+        if (bk > 0) { beam(tip[0], tip[1], ip[0] + 20, ip[1], 10, 24, NRG.projector, bk, { washOp: 160, a: .9 }); glow(...tip, 40, NRG.projector, .8 * bk); glow(ip[0] + 10, ip[1], 70, NRG.projector, .7 * bk); } }
       inv(ip[0], ip[1], t, seg(t, tBlank - .2, tBlank + .2));
+      pipes();
     });
   }
 
