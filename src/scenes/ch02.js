@@ -134,7 +134,7 @@
       const FAR = FL - 50, NEAR = FL + 50;
       for (let i = 0; i < 3; i++) crawler(620 + i * 220 + 45 * Math.sin(t * .05 + i), t, i, { s: 30, g: FAR });
       const tum = seg(t, tTumble - .6, tTumble + 4), struck = t > tHit;
-      const sx = struck ? lerp(1400, 1820, ease(tum)) : 1400, rot = struck ? -TAU * 1.5 * easeOut(tum) : 0, lift = struck ? 160 * Math.sin(Math.PI * tum) : 0;
+      const sx = struck ? lerp(1400, 1820, ease(tum)) : 1400, rot = struck ? -TAU * easeOut(tum) : 0, lift = struck ? 160 * Math.sin(Math.PI * tum) : 0;   // a whole turn: he lands on his feet, unhurt (a turn and a half left him upside down)
       push(); translate(sx, NEAR - 80 - lift); rotate(rot); translate(-sx, -(NEAR - 80 - lift));
       DES.outsider(sx, NEAR - lift, 66, t, { view: struck && tum < 1 ? 'side' : 'front', turn: steps(t, [[0, 0], [C('p010.1:Their eyes projected'), .33, 1.2], [C('p010.1:capable of movement'), .66, 1.2], [C('p010.1:and there were three'), 1, 1.2]]) });
       pop();
