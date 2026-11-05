@@ -90,10 +90,16 @@
     camBegin(960, 560, lerp(1.1, 1.25, seg(t, tIn - 2, T1('F'))));
     boilSeed('gen'); wash(rrPts(760, 220, 420, 640, 30), 3, { ink: true, sw: .9 }); for (let k = 0; k < 6; k++) inkLine([[780, 300 + k * 90], [1160, 300 + k * 90]], .6, INK);
     glow(970, 540, 260, mixCol(HEAT, '#FF4A3A', hot), .3 + .5 * hot); glow(970, 540, 100, NRG.white, .3);
-    // four feeding the generators, two each side, a body's width and more apart (at 140, each pair read as one drawn twice)
-    const FEED = [320, 570, 1370, 1620];
-    for (let i = 0; i < 4; i++) { const x = FEED[i], bob = Math.abs(Math.sin(t * 2.5 + i)) * 20;
-      push(); translate(x, 900); rotate((i < 2 ? .25 : -.25) * Math.abs(Math.sin(t * 2.5 + i))); translate(-x, -900); DES.outsider(x, 900 - bob, 56, t, { view: 'side', turn: .1 * Math.sin(t + i) }); pop(); }
+    // 'they worked and slaved, as they fed giant machines': two each side carry blocks from the piles at the edges to the
+    // generator's mouth, feed them in, and go back for more, half a round apart and at two depths (they rocked in place,
+    // two with their backs to it, none touching it)
+    for (const sd of [-1, 1]) { const pile = 960 + sd * 760; boilSeed('pile' + sd); for (let k = 0; k < 5; k++) wash(rrPts(pile - 70 + (k % 3) * 46, 880 - Math.floor(k / 3) * 34, 42, 30, 4), 1, { ink: true, sw: .6 }); }
+    for (let i = 0; i < 4; i++) { const sd = i < 2 ? -1 : 1, q = frac((t - tIn) / 5.5 + (i % 2) * .5 + (sd > 0 ? .2 : 0)), xo = 960 + sd * 700, xi = 960 + sd * 270, far = i % 2 === 0, g = far ? 862 : 915, sz = far ? 46 : 58;   // the far one smaller and higher: crossing, they read as two
+      const go = q < .42, at = q >= .42 && q < .56, x = go ? lerp(xo, xi, ease(q / .42)) : at ? xi : lerp(xi, xo, ease((q - .56) / .44)), toward = go || at, face = toward ? -sd : sd;
+      const step = (go || q >= .56) ? Math.abs(Math.sin(t * 7 + i)) * 10 : 0, lift = at ? Math.sin(Math.PI * (q - .42) / .14) : 0;
+      push(); translate(x, g); scale(face, 1); translate(-x, -g); DES.outsider(x, g - step, sz, t, { view: 'side', turn: .1 * Math.sin(t + i) }); pop();
+      if (toward && q < .5) { const bx = x - sd * sz * 1.05, by = g - sz * 2.6 - 60 * lift; boilSeed('blk' + i); wash(rrPts(bx - 22, by - 16, 44, 32, 4), 1, { ink: true, sw: .6 }); glow(bx, by, 30, HEAT, .35); }   // a pale block of fuel, carried before it
+      if (at) { glow(960 + sd * 200, 760, 160, mixCol(HEAT, '#FF4A3A', hot), .9 * lift); glow(970, 540, 200, HEAT, .35 * lift); } }   // fed: the mouth flares and the generator glows up
     for (let i = 0; i < 6; i++) { const q = frac(t * .4 + i / 6); glow(800 + 340 * hash(i), 860 - q * 600, 30, HEAT, .3 * (1 - q) * hot); }
     camEnd();
   }
