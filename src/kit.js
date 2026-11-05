@@ -37,9 +37,9 @@ const KIT = (() => {
   // a listener's small nod as each clause said to it ends: add to its look
   const nod = (t, cl) => -.1 * cl.reduce((n, [, b]) => Math.max(n, Math.sin(Math.PI * clamp((t - b - .1) / .7))), 0);
   // a listener through a long speech said to it (a run of clauses 6 s or more): it leans in, and every 7 s shifts how it
-  // stands (arms at rest, the near hand to the chin, hands behind, hands clasped before it), laid over the pose; returns
+  // stands (arms at rest, the near hand to the chin, hands behind, hands clasped at the chest), laid over the pose; returns
   // a slow turn of the head to add to its look
-  const LISTEN = [{}, { up: .5, fore: 2.8 }, { up: -.35, fore: .05, farUp: -.3, farFore: .05 }, { up: .45, fore: 1.5, farUp: .5, farFore: 1.6 }];
+  const LISTEN = [{}, { up: .5, fore: 2.8 }, { up: -.35, fore: .05, farUp: -.3, farFore: .05 }, { up: .15, fore: 2.3, farUp: .2, farFore: 2.2 }];   // the last folded in to the chest (held out, it met the speaker's hand)
   function listen(t, pose, cl, seed = 0) {
     let run = null;
     for (const [a, b] of [...cl].sort((x, y) => x[0] - y[0])) { if (run && a - run[1] < 1.5) { run[1] = b; continue; } if (run && t < run[1] + 2) break; run = [a, b]; }

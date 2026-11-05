@@ -40,10 +40,10 @@
     // smaller while his eyes dream) and nods as the other, or F-2, speaks to him
     const turn = t > tF + .3, dream = win(t, C('p085.2'), T1('D'), 1, 1);
     const rp = {}, rh = listen(t, rp, TO_ROAL, 1), rl = rh + gesture(t, rp, ROALC); if (rp.up) { rp.up = lerp(rp.up, .12 + (rp.up - .12) * .55, dream); rp.fore = lerp(rp.fore, .3 + (rp.fore - .3) * .6, dream); }
-    const roal = stander(t, MID - 70, G, 44, [[tF + .3, tF + 1.4, MID - 70, MID - 30]], {   // 'Roal turned': a half-step round, toward the room
+    const roal = stander(t, MID - 90, G, 44, [[tF + .3, tF + 1.4, MID - 90, MID - 50]], {   // 'Roal turned': a half-step round, toward the room
       who: 'roal', key: 'roal', seed: 3, flip: !turn && t > T0('C') && t < T0('E') ? false : !turn, look: (turn ? .05 : .45) + rl + nod(t, TO_ROAL), pose: rp, talk: talk(t, 'roal'), lid: dream * .45 });
     const tp = {}, th = listen(t, tp, TO_TREST, 2), tl = th + gesture(t, tp, TRESTC);
-    stander(t, MID + 70, G + 10, 46, [], { who: 'trest', key: 'trest', seed: 7, flip: t < tF,   // toward Roal, at his left, until F-2 comes from the right
+    stander(t, MID + 90, G + 10, 46, [], { who: 'trest', key: 'trest', seed: 7, flip: t < tF,   // toward Roal, at his left, until F-2 comes from the right
       look: .1 + tl + nod(t, TO_TREST), pose: tp, talk: talk(t, 'trest') });
     dreamCurl(roal.head[0] - 20, roal.head[1] - 40, K(t, 'p085.2', 'p085.3:I have lived'), t, .5 * (1 - ez(t, C('p085.3:I have lived'), C('p085.3:I have lived') + 2)), 'rc');
     // the cloud of blankness, thickening; then the canopy arching and closing into the dome
