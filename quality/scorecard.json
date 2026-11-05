@@ -2,12 +2,16 @@
  "summary": {
   "pass": 135,
   "stale": 0,
-  "open": 0,
+  "open": 16,
   "curt": 7,
   "later": 3
  },
  "satisfied": false,
- "next": [],
+ "next": [
+  "Chapter 4 and others: bare paper below the set",
+  "Chapters 7 and 8: the falling ships aren't held in the hall's screens",
+  "Chapter 7: Roal and Trest clasp hands again and again"
+ ],
  "checks": {
   "verbatim": {
    "state": "pass",
@@ -42,7 +46,7 @@
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
-   "state": "pass",
+   "state": "stale",
    "detail": "33 pages live (not compared: HEAD has changes not pushed)"
   }
  },
@@ -1056,6 +1060,118 @@
    "title": "Chapter 8: low contrast inside the dome",
    "state": "pass",
    "note": "On the re-rendered draft: inside the dome F-2 is silver as in chapter 7, and both men's faces are drawn over the shade in the screens' light."
+  },
+  {
+   "id": "find.set-edges",
+   "area": "finding",
+   "title": "Chapter 4 and others: bare paper below the set",
+   "state": "open",
+   "note": "Fresh eyes 2: ch04 1:13-1:33, 2:39-2:47, 3:00-3:27 a ~60 px band of bare paper under the hall floor, and the top edge at 2:48-2:58; smaller: ch09 2:28-2:39 and 4:27, ch08 4:23-4:38, ch03 0:09-0:17 and 3:39-4:04. Major."
+  },
+  {
+   "id": "find.hall-screens",
+   "area": "finding",
+   "title": "Chapters 7 and 8: the falling ships aren't held in the hall's screens",
+   "state": "open",
+   "note": "Fresh eyes 2: ch07 0:06-1:30 and ch08's opening: the enemy ships on the screens slide across screen frames and over the pillars, so they read as flying in the room, not as pictures the men watch. Major."
+  },
+  {
+   "id": "find.ch07-clasp",
+   "area": "finding",
+   "title": "Chapter 7: Roal and Trest clasp hands again and again",
+   "state": "open",
+   "note": "Fresh eyes 2, 0:37-1:21: they reach out and clasp, part and clasp again about four times (0:50, 0:57, 1:15, 1:17); a loop, not a beat. Minor."
+  },
+  {
+   "id": "find.ch03-speech",
+   "area": "finding",
+   "title": "Chapter 3: Roal's speech is one wide shot, and the planets hold 49 s",
+   "state": "open",
+   "note": "Fresh eyes 2, 6:11-7:04: figures ~140 px with no readable faces, Trest's arms down throughout, nothing for Roal's 'little chuckle' (6:48); 7:04-7:53 panning planets for 49 s. Minor."
+  },
+  {
+   "id": "find.site-state",
+   "area": "finding",
+   "title": "Site: the home page and Where it stands disagree on the state of the film",
+   "state": "open",
+   "note": "Fresh eyes 2: home says every chapter has been acted and painted, then 'the paintings are still rough'; /review/quality/ says 'Now each chapter is being acted and painted' beside 72 of 72 checks done. Minor."
+  },
+  {
+   "id": "find.about-original",
+   "area": "finding",
+   "title": "About: 'Every on-screen design is original' forgets Morey's page",
+   "state": "open",
+   "note": "Fresh eyes 2: Leo Morey's 1932 illustration appears in ch05 4:36-4:40. Minor."
+  },
+  {
+   "id": "find.ch02-fnsize",
+   "area": "finding",
+   "title": "Chapter 2: the kilad footnote is too small to read on a phone",
+   "state": "open",
+   "note": "Fresh eyes 2, 0:31-0:35: ~9 px cap height at 720p, unreadable in a 343 px player. Minor."
+  },
+  {
+   "id": "find.ch01-small",
+   "area": "finding",
+   "title": "Chapter 1: the games read faintly, and the opening is nearly empty",
+   "state": "open",
+   "note": "Fresh eyes 2: 1:00-1:30 people ~70 px and the mock battle a dotted streak; 0:12-0:16 near-empty black frame with one ruled line under 'For six centuries mankind had been developing machines'. Minor."
+  },
+  {
+   "id": "find.ch09-globe",
+   "area": "finding",
+   "title": "Chapter 9: the golden globe is named before it's seen",
+   "state": "open",
+   "note": "Fresh eyes 2, 3:27.6 'an irregular globe of golden light' over a wide shot that shows it only at ~3:31. Nit."
+  },
+  {
+   "id": "find.ch06-violet",
+   "area": "finding",
+   "title": "Chapter 6: the screens are violet before they flame violet",
+   "state": "open",
+   "note": "Fresh eyes 2, 0:47-1:10 the Outsider screens already violet ~20 s before 'flamed gradually violet' at 1:12. Nit."
+  },
+  {
+   "id": "find.ch03-fall",
+   "area": "finding",
+   "title": "Chapter 3: the colonists fall late",
+   "state": "open",
+   "note": "Fresh eyes 2, 3:29-3:31 they fall 1.5-2 s after 'killed instantly'. Nit."
+  },
+  {
+   "id": "find.f2-blue",
+   "area": "finding",
+   "title": "F-2 is silver, the text says bluish",
+   "state": "open",
+   "note": "Fresh eyes 2: from ch05 on F-2 is drawn silver-white; the text and PLAN §5 call it 'the small bluish torpedo'. Nit."
+  },
+  {
+   "id": "find.ch02-eyes",
+   "area": "finding",
+   "title": "Chapter 2: the Outsiders' three eyes don't read as three",
+   "state": "open",
+   "note": "Fresh eyes 2, ~2:00: the narration stresses three eyes 'set at equal distances apart'; the suits show two eye-stalks and a small nub. Nit."
+  },
+  {
+   "id": "find.watch-jargon",
+   "area": "finding",
+   "title": "Film page: 'reviewed in Round 7' is makers' jargon",
+   "state": "open",
+   "note": "Fresh eyes 2: the visitor-facing draft notice says 'The notes were reviewed in Round 7'. Nit."
+  },
+  {
+   "id": "find.review-title",
+   "area": "finding",
+   "title": "Review page title breaks the pattern",
+   "state": "open",
+   "note": "Fresh eyes 2: 'Review · The Last Evolution' where every other page is 'X: The Last Evolution'. Nit."
+  },
+  {
+   "id": "find.phone-404",
+   "area": "finding",
+   "title": "The phone check doesn't test the real 404 page",
+   "state": "open",
+   "note": "Fresh eyes 2: out/quality/phone/404.jpg shows fallback fonts and a wrapped nav because the local server doesn't serve the absolute /The-Last-Evolution/ paths; the live 404 is fine. Nit (tooling)."
   }
  ],
  "fresh": [

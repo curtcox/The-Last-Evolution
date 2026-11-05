@@ -619,6 +619,86 @@ items:
     note: "On the re-rendered draft: inside the dome F-2 is silver as in chapter 7, and both men's faces are drawn over the shade in the screens' light."
     title: "Chapter 8: low contrast inside the dome"
     when: 2026-11-05 07:58
+  find.set-edges:
+    state: open
+    note: "Fresh eyes 2: ch04 1:13-1:33, 2:39-2:47, 3:00-3:27 a ~60 px band of bare paper under the hall floor, and the top edge at 2:48-2:58; smaller: ch09 2:28-2:39 and 4:27, ch08 4:23-4:38, ch03 0:09-0:17 and 3:39-4:04. Major."
+    title: "Chapter 4 and others: bare paper below the set"
+    when: 2026-11-05 08:15
+  find.hall-screens:
+    state: open
+    note: "Fresh eyes 2: ch07 0:06-1:30 and ch08's opening: the enemy ships on the screens slide across screen frames and over the pillars, so they read as flying in the room, not as pictures the men watch. Major."
+    title: "Chapters 7 and 8: the falling ships aren't held in the hall's screens"
+    when: 2026-11-05 08:15
+  find.ch07-clasp:
+    state: open
+    note: "Fresh eyes 2, 0:37-1:21: they reach out and clasp, part and clasp again about four times (0:50, 0:57, 1:15, 1:17); a loop, not a beat. Minor."
+    title: "Chapter 7: Roal and Trest clasp hands again and again"
+    when: 2026-11-05 08:15
+  find.ch03-speech:
+    state: open
+    note: "Fresh eyes 2, 6:11-7:04: figures ~140 px with no readable faces, Trest's arms down throughout, nothing for Roal's 'little chuckle' (6:48); 7:04-7:53 panning planets for 49 s. Minor."
+    title: "Chapter 3: Roal's speech is one wide shot, and the planets hold 49 s"
+    when: 2026-11-05 08:15
+  find.site-state:
+    state: open
+    note: "Fresh eyes 2: home says every chapter has been acted and painted, then 'the paintings are still rough'; /review/quality/ says 'Now each chapter is being acted and painted' beside 72 of 72 checks done. Minor."
+    title: "Site: the home page and Where it stands disagree on the state of the film"
+    when: 2026-11-05 08:15
+  find.about-original:
+    state: open
+    note: "Fresh eyes 2: Leo Morey's 1932 illustration appears in ch05 4:36-4:40. Minor."
+    title: "About: 'Every on-screen design is original' forgets Morey's page"
+    when: 2026-11-05 08:15
+  find.ch02-fnsize:
+    state: open
+    note: "Fresh eyes 2, 0:31-0:35: ~9 px cap height at 720p, unreadable in a 343 px player. Minor."
+    title: "Chapter 2: the kilad footnote is too small to read on a phone"
+    when: 2026-11-05 08:15
+  find.ch01-small:
+    state: open
+    note: "Fresh eyes 2: 1:00-1:30 people ~70 px and the mock battle a dotted streak; 0:12-0:16 near-empty black frame with one ruled line under 'For six centuries mankind had been developing machines'. Minor."
+    title: "Chapter 1: the games read faintly, and the opening is nearly empty"
+    when: 2026-11-05 08:15
+  find.ch09-globe:
+    state: open
+    note: Fresh eyes 2, 3:27.6 'an irregular globe of golden light' over a wide shot that shows it only at ~3:31. Nit.
+    title: "Chapter 9: the golden globe is named before it's seen"
+    when: 2026-11-05 08:15
+  find.ch06-violet:
+    state: open
+    note: Fresh eyes 2, 0:47-1:10 the Outsider screens already violet ~20 s before 'flamed gradually violet' at 1:12. Nit.
+    title: "Chapter 6: the screens are violet before they flame violet"
+    when: 2026-11-05 08:15
+  find.ch03-fall:
+    state: open
+    note: Fresh eyes 2, 3:29-3:31 they fall 1.5-2 s after 'killed instantly'. Nit.
+    title: "Chapter 3: the colonists fall late"
+    when: 2026-11-05 08:15
+  find.f2-blue:
+    state: open
+    note: "Fresh eyes 2: from ch05 on F-2 is drawn silver-white; the text and PLAN §5 call it 'the small bluish torpedo'. Nit."
+    title: F-2 is silver, the text says bluish
+    when: 2026-11-05 08:15
+  find.ch02-eyes:
+    state: open
+    note: "Fresh eyes 2, ~2:00: the narration stresses three eyes 'set at equal distances apart'; the suits show two eye-stalks and a small nub. Nit."
+    title: "Chapter 2: the Outsiders' three eyes don't read as three"
+    when: 2026-11-05 08:15
+  find.watch-jargon:
+    state: open
+    note: "Fresh eyes 2: the visitor-facing draft notice says 'The notes were reviewed in Round 7'. Nit."
+    title: "Film page: 'reviewed in Round 7' is makers' jargon"
+    when: 2026-11-05 08:15
+  find.review-title:
+    state: open
+    note: "Fresh eyes 2: 'Review · The Last Evolution' where every other page is 'X: The Last Evolution'. Nit."
+    title: Review page title breaks the pattern
+    when: 2026-11-05 08:15
+  find.phone-404:
+    state: open
+    note: "Fresh eyes 2: out/quality/phone/404.jpg shows fallback fonts and a wrapped nav because the local server doesn't serve the absolute /The-Last-Evolution/ paths; the live 404 is fine. Nit (tooling)."
+    title: The phone check doesn't test the real 404 page
+    when: 2026-11-05 08:15
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -628,4 +708,8 @@ fresh:
     found: 15
     note: "Film and site: a subagent with no context watched all twelve drafts (whole-chapter sheets, close sheets at key beats, loudness, transcripts) and checked every page and the phone screenshots. 4 major (ch09 Roal pops, ch04 label on F-1, still listeners in ch07/ch08, film-page notes describing what isn't shown), 9 minor, 2 nits; recorded as find.* items."
     state: 7624f1141953
-since_fresh: 88
+  - when: 2026-11-05 08:15
+    found: 16
+    note: "Film and site, second round: a subagent with no context watched all twelve drafts (whole and close sheets, edge scan, loudness, transcripts) and checked every page live and at 375 px. 2 major (bare paper below the set in ch04 and others; the hall screens' ships not held in their screens), 6 minor, 8 nits; recorded as find.* items."
+    state: d8f7ed90a6a7
+since_fresh: 0
