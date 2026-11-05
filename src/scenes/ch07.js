@@ -23,9 +23,10 @@
         boilSeed('fs' + c + r); push(); translate(cx, fy); rotate(q * .35); translate(-cx, -fy); ship(cx, fy, len, t, -1, { d: 3 }); pop(); } }
   }
   // the six machines: in after F-2, then ranged round the men
-  // they close round the two men three to a side, clear of them (a half-ring put the middle two in front of Roal and Trest)
+  // they close round the two men three to a side, clear of them (a half-ring put the middle two in front of Roal and Trest),
+  // and inside the dome's edge (at 150 apart the end ones stood half out of it)
   const sixAt = (t, i) => { const ring = ez(t, T0('H') - .5, T0('H') + 3), enter = ez(t, tSix - 1 + i * .3, tSix + 5 + i * .3), k = i < 3 ? 2 - i : i - 3, side = i < 3 ? -1 : 1;
-    return [lerp(lerp(2500, 1700 + i * 60, enter), MID + side * (230 + k * 150), ring), lerp(lerp(600, 760, enter), G + 30 - 15 * k, ring)]; };
+    return [lerp(lerp(2500, 1700 + i * 60, enter), MID + side * (230 + k * 110), ring), lerp(lerp(600, 760, enter), G + 30 - 15 * k, ring)]; };
   function inHall(t, o = {}) {
     DES.lab(-300, -150, 2520, 1300, t, { couch: false, ext: 1200 });
     stillSeed('night'); paint(rectPts(-500, -400, 3000, 1900), { wash: PULP.black, washOp: 175, fill: '#1C2028', fillOp: 60, ink: null });
@@ -122,6 +123,8 @@
     boilSeed('cutin'); paint(Q.slice(), { wash: '#141110', washOp: 255, ink: null });
     boilSeed('cutsh'); paint([...P, ...Q.slice().reverse()], { wash: PULP.black, washOp: 255, fill: PULP.black, fillOp: 230, bleed: .02, ink: INK, sw: .8 });
     // the men, small, in the screens' light; F-2 and its new machine
+    // the six that made the dome, ranged along its inner wall (they were there as it closed, and then gone)
+    for (let i = 0; i < 6; i++) { const sd = i < 3 ? -1 : 1, k = i % 3; DES.machine(X + sd * (300 + k * 55), Y - 4 * k, 9, t, { arms: 3, d: 2, hover: 1.2, face: -sd * .6, lit: .3, label: null }); }
     stander(t, X - 220, Y, 22, [], { who: 'roal', key: 'roalc', seed: 3, flip: false, look: .4 });
     stander(t, X - 150, Y + 4, 23, [], { who: 'trest', key: 'trestc', seed: 7, flip: false, look: .35 });
     const made = ez(t, tM, tVio), fx = X + 160, fy = Y - 120;

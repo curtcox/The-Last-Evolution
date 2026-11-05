@@ -20,6 +20,9 @@
     // each gestures on his own clauses (Roal's smaller while his eyes dream) and nods as the other, or F-2, speaks to him
     const dream = Math.max(win(t, T0('D'), T0('E'), 1, 1), win(t, T0('H'), T0('I'), 1, 1));
     const rp = {}, rh = listen(t, rp, TO_ROAL, 1), rl = rh + gesture(t, rp, ROALC); if (rp.up) { rp.up = lerp(rp.up, .12 + (rp.up - .12) * .55, dream); rp.fore = lerp(rp.fore, .3 + (rp.fore - .3) * .6, dream); }
+    // the six that made the dome, dim at the back of it, and the machine F-2 built there, its violet beam holding up the crown
+    for (let i = 0; i < 6; i++) { const sd = i < 3 ? -1 : 1, k = i % 3; DES.machine(910 + sd * (520 + k * 120), G - 40, 16, t, { arms: 3, d: 3, hover: 1.4, face: -sd * .5, lit: .25, label: null }); }
+    boilSeed('vm8'); wash(rrPts(1290, G - 100, 110, 96, 10), 2, { ink: true, sw: .6 });
     const roal = stander(t, ROALX, G, 44, [], { who: 'roal', key: 'roal', seed: 3, flip: false, look: steps(t, [[0, .5], [T0('C'), .1], [T0('D'), .2], [T0('I'), 0]]) + rl + nod(t, TO_ROAL), pose: rp, talk: talk(t, 'roal'), lid: dream * .45 });
     const tp = {}, th = listen(t, tp, TO_TREST, 2), tl = th + gesture(t, tp, TRESTC);
     const trest = stander(t, TRESTX, G + 10, 46, [], { who: 'trest', key: 'trest', seed: 7, flip: t < T0('I'), look: .1 + tl + nod(t, TO_TREST), pose: tp, talk: talk(t, 'trest') });
@@ -31,7 +34,8 @@
     for (const p of [roal, trest]) p.redrawHead();
     // the light: the violet canopy overhead, the screens' glow, F-2's own
     for (let i = 0; i < 9; i++) { const a = Math.PI + (.15 + i / 8 * .7) * Math.PI; glow(1000 + Math.cos(a) * 900, 1100 + Math.sin(a) * 800, 260, VIOLET, .3); }
-    for (let c2 = 0; c2 < 4; c2++) { const x = 560 + c2 * 240, y = 420; boilSeed('ds' + c2); paint(rectPts(x, y, 180, 120), { wash: '#BFC8D2', washOp: 140 + 50 * hash(c2 + Math.floor(t * 3)), ink: INK, sw: .6 }); glow(x + 90, y + 60, 120, '#DDE6F0', .3); }
+    beam(1345, G - 100, 1345, -300, 10, 26, VIOLET, 1, { splash: false, washOp: 50, a: .5 }); glow(1345, G - 100, 70, VIOLET, .5);
+    for (let c2 = 0; c2 < 5; c2++) { const x = 440 + c2 * 240, y = 420; boilSeed('ds' + c2); paint(rectPts(x, y, 180, 120), { wash: '#BFC8D2', washOp: 140 + 50 * hash(c2 + Math.floor(t * 3)), ink: INK, sw: .6 }); glow(x + 90, y + 60, 120, '#DDE6F0', .3); }   // five screens, as in chapter 7
     glow(f2x, f2y, 90, '#E6EEFF', .25 + .3 * talk(t, 'f2'));
     for (const p of [roal, trest]) glow(...p.head, 70, '#DDE6F0', .2);
     dreamCurl(roal.head[0] + 20, roal.head[1] - 40, K(t, 'p103.1', 'p103.1$'), t, .5 * (1 - ez(t, T0('E') - 1.5, T0('E'))), 'rc');
