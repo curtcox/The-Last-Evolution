@@ -85,8 +85,8 @@ Campbell, Jr.'s story from 1932, voiced by a full cast and painted in the manner
 in. Every word of the story is in the film.</p>
 <ul class="ways">
 <li><a href="watch/"><b>Watch</b></a> the whole film, about an hour, with notes beside it as it plays: on the 1932
-science, the text, and the idea at its heart, that machines might inherit from us. It's a draft: every word is voiced,
-and the paintings are still rough.</li>
+science, the text, and the idea at its heart, that machines might inherit from us. It's a draft: every word is voiced
+and every chapter acted, and the drafts are still being watched and fixed.</li>
 <li><a href="read/"><b>Read</b></a> the story (${story.words.toLocaleString()} words, about half an hour), with the
 words the 1961 reprint lost put back from the first printing.</li>
 <li><a href="notes/"><b>Read the notes</b></a>: the science of 1932, machines as heirs, Campbell and the pulps, each
@@ -152,7 +152,8 @@ page</a>. It is in the public domain in the US too.</p>
 Heibel's <a href="https://github.com/JohnHeibel/ClaudeAnimationBase">Claude Animation Base</a> (MIT). It's being made by
 Curt Cox with Claude, Anthropic's AI model, in Claude Code. <a href="../watch/">The draft</a> can be watched now.</p>
 <p>The voices, sound effects and music in the film are AI-generated. Each voice was designed for its part, and none is a
-real person's. Every on-screen design is original.</p>
+real person's. Every on-screen design is original, except Leo Morey's illustration for the story in the August 1932
+<i>Amazing Stories</i>, which chapter 5 shows as it was printed.</p>
 <h2>The notes</h2>
 <p>The notes beside the film, and the longer ones on <a href="../notes/science/">the science of 1932</a>,
 <a href="../notes/succession/">machines as heirs</a> and <a href="../notes/history/">Campbell and the pulps</a>, cite
@@ -266,7 +267,7 @@ const rounds = readdirSync('review').map(f => f.match(/^round(\d+)\.md$/)?.[1]).
     .map(f => ({ href: `round${n}/${f === 'index.html' ? '' : f}`, title: readFileSync(`${dir}/${f}`, 'utf8').match(/<title>(.*?)<\/title>/)[1] })) : [];
   return { n, title: md.match(/^# (.*)$/m)[1], closed: md.match(/^\*\*Closed ([\d-]+)/m)?.[1], pages };
 });
-const review = page(1, 'Review · The Last Evolution', `
+const review = page(1, 'Review: The Last Evolution', `
 <p class="kicker">How it's being made</p>
 <h1>Review</h1>
 <p class="lede">The film is made in rounds. Each round ends at a review gate: a decision sheet of questions, each with a
@@ -300,7 +301,7 @@ const quality = card && (() => {
   return page(2, 'Where it stands: The Last Evolution', `
 <p class="kicker"><a href="../">How it's made</a></p>
 <h1>Where it stands</h1>
-<p class="lede">The whole film is drafted. Now each chapter is being acted and painted to its finished designs, and every
+<p class="lede">The whole film is drafted, and every chapter has been acted and painted to its finished designs. Now every
 chapter and every page of this site is checked against a written bar before it's called done.</p>
 <ul>
 <li><b>The film:</b> ${fd} of its ${fn} checks done (six for each of its twelve chapters).</li>
