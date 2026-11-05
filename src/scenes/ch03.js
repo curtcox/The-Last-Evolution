@@ -146,7 +146,7 @@
       // the colony's domes
       for (let i = 0; i < 5; i++) { const x = 500 + i * 260, s = 70 + 20 * hash(i); stillSeed('cdome' + i); wash([...Array(17)].map((_, k) => { const a = Math.PI + k / 16 * Math.PI; return [x + Math.cos(a) * s, LG + 60 + Math.sin(a) * s * .8]; }), 1, { ink: true, sw: .6 }); }
       // the people: standing, then falling in the green
-      for (let i = 0; i < 9; i++) { const x = 380 + i * 160 + 50 * hash(i), y = LG + 120 + 60 * hash(i * 3), fall = ez(t, tKill + i * .25, tKill + i * .25 + .6);
+      for (let i = 0; i < 9; i++) { const x = 380 + i * 160 + 50 * hash(i), y = LG + 120 + 60 * hash(i * 3), fall = ez(t, tKill - .3 + i * .12, tKill + .2 + i * .12);   // all down within 1.3 s of 'killed instantly' (spread .25 apart, the last fell 2.6 s on)
         if (fall < 1) { push(); translate(x, y); rotate(fall * Math.PI / 2 * (i % 2 ? 1 : -1)); translate(-x, -y); DES.person(x, y, 18, t, { who: 'citizen', flip: i % 2 }); pop(); }
         else { boilSeed('fallen' + i); wash(rrPts(x - 54 * (i % 2 ? -1 : 1) - 50, y - 14, 100, 20, 8), 2, { ink: true, sw: .4 }); } }
       // P: the transports come down on the far ground between the downed ships, behind them (at 600-1600 one landed on the
