@@ -107,8 +107,9 @@ const KIT = (() => {
   function planet(x, y, r, d = 2, o = {}) { steady(() => {
     stillSeed('pl' + (o.key || x));
     if (o.glow) glow(x, y, r * 1.8, o.glow, o.ga ?? .5);
-    wash(ellPts(x, y, r, r, 40), d, { ink: true, sw: .7 });
-    wash([...Array(20)].map((_, i) => { const a = -.3 + i / 19 * Math.PI; return [x + Math.cos(a) * r, y + Math.sin(a) * r]; }).concat([[x - r * .2, y + r * .4]]), Math.min(4, d + 2), { op: .7 });   // the night side
+    const n = Math.max(40, Math.round(r * .4)), nn = Math.max(20, Math.round(r * .2));   // enough points that a large planet's limb is round (at 40, chapter 1's Earth showed its corners)
+    wash(ellPts(x, y, r, r, n), d, { ink: true, sw: .7 });
+    wash([...Array(nn)].map((_, i) => { const a = -.3 + i / (nn - 1) * Math.PI; return [x + Math.cos(a) * r, y + Math.sin(a) * r]; }).concat([[x - r * .2, y + r * .4]]), Math.min(4, d + 2), { op: .7 });   // the night side
     if (o.bands) for (let i = -2; i <= 2; i++) inkLine([[x - r * .9 * Math.cos(i * .35), y + i * r * .3], [x + r * .9 * Math.cos(i * .35), y + i * r * .3 + 3]], .4, D[Math.min(4, d + 1)], 'inkfine');
   }); }
 

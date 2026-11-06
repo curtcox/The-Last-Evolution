@@ -49,7 +49,7 @@
     const k = ez(t, T0('L') - .5, T0('L') + 2) * (1 - ez(t, tShift, tShift + 2));
     if (k <= 0) return;
     for (let r = 0; r < 3; r++) for (let c = 0; c < 7; c++) { const x = 103 + c * 252, y = 110 + r * 208; boilSeed('ten' + c + r); paint(rectPts(x + 6, y + 6, 202, 157), { wash: '#2A231D', washOp: 230 * k, ink: null });
-      for (let i = 0; i < 40; i++) glow(x + 14 + hash(i * 3 + c) * 186, y + 14 + hash(i * 7 + r) * 140, 3, '#F4EEDC', .7 * k); }
+      for (let i = 0; i < 70; i++) { const px = x + 14 + hash(i * 3 + c) * 186, py = y + 14 + hash(i * 7 + r) * 140; glow(px, py, 5, '#F4EEDC', .9 * k); if (i % 3 === 0) inkLine([[px - 7, py], [px + 7, py]], 1.6 * k, '#F4EEDC', 'inkfine', 0); } }   // ten thousand: more of them, brighter, the near ones tiny hulls
   }
 
   // ---------- M to S: the works ----------
@@ -105,7 +105,7 @@
     const at = id => FACE[id], tR = T0('R');
     const c = cam(t, [[0, [1000, 800, 1.1]], [C('p037.2') - .5, at('x5638'), 2.5], [tC, [P.x5638 + 120, 820, 1.6], 2], [T0('D'), [P.roal - 60, 800, 2], 2], [T0('E'), at('x5638'), 1.2], [T0('F'), [P.roal + 60, 800, 1.3], 2.2],
       [T0('G'), at('x6349'), 2], [T0('H'), at('trest'), 1.6], [T0('I'), at('kahsh'), 1.4], [T0('J'), at('x6621'), 1.6], [T0('K'), at('cr21'), 2.2], [C('p046.3'), [P.cr21 + 300, 800, 1.4], 3],
-      [T0('L'), tt => [960, lerp(500, 400, ez(tt, T0('L'), tShift)), lerp(1.2, 1.5, ez(tt, T0('L'), tShift))], 2.5], [tShift, tt => [lerp(600, 1400, ez(tt, tShift, T0('N'))), 760, 1.15], 2.5],
+      [T0('L'), tt => [960, lerp(560, 470, ez(tt, T0('L'), tShift)), lerp(1.1, 1.3, ez(tt, T0('L'), tShift))], 2.5], [tShift, tt => [lerp(600, 1400, ez(tt, tShift, T0('N'))), 760, 1.15], 2.5],   // the screens and the council under them (it was cropped to heads)
       [T0('N'), tt => [FX, lerp(820, 600, ez(tt, T0('N'), T0('O'))), lerp(1.3, 1.5, ez(tt, T0('N'), T0('O')))], 3], [T0('O'), [FX, 560, 1.5], 2.5], [T0('P'), [FX, 330, 2.2], 2.5],
       [T0('Q'), tt => [FX, lerp(420, 560, ez(tt, T0('Q'), tR)), lerp(1.8, 1.05, ez(tt, T0('Q'), tR))], 3], [tR, tt => [FX, lerp(620, 480, ez(tt, tR, T0('S'))), lerp(1.4, 2.2, ez(tt, tR, T0('S')))], 3],
       [T0('S'), tt => [FX, lerp(480, 600, ez(tt, T0('S'), DUR)), lerp(2.2, 1.2, ez(tt, T0('S'), DUR))], 2]]);
