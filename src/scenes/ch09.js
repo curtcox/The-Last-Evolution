@@ -8,7 +8,8 @@
   const FORCE = '#CFE0FF', RG = 900, PX = 1100, PS = 1.8, FS = 26;
   const TOP = RG + 60 - 400 * PS - 90 * PS * .6, ORB = [PX, TOP - 260];   // the plant's crown, and where the spheres float
   const tD = T0('D'), tDark = C('p117.1:The sky darkened'), tF = T0('F'), tI = T0('I'), tStab = C('p121.4:A stabbing beam'), tRed = C('p121.4:an enormously greater beam');
-  const tOrange = C('p121.4:the beam became orange'), tGreen = C('p121.4:and finally green'), tGone = C('p121.4:Then the sphere had vanished'), tJ = T0('J'), tK = T0('K');
+  const tOrange = C('p121.4:orange'), tGreen = C('p121.4:green'),   // on the colour words themselves (the phrase starts ~1 s early)
+    tGone = C('p121.4:Then the sphere had vanished'), tJ = T0('J'), tK = T0('K');
   const tGold = C('p123.1:an irregular globe'), tRuby = C('p126.1:a tiny ruby flame'), tN = T0('N'), tVanish = C('p129.1:fast as light');
 
   // the storm: 0..1; up from D, gone at F; up again at J, gone at K
@@ -85,7 +86,7 @@
     if (t > C('p120.1') && t < tH) for (let i = 0; i < 5; i++) { const k = seg(t, C('p120.1') + i * .8, C('p120.1') + i * .8 + 1.2), d = [ORB[0] - 80, ORB[1] + 40 * (i - 2)], turn = t > C('p120.1:seemed baffled') ? 1 : 0;
       ruled([[f2[0] + 50, f2[1]], [lerp(f2[0] + 50, d[0], .5), f2[1]], [lerp(f2[0] + 50, d[0], .5), d[1]], [d[0], d[1] + turn * (i - 2) * 80]], k, FORCE, .6); }
     if (t > tStab && t < tStab + .5) beam(...ORB, PX - 300, ORB[1] + 60, 6, 20, '#E8F0FF', 1, { washOp: 60, a: .9 });
-    if (t > tRed - .2 && t < tGone + .4) { const col = t < tOrange ? '#B23A2A' : t < tGreen ? mixCol('#FF8A3A', NRG.death, ez(t, tOrange, tGreen)) : NRG.death;
+    if (t > tRed - .2 && t < tGone + .4) { const col = t < tOrange ? '#B23A2A' : t < tGreen ? mixCol('#E8641E', NRG.death, ez(t, tGreen - .35, tGreen)) : NRG.death;   // a true orange, held until 'green'
       // the beam reaches out from the plant toward the sphere where it hangs, and has it once it leaps
       const reach = ez(t, tRed - .2, tRed + 3), end = t < tLeap ? lerpP([PX, TOP], [orb[0] - 40, orb[1] + 30], .25 + .6 * reach) : orb;
       beam(PX, TOP + 20, ...end, 90, 40 * shrink + 24, col, ez(t, tRed - .2, tRed + .3), { washOp: 110, a: .85 }); glow(...end, 60, col, .5); }
