@@ -178,7 +178,9 @@
       // (swaying wider round closer spots, they walked through each other and read as one drawn twice)
       const SPOT = [2290, 2500, 2990];
       for (let i = 0; i < 3; i++) if (t > tL + 5) crawler(SPOT[i] + 25 * Math.sin((t - tSearch) * .4 + i * 2), t, 10 + i, { s: 34, view: 'front', turn: .1 * t + i * .3 });
-      if (t > tN - 2) { const ox = 2750, aim = ez(t, tN, tBeam - .3);
+      // he comes in on 'appeared armed', carrying it (he stood there holding it from the start of the shot)
+      const tArmed = C('p016.1:appeared armed');
+      if (t > tArmed - 1.6) { const ox = lerp(3250, 2750, ez(t, tArmed - 1.6, tArmed + .6)), aim = ez(t, tArmed + .6, tBeam - .3);
         // the projector swings up to the investigator, and the beam runs from its tip (it pointed down, away, and the
         // beam was a run of near-white dots from his chest)
         const pa = lerp(-.3, Math.atan2(FL - 110 - FOUND[1], ox - 40 - FOUND[0]), aim), tip = [ox - 40 - 70 * Math.cos(pa), FL - 110 - 70 * Math.sin(pa)];
