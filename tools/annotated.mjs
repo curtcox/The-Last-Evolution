@@ -87,7 +87,7 @@ main{max-width:1240px} .read{max-width:38em;margin:0 auto} .read h3{font:1.25em/
 .player video{width:100%;height:auto;display:block;aspect-ratio:16/9;background:#2A221B}
 .bar{position:relative;height:1.6em;margin:.4em 0 .2em} .bar input{width:100%;margin:0} .ticks{position:absolute;left:0;right:0;top:0;height:.5em;pointer-events:none}
 .ticks span{position:absolute;top:0;width:1px;height:.5em;background:var(--ink2)} .ticks i{position:absolute;top:.7em;width:5px;height:5px;margin-left:-2px;border-radius:50%;background:var(--accent);opacity:.7}
-.time{display:flex;justify-content:space-between;font-size:.85em;color:var(--ink2);font-variant-numeric:tabular-nums}
+.time{display:flex;gap:.4em;justify-content:space-between;font-size:.85em;color:var(--ink2);font-variant-numeric:tabular-nums}
 .now{min-height:3.2em;font-size:.95em;margin:.3em 0 0} .now .who,.chnow{font-variant:small-caps;color:var(--ink2);margin-right:.5em}
 .now .who{font-variant:normal;font-style:italic;color:var(--ink)} .now .w{color:var(--ink2)} .now .w.said{color:var(--ink)}
 .kinds{display:flex;flex-wrap:wrap;gap:.35em;margin:.4em 0;font-size:.82em} .kinds button{font:inherit;padding:.15em .6em;border:1px solid var(--rule);background:none;color:var(--ink2);cursor:pointer;border-radius:1em}
