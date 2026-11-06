@@ -132,12 +132,14 @@
       lamp(950, 520); lamp(1650, 620);
       // depth: the three on the far floor, the close one on the near, so his size reads as nearness, not as a giant
       const FAR = FL - 50, NEAR = FL + 50;
-      for (let i = 0; i < 3; i++) crawler(620 + i * 220 + 45 * Math.sin(t * .05 + i), t, i, { s: 30, g: FAR });
+      // they crawl in on 'Strange life-forms were crawling about the ship' (in full view 12 s before, the reveal was lost)
+      const tLife = C('p010.1:Strange life-forms'), inK = ez(t, tLife - 1, tLife + 3), off = 1100 * (1 - inK);
+      if (t > tLife - 1) for (let i = 0; i < 3; i++) crawler(620 + i * 220 + 45 * Math.sin(t * .05 + i) + off * (1 + .15 * i), t, i, { s: 30, g: FAR, view: inK < 1 ? 'side' : undefined });
       const tum = seg(t, tTumble - .6, tTumble + 4), struck = t > tHit;
-      const sx = struck ? lerp(1400, 1820, ease(tum)) : 1400, rot = struck ? -TAU * easeOut(tum) : 0, lift = struck ? 160 * Math.sin(Math.PI * tum) : 0;   // a whole turn: he lands on his feet, unhurt (a turn and a half left him upside down)
-      push(); translate(sx, NEAR - 80 - lift); rotate(rot); translate(-sx, -(NEAR - 80 - lift));
+      const sx = (struck ? lerp(1400, 1820, ease(tum)) : 1400) + off * 1.4, rot = struck ? -TAU * easeOut(tum) : 0, lift = struck ? 160 * Math.sin(Math.PI * tum) : 0;   // a whole turn: he lands on his feet, unhurt (a turn and a half left him upside down)
+      if (t > tLife - 1) { push(); translate(sx, NEAR - 80 - lift); rotate(rot); translate(-sx, -(NEAR - 80 - lift));
       DES.outsider(sx, NEAR - lift, 66, t, { view: struck && tum < 1 ? 'side' : 'front', turn: steps(t, [[0, 0], [C('p010.1:Their eyes projected'), .33, 1.2], [C('p010.1:capable of movement'), .66, 1.2], [C('p010.1:and there were three'), 1, 1.2]]) });
-      pop();
+      pop(); }
       if (t > tHit && t < tHit + .3) glow(1360, 720, 120, NRG.white, 1 - seg(t, tHit, tHit + .3));
       // the others clustering round him (I)
       for (let i = 0; i < 2; i++) if (t > tI - 1) crawler(lerp(1100, i ? 2080 : 1560, ez(t, tI - 1, tI + 4)), t, 5 + i, { s: 32, g: NEAR - 25 });
@@ -176,8 +178,10 @@
       const tSearch = C('p015.1:They searched');
       // three searching, each swaying ±25 round its own spot, with a gap at 2750 where the one with the projector comes
       // (swaying wider round closer spots, they walked through each other and read as one drawn twice)
-      const SPOT = [2290, 2500, 2990];
-      for (let i = 0; i < 3; i++) if (t > tL + 5) crawler(SPOT[i] + 25 * Math.sin((t - tSearch) * .4 + i * 2), t, 10 + i, { s: 34, view: 'front', turn: .1 * t + i * .3 });
+      const SPOT = [2240, 2540, 2990];
+      // searching: each hurries between spots, turning as it goes, stopping to look (they faced the camera, still, for a minute)
+      for (let i = 0; i < 3; i++) if (t > tL + 5) { const ph = (t - tSearch) * .35 + i * 2.1, dx = 70 * Math.sin(ph) + 25 * Math.sin(ph * 2.7), moving = Math.abs(Math.cos(ph)) > .35;
+        crawler(SPOT[i] + dx, t, 10 + i, { s: 34, view: moving ? 'side' : 'front', turn: .25 * Math.sin(t * .9 + i) }); }
       // he comes in on 'appeared armed', carrying it (he stood there holding it from the start of the shot)
       const tArmed = C('p016.1:appeared armed');
       if (t > tArmed - 1.6) { const ox = lerp(3250, 2750, ez(t, tArmed - 1.6, tArmed + .6)), aim = ez(t, tArmed + .6, tBeam - .3);
