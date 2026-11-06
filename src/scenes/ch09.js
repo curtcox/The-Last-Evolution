@@ -2,7 +2,7 @@
 // (src/gen/ch09.js). One place, the rock round the power plant, through one night into a red dawn: the storm, the
 // white globe killed by the red beam, and the golden sphere.
 (() => {
-  const { D, INK, ez, win, steps, path, talk, ground, cam, page, closing, stander, thoughtRings, ruled } = KIT;
+  const { D, INK, ez, win, lerpP, steps, path, talk, ground, cam, page, closing, stander, thoughtRings, ruled } = KIT;
   const S = CHAPTER.shots, C = cue, T0 = id => S[id][0], T1 = id => S[id][1];
   const K = (t, a, b) => seg(t, C(a), C(b));
   const FORCE = '#CFE0FF', RG = 900, PX = 1100, PS = 1.8, FS = 26;
@@ -60,9 +60,12 @@
     HALFTONE = .25;
     const tC = T0('C'), tE = T0('E'), tG = T0('G'), tH = T0('H'), tL = T0('L'), tM = T0('M'), tP = T0('P');
     const c = cam(t, [[0, tt => [PX - 100, lerp(560, 420, ez(tt, T0('B'), tC)), lerp(.75, .85, ez(tt, T0('B'), tC))]], [tC, [PX + 40, RG - 380, 2.2], 2], [tD, tt => [PX - 200, lerp(500, 200, ez(tt, tD, tE)), lerp(1.2, .7, ez(tt, tD, tE))], 3],
-      [tE, [PX, ORB[1] + 120, 1.1], 3], [tF, [PX - 100, ORB[1] + 200, .9], 3], [tG, [PX - 160, ORB[1] + 60, 1.5], 2.5], [tH, [PX, ORB[1], 2.2], 2.5], [tI, tt => [PX - 200, lerp(ORB[1] + 200, 300, ez(tt, tI, tGone)), lerp(1.4, .6, ez(tt, tStab, tRed + 2))], 2],
+      [tE, [PX, ORB[1] + 120, 1.1], 3], [tF, [PX - 100, ORB[1] + 200, .9], 3], [tG, [PX - 160, ORB[1] + 60, 1.5], 2.5], [tH, [PX, ORB[1], 2.2], 2.5], [tI, tt => [lerp(PX - 200, PX + 140, ez(tt, tStab, tStab + 2)), lerp(ORB[1] + 200, ORB[1] + 80, ez(tt, tStab, tStab + 2)), lerp(1.4, 1.05, ez(tt, tStab, tStab + 2))], 2],   // the plant's top, the beam and the sphere held together through the duel
       [tJ, tt => [lerp(PX, PX + 400, ez(tt, tJ, tK)), 400, .65], 3], [tK, tt => [lerp(350, PX, ez(tt, C('p123.1:Roal and Trest appeared') + 2, tGold + 2)), lerp(800, ORB[1] + 260, ez(tt, tGold - 2.5, tGold + 1)), lerp(1.2, .75, ez(tt, tK, tGold + .5)) * lerp(1, 1.5, ez(tt, tGold + 3, tL))], 3],   // up and wide, so the globe is in frame as it's named; then a slow push in
-      [tL, tt => [PX, ORB[1], lerp(1.5, 1.9, ez(tt, tL, tM))], 2.5], [tM, tt => [PX - 100, lerp(ORB[1], 300, ez(tt, tRuby + 2, tN)), lerp(1.9, .7, ez(tt, tRuby + 2, lerp(tRuby + 2, tN, .5)))], 3], [tN, [PX, 200, .7], 2.5], [tP, [PX, -100, .7], 2]]);
+      [tL, tt => [PX, ORB[1], lerp(1.5, 1.9, ez(tt, tL, tM))], 2.5], [tM, tt => [PX - 100, lerp(ORB[1], 300, ez(tt, tRuby + 2, tN)), lerp(1.9, .7, ez(tt, tRuby + 2, lerp(tRuby + 2, tN, .5)))], 3],
+      // in close on the two men as the warmth shoots through them, their last time on screen (at 25 px they were specks)
+      [C('p126.1:there shot through') - .4, tt => [lerp(470, 500, ez(tt, C('p126.1:there shot through'), tN)), 800, lerp(2.2, 2.4, ez(tt, C('p126.1:there shot through'), tN))], 1.6],
+      [tN, [PX, 200, .7], 2.5], [tP, [PX, -100, .7], 2]]);
     camBegin(...c);
     const { st } = world(t);
     // E: the ball of white force at the storm's centre, jerking at the lightning's touch
@@ -83,7 +86,9 @@
       ruled([[f2[0] + 50, f2[1]], [lerp(f2[0] + 50, d[0], .5), f2[1]], [lerp(f2[0] + 50, d[0], .5), d[1]], [d[0], d[1] + turn * (i - 2) * 80]], k, FORCE, .6); }
     if (t > tStab && t < tStab + .5) beam(...ORB, PX - 300, ORB[1] + 60, 6, 20, '#E8F0FF', 1, { washOp: 60, a: .9 });
     if (t > tRed - .2 && t < tGone + .4) { const col = t < tOrange ? '#B23A2A' : t < tGreen ? mixCol('#FF8A3A', NRG.death, ez(t, tOrange, tGreen)) : NRG.death;
-      beam(PX, TOP + 20, ...ORB, 80, 40 * shrink + 20, col, ez(t, tRed - .2, tRed + .3), { washOp: 90, a: .8 }); }
+      // the beam reaches out from the plant toward the sphere where it hangs, and has it once it leaps
+      const reach = ez(t, tRed - .2, tRed + 3), end = t < tLeap ? lerpP([PX, TOP], [orb[0] - 40, orb[1] + 30], .25 + .6 * reach) : orb;
+      beam(PX, TOP + 20, ...end, 90, 40 * shrink + 24, col, ez(t, tRed - .2, tRed + .3), { washOp: 110, a: .85 }); glow(...end, 60, col, .5); }
     // F-2; C-R-U-1 joining it at dawn
     DES.f2(f2[0], f2[1] + 2.4 * FS, FS, t, { view: 'side' });
     if (t > C('p122.1:C-R-U-1 joined him') - 3) { const k = ez(t, C('p122.1:C-R-U-1 joined him') - 3, C('p122.1:C-R-U-1 joined him') + 1); DES.cru1(lerp(-600, f2[0] - 140, k), f2[1] + 60 + 2.2 * 30, 30, t, { glowK: 1 }); }
@@ -98,7 +103,7 @@
       // the dome again, in front: the men are inside it until they walk out
       if (domePart(t) < 1) for (let i = 0; i < 2; i++) DES.blackDome(-300, RG + 60, 320 * (1 - domePart(t) * .9), t); }   // twice: one coat lets the figures show through
     if (gk > 0) { sphereGold(t, 90 * gk * (1 + grow)); thoughtRings(...ORB, t, T0('L'), C('p125.1$'), { r1: 600, col: NRG.gold }); thoughtRings(...ORB, t, T0('O'), C('p128.1$'), { r1: 600, col: NRG.gold });
-      const ruby = t > tRuby ? Math.max(0, Math.sin((t - tRuby) * 2.2)) * (1 - ez(t, tN - 1, tN)) : 0; if (ruby > 0 || (t > tRuby && t < tN)) { rubyFlame(t, 90 * gk * (1 + grow), ruby); glow(...ORB, 900, '#FFC780', .3 * ruby); } }
+      const ruby = t > tRuby ? Math.max(0, Math.sin((t - tRuby) * 2.2)) * (1 - ez(t, tN - 1, tN)) : 0; if (ruby > 0 || (t > tRuby && t < tN)) { rubyFlame(t, 90 * gk * (1 + grow), ruby); glow(...ORB, 900, '#FFC780', .3 * ruby); glow(480, RG - 120, 260, '#FFC780', .35 * ruby); } }   // and its warmth on the men
     if (t > tVanish - .1 && t < tVanish + .6) { const q = seg(t, tVanish - .1, tVanish + .6); beam(ORB[0], ORB[1], ORB[0] + 400, -3000, 60 * (1 - q), 10, NRG.gold, 1, { washOp: 60 * (1 - q), a: 1 - q, splash: false }); }
     camEnd();
   }
