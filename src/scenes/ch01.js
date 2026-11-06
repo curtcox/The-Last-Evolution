@@ -79,7 +79,9 @@
           pose: { up: lerp(.12, .8, g), fore: lerp(.3, 1.8, g) }, talk: turn === sd ? .3 * Math.max(0, Math.sin(t * 6 + i)) : 0 }); } }
     // D: the runners cross the plaza; the mock battle beyond them
     const tRun = C('p003.1:But games');
-    for (let i = 0; i < 3; i++) stander(t, 2500, G + 40 + i * 30, 27 + i * 2, [[tRun + i * .3, tRun + 5 + i * .4, 2500 - i * 60, 3900 - i * 120]], { seed: 10 + i, key: 'run' + i, pose: { torso: .15 } });
+    // a race: five runners leaning in, arms pumping, strung out as they cross (three upright walkers didn't read as games)
+    for (let i = 0; i < 5; i++) { const t0 = tRun - .5 + i * .25, dur = 5.2 + .5 * hash(i * 3), sw = Math.sin(t * 13 + i * 1.7);
+      stander(t, 2300, G + 40 + (i % 3) * 26, 26 + (i % 2) * 2, [[t0, t0 + dur, 2300 - i * 50, 4100 - i * 90]], { seed: 10 + i, key: 'run' + i, pose: { torso: .3, up: .9 + .7 * sw, fore: 2.1, farUp: .9 - .7 * sw, farFore: 2.1 } }); }
     const tMock = C('p003.1:mock battles') - 3;
     for (let sd = -1; sd <= 1; sd += 2) for (let i = 0; i < 3; i++) { const x = 3550 + sd * (260 + i * 60), y = G + 10 + i * 40;
       // drilling while they wait: arms levelled and raised in turn, a little step in place (they stood frozen 25 s)
