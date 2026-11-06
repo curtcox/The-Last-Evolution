@@ -854,6 +854,61 @@ items:
     note: "Retaken after the round: the quality page's phone shot is rebuilt from the current scorecard (npm run quality, then the site, then the phone check), and shows 72 of 72 and 20 of 20."
     title: The quality page's phone screenshot predates the page
     when: 2026-11-06 19:23
+  find.ch07-cloud:
+    state: open
+    note: "Fresh eyes 5, 2:07-2:42: 'a cloud of blankness grew... like some smoke... Swiftly it intensified... solidifying... wavered, and thinned', but the two stand in clear air ~35 s until the dome's outline at 2:42. Minor, near major."
+    title: "Chapter 7: the cloud of blankness is never shown"
+    when: 2026-11-06 19:40
+  find.ch04-groups:
+    state: open
+    note: "Fresh eyes 5, 3:02-3:19 (M): 'two small, and one large group... under Roal... under Trest' over floating machines and an empty floor. Minor."
+    title: "Chapter 4: the three groups have no people in them"
+    when: 2026-11-06 19:40
+  find.ch03-decay:
+    state: open
+    note: "Fresh eyes 5, 5:46-6:10 (R): the camera pushes to the screens on 'the bodies of the Outsiders began to decay... demand their removal', and they show only mottled wash. Minor."
+    title: "Chapter 3: the decay is shown on blank screens"
+    when: 2026-11-06 19:40
+  find.ch04-tentacles:
+    state: open
+    note: "Fresh eyes 5, 0:58-1:01: 'I noticed your weaving tentacles, and your force-beams' over the same static claws as every machine; no beam. Minor."
+    title: "Chapter 4: Roal points at weaving tentacles X-5638 doesn't have"
+    when: 2026-11-06 19:40
+  find.ch02-reveal:
+    state: open
+    note: "Fresh eyes 5: in full view from 1:16 in F, before 'Strange life-forms were crawling' (1:28); and 3:39-4:40 three face the camera motionless, two overlapping, under 'the excited action... They searched'. Minor."
+    title: "Chapter 2: the Outsiders show before they're named, and stand still while they search"
+    when: 2026-11-06 19:40
+  find.ch09-colours:
+    state: open
+    note: "Fresh eyes 5, 2:44-2:52: orange ~1 s before 'orange' (2:47.7), green ~1.6 s before 'green' (2:49.1); the orange reads yellow. Nit to minor."
+    title: "Chapter 9: the dying beam turns orange and green before its words"
+    when: 2026-11-06 19:40
+  find.room-tone:
+    state: open
+    note: "Fresh eyes 5: at ch05 5:00 and ch11 1:34 the holds measure about -60 LUFS (the room tone, not digital silence), heard as dead air. Nit."
+    title: "Sound: the room tone is too faint to read as a bed"
+    when: 2026-11-06 19:40
+  find.ch01-games:
+    state: open
+    note: "Fresh eyes 5, 0:53-1:26: no runners visibly race; the first clear event is the mock battle's flash. Minor."
+    title: "Chapter 1: the games don't read as games"
+    when: 2026-11-06 19:40
+  find.small-pic:
+    state: open
+    note: "Fresh eyes 5: ch04 2:46-2:58 'ten thousand great ships' as near-black screens with faint points, the council cropped to heads; ch01 ~2:04 the Earth's limb visibly polygonal. (ch03's torpedoes rise behind the men by design.) Nit."
+    title: Small picture nits in chapters 1 and 4
+    when: 2026-11-06 19:40
+  find.time-gap:
+    state: open
+    note: "Fresh eyes 5: the .time container is flex with no gap. Nit."
+    title: "Film page: the time readout runs '0:00of the whole film'"
+    when: 2026-11-06 19:40
+  find.title-note:
+    state: open
+    note: "Fresh eyes 5: the note names the 1961 header, which the film's page doesn't show. Nit."
+    title: "Film page: the title-page note sends viewers looking for 'A Classic Reprint'"
+    when: 2026-11-06 19:40
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -875,4 +930,8 @@ fresh:
     found: 15
     note: "Film and site, fourth round: a subagent with no context watched all twelve drafts against the word times and checked the site live. No major findings: 8 minor, 7 nits, recorded as find.* items (the beings of force's look is Curt's call; the fix is a note)."
     state: c18437997fe6
-since_fresh: 79
+  - when: 2026-11-06 19:40
+    found: 11
+    note: "Film and site, fifth round: a subagent with no context watched all twelve drafts against the word times and checked the site live. No major findings: 7 minor, 4 nits (one, the 'dropouts', measured as the room tone rather than silence, recorded as the bed being too faint)."
+    state: fd1727873fda
+since_fresh: 0
