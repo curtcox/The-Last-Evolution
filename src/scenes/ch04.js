@@ -20,7 +20,9 @@
     const look = who => clamp(((K_SPEAK(t) ?? 1000) - P[who]) / 600, -1, 1);
     const crt = ez(t, T0('K') - .5, T0('K') + 1);
     DES.cr21(lerp(P.cr21, 300, fan), G, 30, t, { lit: lit(t, 'cr21'), hover: 2 + .6 * crt + .1 * wob(t, .2), face: look('cr21') * .6 });
-    const x56 = DES.x5638(lerp(P.x5638, 620, fan), G, 26, t, { lit: lit(t, 'x5638'), hover: 1.5 + .8 * win(t, T0('B'), T0('D'), 1, 1.5), face: look('x5638') * .8, reach: 4.2 + 1.2 * win(t, C('p039.1:I noticed'), T0('E'), .5, 1) });
+    const x56 = DES.x5638(lerp(P.x5638, 620, fan), G, 26, t, { lit: lit(t, 'x5638'), hover: 1.5 + .8 * win(t, T0('B'), T0('D'), 1, 1.5), face: look('x5638') * .8, reach: 4.2 + 1.2 * win(t, C('p039.1:I noticed'), T0('E'), .5, 1), weave: win(t, C('p039.1:weaving tentacles') - .4, T0('E'), .4, 1) });
+    // 'and your force-beams': a pale beam plays out from it
+    { const fb = win(t, C('p039.1:force-beams') - .2, T0('E'), .3, .8); if (fb > 0) beam(x56.eye[0] - 10, x56.eye[1] - 10, x56.eye[0] - 120 + 60 * Math.sin(t * 2), x56.eye[1] - 320, 4, 16, FORCE, fb, { washOp: 90, a: .7, splash: false }); }
     DES.x6349(lerp(P.x6349, 1500, fan), G, 26, t, { lit: lit(t, 'x6349'), face: look('x6349') * .8 });
     DES.x6621(lerp(P.x6621, 1750, fan), G, 26, t, { lit: lit(t, 'x6621'), face: look('x6621') * .8 });
     if (talk(t, 'x6621') > 0 && t > C('p045.1') && t < C('p045.3')) glow(P.x6621 + look('x6621') * 20, G - 26 * 6.5, 30, NRG.death, .3);
@@ -36,7 +38,7 @@
     const fan = ez(t, tShift - 1, tShift + 4), sp = K_SPEAK(t) ?? 1000;
     const pt = win(t, C('p039.1:I noticed'), T0('E'), .5, .8);
     const rp = { up: lerp(.12, 1.4, pt), fore: lerp(.3, 1.6, pt) }, gl = pt > .1 ? 0 : gesture(t, rp, ROALC);
-    stander(t, P.roal, G, 44, [[tShift, tShift + 4, P.roal, 380]], { who: 'roal', key: 'roal', seed: 3, flip: sp < P.roal || t > tShift + 4, look: .1 + gl + nod(t, TO_ROAL), talk: talk(t, 'roal'), pose: rp });
+    stander(t, P.roal, G, 44, [[tShift, tShift + 4, P.roal, 380]], { who: 'roal', key: 'roal', seed: 3, flip: pt > .1 || sp < P.roal || t > tShift + 4, look: .1 + gl + nod(t, TO_ROAL), talk: talk(t, 'roal'), pose: rp });
     const step = ez(t, T0('H'), T0('H') + 1) * (1 - ez(t, T0('I'), T0('I') + 1)), tp = {}, tl = gesture(t, tp, TRESTC);
     if (tp.up) { tp.up = .12 + (tp.up - .12) * .5; tp.fore = .3 + (tp.fore - .3) * .55; }   // he's stepped up close to Kahsh: a small gesture, in his own space
     stander(t, P.trest, G + 10, 46, [[T0('H'), T0('H') + 1, P.trest, P.trest + 50], [T0('I'), T0('I') + 1, P.trest + 50, P.trest], [tShift + .5, tShift + 5, P.trest, 1640]], { who: 'trest', key: 'trest', seed: 7, flip: sp < P.trest && t < tShift, look: .05 + tl + nod(t, ROALC), talk: talk(t, 'trest'), pose: tp });

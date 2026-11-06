@@ -81,7 +81,8 @@ const DES = {};
     const n = o.arms ?? 4, L = (o.reach ?? 4) * s, arm = (i, front) => {
       const th = (i + .5) / n * TAU + face * .5, u = Math.sin(th), z = Math.cos(th); if ((z > 0) !== front) return;
       // hanging slack from the framework, out and down, the tip curled up short of the ground
-      const sx = x + u * r * .85, sy = dy - fh * .45, sw = wob(t, .35, i * .31), drop = Math.min(L * .8, ground - sy - .6 * s), out = L * .32;
+      // o.weave 0..1: the tentacles lift, reach out and weave (X-5638's 'weaving tentacles', p039)
+      const wv = o.weave || 0, sx = x + u * r * .85, sy = dy - fh * .45, sw = wob(t, .35 + .6 * wv, i * .31) * (1 + 3 * wv), drop = Math.min(L * .8, ground - sy - .6 * s) * (1 - .45 * wv), out = L * .32 * (1 + .9 * wv);
       const P = [[sx, sy], [sx + u * out * .35, sy + drop * .4], [sx + u * out * (.6 + .08 * sw), sy + drop * .8], [sx + u * out * (.8 + .1 * sw), sy + drop], [sx + u * out * (1 + .1 * sw), sy + drop * .82]];
       tentacle(P, .34 * s, .16 * s, front ? 4 : 3, { op: front ? 1 : .8 });
     };
