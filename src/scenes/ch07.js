@@ -48,8 +48,11 @@
       look: .1 + tl + nod(t, TO_TREST), pose: tp, talk: talk(t, 'trest') });
     dreamCurl(roal.head[0] - 20, roal.head[1] - 40, K(t, 'p085.2', 'p085.3:I have lived'), t, .5 * (1 - ez(t, C('p085.3:I have lived'), C('p085.3:I have lived') + 2)), 'rc');
     // the cloud of blankness, thickening; then the canopy arching and closing into the dome
-    const cloud = ez(t, tCloud, tArch), arch = ez(t, tArch - 1, tSolid + 1);
-    if (cloud > 0) for (let i = 0; i < 14; i++) { const a = i / 14 * TAU + t * .1, r = 260 + 60 * Math.sin(t * .7 + i); boilSeed('cl' + i); paint(ellPts(MID + Math.cos(a) * r, G - 160 + Math.sin(a) * r * .5, 140 * cloud, 90 * cloud, 14, 20), { fill: '#0E0B09', fillOp: 120 * cloud * (1 - arch * .5), bleed: .4, ink: null }); }
+    // the cloud of blankness: smoke round them, swiftly thickening, wavering as it solidifies (a near-black fill alone was
+    // lost on the dark hall, and the two stood in clear air for 35 s)
+    const cloud = ez(t, tCloud, tCloud + 8), arch = ez(t, tArch - 1, tSolid + 1), waver = 1 - .25 * Math.max(0, Math.sin(t * 1.6)) * ez(t, T0('I'), tArch);
+    if (cloud > 0) for (let i = 0; i < 16; i++) { const a = i / 16 * TAU + t * .12, r = 240 + 70 * Math.sin(t * .7 + i), cx = MID + Math.cos(a) * r, cy = G - 170 + Math.sin(a) * r * .5, k = cloud * waver * (1 - arch * .6);
+      boilSeed('cl' + i + Math.floor(t * 4)); paint(ellPts(cx, cy, 170 * cloud, 110 * cloud, 14, 26), { wash: '#4A4440', washOp: 115 * k, fill: '#141110', fillOp: 70 * k, bleed: .45, ink: '#6A625A', sw: .4 }); }
     // (the whole arch at once, spreading across and rising from a low canopy to the dome; swept round from one side as a
     // slice pinned to the floor, its first seconds drew a thin wedge, like a stray triangle)
     if (arch > 0) { const r = 560, wide = .55 + .45 * easeOut(Math.min(1, arch * 1.3)), high = easeOut(arch), P = [];
