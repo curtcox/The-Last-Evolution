@@ -779,6 +779,81 @@ items:
     note: From the third fresh-eyes round's transcript check. Voicing is yours to judge by ear.
     title: Does 'Last of Men' sound right in ch08 2:49 (p108.1)? Whisper hears 'blessed'.
     when: 2026-11-05 19:57
+  find.ch09-duel:
+    state: open
+    note: "Fresh eyes 4, 2:19-2:52: the dull red beam is a ~40 px stub on the plant, the sphere far up in the corner, never seen caught or shrinking; the camera is wide. Minor."
+    title: "Chapter 9: the red beam's duel with the white sphere doesn't read"
+    when: 2026-11-06 07:42
+  find.ch06-charge:
+    state: open
+    note: "Fresh eyes 4, 3:52-4:10: the Earth-machines are tiny dots, their screens never visibly flame, the dart ('darted' 3:58.8) barely moves, no rush in as the board asks. Minor."
+    title: "Chapter 6: the motes' last charge is invisible"
+    when: 2026-11-06 07:42
+  find.ch07-shroud:
+    state: open
+    note: "Fresh eyes 4, 4:13-4:25: a faint outline against a near-black sky, the pull-back shrinking it to pixels on 'the only life was under that dark shroud!'. Minor."
+    title: "Chapter 7: the dome is lost on the chapter's last line"
+    when: 2026-11-06 07:42
+  find.ch07-driven:
+    state: open
+    note: "Fresh eyes 4, 4:01-4:11: thin grey dotted beams, the fleet never in frame; the green beams just stop. Minor."
+    title: "Chapter 7: the projectors' beams are faint and the fleet isn't shown driven off"
+    when: 2026-11-06 07:42
+  find.ch03-approach:
+    state: open
+    note: "Fresh eyes 4, 1:31-1:47: 16 s of a static Earth and Moon, the fleet a tiny grid of dots that doesn't move. Minor."
+    title: "Chapter 3: the fleet's slow approach is a still frame"
+    when: 2026-11-06 07:42
+  find.logic-note:
+    state: open
+    note: "Fresh eyes 4: the note at ch08 4:20 says the ruled line and the curl from chapter 1 are together in the forces that build the plant; on screen are white puffs and lightning. Minor."
+    title: "Film page: the 'deadly logic' note promises a picture the film doesn't show"
+    when: 2026-11-06 07:42
+  find.beings-note:
+    state: open
+    note: "Fresh eyes 4: in ch00 (0:14-0:50) and ch11 they're small coloured spirals; the narration doesn't name them and no note explains them, so the heirs-made-of-light idea is lost on a first viewing. The design is Curt's call; a note can say what they are. Minor."
+    title: The beings of force read as galaxies, with nothing to say what they are
+    when: 2026-11-06 07:42
+  find.ch09-last-men:
+    state: open
+    note: "Fresh eyes 4, 3:24-4:58: ~25 px tall through the golden sphere's scene, their last on screen. Minor."
+    title: "Chapter 9: Roal and Trest's last scene shows them as specks"
+    when: 2026-11-06 07:42
+  find.cru1-fit:
+    state: open
+    note: "Fresh eyes 4, 7:46-7:54: the enlarged lettering overruns the cylinder; it floats off-centre over its plinth; ~20 s nearly still (7:34-7:54). Nit."
+    title: "Chapter 5: C-R-U-1's name runs past its case; a long still hold"
+    when: 2026-11-06 07:42
+  find.ch03-torp-heads:
+    state: open
+    note: "Fresh eyes 4, 1:10-1:16: at head height across Roal and Trest. Nit."
+    title: "Chapter 3: the torpedoes rise through the men's heads"
+    when: 2026-11-06 07:42
+  find.ch08-rings:
+    state: open
+    note: "Fresh eyes 4, 2:43-3:47: a ring every ~4 s through Trest's body for 64 s. Nit."
+    title: "Chapter 8: F-2's thought-rings sweep through Trest on a loop"
+    when: 2026-11-06 07:42
+  find.ch05-f1-edge:
+    state: open
+    note: Fresh eyes 4, 4:52-5:02. Nit.
+    title: "Chapter 5: the fallen F-1 lies half out of frame"
+    when: 2026-11-06 07:42
+  find.ch02-armed:
+    state: open
+    note: Fresh eyes 4, 4:36 vs the words at 4:41. Nit.
+    title: "Chapter 2: the Outsider holds the projector before he 'appeared armed'"
+    when: 2026-11-06 07:42
+  find.title-small:
+    state: open
+    note: "Fresh eyes 4: ~12 px caps at 720p (3-4 px on a phone). Nit."
+    title: "Chapter 0: the title page's masthead and byline are small on a phone"
+    when: 2026-11-06 07:42
+  find.phone-stale-shot:
+    state: open
+    note: "Fresh eyes 4: out/quality/phone/review_quality.jpg showed an old 'Next' list. Nit (process)."
+    title: The quality page's phone screenshot predates the page
+    when: 2026-11-06 07:42
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -796,4 +871,8 @@ fresh:
     found: 15
     note: "Film and site, third round: a subagent with no context watched all twelve drafts against the word timings and checked the site live. 2 major (ch02's investigator never hidden, its bluish beam invisible), 9 minor, 4 nits recorded as find.* items; 2 transcription flags put to Curt as voice items."
     state: 346660ef3f66
-since_fresh: 80
+  - when: 2026-11-06 07:42
+    found: 15
+    note: "Film and site, fourth round: a subagent with no context watched all twelve drafts against the word times and checked the site live. No major findings: 8 minor, 7 nits, recorded as find.* items (the beings of force's look is Curt's call; the fix is a note)."
+    state: c18437997fe6
+since_fresh: 0
