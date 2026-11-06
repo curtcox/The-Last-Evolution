@@ -39,7 +39,7 @@
     glow(f2x, f2y, 90, '#E6EEFF', .25 + .3 * talk(t, 'f2'));
     for (const p of [roal, trest]) glow(...p.head, 70, '#DDE6F0', .2);
     dreamCurl(roal.head[0] + 20, roal.head[1] - 40, K(t, 'p103.1', 'p103.1$'), t, .5 * (1 - ez(t, T0('E') - 1.5, T0('E'))), 'rc');
-    thoughtRings(f2x, f2y, t, T0('I'), C('p111.1$'), { r1: 420 });
+    thoughtRings(f2x, f2y, t, T0('I'), C('p111.1$'), { r1: 200 });
     camEnd();
   }
 
