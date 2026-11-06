@@ -68,7 +68,7 @@
       const ew = win(t, tE - 1, T1('E') + .5, 1, 1);
       if (ew > 0) { for (let i = 0; i < 6; i++) { const x = 400 + i * 220, made = ez(t, tE + i * .8, tE + i * .8 + 2), up = ez(t, tE + 6 + i * .5, tE + 9 + i * .5);
           const off = ez(t, tE + 10 + i * .45, tE + 11.5 + i * .45);   // level as they rise, then away one after another (turned upright, hanging in a row, they read as lamps)
-          if (made > 0 && off < 1) { glow(x, G - 80, 60, '#CFE0FF', .4 * (1 - made)); DES.mote(x - 1800 * off * off, G - 70 - 200 * up, 150 * made, t, { ang: 0, drive: up > .1 }); } }
+          if (made > 0 && off < 1) { glow(x, G - 80, 60, '#CFE0FF', .4 * (1 - made)); DES.mote(x - 1800 * off * off, G - 70 - 430 * up, 150 * made, t, { ang: 0, drive: up > .1 }); } }
         const hot = K(t, 'p019.1:a highly effective induction-heat ray', 'p019.1:in some small machines');
         DES.machine(1450, G, 18, t, { arms: 2, nozzles: true, d: 2, label: null }); if (hot > 0) glow(1450, G - 60, 40 + 40 * hot, HEAT, .7 * Math.sin(Math.PI * hot)); }
       const roal = people(t);
