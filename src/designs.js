@@ -118,7 +118,7 @@ const DES = {};
     dcase(x, yb, r, h, dh, 1, { shine: true, rings: [.15, .85] });
     lens(x, yb - h - dh * .45, r * .22, { lit: o.lit });
     // its name, glowing on (o.glowK 0..1; o.unlit: not yet, p069)
-    const L = yb - h * .5, sz = r * .52, k = o.unlit ? 0 : o.glowK ?? 1;
+    const L = yb - h * .5, sz = r * .44, k = o.unlit ? 0 : o.glowK ?? 1;
     if (k <= 0) return;
     glow(x, L, r * 1.2, NRG.gold, .3 * k);
     letter('C-R-U-1', x, L, sz, NRG.gold, { ink: false, font: `700 ${sz}px ${SERIF}`, spacing: 0, stroke: '#6B4A14', alpha: k });

@@ -28,7 +28,7 @@
   // world layout (px): the floor's back edge at 864, figures stand at G; Roal's couch at the left, F-1's place at the
   // right, the working point between them, the tiers of science-machines floating in a ring behind and around
   const G = 1000, F1 = { x: 1420, g: 975, s: 50 }, F1R = 3.4 * 50 * 1.2, WORK = [1000, 790], COUCH = { x: 420, s: 44 }, RS = 44, RU = RS * 6 / 7.4, FS = 30;
-  const MAKE = [1330, 830], CRU = [1330, 810], CAGE = [760, G], SEAT = G - 1.72 * COUCH.s, F2HOV = (G - WORK[1]) / FS;
+  const MAKE = [1301, 830], CRU = [1301, 810], CAGE = [760, G], SEAT = G - 1.72 * COUCH.s, F2HOV = (G - WORK[1]) / FS;
   const night = op => { stillSeed('night'); paint(rectPts(-500, -400, 3000, 1900), { wash: PULP.black, washOp: 215 * op, fill: '#3B322B', fillOp: 60, bleed: .2, tex: .4, ink: null }); };
 
   // the moments everything keys to
@@ -403,7 +403,7 @@
     [T0('AC'), t => [WORK[0] - 40, WORK[1], 2.2 + .3 * along(t, 'AC')], { mv: 1.8, lead: .3 }],
     [tMake + .5, t => [lerp(1000, 1120, ez(t, tMake, T1('AC'))), 790, 1.45], { mv: 2.5, lead: 0 }],   // to the empty floor
     [T0('AD'), t => [lerp(1150, 1250, along(t, 'AD')), 790, 1.6 + .3 * along(t, 'AD')], { mv: 2.4, lead: .3 }],
-    [T0('AE'), t => [CRU[0] + 10, CRU[1] - 38, lerp(3.4, 3.8, along(t, 'AE'))], { mv: 2, lead: .3 }],
+    [T0('AE'), t => [CRU[0] + lerp(40, 10, along(t, 'AE')), CRU[1] - 38, lerp(2.6, 3.9, along(t, 'AE'))], { mv: 2, lead: .3 }],
     [T0('AF'), t => [lerp(980, 1000, along(t, 'AF')), 800, 1.4], { mv: 2.4, lead: .3 }],
     [T0('AG'), t => [CRU[0] + 10, CRU[1] - 38, 3.2 + .5 * ez(t, C('p069.2:on its sides appeared'), C('p069.2$'))], { mv: 2, lead: .3 }],
     [T0('AH'), t => [WORK[0], WORK[1] - 10, 3.4], { mv: 2.6, lead: .6, dip: .3 }],
