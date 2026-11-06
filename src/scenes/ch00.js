@@ -78,10 +78,10 @@
     camBegin(W / 2, H / 2 + 20 * k, 1 + .08 * k);
     const a1 = seg(t, .8, 2.6), a2 = seg(t, 3, 5), a3 = seg(t, 5.5, 7);
     // the issue it first appeared in; not the 1961 reprint's 'A Classic Reprint' header, since the film isn't that reprint
-    letter('AMAZING STORIES · August, 1932', W / 2, 300, 30, INK, { ink: false, font: `italic 30px ${SERIF}`, alpha: a1 });
-    if (a1 > 0) { rule(680, 340, 560, INK, 1.2 * a1); rule(680, 350, 560, INK, .6 * a1); }
+    letter('AMAZING STORIES · August, 1932', W / 2, 296, 42, INK, { ink: false, font: `italic 42px ${SERIF}`, alpha: a1 });
+    if (a1 > 0) { rule(600, 344, 720, INK, 1.2 * a1); rule(600, 354, 720, INK, .6 * a1); }
     letter('THE LAST EVOLUTION', W / 2, 500, 110, INK, { ink: false, font: `700 110px ${SERIF}`, spacing: 6, alpha: a2 });
-    letter('By JOHN W. CAMPBELL, Jr.', W / 2, 640, 40, INK, { ink: false, font: `40px ${SERIF}`, spacing: 3, alpha: a3 });
+    letter('By JOHN W. CAMPBELL, Jr.', W / 2, 650, 52, INK, { ink: false, font: `52px ${SERIF}`, spacing: 3, alpha: a3 });
     if (a3 > 0) rule(810, 700, 300, INK, a3);
     camEnd();
     flushLetters();
