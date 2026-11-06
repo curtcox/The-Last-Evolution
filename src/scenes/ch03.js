@@ -20,7 +20,12 @@
     for (let r = 0; r < 3; r++) for (let c = 0; c < 7; c++) { const [x, y, w, h] = SCR(c, r), mid = [x + w / 2, y + h / 2];
       if (t > tGreenOn && t < T0('P')) { paint(rectPts(x + 6, y + 6, w - 12, h - 12), { wash: mixCol('#F1E9D3', GREEN, .5), washOp: 200, ink: null }); glow(...mid, 90, GREEN, .5); continue; }
       if ((c + r) % 3 === 0 && t < tGreenOn) { const [a, b] = SEEN(x, w), len = Math.min(110, (b - a) * .62); boilSeed('scr' + c + r); ship((a + b) / 2 + .1 * (b - a) * wob(t, .03, c), mid[1], len, t, -1, { d: 3 }); }   // on the screen, clear of the piers
-      if (t > T0('R') - 1 && r === 1 && c > 1 && c < 5) { boilSeed('bod' + c); const q = frac((t - T0('R')) * .08 + c * .3); DES.machine(lerp(x + 20, x + w - 20, q), y + h - 20, 7, t, { arms: 2, label: null, hover: 1.2 }); wash(ellPts(lerp(x + 20, x + w - 20, q), y + h - 60, 24, 10, 10), 2, { ink: true, sw: .4 }); }
+      // R: on the screens, the bodies carried away as they decay: a machine bearing a dead Outsider across each (a tiny
+      // machine and a pale ellipse read as nothing)
+      if (t > T0('R') - 1 && r >= 1 && c > 0 && c < 6 && (c + r) % 2 === 0) { const q = frac((t - T0('R')) * .07 + c * .27 + r * .4), bx = lerp(x + 30, x + w - 30, q);
+        paint(rectPts(x + 6, y + 6, w - 12, h - 12), { wash: '#E4DCC6', washOp: 150, ink: null });
+        DES.machine(bx, y + h - 16, 9, t, { arms: 2, label: null, hover: 1.4 });
+        push(); translate(bx, y + h - 62); rotate(Math.PI / 2); translate(-bx, -(y + h - 62)); DES.outsider(bx, y + h - 62, 16, t, { view: 'side', suit: false }); pop(); }
     }
   }
   // the machines in the hall: floating in tiers at first; gathered in a ring round Roal when he speaks (S), the near
