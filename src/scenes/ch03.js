@@ -82,9 +82,12 @@
   function approach(t) {
     HALFTONE = .2;
     dark('appr'); stars(160, 3);
-    camBegin(960, 540, lerp(1, 1.08, ez(t, T0('F'), T1('F'))));
+    const q = ez(t, T0('F') - 3, T1('F') + 3);
+    camBegin(lerp(960, 1080, q), lerp(540, 480, q), lerp(1, 1.2, q));   // easing toward the fleet as it comes
     planet(560, 640, 230, 1, { key: 'earth', glow: '#F4EEDC', ga: .2, bands: true }); planet(860, 470, 50, 2, { key: 'luna' });
-    for (let i = 0; i < 50; i++) { const q = seg(t, T0('F') - 3, T1('F') + 3); glow(1800 - 80 * q - (i % 10) * 18, 260 + Math.floor(i / 10) * 22 + 6 * hash(i), 5, '#F4EEDC', .7); }
+    // the slow approach: the fleet in its ranks, closing on the Moon and growing as it comes (a still grid of dots)
+    for (let i = 0; i < 15; i++) { const r = Math.floor(i / 5), k = i % 5, len = lerp(40, 84, q) * (1 - .12 * r);
+      ship(lerp(1820, 1330, q) + k * len * 1.25 + r * len * .4, lerp(220, 330, q) + r * len * .55 + 4 * hash(i), len, t, -1, { d: 3 }); }
     camEnd();
   }
   // a ship with its force-screen: the screen flares violet where the induction beams land
