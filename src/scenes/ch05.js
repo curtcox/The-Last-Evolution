@@ -395,7 +395,7 @@
     [T0('T'), t => [WORK[0] - 70, 820, lerp(2, 2.1, along(t, 'T'))], { mv: 2, lead: .5 }],
     [T0('U'), t => { const k = along(t, 'U'); return [WORK[0] + 110, lerp(650, 600, k), 1.45 + .12 * k]; }, { mv: 1.6, lead: .3 }],
     [T0('W'), t => [WORK[0] + 150, 740, 1.12], { mv: 1.2, lead: .4 }],
-    [T0('X'), t => [1110, 730, 1.1], { mv: 1.5, lead: .3 }],
+    [T0('X'), t => [1290, 730, .95], { mv: 1.5, lead: .3 }],   // the fallen F-1 whole in frame (at 1110, 1.1 it lay half out of it)
     [T0('Y'), t => [WORK[0] + 60, WORK[1] + 20, 1.6 + .25 * along(t, 'Y')], { mv: 2.4, lead: .3 }],
     [T0('Z'), t => [lerp(1000, 1040, along(t, 'Z')), 700, 1.05], { mv: 2.5, lead: .3 }],
     [T0('AA'), t => [1150, 760, 1.15 + .05 * along(t, 'AA')], { mv: 2, lead: .4 }],
