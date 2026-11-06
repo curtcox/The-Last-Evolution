@@ -52,7 +52,7 @@
 
   // ---------- M to S: the works ----------
   function groups(t) {
-    const k = ez(t, tShift + 2, tShift + 5); if (k <= 0) return;
+    const k = ez(t, tShift, tShift + 3); if (k <= 0) return;
     // Roal's group, round an atom plate; Trest's, round a beam on a bench
     boilSeed('plateR'); wash(rrPts(160, G - 260, 180, 130, 8), 4, { ink: true, sw: .6 }); for (let i = 1; i < 4; i++) inkLine([...Array(25)].map((_, j) => [250 + Math.cos(j / 24 * TAU) * i * 18, G - 195 + Math.sin(j / 24 * TAU) * i * 10]), .4, '#EFE6D2', 'inkfine');
     glow(250, G - 195, 12, NRG.white, .6); DES.machine(120, G, 16, t, { arms: 3, d: 2, label: null, face: .6 });
@@ -121,8 +121,9 @@
           const bk = win(t, tTrain, T0('D'), .3, .5);
           if (bk > 0) { beam(rx - 20, ry - 50, x56.eye[0] + 40, x56.eye[1] + 60, 7, 22, HEAT, bk, { washOp: 90, splash: false });
             const sc = ez(t, tHarm - 1, tHarm); boilSeed('x56scr'); inkLine([...Array(33)].map((_, i) => { const a = i / 32 * TAU; return [P.x5638 + Math.cos(a) * 90, G - 120 + Math.sin(a) * 150]; }), 1.2 * bk, mixCol(D[3], VIOLET, .8), 'inkfine', .5); glow(P.x5638 + 70, G - 150, 80, VIOLET, .5 * bk * (.6 + .4 * sc)); } }
-        men(t);
       }
+      // Roal and Trest walk to their groups and work there through M (drawn only until they arrived, they vanished)
+      if (t < T0('N')) men(t);
       if (t > tShift - 1) works(t);
     });
   }
