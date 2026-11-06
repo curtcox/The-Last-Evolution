@@ -97,6 +97,11 @@
     // F-2: out through the dome's black wall, over the rocks, to the plant's foot
     const fp = path(t, [[0, [-150, 700]], [tK, [500, 640], 4], [tPlane - 1, [PX - 300, 700], 3], [tL, [PX - 520, 600], 3], [tM, [PX - 360, RG - 40], 3]]);
     DES.f2(fp[0], fp[1] + 2.4 * FS, FS, t, { view: 'side' });
+    // 'the deadly logic of the machine, inspired by the leaping intuition of man': chapter 1's two minds together, the
+    // machine's stepped ruled line from F-2 to the plant and the man's curl of wash rising beside it
+    const tLogic = C('p112.1:the deadly logic'), tLeap8 = C('p112.1:the leaping intuition'), both = 1 - ez(t, tM - .5, tM + 1);
+    if (t > tLogic && both > 0) { const a = [fp[0] + 60, fp[1] - 20], b = [PX - 60, RG + 60 - 1150 * Math.max(.3, grow)]; ruled([a, [a[0], lerp(a[1], b[1], .33)], [lerp(a[0], b[0], .5), lerp(a[1], b[1], .33)], [lerp(a[0], b[0], .5), lerp(a[1], b[1], .66)], [b[0], lerp(a[1], b[1], .66)], b], ez(t, tLogic, tLogic + 2.2), PALE, 5 * both);
+      if (t > tLeap8) { push(); translate(PX - 380, RG - 40); scale(2.4); translate(-(PX - 380), -(RG - 40)); dreamCurl(PX - 380, RG - 40, ez(t, tLeap8, tLeap8 + 2.2), t, .85 * both, 'leap8', 0); pop(); } }
     const lv = ez(t, tLivid - .2, tLivid + .4);
     if (lv > 0) { beam(fp[0] + 50, fp[1], PX - 60, RG - 120, 14, 50, NRG.livid, lv, { washOp: 90, a: .9 }); glow(PX, RG - 150, 260, NRG.livid, .5 * lv); }
     camEnd();
