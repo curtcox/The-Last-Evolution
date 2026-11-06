@@ -88,7 +88,7 @@
     HALFTONE = .25;
     const tL = T0('L'), tStruck = C('p094.1:They struck'), tN = T0('N'), tP = T0('P'), tProj = C('p098.1:Great ray projectors'), tOff = C('p098.1:as light illumines'), tQ = T0('Q');
     const c = cam(t, [[0, tt => [960, lerp(500, 640, ez(tt, tL, tStruck)), lerp(.8, 1.4, ez(tt, tL, tStruck))]], [tN, tt => [960, 560, lerp(1.1, .8, ez(tt, tN, T1('N')))], 2.5],
-      [tP, tt => [960, lerp(640, 300, ez(tt, tProj, tOff + 2)), lerp(1, .8, ez(tt, tP, T1('P')))], 2.5], [tQ, tt => [960, 620, lerp(.9, .35, ez(tt, tQ, DUR))], 3]]);
+      [tP, tt => [960, lerp(640, -160, ez(tt, tProj, tOff + 2)), lerp(1, .62, ez(tt, tP, T1('P')))], 2.5], [tQ, tt => [960, 640, lerp(.95, .55, ez(tt, tQ, DUR))], 3]]);   // up to the fleet as it's driven off; then out, but not so far the dome is lost
     withCam(c, () => {
       stillSeed('osky'); paint(rectPts(-3000, -2400, 7000, 3300), { wash: '#1E1A16', washOp: 255, fill: '#2A231D', fillOp: 80, ink: null });
       for (let i = 0; i < 120; i++) glow(-2600 + hash(i * 3.1) * 7000, -2200 + hash(i * 7.7) * 3000, 5, '#F4EEDC', .3 + .3 * hash(i));
@@ -107,10 +107,12 @@
       // the dome, bellied in at its crown under the beams
       const P = []; for (let i = 0; i <= 32; i++) { const a = Math.PI + i / 32 * Math.PI, dent = press * Math.exp(-Math.pow((i - 16) / 6, 2)); P.push([DOME[0] + Math.cos(a) * DR, DOME[1] + Math.sin(a) * DR * .8 * (1 - dent)]); }
       stillSeed('odome'); paint(P, { wash: PULP.black, washOp: 255, fill: PULP.black, fillOp: 230, bleed: .02, tex: .2, ink: INK, sw: 1 });
+      // a pale rim on the dome once the beams are off, so 'the only life was under that dark shroud' finds it on the night
+      const rim = ez(t, tOff, tOff + 3); if (rim > 0) { boilSeed('orim'); inkLine(P, 2.2 * rim, '#B8AE98', 'inkfine', .5); for (let i = 2; i < 31; i += 4) glow(...P[i], 70, '#C8BEA8', .22 * rim); }
       if (bk > 0) glow(DOME[0], DOME[1] - DR * .7, 200, GREEN, .5 * bk);
       // P: the ground projectors driving white light up through the curtains
-      if (t > tProj - 1) for (let i = 0; i < 5; i++) { const px = DOME[0] - 1400 + i * 700 + (i >= 2 ? 200 : 0), k = ez(t, tProj + i * .3, tProj + i * .3 + .6) * (1 - ez(t, tQ, tQ + 2));
-        DES.machine(px, OG + 60, 26, t, { arms: 0, nozzles: true, d: 2, label: null }); if (k > 0) beam(px, OG - 100, DOME[0] + (i - 2) * 500, -700 - 1500 * rise, 10, 40, NRG.livid, k, { washOp: 40, a: .6 }); }
+      if (t > tProj - 1) for (let i = 0; i < 5; i++) { const px = DOME[0] - 1400 + i * 700 + (i >= 2 ? 340 : 0), k = ez(t, tProj + i * .3, tProj + i * .3 + .6) * (1 - ez(t, tQ, tQ + 2));
+        DES.machine(px, OG + 60, 26, t, { arms: 0, nozzles: true, d: 2, label: null }); if (k > 0) { beam(px, OG - 100, DOME[0] + (i - 2) * 500, -700 - 1500 * rise, 18, 60, NRG.livid, k, { washOp: 110, a: .85 }); glow(px, OG - 100, 80, NRG.livid, .6 * k); } }
     });
   }
   // M, O: the cut-away: F-2 making the machine, its violet beam to the crown, spreading across the canopy
