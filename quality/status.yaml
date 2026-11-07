@@ -945,10 +945,10 @@ items:
     title: "Chapter 8: F-2's 'We, your heirs' speech over one static wide shot"
     when: 2026-11-07 08:38
   find.ch02-footnote:
-    state: open
-    note: "Fresh eyes 6, nit, 0:35-0:40: footnote 1 stays over the transport shot."
+    state: later
+    note: "Kept on purpose: footnote 1 is 33 words lettered on the story's own mark at 'kill-ads' (31.7 s), and shot C cuts 4 s later on 'And one machine' (35.7 s), where the transport shot belongs. Ending it at the cut would leave 4 s for 33 words; it's lettered on a dark band at the foot of the frame, like a page's footnote, so running 5 s into the next shot keeps it readable. Revisit only if a later round finds it confusing."
     title: "Chapter 2: the kilad footnote hangs 4 s into the next shot"
-    when: 2026-11-07 08:38
+    when: 2026-11-07 08:40
   find.flyer-overlap:
     state: open
     note: "Fresh eyes 6, nit, ch01 ~1:00-1:27, ch03 0:10-0:22: machines cross the tops of towers and piers; some frames read as an overlap, not depth."
