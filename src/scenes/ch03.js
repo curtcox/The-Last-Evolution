@@ -42,15 +42,18 @@
   // Roal: walks to the middle of the floor when he speaks; Trest beside him
   const ROALW = [[T0('S') - 2, T0('S') + 1.5, ROAL, 960]], TRESTW = [[T0('S') - 1.5, T0('S') + 2, TREST, 1160]];
   const SPEECH = clauses(['p033.1', 'p033.3', 'p033.5', 'p034.1']);   // his speech to the machines: a gesture to each clause; Trest nods
+  // C: his hand out to the fleet on the screens through 'come for invasion', then a gesture to each phrase as he tells them (split at commas too: one sentence runs 21 s)
+  const tInv = C('p018.1:There had been no wars'), tBut = C('p018.1:But--life alone');
+  const TELL = (() => { const out = []; let a = null; for (const w of CHAPTER.lines.find(l => l.id === 'p018.1').words) { if (w[1] < tInv - .1 || w[1] >= tBut) continue; a ??= w[1]; if (/[,.;?!]$/.test(w[0])) { out.push([a, w[2]]); a = null; } } return out; })();
 
   function people(t) {
-    const tPoint = C('p018.1:Roal had quickly assured us'), out = win(t, tPoint, C('p018.1:But--life alone'), .6, 1), arm = win(t, T0('V') - .2, T0('W') + .5, .25, 1);
+    const tPoint = C('p018.1:Roal had quickly assured us'), out = win(t, tPoint, tInv + .3, .6, .8), arm = win(t, T0('V') - .2, T0('W') + .5, .25, 1);
     const pose = { up: lerp(.12, 1.5, Math.max(out, arm)), fore: lerp(.3, arm ? 2.6 : 1.6, Math.max(out, arm)) };
-    const gl = arm ? 0 : gesture(t, pose, SPEECH);
+    const gl = arm ? 0 : gesture(t, pose, t < tBut + 1 ? TELL : SPEECH);
     // 'that little chuckle': his head goes back a little, a smile, the shoulders bobbing
     const ch = win(t, C('p033.4'), C('p033.4') + 2.2, .3, .6); if (ch > 0) pose.torso = (pose.torso ?? 0) - .05 * ch * Math.abs(Math.sin(t * 15));
     const roal = stander(t, ROAL, G, 44, ROALW, { who: 'roal', key: 'roal', seed: 3, look: (t < T0('S') ? .5 : .15) + gl - .15 * ch, pose, talk: talk(t, 'roal'), smile: ch, flip: false });
-    const point = win(t, T0('Q'), T1('Q'), .5, .5), tp = {}, tl = t > T0('S') + 2 ? listen(t, tp, SPEECH, 2) : 0;   // through the speech Trest listens
+    const point = win(t, T0('Q'), T1('Q'), .5, .5), tp = {}, tl = t > T0('S') + 2 ? listen(t, tp, SPEECH, 2) : t > tInv - 1 && t < tBut + 2 ? listen(t, tp, TELL, 1) : 0;   // through the telling and the speech Trest listens
     stander(t, TREST, G + 10, 46, TRESTW, { who: 'trest', key: 'trest', seed: 7, look: .45 + tl + nod(t, SPEECH), flip: t < T0('S') + 2 || t > T0('W'), pose: point > 0 ? { up: lerp(.12, 1.7, point), fore: lerp(.3, 1.2, point) } : tp });
     return roal;
   }
