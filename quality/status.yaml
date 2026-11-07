@@ -909,6 +909,56 @@ items:
     note: "On the live annotated page: the title-page note now says only that the words come from the March 1961 reprint, with 16 readings from 1932 put back; it no longer names 'A Classic Reprint'."
     title: "Film page: the title-page note sends viewers looking for 'A Classic Reprint'"
     when: 2026-11-07 08:16
+  find.note-f1:
+    state: open
+    note: "Fresh eyes 6, major: the note on p048.1 ('countless trillions of facts') says 'F-2 is built to imagine by sheer quantity'; the brain MX-3401's machines build is F-1 (ch05 names it), and F-1 makes F-2 (p064.1)."
+    title: "Film page: the recombination note calls chapter 4's new brain F-2"
+    when: 2026-11-07 08:38
+  find.note-roal-age:
+    state: open
+    note: "Fresh eyes 6, minor: 'Roal, a hundred and fifty years old' comes from the casting note, not the text, and is presented as a fact."
+    title: "Film page: the Roal and Trest note gives Roal's age, which the story never does"
+    when: 2026-11-07 08:38
+  find.ch03-roal-pose:
+    state: open
+    note: "Fresh eyes 6, minor, 0:27-0:57: his arm stays straight at Trest's face; the board has him turn to the machines with his hand to the fleet on the screens; Trest barely moves."
+    title: "Chapter 3: Roal holds one rigid pointing pose for 30 s"
+    when: 2026-11-07 08:38
+  find.ch09-storm:
+    state: open
+    note: "Fresh eyes 6, minor, 2:55-3:17 (J): 'the wind whined and howled, and the lightnings crashed, while titanic forces worked and played' over the plant in light rain; no lightning; C-R-U-1 joining (3:05) is a few pixels and its name unreadable."
+    title: "Chapter 9: the second creation's storm isn't shown"
+    when: 2026-11-07 08:38
+  find.ch02-plunger:
+    state: open
+    note: "Fresh eyes 6, minor, ~3:03: fully down by 183.1 s; 'snapped' is at 184.7. ch02.js times the close to tLast - .3, the phrase's start."
+    title: "Chapter 2: the last plunger shuts 1.5 s before 'snapped shut'"
+    when: 2026-11-07 08:38
+  find.ch04-brain-frame:
+    state: open
+    note: "Fresh eyes 6, minor, 4:11-4:43 (P, Q): only the top of the half-dome and lens show at the bottom; three quarters of the frame is empty screens for 30 s during 'It was a new brain-machine'."
+    title: "Chapter 4: F-1's new brain sits jammed at the frame's bottom edge"
+    when: 2026-11-07 08:38
+  find.ch08-heirs:
+    state: open
+    note: "Fresh eyes 6, nit, 2:43-3:47: about a minute; F-2's ring pulses in a regular cycle that reads as a loop; Roal and Trest barely move."
+    title: "Chapter 8: F-2's 'We, your heirs' speech over one static wide shot"
+    when: 2026-11-07 08:38
+  find.ch02-footnote:
+    state: open
+    note: "Fresh eyes 6, nit, 0:35-0:40: footnote 1 stays over the transport shot."
+    title: "Chapter 2: the kilad footnote hangs 4 s into the next shot"
+    when: 2026-11-07 08:38
+  find.flyer-overlap:
+    state: open
+    note: "Fresh eyes 6, nit, ch01 ~1:00-1:27, ch03 0:10-0:22: machines cross the tops of towers and piers; some frames read as an overlap, not depth."
+    title: "Chapters 1 and 3: flying machines seem to sit on tower caps"
+    when: 2026-11-07 08:38
+  find.round4-alt:
+    state: pass
+    note: Round 4's page now takes each image's alt from its caption's plain text (no escaped tags), the halftone images read 'The Outsiders frame with no / a light / a strong halftone', and F-1 and F-2's birth is placed in chapter 5, where the aura line is (p05x). look_sampler.mjs --page rewrites the page without re-rendering the frames.
+    title: "Review, Round 4 page: escaped HTML and stray words in image alt text"
+    when: 2026-11-07 08:39
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -934,4 +984,8 @@ fresh:
     found: 11
     note: "Film and site, fifth round: a subagent with no context watched all twelve drafts against the word times and checked the site live. No major findings: 7 minor, 4 nits (one, the 'dropouts', measured as the room tone rather than silence, recorded as the bed being too faint)."
     state: fd1727873fda
-since_fresh: 74
+  - when: 2026-11-07 08:38
+    found: 10
+    note: "Sixth round: 1 major (the recombination note calls chapter 4's brain F-2), 5 minor (Roal's age in a note, ch03 Roal's rigid pose, ch09's second storm unseen, ch02's plunger early, ch04's brain at the frame's edge), 4 nits (ch08 static heirs speech, ch02 footnote overhang, flyers on tower caps, Round 4 alt text)."
+    state: ac16545b778e
+since_fresh: 1

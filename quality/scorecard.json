@@ -1,13 +1,17 @@
 {
  "summary": {
-  "pass": 191,
-  "stale": 0,
-  "open": 0,
+  "pass": 189,
+  "stale": 2,
+  "open": 10,
   "curt": 9,
   "later": 3
  },
  "satisfied": false,
- "next": [],
+ "next": [
+  "Film page: the recombination note calls chapter 4's new brain F-2",
+  "Film page: the Roal and Trest note gives Roal's age, which the story never does",
+  "Chapter 3: Roal holds one rigid pointing pose for 30 s"
+ ],
  "checks": {
   "verbatim": {
    "state": "pass",
@@ -34,15 +38,15 @@
    "detail": "$0.59 of $10"
   },
   "refs": {
-   "state": "pass",
+   "state": "stale",
    "detail": "refs: 53 sources, all cited, all answering; definitions written into 6 notes"
   },
   "phone": {
-   "state": "pass",
+   "state": "stale",
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
-   "state": "pass",
+   "state": "stale",
    "detail": "33 pages live (not compared: HEAD has changes not pushed)"
   }
  },
@@ -630,15 +634,15 @@
    "id": "site.watch.content",
    "area": "site",
    "title": "The film page (annotated): what it says",
-   "state": "pass",
-   "note": "Re-judged after the fifth round: the title-page note says only that the words come from the 1961 reprint with 16 readings from 1932 put back (find.title-note); the twelve draft links are this render's and all resolve. Re-judged after the fourth round: the narrator note now says what the coloured spirals are; the logic note matches the picture; the twelve draft links are this render's. Re-judged after the third round: the last-page note says the text is set as the magazine's page (not its columns); the generator and bluish-beam notes now match what the film shows; the twelve draft links are this render's. Re-judged after the second round: the notice links the fact-check list instead of naming Round 7; the twelve draft links are this render's and resolve. Re-judged after the fresh-eyes round: the banner says each chapter is still being watched and fixed; the title-page note describes the 1932 line the film shows; the footnote notes now match chapter 2's lettered footnotes; the twelve draft links are this round's and resolve. Re-checked: the only change since is the twelve draft links in the page data, now this round's drafts; all twelve resolve on the drafts release (HTTP 200) and the film's total (57:03) is unchanged. Re-judged after the fresh-eyes round: framed for visitors ('Watch: the film in draft, with notes', not 'Review · Round 7'); the bar says it counts the whole film and the player the chapter; draft notice current."
+   "state": "stale",
+   "note": "passed on f4cdbc9b4e98; changed since. Re-judged after the fifth round: the title-page note says only that the words come from the 1961 reprint with 16 readings from 1932 put back (find.title-note); the twelve draft links are this render's and all resolve. Re-judged after the fourth round: the narrator note now says what the coloured spirals are; the logic note matches the picture; the twelve draft links are this render's. Re-judged after the third round: the last-page note says the text is set as the magazine's page (not its columns); the generator and bluish-beam notes now match what the film shows; the twelve draft links are this render's. Re-judged after the second round: the notice links the fact-check list instead of naming Round 7; the twelve draft links are this render's and resolve. Re-judged after the fresh-eyes round: the banner says each chapter is still being watched and fixed; the title-page note describes the 1932 line the film shows; the footnote notes now match chapter 2's lettered footnotes; the twelve draft links are this round's and resolve. Re-checked: the only change since is the twelve draft links in the page data, now this round's drafts; all twelve resolve on the drafts release (HTTP 200) and the film's total (57:03) is unchanged. Re-judged after the fresh-eyes round: framed for visitors ('Watch: the film in draft, with notes', not 'Review · Round 7'); the bar says it counts the whole film and the player the chapter; draft notice current."
   },
   {
    "id": "site.watch.look",
    "area": "site",
    "title": "The film page (annotated): how it looks and works",
-   "state": "pass",
-   "note": "Re-checked at 375 after the fifth round (out/quality/phone): only the title-page note's text and the time readout's gap changed; no overflow. Re-checked at 375 after the fourth round: only the notes' text changed; no overflow. Re-checked at 375 after the third round (out/quality/phone): no overflow; only wording changed. Re-checked at 375 after the second round (out/quality/phone, fonts loaded): no overflow; only wording changed. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-checked: the only change since is the twelve draft links in the page data, now this round's drafts; all twelve resolve on the drafts release (HTTP 200) and the film's total (57:03) is unchanged. Now has the site's masthead, nav and footer; the title sits in the text column; checked at 1280 and 375; scrubber steps 5 s by keyboard and reads '15:00 of 57:03'; no console errors."
+   "state": "stale",
+   "note": "passed on 9a46c688827d; changed since. Re-checked at 375 after the fifth round (out/quality/phone): only the title-page note's text and the time readout's gap changed; no overflow. Re-checked at 375 after the fourth round: only the notes' text changed; no overflow. Re-checked at 375 after the third round (out/quality/phone): no overflow; only wording changed. Re-checked at 375 after the second round (out/quality/phone, fonts loaded): no overflow; only wording changed. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-checked: the only change since is the twelve draft links in the page data, now this round's drafts; all twelve resolve on the drafts release (HTTP 200) and the film's total (57:03) is unchanged. Now has the site's masthead, nav and footer; the title sits in the text column; checked at 1280 and 375; scrubber steps 5 s by keyboard and reads '15:00 of 57:03'; no console errors."
   },
   {
    "id": "site.read.content",
@@ -1472,14 +1476,79 @@
    "title": "Film page: the title-page note sends viewers looking for 'A Classic Reprint'",
    "state": "pass",
    "note": "On the live annotated page: the title-page note now says only that the words come from the March 1961 reprint, with 16 readings from 1932 put back; it no longer names 'A Classic Reprint'."
+  },
+  {
+   "id": "find.note-f1",
+   "area": "finding",
+   "title": "Film page: the recombination note calls chapter 4's new brain F-2",
+   "state": "open",
+   "note": "Fresh eyes 6, major: the note on p048.1 ('countless trillions of facts') says 'F-2 is built to imagine by sheer quantity'; the brain MX-3401's machines build is F-1 (ch05 names it), and F-1 makes F-2 (p064.1)."
+  },
+  {
+   "id": "find.note-roal-age",
+   "area": "finding",
+   "title": "Film page: the Roal and Trest note gives Roal's age, which the story never does",
+   "state": "open",
+   "note": "Fresh eyes 6, minor: 'Roal, a hundred and fifty years old' comes from the casting note, not the text, and is presented as a fact."
+  },
+  {
+   "id": "find.ch03-roal-pose",
+   "area": "finding",
+   "title": "Chapter 3: Roal holds one rigid pointing pose for 30 s",
+   "state": "open",
+   "note": "Fresh eyes 6, minor, 0:27-0:57: his arm stays straight at Trest's face; the board has him turn to the machines with his hand to the fleet on the screens; Trest barely moves."
+  },
+  {
+   "id": "find.ch09-storm",
+   "area": "finding",
+   "title": "Chapter 9: the second creation's storm isn't shown",
+   "state": "open",
+   "note": "Fresh eyes 6, minor, 2:55-3:17 (J): 'the wind whined and howled, and the lightnings crashed, while titanic forces worked and played' over the plant in light rain; no lightning; C-R-U-1 joining (3:05) is a few pixels and its name unreadable."
+  },
+  {
+   "id": "find.ch02-plunger",
+   "area": "finding",
+   "title": "Chapter 2: the last plunger shuts 1.5 s before 'snapped shut'",
+   "state": "open",
+   "note": "Fresh eyes 6, minor, ~3:03: fully down by 183.1 s; 'snapped' is at 184.7. ch02.js times the close to tLast - .3, the phrase's start."
+  },
+  {
+   "id": "find.ch04-brain-frame",
+   "area": "finding",
+   "title": "Chapter 4: F-1's new brain sits jammed at the frame's bottom edge",
+   "state": "open",
+   "note": "Fresh eyes 6, minor, 4:11-4:43 (P, Q): only the top of the half-dome and lens show at the bottom; three quarters of the frame is empty screens for 30 s during 'It was a new brain-machine'."
+  },
+  {
+   "id": "find.ch08-heirs",
+   "area": "finding",
+   "title": "Chapter 8: F-2's 'We, your heirs' speech over one static wide shot",
+   "state": "open",
+   "note": "Fresh eyes 6, nit, 2:43-3:47: about a minute; F-2's ring pulses in a regular cycle that reads as a loop; Roal and Trest barely move."
+  },
+  {
+   "id": "find.ch02-footnote",
+   "area": "finding",
+   "title": "Chapter 2: the kilad footnote hangs 4 s into the next shot",
+   "state": "open",
+   "note": "Fresh eyes 6, nit, 0:35-0:40: footnote 1 stays over the transport shot."
+  },
+  {
+   "id": "find.flyer-overlap",
+   "area": "finding",
+   "title": "Chapters 1 and 3: flying machines seem to sit on tower caps",
+   "state": "open",
+   "note": "Fresh eyes 6, nit, ch01 ~1:00-1:27, ch03 0:10-0:22: machines cross the tops of towers and piers; some frames read as an overlap, not depth."
+  },
+  {
+   "id": "find.round4-alt",
+   "area": "finding",
+   "title": "Review, Round 4 page: escaped HTML and stray words in image alt text",
+   "state": "open",
+   "note": "Fresh eyes 6, nit: alt texts contain '&lt;b&gt;1 · 2538.&lt;/b&gt;…', others 'none', 'strong', 'light (the frames above)'; a caption puts F-1/F-2's birth in 'Chapter 3'."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-05 19:56",
-   "found": 15,
-   "note": "Film and site, third round: a subagent with no context watched all twelve drafts against the word timings and checked the site live. 2 major (ch02's investigator never hidden, its bluish beam invisible), 9 minor, 4 nits recorded as find.* items; 2 transcription flags put to Curt as voice items."
-  },
   {
    "when": "2026-11-06 07:42",
    "found": 15,
@@ -1489,6 +1558,11 @@
    "when": "2026-11-06 19:40",
    "found": 11,
    "note": "Film and site, fifth round: a subagent with no context watched all twelve drafts against the word times and checked the site live. No major findings: 7 minor, 4 nits (one, the 'dropouts', measured as the room tone rather than silence, recorded as the bed being too faint)."
+  },
+  {
+   "when": "2026-11-07 08:38",
+   "found": 10,
+   "note": "Sixth round: 1 major (the recombination note calls chapter 4's brain F-2), 5 minor (Roal's age in a note, ch03 Roal's rigid pose, ch09's second storm unseen, ch02's plunger early, ch04's brain at the frame's edge), 4 nits (ch08 static heirs speech, ch02 footnote overhang, flyers on tower caps, Round 4 alt text)."
   }
  ]
 }
