@@ -141,7 +141,7 @@ notes:
     kind: who
     title: Roal and Trest
     body: >-
-      The two greatest human scientists. Roal, a hundred and fifty years old, is the dreamer, with the soft voice and
+      The two greatest human scientists. Roal is the dreamer, with the soft voice and
       the chuckle. Trest is the plain one, the realist. In 2538 people carry numbers as well as names. The narrator says
       it was there with them, "in memory"; chapter 5 explains how.
   - id: life-understands-life
@@ -223,7 +223,8 @@ notes:
     body: >-
       "Countless trillions of facts to combine and recombine". Chapter 1 drew the line this machine is meant to cross:
       machines had "imagination of the ideal sort", sure steps from fact to conclusion, and man the "illogical,
-      brilliant" kind that leaps. F-2 is built to imagine by sheer quantity, fed everything its makers knew.
+      brilliant" kind that leaps. This new brain, the one chapter 5 names F-1, is built to imagine by sheer quantity,
+      fed everything its makers knew.
 
       It reads now like a description of how today's AI models are made. Meta's Llama 3, in 2024, learned from about
       15 trillion tokens, fragments of words ([Llama][wp-llama]). Campbell wrote it before there was an electronic
@@ -232,7 +233,8 @@ notes:
       Whether recombination on that scale is imagination is still argued. In 2021 four researchers called such models
       "stochastic parrots", stitching together forms they'd seen without reference to meaning; others point to what
       the models work out that was never in the text ([Stochastic parrot][wp-stochastic-parrot]). The story keeps both
-      sides: F-2 is more than anything before it, and in chapter 8 it still needs Roal's leap.
+      sides: F-1, and the F-2 it goes on to make, are more than anything before them, and in chapter 8 F-2 still
+      tells the two men "your swift brains have leapt ahead of us".
 
   # 5. The Hydrogen Wall
   - id: hydrogen-wall
