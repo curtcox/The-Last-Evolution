@@ -62,7 +62,10 @@
     const tC = T0('C'), tE = T0('E'), tG = T0('G'), tH = T0('H'), tL = T0('L'), tM = T0('M'), tP = T0('P');
     const c = cam(t, [[0, tt => [PX - 100, lerp(560, 420, ez(tt, T0('B'), tC)), lerp(.75, .85, ez(tt, T0('B'), tC))]], [tC, [PX + 40, RG - 380, 2.2], 2], [tD, tt => [PX - 200, lerp(500, 200, ez(tt, tD, tE)), lerp(1.2, .7, ez(tt, tD, tE))], 3],
       [tE, [PX, ORB[1] + 120, 1.1], 3], [tF, [PX - 100, ORB[1] + 200, .9], 3], [tG, [PX - 160, ORB[1] + 60, 1.5], 2.5], [tH, [PX, ORB[1], 2.2], 2.5], [tI, tt => [lerp(PX - 200, PX + 140, ez(tt, tStab, tStab + 2)), lerp(ORB[1] + 200, ORB[1] + 80, ez(tt, tStab, tStab + 2)), lerp(1.4, 1.05, ez(tt, tStab, tStab + 2))], 2],   // the plant's top, the beam and the sphere held together through the duel
-      [tJ, tt => [lerp(PX, PX + 400, ez(tt, tJ, tK)), 400, .65], 3], [tK, tt => [lerp(350, PX, ez(tt, C('p123.1:Roal and Trest appeared') + 2, tGold + 2)), lerp(800, ORB[1] + 260, ez(tt, tGold - 2.5, tGold + 1)), lerp(1.2, .75, ez(tt, tK, tGold + .5)) * lerp(1, 1.5, ez(tt, tGold + 3, tL))], 3],   // up and wide, so the globe is in frame as it's named; then a slow push in
+      [tJ, tt => [lerp(PX - 100, PX + 60, ez(tt, tJ, tJ + 10)), 300, .72], 3],   // J: the storm on the plant again, wide enough for the lightning
+      [C('p122.1:C-R-U-1 joined him') - 2, [PX - 490, RG - 110, 1.7], 2.5],   // in on C-R-U-1 floating in beside F-2, its gold name readable
+      [C('p122.1:red glory of the sun') - .5, tt => [lerp(PX - 300, PX + 350, ez(tt, C('p122.1:red glory of the sun') - .5, tK)), lerp(760, 680, ez(tt, C('p122.1:red glory of the sun'), tK)), lerp(1.3, .95, ez(tt, C('p122.1:red glory of the sun') - .5, tK))], 3],   // round, so the red sun rises behind them
+      [tK, tt => [lerp(350, PX, ez(tt, C('p123.1:Roal and Trest appeared') + 2, tGold + 2)), lerp(800, ORB[1] + 260, ez(tt, tGold - 2.5, tGold + 1)), lerp(1.2, .75, ez(tt, tK, tGold + .5)) * lerp(1, 1.5, ez(tt, tGold + 3, tL))], 3],   // up and wide, so the globe is in frame as it's named; then a slow push in
       [tL, tt => [PX, ORB[1], lerp(1.5, 1.9, ez(tt, tL, tM))], 2.5], [tM, tt => [PX - 100, lerp(ORB[1], 300, ez(tt, tRuby + 2, tN)), lerp(1.9, .7, ez(tt, tRuby + 2, lerp(tRuby + 2, tN, .5)))], 3],
       // in close on the two men as the warmth shoots through them, their last time on screen (at 25 px they were specks)
       [C('p126.1:there shot through') - .4, tt => [lerp(470, 500, ez(tt, C('p126.1:there shot through'), tN)), 800, lerp(2.2, 2.4, ez(tt, C('p126.1:there shot through'), tN))], 1.6],
@@ -93,8 +96,11 @@
     // F-2; C-R-U-1 joining it at dawn
     DES.f2(f2[0], f2[1] + 2.4 * FS, FS, t, { view: 'side' });
     if (t > C('p122.1:C-R-U-1 joined him') - 3) { const k = ez(t, C('p122.1:C-R-U-1 joined him') - 3, C('p122.1:C-R-U-1 joined him') + 1); DES.cru1(lerp(-600, f2[0] - 140, k), f2[1] + 60 + 2.2 * 30, 30, t, { glowK: 1 }); }
-    // J: the forces at play again
+    // J: again the lightnings crash on the plant's crown, and titanic forces work and play about it
     if (t > tJ + 1 && t < tK) for (let i = 0; i < 4; i++) glow(ORB[0] + 200 * Math.sin(t * 2 + i), ORB[1] + 120 * Math.cos(t * 1.7 + i), 80, [FORCE, NRG.gold, NRG.violet, FORCE][i], .4 * storm(t));
+    const crash = win(t, C('p122.1:the lightnings crashed') - .2, C('p122.1:C-R-U-1 joined him') + 1, .2, 1), play = win(t, C('p122.1:while titanic forces') - .3, C('p122.1:red glory of the sun'), .5, 1.5);
+    if (crash > 0 && hash(Math.floor(t * 6) + 50) > .3) { const n = Math.floor(t * 3); boilSeed('lj' + Math.floor(t * 12)); lightning(PX + 900 * (hash(n * 5) - .5), -700, PX + 30 * (hash(n) - .5), TOP + 20, NRG.lightning, { amp: .2, r: 70 }); glow(PX, TOP + 20, 220, NRG.white, .55 * crash); }   // down on the plant's crown
+    if (play > 0) for (let i = 0; i < 3; i++) { const a = t * (.9 + .3 * i) + i * 2.1, e = [ORB[0] + 620 * Math.cos(a), ORB[1] - 60 + 320 * Math.sin(a * 1.3)]; beam(PX, TOP + 10, ...e, 20, 40, [FORCE, NRG.violet, NRG.gold][i], play, { washOp: 40, a: .45 * play, splash: false }); glow(...e, 60, [FORCE, NRG.violet, NRG.gold][i], .4 * play); }
     // K on: the golden sphere; Roal and Trest out of the dome; the warmth of the ruby flame
     const gk = ez(t, tGold - 2.2, tGold + .5) * (t < tVanish ? 1 : 0), tTwice = C('p127.1:twice'), grow = .25 * ez(t, C('p126.1') + 2, tTwice - .3) + .75 * ez(t, tTwice - .3, tTwice + 1);   // most of it on 'twice its former size'
     // they stand looking up at the sphere; when the ruby flame warms them, their hands lift toward it, open
