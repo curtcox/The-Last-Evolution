@@ -10,11 +10,16 @@
   // ---------- B to D, H to J: inside the dome ----------
   const ROALX = 820, TRESTX = 1000, F2P = [1240, 760];
   const ROALC = clauses('roal'), TRESTC = clauses('trest'), F2C = clauses('f2'), TO_ROAL = [...TRESTC, ...F2C], TO_TREST = [...ROALC, ...F2C];
+  // F-2's thought goes out as a ring on a word whenever 0.9 s have passed since the last: it pulses with the words and rests in the pauses
+  const F2RINGS = (() => { const out = []; for (const l of CHAPTER.lines) if (l.who === 'f2') for (const w of l.words) if (!out.length || w[1] - out.at(-1) > .9) out.push(w[1]); return out; })();
   function dome(t) {
     HALFTONE = .2;
     const tJ = T0('J'), go = ez(t, C('p111.2') - .5, T1('J') - .3);
     const c = cam(t, [[0, tt => [930, lerp(700, 760, ez(tt, T0('B'), T0('C'))), lerp(1.2, 1.7, ez(tt, T0('B'), T0('C')))]], [T0('C'), [TRESTX, 760, 2.4], 2], [T0('D'), tt => [ROALX, 770, lerp(2.3, 2.8, ez(tt, T0('D'), T0('E')))], 2.5],
-      [T0('H') - .5, [ROALX + 40, 770, 2.6], .01], [T0('I'), tt => [lerp(1040, 1120, ez(tt, T0('I'), tJ)), 740, 1.6], 2.5], [tJ, tt => [lerp(1200, 1700, go), 720, 1.8], 2]]);
+      [T0('H') - .5, [ROALX + 40, 770, 2.6], .01], [T0('I'), tt => [lerp(1040, 1120, ez(tt, T0('I'), C('p109.1'))), 740, 1.6], 2.5],
+      [C('p109.1') - .8, tt => [lerp(990, 1030, ez(tt, C('p109.1'), C('p110.1'))), 760, 2.3], 3],   // in on the two men listening, F-2 still in frame
+      [C('p110.1') - .8, tt => [lerp(1000, 1060, ez(tt, C('p110.1'), tJ)), 750, lerp(1.9, 1.7, ez(tt, C('p110.1'), tJ))], 3],   // the promise: F-2 and the men together
+      [tJ, tt => [lerp(1200, 1700, go), 720, 1.8], 2]]);
     camBegin(...c);
     const f2x = lerp(F2P[0], 1900, go * go), f2y = F2P[1] - 40 * go;
     // each gestures on his own clauses (Roal's smaller while his eyes dream) and nods as the other, or F-2, speaks to him
@@ -39,7 +44,7 @@
     glow(f2x, f2y, 90, '#E6EEFF', .25 + .3 * talk(t, 'f2'));
     for (const p of [roal, trest]) glow(...p.head, 70, '#DDE6F0', .2);
     dreamCurl(roal.head[0] + 20, roal.head[1] - 40, K(t, 'p103.1', 'p103.1$'), t, .5 * (1 - ez(t, T0('E') - 1.5, T0('E'))), 'rc');
-    thoughtRings(f2x, f2y, t, T0('I'), C('p111.1$'), { r1: 200 });
+    thoughtRings(f2x, f2y, t, T0('I'), C('p111.1$'), { r1: 200, at: F2RINGS });
     camEnd();
   }
 

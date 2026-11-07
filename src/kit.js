@@ -86,6 +86,9 @@ const KIT = (() => {
   // thought-speech (PLAN.md §4): rings of light going out from the thinker, one per beat of the words
   function thoughtRings(x, y, t, t0, t1, o = {}) {
     if (t < t0) return;
+    if (o.at) { for (const a of o.at) { const k = (t - a) / (o.life ?? 1.6); if (k < 0 || k >= 1 || a > t1) continue;   // o.at: a ring sent out at each of these times (with the words), not on a clock
+        const r = (o.r0 ?? 40) + k * (o.r1 ?? 520), al = (1 - k) * .35; for (let i = 0; i < 26; i++) { const q = i / 26 * TAU; glow(x + Math.cos(q) * r, y + Math.sin(q) * r * (o.sq ?? .55), 22, o.col || '#E6EEFF', al); } }
+      return; }
     const per = o.per ?? 1.1, fade = clamp((t1 + per * 2 - t) / (per * 2));
     for (let n = 0; n < 4; n++) { const age = (t - t0) / per - n; if (age < 0) continue; const k = frac(age), r = (o.r0 ?? 40) + k * (o.r1 ?? 520), a = (1 - k) * .35 * fade;
       if ((t - t0) - n * per > t1 - t0 + per) continue;
