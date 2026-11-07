@@ -46,8 +46,8 @@
   // and starting a ninth of the loop from the next (START). With random heights and starts two flew stacked for 12 s,
   // like one machine drawn twice; these were searched so no two in near lanes overlap for more than 3 s in the chapter.
   const LANE = [1, 5, 6, 3, 2, 4, 8, 7, 0], START = [4, 0, 8, 1, 3, 7, 5, 2, 6];
-  function workers(t) {
-    for (let i = 0; i < 9; i++) { const ph = t * (.05 + .02 * hash(i)) + START[i] / 9, x = -200 + frac(ph) * 5200, y = 380 + 25 * LANE[i] + 30 * Math.sin(t * .6 + i), s = 16 + 8 * hash(i * 7);
+  function workers(t, back) {   // back: the odd ones fly behind the towers (crossing in front of a cap, they read as sitting on it)
+    for (let i = 0; i < 9; i++) { if ((i % 2 === 1) !== back) continue; const ph = t * (.05 + .02 * hash(i)) + START[i] / 9, x = -200 + frac(ph) * 5200, y = 380 + 25 * LANE[i] + 30 * Math.sin(t * .6 + i), s = (16 + 8 * hash(i * 7)) * (back ? .8 : 1.2);   // the near ones larger, the far ones smaller: depth, not a machine on a cap
       const m = DES.machine(x, y + 2.5 * s, s, t, { arms: 2, d: 1 + (i % 2), hover: 2.5, face: .6, label: null });
       boilSeed('crate' + i); wash(rrPts(x - s * 1.2, m.dy + s * .8, s * 2.4, s * 1.6, s * .2), 2, { ink: true, sw: .5 }); inkLine([[x - s * .6, m.arm], [x - s * .6, m.dy + s * .8]], .5, INK); inkLine([[x + s * .6, m.arm], [x + s * .6, m.dy + s * .8]], .5, INK); }
   }
@@ -56,10 +56,11 @@
     // to the far towers
     steady(() => { stillSeed('citysky'); paint(rectPts(-1600, -800, 7600, H + 1600), { wash: D[0], washOp: 255, fill: '#FFFFFF', fillOp: 40, bleed: .2, tex: .4, ink: null }); });
     stillSeed('hills'); wash([[-800, G - 120], [0, G - 220], [900, G - 150], [1800, G - 240], [2900, G - 160], [3900, G - 230], [5200, G - 140], [5200, G], [-800, G]], 1, { op: .6 });
+    workers(t, true);
     steady(() => towers(t));
     stillSeed('plaza'); wash(rectPts(-800, G - 30, 6000, 600), 1, { ink: false, op: .9 }); inkLine([[-800, G - 30], [5200, G - 30]], .6, D[3]);
     for (let k = 0; k < 24; k++) inkLine([[-800 + k * 260, G - 30], [-1500 + k * 340, G + 600]], .35, D[2]);
-    workers(t);
+    workers(t, false);
     // C: a machine hands a man a crate; he walks on with it
     // then the machine rises back to its work, and the man walks on to clear ground between the pairs and the runners
     // (stopping at 2300 he stood inside a talking pair for the rest of the chapter, and the machine stayed in K's path;
