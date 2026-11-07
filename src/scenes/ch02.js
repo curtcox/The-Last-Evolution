@@ -146,7 +146,8 @@
       // J: the power room: the plungers over their sockets, the ship-brain shattered; the signals; the plungers shutting
       boilSeed('brain'); wash(ellPts(3720, 520, 120, 90, 18, 30), 3, { ink: true, sw: .7 }); for (let k = 0; k < 6; k++) inkLine([[3720, 520], [3720 + Math.cos(k) * 120, 520 + Math.sin(k) * 90]], .6, INK);
       const tSig = C('p013.1:relayed the control signals');
-      for (let i = 0; i < 6; i++) { const x = 2950 + i * 120, shut = ez(t, lerp(C('p013.1:Quickly they were'), tLast - .3, i / 5), lerp(C('p013.1:Quickly they were'), tLast - .3, i / 5) + (i === 5 ? .15 : .5));
+      const tSnap = C('p013.1:snapped shut') - .08;   // the last plunger snaps on its word; the first five shut from 'Quickly' up to 'the last plunger'
+      for (let i = 0; i < 6; i++) { const x = 2950 + i * 120, s0 = i === 5 ? tSnap : lerp(C('p013.1:Quickly they were'), tLast - .3, i / 4), shut = ez(t, s0, s0 + (i === 5 ? .15 : .5));
         boilSeed('pl' + i); wash(rrPts(x - 26, FL - 90, 52, 90, 6), 4, { ink: true, sw: .6 }); wash(rrPts(x - 14, lerp(380, FL - 330, shut), 28, 240, 6), 1, { ink: true, sw: .6, op: 1 });
         wash(rrPts(x - 30, lerp(360, FL - 350, shut), 60, 26, 6), 2, { ink: true, sw: .6 });
         if (t > tSig) ruled([[ip[0], ip[1]], [x, ip[1]], [x, lerp(370, FL - 345, shut)]], seg(t, tSig + i * .3, tSig + i * .3 + .8), FORCE, .6); }
