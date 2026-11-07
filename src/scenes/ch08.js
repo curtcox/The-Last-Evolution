@@ -2,7 +2,7 @@
 // (src/gen/ch08.js). Inside the dome (dark, the screens and the violet canopy); Roal's vision as a science plate; and
 // outside on the twisted rock, from clear sunlight to a crescent moon, where F-2 builds the power plant.
 (() => {
-  const { D, INK, ez, win, steps, path, talk, clauses, gesture, nod, listen, ground, cam, withCam, ruled, dreamCurl, page, stander, thoughtRings, planet } = KIT;
+  const { D, INK, ez, win, steps, path, talk, clauses, gesture, nod, listen, ground, cam, withCam, ruled, dreamCurl, page, stander, thoughtRings, planet, farPlain, haze } = KIT;
   const S = CHAPTER.shots, C = cue, T0 = id => S[id][0], T1 = id => S[id][1];
   const K = (t, a, b) => seg(t, C(a), C(b));
   const VIOLET = NRG.support, FORCE = '#CFE0FF', G = 1000, FS = 26, PALE = '#EFE6D2', BG = '#2E2620';
@@ -15,7 +15,7 @@
   function dome(t) {
     HALFTONE = .2;
     const tJ = T0('J'), go = ez(t, C('p111.2') - .5, T1('J') - .3);
-    const c = cam(t, [[0, tt => [930, lerp(700, 760, ez(tt, T0('B'), T0('C'))), lerp(1.2, 1.7, ez(tt, T0('B'), T0('C')))]], [T0('C'), [TRESTX, 760, 2.4], 2], [T0('D'), tt => [ROALX, 770, lerp(2.3, 2.8, ez(tt, T0('D'), T0('E')))], 2.5],
+    const c = cam(t, [[0, tt => [930, lerp(700, 760, ez(tt, T0('B'), T0('C'))), lerp(1.2, 1.7, ez(tt, T0('B'), T0('C')))]], [T0('C'), [TRESTX, 760, 2.4], 2], [T0('D'), tt => [ROALX - 60, 770, lerp(2.3, 2.8, ez(tt, T0('D'), T0('E')))], 2.5],
       [T0('H') - .5, [ROALX + 40, 770, 2.6], .01], [T0('I'), tt => [lerp(1040, 1120, ez(tt, T0('I'), C('p109.1'))), 740, 1.6], 2.5],
       [C('p109.1') - .8, tt => [lerp(990, 1030, ez(tt, C('p109.1'), C('p110.1'))), 760, 2.3], 3],   // in on the two men listening, F-2 still in frame
       [C('p110.1') - .8, tt => [lerp(1000, 1060, ez(tt, C('p110.1'), tJ)), 750, lerp(1.9, 1.7, ez(tt, C('p110.1'), tJ))], 3],   // the promise: F-2 and the men together
@@ -75,7 +75,9 @@
   }
 
   // ---------- K to N: outside, from noon to night ----------
-  const RG = 900, PX = 1100;
+  // The plant is 'nearly five hundred feet in height' and F-2 'scarcely half the size of Roal': so it stands far off,
+  // on a plain beyond the near rocks (HZ, its horizon), hazed by the air between, and F-2 builds it from the near rock.
+  const RG = 900, PX = 1100, HZ = RG - 230, PB = HZ + 12, PS = 2.2;
   function outside(t) {
     HALFTONE = .25;
     const tK = T0('K'), tPlane = C('p112.1:he laid a plane of force'), tL = T0('L'), tM = T0('M'), tN = T0('N'), tLivid = C('p114.1:Suddenly, a livid beam');
@@ -88,27 +90,31 @@
     if (night < .5) glow(lerp(-200, 3000, grow), lerp(-900, 300, grow * grow), 140, '#FFF6E8', .9 * (1 - night * 2));
     if (night > 0) { for (let i = 0; i < 120; i++) glow(-1600 + hash(i * 3.1) * 5000, -2400 + hash(i * 7.7) * 3000, 5, '#F4EEDC', .5 * night * hash(i)); stillSeed('moon');
       glow(1900, -900, 90, '#F4EEDC', .5 * night); wash([...Array(17)].map((_, i) => { const a = -Math.PI / 2 + i / 16 * Math.PI; return [1900 + Math.cos(a) * 60, -900 + Math.sin(a) * 60]; }).concat([...Array(17)].map((_, i) => { const a = Math.PI / 2 - i / 16 * Math.PI; return [1900 + Math.cos(a) * 30, -900 + Math.sin(a) * 60]; })), 0, { op: night }); }
-    // the twisted, massed rocks; smoothed flat under the plane of force round the plant's place
+    // the far plain, smoothed under the plane of force where the plant will stand
+    const skyCol = mixCol(D[0], '#1E1A16', night);
+    farPlain(HZ, RG + 40, 'far8', { x: PX, r: 260, flat: smooth, col: mixCol(D[1], skyCol, .4) });
+    if (smooth > 0 && smooth < 1) { glow(PX, PB, 300, FORCE, .3 * Math.sin(Math.PI * smooth)); }
+    if (smooth > .5) { stillSeed('plane'); wash(rectPts(PX - 260, PB - 4, 520, 8), 1, { ink: true, sw: .4 }); }
+    // the plant, far off, rising ring by ring as F-2's forces arc round it; finished at night
+    if (grow > 0) { const s = PS * Math.max(.05, grow), lum = .14 * ez(t, tM - 1, tM + 2); DES.plant(PX, PB, s, t, { lum });
+      if (t < tM) for (let i = 0; i < 4; i++) { const y = PB - 400 * s * 1.6 * (.7 + .3 * hash(Math.floor(t * 4) + i)), q = hash(Math.floor(t * 6) + i); if (q > .4) { boilSeed('arc' + i + Math.floor(t * 12)); lightning(PX - 80 * s * 1.2, y, PX + 80 * s * 1.2 * (q - .5) * 2, y - 60, FORCE, { amp: .2 }); } } }
+    haze(PB - 490 * PS, PB + 10, skyCol, .4);
+    // the near rock, twisted and massed, between F-2 and the far plain
     stillSeed('rocks'); wash([[-2000, RG + 40], [6000, RG + 40], [6000, RG + 1600], [-2000, RG + 1600]], 3, { op: 1 });
-    for (let i = 0; i < 40; i++) { const x = -1600 + i * 130 + 60 * hash(i), flat = Math.abs(x - PX) < 700 ? smooth : 0, h = (60 + 120 * hash(i * 3)) * (1 - flat);
-      if (h > 4) { stillSeed('rk' + i); wash([[x - 70, RG + 50], [x - 30 + 20 * hash(i), RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]], 2 + (i % 2), { ink: true, sw: .5 }); } }
-    if (smooth > 0 && smooth < 1) { glow(PX, RG + 40, 700, FORCE, .3 * Math.sin(Math.PI * smooth)); }
-    if (smooth > .5) { stillSeed('plane'); wash(rectPts(PX - 700, RG + 30, 1400, 30), 1, { ink: true, sw: .5 }); }
-    // the dome, behind at the left
+    for (let i = 0; i < 40; i++) { const x = -1600 + i * 130 + 60 * hash(i), h = 60 + 120 * hash(i * 3);
+      stillSeed('rk' + i); wash([[x - 70, RG + 50], [x - 30 + 20 * hash(i), RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]], 2 + (i % 2), { ink: true, sw: .5 }); }
+    // the dome, near, behind at the left
     DES.blackDome(-300, RG + 60, 320, t);
-    // the plant, rising ring by ring as F-2's forces arc round it; finished at night
-    if (grow > 0) { const s = 1.8 * Math.max(.05, grow), lum = .14 * ez(t, tM - 1, tM + 2); DES.plant(PX, RG + 60, s, t, { lum });
-      if (t < tM) for (let i = 0; i < 4; i++) { const y = RG + 60 - 400 * s * 1.6 * (.7 + .3 * hash(Math.floor(t * 4) + i)), q = hash(Math.floor(t * 6) + i); if (q > .4) { boilSeed('arc' + i + Math.floor(t * 12)); lightning(PX - 80 * s * 1.2, y, PX + 80 * s * 1.2 * (q - .5) * 2, y - 60, FORCE, { amp: .2 }); } } }
     // F-2: out through the dome's black wall, over the rocks, to the plant's foot
     const fp = path(t, [[0, [-150, 700]], [tK, [500, 640], 4], [tPlane - 1, [PX - 300, 700], 3], [tL, [PX - 520, 600], 3], [tM, [PX - 360, RG - 40], 3]]);
     DES.f2(fp[0], fp[1] + 2.4 * FS, FS, t, { view: 'side' });
     // 'the deadly logic of the machine, inspired by the leaping intuition of man': chapter 1's two minds together, the
     // machine's stepped ruled line from F-2 to the plant and the man's curl of wash rising beside it
     const tLogic = C('p112.1:the deadly logic'), tLeap8 = C('p112.1:the leaping intuition'), both = 1 - ez(t, tM - .5, tM + 1);
-    if (t > tLogic && both > 0) { const a = [fp[0] + 60, fp[1] - 20], b = [PX - 60, RG + 60 - 1150 * Math.max(.3, grow)]; ruled([a, [a[0], lerp(a[1], b[1], .33)], [lerp(a[0], b[0], .5), lerp(a[1], b[1], .33)], [lerp(a[0], b[0], .5), lerp(a[1], b[1], .66)], [b[0], lerp(a[1], b[1], .66)], b], ez(t, tLogic, tLogic + 2.2), PALE, 5 * both);
+    if (t > tLogic && both > 0) { const a = [fp[0] + 60, fp[1] - 20], b = [PX - 60, PB - 1150 * Math.max(.3, grow)]; ruled([a, [a[0], lerp(a[1], b[1], .33)], [lerp(a[0], b[0], .5), lerp(a[1], b[1], .33)], [lerp(a[0], b[0], .5), lerp(a[1], b[1], .66)], [b[0], lerp(a[1], b[1], .66)], b], ez(t, tLogic, tLogic + 2.2), PALE, 5 * both);
       if (t > tLeap8) { push(); translate(PX - 380, RG - 40); scale(2.4); translate(-(PX - 380), -(RG - 40)); dreamCurl(PX - 380, RG - 40, ez(t, tLeap8, tLeap8 + 2.2), t, .85 * both, 'leap8', 0); pop(); } }
     const lv = ez(t, tLivid - .2, tLivid + .4);
-    if (lv > 0) { beam(fp[0] + 50, fp[1], PX - 60, RG - 120, 14, 50, NRG.livid, lv, { washOp: 90, a: .9 }); glow(PX, RG - 150, 260, NRG.livid, .5 * lv); }
+    if (lv > 0) { beam(fp[0] + 50, fp[1], PX - 60, PB - 180, 14, 50, NRG.livid, lv, { washOp: 90, a: .9 }); glow(PX, PB - 210, 260, NRG.livid, .5 * lv); }
     camEnd();
   }
 

@@ -2,11 +2,13 @@
 // (src/gen/ch09.js). One place, the rock round the power plant, through one night into a red dawn: the storm, the
 // white globe killed by the red beam, and the golden sphere.
 (() => {
-  const { D, INK, ez, win, lerpP, steps, path, talk, ground, cam, page, closing, stander, thoughtRings, ruled } = KIT;
+  const { D, INK, ez, win, lerpP, steps, path, talk, ground, cam, page, closing, stander, thoughtRings, ruled, farPlain, haze } = KIT;
   const S = CHAPTER.shots, C = cue, T0 = id => S[id][0], T1 = id => S[id][1];
   const K = (t, a, b) => seg(t, C(a), C(b));
-  const FORCE = '#CFE0FF', RG = 900, PX = 1100, PS = 1.8, FS = 26;
-  const TOP = RG + 60 - 400 * PS - 90 * PS * .6, ORB = [PX, TOP - 260];   // the plant's crown, and where the spheres float
+  // the plant stands far off on the plain beyond the near rock, as in chapter 8 (HZ its horizon, PB its foot): it is five
+  // hundred feet high and F-2 half a man's size
+  const FORCE = '#CFE0FF', RG = 900, PX = 1100, HZ = RG - 230, PB = HZ + 12, PS = 2.2, FS = 26;
+  const TOP = PB - 400 * PS - 90 * PS * .6, ORB = [PX, TOP - 260], LENS = [PX + 40, PB - 540];   // the crown, where the spheres float, and the lens
   const tD = T0('D'), tDark = C('p117.1:The sky darkened'), tF = T0('F'), tI = T0('I'), tStab = C('p121.4:A stabbing beam'), tRed = C('p121.4:an enormously greater beam');
   const tOrange = C('p121.4:orange'), tGreen = C('p121.4:green'),   // on the colour words themselves (the phrase starts ~1 s early)
     tGone = C('p121.4:Then the sphere had vanished'), tJ = T0('J'), tK = T0('K');
@@ -15,25 +17,28 @@
   // the storm: 0..1; up from D, gone at F; up again at J, gone at K
   const storm = t => Math.max(win(t, tDark - 1, tF, 3, 2), win(t, tJ, tK + 1, 3, 2));
   // the dome parts once the men are out of it (they walk from inside, hidden, from 'appeared')
-  const domePart = t => ez(t, C('p123.1:Roal and Trest appeared') + 1.5, C('p123.1:Roal and Trest appeared') + 4.5);
+  const domePart = t => ez(t, C('p123.1:Roal and Trest appeared') - .3, C('p123.1:Roal and Trest appeared') + 2.2);
   const dawn = t => ez(t, C('p122.1:red glory of the sun') - 3, tK + 6);
   function world(t) {
     const st = storm(t), dw = dawn(t);
     // the sky: night, storm-black, then a red dawn
-    stillSeed('sky9'); paint(rectPts(-2000, -2600, 6000, 3600), { wash: mixCol(mixCol('#1E1A16', '#100D0B', st), mixCol('#2A1E1A', '#7A3E2E', .45), dw), washOp: 255, fill: '#2A231D', fillOp: 70, ink: null });
+    const skyCol = mixCol(mixCol('#1E1A16', '#100D0B', st), mixCol('#2A1E1A', '#7A3E2E', .45), dw);
+    stillSeed('sky9'); paint(rectPts(-2000, -3200, 6000, 4200), { wash: skyCol, washOp: 255, fill: '#2A231D', fillOp: 70, ink: null });
     if (st < .8) for (let i = 0; i < 100; i++) glow(-1600 + hash(i * 3.1) * 5000, -2400 + hash(i * 7.7) * 3000, 5, '#F4EEDC', .5 * (1 - st) * (1 - dw) * hash(i));
-    if (dw > 0) { glow(2300, RG - 40, 300, '#FF6A3A', .7 * dw); glow(2300, RG - 40, 900, '#FF9A6A', .35 * dw); }
+    if (dw > 0) { glow(2300, HZ, 300, '#FF6A3A', .7 * dw); glow(2300, HZ, 900, '#FF9A6A', .35 * dw); }   // the sun rising on the far horizon
     if (st > 0) for (let i = 0; i < 9; i++) { stillSeed('cloud' + i); const x = -800 + i * 450 + 200 * Math.sin(t * .3 + i), y = -1400 + 200 * hash(i); paint(ellPts(x, y, 600, 260, 20, 40), { wash: '#141110', washOp: 200 * st, fill: '#0E0B09', fillOp: 120 * st, bleed: .4, ink: null }); }
+    // the far plain, the plane of force laid at the plant's foot, the plant, the air between, then the near rock
+    farPlain(HZ, RG + 40, 'far9', { x: PX, r: 260, col: mixCol(D[1], skyCol, .4) });
+    stillSeed('plane9'); wash(rectPts(PX - 260, PB - 4, 520, 8), 1, { ink: true, sw: .4 });
+    const beat = t > T0('B') ? Math.max(0, Math.sin((t - T0('B')) * (2 + 6 * seg(t, T0('B'), T0('B') + 5)) )) * win(t, T0('B'), C('p115.1:Then it quieted') + 1, .2, 1) : 0;   // its beat (B)
+    DES.plant(PX, PB, PS, t, { lum: .14 + .3 * beat });
+    const lens = LENS; DES.lens(lens[0], lens[1], 22, { lit: .2 + .8 * talk(t, 'plant') });   // its lens (C)
+    haze(PB - 490 * PS, PB + 10, skyCol, .4);
     stillSeed('rock9'); wash([[-2000, RG + 40], [6000, RG + 40], [6000, RG + 1600], [-2000, RG + 1600]], 3, { op: 1 });
-    stillSeed('plane9'); wash(rectPts(PX - 700, RG + 30, 1400, 30), 1, { ink: true, sw: .5 });
-    for (let i = 0; i < 16; i++) { const x = -1600 + i * 300 + 60 * hash(i); if (Math.abs(x - PX) < 750) continue; stillSeed('rk9' + i); const h = 60 + 120 * hash(i * 3); wash([[x - 70, RG + 50], [x - 30, RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]], 2 + (i % 2), { ink: true, sw: .5 }); }
+    for (let i = 0; i < 16; i++) { const x = -1600 + i * 300 + 60 * hash(i); stillSeed('rk9' + i); const h = 60 + 120 * hash(i * 3); wash([[x - 70, RG + 50], [x - 30, RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]], 2 + (i % 2), { ink: true, sw: .5 }); }
     // the dome at the left; it parts for the men at K
     const part = domePart(t);
     if (part < 1) DES.blackDome(-300, RG + 60, 320 * (1 - part * .9), t);
-    // the plant: its beat (B), its lens (C)
-    const beat = t > T0('B') ? Math.max(0, Math.sin((t - T0('B')) * (2 + 6 * seg(t, T0('B'), T0('B') + 5)) )) * win(t, T0('B'), C('p115.1:Then it quieted') + 1, .2, 1) : 0;
-    DES.plant(PX, RG + 60, PS, t, { lum: .14 + .3 * beat });
-    const lens = [PX + 40, RG - 380]; DES.lens(lens[0], lens[1], 22, { lit: .2 + .8 * talk(t, 'plant') });
     // the rain, driven
     if (st > .2) { boilSeed('rain' + Math.floor(t * 12)); for (let i = 0; i < 60; i++) { const x = -1200 + hash(i * 3 + Math.floor(t * 12)) * 4400, y = -1600 + hash(i * 7 + Math.floor(t * 12)) * 2600; inkLine([[x, y], [x + 50, y + 120]], .4, mixCol('#EFE6D2', '#141110', .3), 'inkfine', 0); } }
     return { st, lens };
@@ -60,16 +65,19 @@
   function scene(t) {
     HALFTONE = .25;
     const tC = T0('C'), tE = T0('E'), tG = T0('G'), tH = T0('H'), tL = T0('L'), tM = T0('M'), tP = T0('P');
-    const c = cam(t, [[0, tt => [PX - 100, lerp(560, 420, ez(tt, T0('B'), tC)), lerp(.75, .85, ez(tt, T0('B'), tC))]], [tC, [PX + 40, RG - 380, 2.2], 2], [tD, tt => [PX - 200, lerp(500, 200, ez(tt, tD, tE)), lerp(1.2, .7, ez(tt, tD, tE))], 3],
+    const c = cam(t, [[0, tt => [PX - 100, lerp(560, 420, ez(tt, T0('B'), tC)), lerp(.75, .85, ez(tt, T0('B'), tC))]], [tC, [...LENS, 2.2], 2], [tD, tt => [PX - 200, lerp(500, 200, ez(tt, tD, tE)), lerp(1.2, .7, ez(tt, tD, tE))], 3],
       [tE, [PX, ORB[1] + 120, 1.1], 3], [tF, [PX - 100, ORB[1] + 200, .9], 3], [tG, [PX - 160, ORB[1] + 60, 1.5], 2.5], [tH, [PX, ORB[1], 2.2], 2.5], [tI, tt => [lerp(PX - 200, PX + 140, ez(tt, tStab, tStab + 2)), lerp(ORB[1] + 200, ORB[1] + 80, ez(tt, tStab, tStab + 2)), lerp(1.4, 1.05, ez(tt, tStab, tStab + 2))], 2],   // the plant's top, the beam and the sphere held together through the duel
-      [tJ, tt => [lerp(PX - 100, PX + 60, ez(tt, tJ, tJ + 10)), 300, .72], 3],   // J: the storm on the plant again, wide enough for the lightning
+      [tJ, tt => [lerp(PX - 100, PX + 60, ez(tt, tJ, tJ + 10)), 80, .72], 3],   // J: the storm on the plant again, wide enough for the lightning
       [C('p122.1:C-R-U-1 joined him') - 2, [PX - 490, RG - 110, 1.7], 2.5],   // in on C-R-U-1 floating in beside F-2, its gold name readable
       [C('p122.1:red glory of the sun') - .5, tt => [lerp(PX - 300, PX + 350, ez(tt, C('p122.1:red glory of the sun') - .5, tK)), lerp(760, 680, ez(tt, C('p122.1:red glory of the sun'), tK)), lerp(1.3, .95, ez(tt, C('p122.1:red glory of the sun') - .5, tK))], 3],   // round, so the red sun rises behind them
-      [tK, tt => [lerp(350, PX, ez(tt, C('p123.1:Roal and Trest appeared') + 2, tGold + 2)), lerp(800, ORB[1] + 260, ez(tt, tGold - 2.5, tGold + 1)), lerp(1.2, .75, ez(tt, tK, tGold + .5)) * lerp(1, 1.5, ez(tt, tGold + 3, tL))], 3],   // up and wide, so the globe is in frame as it's named; then a slow push in
+      // K: in on the dome as it parts and the two men walk out of it, held while they come; then up to the globe above the
+      // plant, wide, so the glow shows
+      [tK, tt => { const tApp = C('p123.1:Roal and Trest appeared'), up = ez(tt, tApp + 3.5, tGold + 2);
+        return [lerp(lerp(350, 150, ez(tt, tK, tApp)), PX, up), lerp(800, ORB[1] + 260, up), lerp(lerp(1, 1.3, ez(tt, tK, tApp)), .75, up) * lerp(1, 1.5, ez(tt, tGold + 3, tL))]; }, 3],
       [tL, tt => [PX, ORB[1], lerp(1.5, 1.9, ez(tt, tL, tM))], 2.5], [tM, tt => [PX - 100, lerp(ORB[1], 300, ez(tt, tRuby + 2, tN)), lerp(1.9, .7, ez(tt, tRuby + 2, lerp(tRuby + 2, tN, .5)))], 3],
       // in close on the two men as the warmth shoots through them, their last time on screen (at 25 px they were specks)
       [C('p126.1:there shot through') - .4, tt => [lerp(470, 500, ez(tt, C('p126.1:there shot through'), tN)), 800, lerp(2.2, 2.4, ez(tt, C('p126.1:there shot through'), tN))], 1.6],
-      [tN, [PX, 200, .7], 2.5], [tP, [PX, -100, .7], 2]]);
+      [tN, [PX, 160, .66], 2.5], [tP, [PX, -300, .7], 2]]);
     camBegin(...c);
     const { st } = world(t);
     // E: the ball of white force at the storm's centre, jerking at the lightning's touch

@@ -95,6 +95,22 @@ const KIT = (() => {
       for (let i = 0; i < 26; i++) { const q = i / 26 * TAU; glow(x + Math.cos(q) * r, y + Math.sin(q) * r * (o.sq ?? .55), 22, o.col || '#E6EEFF', a); } }
   }
 
+  // ---------- distance ----------
+  // the far plain: a paler band of ground from the horizon hz down to y1, strewn with small rocks, so what stands on it
+  // reads as far off (o.col its colour, drawn toward the sky's; o.flat 0..1 smooths the rocks within o.r of o.x, where a plane of
+  // force is laid)
+  function farPlain(hz, y1, key, o = {}) {
+    stillSeed(key); paint([[-4000, hz], [8000, hz], [8000, y1], [-4000, y1]], { wash: o.col || D[1], washOp: 230, ink: null });   // a flat wash, no fill: a watercolour fill's bleed on a band this wide throws lobes up into the sky
+    for (let i = 0; i < 70; i++) { const x = -3000 + i * 150 + 80 * hash(i * 5.3), y = lerp(hz + 4, y1, hash(i * 2.1)), k = (y - hz) / (y1 - hz),
+        flat = o.x != null && Math.abs(x - o.x) < (o.r ?? 300) ? (o.flat ?? 1) : 0, h = (6 + 22 * hash(i * 3.7)) * (.4 + k) * (1 - flat);
+      if (h > 2) { stillSeed(key + i); wash([[x - h * .6, y], [x - h * .2, y - h], [x + h * .4, y - h * .6], [x + h * .7, y]], 2, { op: .7 }); } }
+  }
+  // haze: the air between, laid over what is far as a gradient of the sky's colour, clear at y0 and thickest (a) at y1
+  function haze(y0, y1, col, a = .5) {
+    flushBrush(); const [r, g, b] = [1, 3, 5].map(i => parseInt(col.slice(i, i + 2), 16)), n = 32, h = (y1 - y0) / n;
+    push(); noStroke(); for (let i = 0; i < n; i++) { fill(r, g, b, 255 * a * Math.pow((i + .5) / n, 1.3)); rect(-4000, y0 + i * h, 12000, h + 1); } pop();
+  }
+
   // ---------- grounds ----------
   // a ground of wash over the whole frame (in screen space or under a camera, with a margin)
   function ground(col, op = 255, key = 'ground', o = {}) { steady(() => { stillSeed(key); paint(rectPts(-800, -800, W + 1600, H + 1600), { wash: col, washOp: op, fill: o.fill || col, fillOp: o.fillOp ?? 60, bleed: .2, tex: .4, ink: null }); }); }
@@ -144,5 +160,5 @@ const KIT = (() => {
   }
   const withCam = (c, draw) => { camBegin(c[0], c[1], c[2]); draw(); camEnd(); };
 
-  return { D, INK, ez, win, lerpP, steps, path, talk, blink, clauses, gesture, nod, listen, mixPose, walking, stander, dreamCurl, ruled, thoughtRings, ground, space, planet, page, closing, cam, withCam };
+  return { D, INK, ez, win, lerpP, steps, path, talk, blink, clauses, gesture, nod, listen, mixPose, walking, stander, dreamCurl, ruled, thoughtRings, farPlain, haze, ground, space, planet, page, closing, cam, withCam };
 })();
