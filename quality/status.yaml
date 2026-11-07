@@ -975,8 +975,8 @@ items:
     title: "Chapter 3: the land is green before the death beams"
     when: 2026-11-07 20:34
   find.note-exothermic:
-    state: open
-    note: "Seventh round, minor: the note quotes 'retard exothermic actions'; the story says 'retarding it greatly in exothermic actions' (notes/annotations.yaml:174)."
+    state: pass
+    note: "The note now reads: They affect chemical action, \"retarding it greatly in exothermic actions, speeding greatly endothermic actions\" (chapter 4), the story's words (script p-line in chapter 4); checked in the built film page."
     title: "Film page: the green-beams note misquotes the story"
     when: 2026-11-07 20:34
   find.ch02-firer:
@@ -1027,4 +1027,4 @@ fresh:
     found: 7
     note: "Seventh round: 1 major (ch08/ch09 the 500-ft power plant drawn about 30 ft tall), 4 minor (ch07 the dome doesn't visibly belly inward; ch03 the land green before the death beams; the film page's green-beams note misquotes 'retarding it greatly in exothermic actions'; ch02 which Outsider fires the bluish beam is unclear), 2 nits (ch08 framing at 0:45 and 4:48; small figures at ch07 3:17-3:50 and ch09 3:26)."
     state: 5017a56df064
-since_fresh: 0
+since_fresh: 1

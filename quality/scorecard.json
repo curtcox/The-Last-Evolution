@@ -1,8 +1,8 @@
 {
  "summary": {
-  "pass": 200,
-  "stale": 0,
-  "open": 7,
+  "pass": 187,
+  "stale": 2,
+  "open": 18,
   "curt": 9,
   "later": 4
  },
@@ -23,7 +23,7 @@
   },
   "annotated": {
    "state": "pass",
-   "detail": "had fallen behind; rebuilt now"
+   "detail": "current"
   },
   "voice": {
    "state": "pass",
@@ -42,7 +42,7 @@
    "detail": "refs: 53 sources, all cited, all answering; definitions written into 6 notes"
   },
   "phone": {
-   "state": "pass",
+   "state": "stale",
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
@@ -137,8 +137,8 @@
    "id": "ch05.draft",
    "area": "film",
    "title": "Chapter 5: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch05-draft-6dcdf83a.mp4, -14.5 LUFS, peak -2 dBTP"
+   "state": "open",
+   "note": "older than src/kit.js"
   },
   {
    "id": "ch00.acting",
@@ -179,8 +179,8 @@
    "id": "ch00.draft",
    "area": "film",
    "title": "Chapter 0: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch00-draft-b784b214.mp4, -14.4 LUFS, peak -2.3 dBTP"
+   "state": "open",
+   "note": "older than src/kit.js"
   },
   {
    "id": "ch01.acting",
@@ -221,8 +221,8 @@
    "id": "ch01.draft",
    "area": "film",
    "title": "Chapter 1: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch01-draft-546930b0.mp4, -14.4 LUFS, peak -2.3 dBTP"
+   "state": "open",
+   "note": "older than src/kit.js"
   },
   {
    "id": "ch02.acting",
@@ -263,8 +263,8 @@
    "id": "ch02.draft",
    "area": "film",
    "title": "Chapter 2: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch02-draft-bb07d7a8.mp4, -14.4 LUFS, peak -2 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch02.js, src/kit.js"
   },
   {
    "id": "ch03.acting",
@@ -305,8 +305,8 @@
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch03-draft-3d6366dc.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch03.js, src/kit.js"
   },
   {
    "id": "ch04.acting",
@@ -347,8 +347,8 @@
    "id": "ch04.draft",
    "area": "film",
    "title": "Chapter 4: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch04-draft-122ad2c6.mp4, -14.4 LUFS, peak -2 dBTP"
+   "state": "open",
+   "note": "older than src/kit.js"
   },
   {
    "id": "ch06.acting",
@@ -389,8 +389,8 @@
    "id": "ch06.draft",
    "area": "film",
    "title": "Chapter 6: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch06-draft-e4159bf7.mp4, -14.5 LUFS, peak -2.2 dBTP"
+   "state": "open",
+   "note": "older than src/kit.js"
   },
   {
    "id": "ch07.acting",
@@ -431,8 +431,8 @@
    "id": "ch07.draft",
    "area": "film",
    "title": "Chapter 7: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch07-draft-f5359542.mp4, -14.5 LUFS, peak -2.1 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch07.js, src/kit.js"
   },
   {
    "id": "ch08.acting",
@@ -473,8 +473,8 @@
    "id": "ch08.draft",
    "area": "film",
    "title": "Chapter 8: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch08-draft-b2570310.mp4, -14.5 LUFS, peak -1.6 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch08.js, src/kit.js"
   },
   {
    "id": "ch09.acting",
@@ -515,8 +515,8 @@
    "id": "ch09.draft",
    "area": "film",
    "title": "Chapter 9: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch09-draft-b04814ed.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch09.js, src/kit.js"
   },
   {
    "id": "ch10.acting",
@@ -557,8 +557,8 @@
    "id": "ch10.draft",
    "area": "film",
    "title": "Chapter 10: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch10-draft-c932feb3.mp4, -14.4 LUFS, peak -1.7 dBTP"
+   "state": "open",
+   "note": "older than src/kit.js"
   },
   {
    "id": "ch11.acting",
@@ -599,8 +599,8 @@
    "id": "ch11.draft",
    "area": "film",
    "title": "Chapter 11: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch11-draft-6f7df211.mp4, -14.4 LUFS, peak -2.3 dBTP"
+   "state": "open",
+   "note": "older than src/kit.js"
   },
   {
    "id": "work.sheets",
@@ -634,15 +634,15 @@
    "id": "site.watch.content",
    "area": "site",
    "title": "The film page (annotated): what it says",
-   "state": "pass",
-   "note": "Re-judged after the sixth round: the imagination note calls chapter 4's new brain F-1, as chapter 5 names it, and says F-1 goes on to make F-2, quoting F-2's 'your swift brains have leapt ahead of us' in chapter 8 (p111.1); the Roal note gives no age. Every chapter links its round-6 draft (ch00-draft-b784b214 … ch11-draft-6f7df211). The rest is as judged after the fifth round."
+   "state": "stale",
+   "note": "passed on 52394fe67434; changed since. Re-judged after the sixth round: the imagination note calls chapter 4's new brain F-1, as chapter 5 names it, and says F-1 goes on to make F-2, quoting F-2's 'your swift brains have leapt ahead of us' in chapter 8 (p111.1); the Roal note gives no age. Every chapter links its round-6 draft (ch00-draft-b784b214 … ch11-draft-6f7df211). The rest is as judged after the fifth round."
   },
   {
    "id": "site.watch.look",
    "area": "site",
    "title": "The film page (annotated): how it looks and works",
-   "state": "pass",
-   "note": "Re-checked at 375 after the sixth round (out/quality/phone): only two notes' wording changed, and no line breaks badly; the draft box, nav and the chapter videos sit as before, with no sideways scroll. The phone check passes on all pages."
+   "state": "stale",
+   "note": "passed on cab3c701cb4d; changed since. Re-checked at 375 after the sixth round (out/quality/phone): only two notes' wording changed, and no line breaks badly; the draft box, nav and the chapter videos sit as before, with no sideways scroll. The phone check passes on all pages."
   },
   {
    "id": "site.read.content",
@@ -1572,8 +1572,8 @@
    "id": "find.note-exothermic",
    "area": "finding",
    "title": "Film page: the green-beams note misquotes the story",
-   "state": "open",
-   "note": "Seventh round, minor: the note quotes 'retard exothermic actions'; the story says 'retarding it greatly in exothermic actions' (notes/annotations.yaml:174)."
+   "state": "pass",
+   "note": "The note now reads: They affect chemical action, \"retarding it greatly in exothermic actions, speeding greatly endothermic actions\" (chapter 4), the story's words (script p-line in chapter 4); checked in the built film page."
   },
   {
    "id": "find.ch02-firer",
