@@ -959,6 +959,41 @@ items:
     note: Round 4's page now takes each image's alt from its caption's plain text (no escaped tags); the halftone images read 'The Outsiders frame with no / a light / a strong halftone'; F-1 and F-2's birth is placed in chapter 5, where the aura line is. look_sampler.mjs --page rewrites the page without re-rendering the frames.
     title: "Review, Round 4 page: escaped HTML and stray words in image alt text"
     when: 2026-11-07 08:39
+  find.plant-scale:
+    state: open
+    note: "Seventh round, major: 'Nearly five hundred feet in height' (ch08 4:46-4:50) but the plant is about 3.3 domes or 8-9 F-2 lengths tall on the same ground line; ch09 shows it the same way."
+    title: "Chapters 8 and 9: the 500-ft power plant is drawn about 30 ft tall"
+    when: 2026-11-07 20:34
+  find.ch07-belly:
+    state: open
+    note: "Seventh round, minor: 'bellied inward' at 193.2 s; the crown flattens 10-16% under the beams' glow, no visible dent."
+    title: "Chapter 7: the dome doesn't visibly belly inward"
+    when: 2026-11-07 20:34
+  find.ch03-green-land:
+    state: open
+    note: "Seventh round, minor: at 3:13 the trees and hills are sage-green before any beam, against colour-for-energy and blunting the green beam's arrival."
+    title: "Chapter 3: the land is green before the death beams"
+    when: 2026-11-07 20:34
+  find.note-exothermic:
+    state: open
+    note: "Seventh round, minor: the note quotes 'retard exothermic actions'; the story says 'retarding it greatly in exothermic actions' (notes/annotations.yaml:174)."
+    title: "Film page: the green-beams note misquotes the story"
+    when: 2026-11-07 20:34
+  find.ch02-firer:
+    state: open
+    note: "Seventh round, minor: 4:42-4:50 the firing Outsider overlaps the one in front; edge Outsiders cut off."
+    title: "Chapter 2: which Outsider fires the bluish beam is unclear"
+    when: 2026-11-07 20:34
+  find.ch08-framing:
+    state: open
+    note: Seventh round, nit.
+    title: "Chapter 8: F-2 cut off at 0:45 and the plant's foot at 4:48"
+    when: 2026-11-07 20:34
+  find.small-figures:
+    state: open
+    note: "Seventh round, nit: ch07 3:17-3:50 the men about 12% of frame height, F-2's new machine a 30 px box; ch09 3:26 'Roal and Trest appeared' at about 8%."
+    title: "Chapters 7 and 9: the men are small at key beats"
+    when: 2026-11-07 20:34
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -988,4 +1023,8 @@ fresh:
     found: 10
     note: "Sixth round: 1 major (the recombination note calls chapter 4's brain F-2), 5 minor (Roal's age in a note, ch03 Roal's rigid pose, ch09's second storm unseen, ch02's plunger early, ch04's brain at the frame's edge), 4 nits (ch08 static heirs speech, ch02 footnote overhang, flyers on tower caps, Round 4 alt text)."
     state: ac16545b778e
-since_fresh: 73
+  - when: 2026-11-07 20:34
+    found: 7
+    note: "Seventh round: 1 major (ch08/ch09 the 500-ft power plant drawn about 30 ft tall), 4 minor (ch07 the dome doesn't visibly belly inward; ch03 the land green before the death beams; the film page's green-beams note misquotes 'retarding it greatly in exothermic actions'; ch02 which Outsider fires the bluish beam is unclear), 2 nits (ch08 framing at 0:45 and 4:48; small figures at ch07 3:17-3:50 and ch09 3:26)."
+    state: 5017a56df064
+since_fresh: 0
