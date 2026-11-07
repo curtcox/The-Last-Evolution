@@ -910,15 +910,15 @@ items:
     title: "Film page: the title-page note sends viewers looking for 'A Classic Reprint'"
     when: 2026-11-07 08:16
   find.note-f1:
-    state: open
-    note: "Fresh eyes 6, major: the note on p048.1 ('countless trillions of facts') says 'F-2 is built to imagine by sheer quantity'; the brain MX-3401's machines build is F-1 (ch05 names it), and F-1 makes F-2 (p064.1)."
+    state: pass
+    note: The note on p048.1 now says 'This new brain, the one chapter 5 names F-1, is built to imagine by sheer quantity', and ends with F-1 and the F-2 it makes, F-2 telling the men in chapter 8 'your swift brains have leapt ahead of us' (p111.1). Checked on the rebuilt annotated page.
     title: "Film page: the recombination note calls chapter 4's new brain F-2"
-    when: 2026-11-07 08:38
+    when: 2026-11-07 08:39
   find.note-roal-age:
-    state: open
-    note: "Fresh eyes 6, minor: 'Roal, a hundred and fifty years old' comes from the casting note, not the text, and is presented as a fact."
+    state: pass
+    note: The Roal and Trest note no longer gives an age; what's left (dreamer, soft voice, chuckle; Trest the realist; the numbers; 'in memory') is all in the text.
     title: "Film page: the Roal and Trest note gives Roal's age, which the story never does"
-    when: 2026-11-07 08:38
+    when: 2026-11-07 08:39
   find.ch03-roal-pose:
     state: open
     note: "Fresh eyes 6, minor, 0:27-0:57: his arm stays straight at Trest's face; the board has him turn to the machines with his hand to the fleet on the screens; Trest barely moves."
@@ -956,7 +956,7 @@ items:
     when: 2026-11-07 08:38
   find.round4-alt:
     state: pass
-    note: Round 4's page now takes each image's alt from its caption's plain text (no escaped tags), the halftone images read 'The Outsiders frame with no / a light / a strong halftone', and F-1 and F-2's birth is placed in chapter 5, where the aura line is (p05x). look_sampler.mjs --page rewrites the page without re-rendering the frames.
+    note: Round 4's page now takes each image's alt from its caption's plain text (no escaped tags); the halftone images read 'The Outsiders frame with no / a light / a strong halftone'; F-1 and F-2's birth is placed in chapter 5, where the aura line is. look_sampler.mjs --page rewrites the page without re-rendering the frames.
     title: "Review, Round 4 page: escaped HTML and stray words in image alt text"
     when: 2026-11-07 08:39
 fresh:
@@ -988,4 +988,4 @@ fresh:
     found: 10
     note: "Sixth round: 1 major (the recombination note calls chapter 4's brain F-2), 5 minor (Roal's age in a note, ch03 Roal's rigid pose, ch09's second storm unseen, ch02's plunger early, ch04's brain at the frame's edge), 4 nits (ch08 static heirs speech, ch02 footnote overhang, flyers on tower caps, Round 4 alt text)."
     state: ac16545b778e
-since_fresh: 1
+since_fresh: 5
