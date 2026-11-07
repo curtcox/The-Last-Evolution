@@ -181,10 +181,11 @@
       // (swaying wider round closer spots, they walked through each other and read as one drawn twice)
       const SPOT = [2240, 2540, 2990];
       // searching: each hurries between spots, turning as it goes, stopping to look (they faced the camera, still, for a minute)
-      for (let i = 0; i < 3; i++) if (t > tL + 5) { const ph = (t - tSearch) * .35 + i * 2.1, dx = 70 * Math.sin(ph) + 25 * Math.sin(ph * 2.7), moving = Math.abs(Math.cos(ph)) > .35;
-        crawler(SPOT[i] + dx, t, 10 + i, { s: 34, view: moving ? 'side' : 'front', turn: .25 * Math.sin(t * .9 + i) }); }
-      // he comes in on 'appeared armed', carrying it (he stood there holding it from the start of the shot)
-      const tArmed = C('p016.1:appeared armed');
+      // he comes in on 'appeared armed', carrying it (he stood there holding it from the start of the shot); the searchers
+      // stand aside for him and watch, so the one who fires stands clear of them
+      const tArmed = C('p016.1:appeared armed'), aside = ez(t, tArmed - 1.6, tArmed + .8), ASIDE = [2020, 2300, 3180];
+      for (let i = 0; i < 3; i++) if (t > tL + 5) { const ph = (t - tSearch) * .35 + i * 2.1, dx = (70 * Math.sin(ph) + 25 * Math.sin(ph * 2.7)) * (1 - aside), moving = aside < .5 && Math.abs(Math.cos(ph)) > .35;
+        crawler(lerp(SPOT[i], ASIDE[i], aside) + dx, t, 10 + i, { s: 34, view: moving ? 'side' : 'front', turn: aside > .5 ? (i < 2 ? .4 : -.4) : .25 * Math.sin(t * .9 + i) }); }
       if (t > tArmed - 1.6) { const ox = lerp(3250, 2750, ez(t, tArmed - 1.6, tArmed + .6)), aim = ez(t, tArmed + .6, tBeam - .3);
         // the projector swings up to the investigator, and the beam runs from its tip (it pointed down, away, and the
         // beam was a run of near-white dots from his chest)
