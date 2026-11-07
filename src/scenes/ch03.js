@@ -148,13 +148,13 @@
     const c = cam(t, [[0, tt => [960, lerp(300, 560, ez(tt, tK, tK + 6)), lerp(.8, 1.05, ez(tt, tK, tK + 6))]], [tM - .5, tt => [lerp(800, 1400, ez(tt, tM, T1('M'))), 600, 1.2], 2],
       [tO - .5, [1000, 420, .85], 2.5], [tP - .5, tt => [lerp(900, 1200, ez(tt, tP, T1('P'))), 640, lerp(1.1, 1.3, ez(tt, tP, T1('P')))], 3]]);
     withCam(c, () => {
-      ground(mixCol(D[0], '#DDE8D0', .3 * (1 - wither)), 255, 'landsky', { fill: '#FFFFFF', fillOp: 30 });
+      ground(D[0], 255, 'landsky', { fill: '#FFFFFF', fillOp: 30 });   // no green in the land itself: colour is only for energy, so the green comes with the beams
       stillSeed('hills'); wash([[-800, LG - 140], [200, LG - 260], [900, LG - 180], [1700, LG - 300], [2600, LG - 160], [3400, LG - 240], [3400, LG + 900], [-800, LG + 900]], 1, { op: .8 });
-      paint(rectPts(-800, LG - 20, 4200, 1000), { wash: mixCol(D[1], '#9DB08A', .45 * (1 - wither)), washOp: 220, fill: D[2], fillOp: 50, bleed: .2, ink: null });
-      // trees: their crowns full, then thinning and grey; grass tufts
+      paint(rectPts(-800, LG - 20, 4200, 1000), { wash: mixCol(D[1], D[2], .5 * wither), washOp: 220, fill: D[2], fillOp: 50, bleed: .2, ink: null });
+      // trees: their crowns full, then thinning and darkening; grass tufts
       for (let i = 0; i < 26; i++) { const x = -500 + i * 150 + 60 * hash(i), y = LG + 20 + 200 * hash(i * 3), s = 30 + 30 * hash(i * 5), drop = clamp(wither * 1.6 - hash(i * 7) * .6);
         stillSeed('trunk' + i); wash([[x - 4, y], [x + 4, y], [x + 2, y - s * 2], [x - 2, y - s * 2]], 4, { ink: true, sw: .4 });
-        if (drop < 1) { stillSeed('crown' + i); paint(ellPts(x, y - s * 2.4, s * (1 - .7 * drop), s * .9 * (1 - .7 * drop), 14, 8), { wash: mixCol(D[2], '#7E9A6A', .5 * (1 - wither)), washOp: 220, ink: INK, sw: .4 }); }
+        if (drop < 1) { stillSeed('crown' + i); paint(ellPts(x, y - s * 2.4, s * (1 - .7 * drop), s * .9 * (1 - .7 * drop), 14, 8), { wash: mixCol(D[2], D[3], .7 * wither), washOp: 220, ink: INK, sw: .4 }); }
         for (let k = 0; k < 3 && drop > .1; k++) { const q = frac(t * .3 + hash(i * 9 + k)); glow(x + (hash(k + i) - .5) * 60, y - s * 2.4 + q * s * 2.4, 4, mixCol('#F4EEDC', GREEN, .3), .4 * (1 - q) * drop); } }
       // the colony's domes
       for (let i = 0; i < 5; i++) { const x = 500 + i * 260, s = 70 + 20 * hash(i); stillSeed('cdome' + i); wash([...Array(17)].map((_, k) => { const a = Math.PI + k / 16 * Math.PI; return [x + Math.cos(a) * s, LG + 60 + Math.sin(a) * s * .8]; }), 1, { ink: true, sw: .6 }); }
