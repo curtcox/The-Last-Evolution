@@ -102,14 +102,17 @@
         stillSeed('opier' + i); wash([[x - w / 2, OG], [x - w / 2, OG - h], [x - w / 6, OG - h - 40 * hash(i)], [x + w / 6, OG - h + 30], [x + w / 2, OG - h - 20 * hash(i * 3)], [x + w / 2, OG]], 3, { ink: true, sw: .6 }); }
       for (let i = 0; i < 30; i++) { stillSeed('dead' + i); const x = -2500 + hash(i * 3) * 6000, y = OG + 30 + hash(i * 5) * 500; inkLine([[x, y], [x + 4, y - 40 - 40 * hash(i)], [x + 16, y - 60 - 40 * hash(i)]], .6, INK); }   // the bare dead trees
       // the beams: in, striking, more of them; the dome pressed in under them
-      const n = t < tN ? 4 : Math.min(12, 4 + Math.floor((t - tN) * 1.5)), bk = ez(t, tL, tStruck) * (1 - ez(t, tOff, tOff + 3)), press = (t > tStruck ? .1 + .06 * Math.sin(t * 3) : 0) * (1 - ez(t, tOff, tOff + 3));
+      const n = t < tN ? 4 : Math.min(12, 4 + Math.floor((t - tN) * 1.5)), bk = ez(t, tL, tStruck) * (1 - ez(t, tOff, tOff + 3)), tQuiv = C('p094.1:quivered'), tBelly = C('p094.1:bellied'), quiv = win(t, tQuiv - .1, tBelly + .2, .1, .3), belly = ez(t, tBelly - .1, C('p094.1:inward') + .5),
+        press = (t > tStruck ? .1 + .06 * Math.sin(t * 3) + .3 * belly : 0) * (1 - ez(t, tOff, tOff + 3));   // pressed; quivering; then bellied well in
       const rise = ez(t, tOff - 1, tOff + 6);
       for (let i = 0; i < n; i++) { const a = -Math.PI / 2 + (i - (n - 1) / 2) * .22, sx = DOME[0] + Math.cos(a) * 1500, sy = -600 - 200 * hash(i) - 1500 * rise;
         ship(sx, sy, 300, t, -1, { d: 3 }); boilSeed('curt' + i); paint(ellPts(sx, sy, 260, 90, 16, 20), { wash: '#0E0B09', washOp: 100, ink: null });
         if (bk > 0) beam(sx, sy + 40, DOME[0] + (i - n / 2) * 30, DOME[1] - DR * .78, 10, 60, GREEN, bk, { washOp: 50, a: .5 }); }
       // the dome, bellied in at its crown under the beams
-      const P = []; for (let i = 0; i <= 32; i++) { const a = Math.PI + i / 32 * Math.PI, dent = press * Math.exp(-Math.pow((i - 16) / 6, 2)); P.push([DOME[0] + Math.cos(a) * DR, DOME[1] + Math.sin(a) * DR * .8 * (1 - dent)]); }
+      const P = []; for (let i = 0; i <= 32; i++) { const a = Math.PI + i / 32 * Math.PI, dent = press * Math.exp(-Math.pow((i - 16) / 6, 2)), sh = quiv * 7 * Math.sin(t * 38) * (1 + .3 * Math.sin(i * .7)); P.push([DOME[0] + Math.cos(a) * (DR + sh), DOME[1] + Math.sin(a) * (DR * .8 * (1 - dent) + sh)]); }
       stillSeed('odome'); paint(P, { wash: PULP.black, washOp: 255, fill: PULP.black, fillOp: 230, bleed: .02, tex: .2, ink: INK, sw: 1 });
+      // the bellied crown picked out in pale ink, so the dent reads through the beams' glow
+      const bl = belly * (1 - ez(t, tOff, tOff + 3)); if (bl > 0) { boilSeed('obelly'); inkLine(P.slice(8, 25), 2.4 * bl, '#D8E8C8', 'inkfine', .5); }
       // a pale rim on the dome once the beams are off, so 'the only life was under that dark shroud' finds it on the night
       const rim = ez(t, tOff, tOff + 3); if (rim > 0) { boilSeed('orim'); inkLine(P, 2.2 * rim, '#B8AE98', 'inkfine', .5); for (let i = 2; i < 31; i += 4) glow(...P[i], 70, '#C8BEA8', .22 * rim); }
       if (bk > 0) glow(DOME[0], DOME[1] - DR * .7, 200, GREEN, .5 * bk);
@@ -123,7 +126,9 @@
     HALFTONE = .25;
     const tM = T0('M'), tVio = C('p095.1:a strange violet beam'), tO = T0('O'), r = 520, X = 960, Y = 960;
     ground('#1E1A16', 255, 'cut', { fill: '#2A231D', fillOp: 80 });
-    camBegin(960, 640, lerp(1, 1.08, seg(t, tM, T1('O'))));
+    // in on F-2 and the new machine 'appearing under his lightning force-beams', the men beside; back out as its violet
+    // beam goes up to the roof; O: the canopy spreading, whole
+    camBegin(...cam(t, [[0, [960, 640, 1]], [tM + .3, [X + 60, Y - 110, 1.8], 2.5], [tVio - 1, [960, 680, 1.02], 3], [tO, tt => [960, 640, lerp(1, 1.08, seg(tt, tO, T1('O')))], 1]]));
     const P = [], Q = []; for (let i = 0; i <= 24; i++) { const a = Math.PI + i / 24 * Math.PI; P.push([X + Math.cos(a) * r, Y + Math.sin(a) * r * .8]); Q.push([X + Math.cos(a) * r * .94, Y + Math.sin(a) * r * .8 * .93]); }
     boilSeed('cutin'); paint(Q.slice(), { wash: '#141110', washOp: 255, ink: null });
     boilSeed('cutsh'); paint([...P, ...Q.slice().reverse()], { wash: PULP.black, washOp: 255, fill: PULP.black, fillOp: 230, bleed: .02, ink: INK, sw: .8 });
