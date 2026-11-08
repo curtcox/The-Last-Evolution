@@ -1,16 +1,16 @@
 {
  "summary": {
-  "pass": 187,
-  "stale": 2,
-  "open": 18,
+  "pass": 171,
+  "stale": 27,
+  "open": 9,
   "curt": 9,
   "later": 4
  },
  "satisfied": false,
  "next": [
-  "Chapters 8 and 9: the 500-ft power plant is drawn about 30 ft tall",
-  "Chapter 7: the dome doesn't visibly belly inward",
-  "Chapter 3: the land is green before the death beams"
+  "Chapter 2: which Outsider fires the bluish beam is unclear",
+  "Chapter 5: its draft is current and at the right loudness",
+  "Chapter 0: its draft is current and at the right loudness"
  ],
  "checks": {
   "verbatim": {
@@ -228,85 +228,85 @@
    "id": "ch02.acting",
    "area": "film",
    "title": "Chapter 2: the acting",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: the last plunger snaps shut on 'snapped' (find.ch02-plunger); footnote 1 still runs 4 s into the next shot, kept for reading time (find.ch02-footnote); sound unchanged, -14.4/-14.5 LUFS. The Outsiders move as a ranked crew: the small ones sway at their posts, the close Outsider stands apart and turns; the falls and the dive read; the crawlers keep their distance."
+   "state": "stale",
+   "note": "passed on ch02-draft-bb07d7a8.mp4; changed since. On the draft with the sixth round's fixes: the last plunger snaps shut on 'snapped' (find.ch02-plunger); footnote 1 still runs 4 s into the next shot, kept for reading time (find.ch02-footnote); sound unchanged, -14.4/-14.5 LUFS. The Outsiders move as a ranked crew: the small ones sway at their posts, the close Outsider stands apart and turns; the falls and the dive read; the crawlers keep their distance."
   },
   {
    "id": "ch02.picture",
    "area": "film",
    "title": "Chapter 2: the picture",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: the last plunger snaps shut on 'snapped' (find.ch02-plunger); footnote 1 still runs 4 s into the next shot, kept for reading time (find.ch02-footnote); sound unchanged, -14.4/-14.5 LUFS. Space and the incoming fleet, the hulled ship, the Outsiders' interior with light shells now clear against the darker hull, the plates and rods, the wrecked hulls in the debris field, the dark hall of the masters, the fleet in rows. The earlier contrast note (dark on dark) no longer holds."
+   "state": "stale",
+   "note": "passed on ch02-draft-bb07d7a8.mp4; changed since. On the draft with the sixth round's fixes: the last plunger snaps shut on 'snapped' (find.ch02-plunger); footnote 1 still runs 4 s into the next shot, kept for reading time (find.ch02-footnote); sound unchanged, -14.4/-14.5 LUFS. Space and the incoming fleet, the hulled ship, the Outsiders' interior with light shells now clear against the darker hull, the plates and rods, the wrecked hulls in the debris field, the dark hall of the masters, the fleet in rows. The earlier contrast note (dark on dark) no longer holds."
   },
   {
    "id": "ch02.sync",
    "area": "film",
    "title": "Chapter 2: picture against sound",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: the last plunger snaps shut on 'snapped' (find.ch02-plunger); footnote 1 still runs 4 s into the next shot, kept for reading time (find.ch02-footnote); sound unchanged, -14.4/-14.5 LUFS. Shots change on their cue words; Whisper timing -0.12 s median."
+   "state": "stale",
+   "note": "passed on ch02-draft-bb07d7a8.mp4; changed since. On the draft with the sixth round's fixes: the last plunger snaps shut on 'snapped' (find.ch02-plunger); footnote 1 still runs 4 s into the next shot, kept for reading time (find.ch02-footnote); sound unchanged, -14.4/-14.5 LUFS. Shots change on their cue words; Whisper timing -0.12 s median."
   },
   {
    "id": "ch02.sound",
    "area": "film",
    "title": "Chapter 2: the sound",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: the last plunger snaps shut on 'snapped' (find.ch02-plunger); footnote 1 still runs 4 s into the next shot, kept for reading time (find.ch02-footnote); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.2, shots -14.5 to -16.7; Whisper lost 13 of 640, names (Sirius, Deimos) and numbers."
+   "state": "stale",
+   "note": "passed on ch02-draft-bb07d7a8.mp4; changed since. On the draft with the sixth round's fixes: the last plunger snaps shut on 'snapped' (find.ch02-plunger); footnote 1 still runs 4 s into the next shot, kept for reading time (find.ch02-footnote); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.2, shots -14.5 to -16.7; Whisper lost 13 of 640, names (Sirius, Deimos) and numbers."
   },
   {
    "id": "ch02.story",
    "area": "film",
    "title": "Chapter 2: the chapter as a story",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: the last plunger snaps shut on 'snapped' (find.ch02-plunger); footnote 1 still runs 4 s into the next shot, kept for reading time (find.ch02-footnote); sound unchanged, -14.4/-14.5 LUFS. The Outsiders come from beyond the system, their ships and their masters are shown, and the threat to Earth is set: the chapter does its job as the invader's introduction."
+   "state": "stale",
+   "note": "passed on ch02-draft-bb07d7a8.mp4; changed since. On the draft with the sixth round's fixes: the last plunger snaps shut on 'snapped' (find.ch02-plunger); footnote 1 still runs 4 s into the next shot, kept for reading time (find.ch02-footnote); sound unchanged, -14.4/-14.5 LUFS. The Outsiders come from beyond the system, their ships and their masters are shown, and the threat to Earth is set: the chapter does its job as the invader's introduction."
   },
   {
    "id": "ch02.draft",
    "area": "film",
    "title": "Chapter 2: its draft is current and at the right loudness",
    "state": "open",
-   "note": "older than src/scenes/ch02.js, src/kit.js"
+   "note": "older than src/scenes/ch02.js"
   },
   {
    "id": "ch03.acting",
    "area": "film",
    "title": "Chapter 3: the acting",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: Roal tells the machines with his hands phrase by phrase, and Trest shifts as he listens (find.ch03-roal-pose); sound unchanged, -14.4/-14.5 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
+   "state": "stale",
+   "note": "passed on ch03-draft-3d6366dc.mp4; changed since. On the draft with the sixth round's fixes: Roal tells the machines with his hands phrase by phrase, and Trest shifts as he listens (find.ch03-roal-pose); sound unchanged, -14.4/-14.5 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
   },
   {
    "id": "ch03.picture",
    "area": "film",
    "title": "Chapter 3: the picture",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: Roal tells the machines with his hands phrase by phrase, and Trest shifts as he listens (find.ch03-roal-pose); sound unchanged, -14.4/-14.5 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
+   "state": "stale",
+   "note": "passed on ch03-draft-3d6366dc.mp4; changed since. On the draft with the sixth round's fixes: Roal tells the machines with his hands phrase by phrase, and Trest shifts as he listens (find.ch03-roal-pose); sound unchanged, -14.4/-14.5 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
   },
   {
    "id": "ch03.sync",
    "area": "film",
    "title": "Chapter 3: picture against sound",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: Roal tells the machines with his hands phrase by phrase, and Trest shifts as he listens (find.ch03-roal-pose); sound unchanged, -14.4/-14.5 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
+   "state": "stale",
+   "note": "passed on ch03-draft-3d6366dc.mp4; changed since. On the draft with the sixth round's fixes: Roal tells the machines with his hands phrase by phrase, and Trest shifts as he listens (find.ch03-roal-pose); sound unchanged, -14.4/-14.5 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
   },
   {
    "id": "ch03.sound",
    "area": "film",
    "title": "Chapter 3: the sound",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: Roal tells the machines with his hands phrase by phrase, and Trest shifts as he listens (find.ch03-roal-pose); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
+   "state": "stale",
+   "note": "passed on ch03-draft-3d6366dc.mp4; changed since. On the draft with the sixth round's fixes: Roal tells the machines with his hands phrase by phrase, and Trest shifts as he listens (find.ch03-roal-pose); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
   },
   {
    "id": "ch03.story",
    "area": "film",
    "title": "Chapter 3: the chapter as a story",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: Roal tells the machines with his hands phrase by phrase, and Trest shifts as he listens (find.ch03-roal-pose); sound unchanged, -14.4/-14.5 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
+   "state": "stale",
+   "note": "passed on ch03-draft-3d6366dc.mp4; changed since. On the draft with the sixth round's fixes: Roal tells the machines with his hands phrase by phrase, and Trest shifts as he listens (find.ch03-roal-pose); sound unchanged, -14.4/-14.5 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
   },
   {
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch03.js, src/kit.js"
+   "state": "pass",
+   "note": "ch03-draft-471346ce.mp4, -14.4 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch04.acting",
@@ -396,127 +396,127 @@
    "id": "ch07.acting",
    "area": "film",
    "title": "Chapter 7: the acting",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: no picture change (SSIM 0.985 against the passed draft; side by side the frames match, and the difference is the smoke and grain, which vary from render to render); sound unchanged, -14.4/-14.5 LUFS. Roal and Trest talk in the hall at night with hands out, Roal's curl rises, F-2 and the six machines gather, the two men stand inside the dome with their faces lit by the screens, the projectors feed the dome."
+   "state": "stale",
+   "note": "passed on ch07-draft-f5359542.mp4; changed since. On the draft with the sixth round's fixes: no picture change (SSIM 0.985 against the passed draft; side by side the frames match, and the difference is the smoke and grain, which vary from render to render); sound unchanged, -14.4/-14.5 LUFS. Roal and Trest talk in the hall at night with hands out, Roal's curl rises, F-2 and the six machines gather, the two men stand inside the dome with their faces lit by the screens, the projectors feed the dome."
   },
   {
    "id": "ch07.picture",
    "area": "film",
    "title": "Chapter 7: the picture",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: no picture change (SSIM 0.985 against the passed draft; side by side the frames match, and the difference is the smoke and grain, which vary from render to render); sound unchanged, -14.4/-14.5 LUFS. The hall of screens with falling ships, Roal's curl, F-2 and the six, the ring, the dome rising whole, the inside with five lit screens and the two lit faces, the green beams on the dome, the violet cut-away, the projectors, the dome small on the plain."
+   "state": "stale",
+   "note": "passed on ch07-draft-f5359542.mp4; changed since. On the draft with the sixth round's fixes: no picture change (SSIM 0.985 against the passed draft; side by side the frames match, and the difference is the smoke and grain, which vary from render to render); sound unchanged, -14.4/-14.5 LUFS. The hall of screens with falling ships, Roal's curl, F-2 and the six, the ring, the dome rising whole, the inside with five lit screens and the two lit faces, the green beams on the dome, the violet cut-away, the projectors, the dome small on the plain."
   },
   {
    "id": "ch07.sync",
    "area": "film",
    "title": "Chapter 7: picture against sound",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: no picture change (SSIM 0.985 against the passed draft; side by side the frames match, and the difference is the smoke and grain, which vary from render to render); sound unchanged, -14.4/-14.5 LUFS. Cuts on cue words; the faces lit for 'the two faces in their light'; Whisper timing on the narration."
+   "state": "stale",
+   "note": "passed on ch07-draft-f5359542.mp4; changed since. On the draft with the sixth round's fixes: no picture change (SSIM 0.985 against the passed draft; side by side the frames match, and the difference is the smoke and grain, which vary from render to render); sound unchanged, -14.4/-14.5 LUFS. Cuts on cue words; the faces lit for 'the two faces in their light'; Whisper timing on the narration."
   },
   {
    "id": "ch07.sound",
    "area": "film",
    "title": "Chapter 7: the sound",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: no picture change (SSIM 0.985 against the passed draft; side by side the frames match, and the difference is the smoke and grain, which vary from render to render); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 4.0; Whisper lost 0 of 527; the quiet shots C and I are pauses, speech -14.2 to -15.3 (Trest's 'the end' soft, as it should be)."
+   "state": "stale",
+   "note": "passed on ch07-draft-f5359542.mp4; changed since. On the draft with the sixth round's fixes: no picture change (SSIM 0.985 against the passed draft; side by side the frames match, and the difference is the smoke and grain, which vary from render to render); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 4.0; Whisper lost 0 of 527; the quiet shots C and I are pauses, speech -14.2 to -15.3 (Trest's 'the end' soft, as it should be)."
   },
   {
    "id": "ch07.story",
    "area": "film",
    "title": "Chapter 7: the chapter as a story",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: no picture change (SSIM 0.985 against the passed draft; side by side the frames match, and the difference is the smoke and grain, which vary from render to render); sound unchanged, -14.4/-14.5 LUFS. The last men shelter: Roal and Trest decide, the machines build the dome around them, and the outside goes on without them. The chapter's quiet ending reads."
+   "state": "stale",
+   "note": "passed on ch07-draft-f5359542.mp4; changed since. On the draft with the sixth round's fixes: no picture change (SSIM 0.985 against the passed draft; side by side the frames match, and the difference is the smoke and grain, which vary from render to render); sound unchanged, -14.4/-14.5 LUFS. The last men shelter: Roal and Trest decide, the machines build the dome around them, and the outside goes on without them. The chapter's quiet ending reads."
   },
   {
    "id": "ch07.draft",
    "area": "film",
    "title": "Chapter 7: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch07.js, src/kit.js"
+   "state": "pass",
+   "note": "ch07-draft-8da2b3ba.mp4, -14.5 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch08.acting",
    "area": "film",
    "title": "Chapter 8: the acting",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: F-2's rings go out with its words and the camera moves in and out through 'We, your heirs' (find.ch08-heirs); sound unchanged, -14.4/-14.5 LUFS. Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be."
+   "state": "stale",
+   "note": "passed on ch08-draft-b2570310.mp4; changed since. On the draft with the sixth round's fixes: F-2's rings go out with its words and the camera moves in and out through 'We, your heirs' (find.ch08-heirs); sound unchanged, -14.4/-14.5 LUFS. Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be."
   },
   {
    "id": "ch08.picture",
    "area": "film",
    "title": "Chapter 8: the picture",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: F-2's rings go out with its words and the camera moves in and out through 'We, your heirs' (find.ch08-heirs); sound unchanged, -14.4/-14.5 LUFS. The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light."
+   "state": "stale",
+   "note": "passed on ch08-draft-b2570310.mp4; changed since. On the draft with the sixth round's fixes: F-2's rings go out with its words and the camera moves in and out through 'We, your heirs' (find.ch08-heirs); sound unchanged, -14.4/-14.5 LUFS. The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light."
   },
   {
    "id": "ch08.sync",
    "area": "film",
    "title": "Chapter 8: picture against sound",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: F-2's rings go out with its words and the camera moves in and out through 'We, your heirs' (find.ch08-heirs); sound unchanged, -14.4/-14.5 LUFS. The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median)."
+   "state": "stale",
+   "note": "passed on ch08-draft-b2570310.mp4; changed since. On the draft with the sixth round's fixes: F-2's rings go out with its words and the camera moves in and out through 'We, your heirs' (find.ch08-heirs); sound unchanged, -14.4/-14.5 LUFS. The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median)."
   },
   {
    "id": "ch08.sound",
    "area": "film",
    "title": "Chapter 8: the sound",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: F-2's rings go out with its words and the camera moves in and out through 'We, your heirs' (find.ch08-heirs); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
+   "state": "stale",
+   "note": "passed on ch08-draft-b2570310.mp4; changed since. On the draft with the sixth round's fixes: F-2's rings go out with its words and the camera moves in and out through 'We, your heirs' (find.ch08-heirs); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
   },
   {
    "id": "ch08.story",
    "area": "film",
    "title": "Chapter 8: the chapter as a story",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: F-2's rings go out with its words and the camera moves in and out through 'We, your heirs' (find.ch08-heirs); sound unchanged, -14.4/-14.5 LUFS. 5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
+   "state": "stale",
+   "note": "passed on ch08-draft-b2570310.mp4; changed since. On the draft with the sixth round's fixes: F-2's rings go out with its words and the camera moves in and out through 'We, your heirs' (find.ch08-heirs); sound unchanged, -14.4/-14.5 LUFS. 5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
   },
   {
    "id": "ch08.draft",
    "area": "film",
    "title": "Chapter 8: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch08.js, src/kit.js"
+   "state": "pass",
+   "note": "ch08-draft-39210b2f.mp4, -14.5 LUFS, peak -1.5 dBTP"
   },
   {
    "id": "ch09.acting",
    "area": "film",
    "title": "Chapter 9: the acting",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: lightning strikes the plant and force-beams play in the second storm, and the camera comes in on C-R-U-1 joining F-2 (find.ch09-storm); sound unchanged, -14.4/-14.5 LUFS. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
+   "state": "stale",
+   "note": "passed on ch09-draft-b04814ed.mp4; changed since. On the draft with the sixth round's fixes: lightning strikes the plant and force-beams play in the second storm, and the camera comes in on C-R-U-1 joining F-2 (find.ch09-storm); sound unchanged, -14.4/-14.5 LUFS. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
   },
   {
    "id": "ch09.picture",
    "area": "film",
    "title": "Chapter 9: the picture",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: lightning strikes the plant and force-beams play in the second storm, and the camera comes in on C-R-U-1 joining F-2 (find.ch09-storm); sound unchanged, -14.4/-14.5 LUFS. Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
+   "state": "stale",
+   "note": "passed on ch09-draft-b04814ed.mp4; changed since. On the draft with the sixth round's fixes: lightning strikes the plant and force-beams play in the second storm, and the camera comes in on C-R-U-1 joining F-2 (find.ch09-storm); sound unchanged, -14.4/-14.5 LUFS. Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
   },
   {
    "id": "ch09.sync",
    "area": "film",
    "title": "Chapter 9: picture against sound",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: lightning strikes the plant and force-beams play in the second storm, and the camera comes in on C-R-U-1 joining F-2 (find.ch09-storm); sound unchanged, -14.4/-14.5 LUFS. The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
+   "state": "stale",
+   "note": "passed on ch09-draft-b04814ed.mp4; changed since. On the draft with the sixth round's fixes: lightning strikes the plant and force-beams play in the second storm, and the camera comes in on C-R-U-1 joining F-2 (find.ch09-storm); sound unchanged, -14.4/-14.5 LUFS. The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
   },
   {
    "id": "ch09.sound",
    "area": "film",
    "title": "Chapter 9: the sound",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: lightning strikes the plant and force-beams play in the second storm, and the camera comes in on C-R-U-1 joining F-2 (find.ch09-storm); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.5 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
+   "state": "stale",
+   "note": "passed on ch09-draft-b04814ed.mp4; changed since. On the draft with the sixth round's fixes: lightning strikes the plant and force-beams play in the second storm, and the camera comes in on C-R-U-1 joining F-2 (find.ch09-storm); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.5 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
   },
   {
    "id": "ch09.story",
    "area": "film",
    "title": "Chapter 9: the chapter as a story",
-   "state": "pass",
-   "note": "On the draft with the sixth round's fixes: lightning strikes the plant and force-beams play in the second storm, and the camera comes in on C-R-U-1 joining F-2 (find.ch09-storm); sound unchanged, -14.4/-14.5 LUFS. 5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
+   "state": "stale",
+   "note": "passed on ch09-draft-b04814ed.mp4; changed since. On the draft with the sixth round's fixes: lightning strikes the plant and force-beams play in the second storm, and the camera comes in on C-R-U-1 joining F-2 (find.ch09-storm); sound unchanged, -14.4/-14.5 LUFS. 5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
   },
   {
    "id": "ch09.draft",
    "area": "film",
    "title": "Chapter 9: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch09.js, src/kit.js"
+   "state": "pass",
+   "note": "ch09-draft-088f911c.mp4, -14.4 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch10.acting",
@@ -1551,22 +1551,22 @@
    "id": "find.plant-scale",
    "area": "finding",
    "title": "Chapters 8 and 9: the 500-ft power plant is drawn about 30 ft tall",
-   "state": "open",
-   "note": "Seventh round, major: 'Nearly five hundred feet in height' (ch08 4:46-4:50) but the plant is about 3.3 domes or 8-9 F-2 lengths tall on the same ground line; ch09 shows it the same way."
+   "state": "pass",
+   "note": "On the new chapter 8 draft (4:00-5:16) and chapter 9: the plant stands far off on a raised far plain, hazed, its foot behind the near rock, with F-2 small in front; it reads as a tower many times the height of the men. The night shots have no V-shaped lobes."
   },
   {
    "id": "find.ch07-belly",
    "area": "finding",
    "title": "Chapter 7: the dome doesn't visibly belly inward",
-   "state": "open",
-   "note": "Seventh round, minor: 'bellied inward' at 193.2 s; the crown flattens 10-16% under the beams' glow, no visible dent."
+   "state": "pass",
+   "note": "Chapter 7 at 3:09-3:15: the dome shivers on 'quivered' and dents in on 'bellied inward', a pale line tracing the dent through the glow; the cutaway at 3:20 moves in on F-2 building beside the men, then pulls back."
   },
   {
    "id": "find.ch03-green-land",
    "area": "finding",
    "title": "Chapter 3: the land is green before the death beams",
-   "state": "open",
-   "note": "Seventh round, minor: at 3:13 the trees and hills are sage-green before any beam, against colour-for-energy and blunting the green beam's arrival."
+   "state": "pass",
+   "note": "Chapter 3 at 3:10-4:20: the land and trees are plain ink wash until the death beams; the green comes only with them."
   },
   {
    "id": "find.note-exothermic",
@@ -1586,15 +1586,15 @@
    "id": "find.ch08-framing",
    "area": "finding",
    "title": "Chapter 8: F-2 cut off at 0:45 and the plant's foot at 4:48",
-   "state": "open",
-   "note": "Seventh round, nit."
+   "state": "pass",
+   "note": "Chapter 8 at 0:36-1:04: F-2 is clear of the frame's right edge throughout shot D."
   },
   {
    "id": "find.small-figures",
    "area": "finding",
    "title": "Chapters 7 and 9: the men are small at key beats",
-   "state": "open",
-   "note": "Seventh round, nit: ch07 3:17-3:50 the men about 12% of frame height, F-2's new machine a 30 px box; ch09 3:26 'Roal and Trest appeared' at about 8%."
+   "state": "pass",
+   "note": "Chapter 9 at 3:20-3:32: the camera holds on the dome as Roal and Trest walk out of it, big enough to read, then rises to the golden globe."
   }
  ],
  "fresh": [
