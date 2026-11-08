@@ -5,7 +5,9 @@
   const S = CHAPTER.shots, C = cue, T0 = id => S[id][0], T1 = id => S[id][1];
   const K = (t, a, b) => seg(t, C(a), C(b));
   const BG = '#2E2620', PALE = '#EFE6D2', FORCE = '#CFE0FF';
-  const plateGround = (key = 'plate') => { ground(BG, 255, key, { fill: '#3B322B', fillOp: 120 }); };
+  const plateGround = (key = 'plate') => key !== 'plate' ? ground(BG, 255, key, { fill: '#3B322B', fillOp: 120 })
+    // the history plate runs on to the joined machine at 2500 (ground's sheet ended at 2720, and the move there showed bare paper past it)
+    : steady(() => { stillSeed(key); paint(rectPts(-800, -800, 5600, H + 1600), { wash: BG, washOp: 255, fill: '#3B322B', fillOp: 120, bleed: .2, tex: .4, ink: null }); });
 
   // ---------- B: six centuries of machines, along a ruled line ----------
   const LY = 640, EAR = 700, EYE = 1300, BRAIN = 1900, JOIN = 2500;
@@ -17,7 +19,7 @@
   function history(t) {
     HALFTONE = .3;
     const tEar = C('p003.1:The Ear-apparatus'), tEye = C('p003.1:The Eye came later'), tBrain = C('p003.1:the Brain'), tJoin = C('p003.1:But by twenty-five hundred'), tUp = C('p003.1:to think, and act');
-    const j = ez(t, tJoin, tJoin + 3), up = ez(t, tUp - 1, tUp + 2);
+    const j = ez(t, tJoin, tJoin + 1.8), up = ez(t, tUp - 1, tUp + 2);   // (over 3 s they were still apart at the cut, the joined machine standing by them like a fourth)
     const c = cam(t, [[0, [EAR - 300, LY - 40, 1]], [tEar - 1, [EAR, LY - 40, 1.15], 2], [tEye - .8, [EYE, LY - 40, 1.15], 2], [tBrain - .5, [BRAIN, LY - 40, 1.15], 2], [tJoin, [JOIN - 200, LY - 60, 1.1], 3], [tUp - 1, [JOIN, LY - 120, 2.2], 3]]);
     withCam(c, () => {
       plateGround();
@@ -28,9 +30,10 @@
         const gx = 200 + i * 400, gy = LY - 10, r = (44 + 10 * i) * k, n = 6 + 2 * i, rot = t * (.6 - .08 * i) * (i % 2 ? -1 : 1), P = [];
         for (let q = 0; q <= n * 4; q++) { const a = rot + q / (n * 4) * TAU, tooth = (q % 4 < 2) ? 1.22 : 1; P.push([gx + Math.cos(a) * r * tooth, gy + Math.sin(a) * r * tooth]); }
         const gc = mixCol(D[1], '#EFE6D2', .6); boilSeed('gear' + i); inkLine(P, 1.6, gc, 'inkfine', 0); inkLine([...Array(13)].map((_, q) => [gx + Math.cos(q / 12 * TAU) * r * .35, gy + Math.sin(q / 12 * TAU) * r * .35]), 1.2, gc, 'inkfine', 0); }
-      if (j < 1) { ear(lerp(EAR, JOIN - 90, j), LY - 20, backOut(seg(t, tEar, tEar + .8)) * (1 - j * .6)); eye(lerp(EYE, JOIN, j), LY - 40, backOut(seg(t, tEye, tEye + .8)) * (1 - j * .6)); brain(lerp(BRAIN, JOIN, j), LY - 180 + 60 * j, backOut(seg(t, tBrain, tBrain + .8)) * (1 - j * .4)); }
-      if (j > .6) { const a = seg(j, .6, 1); glow(JOIN, LY - 80, 200 * (1 - a), NRG.white, .6 * (1 - a));
-        DES.machine(JOIN, LY + 110, 34, t, { arms: 3, d: 1, hover: 1 + 2.5 * up, face: .2 * wob(t, .2), lit: .4 + .4 * up, label: null }); }
+      const sh = 1 - ez(t, tJoin + 1.5, tJoin + 2.1), fl = Math.sin(Math.PI * seg(t, tJoin + 1.4, tJoin + 2.6));   // they meet, then shrink into a flash that leaves one machine
+      if (sh > 0) { ear(lerp(EAR, JOIN - 40, j), LY - 20, backOut(seg(t, tEar, tEar + .8)) * (1 - j * .4) * sh); eye(lerp(EYE, JOIN, j), LY - 40, backOut(seg(t, tEye, tEye + .8)) * (1 - j * .4) * sh); brain(lerp(BRAIN, JOIN, j), LY - 180 + 120 * j, backOut(seg(t, tBrain, tBrain + .8)) * (1 - j * .3) * sh); }
+      if (fl > 0) glow(JOIN, LY - 60, 90 + 90 * fl, NRG.white, .7 * fl);
+      if (t > tJoin + 1.9) { DES.machine(JOIN, LY + 110, 34 * easeOut(seg(t, tJoin + 1.9, tJoin + 2.5)), t, { arms: 3, d: 1, hover: 1 + 2.5 * up, face: .2 * wob(t, .2), lit: .4 + .4 * up, label: null }); }
     });
   }
 
