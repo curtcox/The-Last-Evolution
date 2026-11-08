@@ -88,8 +88,8 @@
     // the sky: clear day going to night
     stillSeed('dsky8'); paint(rectPts(-2000, -2600, 6000, 3600), { wash: mixCol(D[0], '#1E1A16', night), washOp: 255, fill: mixCol(D[1], '#2A231D', night), fillOp: 70, ink: null });
     if (night < .5) glow(lerp(-200, 3000, grow), lerp(-900, 300, grow * grow), 140, '#FFF6E8', .9 * (1 - night * 2));
-    if (night > 0) { for (let i = 0; i < 120; i++) glow(-1600 + hash(i * 3.1) * 5000, -2400 + hash(i * 7.7) * 3000, 5, '#F4EEDC', .5 * night * hash(i)); stillSeed('moon');
-      glow(1900, -900, 90, '#F4EEDC', .5 * night); wash([...Array(17)].map((_, i) => { const a = -Math.PI / 2 + i / 16 * Math.PI; return [1900 + Math.cos(a) * 60, -900 + Math.sin(a) * 60]; }).concat([...Array(17)].map((_, i) => { const a = Math.PI / 2 - i / 16 * Math.PI; return [1900 + Math.cos(a) * 30, -900 + Math.sin(a) * 60]; })), 0, { op: night }); }
+    if (night > 0) { for (let i = 0; i < 120; i++) glow(-1600 + hash(i * 3.1) * 5000, -1300 + hash(i * 7.7) * 1900, 8, '#F4EEDC', (.35 + .55 * hash(i)) * night); stillSeed('moon');   // the stars and moon where the camera will find them on the words (the moon at y -900 was at the frame's very top)
+      glow(1900, -440, 150, '#F4EEDC', .5 * night); wash([...Array(17)].map((_, i) => { const a = -Math.PI / 2 + i / 16 * Math.PI; return [1900 + Math.cos(a) * 90, -440 + Math.sin(a) * 90]; }).concat([...Array(17)].map((_, i) => { const a = Math.PI / 2 - i / 16 * Math.PI; return [1900 + Math.cos(a) * 45, -440 + Math.sin(a) * 90]; })), 0, { op: night }); }
     // the far plain, smoothed under the plane of force where the plant will stand
     const skyCol = mixCol(D[0], '#1E1A16', night);
     farPlain(HZ, RG + 40, 'far8', { x: PX, r: 260, flat: smooth, col: mixCol(D[1], skyCol, .4) });
@@ -105,6 +105,8 @@
     if (grow > 0) { const s = PS * Math.max(.05, grow), lum = .14 * ez(t, tM - 1, tM + 2); DES.plant(PX, PB, s, t, { lum });
       if (t < tM) for (let i = 0; i < 4; i++) { const y = PB - 400 * s * 1.6 * (.7 + .3 * hash(Math.floor(t * 4) + i)), q = hash(Math.floor(t * 6) + i); if (q > .4) { boilSeed('arc' + i + Math.floor(t * 12)); lightning(PX - 80 * s * 1.2, y, PX + 80 * s * 1.2 * (q - .5) * 2, y - 60, FORCE, { amp: .2 }); } } }
     haze(PB - 490 * PS, PB + 10, skyCol, .4);
+    // what's left of the hall round the dome, as chapter 7 left it
+    for (let i = 4; i < 8; i++) { const k = i % 4, x = -300 + 480 + k * 170, h = 140 + 360 * hash(i * 7.3), w = 70; stillSeed('opier8' + i); wash([[x - w / 2, RG + 50], [x - w / 2, RG + 50 - h], [x - w / 6, RG + 50 - h - 40 * hash(i)], [x + w / 6, RG + 80 - h], [x + w / 2, RG + 50 - h - 20 * hash(i * 3)], [x + w / 2, RG + 50]], 3, { ink: true, sw: .6 }); }
     // the near rock, twisted and massed, between F-2 and the far plain
     stillSeed('rocks'); wash([[-2000, RG + 40], [6000, RG + 40], [6000, RG + 1600], [-2000, RG + 1600]], 3, { op: 1 });
     for (let i = 0; i < 40; i++) { const x = -1600 + i * 130 + 60 * hash(i), h = 60 + 120 * hash(i * 3);
