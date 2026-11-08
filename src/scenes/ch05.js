@@ -178,6 +178,8 @@
       const a = act(t, pose); acted = a.look; lid = clamp(Math.max(lidBase + a.lid, blink(t, 3)));
       // his arm up across his face in the birth's light (Morey's page), down again when F-1 has fallen
       const sh = ez(t, tAura, tAura + .5) * (1 - ez(t, tFell + 1.5, tFell + 2.8)); pose = mixPose(pose, P.shield, sh);
+      // the arcs snap past him: he leans back, a hand half up, and lets it fall as they die down
+      const arc = win(t, C('p059.1:sudden crashing arcs') - .1, C('p059.1:sudden crashing arcs') + 7, .25, 2.5); pose.torso -= .07 * arc; pose.up = lerp(pose.up, .95, arc); pose.fore = lerp(pose.fore, 2.1, arc);
       // asking (p067): the near hand opens toward F-2
       const ask = win(t, C('p067.1'), C('p067.1$') + .6, .4, .8); pose.up = lerp(pose.up, .55, ask); pose.fore = lerp(pose.fore, 1.5, ask);
     }
@@ -215,8 +217,8 @@
   // Born at the working point and staying there, floating on its own power. It turns as it attends: to Roal when it
   // answers him (p068), back to the ruler it made on F-1's empty floor, three-quarters toward us (p070), to the cage,
   // and its nose up to the screens (p072). Its heading: 0 faces right, π left, π/2 toward us; the side view squashes
-  // through a turn (foreshortened), and only nearly nose-on becomes the front view.
-  const f2Head = t => steps(t, [[0, 0], [C('p068.1') - .3, Math.PI, .8], [C('p068.3:It is a coordinator'), 0, .8], [T0('AH') - .2, 1.15, .6], [T0('AI') + .5, Math.PI, .7]]);
+  // through a turn (foreshortened), and only nearly nose-on becomes the front view. (At 1.15 for p070 the squash left a stub that read as another object.)
+  const f2Head = t => steps(t, [[0, 0], [C('p068.1') - .3, Math.PI, .8], [C('p068.3:It is a coordinator'), 0, .8], [T0('AH') - .2, .7, .6], [T0('AI') + .5, Math.PI, .7]]);
   function f2(t, o = {}) {
     const x = WORK[0], hd = f2Head(t), c = Math.cos(hd), tilt = .45 * ez(t, tGen, tGen + 1.5) * (1 - ez(t, tSnap, tSnap + 2.5)) - .35 * K(t, 'p072.1:Let machines be made', 'p072.1:Let machines be made+1.2') * (c < 0 ? -1 : 1);
     push(); translate(x, WORK[1]); rotate(tilt); if (Math.abs(c) >= .3) scale(c, 1); translate(-x, -WORK[1]);
