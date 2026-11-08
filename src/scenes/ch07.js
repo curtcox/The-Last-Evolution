@@ -97,9 +97,11 @@
     const c = cam(t, [[0, tt => [960, lerp(500, 640, ez(tt, tL, tStruck)), lerp(.8, 1.4, ez(tt, tL, tStruck))]], [tN, tt => [960, 560, lerp(1.1, .8, ez(tt, tN, T1('N')))], 2.5],
       [tP, tt => [960, lerp(640, -160, ez(tt, tProj, tOff + 2)), lerp(1, .62, ez(tt, tP, T1('P')))], 2.5], [tQ, tt => [960, 640, lerp(.95, .55, ez(tt, tQ, DUR))], 3]]);   // up to the fleet as it's driven off; then out, but not so far the dome is lost
     withCam(c, () => {
-      stillSeed('osky'); paint(rectPts(-3000, -2400, 7000, 3300), { wash: '#1E1A16', washOp: 255, fill: '#2A231D', fillOp: 80, ink: null });
-      for (let i = 0; i < 120; i++) glow(-2600 + hash(i * 3.1) * 7000, -2200 + hash(i * 7.7) * 3000, 5, '#F4EEDC', .3 + .3 * hash(i));
-      stillSeed('oground'); paint(rectPts(-3000, OG - 20, 7000, 2600), { wash: D[3], washOp: 255, fill: '#1C1814', fillOp: 90, ink: null });
+      // day, dimmed by the smoke of the battle: 'Dawn was breaking' in chapter 6, 'Last night we saw it leap ahead' here, and
+      // F-2 goes out into 'the clear sunlight' in chapter 8 (under a night sky the three didn't join)
+      stillSeed('osky'); paint(rectPts(-3000, -2400, 7000, 3300), { wash: '#8A7E6C', washOp: 255, fill: '#6E6354', fillOp: 90, ink: null });
+      glow(DOME[0], OG - 120, 1500, '#D8CCB0', .4);
+      stillSeed('oground'); paint(rectPts(-3000, OG - 20, 7000, 2600), { wash: D[2], washOp: 255, fill: '#5A5044', fillOp: 110, ink: null });
       // what's left of the hall round the dome: its floor and its broken piers (the dome was made inside it, 2:45)
       stillSeed('ofloor'); wash(rectPts(DOME[0] - DR - 700, OG - 10, 2 * DR + 1400, 40), 2, { ink: true, sw: .5 });
       for (let i = 0; i < 8; i++) { const side = i < 4 ? -1 : 1, k = i % 4, x = DOME[0] + side * (DR + 160 + k * 170), h = 140 + 360 * hash(i * 7.3), w = 70;
@@ -117,7 +119,7 @@
       stillSeed('odome'); paint(P, { wash: PULP.black, washOp: 255, fill: PULP.black, fillOp: 230, bleed: .02, tex: .2, ink: INK, sw: 1 });
       // the bellied crown picked out in pale ink, so the dent reads through the beams' glow
       const bl = belly * (1 - ez(t, tOff, tOff + 3)); if (bl > 0) { boilSeed('obelly'); inkLine(P.slice(8, 25), 2.4 * bl, '#D8E8C8', 'inkfine', .5); }
-      // a pale rim on the dome once the beams are off, so 'the only life was under that dark shroud' finds it on the night
+      // a pale rim on the dome once the beams are off, so 'the only life was under that dark shroud' finds it on the dead plain
       const rim = ez(t, tOff, tOff + 3); if (rim > 0) { boilSeed('orim'); inkLine(P, 2.2 * rim, '#B8AE98', 'inkfine', .5); for (let i = 2; i < 31; i += 4) glow(...P[i], 70, '#C8BEA8', .22 * rim); }
       if (bk > 0) glow(DOME[0], DOME[1] - DR * .7, 200, GREEN, .5 * bk);
       // P: the ground projectors driving white light up through the curtains

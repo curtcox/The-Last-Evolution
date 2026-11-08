@@ -6,7 +6,7 @@ logline: >-
   that raise a black dome over the two of them; the green beams press it in, F-2's violet beam holds it up, the fleet
   is driven off, and the only life on Earth is under the dome.
 world: >-
-  The Denver hall at night, lit by its screens; the dome raised on its floor round the two men; and outside, the dead
+  The Denver hall, dim, lit by its screens; the dome raised on its floor round the two men; and outside, the dead
   plain under the green beams, the dome a black hill on it.
 colour: >-
   The hall dim and blue-grey with screen-light; the blankness, blacker than any wash; the green beams pressing; the
@@ -16,8 +16,8 @@ motif: >-
   men; man's child protects man.
 arc: From watching the end, to accepting it, to being saved without asking; the chapter ends on the loneliest image yet.
 draft: >-
-  The hall is one set at night; the dome rises on its floor round the two men. Inside it, a cut-away shows F-2's
-  violet beam holding the canopy; outside is the plain at night under the green.
+  The hall is one set, dim; the dome rises on its floor round the two men. Inside it, a cut-away shows F-2's
+  violet beam holding the canopy; outside is the plain by smoke-dimmed day under the green.
 voice_at: 6
 outro: 4
 holds:
@@ -34,12 +34,12 @@ shots:
     seen: The pulp page, The Dome, the opening words under a drop cap.
     event: The theme's first phrase; the narrator begins.
     camera: a slow push
-    out: the paper soaks into the hall at night
+    out: the paper soaks into the dim hall
 
   - id: B
     at: p083.1
     title: Two humans watching
-    seen: The Denver hall at night, lit only by its screens; Roal and Trest before them. On the screens, ships falling.
+    seen: The Denver hall, dim, lit only by its screens; Roal and Trest before them. On the screens, ships falling.
     event: Ship after ship falls on the screens.
     camera: from the dark hall in toward the two men
     reads:
@@ -135,7 +135,7 @@ shots:
   - id: L
     at: p094.1
     title: The beams strike
-    seen: Outside, the dead plain at night; the black dome; the green beams drawing in on it.
+    seen: Outside, the dead plain under a day dimmed with smoke; the black dome; the green beams drawing in on it.
     event: The beams strike; the dome quivers and bellies inward.
     camera: from wide in toward the dome
     reads:
