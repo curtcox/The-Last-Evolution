@@ -121,9 +121,9 @@ items:
     when: 2026-11-02 23:24
   ch02.picture:
     state: pass
-    note: "On the draft with the sixth round's fixes: the last plunger snaps shut on 'snapped' (find.ch02-plunger); footnote 1 still runs 4 s into the next shot, kept for reading time (find.ch02-footnote); sound unchanged, -14.4/-14.5 LUFS. Space and the incoming fleet, the hulled ship, the Outsiders' interior with light shells now clear against the darker hull, the plates and rods, the wrecked hulls in the debris field, the dark hall of the masters, the fleet in rows. The earlier contrast note (dark on dark) no longer holds."
-    at: ch02-draft-bb07d7a8.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft with the seventh round's fixes: the searchers make way to the left before the armed Outsider comes in, so the one who fires the bluish beam stands clear (find.ch02-firer); sound unchanged, -14.4 LUFS. Space and the incoming fleet, the hulled ship, the Outsiders' interior with light shells now clear against the darker hull, the plates and rods, the wrecked hulls in the debris field, the dark hall of the masters, the fleet in rows. The earlier contrast note (dark on dark) no longer holds."
+    at: ch02-draft-8a986171.mp4
+    when: 2026-11-08 03:02
   ch03.picture:
     state: pass
     note: "On the draft with the seventh round's fixes: no green in the land or trees until the death beams come (find.ch03-green-land); sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
@@ -381,24 +381,24 @@ items:
     when: 2026-11-07 20:13
   ch02.acting:
     state: pass
-    note: "On the draft with the sixth round's fixes: the last plunger snaps shut on 'snapped' (find.ch02-plunger); footnote 1 still runs 4 s into the next shot, kept for reading time (find.ch02-footnote); sound unchanged, -14.4/-14.5 LUFS. The Outsiders move as a ranked crew: the small ones sway at their posts, the close Outsider stands apart and turns; the falls and the dive read; the crawlers keep their distance."
-    at: ch02-draft-bb07d7a8.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft with the seventh round's fixes: the searchers make way to the left before the armed Outsider comes in, so the one who fires the bluish beam stands clear (find.ch02-firer); sound unchanged, -14.4 LUFS. The Outsiders move as a ranked crew: the small ones sway at their posts, the close Outsider stands apart and turns; the falls and the dive read; the crawlers keep their distance."
+    at: ch02-draft-8a986171.mp4
+    when: 2026-11-08 03:02
   ch02.sync:
     state: pass
-    note: "On the draft with the sixth round's fixes: the last plunger snaps shut on 'snapped' (find.ch02-plunger); footnote 1 still runs 4 s into the next shot, kept for reading time (find.ch02-footnote); sound unchanged, -14.4/-14.5 LUFS. Shots change on their cue words; Whisper timing -0.12 s median."
-    at: ch02-draft-bb07d7a8.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft with the seventh round's fixes: the searchers make way to the left before the armed Outsider comes in, so the one who fires the bluish beam stands clear (find.ch02-firer); sound unchanged, -14.4 LUFS. Shots change on their cue words; Whisper timing -0.12 s median."
+    at: ch02-draft-8a986171.mp4
+    when: 2026-11-08 03:02
   ch02.sound:
     state: pass
-    note: "On the draft with the sixth round's fixes: the last plunger snaps shut on 'snapped' (find.ch02-plunger); footnote 1 still runs 4 s into the next shot, kept for reading time (find.ch02-footnote); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.2, shots -14.5 to -16.7; Whisper lost 13 of 640, names (Sirius, Deimos) and numbers."
-    at: ch02-draft-bb07d7a8.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft with the seventh round's fixes: the searchers make way to the left before the armed Outsider comes in, so the one who fires the bluish beam stands clear (find.ch02-firer); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.2, shots -14.5 to -16.7; Whisper lost 13 of 640, names (Sirius, Deimos) and numbers."
+    at: ch02-draft-8a986171.mp4
+    when: 2026-11-08 03:02
   ch02.story:
     state: pass
-    note: "On the draft with the sixth round's fixes: the last plunger snaps shut on 'snapped' (find.ch02-plunger); footnote 1 still runs 4 s into the next shot, kept for reading time (find.ch02-footnote); sound unchanged, -14.4/-14.5 LUFS. The Outsiders come from beyond the system, their ships and their masters are shown, and the threat to Earth is set: the chapter does its job as the invader's introduction."
-    at: ch02-draft-bb07d7a8.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft with the seventh round's fixes: the searchers make way to the left before the armed Outsider comes in, so the one who fires the bluish beam stands clear (find.ch02-firer); sound unchanged, -14.4 LUFS. The Outsiders come from beyond the system, their ships and their masters are shown, and the threat to Earth is set: the chapter does its job as the invader's introduction."
+    at: ch02-draft-8a986171.mp4
+    when: 2026-11-08 03:02
   ch03.acting:
     state: pass
     note: "On the draft with the seventh round's fixes: no green in the land or trees until the death beams come (find.ch03-green-land); sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
@@ -980,10 +980,10 @@ items:
     title: "Film page: the green-beams note misquotes the story"
     when: 2026-11-07 20:34
   find.ch02-firer:
-    state: open
-    note: "Seventh round, minor: 4:42-4:50 the firing Outsider overlaps the one in front; edge Outsiders cut off."
+    state: pass
+    note: "On the new chapter 2 draft at 4:36-4:49: the three searchers make way to the left before the armed Outsider comes in from the right, so he walks in clear of them and fires with no one overlapping him."
     title: "Chapter 2: which Outsider fires the bluish beam is unclear"
-    when: 2026-11-07 20:34
+    when: 2026-11-08 03:02
   find.ch08-framing:
     state: pass
     note: "Chapter 8 at 0:36-1:04: F-2 is clear of the frame's right edge throughout shot D."
@@ -1027,4 +1027,4 @@ fresh:
     found: 7
     note: "Seventh round: 1 major (ch08/ch09 the 500-ft power plant drawn about 30 ft tall), 4 minor (ch07 the dome doesn't visibly belly inward; ch03 the land green before the death beams; the film page's green-beams note misquotes 'retarding it greatly in exothermic actions'; ch02 which Outsider fires the bluish beam is unclear), 2 nits (ch08 framing at 0:45 and 4:48; small figures at ch07 3:17-3:50 and ch09 3:26)."
     state: 5017a56df064
-since_fresh: 26
+since_fresh: 32
