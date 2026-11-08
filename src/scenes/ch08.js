@@ -82,7 +82,7 @@
     HALFTONE = .25;
     const tK = T0('K'), tPlane = C('p112.1:he laid a plane of force'), tL = T0('L'), tM = T0('M'), tN = T0('N'), tLivid = C('p114.1:Suddenly, a livid beam');
     const grow = ez(t, tL, tM - 1), night = ez(t, tL + (tM - tL) * .5, tM + 1), smooth = ez(t, tPlane, tPlane + 3);
-    const c = cam(t, [[0, tt => [lerp(500, 900, ez(tt, tK, tPlane)), 640, 1.2]], [tL, tt => [PX, lerp(600, 100, ez(tt, tL, tM)), lerp(1.1, .55, ez(tt, tL, tM))], 3],
+    const c = cam(t, [[0, tt => [lerp(lerp(500, 900, ez(tt, tK, tPlane)), PX - 80, ez(tt, tPlane - .5, tPlane + 1.5)), lerp(640, PB + 60, ez(tt, tPlane - .5, tPlane + 1.5)), lerp(1.2, 1.7, ez(tt, tPlane - .5, tPlane + 1.5))]], [tL, tt => [PX, lerp(600, 100, ez(tt, tL, tM)), lerp(1.1, .55, ez(tt, tL, tM))], 3],
       [tM, tt => [PX, lerp(250, -150, ez(tt, tM, tN)), .6], 3], [tN, [PX - 200, 560, .85], 2.5]]);
     camBegin(...c);
     // the sky: clear day going to night
@@ -93,8 +93,14 @@
     // the far plain, smoothed under the plane of force where the plant will stand
     const skyCol = mixCol(D[0], '#1E1A16', night);
     farPlain(HZ, RG + 40, 'far8', { x: PX, r: 260, flat: smooth, col: mixCol(D[1], skyCol, .4) });
-    if (smooth > 0 && smooth < 1) { glow(PX, PB, 300, FORCE, .3 * Math.sin(Math.PI * smooth)); }
-    if (smooth > .5) { stillSeed('plane'); wash(rectPts(PX - 260, PB - 4, 520, 8), 1, { ink: true, sw: .4 }); }
+    // 'on the twisted, massed rocks he laid a plane of force that smoothed them': a mass of rock where the plant will stand,
+    // big enough to see from here, flattened as the plane sweeps across it, the plane left lying behind (the far plain's
+    // own rocks are too small at this distance, and the jagged rocks seemed to stay jagged)
+    const sweep = PX - 300 + 600 * smooth;
+    for (let i = 0; i < 14; i++) { const x = PX - 250 + i * 38 + 12 * hash(i * 4.1), h = (20 + 30 * hash(i * 1.9)) * (1 - ez(sweep - x, -10, 40));
+      if (h > 1.5) { stillSeed('mass' + i); paint([[x - h * .5, PB], [x - h * .2, PB - h], [x + h * .1, PB - h * .75], [x + h * .35, PB - h * .9], [x + h * .55, PB]], { wash: mixCol(D[2], skyCol, .25), washOp: 220, ink: INK, sw: .45 }); } }
+    if (smooth > 0) { stillSeed('plane'); const e = Math.min(PX + 260, sweep); if (e > PX - 260) wash(rectPts(PX - 260, PB - 4, e - (PX - 260), 8), 1, { ink: true, sw: .4 }); }
+    if (smooth > 0 && smooth < 1) { const k = Math.sin(Math.PI * smooth); glow(sweep, PB - 10, 90, FORCE, .7 * k); glow(PX, PB, 300, FORCE, .2 * k); }
     // the plant, far off, rising ring by ring as F-2's forces arc round it; finished at night
     if (grow > 0) { const s = PS * Math.max(.05, grow), lum = .14 * ez(t, tM - 1, tM + 2); DES.plant(PX, PB, s, t, { lum });
       if (t < tM) for (let i = 0; i < 4; i++) { const y = PB - 400 * s * 1.6 * (.7 + .3 * hash(Math.floor(t * 4) + i)), q = hash(Math.floor(t * 6) + i); if (q > .4) { boilSeed('arc' + i + Math.floor(t * 12)); lightning(PX - 80 * s * 1.2, y, PX + 80 * s * 1.2 * (q - .5) * 2, y - 60, FORCE, { amp: .2 }); } } }
