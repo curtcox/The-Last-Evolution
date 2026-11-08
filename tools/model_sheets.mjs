@@ -33,9 +33,9 @@ main{max-width:1100px} figure{margin:1.4em 0} figure img{width:100%;height:auto;
 figcaption{color:var(--ink2);font-size:.9em;margin-top:.4em}
 </style></head><body><main>
 <p class="kicker"><a href="../">Review</a> · Round 4 · model sheets</p><h1>Model sheets</h1>
-<p>A first pass at every design in the plan, each built from the text, whose words are on the sheet beside it, and
-drawn in the medium of <a href="./">the style frames</a>. Each still links to the full-size sheet. The questions are in
-section 5 of the <a href="https://github.com/curtcox/The-Last-Evolution/blob/main/review/round4.md">decision sheet</a>.</p>
+<p>Every design in the plan, each built from the text, whose words are on the sheet beside it, and drawn in the medium of
+<a href="./">the style frames</a>. Each still links to the full-size sheet. The round's questions are in section 5 of its
+<a href="https://github.com/curtcox/The-Last-Evolution/blob/main/review/round4.md">decision sheet</a>.</p>
 ${SHEETS.map(([f, t, c]) => `<figure><a href="img/${f}.jpg"><img src="img/${f}.jpg" alt="${esc(t)}" loading="lazy"></a><figcaption><b>${esc(t)}.</b> ${esc(c)}</figcaption></figure>`).join('\n')}
 </main></body></html>`);
 console.log(`${OUT}/models.html: ${SHEETS.length} sheets`);
