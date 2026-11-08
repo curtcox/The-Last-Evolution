@@ -342,7 +342,10 @@ writeFileSync(`${OUT}/read/index.html`, read);
 writeFileSync(`${OUT}/about/index.html`, about);
 writeFileSync(`${OUT}/notes/index.html`, notesIndex);
 for (const [name, html] of notePages) writeFileSync(`${OUT}/notes/${name}/index.html`, html);
-if (existsSync('site/review')) cpSync('site/review', `${OUT}/review`, { recursive: true });
+if (existsSync('site/review')) { cpSync('site/review', `${OUT}/review`, { recursive: true });
+  // the review pages share the site's stylesheet, and so its fonts (without them, headings fall back to a heavy grotesque)
+  const FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&display=swap">';
+  for (const f of readdirSync(`${OUT}/review`, { recursive: true }).filter(f => f.endsWith('.html'))) { const p = `${OUT}/review/${f}`, h = readFileSync(p, 'utf8'); if (!h.includes('fonts.googleapis') && h.includes('style.css')) writeFileSync(p, h.replace(/<link rel="stylesheet" href="[^"]*style\.css">/, m => FONTS + m)); } }
 writeFileSync(`${OUT}/review/index.html`, review);
 if (quality) { mkdirSync(`${OUT}/review/quality`, { recursive: true }); writeFileSync(`${OUT}/review/quality/index.html`, quality); }
 writeFileSync(`${OUT}/style.css`, css);
