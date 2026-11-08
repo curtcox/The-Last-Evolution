@@ -1,16 +1,13 @@
 {
  "summary": {
-  "pass": 205,
-  "stale": 2,
+  "pass": 207,
+  "stale": 0,
   "open": 0,
   "curt": 9,
   "later": 4
  },
  "satisfied": false,
- "next": [
-  "The film page (annotated): what it says",
-  "The film page (annotated): how it looks and works"
- ],
+ "next": [],
  "checks": {
   "verbatim": {
    "state": "pass",
@@ -37,16 +34,16 @@
    "detail": "$0.59 of $10"
   },
   "refs": {
-   "state": "fail",
-   "detail": "blackgate-best-of: https://www.blackgate.com/?p=226361 → fetch failed"
+   "state": "pass",
+   "detail": "refs: 53 sources, all cited, all answering; definitions written into 6 notes"
   },
   "phone": {
    "state": "pass",
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
-   "state": "stale",
-   "detail": "33 pages live (not compared: HEAD has changes not pushed)"
+   "state": "pass",
+   "detail": "33 pages live, the deploy is this commit"
   }
  },
  "curt": [
@@ -633,15 +630,15 @@
    "id": "site.watch.content",
    "area": "site",
    "title": "The film page (annotated): what it says",
-   "state": "stale",
-   "note": "passed on 52394fe67434; changed since. Re-judged after the sixth round: the imagination note calls chapter 4's new brain F-1, as chapter 5 names it, and says F-1 goes on to make F-2, quoting F-2's 'your swift brains have leapt ahead of us' in chapter 8 (p111.1); the Roal note gives no age. Every chapter links its round-6 draft (ch00-draft-b784b214 … ch11-draft-6f7df211). The rest is as judged after the fifth round."
+   "state": "pass",
+   "note": "Re-judged after the seventh round: the green-beams note now quotes the story's own words ('retarding it greatly in exothermic actions, speeding greatly endothermic actions', chapter 4); every chapter's player points at its new draft, all 12 on the drafts release; no chapter's length changed, so the notes keep their times."
   },
   {
    "id": "site.watch.look",
    "area": "site",
    "title": "The film page (annotated): how it looks and works",
-   "state": "stale",
-   "note": "passed on cab3c701cb4d; changed since. Re-checked at 375 after the sixth round (out/quality/phone): only two notes' wording changed, and no line breaks badly; the draft box, nav and the chapter videos sit as before, with no sideways scroll. The phone check passes on all pages."
+   "state": "pass",
+   "note": "Re-checked at 375 after the seventh round (out/quality/phone): only one note's wording and the video links changed; the page fits a phone, the draft notice and the opening read cleanly, and the phone check passes for all 34 pages."
   },
   {
    "id": "site.read.content",
