@@ -20,6 +20,8 @@
     stillSeed('rock'); wash([[-200, 720], [2100, 700], [2100, 1300], [-200, 1300]], 3, { op: 1.1 });
     // the great machine, finished, and the stream of motes rising from it
     for (let i = 0; i < 6; i++) { boilSeed('gm' + i); const s = 22, w = (9 - i) * s, y = 860 - i * s * 1.6; wash(rrPts(960 - w, y - s * 1.6, w * 2, s * 1.6, s * .3), 2 + (i % 2), { ink: true, sw: .6 }); }
+    boilSeed('gmtop'); DES.dcase(960, 860 - 6 * 22 * 1.6, 3 * 22, 2.5 * 22, 1.5 * 22, 1, { shine: true, rings: [.5] });   // its dome, and C-R-U-1 beside it, as chapter 5 left them
+    DES.cru1(1400, 640, 30, t, { hover: 2.5, glowK: 1 });
     for (let i = 0; i < 160; i++) { const st = t0 - 3 + i * (T1('B') - t0) / 150, q = (t - st) / 7; if (q <= 0) continue;
       const x = 960 + (hash(i) - .5) * 1600 * q, y = 560 - q * (1200 + 600 * hash(i * 3)), sz = 30 * (1 - q * .4);
       if (y < -900) continue; if (sz > 5) DES.mote(x, y, sz, t, { ang: -Math.PI / 2 + (hash(i) - .5) * .8, drive: true }); else glow(x, y, 6, NRG.white, .5); }
@@ -43,6 +45,9 @@
     for (const [hx, hy] of hits) { glow(hx, hy, len * .3, col, .6); glow(hx, hy, len * .1, NRG.white, .5); }
     if (t > tBlack + .1) for (let i = 0; i < 7; i++) { const a = hash(i * 1.7 + (typeof key === 'number' ? key : 99)) * TAU; boilSeed('fleck' + key + i); wash(ellPts(x + Math.cos(a) * rx * .95, y + Math.sin(a) * ry * .95, 16, 10, 12), 4, { op: ez(t, tBlack, tBlack + 4) }); }
   }
+  // 'some few free ships had turned to the help of their attacked sister-ships': three with no mote on them, coming down
+  // over the top rank; their fire is what makes the puffs
+  const tFree = C('p078.1:some few free ships'), FREE = [[640, -560, 40], [1260, -640, 20], [1880, -600, 50]], freeAt = (f, t) => [f[0], lerp(f[1], f[2], ez(t, tFree - .3, tFree + 3.5))];
   function battle(t) {
     HALFTONE = .2;
     const tC = T0('C'), tD = T0('D'), tF = T0('F'), tH = T0('H'), tI = T0('I');
@@ -59,17 +64,18 @@
       // and the green rays as the giants firing)
       const off = ez(t, tGreen - 3, tGreen - .5) * (1 - ez(t, tJ - 1, tJ)), motePos = (s, k) => [s.x - s.len * (.7 + .15 * off) - 30 * Math.sin(k), s.y - s.len * (.1 + .3 * off) + 20 * Math.cos(k * 1.3)];
       for (const s of RANKS) {
-        const isDead = dead(s.i), drift = isDead ? (t - tGreen) * 6 : 0;
-        if (t < tVanish + .3 || hash(s.i * 7) > .4) { push(); translate(s.x, s.y + drift); rotate(isDead ? (t - tGreen) * .01 : 0); translate(-s.x, -(s.y + drift)); ship(s.x, s.y + drift, s.len, t, -1, { d: isDead ? 4 : 3 }); pop(); }
-        if (!isDead) screen(s.x, s.y, s.len, heat * (.8 + .2 * hash(s.i)), t, [], s.i);
-        if (t > tCurtain) { const v = ez(t, tCurtain, tCurtain + 4) * (1 - ez(t, tK + 2, tK + 8)), V = [...Array(21)].map((_, i) => { const a = i / 20 * TAU; return [s.x + Math.cos(a) * s.len * .8 * (1 + .1 * Math.sin(t * 2 + i)), s.y + Math.sin(a) * s.len * .35 * (1 + .15 * Math.sin(t * 3 + i * 1.7))]; });
+        const isDead = dead(s.i), drift = isDead ? (t - tGreen) * 6 : 0, lost = t > tVanish + .3 && hash(s.i * 7) <= .12;   // few are gone: 9,633 of the ten thousand move on
+        if (!lost) { push(); translate(s.x, s.y + drift); rotate(isDead ? (t - tGreen) * .01 : 0); translate(-s.x, -(s.y + drift)); ship(s.x, s.y + drift, s.len, t, -1, { d: isDead ? 4 : 3 }); pop(); }
+        if (!isDead && !lost) screen(s.x, s.y, s.len, heat * (.8 + .2 * hash(s.i)), t, [], s.i);
+        if (t > tCurtain && !isDead && !lost) { const v = ez(t, tCurtain, tCurtain + 4) * (1 - ez(t, tK + 2, tK + 8)), V = [...Array(21)].map((_, i) => { const a = i / 20 * TAU; return [s.x + Math.cos(a) * s.len * .8 * (1 + .1 * Math.sin(t * 2 + i)), s.y + Math.sin(a) * s.len * .35 * (1 + .15 * Math.sin(t * 3 + i * 1.7))]; });
           // the curtain of waving blankness: a black veil with a pale, waving edge (a dark wash alone showed only as faint ovals on dark space)
           boilSeed('veil' + s.i); paint(V, { wash: '#0E0B09', washOp: 190 * v, ink: null }); inkLine(V, 1.4, '#8A8070', 'inkfine', .4 * v); }
         // its mote
-        const arrive = ez(t, tC + hash(s.i) * 4, tC + 3 + hash(s.i) * 4), puff = T0('H') + 1 + hash(s.i * 3) * 8, gone = (hash(s.i * 5) < .35 && t > puff) || t > tVanish;
+        const arrive = ez(t, tC + hash(s.i) * 4, tC + 3 + hash(s.i) * 4), puff = C('p078.1:And one after another') + hash(s.i * 3) * 5.5, gone = (hash(s.i * 5) < .35 && t > puff) || t > tVanish;
         const [mx, my] = motePos(s, t * .3 + s.i), back = ez(t, tJ, tDart - .2) * 260, dartK = ez(t, tDart, tVanish), x = lerp(lerp(-400, mx, arrive) - back, s.x - s.len * .45, dartK * dartK), y = lerp(lerp(1400, my, arrive), s.y, dartK * dartK);   // the last charge: they draw off, then dart in (from beside the giants the dart barely moved)
         const big = 34 * (1 + 1.2 * off + .6 * ez(t, tJ - 1, tJ + 1));
         if (!gone && arrive > 0) { DES.mote(x, y, big, t, { ang: 0, drive: true });
+          if (hash(s.i * 5) < .35 && t > puff - 1.2) { const [fx, fy] = freeAt(FREE[s.i % 3], t); beam(fx - 80, fy + 24, x, y, 4, 14, HEAT, ez(t, puff - 1.2, puff - .9), { washOp: 70, a: .75, splash: false }); }
           if (t > T0('D') && t < tGreen && hash(Math.floor(t * 4) + s.i) > .5) beam(x + 14, y, s.x - s.len * .55, s.y, 2, 8, NRG.white, 1, { washOp: 30, a: .5 });
           // the death ray turned on the giants: the chapter's turn, so wide and green enough to read (at 2-10 px and 40 it
           // showed as a faint grey thread)
@@ -77,8 +83,11 @@
           if (t > tg && t < tCurtain + 1) { const gk = ez(t, tg, tg + .5); glow(x + big * .5, y, 60, GREEN, .8 * gk); beam(x + big * .5, y, s.x - s.len * .3, s.y, 5, 20, GREEN, gk, { washOp: 110, a: .85, splash: false }); if (gk >= 1) glow(s.x - s.len * .3, s.y, 45, GREEN, .3); }
           // their own screens flaming now: a ring of fire round each
           if (t > tJ - 1) { const fc = ramp(SCREEN, .55 + .3 * Math.sin(t * 6 + s.i)), fk = ez(t, tJ - 1, tJ); boilSeed('ms' + s.i + Math.floor(t * 12)); inkLine([...Array(25)].map((_, i) => { const a = i / 24 * TAU; return [x + Math.cos(a) * big * 1.1, y + Math.sin(a) * big * .55]; }), 1.6 * fk, fc, 'inkfine', .5); glow(x, y, big * 2.2, fc, .6 * fk); } }
-        if (gone && t < (t > tVanish ? tVanish + .8 : puff + .8)) { const pk = seg(t, t > tVanish ? tVanish : puff, (t > tVanish ? tVanish : puff) + .8); glow(x, y, 30 + 80 * pk, NRG.white, 1 - pk); glow(x, y, 20 + 40 * pk, HEAT, .6 * (1 - pk)); }
+        if (gone && t < (t > tVanish ? tVanish + .8 : puff + 1.4)) { const pk = t > tVanish ? seg(t, tVanish, tVanish + .8) : seg(t, puff, puff + 1.4); glow(x, y, 40 + 150 * pk, NRG.white, 1 - pk); glow(x, y, 30 + 100 * pk, HEAT, .85 * (1 - pk));
+          for (let i = 0; i < 6; i++) { const a = i / 6 * TAU + s.i, r = 130 * pk; glow(x + Math.cos(a) * r, y + Math.sin(a) * r * .8, 26 * (1 - pk) + 8, '#FFD9A0', .7 * (1 - pk)); } }   // incandescent vapor
       }
+      if (t > tFree - .3) for (const f of FREE) { const [fx, fy] = freeAt(f, t); ship(fx, fy, 340, t, -1, { d: 3 }); screen(fx, fy, 340, heat * .85, t, [], 'free' + f[0]);
+        if (t > tCurtain) { const v = ez(t, tCurtain, tCurtain + 4) * (1 - ez(t, tK + 2, tK + 8)), V = [...Array(21)].map((_, i) => { const a = i / 20 * TAU; return [fx + Math.cos(a) * 272 * (1 + .1 * Math.sin(t * 2 + i)), fy + Math.sin(a) * 119 * (1 + .15 * Math.sin(t * 3 + i * 1.7))]; }); boilSeed('veilf' + f[0]); paint(V, { wash: '#0E0B09', washOp: 190 * v, ink: null }); inkLine(V, 1.4, '#8A8070', 'inkfine', .4 * v); } }
       // the hero giant, close: its screen under fire through every colour
       const hits = t > T0('D') ? [[HERO.x - HERO.len * .55, HERO.y - 40], [HERO.x - HERO.len * .2, HERO.y + 110], [HERO.x + HERO.len * .2, HERO.y - 120]].filter((_, i) => hash(Math.floor(t * 3) + i) > .3) : [];
       ship(HERO.x, HERO.y, HERO.len, t, -1, { d: 2 });
