@@ -37,7 +37,9 @@
       const tx = 1000 + Math.cos(i / 10 * TAU) * 900 + (isNear ? 0 : 120), ty = 420 + z * 60, rx = 1060 + Math.cos(i / 10 * TAU) * (near ? 1000 : 620), ry = G - 40 + z * 60;   // the far tier half a step over: each near one had a twin straight behind it
       const x = lerp(tx, rx, ring) + 8 * wob(t, .07, i), g = lerp(ty + 160, ry, ring), s = (near ? 22 : 15) + 3 * hash(i), look = clamp((ROAL - x) / 600, -1, 1);
       const m = DES.machine(x, g, s, t, { arms: 3, d: 1 + (i % 3), hover: lerp(3, 1.6, ring), face: look * .9, lit: .3 + .7 * flare, label: null });
-      if (flare > 0) glow(m.eye[0], m.eye[1], s * 2.5, NRG.white, .5 * flare); }
+      if (flare > 0) glow(m.eye[0], m.eye[1], s * 2.5, NRG.white, .5 * flare);
+      const fv = win(t, T0('V'), T0('V') + 2.5, .15, 1.5);   // on 'Attack': every lens throws a burst of short rays (a white glow alone barely showed on the pale paper)
+      if (fv > 0) for (let k = 0; k < 8; k++) { const a = k / 8 * TAU + .2, r0 = s * .45, r1 = s * (.6 + .35 * fv); inkLine([r0, (r0 + r1) / 2, r1].map(r => [m.eye[0] + Math.cos(a) * r, m.eye[1] + Math.sin(a) * r]), .7 * fv, INK, 'inkfine', 0); } }
   }
   // Roal: walks to the middle of the floor when he speaks; Trest beside him
   const ROALW = [[T0('S') - 2, T0('S') + 1.5, ROAL, 960]], TRESTW = [[T0('S') - 1.5, T0('S') + 2, TREST, 1160]];
@@ -48,11 +50,15 @@
 
   function people(t) {
     const tPoint = C('p018.1:Roal had quickly assured us'), out = win(t, tPoint, tInv + .3, .6, .8), arm = win(t, T0('V') - .2, T0('W') + .5, .25, 1);
-    const pose = { up: lerp(.12, 1.5, Math.max(out, arm)), fore: lerp(.3, arm ? 2.6 : 1.6, Math.max(out, arm)) };
+    // 'Attack--therefore!': the arm thrown up, high and forward of his head (at up 1.5 it went out level, like a point;
+    // straight up, it crossed his face); then, on
+    // the force-screen's secret, he turns back to the screens, looking up at the enemy there
+    const back = ez(t, T0('W') + .3, T0('W') + 1.5);
+    const pose = { up: lerp(.12, arm ? 2.3 : 1.5, Math.max(out, arm)), fore: lerp(.3, arm ? 2.75 : 1.6, Math.max(out, arm)) };
     const gl = arm ? 0 : gesture(t, pose, t < tBut + 1 ? TELL : SPEECH);
     // 'that little chuckle': his head goes back a little, a smile, the shoulders bobbing
     const ch = win(t, C('p033.4'), C('p033.4') + 2.2, .3, .6); if (ch > 0) pose.torso = (pose.torso ?? 0) - .05 * ch * Math.abs(Math.sin(t * 15));
-    const roal = stander(t, ROAL, G, 44, ROALW, { who: 'roal', key: 'roal', seed: 3, look: (t < T0('S') ? .5 : .15) + gl - .15 * ch, pose, talk: talk(t, 'roal'), smile: ch, flip: false });
+    const roal = stander(t, ROAL, G, 44, ROALW, { who: 'roal', key: 'roal', seed: 3, look: lerp((t < T0('S') ? .5 : .15) + gl - .15 * ch, .55, back), pose, talk: talk(t, 'roal'), smile: ch, flip: back > .5 });
     const point = win(t, T0('Q'), T1('Q'), .5, .5), tp = {}, tl = t > T0('S') + 2 ? listen(t, tp, SPEECH, 2) : t > tInv - 1 && t < tBut + 2 ? listen(t, tp, TELL, 1) : 0;   // through the telling and the speech Trest listens
     stander(t, TREST, G + 10, 46, TRESTW, { who: 'trest', key: 'trest', seed: 7, look: .45 + tl + nod(t, SPEECH), flip: t < T0('S') + 2 || t > T0('W'), pose: point > 0 ? { up: lerp(.12, 1.7, point), fore: lerp(.3, 1.2, point) } : tp });
     return roal;
