@@ -48,28 +48,33 @@
     const tC = T0('C'), tD = T0('D'), tF = T0('F'), tH = T0('H'), tI = T0('I');
     const c = cam(t, [[0, tt => [lerp(900, 1200, ez(tt, tC, tD)), 560, lerp(.6, .75, ez(tt, tC, tD))]], [tD, [HERO.x - 100, HERO.y, 1.1], 3], [tE, tt => [HERO.x, HERO.y, lerp(1.2, 1.35, ez(tt, tE, tF))], 2],
       [tF, [HERO.x - 300, HERO.y - 40, 1.6], 2.5], [T0('G'), [HERO.x - 100, HERO.y, 1.1], 2.5], [tH, tt => [lerp(1200, 900, ez(tt, tH, tI)), 560, .8], 2.5],
-      [tI, tt => [1100, 560, lerp(.9, .65, ez(tt, tCurtain, tJ))], 2], [tJ, tt => [lerp(HERO.x - 380, HERO.x - 330, ez(tt, tDart, tVanish)), HERO.y, lerp(1.0, 2.2, ez(tt, tDart - .5, tVanish))], 1.2], [tK, tt => [lerp(1000, 1600, ez(tt, tK, T1('K'))), 560, .7], 2]]);   // rushing in with them
+      [tI, tt => [lerp(1000, 1100, ez(tt, tGreen + 1, tCurtain)), 560, lerp(lerp(.9, 1.05, ez(tt, tI + 1, tGreen)), .65, ez(tt, tGreen + 3, tJ))], 2], [tJ, tt => [lerp(HERO.x - 380, HERO.x - 330, ez(tt, tDart, tVanish)), HERO.y, lerp(1.0, 2.2, ez(tt, tDart - .5, tVanish))], 1.2], [tK, tt => [lerp(1000, 1600, ez(tt, tK, T1('K'))), 560, .7], 2]]);   // rushing in with them
     ground('#1A1612', 255, 'bat', { fill: '#262019', fillOp: 90 });
     stars(160, 4);
     withCam(c, () => {
       glow(2900, -200, 120, SUN, .9); glow(2900, -200, 420, SUN, .2);   // the far blue-white sun
-      const heat = heatAt(t), dead = (i) => t > tGreen && i % 3 === 0 && t > tGreen + (i % 7) * .4;
+      const heat = heatAt(t), dead = (i) => i % 3 === 0 && t > tGreen + 3 * hash(i * 2.3) + 1;   // a second after its mote's ray reaches it
       // the motes: in among the ranks, each beside its giant; dying in puffs (H); the charge (J)
-      const motePos = (s, k) => [s.x - s.len * .7 - 30 * Math.sin(k), s.y - s.len * .1 + 20 * Math.cos(k * 1.3)];
+      // (for the green ray they draw off up and away from their giants: hard against a giant's end, a mote read as its gun,
+      // and the green rays as the giants firing)
+      const off = ez(t, tGreen - 3, tGreen - .5) * (1 - ez(t, tJ - 1, tJ)), motePos = (s, k) => [s.x - s.len * (.7 + .15 * off) - 30 * Math.sin(k), s.y - s.len * (.1 + .3 * off) + 20 * Math.cos(k * 1.3)];
       for (const s of RANKS) {
         const isDead = dead(s.i), drift = isDead ? (t - tGreen) * 6 : 0;
         if (t < tVanish + .3 || hash(s.i * 7) > .4) { push(); translate(s.x, s.y + drift); rotate(isDead ? (t - tGreen) * .01 : 0); translate(-s.x, -(s.y + drift)); ship(s.x, s.y + drift, s.len, t, -1, { d: isDead ? 4 : 3 }); pop(); }
         if (!isDead) screen(s.x, s.y, s.len, heat * (.8 + .2 * hash(s.i)), t, [], s.i);
-        if (t > tCurtain) { const v = ez(t, tCurtain, tCurtain + 4) * (1 - ez(t, tK + 2, tK + 8)); boilSeed('veil' + s.i); paint([...Array(21)].map((_, i) => { const a = i / 20 * TAU; return [s.x + Math.cos(a) * s.len * .8 * (1 + .1 * Math.sin(t * 2 + i)), s.y + Math.sin(a) * s.len * .35]; }), { wash: '#0E0B09', washOp: 150 * v, ink: null }); }
+        if (t > tCurtain) { const v = ez(t, tCurtain, tCurtain + 4) * (1 - ez(t, tK + 2, tK + 8)), V = [...Array(21)].map((_, i) => { const a = i / 20 * TAU; return [s.x + Math.cos(a) * s.len * .8 * (1 + .1 * Math.sin(t * 2 + i)), s.y + Math.sin(a) * s.len * .35 * (1 + .15 * Math.sin(t * 3 + i * 1.7))]; });
+          // the curtain of waving blankness: a black veil with a pale, waving edge (a dark wash alone showed only as faint ovals on dark space)
+          boilSeed('veil' + s.i); paint(V, { wash: '#0E0B09', washOp: 190 * v, ink: null }); inkLine(V, 1.4, '#8A8070', 'inkfine', .4 * v); }
         // its mote
         const arrive = ez(t, tC + hash(s.i) * 4, tC + 3 + hash(s.i) * 4), puff = T0('H') + 1 + hash(s.i * 3) * 8, gone = (hash(s.i * 5) < .35 && t > puff) || t > tVanish;
         const [mx, my] = motePos(s, t * .3 + s.i), back = ez(t, tJ, tDart - .2) * 260, dartK = ez(t, tDart, tVanish), x = lerp(lerp(-400, mx, arrive) - back, s.x - s.len * .45, dartK * dartK), y = lerp(lerp(1400, my, arrive), s.y, dartK * dartK);   // the last charge: they draw off, then dart in (from beside the giants the dart barely moved)
-        const big = 34 * (1 + .6 * ez(t, tJ - 1, tJ + 1));
+        const big = 34 * (1 + 1.2 * off + .6 * ez(t, tJ - 1, tJ + 1));
         if (!gone && arrive > 0) { DES.mote(x, y, big, t, { ang: 0, drive: true });
           if (t > T0('D') && t < tGreen && hash(Math.floor(t * 4) + s.i) > .5) beam(x + 14, y, s.x - s.len * .55, s.y, 2, 8, NRG.white, 1, { washOp: 30, a: .5 });
           // the death ray turned on the giants: the chapter's turn, so wide and green enough to read (at 2-10 px and 40 it
           // showed as a faint grey thread)
-          if (t > tGreen && t < tCurtain + 1) { const gk = ez(t, tGreen, tGreen + .5); beam(x + 14, y, s.x - s.len * .3, s.y, 5, 20, GREEN, gk, { washOp: 110, a: .85 }); if (gk >= 1) glow(s.x - s.len * .3, s.y, 70, GREEN, .5); }
+          const tg = tGreen + 3 * hash(s.i * 2.3);   // 'from one after another of the Earth-ships, in quick succession'
+          if (t > tg && t < tCurtain + 1) { const gk = ez(t, tg, tg + .5); glow(x + big * .5, y, 60, GREEN, .8 * gk); beam(x + big * .5, y, s.x - s.len * .3, s.y, 5, 20, GREEN, gk, { washOp: 110, a: .85, splash: false }); if (gk >= 1) glow(s.x - s.len * .3, s.y, 45, GREEN, .3); }
           // their own screens flaming now: a ring of fire round each
           if (t > tJ - 1) { const fc = ramp(SCREEN, .55 + .3 * Math.sin(t * 6 + s.i)), fk = ez(t, tJ - 1, tJ); boilSeed('ms' + s.i + Math.floor(t * 12)); inkLine([...Array(25)].map((_, i) => { const a = i / 24 * TAU; return [x + Math.cos(a) * big * 1.1, y + Math.sin(a) * big * .55]; }), 1.6 * fk, fc, 'inkfine', .5); glow(x, y, big * 2.2, fc, .6 * fk); } }
         if (gone && t < (t > tVanish ? tVanish + .8 : puff + .8)) { const pk = seg(t, t > tVanish ? tVanish : puff, (t > tVanish ? tVanish : puff) + .8); glow(x, y, 30 + 80 * pk, NRG.white, 1 - pk); glow(x, y, 20 + 40 * pk, HEAT, .6 * (1 - pk)); }
