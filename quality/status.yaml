@@ -101,14 +101,14 @@ items:
     when: 2026-11-05 19:39
   site.watch.content:
     state: pass
-    note: "Re-judged after the sixth round: the imagination note calls chapter 4's new brain F-1, as chapter 5 names it, and says F-1 goes on to make F-2, quoting F-2's 'your swift brains have leapt ahead of us' in chapter 8 (p111.1); the Roal note gives no age. Every chapter links its round-6 draft (ch00-draft-b784b214 … ch11-draft-6f7df211). The rest is as judged after the fifth round."
-    at: 52394fe67434
-    when: 2026-11-07 20:16
+    note: "Re-judged after the seventh round: the green-beams note now quotes the story's own words ('retarding it greatly in exothermic actions, speeding greatly endothermic actions', chapter 4); every chapter's player points at its new draft, all 12 on the drafts release; no chapter's length changed, so the notes keep their times."
+    at: 709ee7230531
+    when: 2026-11-08 09:15
   site.watch.look:
     state: pass
-    note: "Re-checked at 375 after the sixth round (out/quality/phone): only two notes' wording changed, and no line breaks badly; the draft box, nav and the chapter videos sit as before, with no sideways scroll. The phone check passes on all pages."
-    at: cab3c701cb4d
-    when: 2026-11-07 20:16
+    note: "Re-checked at 375 after the seventh round (out/quality/phone): only one note's wording and the video links changed; the page fits a phone, the draft notice and the opening read cleanly, and the phone check passes for all 34 pages."
+    at: db92aec98545
+    when: 2026-11-08 09:15
   work.title:
     state: pass
     note: "Re-checked after the fourth round: the title page's masthead (42 px) and byline (52 px) are larger for a phone, the rules widened to match; the title itself unchanged. The header now names the 1932 issue ('AMAZING STORIES · August, 1932') instead of the 1961 reprint's 'A Classic Reprint from…', its rules fitted to it (out/check/ch00_title.jpg)."
@@ -201,29 +201,29 @@ items:
     when: 2026-11-04 09:00
   ch00.acting:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.996 against the passed draft); sound unchanged, -14.4/-14.5 LUFS. F-2 drifts, then the memory of Roal offering and Trest standing apart (0:26-0:34) holds still, as a memory should; nothing acts against the words."
-    at: ch00-draft-b784b214.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.997 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. F-2 drifts, then the memory of Roal offering and Trest standing apart (0:26-0:34) holds still, as a memory should; nothing acts against the words."
+    at: ch00-draft-d50386ad.mp4
+    when: 2026-11-08 09:11
   ch00.picture:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.996 against the passed draft); sound unchanged, -14.4/-14.5 LUFS. Header now reads AMAZING STORIES · August, 1932. Title page, space, the memory and the mentatype sheets all read; the galaxies over the memory are dimmed to 40% by design (ch00.js: 1 - .6*mem)."
-    at: ch00-draft-b784b214.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.997 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. Header now reads AMAZING STORIES · August, 1932. Title page, space, the memory and the mentatype sheets all read; the galaxies over the memory are dimmed to 40% by design (ch00.js: 1 - .6*mem)."
+    at: ch00-draft-d50386ad.mp4
+    when: 2026-11-08 09:11
   ch00.sync:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.996 against the passed draft); sound unchanged, -14.4/-14.5 LUFS. The memory opens on 'in memory I am still close' and the passing light crosses on 'But I will pass soon'; the sheets come in with the record (E). Whisper's words sit 0.14 s from the alignment's (median)."
-    at: ch00-draft-b784b214.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.997 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. The memory opens on 'in memory I am still close' and the passing light crosses on 'But I will pass soon'; the sheets come in with the record (E). Whisper's words sit 0.14 s from the alignment's (median)."
+    at: ch00-draft-d50386ad.mp4
+    when: 2026-11-08 09:11
   ch00.sound:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.996 against the passed draft); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.4 LUFS, range 4.2 LU, shots -14.6 to -17.4. Whisper missed 2 of 95 words: 'menta type', which it heard as 'mentatype', the right word."
-    at: ch00-draft-b784b214.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.997 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 4.2 LU, shots -14.6 to -17.4. Whisper missed 2 of 95 words: 'menta type', which it heard as 'mentatype', the right word."
+    at: ch00-draft-d50386ad.mp4
+    when: 2026-11-08 09:11
   ch00.story:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.996 against the passed draft); sound unchanged, -14.4/-14.5 LUFS. 58 s: the title, the old machine alone in space, the memory of man, and why it sets down its record. Sets up the film without explaining it away."
-    at: ch00-draft-b784b214.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.997 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. 58 s: the title, the old machine alone in space, the memory of man, and why it sets down its record. Sets up the film without explaining it away."
+    at: ch00-draft-d50386ad.mp4
+    when: 2026-11-08 09:11
   find.ch01-workers:
     state: pass
     note: "New draft, 0:55-1:11 every 2 s: workers cross now and then but part within a few seconds; no pair flies stacked."
@@ -241,29 +241,29 @@ items:
     when: 2026-11-04 09:00
   ch04.acting:
     state: pass
-    note: "On the draft with the sixth round's fixes: F-1's new brain sits in the middle of the frame, not cut at its foot (find.ch04-brain-frame); sound unchanged, -14.4/-14.5 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
-    at: ch04-draft-122ad2c6.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.984 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
+    at: ch04-draft-d2d2e06e.mp4
+    when: 2026-11-08 09:11
   ch04.picture:
     state: pass
-    note: "On the draft with the sixth round's fixes: F-1's new brain sits in the middle of the frame, not cut at its foot (find.ch04-brain-frame); sound unchanged, -14.4/-14.5 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
-    at: ch04-draft-122ad2c6.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.984 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
+    at: ch04-draft-d2d2e06e.mp4
+    when: 2026-11-08 09:11
   ch04.sync:
     state: pass
-    note: "On the draft with the sixth round's fixes: F-1's new brain sits in the middle of the frame, not cut at its foot (find.ch04-brain-frame); sound unchanged, -14.4/-14.5 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
-    at: ch04-draft-122ad2c6.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.984 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
+    at: ch04-draft-d2d2e06e.mp4
+    when: 2026-11-08 09:11
   ch04.sound:
     state: pass
-    note: "On the draft with the sixth round's fixes: F-1's new brain sits in the middle of the frame, not cut at its foot (find.ch04-brain-frame); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
-    at: ch04-draft-122ad2c6.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.984 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
+    at: ch04-draft-d2d2e06e.mp4
+    when: 2026-11-08 09:11
   ch04.story:
     state: pass
-    note: "On the draft with the sixth round's fixes: F-1's new brain sits in the middle of the frame, not cut at its foot (find.ch04-brain-frame); sound unchanged, -14.4/-14.5 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
-    at: ch04-draft-122ad2c6.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.984 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
+    at: ch04-draft-d2d2e06e.mp4
+    when: 2026-11-08 09:11
   find.ch06-feeders:
     state: pass
     note: "On the re-rendered draft: 1:52-2:06 two each side carry pale blocks from the piles to the generator's mouth, feed them in (the mouth flares) and go back, the far one of each pair smaller and higher."
@@ -356,29 +356,29 @@ items:
     when: 2026-11-04 20:05
   ch01.acting:
     state: pass
-    note: "On the draft with the sixth round's fixes: the working machines fly at two depths, smaller behind the towers and larger in front (find.flyer-overlap); sound unchanged, -14.4/-14.5 LUFS. Pairs trade talk on the walkways, the crate hand-off and the hander rising back to work, the runners, the mock battle; at the close the man and the machine walk off together, in step, through clear ground."
-    at: ch01-draft-546930b0.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.991 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. Pairs trade talk on the walkways, the crate hand-off and the hander rising back to work, the runners, the mock battle; at the close the man and the machine walk off together, in step, through clear ground."
+    at: ch01-draft-1d044daa.mp4
+    when: 2026-11-08 09:11
   ch01.picture:
     state: pass
-    note: "On the draft with the sixth round's fixes: the working machines fly at two depths, smaller behind the towers and larger in front (find.flyer-overlap); sound unchanged, -14.4/-14.5 LUFS. The history hall, the city of towers and walkways, the numbers, the explorers; the two minds as a head and a sphere, the curved leap landing in a soft haze against the machine's stair of steps, the waves; the close on the plain under the towers. Reads at sheet size."
-    at: ch01-draft-546930b0.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.991 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. The history hall, the city of towers and walkways, the numbers, the explorers; the two minds as a head and a sphere, the curved leap landing in a soft haze against the machine's stair of steps, the waves; the close on the plain under the towers. Reads at sheet size."
+    at: ch01-draft-1d044daa.mp4
+    when: 2026-11-08 09:11
   ch01.sync:
     state: pass
-    note: "On the draft with the sixth round's fixes: the working machines fly at two depths, smaller behind the towers and larger in front (find.flyer-overlap); sound unchanged, -14.4/-14.5 LUFS. Ear, Eye and Brain arrive as they are named; cuts and cues land on their words; Whisper timing -0.12 s median."
-    at: ch01-draft-546930b0.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.991 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. Ear, Eye and Brain arrive as they are named; cuts and cues land on their words; Whisper timing -0.12 s median."
+    at: ch01-draft-1d044daa.mp4
+    when: 2026-11-08 09:11
   ch01.sound:
     state: pass
-    note: "On the draft with the sixth round's fixes: the working machines fly at two depths, smaller behind the towers and larger in front (find.flyer-overlap); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.4 LUFS integrated, LRA 3.3, shots -14.1 to -17.2 (the quiet ones are pauses); Whisper lost 6 of 455 words, all 'twenty hundred' heard as digits."
-    at: ch01-draft-546930b0.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.991 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS integrated, LRA 3.3, shots -14.1 to -17.2 (the quiet ones are pauses); Whisper lost 6 of 455 words, all 'twenty hundred' heard as digits."
+    at: ch01-draft-1d044daa.mp4
+    when: 2026-11-08 09:11
   ch01.story:
     state: pass
-    note: "On the draft with the sixth round's fixes: the working machines fly at two depths, smaller behind the towers and larger in front (find.flyer-overlap); sound unchanged, -14.4/-14.5 LUFS. Man's history to 2,000,000, the city where man and machine live together, the two kinds of mind (the leap of intuition against the logical stair), and the partnership as the chapter's close. Clear setup for what follows."
-    at: ch01-draft-546930b0.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.991 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. Man's history to 2,000,000, the city where man and machine live together, the two kinds of mind (the leap of intuition against the logical stair), and the partnership as the chapter's close. Clear setup for what follows."
+    at: ch01-draft-1d044daa.mp4
+    when: 2026-11-08 09:11
   ch02.acting:
     state: pass
     note: "On the draft with the seventh round's fixes: the searchers make way to the left before the armed Outsider comes in, so the one who fires the bluish beam stands clear (find.ch02-firer); sound unchanged, -14.4 LUFS. The Outsiders move as a ranked crew: the small ones sway at their posts, the close Outsider stands apart and turns; the falls and the dive read; the crawlers keep their distance."
@@ -421,54 +421,54 @@ items:
     when: 2026-11-08 02:01
   ch05.acting:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.984 against the passed draft, the same as last round: the planets' washes and the grain); sound unchanged, -14.4/-14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
-    at: ch05-draft-6dcdf83a.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.984 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
+    at: ch05-draft-5dc08ae2.mp4
+    when: 2026-11-08 09:11
   ch05.picture:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.984 against the passed draft, the same as last round: the planets' washes and the grain); sound unchanged, -14.4/-14.5 LUFS. The hall at night with F-1 vast; the atom plates (orbits, grid, light); the spiralling air field, arcs and flame, aura and lightning; F-1's hulk; F-2 with rings and memories; the ball of forces, the ruler, the guinea pig cage in the pale beam; dawn on the rock with tiny machines streaming up. Dark but legible."
-    at: ch05-draft-6dcdf83a.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.984 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.5 LUFS. The hall at night with F-1 vast; the atom plates (orbits, grid, light); the spiralling air field, arcs and flame, aura and lightning; F-1's hulk; F-2 with rings and memories; the ball of forces, the ruler, the guinea pig cage in the pale beam; dawn on the rock with tiny machines streaming up. Dark but legible."
+    at: ch05-draft-5dc08ae2.mp4
+    when: 2026-11-08 09:11
   ch05.sync:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.984 against the passed draft, the same as last round: the planets' washes and the grain); sound unchanged, -14.4/-14.5 LUFS. Cuts on cue words (F-1 on 'Roal--your thoughts', 'Roal sat up', the plate on 'Hydrogen'); Whisper timing -0.12 s median."
-    at: ch05-draft-6dcdf83a.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.984 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.5 LUFS. Cuts on cue words (F-1 on 'Roal--your thoughts', 'Roal sat up', the plate on 'Hydrogen'); Whisper timing -0.12 s median."
+    at: ch05-draft-5dc08ae2.mp4
+    when: 2026-11-08 09:11
   ch05.sound:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.984 against the passed draft, the same as last round: the planets' washes and the grain); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 3.8; the quiet shots C, D, H, I and AH are pauses, their speech -14.1 to -14.7; Whisper lost 12 of 1107 (names, coinages, 'asked')."
-    at: ch05-draft-6dcdf83a.mp4
-    when: 2026-11-07 20:13
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.984 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 3.8; the quiet shots C, D, H, I and AH are pauses, their speech -14.1 to -14.7; Whisper lost 12 of 1107 (names, coinages, 'asked')."
+    at: ch05-draft-5dc08ae2.mp4
+    when: 2026-11-08 09:11
   ch05.story:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.984 against the passed draft, the same as last round: the planets' washes and the grain); sound unchanged, -14.4/-14.5 LUFS. 9:03: Roal thinks out the hydrogen wall; F-1 builds its successor and is unmade by it; F-2 makes the ruler, tests the green beam on a guinea pig, and the machines build outward. The pilot still holds as the standard."
-    at: ch05-draft-6dcdf83a.mp4
-    when: 2026-11-07 20:14
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.984 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.5 LUFS. 9:03: Roal thinks out the hydrogen wall; F-1 builds its successor and is unmade by it; F-2 makes the ruler, tests the green beam on a guinea pig, and the machines build outward. The pilot still holds as the standard."
+    at: ch05-draft-5dc08ae2.mp4
+    when: 2026-11-08 09:11
   ch06.acting:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.991 against the passed draft); sound unchanged, -14.4/-14.5 LUFS. The fleets as actors: the giants advance in ranks, the screens flare violet then red, the generator crews feed their machines, the motes swing their rays back plainly green into the giants, and the dying ships tip and fall away."
-    at: ch06-draft-e4159bf7.mp4
-    when: 2026-11-07 20:14
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.991 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. The fleets as actors: the giants advance in ranks, the screens flare violet then red, the generator crews feed their machines, the motes swing their rays back plainly green into the giants, and the dying ships tip and fall away."
+    at: ch06-draft-4b07f5d6.mp4
+    when: 2026-11-08 09:11
   ch06.picture:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.991 against the passed draft); sound unchanged, -14.4/-14.5 LUFS. Dawn over the plain with the machines rising, the ranks of giants, shields violet to red, the generator room, the turned green rays, dying ships drifting dark, the curtain, Earth pole to pole, the streak. Reads at sheet size."
-    at: ch06-draft-e4159bf7.mp4
-    when: 2026-11-07 20:14
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.991 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. Dawn over the plain with the machines rising, the ranks of giants, shields violet to red, the generator room, the turned green rays, dying ships drifting dark, the curtain, Earth pole to pole, the streak. Reads at sheet size."
+    at: ch06-draft-4b07f5d6.mp4
+    when: 2026-11-08 09:11
   ch06.sync:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.991 against the passed draft); sound unchanged, -14.4/-14.5 LUFS. The blank screens land on 'went suddenly blank'; the green rays turn on their line; cuts on cue words."
-    at: ch06-draft-e4159bf7.mp4
-    when: 2026-11-07 20:14
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.991 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. The blank screens land on 'went suddenly blank'; the green rays turn on their line; cuts on cue words."
+    at: ch06-draft-4b07f5d6.mp4
+    when: 2026-11-08 09:11
   ch06.sound:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.991 against the passed draft); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.6, shots -14.4 to -17.8; Whisper lost 17 of 584 ('ten thousand', 'motes', numbers)."
-    at: ch06-draft-e4159bf7.mp4
-    when: 2026-11-07 20:14
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.991 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.6, shots -14.4 to -17.8; Whisper lost 17 of 584 ('ten thousand', 'motes', numbers)."
+    at: ch06-draft-4b07f5d6.mp4
+    when: 2026-11-08 09:11
   ch06.story:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.991 against the passed draft); sound unchanged, -14.4/-14.5 LUFS. The second war's turn: the giants come in force, the shields fail, and the motes turn the enemy's own death ray, the chapter's hinge, clearly shown; the curtain closes Earth."
-    at: ch06-draft-e4159bf7.mp4
-    when: 2026-11-07 20:14
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.991 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. The second war's turn: the giants come in force, the shields fail, and the motes turn the enemy's own death ray, the chapter's hinge, clearly shown; the curtain closes Earth."
+    at: ch06-draft-4b07f5d6.mp4
+    when: 2026-11-08 09:12
   ch07.acting:
     state: pass
     note: "On the draft with the seventh round's fixes: the dome shivers on 'quivered' and dents in on 'bellied inward', and the cutaway moves in on F-2 building (find.ch07-belly); sound unchanged, -14.5 LUFS. Roal and Trest talk in the hall at night with hands out, Roal's curl rises, F-2 and the six machines gather, the two men stand inside the dome with their faces lit by the screens, the projectors feed the dome."
@@ -496,54 +496,54 @@ items:
     when: 2026-11-08 02:01
   ch10.acting:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.995 against the passed draft); sound unchanged, -14.4/-14.5 LUFS. The fleet moves as one body; the golden spark gathers its ring, the flagship twists in its grip, and when the lock comes the boil stops, still."
-    at: ch10-draft-c932feb3.mp4
-    when: 2026-11-07 20:14
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.995 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. The fleet moves as one body; the golden spark gathers its ring, the flagship twists in its grip, and when the lock comes the boil stops, still."
+    at: ch10-draft-fef3ef77.mp4
+    when: 2026-11-08 09:11
   ch10.picture:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.995 against the passed draft); sound unchanged, -14.4/-14.5 LUFS. The fleet in formation, the golden spark and its ring of motes, the flagship twisted, the curves drawn as lines, the beam from the spark, the lock (the static flagship is the lock, intended). Reads at sheet size."
-    at: ch10-draft-c932feb3.mp4
-    when: 2026-11-07 20:14
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.995 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. The fleet in formation, the golden spark and its ring of motes, the flagship twisted, the curves drawn as lines, the beam from the spark, the lock (the static flagship is the lock, intended). Reads at sheet size."
+    at: ch10-draft-fef3ef77.mp4
+    when: 2026-11-08 09:11
   ch10.sync:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.995 against the passed draft); sound unchanged, -14.4/-14.5 LUFS. The spark, the twist and the lock land on their lines; 'Go' on its cue."
-    at: ch10-draft-c932feb3.mp4
-    when: 2026-11-07 20:14
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.995 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. The spark, the twist and the lock land on their lines; 'Go' on its cue."
+    at: ch10-draft-fef3ef77.mp4
+    when: 2026-11-08 09:11
   ch10.sound:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.995 against the passed draft); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. -14.5 LUFS; 'Go' sits at -14.5; Whisper lost 2 of 319."
-    at: ch10-draft-c932feb3.mp4
-    when: 2026-11-07 20:14
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.995 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.5 LUFS; 'Go' sits at -14.5; Whisper lost 2 of 319."
+    at: ch10-draft-fef3ef77.mp4
+    when: 2026-11-08 09:11
   ch10.story:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.995 against the passed draft); sound unchanged, -14.4/-14.5 LUFS. The being of Force meets the Outsiders' fleet and stops it; the scale of the new mind is shown, not told."
-    at: ch10-draft-c932feb3.mp4
-    when: 2026-11-07 20:14
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.995 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. The being of Force meets the Outsiders' fleet and stops it; the scale of the new mind is shown, not told."
+    at: ch10-draft-fef3ef77.mp4
+    when: 2026-11-08 09:11
   ch11.acting:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.996 against the passed draft); sound unchanged, -14.4/-14.5 LUFS. The fleet leaves; F-2 works with the metal sheets; F-2 alone in the dark; the page turns to the narrator's words."
-    at: ch11-draft-6f7df211.mp4
-    when: 2026-11-07 20:14
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.996 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. The fleet leaves; F-2 works with the metal sheets; F-2 alone in the dark; the page turns to the narrator's words."
+    at: ch11-draft-13393aec.mp4
+    when: 2026-11-08 09:11
   ch11.picture:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.996 against the passed draft); sound unchanged, -14.4/-14.5 LUFS. The fleet leaving, the system of beings among the galaxies, F-2 with its sheets, the tunnel of light, F-2 alone, the page with its drop capitals, THE END. Reads at sheet size."
-    at: ch11-draft-6f7df211.mp4
-    when: 2026-11-07 20:14
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.996 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. The fleet leaving, the system of beings among the galaxies, F-2 with its sheets, the tunnel of light, F-2 alone, the page with its drop capitals, THE END. Reads at sheet size."
+    at: ch11-draft-13393aec.mp4
+    when: 2026-11-08 09:11
   ch11.sync:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.996 against the passed draft); sound unchanged, -14.4/-14.5 LUFS. The page lines appear as they are read; THE END after the last line."
-    at: ch11-draft-6f7df211.mp4
-    when: 2026-11-07 20:14
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.996 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. The page lines appear as they are read; THE END after the last line."
+    at: ch11-draft-13393aec.mp4
+    when: 2026-11-08 09:11
   ch11.sound:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.996 against the passed draft); sound unchanged, -14.4/-14.5 LUFS, speech still on top and clear. Shot F at -15.0, shot I at -14.7; integrated within the film's -14.4 to -14.5; Whisper lost 0 of 294."
-    at: ch11-draft-6f7df211.mp4
-    when: 2026-11-07 20:14
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.996 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS, speech still on top and clear. Shot F at -15.0, shot I at -14.7; integrated within the film's -14.4 to -14.5; Whisper lost 0 of 294."
+    at: ch11-draft-13393aec.mp4
+    when: 2026-11-08 09:11
   ch11.story:
     state: pass
-    note: "On the draft with the sixth round's fixes: no picture change (SSIM 0.996 against the passed draft); sound unchanged, -14.4/-14.5 LUFS. The coda: the machines go out to the stars, F-2 sets down the record on metal, and the narrator's closing words leave the reader to believe as they will. The film ends where the story does."
-    at: ch11-draft-6f7df211.mp4
-    when: 2026-11-07 20:14
+    note: "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.996 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. The coda: the machines go out to the stars, F-2 sets down the record on metal, and the narrator's closing words leave the reader to believe as they will. The film ends where the story does."
+    at: ch11-draft-13393aec.mp4
+    when: 2026-11-08 09:11
   find.ch09-roal-pop:
     state: pass
     note: "On the re-rendered draft: 3:20-3:30 the dome is in frame at the left from the start of K; nobody stands at the edge before 'Roal and Trest appeared'; the two walk out of the dome's edge, solid black (it parts only after they're out), and on across the rock."
@@ -1027,4 +1027,4 @@ fresh:
     found: 7
     note: "Seventh round: 1 major (ch08/ch09 the 500-ft power plant drawn about 30 ft tall), 4 minor (ch07 the dome doesn't visibly belly inward; ch03 the land green before the death beams; the film page's green-beams note misquotes 'retarding it greatly in exothermic actions'; ch02 which Outsider fires the bluish beam is unclear), 2 nits (ch08 framing at 0:45 and 4:48; small figures at ch07 3:17-3:50 and ch09 3:26)."
     state: 5017a56df064
-since_fresh: 32
+since_fresh: 69
