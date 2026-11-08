@@ -340,10 +340,10 @@ items:
     title: "Chapter 2: a crawler walks into the close Outsider's arm"
     when: 2026-11-04 20:05
   find.ch03-wreck:
-    state: pass
-    note: "On the re-rendered draft: Roal's curl (0:58-1:05) reads as a darker ribbon rising off his head against the hall; shot P (4:10-5:37) keeps all three downed ships through the shot, the standing machines draw in front of the hulls, and the transports land on the far ground behind them."
-    title: "Chapter 3: Roal's thought is invisible, and the wreck scene stages things into each other"
-    when: 2026-11-04 20:05
+    state: open
+    note: "Ninth round, minor: 4:58-5:30 the downed ships are smooth, tilted, whole."
+    title: "Chapter 3: 'a crumpled wreck' is a whole hull"
+    when: 2026-11-08 18:15
   find.ch06-green:
     state: pass
     note: "On the re-rendered draft, 3:07-3:31 (I): each mote's turned ray is a pale green beam ending in a green burst on the giant's hull, plain against the red screens; the chapter's turn reads."
@@ -550,10 +550,10 @@ items:
     title: "Chapter 9: Roal pops out and back in at the dome"
     when: 2026-11-05 07:58
   find.ch04-label:
-    state: pass
-    note: "On the re-rendered draft: 3:50-5:16 the MX-3401 label rides the builder at the left of the ring; the new machine's hull carries no lettering at its birth or after."
-    title: "Chapter 4: the new machine reads as MX-3401"
-    when: 2026-11-05 07:58
+    state: open
+    note: "Ninth round, nit: 5:16 the lettering stays dark through the fade."
+    title: "Chapter 4: MX-3401's name outlasts its machine"
+    when: 2026-11-08 18:15
   find.listeners:
     state: pass
     note: "On the re-rendered draft: ch07 1:29.9-1:30.7 Roal steps round with a half-step at 'Roal turned'; ch07 1:37-2:01 and ch08 2:43-3:37 both men change how they stand through F-2's speeches (a hand to the chin, a hand out, hands behind, hands clasped), leaning in, heads turning slowly."
@@ -870,10 +870,10 @@ items:
     title: "Chapter 3: the decay is shown on blank screens"
     when: 2026-11-07 08:16
   find.ch04-tentacles:
-    state: pass
-    note: "In the new ch04 draft, 0:59-1:03: X-5638's tentacles lift and sway on 'weaving tentacles', its force-beam plays upward on 'force-beams', and Roal faces it with his arm out."
-    title: "Chapter 4: Roal points at weaving tentacles X-5638 doesn't have"
-    when: 2026-11-07 08:16
+    state: open
+    note: "Ninth round, minor: 3:40-3:43 the foot of the case is off frame; tentacles first seen at 4:45."
+    title: "Chapter 4: 'more tentacles' aren't seen"
+    when: 2026-11-08 18:15
   find.ch02-reveal:
     state: pass
     note: "In the new ch02 draft: the Outsiders come in at about 1:28 on 'Strange life-forms', and in the search (3:39-4:40) they move from spot to spot."
@@ -925,10 +925,10 @@ items:
     title: "Chapter 3: Roal holds one rigid pointing pose for 30 s"
     when: 2026-11-07 20:11
   find.ch09-storm:
-    state: pass
-    note: On the round-6 draft lightning strikes the plant's crown on 'the lightnings crashed', violet and gold force-beams play from it on 'titanic forces worked and played', the camera comes in on C-R-U-1 joining F-2, then swings round to the red sunrise (2:55–3:17 sheet).
-    title: "Chapter 9: the second creation's storm isn't shown"
-    when: 2026-11-07 20:11
+    state: open
+    note: "Ninth round, minor: 0:34-1:03 no clouds ever drawn in frame, F-2 too small to see it held, rain 17 s early, lightning 5 s early."
+    title: "Chapter 9: the storm's words aren't all seen"
+    when: 2026-11-08 18:15
   find.ch02-plunger:
     state: pass
     note: On the round-6 draft the last plunger starts at 184.59 s and is shut by 184.74, on 'snapped' (184.67); the 183–185.4 s sheet shows the other five already shut and the sixth closing on the word.
@@ -1034,6 +1034,81 @@ items:
     note: The note now says the frame, 125,000 years on, is the film's only full-colour scene, and that elsewhere colour marks energy alone, as PLAN says; no longer calls the spirals the only colour in the film.
     title: "Film page: the narrator note says the spirals are 'the only full colour in the film'"
     when: 2026-11-08 09:31
+  find.ch07-daylight:
+    state: open
+    note: "Ninth round, major: 3:04-4:25 a black sky; chapter 6 opens at dawn, Roal says 'Last night', chapter 8 goes out into 'the clear sunlight'."
+    title: "Chapter 7: the plain outside is night, between dawn and clear sunlight"
+    when: 2026-11-08 18:15
+  find.ch09-sphere:
+    state: open
+    note: "Ninth round, minor: 4:33-4:58 cut by the top of frame, as wide as the plant's dome, through 'twice its former size' and its speech."
+    title: "Chapter 9: the golden sphere is cut by the frame and doesn't double"
+    when: 2026-11-08 18:15
+  find.ch04-council:
+    state: open
+    note: "Ninth round, minor: 3:02-3:03 Kahsh, C-R-21, X-5638 and X-6349 pop out; C-R-21 stands over Roal first. Trest pops out too at 3:20 (found checking this)."
+    title: "Chapter 4: the council vanishes without a cut"
+    when: 2026-11-08 18:15
+  find.ch06-puffs:
+    state: open
+    note: "Ninth round, minor: the puffs run 2:50-2:59, the words fall at 3:02-3:05; faint grey, not incandescent; 'free ships had turned to help' isn't shown."
+    title: "Chapter 6: the puffs of vapor miss their words"
+    when: 2026-11-08 18:15
+  find.ch06-fleet:
+    state: open
+    note: "Ninth round, minor: 4:13-4:22 screens and curtain cells stay where ships have gone; few hulls for 9,633 of 10,000."
+    title: "Chapter 6: red ovals ring nothing as the fleet moves on"
+    when: 2026-11-08 18:15
+  find.ch03-names:
+    state: open
+    note: "Ninth round, minor: 0:17-0:26 both still; the board asks Trest to turn as he's named."
+    title: "Chapter 3: neither man reacts to being named"
+    when: 2026-11-08 18:15
+  find.ch04-speeches:
+    state: open
+    note: "Ninth round, minor: 1:58-2:21 X-6621 and 2:22-2:46 C-R-21 only glow; the rubric asks for a gesture."
+    title: "Chapter 4: two long speeches with almost no acting"
+    when: 2026-11-08 18:15
+  find.ch06-dome:
+    state: open
+    note: "Ninth round, minor: chapter 5 ends with its dome and C-R-U-1 beside it; chapter 6 opens on bare steps."
+    title: "Chapter 6: the great machine has lost its dome"
+    when: 2026-11-08 18:15
+  find.ch05-f2-turn:
+    state: open
+    note: "Ninth round, nit: 7:54-8:00 on 'Some life-form' the three-quarter turn reads as another object."
+    title: "Chapter 5: F-2 squashes into a stub"
+    when: 2026-11-08 18:15
+  find.ch05-roal-arcs:
+    state: open
+    note: "Ninth round, nit: 3:22-3:45 the arcs snap by his head and he stands arms down."
+    title: "Chapter 5: Roal doesn't react to the arcs"
+    when: 2026-11-08 18:15
+  find.ch08-moon:
+    state: open
+    note: "Ninth round, nit: 4:41-4:45 at 'crescent moon' only a sliver at the top edge; the stars are almost invisible."
+    title: "Chapter 8: the crescent moon comes late"
+    when: 2026-11-08 18:15
+  find.ch09-ruins:
+    state: open
+    note: "Ninth round, nit: chapter 7's broken piers don't appear in 8 or 9; at chapter 9 4:17-4:27 Trest's feet are in a rock."
+    title: "Chapters 8 and 9: the hall's stumps are gone; Trest stands in a rock"
+    when: 2026-11-08 18:15
+  find.site-round4:
+    state: open
+    note: "Ninth round, nit: green death is chapter 3, the screens' colour run is chapter 6."
+    title: "Round 4 page: wrong chapters on two captions"
+    when: 2026-11-08 18:15
+  find.site-models:
+    state: open
+    note: "Ninth round, nit: 'A first pass', 'The questions are in', on a round closed 2026-11-01."
+    title: "Model sheets: speaks as if the round were open"
+    when: 2026-11-08 18:15
+  find.site-fonts:
+    state: open
+    note: "Ninth round, nit: review sub-pages have no font link, so headings fall back to a heavy grotesque."
+    title: Review pages load no web font
+    when: 2026-11-08 18:15
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1071,4 +1146,8 @@ fresh:
     found: 8
     note: "Eighth round: no major; 3 minor (ch07 speakers go see-through in the blankness, ch06 green ray hard to read, the 'Logic and intuition' note contradicts chapter 1), 5 nits (ch03 'Attack' soft, ch01 inventions don't merge and bare paper at 0:28, ch08 plane of force not shown, ch02 swarm reads as stars, the narrator note overclaims colour). Sound, sync on cued beats, lettering, continuity and the site otherwise checked and right."
     state: ce63d2c13d73
-since_fresh: 40
+  - when: 2026-11-08 18:15
+    found: 19
+    note: "Ninth round: 1 major (chapter 7's plain was night, against chapters 6 and 8), 10 minor, 8 nits; a twentieth, the foreword's wording, is Curt's. All checked against the frames and the word times."
+    state: 6712babb2c70
+since_fresh: 0

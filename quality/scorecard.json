@@ -1,13 +1,17 @@
 {
  "summary": {
-  "pass": 215,
+  "pass": 208,
   "stale": 0,
-  "open": 0,
+  "open": 7,
   "curt": 9,
   "later": 4
  },
  "satisfied": false,
- "next": [],
+ "next": [
+  "Chapter 5: its draft is current and at the right loudness",
+  "Chapter 3: its draft is current and at the right loudness",
+  "Chapter 4: its draft is current and at the right loudness"
+ ],
  "checks": {
   "verbatim": {
    "state": "pass",
@@ -38,7 +42,7 @@
    "detail": "refs: 53 sources, all cited, all answering; definitions written into 6 notes"
   },
   "phone": {
-   "state": "pass",
+   "state": "stale",
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
@@ -133,8 +137,8 @@
    "id": "ch05.draft",
    "area": "film",
    "title": "Chapter 5: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch05-draft-5dc08ae2.mp4, -14.5 LUFS, peak -2 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch05.js"
   },
   {
    "id": "ch00.acting",
@@ -301,8 +305,8 @@
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch03-draft-76bc5f48.mp4, -14.4 LUFS, peak -1.3 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch03.js"
   },
   {
    "id": "ch04.acting",
@@ -343,8 +347,8 @@
    "id": "ch04.draft",
    "area": "film",
    "title": "Chapter 4: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch04-draft-d2d2e06e.mp4, -14.4 LUFS, peak -2 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch04.js"
   },
   {
    "id": "ch06.acting",
@@ -385,8 +389,8 @@
    "id": "ch06.draft",
    "area": "film",
    "title": "Chapter 6: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch06-draft-d71faa42.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch06.js"
   },
   {
    "id": "ch07.acting",
@@ -427,8 +431,8 @@
    "id": "ch07.draft",
    "area": "film",
    "title": "Chapter 7: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch07-draft-cfd373fd.mp4, -14.5 LUFS, peak -2 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch07.js, script/boards/ch07.yaml"
   },
   {
    "id": "ch08.acting",
@@ -469,8 +473,8 @@
    "id": "ch08.draft",
    "area": "film",
    "title": "Chapter 8: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch08-draft-5d731adf.mp4, -14.5 LUFS, peak -1.7 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch08.js"
   },
   {
    "id": "ch09.acting",
@@ -511,8 +515,8 @@
    "id": "ch09.draft",
    "area": "film",
    "title": "Chapter 9: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch09-draft-088f911c.mp4, -14.4 LUFS, peak -2 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch09.js"
   },
   {
    "id": "ch10.acting",
