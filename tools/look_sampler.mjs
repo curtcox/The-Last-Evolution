@@ -15,8 +15,8 @@ const render = (...a) => execFileSync('node', ['render.mjs', ...a], { stdio: ['i
 // the frames, in the order of the colour arc (PLAN.md §5)
 const FRAMES = [
   ['look1', '1 · 2538', 'Chapter 1. The world in grey: a terrace above the city of the machines, with Roal and Trest at the rail. No colour at all.'],
-  ['look2', '2 · The Outsiders', 'Chapter 2. Green death spreading across the grey: the Outsiders\' beams, "faintly greenish", "pale green".'],
-  ['look3', '3 · The screens', 'Chapters 2 and 5. A force-screen under fire, which "flamed gradually violet, then blue, orange—red". Here the sequence runs outward from each hit, red where the fire is and violet where it hasn\'t reached.'],
+  ['look2', '2 · The Outsiders', 'Chapter 3. Green death spreading across the grey: the Outsiders\' beams, "faintly greenish", "pale green".'],
+  ['look3', '3 · The screens', 'Chapter 6. A force-screen under fire, which "flamed gradually violet, then blue, orange—red". Here the sequence runs outward from each hit, red where the fire is and violet where it hasn\'t reached.'],
   ['look4', '4 · F-1 and F-2', 'Chapter 5. "An enormous aura of white light … shot through with crackling streamers of blue lightning." F-1 above, the newborn F-2 in the light, a man shielding his face.'],
   ['look5', '5 · Pure force', 'Chapter 9. "An irregular globe of golden light, a faint halo about it of deep violet", over the 500-foot power plant, with "a tiny ruby flame" within. The first warm colour that isn\'t a weapon.'],
   ['look6', '6 · The frame', 'Chapter 11. 125,000 years on, F-2, worn by time and oxidation, under a System of beings of pure force. The only scene in full colour.'],
