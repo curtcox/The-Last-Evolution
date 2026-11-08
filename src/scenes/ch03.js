@@ -55,12 +55,14 @@
     // the force-screen's secret, he turns back to the screens, looking up at the enemy there
     const back = ez(t, T0('W') + .3, T0('W') + 1.5);
     const pose = { up: lerp(.12, arm ? 2.3 : 1.5, Math.max(out, arm)), fore: lerp(.3, arm ? 2.75 : 1.6, Math.max(out, arm)) };
+    // named, he lifts a hand a moment; Trest, named after him, turns from the screens to him
+    const named = win(t, C('p018.1:Roal, 25374') - .1, C('p018.1:Trest, 35429') - .2, .3, .5); pose.up = lerp(pose.up, .8, named); pose.fore = lerp(pose.fore, 1.5, named);
     const gl = arm ? 0 : gesture(t, pose, t < tBut + 1 ? TELL : SPEECH);
     // 'that little chuckle': his head goes back a little, a smile, the shoulders bobbing
     const ch = win(t, C('p033.4'), C('p033.4') + 2.2, .3, .6); if (ch > 0) pose.torso = (pose.torso ?? 0) - .05 * ch * Math.abs(Math.sin(t * 15));
     const roal = stander(t, ROAL, G, 44, ROALW, { who: 'roal', key: 'roal', seed: 3, look: lerp((t < T0('S') ? .5 : .15) + gl - .15 * ch, .55, back), pose, talk: talk(t, 'roal'), smile: ch, flip: back > .5 });
     const point = win(t, T0('Q'), T1('Q'), .5, .5), tp = {}, tl = t > T0('S') + 2 ? listen(t, tp, SPEECH, 2) : t > tInv - 1 && t < tBut + 2 ? listen(t, tp, TELL, 1) : 0;   // through the telling and the speech Trest listens
-    stander(t, TREST, G + 10, 46, TRESTW, { who: 'trest', key: 'trest', seed: 7, look: .45 + tl + nod(t, SPEECH), flip: t < T0('S') + 2 || t > T0('W'), pose: point > 0 ? { up: lerp(.12, 1.7, point), fore: lerp(.3, 1.2, point) } : tp });
+    stander(t, TREST, G + 10, 46, TRESTW, { who: 'trest', key: 'trest', seed: 7, look: .45 + tl + nod(t, SPEECH), flip: (t > C('p018.1:Trest, 35429') && t < T0('S') + 2) || t > T0('W'), pose: point > 0 ? { up: lerp(.12, 1.7, point), fore: lerp(.3, 1.2, point) } : tp });
     return roal;
   }
   function hall(t) {
@@ -147,6 +149,14 @@
 
   // ---------- K, M, O, P: the Colorado settlement ----------
   const LG = 900;
+  // 'a crumpled wreck': a hull bent and buckled along its length, torn open, its ribs sprung
+  function wreck(x, y, len, i) {
+    const L = len / 2, h = len * .11, N = 16, top = [], bot = [], bend = u => 15 * Math.sin(u * TAU * .9 + i * 1.7) + 7 * Math.sin(u * 23 + i);
+    for (let k = 0; k <= N; k++) { const u = k / N, prof = Math.sqrt(Math.min(1, Math.min(u, 1 - u) * 7)); top.push([x - L + u * len, y - h * prof * (.75 + .5 * hash(k * 3.1 + i)) + bend(u)]); bot.push([x - L + u * len, y + h * prof * (.7 + .55 * hash(k * 5.3 + i)) + bend(u)]); }
+    stillSeed('wreck' + i); wash([...top, ...bot.slice().reverse()], 2, { ink: true, sw: 1 });
+    for (let k = 2; k < N - 1; k += 2) { const b = bend(k / N), x0 = x - L + k / N * len; stillSeed('wrib' + i + k); inkLine([[x0 + 10 * (hash(k + i) - .5), y - h * .7 + b], [x0 + 22 * (hash(k * 2 + i) - .5), y + b], [x0 + 26 * (hash(k * 3 + i) - .5), y + h * .7 + b]], .7, INK, 'inkfine', .3); }
+    for (const [u, w] of [[.32, 34], [.68, 46]]) { const cx = x - L + u * len, cy = y + bend(u); stillSeed('wtear' + i + u); wash([[cx - w, cy - 6], [cx - w * .3, cy - h * .6], [cx + w * .2, cy - h * .2], [cx + w, cy - h * .5], [cx + w * .6, cy + h * .4], [cx - w * .2, cy + h * .55]], 4, { ink: true, sw: .7 }); }
+  }
   function land(t) {
     HALFTONE = .3;
     const tK = T0('K'), tKill = C('p024.1:were being killed instantly'), tM = T0('M'), tTrees = C('p025.1:Trees, grass'), tO = T0('O'), tP = T0('P');
@@ -177,7 +187,8 @@
       const settle = ez(t, tK, tK + 6), tDown = C('p029.1:The last of the Outsiders was down');
       const fall2 = i => { const a = lerp(tO + 2, tDown - 1.4, i / 2); return t > tO ? ez(t, a, a + 1.5) : 0; };   // the last lands on its line
       for (let i = 0; i < 3; i++) { const sx = 500 + i * 560, sy = lerp(-400, 120 + 40 * i, settle) + fall2(i) * (LG - 60 - 120 - 40 * i), rot = fall2(i) * (i % 2 ? .4 : -.3);
-        push(); translate(sx, sy); rotate(rot); translate(-sx, -sy); ship(sx, sy, 520, t, -1, { d: 2 }); pop();
+        push(); translate(sx, sy); rotate(rot); translate(-sx, -sy); if (fall2(i) < 1) ship(sx, sy, 520, t, -1, { d: 2 }); else wreck(sx, sy, 520, i); pop();
+        { const a = lerp(tO + 2, tDown - 1.4, i / 2), fl = win(t, a + 1.35, a + 1.7, .1, .5); if (fl > 0) { glow(sx, sy, 260, NRG.white, .8 * fl); glow(sx, sy, 90, '#FFB070', .7 * fl); } }   // the impact
         if (fall2(i) >= 1) for (let k = 0; k < 4; k++) { const q = frac(t * .12 + k / 4 + hash(i)); boilSeed('smoke' + i + k); paint(ellPts(sx + 60 * Math.sin(k + t * .2) + q * 80, sy - 40 - q * 420, 50 + 90 * q, 30 + 50 * q, 12, 20), { wash: D[4], washOp: 170 * (1 - q) * Math.min(1, q * 6), ink: null, bleed: .3 }); }   // the wrecks smoulder
         if (green > 0 && fall2(i) < .1) { boilSeed('gb' + i); paint([[sx - 60, sy + 50], [sx + 60, sy + 50], [sx + 420, LG + 400], [sx - 420, LG + 400]], { wash: GREEN, washOp: 60 * green, ink: null }); glow(sx, LG + 100, 500, GREEN, .35 * green); } }
       if (green > 0) shade(-200, 1400, .0, .18 * green, GREEN);
