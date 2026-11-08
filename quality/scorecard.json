@@ -1,13 +1,17 @@
 {
  "summary": {
-  "pass": 207,
-  "stale": 0,
-  "open": 0,
+  "pass": 205,
+  "stale": 2,
+  "open": 8,
   "curt": 9,
   "later": 4
  },
  "satisfied": false,
- "next": [],
+ "next": [
+  "Chapter 7: the speakers turn see-through in the blankness",
+  "Chapter 6: the green ray from the Earth-ships is hard to read",
+  "Film page: the 'Logic and intuition' note says 'together for the first time'"
+ ],
  "checks": {
   "verbatim": {
    "state": "pass",
@@ -19,7 +23,7 @@
   },
   "annotated": {
    "state": "pass",
-   "detail": "current"
+   "detail": "had fallen behind; rebuilt now"
   },
   "voice": {
    "state": "pass",
@@ -34,11 +38,11 @@
    "detail": "$0.59 of $10"
   },
   "refs": {
-   "state": "pass",
+   "state": "stale",
    "detail": "refs: 53 sources, all cited, all answering; definitions written into 6 notes"
   },
   "phone": {
-   "state": "pass",
+   "state": "stale",
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
@@ -630,15 +634,15 @@
    "id": "site.watch.content",
    "area": "site",
    "title": "The film page (annotated): what it says",
-   "state": "pass",
-   "note": "Re-judged after the seventh round: the green-beams note now quotes the story's own words ('retarding it greatly in exothermic actions, speeding greatly endothermic actions', chapter 4); every chapter's player points at its new draft, all 12 on the drafts release; no chapter's length changed, so the notes keep their times."
+   "state": "stale",
+   "note": "passed on 709ee7230531; changed since. Re-judged after the seventh round: the green-beams note now quotes the story's own words ('retarding it greatly in exothermic actions, speeding greatly endothermic actions', chapter 4); every chapter's player points at its new draft, all 12 on the drafts release; no chapter's length changed, so the notes keep their times."
   },
   {
    "id": "site.watch.look",
    "area": "site",
    "title": "The film page (annotated): how it looks and works",
-   "state": "pass",
-   "note": "Re-checked at 375 after the seventh round (out/quality/phone): only one note's wording and the video links changed; the page fits a phone, the draft notice and the opening read cleanly, and the phone check passes for all 34 pages."
+   "state": "stale",
+   "note": "passed on db92aec98545; changed since. Re-checked at 375 after the seventh round (out/quality/phone): only one note's wording and the video links changed; the page fits a phone, the draft notice and the opening read cleanly, and the phone check passes for all 34 pages."
   },
   {
    "id": "site.read.content",
@@ -1591,14 +1595,65 @@
    "title": "Chapters 7 and 9: the men are small at key beats",
    "state": "pass",
    "note": "Chapter 9 at 3:20-3:32: the camera holds on the dome as Roal and Trest walk out of it, big enough to read, then rises to the golden globe."
+  },
+  {
+   "id": "find.ch07-ghosts",
+   "area": "finding",
+   "title": "Chapter 7: the speakers turn see-through in the blankness",
+   "state": "open",
+   "note": "Eighth round, minor: 2:13-2:40 Roal, Trest, F-2 and the machines go translucent as the cloud of blankness grows; background lines run through them while Trest and F-2 speak; the board asks for 'close, through the cloud'."
+  },
+  {
+   "id": "find.ch06-green-ray",
+   "area": "finding",
+   "title": "Chapter 6: the green ray from the Earth-ships is hard to read",
+   "state": "open",
+   "note": "Eighth round, minor: 3:06-3:32 the motes are tiny pale chips by the giants' sterns, so the green beams look like the giants firing; the curtain of waving blankness shows only as faint ovals."
+  },
+  {
+   "id": "find.note-logic",
+   "area": "finding",
+   "title": "Film page: the 'Logic and intuition' note says 'together for the first time'",
+   "state": "open",
+   "note": "Eighth round, minor: chapter 1 already shows the ruled line and the curl together and ends them walking together."
+  },
+  {
+   "id": "find.ch03-attack",
+   "area": "finding",
+   "title": "Chapter 3: 'Attack -- therefore!' lands softly",
+   "state": "open",
+   "note": "Eighth round, nit: 7:53-8:02 Roal's arm lifts only partway, the lens flare barely shows, and he stays facing Trest."
+  },
+  {
+   "id": "find.ch01-merge",
+   "area": "finding",
+   "title": "Chapter 1: the three inventions don't merge; bare paper at 0:28",
+   "state": "open",
+   "note": "Eighth round, nit: at 'But by twenty-five hundred' a fourth joined machine appears beside the Ear, Eye and Brain instead of them sliding together; the dark plate ends in a hard edge with bare paper at the right at 0:28.5."
+  },
+  {
+   "id": "find.ch08-plane",
+   "area": "finding",
+   "title": "Chapter 8: the plane of force doesn't smooth the rocks",
+   "state": "open",
+   "note": "Eighth round, nit: 3:56-4:01 on 'laid a plane of force that smoothed them' the jagged rocks stay jagged."
+  },
+  {
+   "id": "find.ch02-swarm",
+   "area": "finding",
+   "title": "Chapter 2: the swarm of tiny machines reads as stars",
+   "state": "open",
+   "note": "Eighth round, nit: 4:52-5:08 'thousands of the tiny machines' are white flecks the size and colour of the starfield."
+  },
+  {
+   "id": "find.note-colour",
+   "area": "finding",
+   "title": "Film page: the narrator note says the spirals are 'the only full colour in the film'",
+   "state": "open",
+   "note": "Eighth round, nit: energy is fully coloured later (the screens in chapter 6, the golden sphere and red sunrise in chapter 9); the frame is the only full-colour scene."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-06 19:40",
-   "found": 11,
-   "note": "Film and site, fifth round: a subagent with no context watched all twelve drafts against the word times and checked the site live. No major findings: 7 minor, 4 nits (one, the 'dropouts', measured as the room tone rather than silence, recorded as the bed being too faint)."
-  },
   {
    "when": "2026-11-07 08:38",
    "found": 10,
@@ -1608,6 +1663,11 @@
    "when": "2026-11-07 20:34",
    "found": 7,
    "note": "Seventh round: 1 major (ch08/ch09 the 500-ft power plant drawn about 30 ft tall), 4 minor (ch07 the dome doesn't visibly belly inward; ch03 the land green before the death beams; the film page's green-beams note misquotes 'retarding it greatly in exothermic actions'; ch02 which Outsider fires the bluish beam is unclear), 2 nits (ch08 framing at 0:45 and 4:48; small figures at ch07 3:17-3:50 and ch09 3:26)."
+  },
+  {
+   "when": "2026-11-08 09:30",
+   "found": 8,
+   "note": "Eighth round: no major; 3 minor (ch07 speakers go see-through in the blankness, ch06 green ray hard to read, the 'Logic and intuition' note contradicts chapter 1), 5 nits (ch03 'Attack' soft, ch01 inventions don't merge and bare paper at 0:28, ch08 plane of force not shown, ch02 swarm reads as stars, the narrator note overclaims colour). Sound, sync on cued beats, lettering, continuity and the site otherwise checked and right."
   }
  ]
 }
