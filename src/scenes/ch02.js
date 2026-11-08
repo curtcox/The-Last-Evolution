@@ -89,7 +89,11 @@
         const turn = ez(t, C('p017.1:they started at once for Earth') - 1, C('p017.1:they started at once for Earth') + 3);
         for (let i = 0; i < 10; i++) { const x = 700 + (i % 5) * 560 + 80 * hash(i), y = 250 + Math.floor(i / 5) * 420 + 60 * hash(i * 3), d = Math.cos(Math.PI * turn) * -1;
           ship(x - 300 * turn, y, 480, t, Math.abs(d) < .15 ? .15 * Math.sign(d || 1) : d, { d: 3 }); }
-        for (let i = 0; i < 360; i++) { const a = hash(i * 1.7) * TAU + t * (.05 + .1 * hash(i)), r = 300 + 1500 * hash(i * 2.3); glow(1700 + Math.cos(a) * r * 1.3, 520 + Math.sin(a) * r * .55, 9, NRG.white, .6); }
+        // the swarm: the far ones flecks, darting round faster than anything in the sky; the near ones drawn as the tiny
+        // machines they are, each with its drive lit (as still white flecks alone they read as more stars)
+        for (let i = 0; i < 300; i++) { const a = hash(i * 1.7) * TAU + t * (.15 + .25 * hash(i)), r = 300 + 1500 * hash(i * 2.3); glow(1700 + Math.cos(a) * r * 1.3, 520 + Math.sin(a) * r * .55, 7, NRG.white, .5); }
+        for (let i = 0; i < 70; i++) { const sp = (.2 + .25 * hash(i * 5.3)) * (i % 2 ? 1 : -1), a = hash(i * 3.9) * TAU + t * sp, r = 350 + 1300 * hash(i * 6.1), x = 1700 + Math.cos(a) * r * 1.3, y = 520 + Math.sin(a) * r * .55;
+          DES.mote(x, y, 26 + 18 * hash(i * 8.3), t, { ang: Math.atan2(Math.cos(a) * r * .55 * sp, -Math.sin(a) * r * 1.3 * sp), drive: true }); }
       }
     });
   }
