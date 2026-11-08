@@ -1005,10 +1005,10 @@ items:
     title: "Chapter 6: the green ray from the Earth-ships is hard to read"
     when: 2026-11-08 09:30
   find.note-logic:
-    state: open
-    note: "Eighth round, minor: chapter 1 already shows the ruled line and the curl together and ends them walking together."
+    state: pass
+    note: "The note now reads: the ruled line and the curl from chapter 1. 'There they walked side by side, as man and machine; here they join in one act, the forces that build the plant.' No longer claims a first meeting."
     title: "Film page: the 'Logic and intuition' note says 'together for the first time'"
-    when: 2026-11-08 09:30
+    when: 2026-11-08 09:31
   find.ch03-attack:
     state: open
     note: "Eighth round, nit: 7:53-8:02 Roal's arm lifts only partway, the lens flare barely shows, and he stays facing Trest."
@@ -1030,10 +1030,10 @@ items:
     title: "Chapter 2: the swarm of tiny machines reads as stars"
     when: 2026-11-08 09:30
   find.note-colour:
-    state: open
-    note: "Eighth round, nit: energy is fully coloured later (the screens in chapter 6, the golden sphere and red sunrise in chapter 9); the frame is the only full-colour scene."
+    state: pass
+    note: The note now says the frame, 125,000 years on, is the film's only full-colour scene, and that elsewhere colour marks energy alone, as PLAN says; no longer calls the spirals the only colour in the film.
     title: "Film page: the narrator note says the spirals are 'the only full colour in the film'"
-    when: 2026-11-08 09:30
+    when: 2026-11-08 09:31
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1071,4 +1071,4 @@ fresh:
     found: 8
     note: "Eighth round: no major; 3 minor (ch07 speakers go see-through in the blankness, ch06 green ray hard to read, the 'Logic and intuition' note contradicts chapter 1), 5 nits (ch03 'Attack' soft, ch01 inventions don't merge and bare paper at 0:28, ch08 plane of force not shown, ch02 swarm reads as stars, the narrator note overclaims colour). Sound, sync on cued beats, lettering, continuity and the site otherwise checked and right."
     state: ce63d2c13d73
-since_fresh: 0
+since_fresh: 2
