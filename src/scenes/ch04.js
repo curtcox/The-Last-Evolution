@@ -44,13 +44,19 @@
     const fan = ez(t, tShift - 1, tShift + 4), sp = K_SPEAK(t) ?? 1000;
     const pt = win(t, C('p039.1:I noticed'), T0('E'), .5, .8);
     const rp = { up: lerp(.12, 1.4, pt), fore: lerp(.3, 1.6, pt) }, gl = pt > .1 ? 0 : gesture(t, rp, ROALC);
-    stander(t, P.roal, G, 44, [[tShift, tShift + 4, P.roal, 380]], { who: 'roal', key: 'roal', seed: 3, flip: pt > .1 || sp < P.roal || (t > tShift + 4 && t < T0('N') + 1), look: .1 + gl + nod(t, TO_ROAL), talk: talk(t, 'roal'), pose: rp });
+    // X-5638's demonstration: they look up as the ray-machine rises, flinch back, a hand half up, as the deadly beam is
+    // trained, then lean in to watch it fall harmless (they held one pose, arms down, for 22 s)
+    const up = win(t, C('p037.3:rose') - .3, C('p037.3:trained') - .5, .8, 1), react = win(t, C('p037.3:trained'), C('p037.3:trained') + 3, .35, 1.4), watch = win(t, C('p037.3:trained') + 2.6, C('p037.3:harmless') + 1.2, 1, 1.2);
+    const flinch = (q, a) => { q.up = (q.up ?? DES.POSE.stand.up) + a * .45 * react; q.fore = (q.fore ?? DES.POSE.stand.fore) + a * 2 * react; q.torso = (q.torso ?? 0) - .08 * a * react + .05 * watch; };
+    flinch(rp, 1);
+    stander(t, P.roal, G, 44, [[tShift, tShift + 4, P.roal, 380]], { who: 'roal', key: 'roal', seed: 3, flip: pt > .1 || sp < P.roal || (t > tShift + 4 && t < T0('N') + 1), look: .1 + gl + nod(t, TO_ROAL) + .5 * up + .15 * react, talk: talk(t, 'roal'), pose: rp });
     const step = ez(t, T0('H'), T0('H') + 1) * (1 - ez(t, T0('I'), T0('I') + 1)), tp = {}, tl = gesture(t, tp, TRESTC);
     if (tp.up) { tp.up = .12 + (tp.up - .12) * .5; tp.fore = .3 + (tp.fore - .3) * .55; }   // he's stepped up close to Kahsh: a small gesture, in his own space
-    stander(t, P.trest, G + 10, 46, [[T0('H'), T0('H') + 1, P.trest, P.trest + 50], [T0('I'), T0('I') + 1, P.trest + 50, P.trest], [tShift + .5, tShift + 5, P.trest, 1640]], { who: 'trest', key: 'trest', seed: 7, flip: (sp < P.trest && t < tShift) || t > T0('N') + 1, look: .05 + tl + nod(t, ROALC), talk: talk(t, 'trest'), pose: tp });
+    flinch(tp, .8);
+    stander(t, P.trest, G + 10, 46, [[T0('H'), T0('H') + 1, P.trest, P.trest + 50], [T0('I'), T0('I') + 1, P.trest + 50, P.trest], [tShift + .5, tShift + 5, P.trest, 1640]], { who: 'trest', key: 'trest', seed: 7, flip: (sp < P.trest && t < tShift) || t > T0('N') + 1, look: .05 + tl + nod(t, ROALC) + .5 * up + .15 * react, talk: talk(t, 'trest'), pose: tp });
     // Kahsh, when the council breaks up, walks off to the right (he vanished)
     { const k = win(t, C('p044.2') + .3, C('p044.2') + 5.4, .3, .5); if (k > 0) letter('Kahsh-256799', P.kahsh + 56, 770, 26, INK, { ink: false, align: 'left', font: '700 26px ' + SERIF, spacing: 1, alpha: k }); }   // lettered as he's named
-    if (t < tShift) DES.person(P.kahsh, G + 20, 44, t, { who: 'kahsh', gest: KAHSH.reduce((m, [a, b]) => Math.max(m, win(t, a - .4, b + .8, .4, .7)), 0) });
+    if (t < tShift) DES.person(P.kahsh, G + 20, 44, t, { who: 'kahsh', gest: KAHSH.reduce((m, [a, b]) => Math.max(m, win(t, a - .4, b + .8, .4, .7)), .75 * react + .2 * watch) });
     else if (t < tShift + 8) stander(t, P.kahsh, G + 20, 44, [[tShift, tShift + 8, P.kahsh, 2500]], { who: 'kahsh', key: 'kahsh', seed: 5 });
   }
   // the council's seats and the hall's floor; the screens, and the ten thousand on them (L)
