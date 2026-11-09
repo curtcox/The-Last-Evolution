@@ -50,7 +50,10 @@
   // like one machine drawn twice; these were searched so no two in near lanes overlap for more than 3 s in the chapter.
   const LANE = [1, 5, 6, 3, 2, 4, 8, 7, 0], START = [4, 0, 8, 1, 3, 7, 5, 2, 6];
   function workers(t, back) {   // back: the odd ones fly behind the towers (crossing in front of a cap, they read as sitting on it)
-    for (let i = 0; i < 9; i++) { if ((i % 2 === 1) !== back) continue; const ph = t * (.05 + .02 * hash(i)) + START[i] / 9, x = -200 + frac(ph) * 5200, y = 380 + 25 * LANE[i] + 30 * Math.sin(t * .6 + i), s = (16 + 8 * hash(i * 7)) * (back ? .8 : 1.2);   // the near ones larger, the far ones smaller: depth, not a machine on a cap
+    // as the camera comes in low on the runners (D, and K after it) they climb out over the top of the frame, instead of
+    // flying through it cut off by its top edge
+    const lift = t > T0('D') - .5 ? 560 * ez(t, T0('D') - .5, T0('D') + 2.5) : 0;
+    for (let i = 0; i < 9; i++) { if ((i % 2 === 1) !== back) continue; const ph = t * (.05 + .02 * hash(i)) + START[i] / 9, x = -200 + frac(ph) * 5200, y = 380 + 25 * LANE[i] + 30 * Math.sin(t * .6 + i) - lift, s = (16 + 8 * hash(i * 7)) * (back ? .8 : 1.2);   // the near ones larger, the far ones smaller: depth, not a machine on a cap
       const m = DES.machine(x, y + 2.5 * s, s, t, { arms: 2, d: 1 + (i % 2), hover: 2.5, face: .6, label: null });
       boilSeed('crate' + i); wash(rrPts(x - s * 1.2, m.dy + s * .8, s * 2.4, s * 1.6, s * .2), 2, { ink: true, sw: .5 }); inkLine([[x - s * .6, m.arm], [x - s * .6, m.dy + s * .8]], .5, INK); inkLine([[x + s * .6, m.arm], [x + s * .6, m.dy + s * .8]], .5, INK); }
   }
