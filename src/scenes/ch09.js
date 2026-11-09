@@ -23,24 +23,27 @@
     const st = storm(t), dw = dawn(t);
     // the sky: night, storm-black, then a red dawn
     const skyCol = mixCol(mixCol('#1E1A16', '#100D0B', st), mixCol('#2A1E1A', '#7A3E2E', .45), dw);
-    stillSeed('sky9'); paint(rectPts(-2000, -3200, 6000, 4200), { wash: skyCol, washOp: 255, fill: '#2A231D', fillOp: 70, ink: null });
+    stillSeed('sky9'); paint(rectPts(-2000, -3200, 6000, 5600), { wash: skyCol, washOp: 255, fill: '#2A231D', fillOp: 70, ink: null });
     if (st < .8) for (let i = 0; i < 100; i++) glow(-1600 + hash(i * 3.1) * 5000, -2400 + hash(i * 7.7) * 3000, 5, '#F4EEDC', .5 * (1 - st) * (1 - dw) * hash(i));
     if (dw > 0) { glow(2300, HZ, 300, '#FF6A3A', .7 * dw); glow(2300, HZ, 900, '#FF9A6A', .35 * dw); }   // the sun rising on the far horizon
     // 'heavy clouds' rolling in, low enough to be seen, their edges catching what light there is (at y -1400, dark on dark, no
     // shot ever showed them)
     if (st > 0) for (let i = 0; i < 18; i++) { stillSeed('cloud' + i); const x = -1200 + (i % 9) * 560 + 90 * t * .3 + 240 * Math.sin(t * .2 + i), y = (i < 9 ? -760 : -240) + 180 * hash(i); boilSeed('cl' + i); paint(ellPts(x, y, 420 + 120 * hash(i * 3), 170 + 50 * hash(i * 5), 18, 34), { wash: '#2A2420', washOp: 230 * st, fill: '#141110', fillOp: 120 * st, bleed: .3, ink: mixCol('#141110', '#6E6458', st), sw: .7 }); }
     // the far plain, the plane of force laid at the plant's foot, the plant, the air between, then the near rock
-    farPlain(HZ, RG + 40, 'far9', { x: PX, r: 260, col: mixCol(D[1], skyCol, .4) });
+    farPlain(HZ, RG + 40, 'far9', { x: PX, r: 260, col: mixCol(D[1], skyCol, .4 + .45 * (1 - dw)) });
     stillSeed('plane9'); wash(rectPts(PX - 260, PB - 4, 520, 8), 1, { ink: true, sw: .4 });
     const beat = t > T0('B') ? Math.max(0, Math.sin((t - T0('B')) * (2 + 6 * seg(t, T0('B'), T0('B') + 5)) )) * win(t, T0('B'), C('p115.1:Then it quieted') + 1, .2, 1) : 0;   // its beat (B)
     DES.plant(PX, PB, PS, t, { lum: .14 + .3 * beat });
     const lens = LENS; DES.lens(lens[0], lens[1], 22, { lit: .2 + .8 * talk(t, 'plant') });   // its lens (C)
     haze(PB - 490 * PS, PB + 10, skyCol, .4);
-    stillSeed('rock9'); wash([[-2000, RG + 40], [6000, RG + 40], [6000, RG + 1600], [-2000, RG + 1600]], 3, { op: 1 });
+    // the night's coat on the ground, lifted by the dawn, as in chapter 8
+    const dim = (P, ink = true) => { if (dw < 1) paint(P, { wash: '#141110', washOp: 225 * (1 - dw), ink: ink ? mixCol('#141110', '#8A8070', 1 - dw) : null, sw: .5 }); };
+    { const P = [[-2000, RG + 40], [6000, RG + 40], [6000, RG + 1600], [-2000, RG + 1600]]; stillSeed('rock9'); wash(P, 3, { op: 1 }); dim(P, false); }
     // what's left of the hall round the dome, as chapter 7 left it
-    for (let i = 4; i < 8; i++) { const k = i % 4, x = -300 + 480 + k * 170, h = 140 + 360 * hash(i * 7.3), w = 70; stillSeed('opier9' + i); wash([[x - w / 2, RG + 50], [x - w / 2, RG + 50 - h], [x - w / 6, RG + 50 - h - 40 * hash(i)], [x + w / 6, RG + 80 - h], [x + w / 2, RG + 50 - h - 20 * hash(i * 3)], [x + w / 2, RG + 50]], 3, { ink: true, sw: .6 }); }
+    // (bunched by the dome, clear of where the men, C-R-U-1 and F-2 end up: at 170 apart they stood in Trest and C-R-U-1)
+    for (let i = 4; i < 8; i++) { const k = i % 4, x = -20 + k * 120, h = 140 + 360 * hash(i * 7.3), w = 70, P = [[x - w / 2, RG + 50], [x - w / 2, RG + 50 - h], [x - w / 6, RG + 50 - h - 40 * hash(i)], [x + w / 6, RG + 80 - h], [x + w / 2, RG + 50 - h - 20 * hash(i * 3)], [x + w / 2, RG + 50]]; stillSeed('opier9' + i); wash(P, 3, { ink: true, sw: .6 }); dim(P); }
     for (let i = 0; i < 16; i++) { if (i === 7) continue;   // (Trest ends up standing where it was)
-      const x = -1600 + i * 300 + 60 * hash(i); stillSeed('rk9' + i); const h = 60 + 120 * hash(i * 3); wash([[x - 70, RG + 50], [x - 30, RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]], 2 + (i % 2), { ink: true, sw: .5 }); }
+      const x = -1600 + i * 300 + 60 * hash(i); stillSeed('rk9' + i); const h = 60 + 120 * hash(i * 3), P = [[x - 70, RG + 50], [x - 30, RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]]; wash(P, 2 + (i % 2), { ink: true, sw: .5 }); dim(P); }
     // the dome at the left; it parts for the men at K
     const part = domePart(t);
     if (part < 1) DES.blackDome(-300, RG + 60, 320 * (1 - part * .9), t);
