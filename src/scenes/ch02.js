@@ -205,7 +205,7 @@
 
   function scenes(t) {
     const tB = T0('B'), tC = T0('C'), tD = T0('D'), tF = T0('F'), tK = T0('K'), tL = T0('L'), tO = T0('O');
-    if (t < tB) return page(t, 'The Outsiders', 'Then came the Outsiders. Whence they came, neither machine nor man ever learned.', tB, { soak: '#1C1814' });
+    if (t < tB) return page(t, 'The Outsiders', 'Then came the Outsiders. Whence they came, neither machine nor man ever learned...', tB, { soak: '#1C1814' });
     if (t < tC - .6) return approach(t);
     if (t < tC + .6) return dissolve(seg(t, tC - .6, tC + .6), () => approach(t), () => passing(t));
     if (t < tD - .6) return passing(t);

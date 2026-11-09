@@ -87,7 +87,7 @@
 
   function film(t) {
     const tB = T0('B'), tE = T0('E'), tF = T0('F'), tCarry = C('p136.1:carried back through the past'), tG = T0('G'), tH = T0('H');
-    if (t < tB) return page(t, 'Five Great Years', 'The Outsiders left, going out across the void, and they have not returned.', tB, { soak: '#1A1612' });
+    if (t < tB) return page(t, 'Five Great Years', 'The Outsiders left, going out across the void, and they have not returned...', tB, { soak: '#1A1612' });
     if (t < tE - .8) return system(t);
     if (t < tE + .6) return dissolve(seg(t, tE - .8, tE + .6), () => system(t), () => frame(t));
     if (t < tCarry + .5) return frame(t);

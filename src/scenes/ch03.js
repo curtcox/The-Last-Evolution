@@ -231,7 +231,7 @@
 
   function film(t) {
     const tB = T0('B'), tF = T0('F'), tK = T0('K'), tL = T0('L'), tM = T0('M'), tN = T0('N'), tO = T0('O'), tQ = T0('Q'), tU = T0('U'), tV = T0('V');
-    if (t < tB) return page(t, 'Life Alone Can Understand Life', 'The science-investigators had been present toward the last, and I am there now, in memory with my two friends.', tB);
+    if (t < tB) return page(t, 'Life Alone Can Understand Life', 'The science-investigators had been present toward the last, and I am there now, in memory with my two friends...', tB);
     if (t < tF - .8) return hall(t);
     if (t < tF + .6) return dissolve(seg(t, tF - .8, tF + .6), () => hall(t), () => approach(t));
     if (t < T0('G') - .6) return approach(t);
