@@ -44,8 +44,8 @@ figcaption{color:var(--ink2);font-size:.9em;margin-top:.4em} .ht{display:grid;gr
 </style></head><body><main>
 <p class="kicker"><a href="../">Review</a> · Round 4 · the look</p><h1>The look</h1>
 <p>Style frames for the plan's one rule: the world in ink wash on aged pulp paper, and colour only for energy, in the
-colours the text names. They test the medium, not the designs: the ships, machines and people are placeholders until
-their model sheets, which come once the look is settled. Each still links to the full-size frame. The questions are in
+colours the text names. They test the medium, not the designs: the ships, machines and people are placeholders, drawn before
+their <a href="models.html">model sheets</a>. Each still links to the full-size frame. The questions are in
 the <a href="https://github.com/curtcox/The-Last-Evolution/blob/main/review/round4.md">decision sheet</a>.</p>
 <h2>The colour arc</h2>
 ${FRAMES.slice(0, 6).map(([f, t, c]) => fig(f, `<b>${esc(t)}.</b> ${esc(c)}`)).join('\n')}
