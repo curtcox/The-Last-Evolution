@@ -20,6 +20,8 @@
       [C('p109.1') - .8, tt => [lerp(990, 1030, ez(tt, C('p109.1'), C('p110.1'))), 760, 2.3], 3],   // in on the two men listening, F-2 still in frame
       [C('p110.1') - .8, tt => [lerp(1000, 1060, ez(tt, C('p110.1'), tJ)), 750, lerp(1.9, 1.7, ez(tt, C('p110.1'), tJ))], 3],   // the promise: F-2 and the men together
       [tJ, tt => [lerp(1200, 1700, go), 720, 1.8], 2]]);
+    // 'a solid, black dome' (chapter 7): black within, the men and the machines dim against it, only the screens and the violet giving light
+    ground('#141110', 255, 'dk8', { fill: '#1C1814', fillOp: 90 });
     camBegin(...c);
     const f2x = lerp(F2P[0], 1900, go * go), f2y = F2P[1] - 40 * go;
     // each gestures on his own clauses (Roal's smaller while his eyes dream) and nods as the other, or F-2, speaks to him
@@ -32,7 +34,7 @@
     const tp = {}, th = listen(t, tp, TO_TREST, 2), tl = th + gesture(t, tp, TRESTC);
     const trest = stander(t, TRESTX, G + 10, 46, [], { who: 'trest', key: 'trest', seed: 7, flip: t < T0('I'), look: .1 + tl + nod(t, TO_TREST), pose: tp, talk: talk(t, 'trest') });
     camEnd();
-    shade(-100, H + 100, .62, .78, PULP.black);
+    shade(-100, H + 100, .32, .5, PULP.black);
     camBegin(...c);
     // over the shade: F-2 (silver, as in the hall) and the two faces in the screens' light
     push(); translate(f2x, f2y); scale(go > .02 ? 1 : -1, 1); translate(-f2x, -f2y); DES.f2(f2x, f2y + 2.4 * FS, FS, t, { view: 'side' }); pop();
@@ -49,21 +51,22 @@
   }
 
   // ---------- E to G: the ladder ----------
-  const LAD = 960;
+  const LAD = 960, tLadder = C('p104.1:Machines') - .2;   // after 'a last evolution', which is his to say on screen
   function ladder(t) {
     HALFTONE = .3;
-    const tE = T0('E'), tF = T0('F'), tG = T0('G'), tLife = C('p104.1:man was the product of life'), tMach = C('p104.1:Man built the machine'), tForce = C('p104.1:but of pure, living force');
-    const c = cam(t, [[0, [LAD, 820, 1.3]], [tMach - 1, [LAD, 560, 1.3], 3], [tForce - 1, [LAD, 330, 1.3], 2.5], [tF, tt => [lerp(LAD - 200, LAD + 300, ez(tt, tF, tG)), 600, 1], 3], [tG, [LAD, 600, 1.05], 2.5]]);
+    const tE = tLadder - .4, tF = T0('F'), tG = T0('G'), tLife = C('p104.1:man was the product of life'), tMach = C('p104.1:Man built the machine'), tForce = C('p104.1:but of pure, living force');
+    // in on each rung as he reaches it (at 1.3, a thin ladder in a dark frame for 37 s, unreadable on a phone); out for chance and the machine that makes itself; the whole climb; then in on the man as nature removes him
+    const c = cam(t, [[0, [LAD, 780, 2.1]], [tMach - 1, [LAD, 560, 2.1], 3], [tForce - 1, [LAD, 330, 2.1], 2.5], [tF, tt => [lerp(LAD - 200, LAD + 300, ez(tt, tF, tG)), 600, 1], 3], [tG, [LAD, 560, 1.2], 2.5], [C('p106.1:has removed the parasite') - 2, [LAD, 590, 2.1], 2.5]]);
     camBegin(...c);
     stillSeed('lplate'); paint(rectPts(-800, -800, 3600, 2600), { wash: BG, washOp: 255, fill: '#3B322B', fillOp: 120, bleed: .25, tex: .5, ink: null });
     // the ladder's rails and rungs
-    ruled([[LAD - 140, 1000], [LAD - 140, 120]], seg(t, tE - 1, tE + 3), D[1], 1); ruled([[LAD + 140, 1000], [LAD + 140, 120]], seg(t, tE - 1, tE + 3), D[1], 1);
-    for (let i = 0; i < 4; i++) ruled([[LAD - 140, 920 - i * 230], [LAD + 140, 920 - i * 230]], seg(t, tE + i * .4, tE + 1 + i * .4), D[1], .8);
+    ruled([[LAD - 200, 1000], [LAD - 200, 120]], seg(t, tE - 1, tE + 3), D[1], 1.4); ruled([[LAD + 200, 1000], [LAD + 200, 120]], seg(t, tE - 1, tE + 3), D[1], 1.4);
+    for (let i = 0; i < 4; i++) ruled([[LAD - 200, 920 - i * 230], [LAD + 200, 920 - i * 230]], seg(t, tE + i * .4, tE + 1 + i * .4), D[1], 1.1);
     // a cell and a plant; a man (fading when nature removes him); a machine; pure force
     const a1 = ez(t, tE, tLife), a2 = ez(t, tLife, tLife + 1.5), a3 = ez(t, tMach, tMach + 1.5), a4 = ez(t, tForce, tForce + 2), gone = ez(t, C('p106.1:has removed the parasite'), C('p106.1:has removed the parasite') + 3);
     if (a1 > .03) { boilSeed('cell'); wash(ellPts(LAD - 60, 880, 30 * a1, 26 * a1, 16), 0, { ink: true, sw: .5, op: .8 }); inkLine([[LAD + 60, 900], [LAD + 60, 900 - 70 * a1]], .8, PALE); wash(ellPts(LAD + 40, 870 - 40 * a1, 20 * a1, 10 * a1, 10), 0, { op: .7 }); wash(ellPts(LAD + 80, 860 - 50 * a1, 20 * a1, 10 * a1, 10), 0, { op: .7 }); }
-    if (a2 > .03 && gone < 1) { boilSeed('lman'); push(); translate(LAD, 680); scale(1, 1); translate(-LAD, -680); DES.person(LAD, 680, 22 * a2, t, { who: 'citizen' }); pop(); if (gone > 0) { boilSeed('lmanf'); paint(rectPts(LAD - 80, 520, 160, 170), { wash: BG, washOp: 255 * gone, ink: null }); } }
-    if (a3 > .03) DES.machine(LAD, 460, 22 * a3, t, { arms: 3, d: 1, label: null, lit: .4 });
+    if (a2 > .03 && gone < 1) { boilSeed('lman'); push(); translate(LAD, 680); scale(1, 1); translate(-LAD, -680); DES.person(LAD, 680, 27 * a2, t, { who: 'citizen' }); pop(); if (gone > 0) { boilSeed('lmanf'); paint(rectPts(LAD - 110, 472, 220, 212), { wash: BG, washOp: 255 * gone, ink: null }); } }
+    if (a3 > .03) DES.machine(LAD, 455, 26 * a3, t, { arms: 3, d: 1, label: null, lit: .4 });
     if (a4 > 0) { glow(LAD, 180, 120 * a4, NRG.white, .6); glow(LAD, 180, 50 * a4, '#FFFDF6', .8); }
     // F: chemicals drifting and joining by chance; F-2 making its duplicate
     const fk = win(t, tF - .5, tG + .5, 1, 1);
@@ -85,14 +88,14 @@
     const c = cam(t, [[0, tt => [lerp(lerp(500, 900, ez(tt, tK, tPlane)), PX - 80, ez(tt, tPlane - .5, tPlane + 1.5)), lerp(640, PB + 60, ez(tt, tPlane - .5, tPlane + 1.5)), lerp(1.2, 1.7, ez(tt, tPlane - .5, tPlane + 1.5))]], [tL, tt => [PX, lerp(600, 100, ez(tt, tL, tM)), lerp(1.1, .55, ez(tt, tL, tM))], 3],
       [tM, tt => [PX, lerp(250, -150, ez(tt, tM, tN)), .6], 3], [tN, [PX - 200, 560, .85], 2.5]]);
     camBegin(...c);
-    // the sky: clear day going to night
-    stillSeed('dsky8'); paint(rectPts(-2000, -2600, 6000, 3600), { wash: mixCol(D[0], '#1E1A16', night), washOp: 255, fill: mixCol(D[1], '#2A231D', night), fillOp: 70, ink: null });
+    // the sky: clear day going to night (and on under the ground, or the rock's wash lies on bare paper below y 1000: a bright strip along the foot)
+    stillSeed('dsky8'); paint(rectPts(-2000, -2600, 6000, 5000), { wash: mixCol(D[0], '#1E1A16', night), washOp: 255, fill: mixCol(D[1], '#2A231D', night), fillOp: 70, ink: null });
     if (night < .5) glow(lerp(-200, 3000, grow), lerp(-900, 300, grow * grow), 140, '#FFF6E8', .9 * (1 - night * 2));
     if (night > 0) { for (let i = 0; i < 120; i++) glow(-1600 + hash(i * 3.1) * 5000, -1300 + hash(i * 7.7) * 1900, 8, '#F4EEDC', (.35 + .55 * hash(i)) * night); stillSeed('moon');   // the stars and moon where the camera will find them on the words (the moon at y -900 was at the frame's very top)
       glow(1900, -440, 150, '#F4EEDC', .5 * night); wash([...Array(17)].map((_, i) => { const a = -Math.PI / 2 + i / 16 * Math.PI; return [1900 + Math.cos(a) * 90, -440 + Math.sin(a) * 90]; }).concat([...Array(17)].map((_, i) => { const a = Math.PI / 2 - i / 16 * Math.PI; return [1900 + Math.cos(a) * 45, -440 + Math.sin(a) * 90]; })), 0, { op: night }); }
     // the far plain, smoothed under the plane of force where the plant will stand
     const skyCol = mixCol(D[0], '#1E1A16', night);
-    farPlain(HZ, RG + 40, 'far8', { x: PX, r: 260, flat: smooth, col: mixCol(D[1], skyCol, .4) });
+    farPlain(HZ, RG + 40, 'far8', { x: PX, r: 260, flat: smooth, col: mixCol(D[1], skyCol, .4 + .45 * night) });
     // 'on the twisted, massed rocks he laid a plane of force that smoothed them': a mass of rock where the plant will stand,
     // big enough to see from here, flattened as the plane sweeps across it, the plane left lying behind (the far plain's
     // own rocks are too small at this distance, and the jagged rocks seemed to stay jagged)
@@ -106,11 +109,13 @@
       if (t < tM) for (let i = 0; i < 4; i++) { const y = PB - 400 * s * 1.6 * (.7 + .3 * hash(Math.floor(t * 4) + i)), q = hash(Math.floor(t * 6) + i); if (q > .4) { boilSeed('arc' + i + Math.floor(t * 12)); lightning(PX - 80 * s * 1.2, y, PX + 80 * s * 1.2 * (q - .5) * 2, y - 60, FORCE, { amp: .2 }); } } }
     haze(PB - 490 * PS, PB + 10, skyCol, .4);
     // what's left of the hall round the dome, as chapter 7 left it
-    for (let i = 4; i < 8; i++) { const k = i % 4, x = -300 + 480 + k * 170, h = 140 + 360 * hash(i * 7.3), w = 70; stillSeed('opier8' + i); wash([[x - w / 2, RG + 50], [x - w / 2, RG + 50 - h], [x - w / 6, RG + 50 - h - 40 * hash(i)], [x + w / 6, RG + 80 - h], [x + w / 2, RG + 50 - h - 20 * hash(i * 3)], [x + w / 2, RG + 50]], 3, { ink: true, sw: .6 }); }
+    // (at night the ground goes dark too, under a coat, its edges catching what the moon gives: left daylight tan, it was the brightest thing under a black sky)
+    const dim = (P, ink = true) => { if (night > 0) paint(P, { wash: '#141110', washOp: 225 * night, ink: ink ? mixCol('#141110', '#8A8070', night) : null, sw: .5 }); };
+    for (let i = 4; i < 8; i++) { const k = i % 4, x = -20 + k * 120, h = 140 + 360 * hash(i * 7.3), w = 70, P = [[x - w / 2, RG + 50], [x - w / 2, RG + 50 - h], [x - w / 6, RG + 50 - h - 40 * hash(i)], [x + w / 6, RG + 80 - h], [x + w / 2, RG + 50 - h - 20 * hash(i * 3)], [x + w / 2, RG + 50]]; stillSeed('opier8' + i); wash(P, 3, { ink: true, sw: .6 }); dim(P); }
     // the near rock, twisted and massed, between F-2 and the far plain
-    stillSeed('rocks'); wash([[-2000, RG + 40], [6000, RG + 40], [6000, RG + 1600], [-2000, RG + 1600]], 3, { op: 1 });
+    { const P = [[-2000, RG + 40], [6000, RG + 40], [6000, RG + 1600], [-2000, RG + 1600]]; stillSeed('rocks'); wash(P, 3, { op: 1 }); dim(P, false); }
     for (let i = 0; i < 40; i++) { const x = -1600 + i * 130 + 60 * hash(i), h = 60 + 120 * hash(i * 3);
-      stillSeed('rk' + i); wash([[x - 70, RG + 50], [x - 30 + 20 * hash(i), RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]], 2 + (i % 2), { ink: true, sw: .5 }); }
+      const P = [[x - 70, RG + 50], [x - 30 + 20 * hash(i), RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]]; stillSeed('rk' + i); wash(P, 2 + (i % 2), { ink: true, sw: .5 }); dim(P); }
     // the dome, near, behind at the left
     DES.blackDome(-300, RG + 60, 320, t);
     // F-2: out through the dome's black wall, over the rocks, to the plant's foot
@@ -129,8 +134,8 @@
   function film(t) {
     const tB = T0('B'), tE = T0('E'), tH = T0('H'), tK = T0('K');
     if (t < tB) return page(t, 'Last of Men', '"We are alone, Trest," said Roal...', tB, { soak: '#141110' });
-    if (t < tE - 1) return dome(t);
-    if (t < tE + .8) return dissolve(seg(t, tE - 1, tE + .8), () => dome(t), () => ladder(t));
+    if (t < tLadder - .9) return dome(t);
+    if (t < tLadder + .7) return dissolve(seg(t, tLadder - .9, tLadder + .7), () => dome(t), () => ladder(t));
     if (t < tH - .8) return ladder(t);
     if (t < tH + .6) return dissolve(seg(t, tH - .8, tH + .6), () => ladder(t), () => dome(t));
     if (t < tK - .6) return dome(t);
