@@ -28,7 +28,7 @@
   // world layout (px): the floor's back edge at 864, figures stand at G; Roal's couch at the left, F-1's place at the
   // right, the working point between them, the tiers of science-machines floating in a ring behind and around
   const G = 1000, F1 = { x: 1420, g: 975, s: 50 }, F1R = 3.4 * 50 * 1.2, WORK = [1000, 790], COUCH = { x: 420, s: 44 }, RS = 44, RU = RS * 6 / 7.4, FS = 30;
-  const MAKE = [1301, 830], CRU = [1301, 810], CAGE = [760, G], SEAT = G - 1.72 * COUCH.s, F2HOV = (G - WORK[1]) / FS;
+  const MAKE = [1301, 750], CRU = [1301, 730], CAGE = [760, G], SEAT = G - 1.72 * COUCH.s, F2HOV = (G - WORK[1]) / FS;
   const night = op => { stillSeed('night'); paint(rectPts(-500, -400, 3000, 1900), { wash: PULP.black, washOp: 215 * op, fill: '#3B322B', fillOp: 60, bleed: .2, tex: .4, ink: null }); };
 
   // the moments everything keys to
@@ -96,7 +96,9 @@
     const lurch = -.05 * Math.sin(Math.PI * seg(t, tSnap, tFell + .1)), bounce = t > tLand ? spring(t, tLand, 5, 14) : 0;
     const px = x + F1R, py = g - .2 * s, lie = HALF_PI + lieTilt(3.4, 7.5);
     push(); translate(px, py); rotate(lurch + tip * lie - .04 * bounce); if (o.gone) scale(1, 1 - o.gone); translate(-px, -py);
+    const named = win(t, C('p052.2:F one') - .1, C('p052.2:F one') + 5, .3, .6);   // lettered the first time it's spoken (DECISIONS.md, 2026-11-01)
     const reach = reachAt(t, x), m = DES.f1(x, g, s, t, { arms: reach || tip > .05 ? 0 : 8, hover: lerp(f1Hov(t), .2, easeIn(fall)), lit: o.lit, dark: o.dark, face: f1Face(t) });
+    if (named > 0) letter('F-1', x, g - 6.2 * s, 76, INK, { ink: false, font: '700 76px ' + SERIF, spacing: 2, alpha: named });
     if (reach) reach.forEach((p, i) => { const sx = x + (i - 2.5) * s * 1.1, sy = m.arm, w = o.writhe || 0;
       const mx = lerp(sx, p[0], .5) + s * 2.2 * wob(t, .9 + .4 * w, i * .37) * (.3 + w), my = lerp(sy, p[1], .5) + s * 1.5 * wob(t, .7 + .5 * w, i * .21) * (.3 + w);
       DES.tentacle([[sx, sy], [lerp(sx, mx, .5), lerp(sy, my, .6) + s], [mx, my], [lerp(mx, p[0], .6), lerp(my, p[1], .6)], p], .34 * s, .16 * s, 4); });
@@ -108,9 +110,17 @@
   function stray(t) {
     const k = ez(t, tGen - 3, tGen + 8), fall = easeIn(seg(t, tFell + .1, tFell + .7)), x = lerp(1760, 1210, k), g = lerp(905, 990, k);
     const rx = x - 1.6 * 16 * 1.2;   // it tips over its base disc's near rim and lies on its side, as F-1 does
+    // down, it's 'the fused, distorted mass of metal' (p060): a slumped lump with its lens gone blind, runs of metal, a torn side
+    if (t > tFell + .7) { const cx = rx - 62, cy = g - 26, P = []; for (let i = 0; i < 22; i++) { const a = i / 22 * TAU, r = 1 + .32 * Math.sin(a * 3 + 1) + .2 * Math.sin(a * 7 + 2) + .12 * hash(i * 3.3); P.push([cx + Math.cos(a) * 84 * r, Math.min(g - 4, cy + Math.sin(a) * 34 * r)]); }
+      stillSeed('fused'); wash(P, 2, { ink: true, sw: .9 });
+      for (const [dx, w, h] of [[-58, 13, 16], [-18, 16, 21], [30, 12, 15]]) { stillSeed('frun' + dx); wash(ribbon([[cx + dx, cy - 6], [cx + dx + 5, cy + 8], [cx + dx + 2, g - 6]], w, w * .55), 4, { ink: true, sw: .5 }); }
+      stillSeed('ftear'); wash([[cx + 26, cy - 22], [cx + 48, cy - 26], [cx + 62, cy - 8], [cx + 44, cy + 6], [cx + 30, cy - 6]], 4, { ink: true, sw: .6 });
+      stillSeed('fblind'); wash(ellPts(cx - 44, cy - 14, 13, 10, 12, 3), 4, { ink: true, sw: .6 }); inkLine([[cx - 54, cy - 20], [cx - 44, cy - 12], [cx - 34, cy - 9]], .6, INK, 'inkfine', .3);
+      const hot = 1 - seg(t, tFell + .7, tFell + 9); if (hot > 0) { glow(cx, cy, 120, '#FFB070', .5 * hot); glow(cx, cy - 4, 46, '#FFE0B0', .45 * hot); }
+    } else {
     push(); translate(rx, g); rotate(-fall * (HALF_PI + lieTilt(1.6, 3))); translate(-rx, -g);
     DES.machine(x, g, 16, t, { r: 1.6, h: 3, d: 2, arms: fall > .05 ? 0 : 3, dark: t > tHit + .3, label: null, hover: lerp(1.5, .1, fall) });
-    pop();
+    pop(); }
     if (t > tHit && t < tHit + 2.5) glow(x, g - 90, 160 * (1 - seg(t, tHit, tHit + 2.5) * .5), NRG.lightning, .7 * (1 - seg(t, tHit, tHit + 2.5)));
     return [x, g - 100];
   }
@@ -349,8 +359,9 @@
     if (t > T0('AE') - .3) {
       const name = K(t, 'p069.2:Force played', 'p069.2:in dully glowing');
       if (t > C('p069.2:Force played')) glow(CRU[0], CRU[1] - 40, 120, FORCE, .3 * (1 - name * .5));
-      DES.cru1(CRU[0], G, 34, t, { hover: (G - CRU[1]) / 34, unlit: name < .05, glowK: name, lit: .7 * talk(t, 'cru1') });
+      DES.cru1(CRU[0], G, 34, t, { hover: (G - CRU[1]) / 34 + .12 * wob(t, .25), unlit: name < .05, glowK: name, lit: .7 * talk(t, 'cru1') });
     }
+    { const k = win(t, C('p067.1') + 1.2, C('p067.1') + 6, .3, .6); if (k > 0) letter('F-2', WORK[0], WORK[1] + 74, 34, '#EFE6D2', { ink: false, font: '700 34px ' + SERIF, spacing: 2, alpha: k }); }   // lettered the first time it's spoken
     // AF to AK: F-2's glow as it speaks
     if (t > T0('AF')) glow(WORK[0], WORK[1], 60, '#E6EEFF', .2 * talk(t, 'f2'));
 
