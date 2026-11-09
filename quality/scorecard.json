@@ -1,13 +1,17 @@
 {
  "summary": {
-  "pass": 230,
+  "pass": 218,
   "stale": 0,
-  "open": 0,
+  "open": 28,
   "curt": 9,
   "later": 4
  },
  "satisfied": false,
- "next": [],
+ "next": [
+  "Chapter 7: the cloud of blankness barely registers",
+  "Chapter 2: the swarm doesn't look like the investigators",
+  "Chapter 5: the 'fused, distorted mass' is an intact barrel"
+ ],
  "checks": {
   "verbatim": {
    "state": "pass",
@@ -42,7 +46,7 @@
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
-   "state": "pass",
+   "state": "stale",
    "detail": "33 pages live, the deploy is this commit"
   }
  },
@@ -133,8 +137,8 @@
    "id": "ch05.draft",
    "area": "film",
    "title": "Chapter 5: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch05-draft-56eea027.mp4, -14.5 LUFS, peak -1.9 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch05.js, script/boards/ch05.yaml"
   },
   {
    "id": "ch00.acting",
@@ -259,8 +263,8 @@
    "id": "ch02.draft",
    "area": "film",
    "title": "Chapter 2: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch02-draft-e9d8885d.mp4, -14.4 LUFS, peak -2 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch02.js"
   },
   {
    "id": "ch03.acting",
@@ -301,8 +305,8 @@
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch03-draft-80611844.mp4, -14.4 LUFS, peak -2.2 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch03.js, script/boards/ch03.yaml"
   },
   {
    "id": "ch04.acting",
@@ -343,8 +347,8 @@
    "id": "ch04.draft",
    "area": "film",
    "title": "Chapter 4: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch04-draft-3af7a2ac.mp4, -14.4 LUFS, peak -2 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch04.js"
   },
   {
    "id": "ch06.acting",
@@ -385,8 +389,8 @@
    "id": "ch06.draft",
    "area": "film",
    "title": "Chapter 6: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch06-draft-b20675dc.mp4, -14.4 LUFS, peak -2.2 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch06.js"
   },
   {
    "id": "ch07.acting",
@@ -427,8 +431,8 @@
    "id": "ch07.draft",
    "area": "film",
    "title": "Chapter 7: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch07-draft-88f32829.mp4, -14.5 LUFS, peak -2.1 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch07.js"
   },
   {
    "id": "ch08.acting",
@@ -469,8 +473,8 @@
    "id": "ch08.draft",
    "area": "film",
    "title": "Chapter 8: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch08-draft-50c72056.mp4, -14.5 LUFS, peak -1.7 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch08.js"
   },
   {
    "id": "ch09.acting",
@@ -511,8 +515,8 @@
    "id": "ch09.draft",
    "area": "film",
    "title": "Chapter 9: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch09-draft-2ab24b3b.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch09.js"
   },
   {
    "id": "ch10.acting",
@@ -553,8 +557,8 @@
    "id": "ch10.draft",
    "area": "film",
    "title": "Chapter 10: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch10-draft-fef3ef77.mp4, -14.4 LUFS, peak -2.3 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch10.js"
   },
   {
    "id": "ch11.acting",
@@ -595,8 +599,8 @@
    "id": "ch11.draft",
    "area": "film",
    "title": "Chapter 11: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch11-draft-13393aec.mp4, -14.4 LUFS, peak -2.3 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch11.js"
   },
   {
    "id": "work.sheets",
@@ -1399,9 +1403,9 @@
   {
    "id": "find.ch07-cloud",
    "area": "finding",
-   "title": "Chapter 7: the cloud of blankness is never shown",
-   "state": "pass",
-   "note": "In the new ch07 draft, 2:07-2:45: smoke gathers round the two men and the machines, thickens and wavers, then sets into the black dome."
+   "title": "Chapter 7: the cloud of blankness barely registers",
+   "state": "open",
+   "note": "Tenth round, minor: 2:02-2:40 only a faint darkening; the slow build isn't visible at phone size."
   },
   {
    "id": "find.ch04-groups",
@@ -1637,9 +1641,9 @@
   {
    "id": "find.ch02-swarm",
    "area": "finding",
-   "title": "Chapter 2: the swarm of tiny machines reads as stars",
-   "state": "pass",
-   "note": "Fixed in 91502fb; on the new draft at 4:52-5:08 the swarm is small drawn machines moving among the ships with their drive marks, distinct from the fine starfield."
+   "title": "Chapter 2: the swarm doesn't look like the investigators",
+   "state": "open",
+   "note": "Tenth round, minor: 4:52-5:10 pale capsules, where we followed spheres; they read as the wreck's debris."
   },
   {
    "id": "find.note-colour",
@@ -1752,14 +1756,121 @@
    "title": "Review pages load no web font",
    "state": "pass",
    "note": "Fixed: tools/build_site.mjs gives every review page without the fonts link the site's fonts; checked in the built pages."
+  },
+  {
+   "id": "find.ch05-fused",
+   "area": "finding",
+   "title": "Chapter 5: the 'fused, distorted mass' is an intact barrel",
+   "state": "open",
+   "note": "Tenth round, major: 4:50-8:30 a neat small barrel, lens intact, lies where the text has fused metal."
+  },
+  {
+   "id": "find.ch03-logline",
+   "area": "finding",
+   "title": "Chapter 3's summary: 'lose half their torpedoes'",
+   "state": "open",
+   "note": "Tenth round, major: the torpedoes destroy half the enemy's fleet; the screen stops the induction beams. On the film page and the chapter's page."
+  },
+  {
+   "id": "find.ch03-frozen",
+   "area": "finding",
+   "title": "Chapter 3: the men don't react to the first mass death",
+   "state": "open",
+   "note": "Tenth round, minor: 3:39-4:03 Roal and Trest are in one pose, hands down."
+  },
+  {
+   "id": "find.lettering",
+   "area": "finding",
+   "title": "Designations aren't lettered as decided",
+   "state": "open",
+   "note": "Tenth round, minor: DECISIONS 2026-11-01 says lettered on screen the first time. Roal 25374, Trest 35429, Kahsh-256799, F-1 and F-2 aren't; MX-3401's is tiny and wider than its hull."
+  },
+  {
+   "id": "find.ch08-ladder",
+   "area": "finding",
+   "title": "Chapter 8: the thesis plays over a tiny ladder",
+   "state": "open",
+   "note": "Tenth round, minor: 1:12-2:40 'a last evolution' lands on a near-empty frame; 90 s of a thin ladder, 19% of the frame's width; Roal off screen."
+  },
+  {
+   "id": "find.ch02-outsiders",
+   "area": "finding",
+   "title": "Chapter 2: 'crawling about the ship', three clones stand in a row",
+   "state": "open",
+   "note": "Tenth round, minor: 1:30-2:05 the same pose throughout."
+  },
+  {
+   "id": "find.ch03-fleet",
+   "area": "finding",
+   "title": "Chapter 3: a ship pops in, and half the fleet barely dies",
+   "state": "open",
+   "note": "Tenth round, minor: 2:16.8 a double-size ship appears in one frame; 'fully half the fleet' goes as faint flecks. 'A hundred great ships' are drawn as 10."
+  },
+  {
+   "id": "find.ch03-sat",
+   "area": "finding",
+   "title": "Chapter 3: 'they sat watching', and they stand",
+   "state": "open",
+   "note": "Tenth round, minor: 5:34-5:46."
+  },
+  {
+   "id": "find.night-ground",
+   "area": "finding",
+   "title": "Chapters 8 and 9: the ground stays daylight under a black sky",
+   "state": "open",
+   "note": "Tenth round, minor: ch08 4:27-5:18, ch09 0:06-2:50: tan rocks and a bright strip along the bottom."
+  },
+  {
+   "id": "find.ch09-piers",
+   "area": "finding",
+   "title": "Chapter 9: Trest and C-R-U-1 stand in the piers",
+   "state": "open",
+   "note": "Tenth round, minor: 4:18-4:30 a spike cuts Trest's head and shoulder, C-R-U-1 floats inside another pier. From the ninth round's fix."
+  },
+  {
+   "id": "find.dome-dark",
+   "area": "finding",
+   "title": "Chapter 8: the dome's inside changes from black to a lit room",
+   "state": "open",
+   "note": "Tenth round, minor: ch07 3:15-3:40 near-black, ch08 0:06 mid-brown; PLAN section 5 says the dome goes absolute black."
+  },
+  {
+   "id": "find.site-ch05-draft",
+   "area": "finding",
+   "title": "Chapter 5's page: 'acted and painted', then 'still simple'",
+   "state": "open",
+   "note": "Tenth round, minor: the second sentence is stale."
+  },
+  {
+   "id": "find.ch06-idle-screens",
+   "area": "finding",
+   "title": "Chapter 6: screens flare red with nobody attacking",
+   "state": "open",
+   "note": "Tenth round, minor: 4:14-4:24 as the fleet moves on."
+  },
+  {
+   "id": "find.page-excerpts",
+   "area": "finding",
+   "title": "Chapter pages end an excerpt with a false period",
+   "state": "open",
+   "note": "Tenth round, nit: ch02 'ever learned.', ch03 'my two friends.', ch08 'said Roal.', ch11 'have not returned.'"
+  },
+  {
+   "id": "find.ch07-hundred",
+   "area": "finding",
+   "title": "Chapter 7: 'a hundred great ships' drawn as ten",
+   "state": "open",
+   "note": "Tenth round, nit."
+  },
+  {
+   "id": "find.ch05-cru-float",
+   "area": "finding",
+   "title": "Chapter 5: C-R-U-1 'floated' but stands on a pier's base",
+   "state": "open",
+   "note": "Tenth round, nit: 7:10-7:50."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-07 20:34",
-   "found": 7,
-   "note": "Seventh round: 1 major (ch08/ch09 the 500-ft power plant drawn about 30 ft tall), 4 minor (ch07 the dome doesn't visibly belly inward; ch03 the land green before the death beams; the film page's green-beams note misquotes 'retarding it greatly in exothermic actions'; ch02 which Outsider fires the bluish beam is unclear), 2 nits (ch08 framing at 0:45 and 4:48; small figures at ch07 3:17-3:50 and ch09 3:26)."
-  },
   {
    "when": "2026-11-08 09:30",
    "found": 8,
@@ -1769,6 +1880,11 @@
    "when": "2026-11-08 18:15",
    "found": 19,
    "note": "Ninth round: 1 major (chapter 7's plain was night, against chapters 6 and 8), 10 minor, 8 nits; a twentieth, the foreword's wording, is Curt's. All checked against the frames and the word times."
+  },
+  {
+   "when": "2026-11-09 04:17",
+   "found": 18,
+   "note": "Tenth round: 19 reported, 2 major, 13 minor, 4 nits; 18 opened. The site's 'still being watched and fixed' stays, since it's true: the scorecard's counts show what has passed, and the watching goes on."
   }
  ]
 }

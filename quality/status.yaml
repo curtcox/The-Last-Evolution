@@ -855,10 +855,10 @@ items:
     title: The quality page's phone screenshot predates the page
     when: 2026-11-06 19:23
   find.ch07-cloud:
-    state: pass
-    note: "In the new ch07 draft, 2:07-2:45: smoke gathers round the two men and the machines, thickens and wavers, then sets into the black dome."
-    title: "Chapter 7: the cloud of blankness is never shown"
-    when: 2026-11-07 08:16
+    state: open
+    note: "Tenth round, minor: 2:02-2:40 only a faint darkening; the slow build isn't visible at phone size."
+    title: "Chapter 7: the cloud of blankness barely registers"
+    when: 2026-11-09 04:17
   find.ch04-groups:
     state: pass
     note: "In the new ch04 draft, 3:02-3:19: Roal and Trest stay in frame at their groups through 'three groups' instead of vanishing on arrival."
@@ -1025,10 +1025,10 @@ items:
     title: "Chapter 8: the plane of force doesn't smooth the rocks"
     when: 2026-11-08 17:45
   find.ch02-swarm:
-    state: pass
-    note: Fixed in 91502fb; on the new draft at 4:52-5:08 the swarm is small drawn machines moving among the ships with their drive marks, distinct from the fine starfield.
-    title: "Chapter 2: the swarm of tiny machines reads as stars"
-    when: 2026-11-08 17:45
+    state: open
+    note: "Tenth round, minor: 4:52-5:10 pale capsules, where we followed spheres; they read as the wreck's debris."
+    title: "Chapter 2: the swarm doesn't look like the investigators"
+    when: 2026-11-09 04:17
   find.note-colour:
     state: pass
     note: The note now says the frame, 125,000 years on, is the film's only full-colour scene, and that elsewhere colour marks energy alone, as PLAN says; no longer calls the spirals the only colour in the film.
@@ -1109,6 +1109,86 @@ items:
     note: "Fixed: tools/build_site.mjs gives every review page without the fonts link the site's fonts; checked in the built pages."
     title: Review pages load no web font
     when: 2026-11-09 03:55
+  find.ch05-fused:
+    state: open
+    note: "Tenth round, major: 4:50-8:30 a neat small barrel, lens intact, lies where the text has fused metal."
+    title: "Chapter 5: the 'fused, distorted mass' is an intact barrel"
+    when: 2026-11-09 04:17
+  find.ch03-logline:
+    state: open
+    note: "Tenth round, major: the torpedoes destroy half the enemy's fleet; the screen stops the induction beams. On the film page and the chapter's page."
+    title: "Chapter 3's summary: 'lose half their torpedoes'"
+    when: 2026-11-09 04:17
+  find.ch03-frozen:
+    state: open
+    note: "Tenth round, minor: 3:39-4:03 Roal and Trest are in one pose, hands down."
+    title: "Chapter 3: the men don't react to the first mass death"
+    when: 2026-11-09 04:17
+  find.lettering:
+    state: open
+    note: "Tenth round, minor: DECISIONS 2026-11-01 says lettered on screen the first time. Roal 25374, Trest 35429, Kahsh-256799, F-1 and F-2 aren't; MX-3401's is tiny and wider than its hull."
+    title: Designations aren't lettered as decided
+    when: 2026-11-09 04:17
+  find.ch08-ladder:
+    state: open
+    note: "Tenth round, minor: 1:12-2:40 'a last evolution' lands on a near-empty frame; 90 s of a thin ladder, 19% of the frame's width; Roal off screen."
+    title: "Chapter 8: the thesis plays over a tiny ladder"
+    when: 2026-11-09 04:17
+  find.ch02-outsiders:
+    state: open
+    note: "Tenth round, minor: 1:30-2:05 the same pose throughout."
+    title: "Chapter 2: 'crawling about the ship', three clones stand in a row"
+    when: 2026-11-09 04:17
+  find.ch03-fleet:
+    state: open
+    note: "Tenth round, minor: 2:16.8 a double-size ship appears in one frame; 'fully half the fleet' goes as faint flecks. 'A hundred great ships' are drawn as 10."
+    title: "Chapter 3: a ship pops in, and half the fleet barely dies"
+    when: 2026-11-09 04:17
+  find.ch03-sat:
+    state: open
+    note: "Tenth round, minor: 5:34-5:46."
+    title: "Chapter 3: 'they sat watching', and they stand"
+    when: 2026-11-09 04:17
+  find.night-ground:
+    state: open
+    note: "Tenth round, minor: ch08 4:27-5:18, ch09 0:06-2:50: tan rocks and a bright strip along the bottom."
+    title: "Chapters 8 and 9: the ground stays daylight under a black sky"
+    when: 2026-11-09 04:17
+  find.ch09-piers:
+    state: open
+    note: "Tenth round, minor: 4:18-4:30 a spike cuts Trest's head and shoulder, C-R-U-1 floats inside another pier. From the ninth round's fix."
+    title: "Chapter 9: Trest and C-R-U-1 stand in the piers"
+    when: 2026-11-09 04:17
+  find.dome-dark:
+    state: open
+    note: "Tenth round, minor: ch07 3:15-3:40 near-black, ch08 0:06 mid-brown; PLAN section 5 says the dome goes absolute black."
+    title: "Chapter 8: the dome's inside changes from black to a lit room"
+    when: 2026-11-09 04:17
+  find.site-ch05-draft:
+    state: open
+    note: "Tenth round, minor: the second sentence is stale."
+    title: "Chapter 5's page: 'acted and painted', then 'still simple'"
+    when: 2026-11-09 04:17
+  find.ch06-idle-screens:
+    state: open
+    note: "Tenth round, minor: 4:14-4:24 as the fleet moves on."
+    title: "Chapter 6: screens flare red with nobody attacking"
+    when: 2026-11-09 04:17
+  find.page-excerpts:
+    state: open
+    note: "Tenth round, nit: ch02 'ever learned.', ch03 'my two friends.', ch08 'said Roal.', ch11 'have not returned.'"
+    title: Chapter pages end an excerpt with a false period
+    when: 2026-11-09 04:17
+  find.ch07-hundred:
+    state: open
+    note: Tenth round, nit.
+    title: "Chapter 7: 'a hundred great ships' drawn as ten"
+    when: 2026-11-09 04:17
+  find.ch05-cru-float:
+    state: open
+    note: "Tenth round, nit: 7:10-7:50."
+    title: "Chapter 5: C-R-U-1 'floated' but stands on a pier's base"
+    when: 2026-11-09 04:17
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1150,4 +1230,8 @@ fresh:
     found: 19
     note: "Ninth round: 1 major (chapter 7's plain was night, against chapters 6 and 8), 10 minor, 8 nits; a twentieth, the foreword's wording, is Curt's. All checked against the frames and the word times."
     state: 6712babb2c70
-since_fresh: 73
+  - when: 2026-11-09 04:17
+    found: 18
+    note: "Tenth round: 19 reported, 2 major, 13 minor, 4 nits; 18 opened. The site's 'still being watched and fixed' stays, since it's true: the scorecard's counts show what has passed, and the watching goes on."
+    state: 63f4ca20cfa3
+since_fresh: 0
