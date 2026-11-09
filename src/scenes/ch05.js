@@ -368,16 +368,19 @@
     roal(t);
 
     // AI, AJ: the life-form investigator brings the cage and sets it down; the green beam; it leaves when it's done
-    if (t > tCage - 2) {
-      const k = ez(t, tCage - 2, tHeld), down = ez(t, tHeld, tPig), leave = ez(t, C('p072.1') + 1.5, C('p072.1') + 8);
-      const ix = lerp(2150, CAGE[0] + 130, k) + 1300 * leave, iy = G - 30 * (1 - down) - 60 * leave;   // in from the right, under F-2
+    // it carries the cage in and comes on 'came with a small cage' (the cage stood at its place from the start, hung on a
+    // long line from the investigator off the right edge, 2-4 s early, as if F-2 had fetched it)
+    const tInv = C('p071.1:investigator') - .5;
+    if (t > tInv) {
+      const k = ez(t, tInv, C('p071.1:small cage')), down = ez(t, tHeld, tPig), leave = ez(t, C('p072.1') + 1.5, C('p072.1') + 8);
+      const ix = lerp(CAGE[0] + 1030, CAGE[0] + 130, k) + 1300 * leave, iy = G - 30 * (1 - down) - 60 * leave;   // in from the right, under F-2
       const m = DES.machine(ix, iy, 14, t, { r: 1.4, h: 2.6, dh: 1, d: 1, arms: 2, reach: 3 });
-      const cy = lerp(G - 70, G, down);
-      if (leave < .05) { const hd = [CAGE[0], cy - 108]; DES.tentacle([[ix - 14, m.arm], [lerp(ix - 14, hd[0], .45), Math.min(m.arm, hd[1]) - 18], [lerp(ix - 14, hd[0], .8), hd[1] - 14], hd], 5, 3, 4, { grip: true }); }
+      const cy = lerp(G - 70, G, down), cx = leave > 0 ? CAGE[0] : ix - 130;
+      if (leave < .05) { const hd = [cx, cy - 108]; DES.tentacle([[ix - 14, m.arm], [lerp(ix - 14, hd[0], .45), Math.min(m.arm, hd[1]) - 18], [lerp(ix - 14, hd[0], .8), hd[1] - 14], hd], 5, 3, 4, { grip: true }); }
       // AJ: forces play about F-2's base; the pale-green beam passes through the cage
       const fz = K(t, 'p071.1:Forces played', 'p071.1:moments later') * (1 - ez(t, tDead, tDead + 2));
       for (let i = 0; i < 5; i++) if (fz > 0) { const a = t * 2 + i * 1.3; glow(WORK[0] + Math.cos(a) * 60, WORK[1] + 40 + Math.sin(a) * 20, 30, FORCE, .4 * fz); }
-      DES.cage(CAGE[0], cy, 90, t, { dead: ease(K(t, 'p071.1:and the little animal', 'p071.1:fell dead')) });
+      DES.cage(cx, cy, 90, t, { dead: ease(K(t, 'p071.1:and the little animal', 'p071.1:fell dead')) });
       const bk = seg(t, tGreen, tGreen + .5) * (1 - seg(t, tDead + .5, tDead + 1.2));
       if (bk > 0) { const n = f2Nose(t); beam(n[0], n[1], CAGE[0] - 30, G - 40, 6, 30, NRG.death, bk, { washOp: 60 }); }
     }
@@ -409,7 +412,7 @@
     [T0('U'), t => { const k = along(t, 'U'); return [WORK[0] + 110, lerp(650, 600, k), 1.45 + .12 * k]; }, { mv: 1.6, lead: .3 }],
     [T0('W'), t => [WORK[0] + 150, 740, 1.12], { mv: 1.2, lead: .4 }],
     [T0('X'), t => [1290, 730, .95], { mv: 1.5, lead: .3 }],   // the fallen F-1 whole in frame (at 1110, 1.1 it lay half out of it)
-    [T0('Y'), t => [WORK[0] + 60, WORK[1] + 20, 1.6 + .25 * along(t, 'Y')], { mv: 2.4, lead: .3 }],
+    [T0('Y'), t => [WORK[0] - 40, WORK[1] + 20, 1.6 + .25 * along(t, 'Y')], { mv: 2.4, lead: .3 }],   // F-1's hulk kept out of frame: cut by the edge to its end disc, it read as an upright ellipse, another thing from the hulk lying in Z
     [T0('Z'), t => [lerp(1000, 1040, along(t, 'Z')), 700, 1.05], { mv: 2.5, lead: .3 }],
     [T0('AA'), t => [1150, 760, 1.15 + .05 * along(t, 'AA')], { mv: 2, lead: .4 }],
     [T0('AB'), t => { const p = ez(t, C('p064.1:as they are in you'), C('p064.1:nor molecular') + 1); return [lerp(WORK[0] + 120, WORK[0] - 160, p), WORK[1] - 20, 2]; }, { mv: 2.2, lead: .3 }],
