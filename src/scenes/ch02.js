@@ -62,11 +62,13 @@
         if (t < tOut) {
           const tx = transport(t), br = seg(t, tDead, tDead + .3);
           if (t > T0('D') - 1) { const P = []; for (let i = 0; i <= 12; i++) P.push([tx - 260 - i * 260, TR[1] - 10 + (i % 2) * 18]); ruled(P, seg(t, T0('D') - 1, T0('D') + 2), FORCE, .8, br); }
-          // the ships: one closing on the transport and grappling it, the others hanging beyond
-          const close = ez(t, T0('D') + 2, tDead - .5);
-          ship(lerp(2600, TR[0] + 640, close), lerp(300, 420, close), 900, t, -1, { d: 2 });
+          // the ships: one closing on the transport and grappling it, the others hanging beyond. They come while the camera
+          // is at Deimos, so they're first seen when they're sighted: the transport dies to 'some unperceived body' (one
+          // was plainly beside it as it died)
+          const seen = t > tGo + 1, close = ez(t, tGo + 1, tGo + 2.2);
+          if (seen) ship(lerp(2600, TR[0] + 640, close), lerp(300, 420, close), 900, t, -1, { d: 2 });
           if (t > tSight - 6) for (let k = 0; k < 3; k++) { boilSeed('grap' + k); inkLine([[TR[0] + 300 + k * 120, 470], [TR[0] + 80 + k * 70, TR[1] - 30 + k * 18]], .9, INK, 'ink', .3); }
-          for (let i = 0; i < 9; i++) ship(1700 + i * 260 + 60 * hash(i), 140 + 120 * (i % 3) + 300 * hash(i * 3), 220 + 120 * hash(i * 5), t, -1, { d: 3 });
+          if (seen) for (let i = 0; i < 9; i++) ship(1700 + i * 260 + 60 * hash(i), 140 + 120 * (i % 3) + 300 * hash(i * 3), 220 + 120 * hash(i * 5), t, -1, { d: 3 });
           // Deimos, and the investigator's streak at a thousand gravities
           planet(DEIMOS[0], DEIMOS[1], 90, 2, { key: 'deimos' });
           const g = seg(t, tGo, tGo + 3.5), gx = lerp(DEIMOS[0] + 90, TR[0] - 200, g * g), gy = lerp(DEIMOS[1] + 20, TR[1] - 20, g * g);
