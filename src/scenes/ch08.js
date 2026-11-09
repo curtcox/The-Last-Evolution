@@ -16,7 +16,8 @@
     HALFTONE = .2;
     const tJ = T0('J'), go = ez(t, C('p111.2') - .5, T1('J') - .3);
     const c = cam(t, [[0, tt => [930, lerp(700, 760, ez(tt, T0('B'), T0('C'))), lerp(1.2, 1.7, ez(tt, T0('B'), T0('C')))]], [T0('C'), [TRESTX, 760, 2.4], 2], [T0('D'), tt => [ROALX - 60, 770, lerp(2.3, 2.8, ez(tt, T0('D'), T0('E')))], 2.5],
-      [T0('H') - .5, [ROALX + 40, 770, 2.6], .01], [T0('I'), tt => [lerp(1040, 1120, ez(tt, T0('I'), C('p109.1'))), 740, 1.6], 2.5],
+      [T0('H') - .5, [ROALX - 20, 770, 2.6], .01],   // close on the two men, F-2 just out of frame (it stood half cut by the edge)
+      [T0('I'), tt => [lerp(1040, 1120, ez(tt, T0('I'), C('p109.1'))), 740, 1.6], 2.5],
       [C('p109.1') - .8, tt => [lerp(990, 1030, ez(tt, C('p109.1'), C('p110.1'))), 760, 2.3], 3],   // in on the two men listening, F-2 still in frame
       [C('p110.1') - .8, tt => [lerp(1000, 1060, ez(tt, C('p110.1'), tJ)), 750, lerp(1.9, 1.7, ez(tt, C('p110.1'), tJ))], 3],   // the promise: F-2 and the men together
       [tJ, tt => [lerp(1200, 1700, go), 720, 1.8], 2]]);
