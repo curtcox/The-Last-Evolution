@@ -9,6 +9,7 @@
   // the council's places on the floor, left to right
   const P = { cr21: 300, x5638: 560, roal: 820, trest: 1010, kahsh: 1180, x6349: 1420, x6621: 1680 };
   const lit = (t, who) => .25 + .75 * talk(t, who);
+  const XS = [-515, -400, -280, -116, 116, 280, 400, 515];   // the builders' ring across the frame, none hiding another
   const BUILD = [2, 0, 5, 7];   // which place in the builders' ring each of the four takes: C-R-21, X-5638, X-6349, X-6621
   // where everyone's lens or face is, for the camera
   const FACE = { cr21: [P.cr21, 780, 1.7], x5638: [P.x5638, 840, 2], roal: [P.roal, 800, 2.1], trest: [P.trest + 30, 800, 2.1], kahsh: [P.kahsh, 800, 2.1], x6349: [P.x6349, 860, 2], x6621: [P.x6621, 850, 2] };
@@ -21,7 +22,7 @@
     const look = who => clamp(((K_SPEAK(t) ?? 1000) - P[who]) / 600, -1, 1);
     const crt = ez(t, T0('K') - .5, T0('K') + 1), said = cl => cl.reduce((m, [a, b]) => Math.max(m, win(t, a - .3, b + .5, .4, .7)), 0), crg = said(CR21C), x66 = said(X6621C);
     // the council breaks up: each machine rises and flies across to its place in the builders' ring (they vanished, 5 s on)
-    const fly = (i, s) => { const k = ez(t, tShift + .5 + i * .3, tShift + 5 + i * .3), a = Math.PI + BUILD[i] / 7 * Math.PI; return { x: FX + Math.cos(a) * 520, by: G - 300 - 160 * Math.sin(a + Math.PI) + 10 * (BUILD[i] % 2), s: lerp(s, 12, k), k }; };
+    const fly = (i, s) => { const k = ez(t, tShift + .5 + i * .3, tShift + 5 + i * .3), a = Math.PI + BUILD[i] / 7 * Math.PI; return { x: FX + XS[BUILD[i]], by: G - 300 - 160 * Math.sin(a + Math.PI) + 10 * (BUILD[i] % 2), s: lerp(s, 12, k), k }; };
     const F = [fly(0, 30), fly(1, 26), fly(2, 26), fly(3, 26)], hov = (f, h) => lerp(h, (G - f.by) / f.s, f.k);
     if (F[0].k < 1) DES.cr21(lerp(P.cr21, F[0].x, F[0].k), G, F[0].s, t, { lit: lit(t, 'cr21'), hover: hov(F[0], 2 + .6 * crt + .1 * wob(t, .2) + .5 * crg), reach: 4 + 1.2 * crg, weave: .7 * crg, face: look('cr21') * .6 + .35 * crg * Math.sin(t * .9) });
     const x56 = DES.x5638(lerp(P.x5638, F[1].x, F[1].k), G, F[1].s, t, { lit: lit(t, 'x5638'), hover: hov(F[1], 1.5 + .8 * win(t, T0('B'), T0('D'), 1, 1.5)), face: look('x5638') * .8, reach: 4.2 + 1.2 * win(t, C('p039.1:I noticed'), T0('E'), .5, 1), weave: win(t, C('p039.1:weaving tentacles') - .4, T0('E'), .4, 1) });
@@ -48,6 +49,7 @@
     if (tp.up) { tp.up = .12 + (tp.up - .12) * .5; tp.fore = .3 + (tp.fore - .3) * .55; }   // he's stepped up close to Kahsh: a small gesture, in his own space
     stander(t, P.trest, G + 10, 46, [[T0('H'), T0('H') + 1, P.trest, P.trest + 50], [T0('I'), T0('I') + 1, P.trest + 50, P.trest], [tShift + .5, tShift + 5, P.trest, 1640]], { who: 'trest', key: 'trest', seed: 7, flip: (sp < P.trest && t < tShift) || t > T0('N') + 1, look: .05 + tl + nod(t, ROALC), talk: talk(t, 'trest'), pose: tp });
     // Kahsh, when the council breaks up, walks off to the right (he vanished)
+    { const k = win(t, C('p044.2') + .3, C('p044.2') + 5.4, .3, .5); if (k > 0) letter('Kahsh-256799', P.kahsh + 56, 770, 26, INK, { ink: false, align: 'left', font: '700 26px ' + SERIF, spacing: 1, alpha: k }); }   // lettered as he's named
     if (t < tShift) DES.person(P.kahsh, G + 20, 44, t, { who: 'kahsh', gest: KAHSH.reduce((m, [a, b]) => Math.max(m, win(t, a - .4, b + .8, .4, .7)), 0) });
     else if (t < tShift + 8) stander(t, P.kahsh, G + 20, 44, [[tShift, tShift + 8, P.kahsh, 2500]], { who: 'kahsh', key: 'kahsh', seed: 5 });
   }
@@ -88,8 +90,10 @@
     // the builders: in a ring round the frame, their force-beams on the work
     const tN = T0('N'), tMem = C('p048.1:there were stacked the memory-units'), tFeed = C('p048.1:all the sensation-ideas'), tQ = T0('Q');
     const busy = win(t, tN, tQ + 1, 1.5, 2);
-    for (let i = 0; i < 8; i++) { const a = Math.PI + i / 7 * Math.PI, x = FX + Math.cos(a) * 520, g = G - 20 + Math.sin(a) * -40, y = G - 300 - 160 * Math.sin(a + Math.PI);
-      const mm = DES.machine(x, G + 10 * (i % 2), 18, t, { arms: 3, d: 1 + (i % 2), hover: (G - y) / 18, face: clamp((FX - x) / 500, -1, 1) * .9, label: i === 1 && t < DUR - 1.6 ? 'MX-3401' : null, lit: .3 + .4 * busy });
+    for (let i = 0; i < 8; i++) { const a = Math.PI + i / 7 * Math.PI, x = FX + XS[i], g = G - 20 + Math.sin(a) * -40, y = G - 300 - 160 * Math.sin(a + Math.PI);
+      const mm = DES.machine(x, G + 10 * (i % 2), 18, t, { arms: 3, d: 1 + (i % 2), hover: (G - y) / 18, face: clamp((FX - x) / 500, -1, 1) * .9, label: null, lit: .3 + .4 * busy });
+      // MX-3401, lettered as it's named, under its hull (on it, the seven letters were tiny and wider than the case)
+      if (i === 1) { const k = win(t, C('p048.1:under the direction') - .1, C('p048.1:under the direction') + 6, .3, .6); if (k > 0) letter('MX-3401', x, y + 96, 30, INK, { ink: false, font: '700 30px ' + SERIF, spacing: 1, alpha: k }); }
       if (busy > 0 && hash(Math.floor(t * 3) + i) > .4) beam(mm.eye[0], mm.eye[1], FX + (hash(i) - .5) * 200, G - 200 - 400 * ez(t, tN, tQ), 3, 8, FORCE, 1, { washOp: 30 * busy, a: .4 * busy, splash: true }); }
     const m = f1Build(t);   // (lettering isn't faded by closing(), so its name goes before the fade)
     // O: the memory-units borne in; the ruled lines from every science-machine converging on the dome-case
