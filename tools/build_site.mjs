@@ -86,7 +86,7 @@ in. Every word of the story is in the film.</p>
 <ul class="ways">
 <li><a href="watch/"><b>Watch</b></a> the whole film, about an hour, with notes beside it as it plays: on the 1932
 science, the text, and the idea at its heart, that machines might inherit from us. It's a draft: every word is voiced
-and every chapter acted, and the drafts are still being watched and fixed.</li>
+and every chapter acted, and fresh reviews go on looking for faults in the drafts until two in a row find none.</li>
 <li><a href="read/"><b>Read</b></a> the story (${story.words.toLocaleString()} words, about half an hour), with the
 words the 1961 reprint lost put back from the first printing.</li>
 <li><a href="notes/"><b>Read the notes</b></a>: the science of 1932, machines as heirs, Campbell and the pulps, each
@@ -94,8 +94,9 @@ claim with its source.</li>
 <li><a href="review/"><b>See how it's made</b></a>, round by round: every choice, and why.</li>
 </ul>
 <div class="status"><h2>In production</h2>
-<p>The whole film is drafted, and every chapter has been acted and painted to its finished designs. Now each draft is
-being watched and fixed until it meets its bar; then the film is rendered in full and posted to YouTube with captions.
+<p>The whole film is drafted, and every chapter has been acted and painted to its finished designs. Each draft has met
+its bar, and now fresh reviewers watch the whole film round after round, and what they find is fixed, until two rounds in
+a row find nothing; then the film is rendered in full and posted to YouTube with captions.
 <a href="review/quality/">Where it stands</a> shows every chapter and page against the bar it has to meet, and
 <a href="${REPO}/blob/main/PLAN.md">the plan</a> says how.</p></div>
 `);
@@ -308,6 +309,8 @@ chapter and every page of this site is checked against a written bar before it's
 <li><b>This site:</b> ${sd} of its ${sn} checks done (what each page says, and how it looks and works).</li>
 ${next ? `<li><b>Next:</b> ${esc(next)}.</li>` : ''}
 </ul>
+<p>A check done isn't the last word: every so often a fresh reviewer, new to the work, watches the whole film and reads
+the site, and what they find reopens its check. The film is finished when two reviews in a row find nothing${card.fresh?.length ? `; the latest found ${card.fresh.at(-1).found}` : ''}.</p>
 ${card.satisfied ? '<p><b>Everything is done.</b></p>' : ''}
 <h2>The film, chapter by chapter</h2>
 <p>Each chapter is checked for its <b>acting</b> (do the figures act their lines?), its <b>picture</b> (does each shot show

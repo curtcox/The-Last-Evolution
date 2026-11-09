@@ -43,8 +43,8 @@ ol.notes .x{cursor:pointer;color:var(--ink2);margin-left:.5em} .notesbar{display
 <p class="kicker"><a href="../">Review</a> · Round 6 · the chapters</p><h1>The Last Evolution: the whole film, in draft</h1>
 <p>Every chapter's draft, played back to back: ${hms(total)}, at 12 drawings a second, over the voice pass and the
 effects. Chapter 5 was the pilot (Round 5); the other eleven were built the same way, with the same palette and the
-same boil. Every chapter has since been acted and painted to its finished designs, and each draft here is the latest,
-still being watched and fixed before the film is rendered in full.${missing.length ? ` <b>Still rendering:</b> chapter${missing.length > 1 ? 's' : ''} ${missing.join(', ')}; ${missing.length > 1 ? 'they join' : 'it joins'} the film when ${missing.length > 1 ? 'they\'re' : 'it\'s'} done.` : ''}</p>
+same boil. Every chapter has since been acted and painted to its finished designs, and each draft here is the latest:
+fresh reviews go on looking for faults until two in a row find none, and then the film is rendered in full.${missing.length ? ` <b>Still rendering:</b> chapter${missing.length > 1 ? 's' : ''} ${missing.join(', ')}; ${missing.length > 1 ? 'they join' : 'it joins'} the film when ${missing.length > 1 ? 'they\'re' : 'it\'s'} done.` : ''}</p>
 <p><b>Notes:</b> pause anywhere, type, and press Enter (or <i>Pin</i>) to pin a note to that moment of the film. They
 stay in this browser. <i>Copy notes</i> puts them on the clipboard as text, with the chapter and the shot, for the
 <a href="https://github.com/curtcox/The-Last-Evolution/blob/main/review/round6.md">decision sheet</a> or a message.</p>
