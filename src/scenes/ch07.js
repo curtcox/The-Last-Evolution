@@ -49,10 +49,10 @@
     // Roal and Trest before the screens; Roal turns when the machines come. Each gestures on his own clauses (Roal's
     // smaller while his eyes dream) and nods as the other, or F-2, speaks to him
     const turn = t > tF + .3, dream = win(t, C('p085.2'), T1('D'), 1, 1);
-    const rp = {}, rh = listen(t, rp, TO_ROAL, 1), rl = rh + gesture(t, rp, ROALC); if (rp.up) { rp.up = lerp(rp.up, .12 + (rp.up - .12) * .55, dream); rp.fore = lerp(rp.fore, .3 + (rp.fore - .3) * .6, dream); }
+    const rp = {}, rh = listen(t, rp, TO_ROAL, 1), rl = rh + gesture(t, rp, ROALG) + staged(t, rp); if (rp.up) { rp.up = lerp(rp.up, .12 + (rp.up - .12) * .55, dream); rp.fore = lerp(rp.fore, .3 + (rp.fore - .3) * .6, dream); }
     const roal = stander(t, MID - 90, G, 44, [[tF + .3, tF + 1.4, MID - 90, MID - 50]], {   // 'Roal turned': a half-step round, toward the room
       who: 'roal', key: 'roal', seed: 3, flip: !turn && t > T0('C') && t < T0('E') ? false : !turn, look: (turn ? .05 : .45) + rl + nod(t, TO_ROAL), pose: rp, talk: talk(t, 'roal'), lid: dream * .45 });
-    const tp = {}, th = listen(t, tp, TO_TREST, 2), tl = th + gesture(t, tp, TRESTC);
+    const tp = {}, th = listen(t, tp, merge(TO_TREST, 3), 2), tl = th + gesture(t, tp, TRESTC);
     stander(t, MID + 90, G + 10, 46, [], { who: 'trest', key: 'trest', seed: 7, flip: t < tF,   // toward Roal, at his left, until F-2 comes from the right
       look: .1 + tl + nod(t, TO_TREST), pose: tp, talk: talk(t, 'trest') });
     dreamCurl(roal.head[0] - 20, roal.head[1] - 40, K(t, 'p085.2', 'p085.3:I have lived'), t, .5 * (1 - ez(t, C('p085.3:I have lived'), C('p085.3:I have lived') + 2)), 'rc');
@@ -65,6 +65,22 @@
       stillSeed('dome'); paint(P, { wash: PULP.black, washOp: 255 * Math.min(1, arch * 1.4), fill: PULP.black, fillOp: 200 * arch, bleed: .05, ink: INK, sw: 1 }); if (arch > .6) paint(P, { wash: PULP.black, washOp: 255 * seg(arch, .6, 1), ink: null, bleed: .05 }); }   // a second coat as it solidifies: one lets the figures show through
   }
   const ROALC = clauses('roal'), TRESTC = clauses('trest'), F2C = clauses('f2'), TO_ROAL = [...TRESTC, ...F2C], TO_TREST = [...ROALC, ...F2C];
+  // Roal's long speech, 'But not the end of evolution', staged on its sentences: the hand opens on 'evolution', sweeps out
+  // to the machines that will go on, comes to his chest for man's flesh, rests, goes to his chin, rises high on 'leaps
+  // ahead', hands behind him for last night, opens at 'baffled', back to his chest for himself, folds for his own life.
+  // Trest's listening runs on across the breaths between clauses, so it goes through all its stances. (Roal opened the
+  // same hand every 4-5 s, eight times in 44 s, and Trest swapped two poses.)
+  const merge = (cl, gap) => { const out = []; for (const [a, b] of [...cl].sort((x, y) => x[0] - y[0])) { const l = out[out.length - 1]; if (l && a - l[1] < gap) l[1] = Math.max(l[1], b); else out.push([a, b]); } return out; };
+  const SPEECH = [C('p085.3'), C('p085.3$')], ROALG = ROALC.filter(([a]) => a < SPEECH[0] - .2 || a > SPEECH[1]);
+  const STAGE = [['', 'The children', { up: .8, fore: 1.9 }], ['The children', 'Not of', { up: 1.3, fore: .5 }], ['Not of', 'a flesh that knows', { up: .35, fore: 2.7 }],
+    ['a flesh that spends', 'but overnight', { up: .5, fore: 2.8 }], ['but overnight', 'Last night', { up: 1.6, fore: 1.1 }], ['Last night', 'baffled', { up: -.35, fore: .05, farUp: -.3, farFore: .05 }],
+    ['baffled', 'and me', { up: .6, fore: 1.6 }], ['and me', 'I have lived', { up: .35, fore: 2.7 }], ['Surely', 'We will go', { up: .15, fore: 2.3, farUp: .2, farFore: 2.2 }], ['We will go', '$', { up: .5, fore: 1.4 }]]
+    .map(([a, b, p]) => [C('p085.3' + (a ? ':' + a : '')), b === '$' ? C('p085.3$') : C('p085.3:' + b), p]);
+  function staged(t, pose) {
+    let m = 0;
+    for (const [a, b, p] of STAGE) { const k = win(t, a - .2, b - .1, .5, .6); if (k <= 0) continue; m = Math.max(m, k); for (const f in p) pose[f] = lerp(pose[f] ?? DES.POSE.stand[f], p[f], k); }
+    return .04 * m * Math.sin(t * 1.3);
+  }
   function hall(t) {
     HALFTONE = .3;
     const c = cam(t, [[0, tt => [lerp(900, MID, ez(tt, T0('B'), T0('C'))), lerp(560, 760, ez(tt, T0('B'), T0('C'))), lerp(.95, 1.4, ez(tt, T0('B'), T0('C')))]], [T0('C'), [MID + 60, 780, 2.2], 2],
