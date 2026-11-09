@@ -36,9 +36,10 @@
     // the cloud of blankness: smoke round them, swiftly thickening, wavering as it solidifies (a near-black fill alone was
     // lost on the dark hall, and the two stood in clear air for 35 s). Drawn behind them, with only a low drift at their
     // feet in front: drawn over them, its washes and lines ran through the men and machines as they spoke, like ghosts
-    cloud = ez(t, tCloud, tCloud + 8), arch = ez(t, tArch - 1, tSolid + 1); const waver = 1 - .25 * Math.max(0, Math.sin(t * 1.6)) * ez(t, T0('I'), tArch);
-    if (cloud > 0) for (let i = 0; i < 16; i++) { const a = i / 16 * TAU + t * .12, r = 240 + 70 * Math.sin(t * .7 + i), cx = MID + Math.cos(a) * r, cy = G - 170 + Math.sin(a) * r * .5, k = cloud * waver * (1 - arch * .6);
-      boilSeed('cl' + i + Math.floor(t * 4)); paint(ellPts(cx, cy, 170 * cloud, 110 * cloud, 14, 26), { wash: '#4A4440', washOp: 115 * k, fill: '#141110', fillOp: 70 * k, bleed: .45, ink: '#6A625A', sw: .4 }); }
+    cloud = .55 * ez(t, tCloud, tCloud + 8) + .45 * ez(t, C('p089.1:Swiftly it intensified') - .3, C('p089.1:Swiftly it intensified') + 5), arch = ez(t, tArch - 1, tSolid + 1); const waver = 1 - .25 * Math.max(0, Math.sin(t * 1.6)) * ez(t, T0('I'), tArch);
+    // (paler smoke, wider and rising as it grows: even at 115 its dark grey barely showed on the dim hall)
+    if (cloud > 0) for (let i = 0; i < 24; i++) { const a = i / 24 * TAU + t * .12, r = lerp(170, 560, cloud) + 70 * Math.sin(t * .7 + i), cx = MID + Math.cos(a) * r, cy = G - 150 - 170 * cloud + Math.sin(a) * r * .55, k = cloud * waver * (1 - arch * .6);
+      boilSeed('cl' + i + Math.floor(t * 4)); paint(ellPts(cx, cy, 110 + 160 * cloud, 70 + 110 * cloud, 14, 26), { wash: mixCol('#7E766A', '#2E2A26', arch), washOp: (60 + 150 * cloud) * Math.min(1, k * 2), fill: '#2A2520', fillOp: 70 * k, bleed: .45, ink: null }); }   // no edges: thin, they drew a web, and thick, it read as rock
     // F-2 floats in and stops before the men
     const f2k = ez(t, tF - .5, tF + 5), fx = lerp(2300, MID + 260, f2k), fy = lerp(560, 780, f2k);
     for (let i = 0; i < 6; i++) if (t > tSix - 1) { const [x, g] = sixAt(t, i); const m = DES.machine(x, g, 22, t, { arms: 3, d: 1 + (i % 2), hover: 1.5 + .1 * wob(t, .3, i), face: clamp((MID - x) / 300, -1, 1), lit: .3, label: null });
@@ -56,12 +57,12 @@
       look: .1 + tl + nod(t, TO_TREST), pose: tp, talk: talk(t, 'trest') });
     dreamCurl(roal.head[0] - 20, roal.head[1] - 40, K(t, 'p085.2', 'p085.3:I have lived'), t, .5 * (1 - ez(t, C('p085.3:I have lived'), C('p085.3:I have lived') + 2)), 'rc');
     if (cloud > 0) for (let i = 0; i < 7; i++) { const cx = MID - 480 + i * 160 + 30 * Math.sin(t * .5 + i), k = cloud * (1 - arch * .6);
-      boilSeed('cf' + i + Math.floor(t * 4)); paint(ellPts(cx, G + 40, 150 * cloud, 34 * cloud, 12, 26), { wash: '#4A4440', washOp: 90 * k, bleed: .45, ink: null }); }
+      boilSeed('cf' + i + Math.floor(t * 4)); paint(ellPts(cx, G + 40, 150 * cloud, 34 * cloud, 12, 26), { wash: '#6A625A', washOp: 110 * k, bleed: .45, ink: null }); }
     // (the whole arch at once, spreading across and rising from a low canopy to the dome; swept round from one side as a
     // slice pinned to the floor, its first seconds drew a thin wedge, like a stray triangle)
     if (arch > 0) { const r = 560, wide = .55 + .45 * easeOut(Math.min(1, arch * 1.3)), high = easeOut(arch), P = [];
       for (let i = 0; i <= 24; i++) { const a = Math.PI + i / 24 * Math.PI, w = 1 + .05 * Math.sin(t * 4 + i) * (1 - arch); P.push([MID + Math.cos(a) * r * wide * w, G + Math.sin(a) * r * .8 * high * w]); }
-      stillSeed('dome'); paint(P, { wash: PULP.black, washOp: 255 * Math.min(1, arch * 1.4), fill: PULP.black, fillOp: 200 * arch, bleed: .05, ink: INK, sw: 1 }); }
+      stillSeed('dome'); paint(P, { wash: PULP.black, washOp: 255 * Math.min(1, arch * 1.4), fill: PULP.black, fillOp: 200 * arch, bleed: .05, ink: INK, sw: 1 }); if (arch > .6) paint(P, { wash: PULP.black, washOp: 255 * seg(arch, .6, 1), ink: null, bleed: .05 }); }   // a second coat as it solidifies: one lets the figures show through
   }
   const ROALC = clauses('roal'), TRESTC = clauses('trest'), F2C = clauses('f2'), TO_ROAL = [...TRESTC, ...F2C], TO_TREST = [...ROALC, ...F2C];
   function hall(t) {
