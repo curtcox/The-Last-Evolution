@@ -48,6 +48,8 @@
   const tInv = C('p018.1:There had been no wars'), tBut = C('p018.1:But--life alone');
   const TELL = (() => { const out = []; let a = null; for (const w of CHAPTER.lines.find(l => l.id === 'p018.1').words) { if (w[1] < tInv - .1 || w[1] >= tBut) continue; a ??= w[1]; if (/[,.;?!]$/.test(w[0])) { out.push([a, w[2]]); a = null; } } return out; })();
 
+  // a pose bent to sit; DROP lowers the hip so the feet stay on the floor
+  const DROP = 50, seat = (p, k) => { if (k > 0) for (const f of ['torso', 'thigh', 'shin']) p[f] = lerp(p[f] ?? DES.POSE.stand[f], DES.POSE.sit[f], k); return p; };
   function people(t) {
     const tPoint = C('p018.1:Roal had quickly assured us'), out = win(t, tPoint, tInv + .3, .6, .8), arm = win(t, T0('V') - .2, T0('W') + .5, .25, 1);
     // 'Attack--therefore!': the arm thrown up, high and forward of his head (at up 1.5 it went out level, like a point;
@@ -57,12 +59,19 @@
     const pose = { up: lerp(.12, arm ? 2.3 : 1.5, Math.max(out, arm)), fore: lerp(.3, arm ? 2.75 : 1.6, Math.max(out, arm)) };
     // named, he lifts a hand a moment; Trest, named after him, turns from the screens to him
     const named = win(t, C('p018.1:Roal, 25374') - .1, C('p018.1:Trest, 35429') - .2, .3, .5); pose.up = lerp(pose.up, .8, named); pose.fore = lerp(pose.fore, 1.5, named);
+    // what the beams did: his hand comes up at 'could be revived' and stays; 'burned out', it falls and his head goes down
+    const rue = win(t, C('p024.1:can be revived') - .3, C('p024.1:had been literally'), .7, 1.6), bow = win(t, C('p024.1:burned out'), T1('L') + .5, 1.2, 1); pose.up = lerp(pose.up, 1.05, rue); pose.fore = lerp(pose.fore, 1.9, rue); pose.torso = .06 * bow;
     const gl = arm ? 0 : gesture(t, pose, t < tBut + 1 ? TELL : SPEECH);
     // 'that little chuckle': his head goes back a little, a smile, the shoulders bobbing
     const ch = win(t, C('p033.4'), C('p033.4') + 2.2, .3, .6); if (ch > 0) pose.torso = (pose.torso ?? 0) - .05 * ch * Math.abs(Math.sin(t * 15));
-    const roal = stander(t, ROAL, G, 44, ROALW, { who: 'roal', key: 'roal', seed: 3, look: lerp((t < T0('S') ? .5 : .15) + gl - .15 * ch, .55, back), pose, talk: talk(t, 'roal'), smile: ch, flip: back > .5 });
+    // 'Hour after hour they sat watching': on stools the machines have brought, risen again before he speaks
+    const sit = t > T0('P') ? 1 - ez(t, T0('S') - 3.2, T0('S') - 2) : 0; seat(pose, sit);
+    const roal = stander(t, ROAL, G + DROP * sit, 44, ROALW, { who: 'roal', key: 'roal', seed: 3, look: lerp((t < T0('S') ? .5 : .15) + gl - .15 * ch, .55, back) - .55 * bow, pose, talk: talk(t, 'roal'), smile: ch, flip: back > .5 });
     const point = win(t, T0('Q'), T1('Q'), .5, .5), tp = {}, tl = t > T0('S') + 2 ? listen(t, tp, SPEECH, 2) : t > tInv - 1 && t < tBut + 2 ? listen(t, tp, TELL, 1) : 0;   // through the telling and the speech Trest listens
-    stander(t, TREST, G + 10, 46, TRESTW, { who: 'trest', key: 'trest', seed: 7, look: .45 + tl + nod(t, SPEECH), flip: (t > C('p018.1:Trest, 35429') && t < T0('S') + 2) || t > T0('W'), pose: point > 0 ? { up: lerp(.12, 1.7, point), fore: lerp(.3, 1.2, point) } : tp });
+    // Trest's hand goes to his mouth at 'could not be brought to life again'; his head goes down last
+    const mouth = win(t, C('p024.1:could not be brought') - .2, C('p024.1:The complicated system'), .8, 1.8), bow2 = win(t, C('p024.1:utterly destroyed') - 1, T1('L') + .5, 1, 1);
+    if (mouth > 0) { tp.up = lerp(tp.up ?? .12, 1.75, mouth); tp.fore = lerp(tp.fore ?? .3, 3.6, mouth); }
+    stander(t, TREST, G + 10 + DROP * sit, 46, TRESTW, { who: 'trest', key: 'trest', seed: 7, look: .45 + tl + nod(t, SPEECH) - .5 * bow2, flip: (t > C('p018.1:Trest, 35429') && t < T0('S') + 2) || t > T0('W'), pose: seat(point > 0 ? { up: lerp(.12, 1.7, point), fore: lerp(.3, 1.2, point) } : tp, sit) });
     return roal;
   }
   function hall(t) {
@@ -87,7 +96,10 @@
           if (made > 0 && off < 1) { glow(x, G - 80, 60, '#CFE0FF', .4 * (1 - made)); DES.mote(x - 1800 * off * off, G - 70 - 430 * up, 150 * made, t, { ang: 0, drive: up > .1 }); } }
         const hot = K(t, 'p019.1:a highly effective induction-heat ray', 'p019.1:in some small machines');
         DES.machine(1450, G, 18, t, { arms: 2, nozzles: true, d: 2, label: null }); if (hot > 0) glow(1450, G - 60, 40 + 40 * hot, HEAT, .7 * Math.sin(Math.PI * hot)); }
+      if (t > T0('P') && t < T0('S') - 1) for (const [x, g] of [[ROAL, G], [TREST, G + 10]]) { stillSeed('stool' + x); wash(rrPts(x - 38, g - 78, 76, 60, 6), 3, { ink: true, sw: .6 }); }
       const roal = people(t);
+      // their designations, lettered the first time they're spoken (DECISIONS.md, 2026-11-01)
+      for (const [txt, x, y, a, b] of [['Roal 25374', ROAL, G + 34, C('p018.1:Roal, 25374'), C('p018.1:Trest, 35429') + 2.4], ['Trest 35429', TREST, G + 44, C('p018.1:Trest, 35429'), C('p018.1:Trest, 35429') + 3.2]]) { const k = win(t, a - .1, b, .3, .5); if (k > 0) letter(txt, x, y, 34, INK, { ink: false, font: '700 34px ' + SERIF, spacing: 1, alpha: k }); }
       // D: his thought, the curl, in the darkest tone (the palest and mid washes vanished against the hall's light wall); S: rings as he speaks
       dreamCurl(roal.head[0] + 20, roal.head[1] - 40, K(t, 'p018.1:But--life alone', 'p018.1:so Roal was believed'), t, .8 * (1 - ez(t, T0('E') - 1, T0('E'))), 'roalcurl', 4);
       hallMachines(t, true);
@@ -120,10 +132,15 @@
     stars(160, 9);
     withCam(c, () => {
       planet(-200, 900, 300, 2, { key: 'luna2' });
-      // the hundred: ten shown; half broken by the torpedoes
+      // the hundred: forty more far off behind the ten near ones, half of those gone too, each in its own small burst
+      for (let i = 0; i < 40; i++) { const x = 330 + (i % 10) * 190 + 60 * hash(i * 5.1), y = [150, 455, 760, 905][Math.floor(i / 10)] + 24 * hash(i * 3.7), dies = (i + Math.floor(i / 10)) % 2 === 1, at = tHalf - 1 + 4 * hash(i * 9.1);
+        if (!dies || t < at + .4) ship(x, y, 84, t, -1, { d: 2 });
+        if (dies) { const q = seg(t, at, at + 1.1); if (q > 0 && q < 1) { glow(x, y, 30 + 110 * q, '#FFFDF6', 1 - q); glow(x, y, 20 + 70 * q, HEAT, .8 * (1 - q)); } } }
+      // ten near ones; half broken by the torpedoes
       for (let i = 0; i < 10; i++) { const x = 900 + (i % 5) * 230 + 40 * hash(i), y = 300 + Math.floor(i / 5) * 300 + 50 * hash(i * 3), dies = i % 2 === 1, br = dies ? ez(t, tHalf - 1 + i * .3, tHalf + 1.5 + i * .3) : 0;
-        if (br >= 1) { for (let k = 0; k < 6; k++) { boilSeed('fr' + i + k); const q = t - (tHalf + 1.5 + i * .3); push(); translate(x + (hash(k) - .5) * 60 * (1 + q), y + (hash(k * 3) - .5) * 40 * (1 + q)); rotate(q * (hash(k * 5) - .5)); wash(rectPts(-18, -6, 36, 12), 3, { ink: true, sw: .4 }); pop(); } continue; }
-        if (br > 0) glow(x, y, 160 * br, NRG.white, 1 - br);
+        if (br >= 1) { const q = t - (tHalf + 1.5 + i * .3); for (let k = 0; k < 8; k++) { boilSeed('fr' + i + k); push(); translate(x + (hash(k + i) - .5) * 150 * (1 + .9 * q), y + (hash(k * 3 + i) - .5) * 70 * (1 + .9 * q)); rotate(q * (hash(k * 5) - .5)); wash(rectPts(-34, -9, 68, 18), 3, { ink: true, sw: .5 }); pop(); }
+          if (q < 1.6) { glow(x, y, 240, HEAT, .7 * (1 - q / 1.6)); glow(x, y, 120, '#FFFDF6', .6 * (1 - q / 1.6)); } continue; }
+        if (br > 0) { glow(x, y, 120 + 260 * br, NRG.white, .95 * br); glow(x, y, 200 * br, HEAT, .8 * br); }
         if (i === 4 && t > tH - 2) continue;   // the one under the induction beams, drawn larger below
         screened(x, y, 200, t, t > tH ? win(t, tH, tI + 6, .5, 2) * (.5 + .5 * hash(Math.floor(t * 6) + i)) : 0); }
       // G: the torpedoes: in at the ships, thrown aside by the field, back again; some volatilized in white
@@ -135,7 +152,9 @@
         push(); translate(x, y); rotate(Math.atan2(tgt[1] - sy, tgt[0] - sx)); translate(-x, -y); DES.mote(x, y, 46, t, { ang: 0, drive: true }); pop(); }
       // H: the one ship under the induction beams; its screen swallowing them
       if (t > tH - 2) { const sx = 1250, sy = 520, k = win(t, tH - 1, tJ + 1, 1, 1);
-        screened(sx, sy, 420, t, k * (.6 + .4 * Math.sin(t * 7)));
+        // the near ship of the upper rank comes forward to fill the shot (it was drawn at twice the size from one frame to the next)
+        const come = ez(t, tH - 2, tH + .4), x4 = 900 + 4 * 230 + 40 * hash(4), y4 = 300 + 50 * hash(12);
+        screened(lerp(x4, sx, come), lerp(y4, sy, come), lerp(200, 420, come), t, k * (.6 + .4 * Math.sin(t * 7)));
         if (t < tI + 2) for (let i = 0; i < 3; i++) { const bx = 500 + i * 80, by = 300 + i * 220, hk = win(t, tH + i * .7, tI + 2, .4, .6); if (hk > 0) beam(bx, by, sx - 240 + i * 40, sy - 60 + i * 50, 4, 20, HEAT, hk, { washOp: 40, a: .6 }); }
         // I: investigators diving at the screen, flaring out; their signals back to the last
         if (t > tI) for (let i = 0; i < 5; i++) { const st = tI + 1 + i * 1.3, q = seg(t, st, st + 1.4); if (q <= 0) continue; const x = lerp(700 + 50 * i, sx - 200 + 60 * i, q), y = lerp(150 + 60 * i, sy - 70 + 20 * i, q);
