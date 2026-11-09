@@ -1189,6 +1189,61 @@ items:
     note: On the new draft 7:03-7:55 C-R-U-1 hovers and bobs over the floor, clear of the pier's base, and is made at that height.
     title: "Chapter 5: C-R-U-1 'floated' but stands on a pier's base"
     when: 2026-11-09 17:58
+  find.ch03-torpedoes:
+    state: open
+    note: "Eleventh round, minor: 1:58-2:15 a near-still grid while the text has torpedoes thrown aside by a magnetic field, redirected, volatilized; the machines' torpedoes are small copies of the Outsider ships."
+    title: "Chapter 3: the torpedoes aren't thrown aside, and look like the ships"
+    when: 2026-11-09 18:18
+  find.ch03-planets:
+    state: open
+    note: "Eleventh round, minor: 7:05-7:25 Mercury to Saturn only, Pluto named at 7:17.6; a machine stands on every world by 7:07, before Roal names them; the film page's note points at Pluto."
+    title: "Chapter 3: the planets plate lacks Pluto and is filled before it's named"
+    when: 2026-11-09 18:18
+  find.ch04-listeners:
+    state: open
+    note: "Eleventh round, minor: 0:14-0:38 one identical pose for 22 s while a deadly beam fires metres away; Kahsh model-sheet frontal through 1:49-1:58."
+    title: "Chapter 4: the men and Kahsh frozen through the ray demonstration"
+    when: 2026-11-09 18:18
+  find.ch07-loop:
+    state: open
+    note: "Eleventh round, minor: 0:37-1:21 the same open hand pushed forward every 4-5 s, about eight times; Trest alternates two poses."
+    title: "Chapter 7: Roal's gesture repeats like a cycle"
+    when: 2026-11-09 18:18
+  find.ch03-colorado:
+    state: open
+    note: "Eleventh round, minor: 3:12-3:36 people and machines in the bottom 80 px, feet cut, trees over them; a few pixels tall on a phone."
+    title: "Chapter 3: the Colorado colonists are crammed at the foot"
+    when: 2026-11-09 18:18
+  find.ch05-cage:
+    state: open
+    note: "Eleventh round, nit: 7:58-8:02 on a long line from off the right edge, behind F-2, set down 2-4 s before 'a life-form investigator came with a small cage'."
+    title: "Chapter 5: the cage swings in early, as if F-2 fetched it"
+    when: 2026-11-09 18:18
+  find.ch05-hulk:
+    state: open
+    note: "Eleventh round, nit: 5:02-5:11 a tall upright ellipse at the right edge, from 5:11 a cylinder lying on its side off the floor line."
+    title: "Chapter 5: F-1's hulk changes shape between shots"
+    when: 2026-11-09 18:18
+  find.ch02-unperceived:
+    state: open
+    note: "Eleventh round, nit: 0:42-0:44 an Outsider ship beside the transport as it dies; the ships are first sighted at 1:07."
+    title: "Chapter 2: an Outsider ship is seen before 'some unperceived body'"
+    when: 2026-11-09 18:18
+  find.ch08-f2-edge:
+    state: open
+    note: "Eleventh round, nit: 2:31-2:43."
+    title: "Chapter 8: F-2 half off the right edge in shot H"
+    when: 2026-11-09 18:18
+  find.ch01-top-edge:
+    state: open
+    note: "Eleventh round, nit: 0:53-1:30, e.g. 1:04, 1:16, 1:22."
+    title: "Chapter 1: floating workers cut by the top edge"
+    when: 2026-11-09 18:18
+  find.site-watched:
+    state: open
+    note: "Eleventh round, nit, second time reported: home and film page say each draft is still being watched and fixed, while the scorecard says 72 of 72 done. Reword so the two agree: say what the watching is."
+    title: "Site: 'still being watched and fixed' beside a full scorecard"
+    when: 2026-11-09 18:18
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1234,4 +1289,8 @@ fresh:
     found: 18
     note: "Tenth round: 19 reported, 2 major, 13 minor, 4 nits; 18 opened. The site's 'still being watched and fixed' stays, since it's true: the scorecard's counts show what has passed, and the watching goes on."
     state: 63f4ca20cfa3
-since_fresh: 71
+  - when: 2026-11-09 18:18
+    found: 11
+    note: "Eleventh round: no majors. Minor: ch03 torpedoes not deflected and look like the ships; ch03 planets plate lacks Pluto and lands before its words; ch04 listeners frozen through X-5638's demonstration; ch07 Roal's speech gesture loops; ch03 Colorado colonists cramped at the foot. Nits: ch05 cage swung in early; ch05 F-1's hulk changes shape between shots; ch02 an Outsider ship seen before 'unperceived'; ch08 F-2 half off the edge; ch01 floating workers cut by the top edge; site 'still being watched' beside a full scorecard."
+    state: 100eceb59252
+since_fresh: 0

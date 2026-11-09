@@ -123,6 +123,30 @@
     ship(x, y, len, t, -1, { d: 2 });
     if (k > 0) { boilSeed('fsc' + x); inkLine([...Array(33)].map((_, i) => { const a = i / 32 * TAU; return [x + Math.cos(a) * len * .62, y + Math.sin(a) * len * .2]; }), 1.2 * k, mixCol('#1C1814', VIOLET, .8), 'inkfine', .5); glow(x, y, len * .5, VIOLET, .35 * k); }
   }
+  // the near ten's places, and one torpedo's path through G (see battle)
+  const NEAR = j => [900 + (j % 5) * 230 + 40 * hash(j), 300 + Math.floor(j / 5) * 300 + 50 * hash(j * 3)];
+  function torpedo(i, t) {
+    const tSail = C('p021.1:sailed at'), tThrow = C('p021.1:They were thrown aside'), tRedir = C('p021.1:were redirected'), tVol = C('p021.1:some beams reached out'), tHalf = C('p021.1:fully half the fleet was destroyed');
+    const j = (i * 7) % 10, side = i % 2 ? 1 : -1, T = NEAR(j), st = tSail - .6 + i * .15, a = tThrow + i * .17, r = tRedir + .15 * (i % 6);
+    const P0 = [-140 - 160 * hash(i * 1.9), 120 + 760 * hash(i * 2.3)], P1 = [T[0] - 300, T[1] + 30 * side], P2 = [T[0] - 430, T[1] + 230 * side], P2b = [P2[0] - 30, P2[1] + 40 * side], P3 = [T[0] - 250, T[1] + 80 * side];
+    const vt = i % 3 === 0 ? tVol + .5 + i / 3 * .45 : undefined, jj = j % 2 ? j : j % 5 === 4 ? j - 1 : j + 1, hit = tHalf - 1 + jj * .3;
+    if (t < st || (vt === undefined && t > hit)) return null;
+    const L = (A, B, q) => [lerp(A[0], B[0], q), lerp(A[1], B[1], q)];
+    let x, y;
+    if (t < a) [x, y] = L(P0, P1, seg(t, st, a));
+    else if (t < a + 1.2) { const q = ez(t, a, a + 1.2); [x, y] = L(P1, P2, q); x += 60 * Math.sin(Math.PI * q); }   // flung back and aside by the field
+    else if (t < r) [x, y] = L(P2, P2b, seg(t, a + 1.2, r));
+    else if (t < r + 2.6) [x, y] = L(P2b, P3, ez(t, r, r + 2.6));   // redirected, coming again
+    else { [x, y] = P3; x += 14 * Math.sin(t * 2.3 + i); y += 10 * Math.sin(t * 3.1 + i * 2); }
+    if (vt === undefined && t > hit - 1.1) { const N = NEAR(jj); [x, y] = L([x, y], [N[0] - 60, N[1]], ez(t, hit - 1.1, hit)); }   // the dive
+    return { x, y, j, a, vt, side };
+  }
+  // a torpedo with its drive's trail, nose along its path
+  function trailed(x, y, t, at, s) {
+    for (let k = 1; k <= 7; k++) { const q = at(t - .07 * k); if (q) glow(q.x, q.y, 18 - 1.8 * k, HEAT, .75 * (1 - k / 8)); }
+    const b = at(t - .05) || { x: x - 1, y }; glow(x, y, 14, '#FFFDF6', .8);
+    push(); translate(x, y); rotate(Math.atan2(y - b.y, x - b.x)); translate(-x, -y); DES.mote(x, y, s, t, { ang: 0, drive: true }); pop();
+  }
   function battle(t) {
     HALFTONE = .2;
     const tG = T0('G'), tThrow = C('p021.1:They were thrown aside'), tVol = C('p021.1:some beams reached out'), tHalf = C('p021.1:fully half the fleet was destroyed');
@@ -135,6 +159,7 @@
       // the hundred: forty more far off behind the ten near ones, half of those gone too, each in its own small burst
       for (let i = 0; i < 40; i++) { const x = 330 + (i % 10) * 190 + 60 * hash(i * 5.1), y = [150, 455, 760, 905][Math.floor(i / 10)] + 24 * hash(i * 3.7), dies = (i + Math.floor(i / 10)) % 2 === 1, at = tHalf - 1 + 4 * hash(i * 9.1);
         if (!dies || t < at + .4) ship(x, y, 84, t, -1, { d: 2 });
+        if (dies && t > at - 2 && t < at) { const fy = y + 300 * (hash(i * 4.3) - .5), fp = tt => tt < at - 2 || tt > at ? null : { x: lerp(x - 700, x - 30, seg(tt, at - 2, at)), y: lerp(fy, y, seg(tt, at - 2, at)) }; const p = fp(t); trailed(p.x, p.y, t, fp, 32); }
         if (dies) { const q = seg(t, at, at + 1.1); if (q > 0 && q < 1) { glow(x, y, 30 + 110 * q, '#FFFDF6', 1 - q); glow(x, y, 20 + 70 * q, HEAT, .8 * (1 - q)); } } }
       // ten near ones; half broken by the torpedoes
       for (let i = 0; i < 10; i++) { const x = 900 + (i % 5) * 230 + 40 * hash(i), y = 300 + Math.floor(i / 5) * 300 + 50 * hash(i * 3), dies = i % 2 === 1, br = dies ? ez(t, tHalf - 1 + i * .3, tHalf + 1.5 + i * .3) : 0;
@@ -143,13 +168,16 @@
         if (br > 0) { glow(x, y, 120 + 260 * br, NRG.white, .95 * br); glow(x, y, 200 * br, HEAT, .8 * br); }
         if (i === 4 && t > tH - 2) continue;   // the one under the induction beams, drawn larger below
         screened(x, y, 200, t, t > tH ? win(t, tH, tI + 6, .5, 2) * (.5 + .5 * hash(Math.floor(t * 6) + i)) : 0); }
-      // G: the torpedoes: in at the ships, thrown aside by the field, back again; some volatilized in white
-      if (t < tH) for (let i = 0; i < 18; i++) { const st = tG + i * .5, q = clamp((t - st) / 8); if (q <= 0 || q >= 1) continue;
-        const tgt = [900 + ((i * 3) % 10 % 5) * 230, 300 + Math.floor(((i * 3) % 10) / 5) * 300], sx = -200, sy = 300 + 700 * hash(i);
-        let x = lerp(sx, tgt[0], q), y = lerp(sy, tgt[1], q); if (t > tThrow && q > .4) { const w = Math.sin(Math.PI * seg(q, .4, .8)); y += (hash(i) > .5 ? 1 : -1) * 220 * w; }
-        const vol = t > tVol && i % 4 === 0 && q > .55;
-        if (vol) { if (q < .62) glow(x, y, 60, NRG.white, 1 - seg(q, .55, .62)); const sh = [900 + 230 * (i % 5), 300]; if (q < .58) beam(sh[0], sh[1], x, y, 3, 2, NRG.white, 1, { washOp: 30, a: .6 }); continue; }
-        push(); translate(x, y); rotate(Math.atan2(tgt[1] - sy, tgt[0] - sx)); translate(-x, -y); DES.mote(x, y, 46, t, { ang: 0, drive: true }); pop(); }
+      // G: the torpedoes, on the words: they sail in, are thrown aside by each ship's field, turn and come again, some are
+      // volatilized by the ships' beams, and the rest dive into half the fleet. (On one 8 s clock they were all gone by
+      // 'redirected', the beams struck none, and the frame stood still till the bursts.) Each trails its drive, so it
+      // reads as a torpedo, not a small ship.
+      if (t < tH) for (let i = 0; i < 18; i++) {
+        const p = torpedo(i, t); if (!p) continue;
+        const { j, a, vt } = p, T = NEAR(j), f = win(t, a - .1, a + .9, .1, .7);
+        if (f > 0) { boilSeed('fld' + j + i); inkLine([...Array(25)].map((_, k) => { const u = (k / 24 - .5) * 1.6 + Math.PI; return [T[0] + Math.cos(u) * 170, T[1] + Math.sin(u) * 110]; }), 2 * f, '#CFE0FF', 'inkfine', .5); glow(T[0] - 170, T[1] + (p.side * 20), 60, '#CFE0FF', .7 * f); }
+        if (vt !== undefined && t > vt - .3) { const q = seg(t, vt, vt + .9); if (t < vt + .1) beam(T[0] - 90, T[1], p.x, p.y, 5, 4, NRG.white, 1, { washOp: 40, a: .8 }); if (t >= vt) { if (q < 1) { glow(p.x, p.y, 60 + 160 * q, NRG.white, 1 - q); glow(p.x, p.y, 40 + 70 * q, HEAT, .7 * (1 - q)); } continue; } }
+        trailed(p.x, p.y, t, tt => torpedo(i, tt), 56); }
       // H: the one ship under the induction beams; its screen swallowing them
       if (t > tH - 2) { const sx = 1250, sy = 520, k = win(t, tH - 1, tJ + 1, 1, 1);
         // the near ship of the upper rank comes forward to fill the shot (it was drawn at twice the size from one frame to the next)
@@ -180,7 +208,8 @@
     HALFTONE = .3;
     const tK = T0('K'), tKill = C('p024.1:were being killed instantly'), tM = T0('M'), tTrees = C('p025.1:Trees, grass'), tO = T0('O'), tP = T0('P');
     const green = Math.max(ez(t, tGreenOn - .5, tGreenOn + 2) * (1 - ez(t, tO - 2, tO + 2) * .6), 0), wither = ez(t, tTrees - 1, tTrees + 6) + (t > T0('L') ? ez(t, tKill, tKill + 6) * .3 : 0);
-    const c = cam(t, [[0, tt => [960, lerp(300, 560, ez(tt, tK, tK + 6)), lerp(.8, 1.05, ez(tt, tK, tK + 6))]], [tM - .5, tt => [lerp(800, 1400, ez(tt, tM, T1('M'))), 600, 1.2], 2],
+    // on 'we saw', in close on the colonists, so their deaths are seen (they stood in the frame's last 80 px, a few pixels tall on a phone)
+    const c = cam(t, [[0, tt => [960, lerp(300, 560, ez(tt, tK, tK + 6)), lerp(.8, 1.05, ez(tt, tK, tK + 6))]], [C('p024.1:and we saw'), [960, 860, 1.45], 3.5], [tM - .5, tt => [lerp(800, 1400, ez(tt, tM, T1('M'))), 600, 1.2], 2],
       [tO - .5, [1000, 420, .85], 2.5], [tP - .5, tt => [lerp(900, 1200, ez(tt, tP, T1('P'))), 640, lerp(1.1, 1.3, ez(tt, tP, T1('P')))], 3]]);
     withCam(c, () => {
       ground(D[0], 255, 'landsky', { fill: '#FFFFFF', fillOp: 30 });   // no green in the land itself: colour is only for energy, so the green comes with the beams
@@ -194,9 +223,9 @@
       // the colony's domes
       for (let i = 0; i < 5; i++) { const x = 500 + i * 260, s = 70 + 20 * hash(i); stillSeed('cdome' + i); wash([...Array(17)].map((_, k) => { const a = Math.PI + k / 16 * Math.PI; return [x + Math.cos(a) * s, LG + 60 + Math.sin(a) * s * .8]; }), 1, { ink: true, sw: .6 }); }
       // the people: standing, then falling in the green
-      for (let i = 0; i < 9; i++) { const x = 380 + i * 160 + 50 * hash(i), y = LG + 120 + 60 * hash(i * 3), fall = ez(t, tKill - .3 + i * .12, tKill + .2 + i * .12);   // all down within 1.3 s of 'killed instantly' (spread .25 apart, the last fell 2.6 s on)
-        if (fall < 1) { push(); translate(x, y); rotate(fall * Math.PI / 2 * (i % 2 ? 1 : -1)); translate(-x, -y); DES.person(x, y, 18, t, { who: 'citizen', flip: i % 2 }); pop(); }
-        else { boilSeed('fallen' + i); wash(rrPts(x - 54 * (i % 2 ? -1 : 1) - 50, y - 14, 100, 20, 8), 2, { ink: true, sw: .4 }); } }
+      for (let i = 0; i < 9; i++) { const x = 420 + i * 140 + 40 * hash(i), y = LG + 90 + 40 * hash(i * 3), fall = ez(t, tKill - .3 + i * .12, tKill + .2 + i * .12);   // all down within 1.3 s of 'killed instantly' (spread .25 apart, the last fell 2.6 s on)
+        if (fall < 1) { push(); translate(x, y); rotate(fall * Math.PI / 2 * (i % 2 ? 1 : -1)); translate(-x, -y); DES.person(x, y, 25, t, { who: 'citizen', flip: i % 2 }); pop(); }
+        else { boilSeed('fallen' + i); wash(rrPts(x - 75 * (i % 2 ? -1 : 1) - 68, y - 18, 136, 26, 10), 2, { ink: true, sw: .4 }); } }
       // P: the transports come down on the far ground between the downed ships, behind them (at 600-1600 one landed on the
       // wreck and each sat on a standing machine's head, reading as one thing)
       // 'scores of great transports': two near, three smaller on the farther ground, coming down one after another
@@ -233,18 +262,23 @@
     SP.forEach(([x, y], i) => { const k = i < 3 ? 1 : ez(t, C('p027.1:three more colonies') + (i - 3) * .7, C('p027.1:three more colonies') + (i - 3) * .7 + 1.5); if (k > 0) { glow(x, y, 60 * k, GREEN, .8); glow(x, y, 20 * k, '#FFFDF6', .5); } });
     camEnd();
   }
-  // U: the planets, a machine on each
+  // U: the planets, a machine landing on each as he names them: Pluto, Mercury and Earth on their words, the rest on 'Any
+  // place is a home-world'. The camera starts on the inner worlds and pulls back to take in all nine by 'Pluto'. (It
+  // panned from Mercury and cut away at Uranus, so Pluto, named, was never seen; and every machine stood by 7:07, before
+  // a world was named.)
   function worlds(t) {
     HALFTONE = .3;
     ground('#2E2620', 255, 'worlds', { fill: '#3B322B', fillOp: 120 });
-    const t0 = T0('U'), c = [lerp(600, 2300, ez(t, t0, T1('U'))), 540, 1];
+    const t0 = T0('U'), tPl = C('p034.1:Pluto'), back = ez(t, t0 + 2, tPl - .3), c = [lerp(760, 1640, back), 560, lerp(1.1, .64, back)];
+    const ON = { pluto: tPl, mercury: C('p034.1:Mercury'), earth: C('p034.1:Earth') }, tAny = C('p034.1:Any place');
     withCam(c, () => {
       // spaced by their sizes, 90 apart edge to edge (evenly spaced, Jupiter and Saturn overlapped and showed through each other)
-      let x = 260;
+      let x = 260, n = 0;
       [['mercury', 60], ['venus', 90], ['earth', 95], ['mars', 70], ['jupiter', 220], ['saturn', 180], ['uranus', 120], ['neptune', 115], ['pluto', 40]].forEach(([k, r], i, all) => {
         if (i) x += all[i - 1][1] + 90 + r;
         const y = 600; planet(x, y, r, 1 + (i % 3), { key: 'w' + k, bands: r > 150 });
-        const on = ez(t, t0 + i * 1.2, t0 + i * 1.2 + 1); if (on > 0) DES.machine(x, y - r + 4, 16 * on, t, { arms: 3, d: 1, label: null }); });
+        const at = ON[k] ?? tAny + .45 * n++, on = ez(t, at - .2, at + .6);
+        if (on > 0) { DES.machine(x, lerp(y - r - 260, y - r + 4, on), 24, t, { arms: 3, d: 1, label: null }); if (on < 1) glow(x, y - r, 50, '#FFFDF6', .5 * (1 - on)); } });
     });
   }
 
