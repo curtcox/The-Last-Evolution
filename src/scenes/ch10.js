@@ -51,9 +51,10 @@
     // the fleet: wheeling; turning its weapons on the sphere; then turning for home
     const leave = ez(t, tG + 2, DUR + 2), rays = win(t, tShower, tD + 1, .4, 1.5);
     const R = ring(t);
-    R.forEach(s => { const x = s.x + 2600 * leave * Math.cos(s.a * .2 + 2.5), y = s.y - 900 * leave;
-      if (s.i === 0) return; ship(x, y, 380, t, Math.cos(s.a) > 0 ? -1 : 1, { d: 3 });
-      if (rays > 0) { const col = [NRG.death, '#FFB070', NRG.white, NRG.projector][s.i % 4]; beam(x, y, MID[0], MID[1], 6, 20, col, rays, { washOp: 40, a: .55 }); } });
+    // the rays first, so each leaves its ship's hull rather than crossing it
+    for (const pass of [0, 1]) R.forEach(s => { const x = s.x + 2600 * leave * Math.cos(s.a * .2 + 2.5), y = s.y - 900 * leave;
+      if (s.i === 0) return; if (pass) return ship(x, y, 380, t, Math.cos(s.a) > 0 ? -1 : 1, { d: 3 });
+      if (rays > 0) { const col = [NRG.death, '#FFB070', NRG.white, NRG.projector][s.i % 4]; beam(x, y, MID[0], MID[1], 16, 44, col, rays, { washOp: 120, a: .9 }); glow(x, y, 50, col, .5 * rays); } });   // each weapon in its own colour: the green death, heat, white, the projectors' blue (at 6-20 wide and washOp 40 they all read as one grey-white line)
     // the flagship: in the ring's near side
     const fx = FLAG[0] + 2600 * leave * .6, fy = FLAG[1] - 900 * leave;
     flagship(t, fx, fy);
