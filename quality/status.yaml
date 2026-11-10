@@ -1274,6 +1274,56 @@ items:
     note: "Measured, no change: by integrated loudness 'We are alone, Trest' (5.5-8.5 s) is -14.3 LUFS, against -13.6 for the lines after it (8.5-12.5, 13-17 s), so it isn't louder; the median word peak (-9.8) catches the line's stressed words, not a level jump, and nothing of the theme sits under it at a level that shows. Chapter 4's first line is the same case."
     title: "Chapter 8: the first line louder than its neighbours"
     when: 2026-11-10 05:23
+  find.ch07-hall:
+    state: open
+    note: "Thirteenth round, minor: 2:43-3:10 the dome forms in the intact screen hall, then from 3:04 stands alone on an open plain among broken pillars, with nothing showing the hall go."
+    title: "Chapter 7: the screen hall vanishes between shots"
+    when: 2026-11-10 11:02
+  find.ch10-rays:
+    state: open
+    note: "Thirteenth round, minor: 0:24-0:42 every ray is the same grey-white dashed line; the board asks for green, heat, white and the projector's blue at once."
+    title: "Chapter 10: 'all the rays and all the forces' drawn in one colour"
+    when: 2026-11-10 11:02
+  find.ch05-tentacles:
+    state: open
+    note: "Thirteenth round, nit: clear curls at 4:23, faint smudges under the hull at 7:56 and 8:20."
+    title: "Chapter 5: F-2's tentacles fade to smudges"
+    when: 2026-11-10 11:02
+  find.ch09-sphere-scale:
+    state: open
+    note: "Thirteenth round, nit: 3:34 it is about a third the plant dome's width (~30 ft) for 'scarcely a foot', then 'easily three feet'; the white sphere at 1:44 likewise."
+    title: "Chapter 9: the golden sphere drawn far bigger than the words say"
+    when: 2026-11-10 11:02
+  find.ch09-f2-edge:
+    state: open
+    note: "Thirteenth round, nit: 3:25-3:30 while Roal and Trest step out of the dome."
+    title: "Chapter 9: F-2's nose cut by the right edge"
+    when: 2026-11-10 11:02
+  find.ch03-tilt:
+    state: open
+    note: "Thirteenth round, nit: 5:50-5:58 Roal and Trest cut at the shoulders by the bottom edge; the bodies carried off at 'removal' are small dark clumps."
+    title: "Chapter 3: the tilt leaves the men as heads at the bottom edge"
+    when: 2026-11-10 11:02
+  find.ch06-dawn:
+    state: open
+    note: "Thirteenth round, nit: 0:05-0:30 no dawn light or sun."
+    title: "Chapter 6: 'Dawn was breaking' over an even grey plain"
+    when: 2026-11-10 11:02
+  find.ch08-quotes:
+    state: open
+    note: "Thirteenth round, nit: 0:00-0:05 the drop cap and the line use typewriter quotes, the only page that does."
+    title: "Chapter 8: straight quotes on the title page"
+    when: 2026-11-10 11:02
+  find.site-every-word:
+    state: pass
+    note: "Fixed: the home page says 'the whole story is voiced (its two footnotes lettered on screen)', the film page's draft box 'voiced and acted (its two footnotes lettered on screen)'. The foreword's 'Every word of it is spoken, in order' is Curt's wording (curt.foreword), left for him."
+    title: "Site: 'every word is voiced' overclaims"
+    when: 2026-11-10 11:13
+  find.round6-nav:
+    state: pass
+    note: "Fixed for every review round's page, not only Round 6's (21 had only a breadcrumb): the site build adds the masthead and nav; out/quality/phone/review_round6_film.jpg and desktop/review_round4_models.jpg show it."
+    title: "Site: the Round 6 draft pages lack the site's header and nav"
+    when: 2026-11-10 11:13
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1327,4 +1377,8 @@ fresh:
     found: 7
     note: "Twelfth round: no majors. Minor: ch09 the sphere's attack and F-2's dodge too brief to land; ch02 footnote 1 too small at phone size; ch09 the men show through the ruins' rock; ch08 shot D leaves Roal off to the right with the left half empty. Nits: ch05 F-2 mostly out of frame while C-R-U-1 speaks; figures cut by the frame edge in ch04 and ch02; ch08's first line louder than its neighbours. The makers' text on the quality page stays, inside its 'For the makers' fold."
     state: e6edf06251a1
-since_fresh: 34
+  - when: 2026-11-10 11:02
+    found: 10
+    note: "Thirteenth round: 2 minor (ch07 the hall vanishes; ch10 the rays all one colour), 8 nits; no majors."
+    state: d6f65ec330d8
+since_fresh: 2

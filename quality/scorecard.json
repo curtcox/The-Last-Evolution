@@ -1,13 +1,17 @@
 {
  "summary": {
-  "pass": 263,
-  "stale": 0,
-  "open": 0,
+  "pass": 254,
+  "stale": 4,
+  "open": 15,
   "curt": 9,
   "later": 4
  },
  "satisfied": false,
- "next": [],
+ "next": [
+  "Chapter 7: the screen hall vanishes between shots",
+  "Chapter 10: 'all the rays and all the forces' drawn in one colour",
+  "Chapter 5: F-2's tentacles fade to smudges"
+ ],
  "checks": {
   "verbatim": {
    "state": "pass",
@@ -15,7 +19,7 @@
   },
   "links": {
    "state": "pass",
-   "detail": "1106 links in 34 pages, 0 broken"
+   "detail": "1232 links in 34 pages, 0 broken"
   },
   "annotated": {
    "state": "pass",
@@ -43,7 +47,7 @@
   },
   "live": {
    "state": "pass",
-   "detail": "33 pages live, the deploy is this commit"
+   "detail": "33 pages live (not compared: HEAD has changes not pushed)"
   }
  },
  "curt": [
@@ -133,8 +137,8 @@
    "id": "ch05.draft",
    "area": "film",
    "title": "Chapter 5: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch05-draft-9f24a647.mp4, -14.5 LUFS, peak -2 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch05.js"
   },
   {
    "id": "ch00.acting",
@@ -301,8 +305,8 @@
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch03-draft-2c5e96d6.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch03.js"
   },
   {
    "id": "ch04.acting",
@@ -385,8 +389,8 @@
    "id": "ch06.draft",
    "area": "film",
    "title": "Chapter 6: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch06-draft-61665122.mp4, -14.4 LUFS, peak -2.2 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch06.js"
   },
   {
    "id": "ch07.acting",
@@ -427,8 +431,8 @@
    "id": "ch07.draft",
    "area": "film",
    "title": "Chapter 7: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch07-draft-88557170.mp4, -14.5 LUFS, peak -2 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch07.js"
   },
   {
    "id": "ch08.acting",
@@ -469,8 +473,8 @@
    "id": "ch08.draft",
    "area": "film",
    "title": "Chapter 8: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch08-draft-ee88805e.mp4, -14.5 LUFS, peak -1.8 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch08.js"
   },
   {
    "id": "ch09.acting",
@@ -511,8 +515,8 @@
    "id": "ch09.draft",
    "area": "film",
    "title": "Chapter 9: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch09-draft-4e108e22.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch09.js"
   },
   {
    "id": "ch10.acting",
@@ -553,8 +557,8 @@
    "id": "ch10.draft",
    "area": "film",
    "title": "Chapter 10: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch10-draft-8c63e394.mp4, -14.4 LUFS, peak -2.3 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch10.js"
   },
   {
    "id": "ch11.acting",
@@ -616,29 +620,29 @@
    "id": "site.home.content",
    "area": "site",
    "title": "The home page: what it says",
-   "state": "pass",
-   "note": "Rechecked after the eleventh round: the Watch line and the status paragraph say what the watching is, fresh reviews looking for faults until two in a row find none, so they agree with the scorecard (find.site-watched). Re-judged after the second round: the Watch line now says every chapter is acted and the drafts are being watched and fixed (it said the paintings were still rough). Re-judged after the fresh-eyes round: the status line now says every chapter has been acted and painted and each draft is being watched and fixed until it meets its bar (it said 'starting with chapter 5'). Re-judged after the fresh-eyes round: the kicker now reads 'From Amazing Stories, August 1932' instead of the 1961 reprint's header; the rest as judged."
+   "state": "stale",
+   "note": "passed on 7a5e3e83d3e9; changed since. Rechecked after the eleventh round: the Watch line and the status paragraph say what the watching is, fresh reviews looking for faults until two in a row find none, so they agree with the scorecard (find.site-watched). Re-judged after the second round: the Watch line now says every chapter is acted and the drafts are being watched and fixed (it said the paintings were still rough). Re-judged after the fresh-eyes round: the status line now says every chapter has been acted and painted and each draft is being watched and fixed until it meets its bar (it said 'starting with chapter 5'). Re-judged after the fresh-eyes round: the kicker now reads 'From Amazing Stories, August 1932' instead of the 1961 reprint's header; the rest as judged."
   },
   {
    "id": "site.home.look",
    "area": "site",
    "title": "The home page: how it looks and works",
-   "state": "pass",
-   "note": "Rechecked at 375 after the eleventh round (out/quality/phone/home.jpg): the reworded lines wrap cleanly, no overflow; the phone check passes. Re-checked at 375 after the second round (out/quality/phone, fonts loaded): no overflow; only wording changed. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-checked at 375 and 1280 after the kicker and stylesheet changes; nav on one line, no overflow."
+   "state": "stale",
+   "note": "passed on 30b9fac8d7f5; changed since. Rechecked at 375 after the eleventh round (out/quality/phone/home.jpg): the reworded lines wrap cleanly, no overflow; the phone check passes. Re-checked at 375 after the second round (out/quality/phone, fonts loaded): no overflow; only wording changed. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-checked at 375 and 1280 after the kicker and stylesheet changes; nav on one line, no overflow."
   },
   {
    "id": "site.watch.content",
    "area": "site",
    "title": "The film page (annotated): what it says",
-   "state": "pass",
-   "note": "Rechecked after the twelfth round: only the chapter videos' links changed (new drafts of chapters 2, 4, 5, 8 and 9, the same lengths, so every chapter start and note time holds); the phone check passes. the draft box says each chapter has passed its checks and fresh reviews go on until two in a row find none; chapter 3 and the film page say Mercury to Pluto; the new drafts of chapters 1-5, 7 and 8 are linked. Rechecked after the tenth round: the film page and chapter 3's page have the torpedoes right, chapter 5's page no longer calls the draft simple, excerpts end in dots where the sentence goes on, and every chapter page embeds its new draft."
+   "state": "stale",
+   "note": "passed on 2a30d0805f3a; changed since. Rechecked after the twelfth round: only the chapter videos' links changed (new drafts of chapters 2, 4, 5, 8 and 9, the same lengths, so every chapter start and note time holds); the phone check passes. the draft box says each chapter has passed its checks and fresh reviews go on until two in a row find none; chapter 3 and the film page say Mercury to Pluto; the new drafts of chapters 1-5, 7 and 8 are linked. Rechecked after the tenth round: the film page and chapter 3's page have the torpedoes right, chapter 5's page no longer calls the draft simple, excerpts end in dots where the sentence goes on, and every chapter page embeds its new draft."
   },
   {
    "id": "site.watch.look",
    "area": "site",
    "title": "The film page (annotated): how it looks and works",
-   "state": "pass",
-   "note": "Rechecked after the twelfth round: only the chapter videos' links changed (new drafts of chapters 2, 4, 5, 8 and 9, the same lengths, so every chapter start and note time holds); the phone check passes. the draft box and the new drafts posters and players lay out as before at 375; the phone check passes. Rechecked after the tenth round: the chapter pages and film page show the new drafts' posters and players as before; nothing in the layout changed."
+   "state": "stale",
+   "note": "passed on 674bc1b180e4; changed since. Rechecked after the twelfth round: only the chapter videos' links changed (new drafts of chapters 2, 4, 5, 8 and 9, the same lengths, so every chapter start and note time holds); the phone check passes. the draft box and the new drafts posters and players lay out as before at 375; the phone check passes. Rechecked after the tenth round: the chapter pages and film page show the new drafts' posters and players as before; nothing in the layout changed."
   },
   {
    "id": "site.read.content",
@@ -1983,14 +1987,79 @@
    "title": "Chapter 8: the first line louder than its neighbours",
    "state": "pass",
    "note": "Measured, no change: by integrated loudness 'We are alone, Trest' (5.5-8.5 s) is -14.3 LUFS, against -13.6 for the lines after it (8.5-12.5, 13-17 s), so it isn't louder; the median word peak (-9.8) catches the line's stressed words, not a level jump, and nothing of the theme sits under it at a level that shows. Chapter 4's first line is the same case."
+  },
+  {
+   "id": "find.ch07-hall",
+   "area": "finding",
+   "title": "Chapter 7: the screen hall vanishes between shots",
+   "state": "open",
+   "note": "Thirteenth round, minor: 2:43-3:10 the dome forms in the intact screen hall, then from 3:04 stands alone on an open plain among broken pillars, with nothing showing the hall go."
+  },
+  {
+   "id": "find.ch10-rays",
+   "area": "finding",
+   "title": "Chapter 10: 'all the rays and all the forces' drawn in one colour",
+   "state": "open",
+   "note": "Thirteenth round, minor: 0:24-0:42 every ray is the same grey-white dashed line; the board asks for green, heat, white and the projector's blue at once."
+  },
+  {
+   "id": "find.ch05-tentacles",
+   "area": "finding",
+   "title": "Chapter 5: F-2's tentacles fade to smudges",
+   "state": "open",
+   "note": "Thirteenth round, nit: clear curls at 4:23, faint smudges under the hull at 7:56 and 8:20."
+  },
+  {
+   "id": "find.ch09-sphere-scale",
+   "area": "finding",
+   "title": "Chapter 9: the golden sphere drawn far bigger than the words say",
+   "state": "open",
+   "note": "Thirteenth round, nit: 3:34 it is about a third the plant dome's width (~30 ft) for 'scarcely a foot', then 'easily three feet'; the white sphere at 1:44 likewise."
+  },
+  {
+   "id": "find.ch09-f2-edge",
+   "area": "finding",
+   "title": "Chapter 9: F-2's nose cut by the right edge",
+   "state": "open",
+   "note": "Thirteenth round, nit: 3:25-3:30 while Roal and Trest step out of the dome."
+  },
+  {
+   "id": "find.ch03-tilt",
+   "area": "finding",
+   "title": "Chapter 3: the tilt leaves the men as heads at the bottom edge",
+   "state": "open",
+   "note": "Thirteenth round, nit: 5:50-5:58 Roal and Trest cut at the shoulders by the bottom edge; the bodies carried off at 'removal' are small dark clumps."
+  },
+  {
+   "id": "find.ch06-dawn",
+   "area": "finding",
+   "title": "Chapter 6: 'Dawn was breaking' over an even grey plain",
+   "state": "open",
+   "note": "Thirteenth round, nit: 0:05-0:30 no dawn light or sun."
+  },
+  {
+   "id": "find.ch08-quotes",
+   "area": "finding",
+   "title": "Chapter 8: straight quotes on the title page",
+   "state": "open",
+   "note": "Thirteenth round, nit: 0:00-0:05 the drop cap and the line use typewriter quotes, the only page that does."
+  },
+  {
+   "id": "find.site-every-word",
+   "area": "finding",
+   "title": "Site: 'every word is voiced' overclaims",
+   "state": "pass",
+   "note": "Fixed: the home page says 'the whole story is voiced (its two footnotes lettered on screen)', the film page's draft box 'voiced and acted (its two footnotes lettered on screen)'. The foreword's 'Every word of it is spoken, in order' is Curt's wording (curt.foreword), left for him."
+  },
+  {
+   "id": "find.round6-nav",
+   "area": "finding",
+   "title": "Site: the Round 6 draft pages lack the site's header and nav",
+   "state": "pass",
+   "note": "Fixed for every review round's page, not only Round 6's (21 had only a breadcrumb): the site build adds the masthead and nav; out/quality/phone/review_round6_film.jpg and desktop/review_round4_models.jpg show it."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-09 04:17",
-   "found": 18,
-   "note": "Tenth round: 19 reported, 2 major, 13 minor, 4 nits; 18 opened. The site's 'still being watched and fixed' stays, since it's true: the scorecard's counts show what has passed, and the watching goes on."
-  },
   {
    "when": "2026-11-09 18:18",
    "found": 11,
@@ -2000,6 +2069,11 @@
    "when": "2026-11-10 05:17",
    "found": 7,
    "note": "Twelfth round: no majors. Minor: ch09 the sphere's attack and F-2's dodge too brief to land; ch02 footnote 1 too small at phone size; ch09 the men show through the ruins' rock; ch08 shot D leaves Roal off to the right with the left half empty. Nits: ch05 F-2 mostly out of frame while C-R-U-1 speaks; figures cut by the frame edge in ch04 and ch02; ch08's first line louder than its neighbours. The makers' text on the quality page stays, inside its 'For the makers' fold."
+  },
+  {
+   "when": "2026-11-10 11:02",
+   "found": 10,
+   "note": "Thirteenth round: 2 minor (ch07 the hall vanishes; ch10 the rays all one colour), 8 nits; no majors."
   }
  ]
 }
