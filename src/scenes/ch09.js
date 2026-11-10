@@ -42,8 +42,9 @@
     const dim = (P, ink = true) => { if (dw < 1) paint(P, { wash: '#141110', washOp: 225 * (1 - dw), ink: ink ? mixCol('#141110', '#8A8070', 1 - dw) : null, sw: .5 }); };
     { const P = [[-2000, RG + 40], [6000, RG + 40], [6000, RG + 1600], [-2000, RG + 1600]]; stillSeed('rock9'); wash(P, 3, { op: 1 }); dim(P, false); }
     // what's left of the hall round the dome, as chapter 7 left it
-    // (bunched by the dome, clear of where the men, C-R-U-1 and F-2 end up: at 170 apart they stood in Trest and C-R-U-1)
-    for (let i = 4; i < 8; i++) { const k = i % 4, x = -20 + k * 120, h = 140 + 360 * hash(i * 7.3), w = 70, P = [[x - w / 2, RG + 50], [x - w / 2, RG + 50 - h], [x - w / 6, RG + 50 - h - 40 * hash(i)], [x + w / 6, RG + 80 - h], [x + w / 2, RG + 50 - h - 20 * hash(i * 3)], [x + w / 2, RG + 50]]; stillSeed('opier9' + i); wash(P, 3, { ink: true, sw: .6 }); stillSeed('opier9' + i); wash(P, 3, { ink: true, sw: .6 }); dim(P); }   // two coats: solid rock, not glass
+    // (bunched on the dome's far side, clear of the men's way out and of where they, C-R-U-1 and F-2 end up: by it they
+    // walked through them, and at 170 apart they stood in Trest and C-R-U-1)
+    for (let i = 4; i < 8; i++) { const k = i % 4, x = -1020 + k * 120, h = 140 + 360 * hash(i * 7.3), w = 70, P = [[x - w / 2, RG + 50], [x - w / 2, RG + 50 - h], [x - w / 6, RG + 50 - h - 40 * hash(i)], [x + w / 6, RG + 80 - h], [x + w / 2, RG + 50 - h - 20 * hash(i * 3)], [x + w / 2, RG + 50]]; stillSeed('opier9' + i); wash(P, 3, { ink: true, sw: .6 }); stillSeed('opier9' + i); wash(P, 3, { ink: true, sw: .6 }); dim(P); }   // two coats: solid rock, not glass
     for (let i = 0; i < 16; i++) { if (i === 7) continue;   // (Trest ends up standing where it was)
       const x = -1600 + i * 300 + 60 * hash(i); stillSeed('rk9' + i); const h = 60 + 120 * hash(i * 3), P = [[x - 70, RG + 50], [x - 30, RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]]; for (let coat = 0; coat < 2; coat++) { stillSeed('rk9' + i); wash(P, 2 + (i % 2), { ink: true, sw: .5 }); } dim(P); }
     // the dome at the left; it parts for the men at K
@@ -135,8 +136,9 @@
     // they stand looking up at the sphere; when the ruby flame warms them, their hands lift toward it, open
     const warm = win(t, tRuby + .5, tN - .5, 1.5, 1), wp = k => ({ up: lerp(.12, .9, k), fore: lerp(.3, 1.7, k) });
     // two coats on each man, so the ruins' rock doesn't show through them as they walk past it (one read as glass)
-    if (t > tK) for (let coat = 0; coat < 2; coat++) { stander(t, -260, RG + 40, 30, [[C('p123.1:Roal and Trest appeared'), C('p123.1:Roal and Trest appeared') + 5, -260, 420]], { who: 'roal', key: 'roal9', seed: 3, look: .6, pose: wp(warm) });
-      stander(t, -340, RG + 46, 31, [[C('p123.1:Roal and Trest appeared') + .4, C('p123.1:Roal and Trest appeared') + 5.6, -340, 540]], { who: 'trest', key: 'trest9', seed: 7, look: .55, pose: wp(.8 * win(t, tRuby + 1.2, tN - .5, 1.5, 1)) }); }
+    // Trest out first and ahead, so neither walks through the other
+    if (t > tK) for (let coat = 0; coat < 2; coat++) { stander(t, -300, RG + 40, 30, [[C('p123.1:Roal and Trest appeared') + .4, C('p123.1:Roal and Trest appeared') + 5.6, -300, 420]], { who: 'roal', key: 'roal9', seed: 3, look: .6, pose: wp(warm) });
+      stander(t, -200, RG + 46, 31, [[C('p123.1:Roal and Trest appeared'), C('p123.1:Roal and Trest appeared') + 5.4, -200, 540]], { who: 'trest', key: 'trest9', seed: 7, look: .55, pose: wp(.8 * win(t, tRuby + 1.2, tN - .5, 1.5, 1)) }); }
     if (t > tK) {
       // the dome again, in front: the men are inside it until they walk out
       if (domePart(t) < 1) for (let i = 0; i < 2; i++) DES.blackDome(-300, RG + 60, 320 * (1 - domePart(t) * .9), t); }   // twice: one coat lets the figures show through
