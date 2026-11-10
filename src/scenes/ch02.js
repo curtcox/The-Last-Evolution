@@ -225,16 +225,16 @@
     voidWorld(t); closing(t);
   }
   // the story's own footnotes (PLAN.md §5), lettered at the foot of the frame for 5 s from the word that carries the mark
-  const NOTES = [['p007.1:kill-ads', '1', ['Kilad\u2014unit introduced by the machines. Based on the duodecimal', 'system, similarly introduced, as more logical, and more readily used.',
-    'Thus we would have said 1728 kilads, about 1/2 mile.']],
+  const NOTES = [['p007.1:kill-ads', '1', ['Kilad\u2014unit introduced by the machines. Based on the', 'duodecimal system, similarly introduced, as more', 'logical, and more readily used. Thus we would have',
+    'said 1728 kilads, about 1/2 mile.']],
     ['p008.1:thousand units', '2', ['One unit was equal to one earth-gravity.']]];
   function footnotes(t) {
     for (const [at, n, lines] of NOTES) { const t0 = C(at) + .5, a = win(t, t0, t0 + 1.8 + .22 * lines.join(' ').split(' ').length, .4, .6); if (a <= 0) continue;   // long enough to read: ~9 s for footnote 1's 33 words
-      const y = H - 50 - 50 * lines.length;   // 40 px: read in a phone-width player (at 26 it was ~9 px caps at 720p)
-      stillSeed('fnband' + n); paint(rectPts(90, y - 60, 1380, 50 * lines.length + 50), { wash: '#141110', washOp: 190 * a, ink: null, bleed: .05 });   // a dark band, so the note reads over a pale hull
+      const y = H - 40 - 62 * lines.length;   // 52 px: read in a phone-width player (at 40 it was ~5 px tall at 375 px wide)
+      stillSeed('fnband' + n); paint(rectPts(90, y - 60, 1400, 62 * lines.length + 50), { wash: '#141110', washOp: 190 * a, ink: null, bleed: .05 });   // a dark band, so the note reads over a pale hull
       rule(120, y - 36, 260, '#EFE6D2', 1.4);
       letter(n, 126, y - 10, 26, '#EFE6D2', { screen: true, align: 'left', font: `700 26px ${SERIF}`, alpha: a });
-      lines.forEach((l, i) => letter(l, 152, y + i * 50, 40, '#EFE6D2', { screen: true, align: 'left', font: `40px ${SERIF}`, alpha: a })); }
+      lines.forEach((l, i) => letter(l, 152, y + i * 62, 52, '#EFE6D2', { screen: true, align: 'left', font: `52px ${SERIF}`, alpha: a })); }
   }
   function film(t) { scenes(t); footnotes(t); }
   shots([[0, film]]);
