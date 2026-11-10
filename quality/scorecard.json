@@ -1,13 +1,17 @@
 {
  "summary": {
-  "pass": 257,
+  "pass": 253,
   "stale": 0,
-  "open": 0,
+  "open": 10,
   "curt": 9,
   "later": 4
  },
  "satisfied": false,
- "next": [],
+ "next": [
+  "Chapter 9: the men show through the ruins' rock",
+  "Chapter 9: the sphere's attack and F-2's dodge too brief to land",
+  "Chapter 2: footnote 1 too small to read at phone size"
+ ],
  "checks": {
   "verbatim": {
    "state": "pass",
@@ -42,7 +46,7 @@
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
-   "state": "pass",
+   "state": "stale",
    "detail": "33 pages live, the deploy is this commit"
   }
  },
@@ -259,8 +263,8 @@
    "id": "ch02.draft",
    "area": "film",
    "title": "Chapter 2: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch02-draft-d6fe242e.mp4, -14.4 LUFS, peak -2 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch02.js"
   },
   {
    "id": "ch03.acting",
@@ -469,8 +473,8 @@
    "id": "ch08.draft",
    "area": "film",
    "title": "Chapter 8: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch08-draft-1ff1171c.mp4, -14.5 LUFS, peak -1.6 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch08.js"
   },
   {
    "id": "ch09.acting",
@@ -511,8 +515,8 @@
    "id": "ch09.draft",
    "area": "film",
    "title": "Chapter 9: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch09-draft-6f8cc8af.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch09.js"
   },
   {
    "id": "ch10.acting",
@@ -1728,9 +1732,9 @@
   {
    "id": "find.ch09-ruins",
    "area": "finding",
-   "title": "Chapters 8 and 9: the hall's stumps are gone; Trest stands in a rock",
-   "state": "pass",
-   "note": "Fixed in the ninth round's draft: the broken piers stand in chapters 8 and 9, and Trest no longer stands in a rock at 4:17-4:27."
+   "title": "Chapter 9: the men show through the ruins' rock",
+   "state": "open",
+   "note": "Twelfth round, minor: 3:25-3:31 Roal and Trest walk behind rock spires drawn half see-through, so they read as glass."
   },
   {
    "id": "find.site-round4",
@@ -1941,14 +1945,51 @@
    "title": "Site: 'still being watched and fixed' beside a full scorecard",
    "state": "pass",
    "note": "Fixed: the home page, the film page and the annotated page now say what the watching is, fresh reviews looking for faults until two in a row find none, so they agree with a scorecard whose checks are all done; the scorecard says what the latest review found."
+  },
+  {
+   "id": "find.ch09-attack",
+   "area": "finding",
+   "title": "Chapter 9: the sphere's attack and F-2's dodge too brief to land",
+   "state": "open",
+   "note": "Twelfth round, minor: 2:19-2:25 the stabbing beam is on screen ~5 frames, a white dotted line, not blue-white; then a static wide shot through 'of blue-white light flashed out (141.6), but F two was not there (144.1)', F-2 cut at the left edge."
+  },
+  {
+   "id": "find.ch02-footnote-size",
+   "area": "finding",
+   "title": "Chapter 2: footnote 1 too small to read at phone size",
+   "state": "open",
+   "note": "Twelfth round, minor: 0:30-0:40 the kilad footnote's 40 px lettering is ~5 px tall in a 375 px player."
+  },
+  {
+   "id": "find.ch08-shotd",
+   "area": "finding",
+   "title": "Chapter 8: shot D leaves Roal off to the right",
+   "state": "open",
+   "note": "Twelfth round, minor: 0:40.6-1:11.7 the board's 'slow push on Roal' has the men in the right third, the left 55-60% black for 31 s, the thought curl loose; a machine sliver at the left edge ~0:44."
+  },
+  {
+   "id": "find.ch05-f2-frame",
+   "area": "finding",
+   "title": "Chapter 5: F-2 mostly out of frame while C-R-U-1 speaks to it",
+   "state": "open",
+   "note": "Twelfth round, nit: 7:34-7:53 only F-2's nose at the left edge for ~19 s."
+  },
+  {
+   "id": "find.edge-cuts",
+   "area": "finding",
+   "title": "Chapters 2 and 4: figures cut by the frame edge",
+   "state": "open",
+   "note": "Twelfth round, nit: ch04 1:46-1:48 a machine cut at the right and a sliver at the left during Trest's line; ch02 ~2:08-2:30 and 4:38-4:45 Outsiders cut at the left."
+  },
+  {
+   "id": "find.ch08-first-line",
+   "area": "finding",
+   "title": "Chapter 8: the first line louder than its neighbours",
+   "state": "open",
+   "note": "Twelfth round, nit: 0:06 'We are alone, Trest' ~-9.8 LUFS (median word peak momentary) against -12.8 for the next line; ch04's first line similar (-10.3)."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-08 18:15",
-   "found": 19,
-   "note": "Ninth round: 1 major (chapter 7's plain was night, against chapters 6 and 8), 10 minor, 8 nits; a twentieth, the foreword's wording, is Curt's. All checked against the frames and the word times."
-  },
   {
    "when": "2026-11-09 04:17",
    "found": 18,
@@ -1958,6 +1999,11 @@
    "when": "2026-11-09 18:18",
    "found": 11,
    "note": "Eleventh round: no majors. Minor: ch03 torpedoes not deflected and look like the ships; ch03 planets plate lacks Pluto and lands before its words; ch04 listeners frozen through X-5638's demonstration; ch07 Roal's speech gesture loops; ch03 Colorado colonists cramped at the foot. Nits: ch05 cage swung in early; ch05 F-1's hulk changes shape between shots; ch02 an Outsider ship seen before 'unperceived'; ch08 F-2 half off the edge; ch01 floating workers cut by the top edge; site 'still being watched' beside a full scorecard."
+  },
+  {
+   "when": "2026-11-10 05:17",
+   "found": 7,
+   "note": "Twelfth round: no majors. Minor: ch09 the sphere's attack and F-2's dodge too brief to land; ch02 footnote 1 too small at phone size; ch09 the men show through the ruins' rock; ch08 shot D leaves Roal off to the right with the left half empty. Nits: ch05 F-2 mostly out of frame while C-R-U-1 speaks; figures cut by the frame edge in ch04 and ch02; ch08's first line louder than its neighbours. The makers' text on the quality page stays, inside its 'For the makers' fold."
   }
  ]
 }

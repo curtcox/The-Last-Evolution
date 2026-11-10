@@ -1090,10 +1090,10 @@ items:
     title: "Chapter 8: the crescent moon comes late"
     when: 2026-11-09 03:53
   find.ch09-ruins:
-    state: pass
-    note: "Fixed in the ninth round's draft: the broken piers stand in chapters 8 and 9, and Trest no longer stands in a rock at 4:17-4:27."
-    title: "Chapters 8 and 9: the hall's stumps are gone; Trest stands in a rock"
-    when: 2026-11-09 03:53
+    state: open
+    note: "Twelfth round, minor: 3:25-3:31 Roal and Trest walk behind rock spires drawn half see-through, so they read as glass."
+    title: "Chapter 9: the men show through the ruins' rock"
+    when: 2026-11-10 05:17
   find.site-round4:
     state: pass
     note: "Fixed: green death is captioned Chapter 3 and the screens' colour run Chapter 6, on the page and in tools/look_sampler.mjs; one more sentence that still looked ahead to the model sheets now links to them."
@@ -1244,6 +1244,36 @@ items:
     note: "Fixed: the home page, the film page and the annotated page now say what the watching is, fresh reviews looking for faults until two in a row find none, so they agree with a scorecard whose checks are all done; the scorecard says what the latest review found."
     title: "Site: 'still being watched and fixed' beside a full scorecard"
     when: 2026-11-10 04:03
+  find.ch09-attack:
+    state: open
+    note: "Twelfth round, minor: 2:19-2:25 the stabbing beam is on screen ~5 frames, a white dotted line, not blue-white; then a static wide shot through 'of blue-white light flashed out (141.6), but F two was not there (144.1)', F-2 cut at the left edge."
+    title: "Chapter 9: the sphere's attack and F-2's dodge too brief to land"
+    when: 2026-11-10 05:17
+  find.ch02-footnote-size:
+    state: open
+    note: "Twelfth round, minor: 0:30-0:40 the kilad footnote's 40 px lettering is ~5 px tall in a 375 px player."
+    title: "Chapter 2: footnote 1 too small to read at phone size"
+    when: 2026-11-10 05:17
+  find.ch08-shotd:
+    state: open
+    note: "Twelfth round, minor: 0:40.6-1:11.7 the board's 'slow push on Roal' has the men in the right third, the left 55-60% black for 31 s, the thought curl loose; a machine sliver at the left edge ~0:44."
+    title: "Chapter 8: shot D leaves Roal off to the right"
+    when: 2026-11-10 05:17
+  find.ch05-f2-frame:
+    state: open
+    note: "Twelfth round, nit: 7:34-7:53 only F-2's nose at the left edge for ~19 s."
+    title: "Chapter 5: F-2 mostly out of frame while C-R-U-1 speaks to it"
+    when: 2026-11-10 05:17
+  find.edge-cuts:
+    state: open
+    note: "Twelfth round, nit: ch04 1:46-1:48 a machine cut at the right and a sliver at the left during Trest's line; ch02 ~2:08-2:30 and 4:38-4:45 Outsiders cut at the left."
+    title: "Chapters 2 and 4: figures cut by the frame edge"
+    when: 2026-11-10 05:17
+  find.ch08-first-line:
+    state: pass
+    note: "Measured, no change: by integrated loudness 'We are alone, Trest' (5.5-8.5 s) is -14.3 LUFS, against -13.6 for the lines after it (8.5-12.5, 13-17 s), so it isn't louder; the median word peak (-9.8) catches the line's stressed words, not a level jump, and nothing of the theme sits under it at a level that shows. Chapter 4's first line is the same case."
+    title: "Chapter 8: the first line louder than its neighbours"
+    when: 2026-11-10 05:23
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1293,4 +1323,8 @@ fresh:
     found: 11
     note: "Eleventh round: no majors. Minor: ch03 torpedoes not deflected and look like the ships; ch03 planets plate lacks Pluto and lands before its words; ch04 listeners frozen through X-5638's demonstration; ch07 Roal's speech gesture loops; ch03 Colorado colonists cramped at the foot. Nits: ch05 cage swung in early; ch05 F-1's hulk changes shape between shots; ch02 an Outsider ship seen before 'unperceived'; ch08 F-2 half off the edge; ch01 floating workers cut by the top edge; site 'still being watched' beside a full scorecard."
     state: 100eceb59252
-since_fresh: 50
+  - when: 2026-11-10 05:17
+    found: 7
+    note: "Twelfth round: no majors. Minor: ch09 the sphere's attack and F-2's dodge too brief to land; ch02 footnote 1 too small at phone size; ch09 the men show through the ruins' rock; ch08 shot D leaves Roal off to the right with the left half empty. Nits: ch05 F-2 mostly out of frame while C-R-U-1 speaks; figures cut by the frame edge in ch04 and ch02; ch08's first line louder than its neighbours. The makers' text on the quality page stays, inside its 'For the makers' fold."
+    state: e6edf06251a1
+since_fresh: 1
