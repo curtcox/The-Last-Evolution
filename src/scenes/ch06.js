@@ -57,7 +57,7 @@
     HALFTONE = .2;
     const tC = T0('C'), tD = T0('D'), tF = T0('F'), tH = T0('H'), tI = T0('I');
     const c = cam(t, [[0, tt => [lerp(900, 1200, ez(tt, tC, tD)), 560, lerp(.6, .75, ez(tt, tC, tD))]], [tD, [HERO.x - 100, HERO.y, 1.1], 3], [tE, tt => [HERO.x, HERO.y, lerp(1.2, 1.35, ez(tt, tE, tF))], 2],
-      [tF, [HERO.x - 300, HERO.y - 40, 1.6], 2.5], [T0('G'), [HERO.x - 100, HERO.y, 1.1], 2.5], [tH, tt => [lerp(1200, 900, ez(tt, tH, tI)), 560, .8], 2.5],
+      [tF, [HERO.x - 300, HERO.y - 40, 1.6], 2.5], [T0('G'), tt => [lerp(HERO.x - 60, HERO.x - 160, ez(tt, T0('G') + 9, T0('G') + 24)), HERO.y, lerp(1.35, .85, ez(tt, T0('G') + 9, T0('G') + 24))], 2.5], [tH, tt => [lerp(1200, 900, ez(tt, tH, tI)), 560, .8], 2.5],
       [tI, tt => [lerp(1000, 1100, ez(tt, tGreen + 1, tCurtain)), 560, lerp(lerp(.9, 1.05, ez(tt, tI + 1, tGreen)), .65, ez(tt, tGreen + 3, tJ))], 2], [tJ, tt => [lerp(HERO.x - 380, HERO.x - 330, ez(tt, tDart, tVanish)), HERO.y, lerp(1.0, 2.2, ez(tt, tDart - .5, tVanish))], 1.2], [tK, tt => [lerp(1000, 1600, ez(tt, tK, T1('K'))), 560, .7], 2]]);   // rushing in with them
     ground('#1A1612', 255, 'bat', { fill: '#262019', fillOp: 90 });
     stars(160, 4);
@@ -129,7 +129,12 @@
     HALFTONE = .3;
     camBegin(800, 330, 1.6);
     DES.lab(-300, -150, 2520, 1300, t, { couch: false, ext: 1200 });
-    for (let r = 0; r < 3; r++) for (let c = 0; c < 7; c++) { const x = 103 + c * 252, y = 110 + r * 208; boilSeed('bl' + c + r); paint(rectPts(x + 6, y + 6, 202, 157), { wash: '#1C1814', washOp: 235, ink: null }); }
+    // lit until 'went suddenly blank', then out all at once
+    const out = ez(t, C('p080.1:blank') - .05, C('p080.1:blank') + .15);
+    if (out > 0) for (let r = 0; r < 3; r++) for (let c = 0; c < 7; c++) { const x = 103 + c * 252, y = 110 + r * 208; boilSeed('bl' + c + r); paint(rectPts(x + 6, y + 6, 202, 157), { wash: '#1C1814', washOp: 235 * out, ink: null }); }
+    { const x0 = -300, y0 = -150, w = 2520, h = 1300, fy = y0 + h * .78;   // the lab's piers again, solid: its washes let the screens' frames show through them
+      for (let k = 0; k < 6; k++) { const px = x0 + w * (.04 + k * .19); stillSeed('spier' + k); paint(rectPts(px, y0, w * .05, fy - y0), { wash: '#8C8170', washOp: 255, fill: '#7C7262', fillOp: 110, bleed: .02, tex: .3, ink: INK, sw: .6 });
+        for (let f = 1; f < 4; f++) inkLine([[px + f * w * .0125, y0 + 10], [px + f * w * .0125, fy - 10]], .35, D[4]); wash(rectPts(px - w * .01, fy - h * .03, w * .07, h * .03), 4, { ink: true, sw: .5 }); } }
     stillSeed('night'); paint(rectPts(-500, -400, 3000, 1900), { wash: PULP.black, washOp: 120, ink: null });
     camEnd();
   }
