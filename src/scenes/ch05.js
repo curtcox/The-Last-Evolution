@@ -232,6 +232,12 @@
   function f2(t, o = {}) {
     const x = WORK[0], hd = f2Head(t), c = Math.cos(hd), tilt = .45 * ez(t, tGen, tGen + 1.5) * (1 - ez(t, tSnap, tSnap + 2.5)) - .35 * K(t, 'p072.1:Let machines be made', 'p072.1:Let machines be made+1.2') * (c < 0 ? -1 : 1);
     push(); translate(x, WORK[1]); rotate(tilt); if (Math.abs(c) >= .3) scale(c, 1); translate(-x, -WORK[1]);
+    // the three tentacles (p060) under-stroked broad and pale on DES.f2's own curves, so they read against the dark hall
+    // in the close shots (its 1.1-wide dark lines were faint smudges there from 4:50 on)
+    if (!o.newborn && Math.abs(c) >= .3) { const len = 4.2 * FS, w = .65 * FS, y = G - F2HOV * FS + 3 * wob(t, .25);
+      [[.14, -.7], [0, -.95], [-.14, -1.2]].forEach(([k, a], i) => { const dx = Math.sin(a), dy = Math.cos(a), sx = x + len * k, sy = y + w * .8, sw = wob(t, .5, i * .29), L = 1.6 * FS,
+        at = (p, q) => [sx + dx * L * p - dy * L * q, sy + dy * L * p + dx * L * q];
+        boilSeed('f2u' + i); inkLine(through([[sx, sy], at(.3, .1 + .05 * sw), at(.62, -.06 + .08 * sw), at(.88, .04 + .07 * sw), at(1, .16 + .05 * sw)]), 2.6, '#7E8AA0', 'inkfine'); }); }
     DES.f2(x, G, FS, t, { hover: F2HOV, view: Math.abs(c) < .3 ? 'front' : 'side', newborn: o.newborn });
     pop();
   }
