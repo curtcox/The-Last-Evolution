@@ -29,6 +29,9 @@
     return [lerp(lerp(2500, 1700 + i * 60, enter), MID + side * (230 + k * 110), ring), lerp(lerp(600, 760, enter), G + 30 - 15 * k, ring)]; };
   function inHall(t, o = {}) {
     DES.lab(-300, -150, 2520, 1300, t, { couch: false, ext: 1200 });
+    { const x0 = -300, y0 = -150, w = 2520, h = 1300, fy = y0 + h * .78;   // the lab's piers again, solid: its washes let the screens' frames show through them
+      for (let k = 0; k < 6; k++) { const px = x0 + w * (.04 + k * .19); stillSeed('spier' + k); paint(rectPts(px, y0, w * .05, fy - y0), { wash: '#8C8170', washOp: 255, fill: '#7C7262', fillOp: 110, bleed: .02, tex: .3, ink: INK, sw: .6 });
+        for (let f = 1; f < 4; f++) inkLine([[px + f * w * .0125, y0 + 10], [px + f * w * .0125, fy - 10]], .35, D[4]); wash(rectPts(px - w * .01, fy - h * .03, w * .07, h * .03), 4, { ink: true, sw: .5 }); } }
     stillSeed('night'); paint(rectPts(-500, -400, 3000, 1900), { wash: PULP.black, washOp: 175, fill: '#1C2028', fillOp: 60, ink: null });
     screens(t);
     let cloud, arch;
