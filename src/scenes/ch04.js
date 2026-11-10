@@ -124,7 +124,7 @@
     const tB = T0('B'), tC = T0('C'), tRay = C('p037.3:rose into the air'), tTrain = C('p037.3:trained upon it'), tHarm = C('p037.3:for the ray fell harmless');
     const at = id => FACE[id], tR = T0('R');
     const c = cam(t, [[0, [1000, 800, 1.1]], [C('p037.2') - .5, at('x5638'), 2.5], [tC, [P.x5638 + 120, 820, 1.6], 2], [T0('D'), [P.roal - 60, 800, 2], 2], [T0('E'), at('x5638'), 1.2], [T0('F'), [P.roal + 60, 800, 1.3], 2.2],
-      [T0('G'), at('x6349'), 2], [T0('H'), at('trest'), 1.6], [T0('I'), at('kahsh'), 1.4], [T0('J'), at('x6621'), 1.6], [T0('K'), at('cr21'), 2.2], [C('p046.3'), [P.cr21 + 300, 800, 1.4], 3],
+      [T0('G'), at('x6349'), 2], [T0('H'), [P.trest + 80, 800, 2.1], 1.6],   // Trest, Kahsh, and X-6349 whole beside them (on Trest alone, X-6349 was cut by the right edge and X-5638 left a sliver at the left) [T0('I'), at('kahsh'), 1.4], [T0('J'), at('x6621'), 1.6], [T0('K'), at('cr21'), 2.2], [C('p046.3'), [P.cr21 + 300, 800, 1.4], 3],
       [T0('L'), tt => [960, lerp(560, 470, ez(tt, T0('L'), tShift)), lerp(1.1, 1.3, ez(tt, T0('L'), tShift))], 2.5], [tShift, tt => [lerp(600, 1400, ez(tt, tShift, T0('N'))), 760, 1.15], 2.5],   // the screens and the council under them (it was cropped to heads)
       [T0('N'), tt => [FX, lerp(820, 600, ez(tt, T0('N'), C('p048.1:more tentacles') - 2)), lerp(1.3, 1.5, ez(tt, T0('N'), C('p048.1:more tentacles') - 2))], 3], [C('p048.1:more tentacles') - 1.5, [FX, 770, 1.15], 2],   // down to the framework's foot as the tentacles go on, one by one
       [C('p048.1:there were stacked the memory-units') - 2.5, [FX, 560, 1.5], 2.5], [T0('P'), [FX, 480, 2.2], 2.5],   // the lens and the dome's crown in the middle of the frame, the lens lowered in from above
