@@ -9,7 +9,7 @@
   // hundred feet high and F-2 half a man's size
   const GR = 60, FORCE = '#CFE0FF', RG = 900, PX = 1100, HZ = RG - 230, PB = HZ + 12, PS = 2.2, FS = 26;
   const TOP = PB - 400 * PS - 90 * PS * .6, ORB = [PX, TOP - 260], LENS = [PX + 40, PB - 540];   // the crown, where the spheres float, and the lens
-  const tD = T0('D'), tDark = C('p117.1:The sky darkened'), tF = T0('F'), tI = T0('I'), tStab = C('p121.4:A stabbing beam'), tRed = C('p121.4:an enormously greater beam');
+  const tD = T0('D'), tDark = C('p117.1:The sky darkened'), tF = T0('F'), tI = T0('I'), tCharge = C('p121.4:A stabbing beam'), tStab = C('p121.4:flashed out'), tStabEnd = C('p121.4:an enormously greater beam') + .3, tRed = C('p121.4:an enormously greater beam');
   const tOrange = C('p121.4:orange'), tGreen = C('p121.4:green'),   // on the colour words themselves (the phrase starts ~1 s early)
     tGone = C('p121.4:Then the sphere had vanished'), tJ = T0('J'), tK = T0('K');
   const tGold = C('p123.1:an irregular globe'), tRuby = C('p126.1:a tiny ruby flame'), tN = T0('N'), tVanish = C('p129.1:fast as light');
@@ -41,9 +41,9 @@
     { const P = [[-2000, RG + 40], [6000, RG + 40], [6000, RG + 1600], [-2000, RG + 1600]]; stillSeed('rock9'); wash(P, 3, { op: 1 }); dim(P, false); }
     // what's left of the hall round the dome, as chapter 7 left it
     // (bunched by the dome, clear of where the men, C-R-U-1 and F-2 end up: at 170 apart they stood in Trest and C-R-U-1)
-    for (let i = 4; i < 8; i++) { const k = i % 4, x = -20 + k * 120, h = 140 + 360 * hash(i * 7.3), w = 70, P = [[x - w / 2, RG + 50], [x - w / 2, RG + 50 - h], [x - w / 6, RG + 50 - h - 40 * hash(i)], [x + w / 6, RG + 80 - h], [x + w / 2, RG + 50 - h - 20 * hash(i * 3)], [x + w / 2, RG + 50]]; stillSeed('opier9' + i); wash(P, 3, { ink: true, sw: .6 }); dim(P); }
+    for (let i = 4; i < 8; i++) { const k = i % 4, x = -20 + k * 120, h = 140 + 360 * hash(i * 7.3), w = 70, P = [[x - w / 2, RG + 50], [x - w / 2, RG + 50 - h], [x - w / 6, RG + 50 - h - 40 * hash(i)], [x + w / 6, RG + 80 - h], [x + w / 2, RG + 50 - h - 20 * hash(i * 3)], [x + w / 2, RG + 50]]; stillSeed('opier9' + i); wash(P, 3, { ink: true, sw: .6 }); stillSeed('opier9' + i); wash(P, 3, { ink: true, sw: .6 }); dim(P); }   // two coats: solid rock, not glass
     for (let i = 0; i < 16; i++) { if (i === 7) continue;   // (Trest ends up standing where it was)
-      const x = -1600 + i * 300 + 60 * hash(i); stillSeed('rk9' + i); const h = 60 + 120 * hash(i * 3), P = [[x - 70, RG + 50], [x - 30, RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]]; wash(P, 2 + (i % 2), { ink: true, sw: .5 }); dim(P); }
+      const x = -1600 + i * 300 + 60 * hash(i); stillSeed('rk9' + i); const h = 60 + 120 * hash(i * 3), P = [[x - 70, RG + 50], [x - 30, RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]]; for (let coat = 0; coat < 2; coat++) { stillSeed('rk9' + i); wash(P, 2 + (i % 2), { ink: true, sw: .5 }); } dim(P); }
     // the dome at the left; it parts for the men at K
     const part = domePart(t);
     if (part < 1) DES.blackDome(-300, RG + 60, 320 * (1 - part * .9), t);
@@ -56,7 +56,7 @@
   }
   function f2At(t) {
     const st = storm(t), wind = win(t, C('p117.1:a howling wind') - .3, T0('E'), .8, 2), gust = st * (30 + 45 * wind) * Math.sin(t * 7) + st * (20 + 30 * wind) * Math.sin(t * 13.3);   // torn at: it held its place only just
-    let p = path(t, [[0, [PX - 360, RG - 40]], [tD, [PX - 420, RG - 200], 3], [T0('G'), [PX - 300, ORB[1] + 60], 2.5], [tStab - .2, [PX - 700, ORB[1] + 220], .4], [tJ, [PX - 420, RG - 160], 3], [tK + 2, [PX - 260, RG - 120], 3]]);
+    let p = path(t, [[0, [PX - 360, RG - 40]], [tD, [PX - 420, RG - 200], 3], [T0('G'), [PX - 300, ORB[1] + 60], 2.5], [tStab - .1, [PX - 560, ORB[1] + 250], .35], [tJ, [PX - 420, RG - 160], 3], [tK + 2, [PX - 260, RG - 120], 3]]);
     return [p[0] + gust, p[1] + gust * .4];
   }
   function sphereGold(t, r) {   // irregular, golden, a deep violet halo; the ruby flame within
@@ -78,7 +78,7 @@
     const tC = T0('C'), tE = T0('E'), tG = T0('G'), tH = T0('H'), tL = T0('L'), tM = T0('M'), tP = T0('P');
     const c = cam(t, [[0, tt => [PX - 100, lerp(560, 420, ez(tt, T0('B'), tC)), lerp(.75, .85, ez(tt, T0('B'), tC))]], [tC, [...LENS, 2.2], 2], [tD, tt => [PX - 200, lerp(500, 200, ez(tt, tD, tDark)), lerp(1.2, .7, ez(tt, tD, tDark))], 3],
       [C('p117.1:a howling wind') - .5, tt => [PX - 380, 640, 1.5], 2.5],   // in on the 'tiny rounded hull' the wind tears at; at the wide it was too small to see it held
-      [tE, [PX, ORB[1] + 120, 1.1], 3], [tF, [PX - 100, ORB[1] + 200, .9], 3], [tG, [PX - 160, ORB[1] + 60, 1.5], 2.5], [tH, [PX, ORB[1], 2.2], 2.5], [tI, tt => [lerp(PX - 200, PX + 140, ez(tt, tStab, tStab + 2)), lerp(ORB[1] + 200, ORB[1] + 80, ez(tt, tStab, tStab + 2)), lerp(1.4, 1.05, ez(tt, tStab, tStab + 2))], 2],   // the plant's top, the beam and the sphere held together through the duel
+      [tE, [PX, ORB[1] + 120, 1.1], 3], [tF, [PX - 100, ORB[1] + 200, .9], 3], [tG, [PX - 160, ORB[1] + 60, 1.5], 2.5], [tH, [PX, ORB[1], 2.2], 2.5], [tI, tt => [lerp(PX - 220, PX + 60, ez(tt, tStabEnd, tStabEnd + 2.5)), lerp(ORB[1] + 160, ORB[1] + 100, ez(tt, tStabEnd, tStabEnd + 2.5)), lerp(1.35, 1, ez(tt, tStabEnd, tStabEnd + 2.5))], 2],   // in on the globe and F-2 for the stab and the dodge; then out to hold the plant, the beam and the sphere together through the duel (it went wide 0.5 s after the stab, F-2 cut by the edge)
       [tJ, tt => [lerp(PX - 100, PX + 60, ez(tt, tJ, tJ + 10)), 80, .72], 3],   // J: the storm on the plant again, wide enough for the lightning
       [C('p122.1:C-R-U-1 joined him') - 2, [PX - 490, RG - 110, 1.7], 2.5],   // in on C-R-U-1 floating in beside F-2, its gold name readable
       [C('p122.1:red glory of the sun') - .5, tt => [lerp(PX - 300, PX + 350, ez(tt, C('p122.1:red glory of the sun') - .5, tK)), lerp(760, 680, ez(tt, C('p122.1:red glory of the sun'), tK)), lerp(1.3, .95, ez(tt, C('p122.1:red glory of the sun') - .5, tK))], 3],   // round, so the red sun rises behind them
@@ -102,7 +102,7 @@
     // F to I: the white globe; F-2's probing; the stab; the red beam, shrinking it through orange and green
     // after its stab the globe draws back, up and away; the red beam reaches for where it was, and on 'The sphere leaped
     // forward' it leaps back into the beam, which catches it (the beam had it 4 s early, sitting on the plant)
-    const tLeap = C('p121.4:The sphere leaped'), back = ez(t, tStab + .3, tStab + 1.6) * (1 - ez(t, tLeap - .1, tLeap + .35)), orb = [ORB[0] + 330 * back, ORB[1] - 150 * back];
+    const tLeap = C('p121.4:The sphere leaped'), back = ez(t, tStabEnd, tStabEnd + 1.3) * (1 - ez(t, tLeap - .1, tLeap + .35)), orb = [ORB[0] + 330 * back, ORB[1] - 150 * back];
     const g1 = t > tF - 1 && t < tGone + .3, shrink = 1 - .9 * ez(t, tLeap, tGone);
     if (g1) { const r = 40 * shrink * (t < tF ? seg(t, tF - 1, tF) : 1); glow(...orb, r * 3, NRG.white, .6); glow(...orb, r * 1.4, '#FFFDF6', .9);
       if (t > tLeap) for (let i = 0; i < 6; i++) { const a = hash(Math.floor(t * 8) + i) * TAU; boilSeed('spray' + i + Math.floor(t * 12)); lightning(...orb, orb[0] + Math.cos(a) * 300, orb[1] + Math.sin(a) * 300, '#FFE2B0', { amp: .2, r: 30 }); } }
@@ -110,7 +110,11 @@
     const f2 = f2At(t);
     if (t > C('p120.1') && t < tH) for (let i = 0; i < 5; i++) { const k = seg(t, C('p120.1') + i * .8, C('p120.1') + i * .8 + 1.2), d = [ORB[0] - 80, ORB[1] + 40 * (i - 2)], turn = t > C('p120.1:seemed baffled') ? 1 : 0;
       ruled([[f2[0] + 50, f2[1]], [lerp(f2[0] + 50, d[0], .5), f2[1]], [lerp(f2[0] + 50, d[0], .5), d[1]], [d[0], d[1] + turn * (i - 2) * 80]], k, FORCE, .6); }
-    if (t > tStab && t < tStab + .5) beam(...ORB, PX - 300, ORB[1] + 60, 6, 20, '#E8F0FF', 1, { washOp: 60, a: .9 });
+    // the stab: the globe gathers blue-white on 'A stabbing beam', fires on 'flashed out' at where F-2 hung, and F-2 darts
+    // clear as it fires; the beam burns on through empty air until the red beam comes (it was on screen for 5 frames)
+    if (t > tCharge && t < tStabEnd + .4) { const ch = ez(t, tCharge, tStab) * (1 - ez(t, tStabEnd, tStabEnd + .4)); glow(...ORB, 90 + 60 * ch, '#9DBBFF', .55 * ch); }
+    if (t > tStab && t < tStabEnd + .4) { const k = ez(t, tStab, tStab + .12) * (1 - ez(t, tStabEnd, tStabEnd + .4)), fl = .85 + .15 * Math.sin(t * 40), end = [PX - 300 - 520, ORB[1] + 60 + 170];
+      beam(...ORB, ...end, 50, 80, '#8FB2FF', k, { washOp: 130, a: .85 * fl }); beam(...ORB, ...end, 18, 30, '#F4F8FF', k, { washOp: 150, a: .8 * fl, splash: false }); }
     if (t > tRed - .2 && t < tGone + .4) { const col = t < tOrange ? '#B23A2A' : t < tGreen ? mixCol('#E8641E', NRG.death, ez(t, tGreen - .35, tGreen)) : NRG.death;   // a true orange, held until 'green'
       // the beam reaches out from the plant toward the sphere where it hangs, and has it once it leaps
       const reach = ez(t, tRed - .2, tRed + 3), end = t < tLeap ? lerpP([PX, TOP], [orb[0] - 40, orb[1] + 30], .25 + .6 * reach) : orb;
@@ -127,8 +131,10 @@
     const gk = ez(t, tGold - 2.2, tGold + .5) * (t < tVanish ? 1 : 0), tTwice = C('p127.1:twice'), grow = .25 * ez(t, C('p126.1') + 2, tTwice - .3) + .75 * ez(t, tTwice - .3, tTwice + 1);   // most of it on 'twice its former size'
     // they stand looking up at the sphere; when the ruby flame warms them, their hands lift toward it, open
     const warm = win(t, tRuby + .5, tN - .5, 1.5, 1), wp = k => ({ up: lerp(.12, .9, k), fore: lerp(.3, 1.7, k) });
-    if (t > tK) { stander(t, -260, RG + 40, 30, [[C('p123.1:Roal and Trest appeared'), C('p123.1:Roal and Trest appeared') + 5, -260, 420]], { who: 'roal', key: 'roal9', seed: 3, look: .6, pose: wp(warm) });
-      stander(t, -340, RG + 46, 31, [[C('p123.1:Roal and Trest appeared') + .4, C('p123.1:Roal and Trest appeared') + 5.6, -340, 540]], { who: 'trest', key: 'trest9', seed: 7, look: .55, pose: wp(.8 * win(t, tRuby + 1.2, tN - .5, 1.5, 1)) });
+    // two coats on each man, so the ruins' rock doesn't show through them as they walk past it (one read as glass)
+    if (t > tK) for (let coat = 0; coat < 2; coat++) { stander(t, -260, RG + 40, 30, [[C('p123.1:Roal and Trest appeared'), C('p123.1:Roal and Trest appeared') + 5, -260, 420]], { who: 'roal', key: 'roal9', seed: 3, look: .6, pose: wp(warm) });
+      stander(t, -340, RG + 46, 31, [[C('p123.1:Roal and Trest appeared') + .4, C('p123.1:Roal and Trest appeared') + 5.6, -340, 540]], { who: 'trest', key: 'trest9', seed: 7, look: .55, pose: wp(.8 * win(t, tRuby + 1.2, tN - .5, 1.5, 1)) }); }
+    if (t > tK) {
       // the dome again, in front: the men are inside it until they walk out
       if (domePart(t) < 1) for (let i = 0; i < 2; i++) DES.blackDome(-300, RG + 60, 320 * (1 - domePart(t) * .9), t); }   // twice: one coat lets the figures show through
     if (gk > 0) { sphereGold(t, GR * gk * (1 + grow)); thoughtRings(...ORB, t, T0('L'), C('p125.1$'), { r1: 600, col: NRG.gold }); thoughtRings(...ORB, t, T0('O'), C('p128.1$'), { r1: 600, col: NRG.gold });
