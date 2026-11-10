@@ -946,7 +946,7 @@ items:
     when: 2026-11-07 20:11
   find.ch02-footnote:
     state: pass
-    note: "Kept as it is: footnote 1's 33 words need about 9 s to read (the readable floor PLAN.md §5 asks for), and the word that carries its mark comes 4 s before the cut to shot D, so the note carries across the cut at the foot of the frame, as a subtitle would; it sits on its dark band and covers nothing the narration points to (0:35.7-0:40 is the transport ship coming in)."
+    note: "Kept as it is: footnote 1's 33 words need about 9 s to read, and the word that carries its mark comes 4 s before the cut to shot D, so the note carries across the cut at the foot of the frame, as a subtitle would; it sits on its dark band and covers nothing the narration points to (0:35.7-0:40 is the transport ship coming in)."
     title: "Chapter 2: the kilad footnote"
     when: 2026-11-10 22:39
   find.flyer-overlap:
@@ -1420,4 +1420,4 @@ fresh:
     found: 9
     note: "Fourteenth round: 9 found, no majors (2 minor, 7 nits); the foreword's 'Every word of it is spoken, in order' left for Curt (curt.foreword)."
     state: 67704b25a130
-since_fresh: 1
+since_fresh: 2
