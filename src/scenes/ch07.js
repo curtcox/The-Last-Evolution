@@ -111,7 +111,8 @@
   function outside(t) {
     HALFTONE = .25;
     const tL = T0('L'), tStruck = C('p094.1:They struck'), tN = T0('N'), tP = T0('P'), tProj = C('p098.1:Great ray projectors'), tOff = C('p098.1:as light illumines'), tQ = T0('Q');
-    const c = cam(t, [[0, tt => [960, lerp(500, 640, ez(tt, tL, tStruck)), lerp(.8, 1.4, ez(tt, tL, tStruck))]], [tN, tt => [960, 560, lerp(1.1, .8, ez(tt, tN, T1('N')))], 2.5],
+    const c = cam(t, [[0, tt => [960, lerp(100, 640, ez(tt, tStruck - .6, tStruck + 1.6)), lerp(.6, 1.4, ez(tt, tStruck - .6, tStruck + 1.6))]],   // wide on the hall as the beams draw in, then in as it goes
+      [tN, tt => [960, 560, lerp(1.1, .8, ez(tt, tN, T1('N')))], 2.5],
       [tP, tt => [960, lerp(640, -160, ez(tt, tProj, tOff + 2)), lerp(1, .62, ez(tt, tP, T1('P')))], 2.5], [tQ, tt => [960, 640, lerp(.95, .55, ez(tt, tQ, DUR))], 3]]);   // up to the fleet as it's driven off; then out, but not so far the dome is lost
     withCam(c, () => {
       // day, dimmed by the smoke of the battle: 'Dawn was breaking' in chapter 6, 'Last night we saw it leap ahead' here, and
@@ -131,9 +132,10 @@
       const n = t < tN ? 4 : Math.min(12, 4 + Math.floor((t - tN) * 1.5)), bk = ez(t, tL, tStruck) * (1 - ez(t, tOff, tOff + 3)), tQuiv = C('p094.1:quivered'), tBelly = C('p094.1:bellied'), quiv = win(t, tQuiv - .1, tBelly + .2, .1, .3), belly = ez(t, tBelly - .1, C('p094.1:inward') + .5),
         press = (t > tStruck ? .1 + .06 * Math.sin(t * 3) + .3 * belly : 0) * (1 - ez(t, tOff, tOff + 3));   // pressed; quivering; then bellied well in
       const rise = ez(t, tOff - 1, tOff + 6);
-      for (let i = 0; i < n; i++) { const a = -Math.PI / 2 + (i - (n - 1) / 2) * .22, sx = DOME[0] + Math.cos(a) * 1500, sy = -600 - 200 * hash(i) - 1500 * rise;
+      const near = 300 - 500 * ez(t, tL, tStruck), onHall = [];   // 'swiftly they drew closer': the ships come down into the frame, and stay lower
+      for (let i = 0; i < n; i++) { const a = -Math.PI / 2 + (i - (n - 1) / 2) * .22, sx = DOME[0] + Math.cos(a) * 1500, sy = -600 - 200 * hash(i) - 1500 * rise - near;
         ship(sx, sy, 300, t, -1, { d: 3 }); boilSeed('curt' + i); paint(ellPts(sx, sy, 260, 90, 16, 20), { wash: '#0E0B09', washOp: 100, ink: null });
-        if (bk > 0) beam(sx, sy + 40, DOME[0] + (i - n / 2) * 30, DOME[1] - DR * .78, 10, 60, GREEN, bk, { washOp: 50, a: .5 }); }
+        if (bk > 0) { if (t < tStruck) onHall.push([sx, sy + 40, DOME[0] + (i - n / 2) * 30]); else beam(sx, sy + 40, DOME[0] + (i - n / 2) * 30, DOME[1] - DR * .78, 10, 60, GREEN, bk, { washOp: 50, a: .5 }); } }
       // the dome, bellied in at its crown under the beams
       const P = []; for (let i = 0; i <= 32; i++) { const a = Math.PI + i / 32 * Math.PI, dent = press * Math.exp(-Math.pow((i - 16) / 6, 2)), sh = quiv * 7 * Math.sin(t * 38) * (1 + .3 * Math.sin(i * .7)); P.push([DOME[0] + Math.cos(a) * (DR + sh), DOME[1] + Math.sin(a) * (DR * .8 * (1 - dent) + sh)]); }
       stillSeed('odome'); paint(P, { wash: PULP.black, washOp: 255, fill: PULP.black, fillOp: 230, bleed: .02, tex: .2, ink: INK, sw: 1 });
@@ -144,11 +146,13 @@
         stillSeed('ohall' + r + q); { const col = r === 0 ? '#5E5648' : '#6E6656'; paint(rectPts(cx - 100 * sc, cy - 72 * sc, 200 * sc, 144 * sc), { wash: col, washOp: 255, fill: col, fillOp: 200, bleed: .04, tex: .3, ink: INK, sw: .5 }); }
         if (r > 0 && r < 4 && q % 2 === 0 && k === 0) { stillSeed('owin' + r + q); paint(rectPts(bx + 40, by + 30, 120, 84), { wash: '#3A352E', washOp: 220, ink: INK, sw: .4 }); }
         if (k > 0) glow(cx, cy, 120 * (1 - k * .5), GREEN, .6 * (1 - k)); }
+      // before the strike the beams come down on the hall's roof, over it
+      onHall.forEach(([sx, sy, ex]) => beam(sx, sy, ex, HALLY, 10, 60, GREEN, bk, { washOp: 50, a: .5 })); if (onHall.length) glow(DOME[0], HALLY, 260, GREEN, .5 * bk);
       // the bellied crown picked out in pale ink, so the dent reads through the beams' glow
       const bl = belly * (1 - ez(t, tOff, tOff + 3)); if (bl > 0) { boilSeed('obelly'); inkLine(P.slice(8, 25), 2.4 * bl, '#D8E8C8', 'inkfine', .5); }
       // a pale rim on the dome once the beams are off, so 'the only life was under that dark shroud' finds it on the dead plain
       const rim = ez(t, tOff, tOff + 3); if (rim > 0) { boilSeed('orim'); inkLine(P, 2.2 * rim, '#B8AE98', 'inkfine', .5); for (let i = 2; i < 31; i += 4) glow(...P[i], 70, '#C8BEA8', .22 * rim); }
-      if (bk > 0) glow(DOME[0], DOME[1] - DR * .7, 200, GREEN, .5 * bk);
+      if (bk > 0 && t >= tStruck) glow(DOME[0], DOME[1] - DR * .7, 200, GREEN, .5 * bk);
       // P: the ground projectors driving white light up through the curtains
       if (t > tProj - 1) for (let i = 0; i < 5; i++) { const px = DOME[0] - 1400 + i * 700 + (i >= 2 ? 340 : 0), k = ez(t, tProj + i * .3, tProj + i * .3 + .6) * (1 - ez(t, tQ, tQ + 2));
         DES.machine(px, OG + 60, 26, t, { arms: 0, nozzles: true, d: 2, label: null }); if (k > 0) { beam(px, OG - 100, DOME[0] + (i - 2) * 500, -700 - 1500 * rise, 18, 60, NRG.livid, k, { washOp: 110, a: .85 }); glow(px, OG - 100, 80, NRG.livid, .6 * k); } }
