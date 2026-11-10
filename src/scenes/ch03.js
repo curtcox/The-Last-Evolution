@@ -24,8 +24,8 @@
       // machine and a pale ellipse read as nothing)
       if (t > T0('R') - 1 && r >= 1 && c > 0 && c < 6 && (c + r) % 2 === 0) { const q = frac((t - T0('R')) * .07 + c * .27 + r * .4), bx = lerp(x + 30, x + w - 30, q);
         paint(rectPts(x + 6, y + 6, w - 12, h - 12), { wash: '#E4DCC6', washOp: 150, ink: null });
-        DES.machine(bx, y + h - 16, 9, t, { arms: 2, label: null, hover: 1.4 });
-        push(); translate(bx, y + h - 62); rotate(Math.PI / 2); translate(-bx, -(y + h - 62)); DES.outsider(bx, y + h - 62, 16, t, { view: 'side', suit: false }); pop(); }
+        DES.machine(bx, y + h - 16, 10, t, { arms: 2, label: null, hover: 1.4 });
+        push(); translate(bx, y + h - 70); rotate(Math.PI / 2); translate(-bx, -(y + h - 70)); DES.outsider(bx, y + h - 70, 21, t, { view: 'side', suit: false }); pop(); }   // (at 16 a dark clump)
     }
   }
   // the machines in the hall: floating in tiers at first; gathered in a ring round Roal when he speaks (S), the near
@@ -80,7 +80,7 @@
     const c = cam(t, [[0, tt => [lerp(960, 900, ez(tt, tB, tB + 8)), lerp(560, 720, ez(tt, tB, tB + 8)), lerp(.95, 1.3, ez(tt, tB, C('p018.1:Trest, 35429') + 1))]],
       [T0('C'), tt => [lerp(800, 1250, ez(tt, T0('C') + 1, T0('D'))), 760, 1.4], 2.5], [T0('D'), tt => [ROAL + 40, 760, lerp(2.4, 2.9, ez(tt, T0('D'), tE))], 2.5],
       [tE - .5, tt => [lerp(500, 1500, ez(tt, tE, T1('E'))), 820, 1.6], 2.5], [T0('L') - 1, tt => [lerp(900, 880, ez(tt, T0('L'), T1('L'))), lerp(400, 700, ez(tt, T0('L') - 1, T0('L') + 3)), lerp(2.2, 1.15, ez(tt, T0('L') - 1, T0('L') + 3))], .01],
-      [T0('Q') - 1, [900, 740, 1.3], .01], [T0('R'), tt => [lerp(900, 800, ez(tt, T0('R'), T1('R'))), lerp(560, 330, ez(tt, T0('R'), T1('R'))), lerp(1.2, 2, ez(tt, T0('R'), T1('R')))], 2.5],
+      [T0('Q') - 1, [900, 740, 1.3], .01], [T0('R'), tt => [lerp(900, 800, ez(tt, T0('R'), T1('R'))), lerp(420, 330, ez(tt, T0('R'), T1('R'))), lerp(1.6, 2, ez(tt, T0('R'), T1('R')))], .01],   // a cut to the screens (tilting up from the men left them heads at the bottom edge)
       [T0('S'), tt => [lerp(1000, 1060, ez(tt, T0('S') + 2, T0('S') + 12)), lerp(720, 770, ez(tt, T0('S') + 2, T0('S') + 12)), lerp(1.2, 2.4, ez(tt, T0('S') + 2, T0('S') + 12))], 3],   // in close enough to read the faces
       [C('p033.5') - .5, [1060, 660, 1.25], 3],   // out to the ring of machines he's speaking to
       [C('p034.1:And--most dangerous') - .6, [1060, 770, 2.3], .01],
