@@ -134,7 +134,7 @@
 
   function film(t) {
     const tB = T0('B'), tE = T0('E'), tH = T0('H'), tK = T0('K');
-    if (t < tB) return page(t, 'Last of Men', '"We are alone, Trest," said Roal...', tB, { soak: '#141110' });
+    if (t < tB) return page(t, 'Last of Men', '“We are alone, Trest,” said Roal...', tB, { soak: '#141110' });
     if (t < tLadder - .9) return dome(t);
     if (t < tLadder + .7) return dissolve(seg(t, tLadder - .9, tLadder + .7), () => dome(t), () => ladder(t));
     if (t < tH - .8) return ladder(t);
