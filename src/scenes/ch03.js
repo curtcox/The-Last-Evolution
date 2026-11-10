@@ -88,6 +88,10 @@
     withCam(c, () => {
       DES.lab(-300, -150, 2520, 1300, t, { couch: false, ext: 1200 });
       screens(t);
+      // the lab's piers again, solid: its washes let the screens' frames and Roal's curl show through them
+      { const x0 = -300, y0 = -150, w = 2520, h = 1300, fy = y0 + h * .78;
+        for (let k = 0; k < 6; k++) { const px = x0 + w * (.04 + k * .19); stillSeed('spier' + k); paint(rectPts(px, y0, w * .05, fy - y0), { wash: '#8C8170', washOp: 255, fill: '#7C7262', fillOp: 110, bleed: .02, tex: .3, ink: INK, sw: .6 });
+          for (let f = 1; f < 4; f++) inkLine([[px + f * w * .0125, y0 + 10], [px + f * w * .0125, fy - 10]], .35, D[4]); wash(rectPts(px - w * .01, fy - h * .03, w * .07, h * .03), 4, { ink: true, sw: .5 }); } }
       hallMachines(t, false);
       // E: the weapons taking shape on the floor
       const ew = win(t, tE - 1, T1('E') + .5, 1, 1);
@@ -101,7 +105,10 @@
       // their designations, lettered the first time they're spoken (DECISIONS.md, 2026-11-01)
       for (const [txt, x, y, a, b] of [['Roal 25374', ROAL, G + 34, C('p018.1:Roal, 25374'), C('p018.1:Trest, 35429') + 2.4], ['Trest 35429', TREST, G + 44, C('p018.1:Trest, 35429'), C('p018.1:Trest, 35429') + 3.2]]) { const k = win(t, a - .1, b, .3, .5); if (k > 0) letter(txt, x, y, 34, INK, { ink: false, font: '700 34px ' + SERIF, spacing: 1, alpha: k }); }
       // D: his thought, the curl, in the darkest tone (the palest and mid washes vanished against the hall's light wall); S: rings as he speaks
-      dreamCurl(roal.head[0] + 20, roal.head[1] - 40, K(t, 'p018.1:But--life alone', 'p018.1:so Roal was believed'), t, .8 * (1 - ez(t, T0('E') - 1, T0('E'))), 'roalcurl', 4);
+      // it rises up and to the left, over the window's light, not along the pier behind him
+      push(); translate(roal.head[0], 0); scale(-1, 1); translate(-roal.head[0], 0);
+      dreamCurl(roal.head[0] + 10, roal.head[1] - 40, K(t, 'p018.1:But--life alone', 'p018.1:so Roal was believed'), t, .8 * (1 - ez(t, T0('E') - 1, T0('E'))), 'roalcurl', 4);
+      pop();
       hallMachines(t, true);
     });
   }
