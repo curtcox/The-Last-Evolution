@@ -7,7 +7,9 @@
   const K = (t, a, b) => seg(t, C(a), C(b));
   // the plant stands far off on the plain beyond the near rock, as in chapter 8 (HZ its horizon, PB its foot): it is five
   // hundred feet high and F-2 half a man's size
-  const GR = 60, FORCE = '#CFE0FF', RG = 900, PX = 1100, HZ = RG - 230, PB = HZ + 12, PS = 2.2, FS = 26;
+  // the spheres sized by F-2 beside them (half a man, 4.2 * FS long, about 3 ft): the white 'scarcely a foot', the golden
+  // half F-2's length and then 'twice its former size--easily three feet' (at 40 and 60 they were several times the words)
+  const GR = 28, FORCE = '#CFE0FF', RG = 900, PX = 1100, HZ = RG - 230, PB = HZ + 12, PS = 2.2, FS = 26;
   const TOP = PB - 400 * PS - 90 * PS * .6, ORB = [PX, TOP - 260], LENS = [PX + 40, PB - 540];   // the crown, where the spheres float, and the lens
   const tD = T0('D'), tDark = C('p117.1:The sky darkened'), tF = T0('F'), tI = T0('I'), tCharge = C('p121.4:A stabbing beam'), tStab = C('p121.4:flashed out'), tStabEnd = C('p121.4:an enormously greater beam') + .3, tRed = C('p121.4:an enormously greater beam');
   const tOrange = C('p121.4:orange'), tGreen = C('p121.4:green'),   // on the colour words themselves (the phrase starts ~1 s early)
@@ -85,8 +87,9 @@
       // K: in on the dome as it parts and the two men walk out of it, held while they come; then up to the globe above the
       // plant, wide, so the glow shows
       [tK, tt => { const tApp = C('p123.1:Roal and Trest appeared'), up = ez(tt, tApp + 3.5, tGold + 2);
-        return [lerp(lerp(350, 150, ez(tt, tK, tApp)), PX, up), lerp(800, ORB[1] + 260, up), lerp(lerp(1, 1.3, ez(tt, tK, tApp)), .75, up) * lerp(1, 1.5, ez(tt, tGold + 3, tL))]; }, 3],
-      [tL, tt => [PX, ORB[1], lerp(1.5, 1.9, ez(tt, tL, tM))], 2.5], [tM, tt => [PX - 100, lerp(ORB[1], 300, ez(tt, tRuby + 2, tN)), lerp(1.9, .7, ez(tt, tRuby + 2, lerp(tRuby + 2, tN, .5)))], 3],
+        return [lerp(lerp(350, 215, ez(tt, tK, tApp)), PX, up),   // (at 150 F-2's nose was cut by the right edge as they came out)
+           lerp(800, ORB[1] + 260, up), lerp(lerp(1, 1.3, ez(tt, tK, tApp)), .75, up) * lerp(1, 1.5, ez(tt, tGold + 3, tL))]; }, 3],
+      [tL, tt => [PX, ORB[1], lerp(2.6, 3.4, ez(tt, tL, tM))], 2.5], [tM, tt => [PX - 100 * ez(tt, tRuby + 2, tN), lerp(ORB[1], 300, ez(tt, tRuby + 2, tN)), lerp(3.4, .7, ez(tt, tRuby + 2, lerp(tRuby + 2, tN, .5)))], 3],   // close on the sphere, now sized to the words, so its violet halo and the ruby flame read
       // in close on the two men as the warmth shoots through them, their last time on screen (at 25 px they were specks)
       [C('p126.1:there shot through') - .4, tt => [lerp(470, 500, ez(tt, C('p126.1:there shot through'), tN)), 800, lerp(2.2, 2.4, ez(tt, C('p126.1:there shot through'), tN))], 1.6],
       // 'twice its former size': held on the sphere as it grows; then out over the whole plant, sphere and men in frame, for
@@ -104,7 +107,7 @@
     // forward' it leaps back into the beam, which catches it (the beam had it 4 s early, sitting on the plant)
     const tLeap = C('p121.4:The sphere leaped'), back = ez(t, tStabEnd, tStabEnd + 1.3) * (1 - ez(t, tLeap - .1, tLeap + .35)), orb = [ORB[0] + 330 * back, ORB[1] - 150 * back];
     const g1 = t > tF - 1 && t < tGone + .3, shrink = 1 - .9 * ez(t, tLeap, tGone);
-    if (g1) { const r = 40 * shrink * (t < tF ? seg(t, tF - 1, tF) : 1); glow(...orb, r * 3, NRG.white, .6); glow(...orb, r * 1.4, '#FFFDF6', .9);
+    if (g1) { const r = 20 * shrink * (t < tF ? seg(t, tF - 1, tF) : 1); glow(...orb, r * 3, NRG.white, .6); glow(...orb, r * 1.4, '#FFFDF6', .9);
       if (t > tLeap) for (let i = 0; i < 6; i++) { const a = hash(Math.floor(t * 8) + i) * TAU; boilSeed('spray' + i + Math.floor(t * 12)); lightning(...orb, orb[0] + Math.cos(a) * 300, orb[1] + Math.sin(a) * 300, '#FFE2B0', { amp: .2, r: 30 }); } }
     if (t > tH && t < tStab + .5) thoughtRings(...ORB, t, tH, C('p121.3$'), { r1: 400, col: '#FFFDF6' });
     const f2 = f2At(t);
