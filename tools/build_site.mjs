@@ -85,8 +85,8 @@ Campbell, Jr.'s story from 1932, voiced by a full cast and painted in the manner
 in. Every word of the story is in the film.</p>
 <ul class="ways">
 <li><a href="watch/"><b>Watch</b></a> the whole film, about an hour, with notes beside it as it plays: on the 1932
-science, the text, and the idea at its heart, that machines might inherit from us. It's a draft: every word is voiced
-and every chapter acted, and fresh reviews go on looking for faults in the drafts until two in a row find none.</li>
+science, the text, and the idea at its heart, that machines might inherit from us. It's a draft: the whole story is voiced
+(its two footnotes lettered on screen) and every chapter acted, and fresh reviews go on looking for faults in the drafts until two in a row find none.</li>
 <li><a href="read/"><b>Read</b></a> the story (${story.words.toLocaleString()} words, about half an hour), with the
 words the 1961 reprint lost put back from the first printing.</li>
 <li><a href="notes/"><b>Read the notes</b></a>: the science of 1932, machines as heirs, Campbell and the pulps, each
@@ -349,6 +349,10 @@ if (existsSync('site/review')) { cpSync('site/review', `${OUT}/review`, { recurs
   // the review pages share the site's stylesheet, and so its fonts (without them, headings fall back to a heavy grotesque)
   const FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&display=swap">';
   for (const f of readdirSync(`${OUT}/review`, { recursive: true }).filter(f => f.endsWith('.html'))) { const p = `${OUT}/review/${f}`, h = readFileSync(p, 'utf8'); if (!h.includes('fonts.googleapis') && h.includes('style.css')) writeFileSync(p, h.replace(/<link rel="stylesheet" href="[^"]*style\.css">/, m => FONTS + m)); } }
+  // and its masthead and nav, so a visitor on a review round's page can get back to the film and the story (they had
+  // only a breadcrumb)
+  for (const f of readdirSync(`${OUT}/review`, { recursive: true }).filter(f => f.endsWith('.html'))) { const p = `${OUT}/review/${f}`, h = readFileSync(p, 'utf8'), up = '../'.repeat(1 + f.split('/').length - 1);
+    if (!h.includes('class="mast"') && /<body[^>]*>/.test(h)) writeFileSync(p, h.replace(/<body[^>]*>/, m => `${m}\n<header class="mast"><a href="${up}" class="name">The Last Evolution</a>\n<nav><a href="${up}watch/">Watch</a><a href="${up}read/">Read</a><a href="${up}notes/">Notes</a><a href="${up}about/">About</a><a href="${up}review/">Review</a><a href="${REPO}">Source</a></nav></header>`)); }
 writeFileSync(`${OUT}/review/index.html`, review);
 if (quality) { mkdirSync(`${OUT}/review/quality`, { recursive: true }); writeFileSync(`${OUT}/review/quality/index.html`, quality); }
 writeFileSync(`${OUT}/style.css`, css);
