@@ -421,7 +421,7 @@
     [T0('AD'), t => [lerp(1150, 1250, along(t, 'AD')), 790, 1.6 + .3 * along(t, 'AD')], { mv: 2.4, lead: .3 }],
     [T0('AE'), t => [CRU[0] + lerp(40, 10, along(t, 'AE')), CRU[1] - 38, lerp(2.6, 3.9, along(t, 'AE'))], { mv: 2, lead: .3 }],
     [T0('AF'), t => [lerp(980, 1000, along(t, 'AF')), 800, 1.4], { mv: 2.4, lead: .3 }],
-    [T0('AG'), t => [CRU[0] + 10, CRU[1] - 38, 3.2 + .5 * ez(t, C('p069.2:on its sides appeared'), C('p069.2$'))], { mv: 2, lead: .3 }],
+    [T0('AG'), t => { const k = ez(t, C('p069.2:on its sides appeared'), C('p069.2$')); return [lerp(1160, 1190, k), lerp(CRU[1] - 45, CRU[1] - 55, k), 2.5 + .5 * k]; }, { mv: 2, lead: .3 }],   // C-R-U-1 and F-2, whom it speaks to, together; a push as its name glows on (close on C-R-U-1 alone, F-2's nose sat at the left edge for 19 s)
     [T0('AH'), t => [WORK[0], WORK[1] - 10, 3.4], { mv: 2.6, lead: .6, dip: .3 }],
     [T0('AI'), t => [lerp(790, 840, along(t, 'AI')), 890, 2.3], { mv: 1.8, lead: .3 }],
     [T0('AJ'), t => { const k = ez(t, C('p071.1:and the little animal'), C('p071.1$') + 1); return [lerp(880, 800, k), 880, lerp(1.8, 2.4, k)]; }, { mv: 1.5, lead: .3 }],
