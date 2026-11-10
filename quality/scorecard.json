@@ -1,17 +1,13 @@
 {
  "summary": {
-  "pass": 246,
-  "stale": 9,
-  "open": 2,
+  "pass": 257,
+  "stale": 0,
+  "open": 0,
   "curt": 9,
   "later": 4
  },
  "satisfied": false,
- "next": [
-  "Chapter 4: the men and Kahsh frozen through the ray demonstration",
-  "Chapter 4: the acting",
-  "Chapter 4: the picture"
- ],
+ "next": [],
  "checks": {
   "verbatim": {
    "state": "pass",
@@ -42,12 +38,12 @@
    "detail": "refs: 53 sources, all cited, all answering; definitions written into 6 notes"
   },
   "phone": {
-   "state": "stale",
+   "state": "pass",
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
-   "state": "stale",
-   "detail": "33 pages live, the deploy is this commit"
+   "state": "pass",
+   "detail": "33 pages live (not compared: HEAD has changes not pushed)"
   }
  },
  "curt": [
@@ -312,43 +308,43 @@
    "id": "ch04.acting",
    "area": "film",
    "title": "Chapter 4: the acting",
-   "state": "stale",
-   "note": "passed on ch04-draft-a3d71a2f.mp4; changed since. On the draft with the tenth round's fixes: Kahsh-256799 and MX-3401 lettered as named; the builders' ring spread so none hides another, the council flying onto it; sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
+   "state": "pass",
+   "note": "On the draft with the eleventh round's fixes: Roal, Trest and Kahsh look up as the ray-machine rises, flinch back as the beam is trained and lean in to watch it fall harmless; Kahsh in profile like the men through the council, turned to whoever speaks, asking 'The life-beams?' with his hand out to the machines (find.ch04-listeners); sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
   },
   {
    "id": "ch04.picture",
    "area": "film",
    "title": "Chapter 4: the picture",
-   "state": "stale",
-   "note": "passed on ch04-draft-a3d71a2f.mp4; changed since. On the draft with the tenth round's fixes: Kahsh-256799 and MX-3401 lettered as named; the builders' ring spread so none hides another, the council flying onto it; sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
+   "state": "pass",
+   "note": "On the draft with the eleventh round's fixes: Roal, Trest and Kahsh look up as the ray-machine rises, flinch back as the beam is trained and lean in to watch it fall harmless; Kahsh in profile like the men through the council, turned to whoever speaks, asking 'The life-beams?' with his hand out to the machines (find.ch04-listeners); sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
   },
   {
    "id": "ch04.sync",
    "area": "film",
    "title": "Chapter 4: picture against sound",
-   "state": "stale",
-   "note": "passed on ch04-draft-a3d71a2f.mp4; changed since. On the draft with the tenth round's fixes: Kahsh-256799 and MX-3401 lettered as named; the builders' ring spread so none hides another, the council flying onto it; sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
+   "state": "pass",
+   "note": "On the draft with the eleventh round's fixes: Roal, Trest and Kahsh look up as the ray-machine rises, flinch back as the beam is trained and lean in to watch it fall harmless; Kahsh in profile like the men through the council, turned to whoever speaks, asking 'The life-beams?' with his hand out to the machines (find.ch04-listeners); sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
   },
   {
    "id": "ch04.sound",
    "area": "film",
    "title": "Chapter 4: the sound",
-   "state": "stale",
-   "note": "passed on ch04-draft-a3d71a2f.mp4; changed since. On the draft with the tenth round's fixes: Kahsh-256799 and MX-3401 lettered as named; the builders' ring spread so none hides another, the council flying onto it; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
+   "state": "pass",
+   "note": "On the draft with the eleventh round's fixes: Roal, Trest and Kahsh look up as the ray-machine rises, flinch back as the beam is trained and lean in to watch it fall harmless; Kahsh in profile like the men through the council, turned to whoever speaks, asking 'The life-beams?' with his hand out to the machines (find.ch04-listeners); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
   },
   {
    "id": "ch04.story",
    "area": "film",
    "title": "Chapter 4: the chapter as a story",
-   "state": "stale",
-   "note": "passed on ch04-draft-a3d71a2f.mp4; changed since. On the draft with the tenth round's fixes: Kahsh-256799 and MX-3401 lettered as named; the builders' ring spread so none hides another, the council flying onto it; sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
+   "state": "pass",
+   "note": "On the draft with the eleventh round's fixes: Roal, Trest and Kahsh look up as the ray-machine rises, flinch back as the beam is trained and lean in to watch it fall harmless; Kahsh in profile like the men through the council, turned to whoever speaks, asking 'The life-beams?' with his hand out to the machines (find.ch04-listeners); sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
   },
   {
    "id": "ch04.draft",
    "area": "film",
    "title": "Chapter 4: its draft is current and at the right loudness",
-   "state": "open",
-   "note": "older than src/scenes/ch04.js"
+   "state": "pass",
+   "note": "ch04-draft-29d6f61e.mp4, -14.4 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch06.acting",
@@ -620,29 +616,29 @@
    "id": "site.home.content",
    "area": "site",
    "title": "The home page: what it says",
-   "state": "stale",
-   "note": "passed on fdb7cd93a7c6; changed since. Re-judged after the second round: the Watch line now says every chapter is acted and the drafts are being watched and fixed (it said the paintings were still rough). Re-judged after the fresh-eyes round: the status line now says every chapter has been acted and painted and each draft is being watched and fixed until it meets its bar (it said 'starting with chapter 5'). Re-judged after the fresh-eyes round: the kicker now reads 'From Amazing Stories, August 1932' instead of the 1961 reprint's header; the rest as judged."
+   "state": "pass",
+   "note": "Rechecked after the eleventh round: the Watch line and the status paragraph say what the watching is, fresh reviews looking for faults until two in a row find none, so they agree with the scorecard (find.site-watched). Re-judged after the second round: the Watch line now says every chapter is acted and the drafts are being watched and fixed (it said the paintings were still rough). Re-judged after the fresh-eyes round: the status line now says every chapter has been acted and painted and each draft is being watched and fixed until it meets its bar (it said 'starting with chapter 5'). Re-judged after the fresh-eyes round: the kicker now reads 'From Amazing Stories, August 1932' instead of the 1961 reprint's header; the rest as judged."
   },
   {
    "id": "site.home.look",
    "area": "site",
    "title": "The home page: how it looks and works",
-   "state": "stale",
-   "note": "passed on e6db4f0118ef; changed since. Re-checked at 375 after the second round (out/quality/phone, fonts loaded): no overflow; only wording changed. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-checked at 375 and 1280 after the kicker and stylesheet changes; nav on one line, no overflow."
+   "state": "pass",
+   "note": "Rechecked at 375 after the eleventh round (out/quality/phone/home.jpg): the reworded lines wrap cleanly, no overflow; the phone check passes. Re-checked at 375 after the second round (out/quality/phone, fonts loaded): no overflow; only wording changed. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-checked at 375 and 1280 after the kicker and stylesheet changes; nav on one line, no overflow."
   },
   {
    "id": "site.watch.content",
    "area": "site",
    "title": "The film page (annotated): what it says",
-   "state": "stale",
-   "note": "passed on cd55e0fc0dd2; changed since. Rechecked after the tenth round: the film page and chapter 3's page have the torpedoes right, chapter 5's page no longer calls the draft simple, excerpts end in dots where the sentence goes on, and every chapter page embeds its new draft."
+   "state": "pass",
+   "note": "Rechecked after the eleventh round: the draft box says each chapter has passed its checks and fresh reviews go on until two in a row find none; chapter 3 and the film page say Mercury to Pluto; the new drafts of chapters 1-5, 7 and 8 are linked. Rechecked after the tenth round: the film page and chapter 3's page have the torpedoes right, chapter 5's page no longer calls the draft simple, excerpts end in dots where the sentence goes on, and every chapter page embeds its new draft."
   },
   {
    "id": "site.watch.look",
    "area": "site",
    "title": "The film page (annotated): how it looks and works",
-   "state": "stale",
-   "note": "passed on 8b8eaa55743e; changed since. Rechecked after the tenth round: the chapter pages and film page show the new drafts' posters and players as before; nothing in the layout changed."
+   "state": "pass",
+   "note": "Rechecked after the eleventh round (out/quality/phone/watch.jpg): the draft box and the new drafts posters and players lay out as before at 375; the phone check passes. Rechecked after the tenth round: the chapter pages and film page show the new drafts' posters and players as before; nothing in the layout changed."
   },
   {
    "id": "site.read.content",
@@ -1887,8 +1883,8 @@
    "id": "find.ch04-listeners",
    "area": "finding",
    "title": "Chapter 4: the men and Kahsh frozen through the ray demonstration",
-   "state": "open",
-   "note": "Eleventh round, minor: 0:14-0:38 one identical pose for 22 s while a deadly beam fires metres away; Kahsh model-sheet frontal through 1:49-1:58."
+   "state": "pass",
+   "note": "Fixed: 0:14-0:38 the men and Kahsh look up as the ray-machine rises, flinch back with a hand half up as the beam is trained, and lean in to watch it fall harmless; Kahsh is drawn in profile through the council instead of front-on as on his model sheet, turned to Trest as he steps up and to the machines as he asks 'The life-beams?' (1:49-1:51); checked on the new draft, -14.4 LUFS."
   },
   {
    "id": "find.ch07-loop",
