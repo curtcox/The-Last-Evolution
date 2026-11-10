@@ -101,14 +101,14 @@ items:
     when: 2026-11-05 19:39
   site.watch.content:
     state: pass
-    note: "Rechecked after the eleventh round: the draft box says each chapter has passed its checks and fresh reviews go on until two in a row find none; chapter 3 and the film page say Mercury to Pluto; the new drafts of chapters 1-5, 7 and 8 are linked. Rechecked after the tenth round: the film page and chapter 3's page have the torpedoes right, chapter 5's page no longer calls the draft simple, excerpts end in dots where the sentence goes on, and every chapter page embeds its new draft."
-    at: 578c2e9452b2
-    when: 2026-11-10 05:02
+    note: "Rechecked after the twelfth round: only the chapter videos' links changed (new drafts of chapters 2, 4, 5, 8 and 9, the same lengths, so every chapter start and note time holds); the phone check passes. the draft box says each chapter has passed its checks and fresh reviews go on until two in a row find none; chapter 3 and the film page say Mercury to Pluto; the new drafts of chapters 1-5, 7 and 8 are linked. Rechecked after the tenth round: the film page and chapter 3's page have the torpedoes right, chapter 5's page no longer calls the draft simple, excerpts end in dots where the sentence goes on, and every chapter page embeds its new draft."
+    at: 2a30d0805f3a
+    when: 2026-11-10 10:45
   site.watch.look:
     state: pass
-    note: "Rechecked after the eleventh round (out/quality/phone/watch.jpg): the draft box and the new drafts posters and players lay out as before at 375; the phone check passes. Rechecked after the tenth round: the chapter pages and film page show the new drafts' posters and players as before; nothing in the layout changed."
-    at: 2da1c3639b71
-    when: 2026-11-10 05:02
+    note: "Rechecked after the twelfth round: only the chapter videos' links changed (new drafts of chapters 2, 4, 5, 8 and 9, the same lengths, so every chapter start and note time holds); the phone check passes. the draft box and the new drafts posters and players lay out as before at 375; the phone check passes. Rechecked after the tenth round: the chapter pages and film page show the new drafts' posters and players as before; nothing in the layout changed."
+    at: 674bc1b180e4
+    when: 2026-11-10 10:45
   work.title:
     state: pass
     note: "Re-checked after the fourth round: the title page's masthead (42 px) and byline (52 px) are larger for a phone, the rules widened to match; the title itself unchanged. The header now names the 1932 issue ('AMAZING STORIES · August, 1932') instead of the 1961 reprint's 'A Classic Reprint from…', its rules fitted to it (out/check/ch00_title.jpg)."
@@ -241,29 +241,29 @@ items:
     when: 2026-11-04 09:00
   ch04.acting:
     state: pass
-    note: "On the draft with the eleventh round's fixes: Roal, Trest and Kahsh look up as the ray-machine rises, flinch back as the beam is trained and lean in to watch it fall harmless; Kahsh in profile like the men through the council, turned to whoever speaks, asking 'The life-beams?' with his hand out to the machines (find.ch04-listeners); sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
-    at: ch04-draft-29d6f61e.mp4
-    when: 2026-11-10 05:00
+    note: "On the draft with the twelfth round's fixes: shot H frames Trest, Kahsh and X-6349 whole (find.edge-cuts), the rest of the chapter unchanged; sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
+    at: ch04-draft-502e2e5c.mp4
+    when: 2026-11-10 10:44
   ch04.picture:
     state: pass
-    note: "On the draft with the eleventh round's fixes: Roal, Trest and Kahsh look up as the ray-machine rises, flinch back as the beam is trained and lean in to watch it fall harmless; Kahsh in profile like the men through the council, turned to whoever speaks, asking 'The life-beams?' with his hand out to the machines (find.ch04-listeners); sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
-    at: ch04-draft-29d6f61e.mp4
-    when: 2026-11-10 05:00
+    note: "On the draft with the twelfth round's fixes: shot H frames Trest, Kahsh and X-6349 whole (find.edge-cuts), the rest of the chapter unchanged; sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
+    at: ch04-draft-502e2e5c.mp4
+    when: 2026-11-10 10:44
   ch04.sync:
     state: pass
-    note: "On the draft with the eleventh round's fixes: Roal, Trest and Kahsh look up as the ray-machine rises, flinch back as the beam is trained and lean in to watch it fall harmless; Kahsh in profile like the men through the council, turned to whoever speaks, asking 'The life-beams?' with his hand out to the machines (find.ch04-listeners); sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
-    at: ch04-draft-29d6f61e.mp4
-    when: 2026-11-10 05:00
+    note: "On the draft with the twelfth round's fixes: shot H frames Trest, Kahsh and X-6349 whole (find.edge-cuts), the rest of the chapter unchanged; sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
+    at: ch04-draft-502e2e5c.mp4
+    when: 2026-11-10 10:44
   ch04.sound:
     state: pass
-    note: "On the draft with the eleventh round's fixes: Roal, Trest and Kahsh look up as the ray-machine rises, flinch back as the beam is trained and lean in to watch it fall harmless; Kahsh in profile like the men through the council, turned to whoever speaks, asking 'The life-beams?' with his hand out to the machines (find.ch04-listeners); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
-    at: ch04-draft-29d6f61e.mp4
-    when: 2026-11-10 05:00
+    note: "On the draft with the twelfth round's fixes: shot H frames Trest, Kahsh and X-6349 whole (find.edge-cuts), the rest of the chapter unchanged; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
+    at: ch04-draft-502e2e5c.mp4
+    when: 2026-11-10 10:44
   ch04.story:
     state: pass
-    note: "On the draft with the eleventh round's fixes: Roal, Trest and Kahsh look up as the ray-machine rises, flinch back as the beam is trained and lean in to watch it fall harmless; Kahsh in profile like the men through the council, turned to whoever speaks, asking 'The life-beams?' with his hand out to the machines (find.ch04-listeners); sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
-    at: ch04-draft-29d6f61e.mp4
-    when: 2026-11-10 05:00
+    note: "On the draft with the twelfth round's fixes: shot H frames Trest, Kahsh and X-6349 whole (find.edge-cuts), the rest of the chapter unchanged; sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
+    at: ch04-draft-502e2e5c.mp4
+    when: 2026-11-10 10:44
   find.ch06-feeders:
     state: pass
     note: "On the re-rendered draft: 1:52-2:06 two each side carry pale blocks from the piles to the generator's mouth, feed them in (the mouth flares) and go back, the far one of each pair smaller and higher."
@@ -1265,10 +1265,10 @@ items:
     title: "Chapter 5: F-2 mostly out of frame while C-R-U-1 speaks to it"
     when: 2026-11-10 09:43
   find.edge-cuts:
-    state: open
-    note: "Twelfth round, nit: ch04 1:46-1:48 a machine cut at the right and a sliver at the left during Trest's line; ch02 ~2:08-2:30 and 4:38-4:45 Outsiders cut at the left."
+    state: pass
+    note: "Fixed on ch04-draft-502e2e5c: shot H frames Trest, Kahsh and X-6349 whole, no sliver at the left. Chapter 2's Outsiders at 2:08 and 4:38-4:45 are left as framed: each shot holds its subject whole, and only the crowd around it runs past the edge, as a crowd does."
     title: "Chapters 2 and 4: figures cut by the frame edge"
-    when: 2026-11-10 05:17
+    when: 2026-11-10 10:44
   find.ch08-first-line:
     state: pass
     note: "Measured, no change: by integrated loudness 'We are alone, Trest' (5.5-8.5 s) is -14.3 LUFS, against -13.6 for the lines after it (8.5-12.5, 13-17 s), so it isn't louder; the median word peak (-9.8) catches the line's stressed words, not a level jump, and nothing of the theme sits under it at a level that shows. Chapter 4's first line is the same case."
@@ -1327,4 +1327,4 @@ fresh:
     found: 7
     note: "Twelfth round: no majors. Minor: ch09 the sphere's attack and F-2's dodge too brief to land; ch02 footnote 1 too small at phone size; ch09 the men show through the ruins' rock; ch08 shot D leaves Roal off to the right with the left half empty. Nits: ch05 F-2 mostly out of frame while C-R-U-1 speaks; figures cut by the frame edge in ch04 and ch02; ch08's first line louder than its neighbours. The makers' text on the quality page stays, inside its 'For the makers' fold."
     state: e6edf06251a1
-since_fresh: 26
+since_fresh: 34
