@@ -945,10 +945,10 @@ items:
     title: "Chapter 8: F-2's 'We, your heirs' speech over one static wide shot"
     when: 2026-11-07 20:11
   find.ch02-footnote:
-    state: later
-    note: "Kept on purpose: footnote 1 is 33 words lettered on the story's own mark at 'kill-ads' (31.7 s), and shot C cuts 4 s later on 'And one machine' (35.7 s), where the transport shot belongs. Ending it at the cut would leave 4 s for 33 words; it's lettered on a dark band at the foot of the frame, like a page's footnote, so running 5 s into the next shot keeps it readable. Revisit only if a later round finds it confusing."
-    title: "Chapter 2: the kilad footnote hangs 4 s into the next shot"
-    when: 2026-11-07 08:40
+    state: pass
+    note: "Kept as it is: footnote 1's 33 words need about 9 s to read (the readable floor PLAN.md §5 asks for), and the word that carries its mark comes 4 s before the cut to shot D, so the note carries across the cut at the foot of the frame, as a subtitle would; it sits on its dark band and covers nothing the narration points to (0:35.7-0:40 is the transport ship coming in)."
+    title: "Chapter 2: the kilad footnote"
+    when: 2026-11-10 22:39
   find.flyer-overlap:
     state: pass
     note: "On the round-6 draft the working machines fly at two depths: smaller ones behind the towers, larger ones in front. In the 1:00–1:29 sheets a front machine crosses the left tower's dome at 1:26–1:27 and keeps going, so none reads as resting on a tower."
@@ -1324,6 +1324,41 @@ items:
     note: "Fixed for every review round's page, not only Round 6's (21 had only a breadcrumb): the site build adds the masthead and nav; out/quality/phone/review_round6_film.jpg and desktop/review_round4_models.jpg show it."
     title: "Site: the Round 6 draft pages lack the site's header and nav"
     when: 2026-11-10 11:13
+  find.ch07-beams:
+    state: open
+    note: "Fourteenth round, minor: 3:03.7-3:08.5 'The beams appeared, and swiftly they drew closer' plays over a close push through a grey panelled wall; the beams show only as a faint glow, the dome and beams only on 'They struck'."
+    title: "Chapter 7: the beams drawing in"
+    when: 2026-11-10 22:28
+  find.ch01-population:
+    state: open
+    note: "Fourteenth round, minor: 1:33-1:57 a hairline curve on dark ground, its fall ending at the height it began, so it reads as back to the start, not ten billion down to two million; nearly lost at phone width."
+    title: "Chapter 1: the population curve"
+    when: 2026-11-10 22:28
+  find.ch03-piers:
+    state: open
+    note: "Fourteenth round, nit: 0:55-1:05 window frames and the curl show through the piers; the curl reads as a streak down the pier behind Roal, not rising from him."
+    title: "Chapter 3: the lab's piers and Roal's curl"
+    when: 2026-11-10 22:28
+  find.ch06-blank:
+    state: open
+    note: "Fourteenth round, nit: 4:07.5 the Denver screens are blank before 'went suddenly blank' (4:09.9)."
+    title: "Chapter 6: the screens go blank"
+    when: 2026-11-10 22:28
+  find.ch06-shotg:
+    state: open
+    note: "Fourteenth round, nit: 2:18.6-2:49 one 30 s wide shot with only a slow dimming of the red screens; the slowest stretch of the battle."
+    title: "Chapter 6: shot G"
+    when: 2026-11-10 22:28
+  find.ch09-hidden:
+    state: open
+    note: "Fourteenth round, nit: 3:26-3:30 Roal and Trest pass behind the broken spires for about a second as they come out."
+    title: "Chapter 9: the men behind the spires"
+    when: 2026-11-10 22:28
+  find.phone-stale:
+    state: open
+    note: "Fourteenth round, nit: out/quality/phone/review_quality.jpg shows 16 of 20 site checks; the built page says 20 of 20 (taken before the last re-pass)."
+    title: The phone screenshots
+    when: 2026-11-10 22:28
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1381,4 +1416,8 @@ fresh:
     found: 10
     note: "Thirteenth round: 2 minor (ch07 the hall vanishes; ch10 the rays all one colour), 8 nits; no majors."
     state: d6f65ec330d8
-since_fresh: 49
+  - when: 2026-11-10 22:28
+    found: 9
+    note: "Fourteenth round: 9 found, no majors (2 minor, 7 nits); the foreword's 'Every word of it is spoken, in order' left for Curt (curt.foreword)."
+    state: 67704b25a130
+since_fresh: 1
