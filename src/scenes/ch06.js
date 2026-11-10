@@ -16,6 +16,11 @@
     camBegin(W / 2, lerp(H / 2, -150, up), 1);
     stillSeed('dsky'); paint(rectPts(-200, -900, W + 400, 1800), { wash: mixCol(D[2], D[0], .3 + .5 * seg(t, 0, T1('B'))), washOp: 255, fill: D[1], fillOp: 80, bleed: .3, ink: null });
     blooms(-900, 500, 6, 1, 73, .4); shade(-900, 700, .55, .05, '#2A231D');
+    // 'Dawn was breaking': the light warming along the range and the sun's rim coming up behind it (the plain was an
+    // even grey, with nothing to say what hour it was)
+    const sunUp = ez(t, t0 - 2, T1('B')), sy = lerp(600, 470, sunUp);
+    glow(1250, 560, 1100, '#E0A868', .35 + .2 * sunUp); glow(1250, 540, 520, '#F0C080', .3 + .25 * sunUp);
+    stillSeed('dsun'); paint(ellPts(1250, sy, 70, 70, 24), { wash: '#F4CC86', washOp: 240, fill: '#F8DCA0', fillOp: 160, bleed: .1, ink: null }); glow(1250, sy, 160, '#FFE2A8', .5);
     stillSeed('mtn'); wash([[-200, 700], [200, 520], [420, 600], [700, 470], [980, 590], [1300, 500], [1600, 610], [2100, 540], [2100, 760], [-200, 760]], 2, { ink: true, sw: .5 });
     stillSeed('rock'); wash([[-200, 720], [2100, 700], [2100, 1300], [-200, 1300]], 3, { op: 1.1 });
     // the great machine, finished, and the stream of motes rising from it
