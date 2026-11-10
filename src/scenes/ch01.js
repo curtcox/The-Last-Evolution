@@ -120,11 +120,14 @@
     const n = 320, lit = t < tPeak ? lerp(.15, 1, ease(seg(t, t0, tPeak))) : lerp(1, .012, Math.pow(seg(t, tPeak + .5, tFew + 1.5), .6));
     const z = 1 + .5 * ez(t, tFew, tEnd);
     camBegin(lerp(W / 2, W / 2 + 200, z - 1), lerp(H / 2 + 60, 430, (z - 1) * 2), z);   // the push in keeps the curve's peak and its fall in frame
-    for (let i = 0; i < n; i++) { if (hash(i * 9.1) > lit) continue; const x = 240 + hash(i * 3.3) * 1440, y = 360 + hash(i * 5.7) * 560, b = .5 + .5 * Math.sin(t * 2 + i);
+    for (let i = 0; i < n; i++) { if (hash(i * 9.1) > lit) continue; const x = 240 + hash(i * 3.3) * 1440, y = 440 + hash(i * 5.7) * 500, b = .5 + .5 * Math.sin(t * 2 + i);
       glow(x, y, 9, '#F4EEDC', .5 + .3 * b); }
     // the years: a ruled curve rising to its peak and falling, drawn as the voice says them
-    const P = []; for (let k = 0; k <= 30; k++) { const u = k / 30; P.push([240 + u * 1440, 340 - 180 * Math.sin(Math.PI * Math.min(1, u * 1.6)) * (u < .62 ? 1 : 1 - (u - .62) * 2.4)]); }
-    ruled(P, seg(t, t0, tFew + 1), D[1], 1);
+    // over a base line for none: up from the start to the peak, then down to almost nothing (two millions of ten billion), and along it
+    const P = []; for (let k = 0; k <= 40; k++) { const u = k / 40, v = u < .3125 ? lerp(.4, 1, Math.sin(Math.PI / 2 * u / .3125)) : u < .625 ? .5 + .5 * Math.cos(Math.PI * (u - .3125) / .3125) : 0;
+      P.push([240 + u * 1440, 396 - 220 * Math.max(v, .015)]); }
+    stillSeed('nbase'); inkLine([[220, 400], [1700, 400]], 1.2, '#7A6E5C', 'inkfine', 0);
+    ruled(P, seg(t, t0, tFew + 1), '#B09C74', 3.2);
     camEnd();
   }
 
