@@ -121,8 +121,11 @@
       stillSeed('oground'); paint(rectPts(-3000, OG - 20, 7000, 2600), { wash: D[2], washOp: 255, fill: '#5A5044', fillOp: 110, ink: null });
       // what's left of the hall round the dome: its floor and its broken piers (the dome was made inside it, 2:45)
       stillSeed('ofloor'); wash(rectPts(DOME[0] - DR - 700, OG - 10, 2 * DR + 1400, 40), 2, { ink: true, sw: .5 });
-      for (let i = 0; i < 8; i++) { const side = i < 4 ? -1 : 1, k = i % 4, x = DOME[0] + side * (DR + 160 + k * 170), h = 140 + 360 * hash(i * 7.3), w = 70;
-        stillSeed('opier' + i); wash([[x - w / 2, OG], [x - w / 2, OG - h], [x - w / 6, OG - h - 40 * hash(i)], [x + w / 6, OG - h + 30], [x + w / 2, OG - h - 20 * hash(i * 3)], [x + w / 2, OG]], 3, { ink: true, sw: .6 }); }
+      // the hall stands whole round the dome as the beams come in, and goes as they strike: its piers break down from
+      // the roof to their stumps, from the crown outward (the dome was made inside it, then stood alone on the plain)
+      const HALLY = OG - 720, gone = (x, y) => tStruck + .1 + 1.1 * Math.min(1, Math.hypot((x - DOME[0]) / 1000, (y - HALLY) / 720)) + .25 * hash(x * .37 + y * .11);
+      for (let i = 0; i < 8; i++) { const side = i < 4 ? -1 : 1, k = i % 4, x = DOME[0] + side * (DR + 160 + k * 170), w = 70, bkp = ez(t, gone(x, HALLY), gone(x, HALLY) + .5), h = lerp(720, 140 + 360 * hash(i * 7.3), bkp);
+        stillSeed('opier' + i); wash([[x - w / 2, OG], [x - w / 2, OG - h], [x - w / 6, OG - h - 40 * hash(i) * bkp], [x + w / 6, OG - h + 30 * bkp], [x + w / 2, OG - h - 20 * hash(i * 3) * bkp], [x + w / 2, OG]], 3, { ink: true, sw: .6 }); }   // square-topped until it breaks
       for (let i = 0; i < 30; i++) { stillSeed('dead' + i); const x = -2500 + hash(i * 3) * 6000, y = OG + 30 + hash(i * 5) * 500; inkLine([[x, y], [x + 4, y - 40 - 40 * hash(i)], [x + 16, y - 60 - 40 * hash(i)]], .6, INK); }   // the bare dead trees
       // the beams: in, striking, more of them; the dome pressed in under them
       const n = t < tN ? 4 : Math.min(12, 4 + Math.floor((t - tN) * 1.5)), bk = ez(t, tL, tStruck) * (1 - ez(t, tOff, tOff + 3)), tQuiv = C('p094.1:quivered'), tBelly = C('p094.1:bellied'), quiv = win(t, tQuiv - .1, tBelly + .2, .1, .3), belly = ez(t, tBelly - .1, C('p094.1:inward') + .5),
@@ -134,6 +137,13 @@
       // the dome, bellied in at its crown under the beams
       const P = []; for (let i = 0; i <= 32; i++) { const a = Math.PI + i / 32 * Math.PI, dent = press * Math.exp(-Math.pow((i - 16) / 6, 2)), sh = quiv * 7 * Math.sin(t * 38) * (1 + .3 * Math.sin(i * .7)); P.push([DOME[0] + Math.cos(a) * (DR + sh), DOME[1] + Math.sin(a) * (DR * .8 * (1 - dent) + sh)]); }
       stillSeed('odome'); paint(P, { wash: PULP.black, washOp: 255, fill: PULP.black, fillOp: 230, bleed: .02, tex: .2, ink: INK, sw: 1 });
+      // the hall's walls and roof before the strike, block by block; each block breaks up in the green as it goes
+      if (t < tStruck + 2) for (let r = 0; r < 5; r++) for (let q = 0; q < 10; q++) { const bx = DOME[0] - 1000 + q * 200, by = HALLY + r * 144, tg = gone(bx + 100, by), k = ez(t, tg, tg + .35);
+        if (k >= 1) continue;
+        const cx = bx + 100, cy = by + 72 + 60 * k, sc = 1 - k;
+        stillSeed('ohall' + r + q); { const col = r === 0 ? '#5E5648' : '#6E6656'; paint(rectPts(cx - 100 * sc, cy - 72 * sc, 200 * sc, 144 * sc), { wash: col, washOp: 255, fill: col, fillOp: 200, bleed: .04, tex: .3, ink: INK, sw: .5 }); }
+        if (r > 0 && r < 4 && q % 2 === 0 && k === 0) { stillSeed('owin' + r + q); paint(rectPts(bx + 40, by + 30, 120, 84), { wash: '#3A352E', washOp: 220, ink: INK, sw: .4 }); }
+        if (k > 0) glow(cx, cy, 120 * (1 - k * .5), GREEN, .6 * (1 - k)); }
       // the bellied crown picked out in pale ink, so the dent reads through the beams' glow
       const bl = belly * (1 - ez(t, tOff, tOff + 3)); if (bl > 0) { boilSeed('obelly'); inkLine(P.slice(8, 25), 2.4 * bl, '#D8E8C8', 'inkfine', .5); }
       // a pale rim on the dome once the beams are off, so 'the only life was under that dark shroud' finds it on the dead plain
