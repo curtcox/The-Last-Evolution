@@ -163,7 +163,7 @@
     const P = DES.POSE, look = steps(t, LOOK, 1), lidBase = steps(t, [[0, .3], [T0('D'), 0, .6], [T0('H'), .1], [T0('M'), .1], [C('p057.2'), .45, 4], [tRise, 0, .5]], 1);
     const say = talk(t, 'roal');
     if (t < tRise) {   // on the couch
-      const k = backOut(K(t, 'p053.1', 'p053.1+1.3')), pose = mixPose(P.lie, P.sitUp, k); pose.torso += .012 * wob(t, .22);
+      const k = backOut(seg(t, C('p053.1:sat') - .25, C('p053.1:sat') + 1.1)), pose = mixPose(P.lie, P.sitUp, k); pose.torso += .012 * wob(t, .22);   // on 'sat', once the camera is down to him (begun on 'Roal', it ran mostly in the pan)
       const a = act(t, pose), lid = clamp(Math.max(lidBase + a.lid, blink(t, 3)));
       return DES.personSide(COUCH.x - 30 + k * 12, SEAT - .38 * RU, RS, t, { pose, look: look + a.look, lid, key: 'r', talk: say });
     }
@@ -391,7 +391,7 @@
       for (let i = 0; i < 5; i++) if (fz > 0) { const a = t * 2 + i * 1.3; glow(WORK[0] + Math.cos(a) * 60, WORK[1] + 40 + Math.sin(a) * 20, 30, FORCE, .4 * fz); }
       DES.cage(cx, cy, 90, t, { dead: ease(K(t, 'p071.1:and the little animal', 'p071.1:fell dead')) });
       const bk = seg(t, tGreen, tGreen + .5) * (1 - seg(t, tDead + .5, tDead + 1.2));
-      if (bk > 0) { const n = f2Nose(t); beam(n[0], n[1], CAGE[0] - 30, G - 40, 6, 30, NRG.death, bk, { washOp: 60 }); }
+      if (bk > 0) { const n = [WORK[0] + Math.cos(f2Head(t)) * 4.2 * FS * .1, WORK[1] + 34]; beam(n[0], n[1], CAGE[0] - 30, G - 40, 6, 30, NRG.death, bk, { washOp: 60 }); }   // 'therefrom': out of the forces about its base (from its nose it read as its gun)
     }
     tierRing(t, lit, true);
     // AK: the enemy on the screens, torpedoes of the void hanging in three of them, with a faint green
@@ -404,7 +404,7 @@
   const HALLCAM = [
     [T0('B'), t => { const k = along(t, 'B'); return [lerp(960, 830, k), lerp(640, 690, k), lerp(1, 1.1, k)]; }],
     [T0('C'), t => [1385, lerp(800, 560, ez(t, T0('C'), T1('C') + 1)), 1.7], { mv: 1.8, lead: .6 }],
-    [T0('D'), t => [COUCH.x + 40, 850, 2.4 + .15 * K(t, 'p053.2', 'p053.2$')], { mv: 3.2, lead: .9, dip: .35 }],
+    [T0('D'), t => [COUCH.x + 40, 850, 2.4 + .15 * K(t, 'p053.2', 'p053.2$')], { mv: 1.9, lead: .9, dip: .35 }],
     [T0('E'), t => { const k = f1In(t); return [lerp(860, 660, k), lerp(700, 680, k), lerp(1.05, 1.35, k)]; }, { mv: 2.2, lead: .4 }],
     [T0('F'), t => [COUCH.x - 14, SEAT - 132, 5.5], { mv: 2.2, lead: 1.6 }],                  // into his eyes
     [T0('H'), t => { const e = f1Eye(t); return [e[0], e[1], 4]; }, { mv: .01, lead: .6 }],    // out of F-1's lens
