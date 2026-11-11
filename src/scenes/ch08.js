@@ -46,7 +46,12 @@
     for (let c2 = 0; c2 < 5; c2++) { const x = 440 + c2 * 240, y = 420; boilSeed('ds' + c2); paint(rectPts(x, y, 180, 120), { wash: '#BFC8D2', washOp: 140 + 50 * hash(c2 + Math.floor(t * 3)), ink: INK, sw: .6 }); glow(x + 90, y + 60, 120, '#DDE6F0', .3); }   // five screens, as in chapter 7
     glow(f2x, f2y, 90, '#E6EEFF', .25 + .3 * talk(t, 'f2'));
     for (const p of [roal, trest]) glow(...p.head, 70, '#DDE6F0', .2);
-    dreamCurl(roal.head[0] + 20, roal.head[1] - 40, K(t, 'p103.1', 'p103.1$'), t, .5 * (1 - ez(t, T0('E') - 1.5, T0('E'))), 'rc');
+    // Roal's thought, rising and wandering while he thinks: its sway mixes slow periods that don't repeat together (one
+    // 10 s writhe read as a loop over the 28 s), in a pale wash with a faint edge, as dark grey it barely showed on the dark
+    { const k = K(t, 'p103.1', 'p103.1$'), op = .7 * (1 - ez(t, T0('E') - 1.5, T0('E'))), x = roal.head[0] + 20, y = roal.head[1] - 40;
+      if (k > 0 && op > 0) { const P = []; for (let i = 0; i <= 14 * k; i++) { const u = i / 14, a = Math.min(1, u * 2.5); P.push([x + u * (130 + 30 * Math.sin(t * .13)) + a * (55 * Math.sin(u * 7 + t * .6) + 28 * Math.sin(u * 3.1 - t * .37)),   // (a: rooted at his head)
+          y - (u * (220 + 30 * Math.sin(t * .21 + 1)) + a * (26 * Math.sin(u * 5 + t * .43) + 14 * Math.sin(u * 9 - t * .29)))]); }
+        if (P.length > 2) { boilSeed('rc'); wash(ribbon(P, 26, 6), 0, { op }); inkLine(P, 1, '#A89C88', 'inkfine', .5 * op); } } }
     thoughtRings(f2x, f2y, t, T0('I'), C('p111.1$'), { r1: 200, at: F2RINGS });
     camEnd();
   }
@@ -134,7 +139,9 @@
 
   function film(t) {
     const tB = T0('B'), tE = T0('E'), tH = T0('H'), tK = T0('K');
-    if (t < tB) return page(t, 'Last of Men', '“We are alone, Trest,” said Roal...', tB, { soak: '#141110' });
+    if (t < tB) {   // the cap is the W, its opening quotation mark hung small in the margin, as the magazine set it (dropped, the mark was the cap)
+      const k = ease(seg(t, 0, tB)); withCam([W / 2 + 40 * k, H / 2 + 40 * k, 1 + .06 * k], () => letter('\u201C', 452, 506, 70, PULP.ink, { ink: false, align: 'right', font: `700 70px "Old Standard TT", Georgia, serif` }));
+      return page(t, 'Last of Men', 'We are alone, Trest,\u201D said Roal...', tB, { soak: '#141110' }); }
     if (t < tLadder - .9) return dome(t);
     if (t < tLadder + .7) return dissolve(seg(t, tLadder - .9, tLadder + .7), () => dome(t), () => ladder(t));
     if (t < tH - .8) return ladder(t);
