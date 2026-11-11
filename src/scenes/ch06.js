@@ -4,6 +4,19 @@
 (() => {
   const { D, INK, ez, win, steps, path, ground, cam, withCam, ruled, page, planet } = KIT;
   const S = CHAPTER.shots, C = cue, T0 = id => S[id][0], T1 = id => S[id][1];
+  // Earth: the planet's disc with a slate sea, ochre land and cloud, so it doesn't read as the Moon (the same in chapters 1, 3, 6 and 11)
+  const LAND = [[[-.62, -.55], [-.45, -.68], [-.22, -.62], [-.12, -.48], [-.28, -.42], [-.34, -.28], [-.24, -.16], [-.3, -.05], [-.18, .08], [-.12, .26], [-.2, .42], [-.3, .62], [-.36, .5], [-.34, .3], [-.44, .12], [-.48, -.1], [-.6, -.25], [-.7, -.38]],
+    [[.02, -.62], [.2, -.7], [.42, -.62], [.58, -.5], [.5, -.38], [.38, -.36], [.44, -.2], [.4, -.02], [.46, .12], [.36, .3], [.26, .5], [.16, .42], [.12, .22], [.04, .06], [.08, -.1], [-.02, -.2], [.06, -.34], [-.02, -.46]],
+    [[.6, .26], [.72, .22], [.8, .36], [.7, .48], [.6, .42]]];
+  const CLOUD = [[[-.72, -.12], [-.5, -.08], [-.3, -.14]], [[.12, .62], [.32, .58], [.5, .5]], [[-.18, -.78], [.02, -.8], [.2, -.76]], [[.5, -.1], [.66, -.06], [.8, -.14]]];
+  const earthDisc = (x, y, r, key, o = {}) => { planet(x, y, r, 1, { key, glow: '#F4EEDC', ga: .2, ...o }); steady(() => { stillSeed('land' + key);
+    const at = P => P.map(([u, v]) => [x + u * r, y + v * r]), nn = Math.max(20, Math.round(r * .2));
+    paint(ellPts(x, y, r * .99, r * .99, Math.max(40, Math.round(r * .4))), { wash: '#53666A', washOp: 150, ink: null });
+    LAND.forEach(P => paint(at(P), { wash: '#8C8256', washOp: 210, fill: '#6F6A44', fillOp: 90, bleed: .05, tex: .3, ink: INK, sw: .4, curv: .5 }));
+    CLOUD.forEach(P => inkLine(at(P), Math.max(1, r * .008), '#E8E0CC', 'inkfine'));
+    for (const dd of [0, .2, .4, .6, .8]) { const h = Math.acos(dd);   // the night side over the land, in soft steps toward the far limb
+      paint([...Array(nn)].map((_, i) => { const a = 1.27 - h + i / (nn - 1) * 2 * h; return [x + Math.cos(a) * r * .99, y + Math.sin(a) * r * .99]; }), { wash: '#1C1814', washOp: 32, ink: null }); }
+  }); };
   const K = (t, a, b) => seg(t, C(a), C(b));
   const GREEN = NRG.death, SUN = '#E8F0FF', HEAT = '#FFB070';
   const stars = (n, seed, cx = 960, cy = 540, w = 4000, h = 2400) => { for (let i = 0; i < n; i++) { const b = hash(i * 1.3 + seed); glow(cx + (hash(i * 3.1 + seed) - .5) * w, cy + (hash(i * 7.7 + seed) - .5) * h, 3 + 8 * b * b, '#F4EEDC', .2 + .45 * b); } };
@@ -41,7 +54,10 @@
   const tGreen = C('p079.1:a new ray reached out'), tCurtain = C('p079.1:a strange curtain'), tJ = T0('J'), tDart = C('p080.1:they darted suddenly'), tVanish = C('p080.1:disappear'), tK = T0('K');
   // a giant's screen: an ellipse of force round it, its colour the heat along the text's sequence; dying to dull red-black
   const SCREEN = ['#A27BEA', '#6F8FF0', '#FF9A3C', '#FF4A3A', '#5A1810'];
-  const heatAt = t => t < tV ? 0 : t < tDie ? .75 * ez(t, tV, tRed + 1) : lerp(.75, 1, ez(t, tDie, tBlack + 3));
+  // each colour comes on its word (one long ramp from 'flamed' ran each of them ahead of its word); 'blue' alone is the
+  // 'blue-white' sun of the line's start, so it's found by 'then', .26 s before it
+  const tVi = C('p075.1:violet'), tBl = C('p075.1:then blue') + .26, tOr = C('p075.1:orange'), on = (t, w) => ez(t, w - .3, w + .2);
+  const heatAt = t => t < tV ? 0 : t < tDie ? .03 + .03 * on(t, tVi - .1) + .19 * on(t, tBl) + .25 * on(t, tOr) + .25 * on(t, tRed) : lerp(.75, 1, ez(t, tDie, tBlack + 3));
   function screen(x, y, len, heat, t, hits, key, calm = 0) {
     if (heat <= 0 || calm >= 1) return;
     const col = heat < .06 ? '#C9C6BE' : ramp(SCREEN, heat), rx = len * .62, ry = len * .2;   // not yet struck: a colourless shimmer (it was violet before 'flamed gradually violet')
@@ -144,7 +160,7 @@
     ground('#1A1612', 255, 'earthsp', { fill: '#262019', fillOp: 90 }); stars(140, 8);
     const sw = ez(t, T0('L'), DUR - .5), lx = lerp(1360, 560, sw);
     camBegin(960, 540, lerp(1.1, 1, ez(t, T0('L'), DUR)));
-    planet(960, 540, 420, 1, { key: 'earthL', glow: '#F4EEDC', ga: .2, bands: true });
+    earthDisc(960, 540, 420, 'earthL');
     // the swept side, green
     boilSeed('sweep'); const P = []; for (let i = 0; i <= 24; i++) { const a = -Math.PI / 2 + i / 24 * Math.PI, y = 540 + Math.sin(a) * 420, half = Math.cos(a) * 420; P.push([Math.min(960 + half, Math.max(960 - half, lx)), y]); }
     for (let i = 24; i >= 0; i--) { const a = -Math.PI / 2 + i / 24 * Math.PI; P.push([960 + Math.cos(a) * 420, 540 + Math.sin(a) * 420]); }

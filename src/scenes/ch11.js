@@ -4,6 +4,19 @@
 (() => {
   const { D, INK, ez, win, steps, talk, ground, cam, page, planet, ruled } = KIT;
   const S = CHAPTER.shots, C = cue, T0 = id => S[id][0], T1 = id => S[id][1];
+  // Earth: the planet's disc with a slate sea, ochre land and cloud, so it doesn't read as the Moon (the same in chapters 1, 3, 6 and 11)
+  const LAND = [[[-.62, -.55], [-.45, -.68], [-.22, -.62], [-.12, -.48], [-.28, -.42], [-.34, -.28], [-.24, -.16], [-.3, -.05], [-.18, .08], [-.12, .26], [-.2, .42], [-.3, .62], [-.36, .5], [-.34, .3], [-.44, .12], [-.48, -.1], [-.6, -.25], [-.7, -.38]],
+    [[.02, -.62], [.2, -.7], [.42, -.62], [.58, -.5], [.5, -.38], [.38, -.36], [.44, -.2], [.4, -.02], [.46, .12], [.36, .3], [.26, .5], [.16, .42], [.12, .22], [.04, .06], [.08, -.1], [-.02, -.2], [.06, -.34], [-.02, -.46]],
+    [[.6, .26], [.72, .22], [.8, .36], [.7, .48], [.6, .42]]];
+  const CLOUD = [[[-.72, -.12], [-.5, -.08], [-.3, -.14]], [[.12, .62], [.32, .58], [.5, .5]], [[-.18, -.78], [.02, -.8], [.2, -.76]], [[.5, -.1], [.66, -.06], [.8, -.14]]];
+  const earthDisc = (x, y, r, key, o = {}) => { planet(x, y, r, 1, { key, glow: '#F4EEDC', ga: .2, ...o }); steady(() => { stillSeed('land' + key);
+    const at = P => P.map(([u, v]) => [x + u * r, y + v * r]), nn = Math.max(20, Math.round(r * .2));
+    paint(ellPts(x, y, r * .99, r * .99, Math.max(40, Math.round(r * .4))), { wash: '#53666A', washOp: 150, ink: null });
+    LAND.forEach(P => paint(at(P), { wash: '#8C8256', washOp: 210, fill: '#6F6A44', fillOp: 90, bleed: .05, tex: .3, ink: INK, sw: .4, curv: .5 }));
+    CLOUD.forEach(P => inkLine(at(P), Math.max(1, r * .008), '#E8E0CC', 'inkfine'));
+    for (const dd of [0, .2, .4, .6, .8]) { const h = Math.acos(dd);   // the night side over the land, in soft steps toward the far limb
+      paint([...Array(nn)].map((_, i) => { const a = 1.27 - h + i / (nn - 1) * 2 * h; return [x + Math.cos(a) * r * .99, y + Math.sin(a) * r * .99]; }), { wash: '#1C1814', washOp: 32, ink: null }); }
+  }); };
   const F2 = [960, 560], FS = 40, SHEET = [1180, 470, 300, 380];
   const HUES = ['#B48CFF', '#FFC766', '#FF8FA8', '#7FE0D0', '#9CC8FF', '#FFE08A', '#D6A0FF'];
   // a being of force, as in chapter 0: a core, a halo and filaments, in its own colour
@@ -28,7 +41,7 @@
     [[140, 10], [220, 16], [310, 18], [400, 14], [560, 50], [720, 42], [860, 30], [980, 28]].forEach(([R, r], i) => {
       const a = spin / (1 + i * .6) + i, x = 960 + Math.cos(a) * R, y = 540 + Math.sin(a) * R * .45;
       boilSeed('orb' + i); inkLine([...Array(49)].map((_, k) => [960 + Math.cos(k / 48 * TAU) * R, 540 + Math.sin(k / 48 * TAU) * R * .45]), .4, D[3], 'inkfine', .5);
-      planet(x, y, r, 2, { key: 'p11' + i });
+      if (i === 2) earthDisc(x, y, r, 'p11' + i, { glow: null }); else planet(x, y, r, 2, { key: 'p11' + i });
       // the beings of force round every world (D on)
       const n = Math.floor(6 * ez(t, tD - 1, tD + 3)); for (let k = 0; k < n; k++) { const b = k * 1.7 + t * (.5 + hash(k + i)), rr = r * 2 + 20 + 30 * hash(k * 3 + i); being(x + Math.cos(b) * rr, y + Math.sin(b) * rr * .7, 6 + 6 * hash(k + i * 7), HUES[(k + i) % HUES.length], t, i * 10 + k, .9); } });
     camEnd();
@@ -62,7 +75,7 @@
     const tCarry = C('p136.1:carried back through the past'), q = seg(t, tCarry, T0('G'));
     dark('tun');
     for (let i = 0; i < 40; i++) { const d = frac(i / 40 + q * 2), r = 40 + 1400 * d * d, a = i * 2.4 + q * 6; boilSeed('ring' + i); inkLine([...Array(33)].map((_, k) => [960 + Math.cos(k / 32 * TAU + a) * r, 540 + Math.sin(k / 32 * TAU + a) * r * .6]), .6 + d, mixCol('#1A1612', '#EFE6D2', d), 'inkfine', .5); }
-    planet(960, 540, 30 + 60 * q, 1, { key: 'oldearth', glow: '#F4EEDC', ga: .3 });
+    earthDisc(960, 540, 30 + 60 * q, 'oldearth', { ga: .3 });
     glow(960, 540 - 300 * (1 - q), 30, '#FFE08A', .9); glow(960, 540 - 300 * (1 - q), 100, '#FFE08A', .4);
   }
   // H to J: the page, and THE END. Its paragraph is the one being read: p138, then p139 (which it used to sit through

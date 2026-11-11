@@ -8,6 +8,19 @@
   const HEAT = '#FFB070', GREEN = NRG.death, VIOLET = NRG.support;
   const stars = (n = 140, seed = 1, w = 3000, h = 1800) => { for (let i = 0; i < n; i++) { const b = hash(i * 1.3 + seed); glow(960 + (hash(i * 3.1 + seed) - .5) * w, 540 + (hash(i * 7.7 + seed) - .5) * h, 3 + 8 * b * b, '#F4EEDC', .2 + .45 * b); } };
   const dark = key => ground('#1C1814', 255, key, { fill: '#2A231D', fillOp: 90 });
+  // Earth: the planet's disc with a slate sea, ochre land and cloud, so it doesn't read as the Moon (the same in chapters 1, 3, 6 and 11)
+  const LAND = [[[-.62, -.55], [-.45, -.68], [-.22, -.62], [-.12, -.48], [-.28, -.42], [-.34, -.28], [-.24, -.16], [-.3, -.05], [-.18, .08], [-.12, .26], [-.2, .42], [-.3, .62], [-.36, .5], [-.34, .3], [-.44, .12], [-.48, -.1], [-.6, -.25], [-.7, -.38]],
+    [[.02, -.62], [.2, -.7], [.42, -.62], [.58, -.5], [.5, -.38], [.38, -.36], [.44, -.2], [.4, -.02], [.46, .12], [.36, .3], [.26, .5], [.16, .42], [.12, .22], [.04, .06], [.08, -.1], [-.02, -.2], [.06, -.34], [-.02, -.46]],
+    [[.6, .26], [.72, .22], [.8, .36], [.7, .48], [.6, .42]]];
+  const CLOUD = [[[-.72, -.12], [-.5, -.08], [-.3, -.14]], [[.12, .62], [.32, .58], [.5, .5]], [[-.18, -.78], [.02, -.8], [.2, -.76]], [[.5, -.1], [.66, -.06], [.8, -.14]]];
+  const earthDisc = (x, y, r, key, o = {}) => { planet(x, y, r, 1, { key, glow: '#F4EEDC', ga: .2, ...o }); steady(() => { stillSeed('land' + key);
+    const at = P => P.map(([u, v]) => [x + u * r, y + v * r]), nn = Math.max(20, Math.round(r * .2));
+    paint(ellPts(x, y, r * .99, r * .99, Math.max(40, Math.round(r * .4))), { wash: '#53666A', washOp: 150, ink: null });
+    LAND.forEach(P => paint(at(P), { wash: '#8C8256', washOp: 210, fill: '#6F6A44', fillOp: 90, bleed: .05, tex: .3, ink: INK, sw: .4, curv: .5 }));
+    CLOUD.forEach(P => inkLine(at(P), Math.max(1, r * .008), '#E8E0CC', 'inkfine'));
+    for (const dd of [0, .2, .4, .6, .8]) { const h = Math.acos(dd);   // the night side over the land, in soft steps toward the far limb
+      paint([...Array(nn)].map((_, i) => { const a = 1.27 - h + i / (nn - 1) * 2 * h; return [x + Math.cos(a) * r * .99, y + Math.sin(a) * r * .99]; }), { wash: '#1C1814', washOp: 32, ink: null }); }
+  }); };
   const ship = (x, y, len, t, dir = -1, o = {}) => { push(); translate(x, y); scale(dir, 1); translate(-x, -y); DES.oShip(x, y, len, t, o); pop(); };
 
   // ---------- the hall ----------
@@ -119,7 +132,7 @@
     dark('appr'); stars(160, 3);
     const q = ez(t, T0('F') - 3, T1('F') + 3);
     camBegin(lerp(960, 1080, q), lerp(540, 480, q), lerp(1, 1.2, q));   // easing toward the fleet as it comes
-    planet(560, 640, 230, 1, { key: 'earth', glow: '#F4EEDC', ga: .2, bands: true }); planet(860, 470, 50, 2, { key: 'luna' });
+    earthDisc(560, 640, 230, 'earth'); planet(860, 470, 50, 2, { key: 'luna' });
     // the slow approach: the fleet in its ranks, closing on the Moon and growing as it comes (a still grid of dots)
     for (let i = 0; i < 15; i++) { const r = Math.floor(i / 5), k = i % 5, len = lerp(40, 84, q) * (1 - .12 * r);
       ship(lerp(1820, 1330, q) + k * len * 1.25 + r * len * .4, lerp(220, 330, q) + r * len * .55 + 4 * hash(i), len, t, -1, { d: 3 }); }
@@ -264,7 +277,7 @@
     dark('globe'); stars(120, 21);
     const z = lerp(1.3, 1, ez(t, T0('N'), T1('N')));
     camBegin(960, 540, z);
-    planet(960, 560, 380, 1, { key: 'earth2', glow: '#F4EEDC', ga: .2, bands: true });
+    earthDisc(960, 560, 380, 'earth2');
     const SP = [[820, 470], [1120, 520], [1240, 400], [700, 620], [980, 700], [1080, 640]];
     SP.forEach(([x, y], i) => { const k = i < 3 ? 1 : ez(t, C('p027.1:three more colonies') + (i - 3) * .7, C('p027.1:three more colonies') + (i - 3) * .7 + 1.5); if (k > 0) { glow(x, y, 60 * k, GREEN, .8); glow(x, y, 20 * k, '#FFFDF6', .5); } });
     camEnd();
@@ -283,7 +296,7 @@
       let x = 260, n = 0;
       [['mercury', 60], ['venus', 90], ['earth', 95], ['mars', 70], ['jupiter', 220], ['saturn', 180], ['uranus', 120], ['neptune', 115], ['pluto', 40]].forEach(([k, r], i, all) => {
         if (i) x += all[i - 1][1] + 90 + r;
-        const y = 600; planet(x, y, r, 1 + (i % 3), { key: 'w' + k, bands: r > 150 });
+        const y = 600; if (k === 'earth') earthDisc(x, y, r, 'wearth', { glow: null }); else planet(x, y, r, 1 + (i % 3), { key: 'w' + k, bands: r > 150 });
         const at = ON[k] ?? tAny + .45 * n++, on = ez(t, at - .2, at + .6);
         if (on > 0) { DES.machine(x, lerp(y - r - 260, y - r + 4, on), 24, t, { arms: 3, d: 1, label: null }); if (on < 1) glow(x, y - r, 50, '#FFFDF6', .5 * (1 - on)); } });
     });

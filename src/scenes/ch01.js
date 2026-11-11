@@ -3,6 +3,19 @@
 (() => {
   const { D, INK, ez, win, steps, path, talk, ground, cam, withCam, ruled, dreamCurl, page, closing, planet, stander } = KIT;
   const S = CHAPTER.shots, C = cue, T0 = id => S[id][0], T1 = id => S[id][1];
+  // Earth: the planet's disc with a slate sea, ochre land and cloud, so it doesn't read as the Moon (the same in chapters 1, 3, 6 and 11)
+  const LAND = [[[-.62, -.55], [-.45, -.68], [-.22, -.62], [-.12, -.48], [-.28, -.42], [-.34, -.28], [-.24, -.16], [-.3, -.05], [-.18, .08], [-.12, .26], [-.2, .42], [-.3, .62], [-.36, .5], [-.34, .3], [-.44, .12], [-.48, -.1], [-.6, -.25], [-.7, -.38]],
+    [[.02, -.62], [.2, -.7], [.42, -.62], [.58, -.5], [.5, -.38], [.38, -.36], [.44, -.2], [.4, -.02], [.46, .12], [.36, .3], [.26, .5], [.16, .42], [.12, .22], [.04, .06], [.08, -.1], [-.02, -.2], [.06, -.34], [-.02, -.46]],
+    [[.6, .26], [.72, .22], [.8, .36], [.7, .48], [.6, .42]]];
+  const CLOUD = [[[-.72, -.12], [-.5, -.08], [-.3, -.14]], [[.12, .62], [.32, .58], [.5, .5]], [[-.18, -.78], [.02, -.8], [.2, -.76]], [[.5, -.1], [.66, -.06], [.8, -.14]]];
+  const earthDisc = (x, y, r, key, o = {}) => { planet(x, y, r, 1, { key, glow: '#F4EEDC', ga: .2, ...o }); steady(() => { stillSeed('land' + key);
+    const at = P => P.map(([u, v]) => [x + u * r, y + v * r]), nn = Math.max(20, Math.round(r * .2));
+    paint(ellPts(x, y, r * .99, r * .99, Math.max(40, Math.round(r * .4))), { wash: '#53666A', washOp: 150, ink: null });
+    LAND.forEach(P => paint(at(P), { wash: '#8C8256', washOp: 210, fill: '#6F6A44', fillOp: 90, bleed: .05, tex: .3, ink: INK, sw: .4, curv: .5 }));
+    CLOUD.forEach(P => inkLine(at(P), Math.max(1, r * .008), '#E8E0CC', 'inkfine'));
+    for (const dd of [0, .2, .4, .6, .8]) { const h = Math.acos(dd);   // the night side over the land, in soft steps toward the far limb
+      paint([...Array(nn)].map((_, i) => { const a = 1.27 - h + i / (nn - 1) * 2 * h; return [x + Math.cos(a) * r * .99, y + Math.sin(a) * r * .99]; }), { wash: '#1C1814', washOp: 32, ink: null }); }
+  }); };
   const K = (t, a, b) => seg(t, C(a), C(b));
   const BG = '#2E2620', PALE = '#EFE6D2', FORCE = '#CFE0FF';
   const plateGround = (key = 'plate') => key !== 'plate' ? ground(BG, 255, key, { fill: '#3B322B', fillOp: 120 })
@@ -141,7 +154,7 @@
       ground('#221C17', 255, 'sp1', { fill: '#2E2620', fillOp: 90 });
       for (let i = 0; i < 120; i++) { const b = hash(i * 1.3); glow(960 + (hash(i * 3.1) - .5) * 3200, 540 + (hash(i * 7.7) - .5) * 2000, 3 + 8 * b * b, '#F4EEDC', .2 + .4 * b); }
       planet(1700, 300, 70, 2, { key: 'mars' });
-      planet(480, 1350, 760, 1, { key: 'earth', glow: '#F4EEDC', ga: .25, bands: true });
+      earthDisc(480, 1350, 760, 'earth', { ga: .25 });
       // the ship, and its drive's thread behind it
       const P = []; for (let q = 0; q <= k; q += .04) P.push([lerp(860, 1560, q), lerp(720, 320, q) - 120 * Math.sin(Math.PI * q)]);
       if (P.length > 1) inkLine(P, .5, FORCE, 'inkfine', .5);
