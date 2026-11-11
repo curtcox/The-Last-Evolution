@@ -3,15 +3,15 @@
 (() => {
   const { D, INK, ez, win, steps, path, talk, ground, cam, withCam, ruled, dreamCurl, page, closing, planet, stander } = KIT;
   const S = CHAPTER.shots, C = cue, T0 = id => S[id][0], T1 = id => S[id][1];
-  // Earth: the planet's disc with a slate sea, ochre land and cloud, so it doesn't read as the Moon (the same in chapters 1, 3, 6 and 11)
+  // Earth: the planet's disc with a dark sea, pale land and cloud, so it doesn't read as the Moon; in the wash's warm greys, since only energy has colour (the same in chapters 1, 3, 6 and 11)
   const LAND = [[[-.62, -.55], [-.45, -.68], [-.22, -.62], [-.12, -.48], [-.28, -.42], [-.34, -.28], [-.24, -.16], [-.3, -.05], [-.18, .08], [-.12, .26], [-.2, .42], [-.3, .62], [-.36, .5], [-.34, .3], [-.44, .12], [-.48, -.1], [-.6, -.25], [-.7, -.38]],
     [[.02, -.62], [.2, -.7], [.42, -.62], [.58, -.5], [.5, -.38], [.38, -.36], [.44, -.2], [.4, -.02], [.46, .12], [.36, .3], [.26, .5], [.16, .42], [.12, .22], [.04, .06], [.08, -.1], [-.02, -.2], [.06, -.34], [-.02, -.46]],
     [[.6, .26], [.72, .22], [.8, .36], [.7, .48], [.6, .42]]];
   const CLOUD = [[[-.72, -.12], [-.5, -.08], [-.3, -.14]], [[.12, .62], [.32, .58], [.5, .5]], [[-.18, -.78], [.02, -.8], [.2, -.76]], [[.5, -.1], [.66, -.06], [.8, -.14]]];
   const earthDisc = (x, y, r, key, o = {}) => { planet(x, y, r, 1, { key, glow: '#F4EEDC', ga: .2, ...o }); steady(() => { stillSeed('land' + key);
     const at = P => P.map(([u, v]) => [x + u * r, y + v * r]), nn = Math.max(20, Math.round(r * .2));
-    paint(ellPts(x, y, r * .99, r * .99, Math.max(40, Math.round(r * .4))), { wash: '#53666A', washOp: 150, ink: null });
-    LAND.forEach(P => paint(at(P), { wash: '#8C8256', washOp: 210, fill: '#6F6A44', fillOp: 90, bleed: .05, tex: .3, ink: INK, sw: .4, curv: .5 }));
+    paint(ellPts(x, y, r * .99, r * .99, Math.max(40, Math.round(r * .4))), { wash: '#3E3A34', washOp: 170, ink: null });
+    LAND.forEach(P => paint(at(P), { wash: '#A39680', washOp: 220, fill: '#857761', fillOp: 90, bleed: .05, tex: .3, ink: INK, sw: .4, curv: .5 }));
     CLOUD.forEach(P => inkLine(at(P), Math.max(1, r * .008), '#E8E0CC', 'inkfine'));
     for (const dd of [0, .2, .4, .6, .8]) { const h = Math.acos(dd);   // the night side over the land, in soft steps toward the far limb
       paint([...Array(nn)].map((_, i) => { const a = 1.27 - h + i / (nn - 1) * 2 * h; return [x + Math.cos(a) * r * .99, y + Math.sin(a) * r * .99]; }), { wash: '#1C1814', washOp: 32, ink: null }); }
@@ -119,7 +119,7 @@
   }
   function city(t) {
     HALFTONE = .3;
-    const c = cam(t, [[0, tt => [lerp(900, 1700, ez(tt, T0('C') - 2, T1('C'))), 600, .85]], [T0('D') - .5, tt => [lerp(2900, 3500, ez(tt, T0('D'), T1('D'))), lerp(680, 800, ez(tt, T0('D'), T1('D'))), lerp(1.15, 1.6, ez(tt, T0('D'), T1('D')))], 3],   // in on the runners and the mock battle
+    const c = cam(t, [[0, tt => [lerp(900, 1700, ez(tt, T0('C') - 2, T1('C'))), 600, .85]], [T0('D') - .5, tt => [lerp(2900, 3550, ez(tt, T0('D'), C('p003.1:their pleasure') + .6)), lerp(680, 800, ez(tt, T0('D'), T1('D'))), lerp(1.15, 1.6, ez(tt, T0('D'), T1('D')))], 3],   // in on the runners and the mock battle (centred on its two sides once the race is by: drifting there over the whole shot, the far side stood cut by the frame's edge 20 s)
       [T0('K') - 2, tt => [lerp(1100, 2300, ez(tt, T0('K'), DUR + 1)), 850, 1.6], .01]]);
     withCam(c, () => { cityWorld(t); if (t > T0('K') - 2) together(t); });
   }
