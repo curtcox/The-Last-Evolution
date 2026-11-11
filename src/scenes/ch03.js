@@ -8,15 +8,15 @@
   const HEAT = '#FFB070', GREEN = NRG.death, VIOLET = NRG.support;
   const stars = (n = 140, seed = 1, w = 3000, h = 1800) => { for (let i = 0; i < n; i++) { const b = hash(i * 1.3 + seed); glow(960 + (hash(i * 3.1 + seed) - .5) * w, 540 + (hash(i * 7.7 + seed) - .5) * h, 3 + 8 * b * b, '#F4EEDC', .2 + .45 * b); } };
   const dark = key => ground('#1C1814', 255, key, { fill: '#2A231D', fillOp: 90 });
-  // Earth: the planet's disc with a slate sea, ochre land and cloud, so it doesn't read as the Moon (the same in chapters 1, 3, 6 and 11)
+  // Earth: the planet's disc with a dark sea, pale land and cloud, so it doesn't read as the Moon; in the wash's warm greys, since only energy has colour (the same in chapters 1, 3, 6 and 11)
   const LAND = [[[-.62, -.55], [-.45, -.68], [-.22, -.62], [-.12, -.48], [-.28, -.42], [-.34, -.28], [-.24, -.16], [-.3, -.05], [-.18, .08], [-.12, .26], [-.2, .42], [-.3, .62], [-.36, .5], [-.34, .3], [-.44, .12], [-.48, -.1], [-.6, -.25], [-.7, -.38]],
     [[.02, -.62], [.2, -.7], [.42, -.62], [.58, -.5], [.5, -.38], [.38, -.36], [.44, -.2], [.4, -.02], [.46, .12], [.36, .3], [.26, .5], [.16, .42], [.12, .22], [.04, .06], [.08, -.1], [-.02, -.2], [.06, -.34], [-.02, -.46]],
     [[.6, .26], [.72, .22], [.8, .36], [.7, .48], [.6, .42]]];
   const CLOUD = [[[-.72, -.12], [-.5, -.08], [-.3, -.14]], [[.12, .62], [.32, .58], [.5, .5]], [[-.18, -.78], [.02, -.8], [.2, -.76]], [[.5, -.1], [.66, -.06], [.8, -.14]]];
   const earthDisc = (x, y, r, key, o = {}) => { planet(x, y, r, 1, { key, glow: '#F4EEDC', ga: .2, ...o }); steady(() => { stillSeed('land' + key);
     const at = P => P.map(([u, v]) => [x + u * r, y + v * r]), nn = Math.max(20, Math.round(r * .2));
-    paint(ellPts(x, y, r * .99, r * .99, Math.max(40, Math.round(r * .4))), { wash: '#53666A', washOp: 150, ink: null });
-    LAND.forEach(P => paint(at(P), { wash: '#8C8256', washOp: 210, fill: '#6F6A44', fillOp: 90, bleed: .05, tex: .3, ink: INK, sw: .4, curv: .5 }));
+    paint(ellPts(x, y, r * .99, r * .99, Math.max(40, Math.round(r * .4))), { wash: '#3E3A34', washOp: 170, ink: null });
+    LAND.forEach(P => paint(at(P), { wash: '#A39680', washOp: 220, fill: '#857761', fillOp: 90, bleed: .05, tex: .3, ink: INK, sw: .4, curv: .5 }));
     CLOUD.forEach(P => inkLine(at(P), Math.max(1, r * .008), '#E8E0CC', 'inkfine'));
     for (const dd of [0, .2, .4, .6, .8]) { const h = Math.acos(dd);   // the night side over the land, in soft steps toward the far limb
       paint([...Array(nn)].map((_, i) => { const a = 1.27 - h + i / (nn - 1) * 2 * h; return [x + Math.cos(a) * r * .99, y + Math.sin(a) * r * .99]; }), { wash: '#1C1814', washOp: 32, ink: null }); }
@@ -229,7 +229,7 @@
     const tK = T0('K'), tKill = C('p024.1:were being killed instantly'), tM = T0('M'), tTrees = C('p025.1:Trees, grass'), tO = T0('O'), tP = T0('P');
     const green = Math.max(ez(t, tGreenOn - .5, tGreenOn + 2) * (1 - ez(t, tO - 2, tO + 2) * .6), 0), wither = ez(t, tTrees - 1, tTrees + 6) + (t > T0('L') ? ez(t, tKill, tKill + 6) * .3 : 0);
     // on 'we saw', in close on the colonists, so their deaths are seen (they stood in the frame's last 80 px, a few pixels tall on a phone)
-    const c = cam(t, [[0, tt => [960, lerp(300, 560, ez(tt, tK, tK + 6)), lerp(.8, 1.05, ez(tt, tK, tK + 6))]], [C('p024.1:and we saw'), [960, 860, 1.45], 3.5], [tM - .5, tt => [lerp(800, 1400, ez(tt, tM, T1('M'))), 600, 1.2], 2],
+    const c = cam(t, [[0, tt => [960, lerp(300, 560, ez(tt, tK, tK + 6)), lerp(.8, 1.05, ez(tt, tK, tK + 6))]], [C('p024.1:and we saw'), [960, 860, 1.45], 3.5], [tM - .5, tt => [lerp(800, 1400, ez(tt, tM, T1('M'))), 630, .95], 2],   // the ships whole, their green light down to the machines, all in (at 600 and 1.2 the ships were cut by the top, the machines' feet by the bottom, and the sky between was two-thirds of it)
       [tO - .5, [1000, 420, .85], 2.5], [tP - .5, tt => [lerp(900, 1200, ez(tt, tP, T1('P'))), 640, lerp(1.1, 1.3, ez(tt, tP, T1('P')))], 3]]);
     withCam(c, () => {
       ground(D[0], 255, 'landsky', { fill: '#FFFFFF', fillOp: 30 });   // no green in the land itself: colour is only for energy, so the green comes with the beams
