@@ -4,15 +4,15 @@
 (() => {
   const { D, INK, ez, win, steps, path, ground, cam, withCam, ruled, page, planet } = KIT;
   const S = CHAPTER.shots, C = cue, T0 = id => S[id][0], T1 = id => S[id][1];
-  // Earth: the planet's disc with a slate sea, ochre land and cloud, so it doesn't read as the Moon (the same in chapters 1, 3, 6 and 11)
+  // Earth: the planet's disc with a dark sea, pale land and cloud, so it doesn't read as the Moon; in the wash's warm greys, since only energy has colour (the same in chapters 1, 3, 6 and 11)
   const LAND = [[[-.62, -.55], [-.45, -.68], [-.22, -.62], [-.12, -.48], [-.28, -.42], [-.34, -.28], [-.24, -.16], [-.3, -.05], [-.18, .08], [-.12, .26], [-.2, .42], [-.3, .62], [-.36, .5], [-.34, .3], [-.44, .12], [-.48, -.1], [-.6, -.25], [-.7, -.38]],
     [[.02, -.62], [.2, -.7], [.42, -.62], [.58, -.5], [.5, -.38], [.38, -.36], [.44, -.2], [.4, -.02], [.46, .12], [.36, .3], [.26, .5], [.16, .42], [.12, .22], [.04, .06], [.08, -.1], [-.02, -.2], [.06, -.34], [-.02, -.46]],
     [[.6, .26], [.72, .22], [.8, .36], [.7, .48], [.6, .42]]];
   const CLOUD = [[[-.72, -.12], [-.5, -.08], [-.3, -.14]], [[.12, .62], [.32, .58], [.5, .5]], [[-.18, -.78], [.02, -.8], [.2, -.76]], [[.5, -.1], [.66, -.06], [.8, -.14]]];
   const earthDisc = (x, y, r, key, o = {}) => { planet(x, y, r, 1, { key, glow: '#F4EEDC', ga: .2, ...o }); steady(() => { stillSeed('land' + key);
     const at = P => P.map(([u, v]) => [x + u * r, y + v * r]), nn = Math.max(20, Math.round(r * .2));
-    paint(ellPts(x, y, r * .99, r * .99, Math.max(40, Math.round(r * .4))), { wash: '#53666A', washOp: 150, ink: null });
-    LAND.forEach(P => paint(at(P), { wash: '#8C8256', washOp: 210, fill: '#6F6A44', fillOp: 90, bleed: .05, tex: .3, ink: INK, sw: .4, curv: .5 }));
+    paint(ellPts(x, y, r * .99, r * .99, Math.max(40, Math.round(r * .4))), { wash: '#3E3A34', washOp: 170, ink: null });
+    LAND.forEach(P => paint(at(P), { wash: '#A39680', washOp: 220, fill: '#857761', fillOp: 90, bleed: .05, tex: .3, ink: INK, sw: .4, curv: .5 }));
     CLOUD.forEach(P => inkLine(at(P), Math.max(1, r * .008), '#E8E0CC', 'inkfine'));
     for (const dd of [0, .2, .4, .6, .8]) { const h = Math.acos(dd);   // the night side over the land, in soft steps toward the far limb
       paint([...Array(nn)].map((_, i) => { const a = 1.27 - h + i / (nn - 1) * 2 * h; return [x + Math.cos(a) * r * .99, y + Math.sin(a) * r * .99]; }), { wash: '#1C1814', washOp: 32, ink: null }); }
@@ -72,18 +72,22 @@
   function battle(t) {
     HALFTONE = .2;
     const tC = T0('C'), tD = T0('D'), tF = T0('F'), tH = T0('H'), tI = T0('I');
-    const c = cam(t, [[0, tt => [lerp(900, 1200, ez(tt, tC, tD)), 560, lerp(.6, .75, ez(tt, tC, tD))]], [tD, [HERO.x - 100, HERO.y, 1.1], 3], [tE, tt => [HERO.x, HERO.y, lerp(1.2, 1.35, ez(tt, tE, tF))], 2],
+    const c = cam(t, [[0, tt => [lerp(900, 1200, ez(tt, tC, tD)), 560, lerp(lerp(.6, .75, ez(tt, tC, tD)), 1, ez(tt, C('p075.1:darting') - 2, C('p075.1:darting') + 1.5))]],   // in among the ranks on 'tiny, darting motes', so they show [tD, [HERO.x - 100, HERO.y, 1.1], 3], [tE, tt => [HERO.x, HERO.y, lerp(1.2, 1.35, ez(tt, tE, tF))], 2],
       [tF, [HERO.x - 300, HERO.y - 40, 1.6], 2.5], [T0('G'), tt => [lerp(HERO.x - 60, HERO.x - 160, ez(tt, T0('G') + 9, T0('G') + 24)), HERO.y, lerp(1.35, .85, ez(tt, T0('G') + 9, T0('G') + 24))], 2.5], [tH, tt => [lerp(1200, 900, ez(tt, tH, tI)), 560, .8], 2.5],
       [tI, tt => [lerp(1000, 1100, ez(tt, tGreen + 1, tCurtain)), 560, lerp(lerp(.9, 1.05, ez(tt, tI + 1, tGreen)), .65, ez(tt, tGreen + 3, tJ))], 2], [tJ, tt => [lerp(HERO.x - 380, HERO.x - 330, ez(tt, tDart, tVanish)), HERO.y, lerp(1.0, 2.2, ez(tt, tDart - .5, tVanish))], 1.2], [tK, tt => [lerp(1000, 1600, ez(tt, tK, T1('K'))), 560, .7], 2]]);   // rushing in with them
     ground('#1A1612', 255, 'bat', { fill: '#262019', fillOp: 90 });
     stars(160, 4);
     withCam(c, () => {
-      glow(2900, -200, 120, SUN, .9); glow(2900, -200, 420, SUN, .2);   // the far blue-white sun
+      glow(2350, -180, 120, SUN, .9); glow(2350, -180, 420, SUN, .2);   // the far blue-white sun (at 2900 it was out of every shot)
       const heat = heatAt(t), dead = (i) => i % 3 === 0 && t > tGreen + 3 * hash(i * 2.3) + 1;   // a second after its mote's ray reaches it
       // the motes: in among the ranks, each beside its giant; dying in puffs (H); the charge (J)
       // (for the green ray they draw off up and away from their giants: hard against a giant's end, a mote read as its gun,
       // and the green rays as the giants firing)
       const off = ez(t, tGreen - 3, tGreen - .5) * (1 - ez(t, tJ - 1, tJ)), motePos = (s, k) => [s.x - s.len * (.7 + .15 * off) - 30 * Math.sin(k), s.y - s.len * (.1 + .3 * off) + 20 * Math.cos(k * 1.3)];
+      // 'tiny, darting motes … maneuvering far more rapidly than the giants': each dashes from point to point about its giant,
+      // a quick dash every second or so (a slow sway at the giants' pace, they read as the giants' pellets), until they draw off
+      const darting = 1 - ez(t, tGreen - 3, tGreen - .5), dartOff = i => { const p = t * .8 + hash(i * 1.3) * 7, n = Math.floor(p), w = ez(p - n, 0, .3), at = m => [(hash(i * 11 + m) - .5) * 260, (hash(i * 13 + m) - .5) * 130];
+        const [a, b] = [at(n), at(n + 1)]; return [lerp(a[0], b[0], w) * darting, lerp(a[1], b[1], w) * darting, (a[0] - b[0]) * darting, (a[1] - b[1]) * darting, w > 0 && w < 1 ? Math.sin(w * Math.PI) * darting : 0]; };
       for (const s of RANKS) {
         const isDead = dead(s.i), drift = isDead ? (t - tGreen) * 6 : 0, lost = t > tVanish + .3 && hash(s.i * 7) <= .12;   // few are gone: 9,633 of the ten thousand move on
         if (!lost) { push(); translate(s.x, s.y + drift); rotate(isDead ? (t - tGreen) * .01 : 0); translate(-s.x, -(s.y + drift)); ship(s.x, s.y + drift, s.len, t, -1, { d: isDead ? 4 : 3 }); pop(); }
@@ -93,9 +97,11 @@
           boilSeed('veil' + s.i); paint(V, { wash: '#0E0B09', washOp: 190 * v, ink: null }); inkLine(V, 1.4, '#8A8070', 'inkfine', .4 * v); }
         // its mote
         const arrive = ez(t, tC + hash(s.i) * 4, tC + 3 + hash(s.i) * 4), puff = C('p078.1:And one after another') + hash(s.i * 3) * 5.5, gone = (hash(s.i * 5) < .35 && t > puff) || t > tVanish;
-        const [mx, my] = motePos(s, t * .3 + s.i), back = ez(t, tJ, tDart - .2) * 260, dartK = ez(t, tDart, tVanish), x = lerp(lerp(-400, mx, arrive) - back, s.x - s.len * .45, dartK * dartK), y = lerp(lerp(1400, my, arrive), s.y, dartK * dartK);   // the last charge: they draw off, then dart in (from beside the giants the dart barely moved)
-        const big = 34 * (1 + 1.2 * off + .6 * ez(t, tJ - 1, tJ + 1));
-        if (!gone && arrive > 0) { DES.mote(x, y, big, t, { ang: 0, drive: true });
+        const [mx, my] = motePos(s, t * .3 + s.i), back = ez(t, tJ, tDart - .2) * 260, dartK = ez(t, tDart, tVanish), [dx, dy, tx, ty, dash] = dartOff(s.i), x = lerp(lerp(-400, mx + dx, arrive) - back, s.x - s.len * .45, dartK * dartK), y = lerp(lerp(1400, my + dy, arrive), s.y, dartK * dartK);   // the last charge: they draw off, then dart in (from beside the giants the dart barely moved)
+        const big = 46 * (1 + .65 * off + .6 * ez(t, tJ - 1, tJ + 1));
+        if (!gone && arrive > 0) { if (dash > .05 && arrive >= 1) for (let k = 1; k <= 9; k++) glow(x + tx * k * .09 * dash, y + ty * k * .09 * dash, 40 - 3 * k, NRG.white, .8 * dash * (1 - k / 10));   // the dash's streak
+          if (darting > 0) glow(x, y, 36, NRG.white, .35 * darting);   // each lit by its drive, so the tiny things show among the giants
+          DES.mote(x, y, big, t, { ang: 0, drive: true });
           if (hash(s.i * 5) < .35 && t > puff - 1.2) { const [fx, fy] = freeAt(FREE[s.i % 3], t); beam(fx - 80, fy + 24, x, y, 4, 14, HEAT, ez(t, puff - 1.2, puff - .9), { washOp: 70, a: .75, splash: false }); }
           if (t > T0('D') && t < tGreen && hash(Math.floor(t * 4) + s.i) > .5) beam(x + 14, y, s.x - s.len * .55, s.y, 2, 8, NRG.white, 1, { washOp: 30, a: .5 });
           // the death ray turned on the giants: the chapter's turn, so wide and green enough to read (at 2-10 px and 40 it
