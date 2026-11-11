@@ -220,7 +220,7 @@ main { max-width: 38em; margin: 0 auto; padding: 1.5em 16px 3em; }
 h1 { font: 3.2em/1 "Bebas Neue", Impact, sans-serif; letter-spacing: .03em; margin: .2em 0 .1em; }
 h1 i { font-style: normal; }
 h2 { font: 1.6em/1.1 "Bebas Neue", Impact, sans-serif; letter-spacing: .04em; margin: 1.6em 0 .3em; }
-.kicker { font-variant: small-caps; letter-spacing: .06em; color: var(--ink2); margin: 0; text-align: left; hyphens: none; }
+.kicker, .story p.kicker { font-variant: small-caps; letter-spacing: .06em; color: var(--ink2); margin: 0; text-align: left; hyphens: none; }   /* (.story p's justify and hyphens won over plain .kicker: 'read-ings' at 375) */
 .byline { font-variant: small-caps; letter-spacing: .05em; margin: 0 0 1.5em; }
 .lede { font-size: 1.15em; }
 .ways { padding-left: 1.2em; } .ways li { margin: 0 0 .7em; }
