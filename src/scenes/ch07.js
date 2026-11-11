@@ -99,6 +99,10 @@
     camBegin(960, 560, z);
     const faces = [stander(t, 860, G, 44, [], { who: 'roal', key: 'roalw', seed: 3, flip: true, look: .35 }),
       stander(t, 1060, G + 10, 46, [], { who: 'trest', key: 'trestw', seed: 7, flip: true, look: .3 })];
+    // F-2 and the six that made the dome, still with them in the dark (gone, they seemed to have left until 3:16): under
+    // the shade, dim shapes with the glint of an eye
+    const eyes = [[0, 1, 2, 3, 4, 5].map(i => DES.machine([420, 520, 620, 1400, 1500, 1600][i], G - 110, 15, t, { arms: 3, d: 1 + (i % 2), hover: 1.5 + .1 * wob(t, .3, i), face: i < 3 ? 1 : -1, lit: .3, label: null }).eye)];
+    const fx = 1290, fy = 780; push(); translate(fx, fy); scale(-1, 1); translate(-fx, -fy); DES.f2(fx, fy + 2.4 * FS, FS, t, { view: 'side' }); pop();
     camEnd();
     shade(-100, H + 100, .82, .9, PULP.black);   // black all round; only the screens give light
     camBegin(960, 560, z);
@@ -106,6 +110,7 @@
     // the faces in the screens' light: drawn again over the dark (under the shade, with glows of .2 at a guessed height,
     // they were dark grey)
     for (const p of faces) { p.redrawHead(); glow(...p.head, 70, '#DDE6F0', .2); }
+    for (const e of eyes[0]) glow(e[0], e[1], 26, '#E6EEFF', .35); glow(fx - 50, fy, 40, '#E6EEFF', .3 + .5 * talk(t, 'f2'));
     camEnd();
   }
 
