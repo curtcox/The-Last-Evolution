@@ -1,6 +1,6 @@
 {
  "summary": {
-  "pass": 281,
+  "pass": 287,
   "stale": 0,
   "open": 0,
   "curt": 9,
@@ -43,7 +43,7 @@
   },
   "live": {
    "state": "pass",
-   "detail": "33 pages live, the deploy is this commit"
+   "detail": "33 pages live (not compared: HEAD has changes not pushed)"
   }
  },
  "curt": [
@@ -99,42 +99,42 @@
    "area": "film",
    "title": "Chapter 5: the acting",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the lab's piers are solid, as in chapter 3, so the screens' frames no longer show through them (find.ch03-piers); sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
+   "note": "On the draft with the fifteenth round's fixes: the camera goes in on C-R-U-1 as its name glows on, so the name reads at phone size, with F-2 wholly out of frame (find.ch05-cru1-name); sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
   },
   {
    "id": "ch05.picture",
    "area": "film",
    "title": "Chapter 5: the picture",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the lab's piers are solid, as in chapter 3, so the screens' frames no longer show through them (find.ch03-piers); sound unchanged, -14.5 LUFS. The hall at night with F-1 vast; the atom plates (orbits, grid, light); the spiralling air field, arcs and flame, aura and lightning; F-1's hulk; F-2 with rings and memories; the ball of forces, the ruler, the guinea pig cage in the pale beam; dawn on the rock with tiny machines streaming up. Dark but legible."
+   "note": "On the draft with the fifteenth round's fixes: the camera goes in on C-R-U-1 as its name glows on, so the name reads at phone size, with F-2 wholly out of frame (find.ch05-cru1-name); sound unchanged, -14.5 LUFS. The hall at night with F-1 vast; the atom plates (orbits, grid, light); the spiralling air field, arcs and flame, aura and lightning; F-1's hulk; F-2 with rings and memories; the ball of forces, the ruler, the guinea pig cage in the pale beam; dawn on the rock with tiny machines streaming up. Dark but legible."
   },
   {
    "id": "ch05.sync",
    "area": "film",
    "title": "Chapter 5: picture against sound",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the lab's piers are solid, as in chapter 3, so the screens' frames no longer show through them (find.ch03-piers); sound unchanged, -14.5 LUFS. Cuts on cue words (F-1 on 'Roal--your thoughts', 'Roal sat up', the plate on 'Hydrogen'); Whisper timing -0.12 s median."
+   "note": "On the draft with the fifteenth round's fixes: the camera goes in on C-R-U-1 as its name glows on, so the name reads at phone size, with F-2 wholly out of frame (find.ch05-cru1-name); sound unchanged, -14.5 LUFS. Cuts on cue words (F-1 on 'Roal--your thoughts', 'Roal sat up', the plate on 'Hydrogen'); Whisper timing -0.12 s median."
   },
   {
    "id": "ch05.sound",
    "area": "film",
    "title": "Chapter 5: the sound",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the lab's piers are solid, as in chapter 3, so the screens' frames no longer show through them (find.ch03-piers); sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 3.8; the quiet shots C, D, H, I and AH are pauses, their speech -14.1 to -14.7; Whisper lost 12 of 1107 (names, coinages, 'asked')."
+   "note": "On the draft with the fifteenth round's fixes: the camera goes in on C-R-U-1 as its name glows on, so the name reads at phone size, with F-2 wholly out of frame (find.ch05-cru1-name); sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 3.8; the quiet shots C, D, H, I and AH are pauses, their speech -14.1 to -14.7; Whisper lost 12 of 1107 (names, coinages, 'asked')."
   },
   {
    "id": "ch05.story",
    "area": "film",
    "title": "Chapter 5: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the lab's piers are solid, as in chapter 3, so the screens' frames no longer show through them (find.ch03-piers); sound unchanged, -14.5 LUFS. 9:03: Roal thinks out the hydrogen wall; F-1 builds its successor and is unmade by it; F-2 makes the ruler, tests the green beam on a guinea pig, and the machines build outward. The pilot still holds as the standard."
+   "note": "On the draft with the fifteenth round's fixes: the camera goes in on C-R-U-1 as its name glows on, so the name reads at phone size, with F-2 wholly out of frame (find.ch05-cru1-name); sound unchanged, -14.5 LUFS. 9:03: Roal thinks out the hydrogen wall; F-1 builds its successor and is unmade by it; F-2 makes the ruler, tests the green beam on a guinea pig, and the machines build outward. The pilot still holds as the standard."
   },
   {
    "id": "ch05.draft",
    "area": "film",
    "title": "Chapter 5: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch05-draft-7b9e3e9f.mp4, -14.5 LUFS, peak -1.9 dBTP"
+   "note": "ch05-draft-a04b65d9.mp4, -14.5 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch00.acting",
@@ -183,42 +183,42 @@
    "area": "film",
    "title": "Chapter 1: the acting",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the population curve falls almost to a drawn base line for zero, in a heavier, lighter stroke (find.ch01-population); sound unchanged, -14.4 LUFS. Pairs trade talk on the walkways, the crate hand-off and the hander rising back to work, the runners, the mock battle; at the close the man and the machine walk off together, in step, through clear ground."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon); sound unchanged, -14.4 LUFS. Pairs trade talk on the walkways, the crate hand-off and the hander rising back to work, the runners, the mock battle; at the close the man and the machine walk off together, in step, through clear ground."
   },
   {
    "id": "ch01.picture",
    "area": "film",
    "title": "Chapter 1: the picture",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the population curve falls almost to a drawn base line for zero, in a heavier, lighter stroke (find.ch01-population); sound unchanged, -14.4 LUFS. The history hall, the city of towers and walkways, the numbers, the explorers; the two minds as a head and a sphere, the curved leap landing in a soft haze against the machine's stair of steps, the waves; the close on the plain under the towers. Reads at sheet size."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon); sound unchanged, -14.4 LUFS. The history hall, the city of towers and walkways, the numbers, the explorers; the two minds as a head and a sphere, the curved leap landing in a soft haze against the machine's stair of steps, the waves; the close on the plain under the towers. Reads at sheet size."
   },
   {
    "id": "ch01.sync",
    "area": "film",
    "title": "Chapter 1: picture against sound",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the population curve falls almost to a drawn base line for zero, in a heavier, lighter stroke (find.ch01-population); sound unchanged, -14.4 LUFS. Ear, Eye and Brain arrive as they are named; cuts and cues land on their words; Whisper timing -0.12 s median."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon); sound unchanged, -14.4 LUFS. Ear, Eye and Brain arrive as they are named; cuts and cues land on their words; Whisper timing -0.12 s median."
   },
   {
    "id": "ch01.sound",
    "area": "film",
    "title": "Chapter 1: the sound",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the population curve falls almost to a drawn base line for zero, in a heavier, lighter stroke (find.ch01-population); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS integrated, LRA 3.3, shots -14.1 to -17.2 (the quiet ones are pauses); Whisper lost 6 of 455 words, all 'twenty hundred' heard as digits."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS integrated, LRA 3.3, shots -14.1 to -17.2 (the quiet ones are pauses); Whisper lost 6 of 455 words, all 'twenty hundred' heard as digits."
   },
   {
    "id": "ch01.story",
    "area": "film",
    "title": "Chapter 1: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the population curve falls almost to a drawn base line for zero, in a heavier, lighter stroke (find.ch01-population); sound unchanged, -14.4 LUFS. Man's history to 2,000,000, the city where man and machine live together, the two kinds of mind (the leap of intuition against the logical stair), and the partnership as the chapter's close. Clear setup for what follows."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon); sound unchanged, -14.4 LUFS. Man's history to 2,000,000, the city where man and machine live together, the two kinds of mind (the leap of intuition against the logical stair), and the partnership as the chapter's close. Clear setup for what follows."
   },
   {
    "id": "ch01.draft",
    "area": "film",
    "title": "Chapter 1: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch01-draft-28ac681c.mp4, -14.4 LUFS, peak -2.3 dBTP"
+   "note": "ch01-draft-b1654f59.mp4, -14.4 LUFS, peak -2.3 dBTP"
   },
   {
    "id": "ch02.acting",
@@ -267,126 +267,126 @@
    "area": "film",
    "title": "Chapter 3: the acting",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the lab's piers are solid, and Roal's thought-curl rises up and to the left over the window instead of down the pier (find.ch03-piers); sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon), over the green points of death and in the planets' row; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
   },
   {
    "id": "ch03.picture",
    "area": "film",
    "title": "Chapter 3: the picture",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the lab's piers are solid, and Roal's thought-curl rises up and to the left over the window instead of down the pier (find.ch03-piers); sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon), over the green points of death and in the planets' row; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
   },
   {
    "id": "ch03.sync",
    "area": "film",
    "title": "Chapter 3: picture against sound",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the lab's piers are solid, and Roal's thought-curl rises up and to the left over the window instead of down the pier (find.ch03-piers); sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon), over the green points of death and in the planets' row; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
   },
   {
    "id": "ch03.sound",
    "area": "film",
    "title": "Chapter 3: the sound",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the lab's piers are solid, and Roal's thought-curl rises up and to the left over the window instead of down the pier (find.ch03-piers); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon), over the green points of death and in the planets' row; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
   },
   {
    "id": "ch03.story",
    "area": "film",
    "title": "Chapter 3: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the lab's piers are solid, and Roal's thought-curl rises up and to the left over the window instead of down the pier (find.ch03-piers); sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon), over the green points of death and in the planets' row; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
   },
   {
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch03-draft-8cd471e1.mp4, -14.4 LUFS, peak -2 dBTP"
+   "note": "ch03-draft-c27628d4.mp4, -14.4 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch04.acting",
    "area": "film",
    "title": "Chapter 4: the acting",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the lab's piers are solid, as in chapter 3, so the screens' frames no longer show through them (find.ch03-piers); sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
+   "note": "On the draft with the fifteenth round's fixes: the push on the memory-units goes in to 1.75, so Roal and Trest are out of frame, not sliced by its edges (find.ch04-watchers-cut); sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
   },
   {
    "id": "ch04.picture",
    "area": "film",
    "title": "Chapter 4: the picture",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the lab's piers are solid, as in chapter 3, so the screens' frames no longer show through them (find.ch03-piers); sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
+   "note": "On the draft with the fifteenth round's fixes: the push on the memory-units goes in to 1.75, so Roal and Trest are out of frame, not sliced by its edges (find.ch04-watchers-cut); sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
   },
   {
    "id": "ch04.sync",
    "area": "film",
    "title": "Chapter 4: picture against sound",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the lab's piers are solid, as in chapter 3, so the screens' frames no longer show through them (find.ch03-piers); sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
+   "note": "On the draft with the fifteenth round's fixes: the push on the memory-units goes in to 1.75, so Roal and Trest are out of frame, not sliced by its edges (find.ch04-watchers-cut); sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
   },
   {
    "id": "ch04.sound",
    "area": "film",
    "title": "Chapter 4: the sound",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the lab's piers are solid, as in chapter 3, so the screens' frames no longer show through them (find.ch03-piers); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
+   "note": "On the draft with the fifteenth round's fixes: the push on the memory-units goes in to 1.75, so Roal and Trest are out of frame, not sliced by its edges (find.ch04-watchers-cut); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
   },
   {
    "id": "ch04.story",
    "area": "film",
    "title": "Chapter 4: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the lab's piers are solid, as in chapter 3, so the screens' frames no longer show through them (find.ch03-piers); sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
+   "note": "On the draft with the fifteenth round's fixes: the push on the memory-units goes in to 1.75, so Roal and Trest are out of frame, not sliced by its edges (find.ch04-watchers-cut); sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
   },
   {
    "id": "ch04.draft",
    "area": "film",
    "title": "Chapter 4: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch04-draft-b9c6d2dd.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "note": "ch04-draft-287a32dd.mp4, -14.4 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch06.acting",
    "area": "film",
    "title": "Chapter 6: the acting",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the Denver screens stay lit until 'blank' and go dark on it (find.ch06-blank), shot G pulls back over the fleet (find.ch06-shotg), and the lab's piers are solid, as in chapter 3, so the screens' frames no longer show through them (find.ch03-piers); sound unchanged, -14.4 LUFS. The fleets as actors: the giants advance in ranks, the screens flare violet then red, the generator crews feed their machines, the motes swing their rays back plainly green into the giants, and the dying ships tip and fall away."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon), and the screens take each colour on its word (find.ch06-colours-early); sound unchanged, -14.4 LUFS. The fleets as actors: the giants advance in ranks, the screens flare violet then red, the generator crews feed their machines, the motes swing their rays back plainly green into the giants, and the dying ships tip and fall away."
   },
   {
    "id": "ch06.picture",
    "area": "film",
    "title": "Chapter 6: the picture",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the Denver screens stay lit until 'blank' and go dark on it (find.ch06-blank), shot G pulls back over the fleet (find.ch06-shotg), and the lab's piers are solid, as in chapter 3, so the screens' frames no longer show through them (find.ch03-piers); sound unchanged, -14.4 LUFS. Dawn over the plain with the machines rising, the ranks of giants, shields violet to red, the generator room, the turned green rays, dying ships drifting dark, the curtain, Earth pole to pole, the streak. Reads at sheet size."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon), and the screens take each colour on its word (find.ch06-colours-early); sound unchanged, -14.4 LUFS. Dawn over the plain with the machines rising, the ranks of giants, shields violet to red, the generator room, the turned green rays, dying ships drifting dark, the curtain, Earth pole to pole, the streak. Reads at sheet size."
   },
   {
    "id": "ch06.sync",
    "area": "film",
    "title": "Chapter 6: picture against sound",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the Denver screens stay lit until 'blank' and go dark on it (find.ch06-blank), shot G pulls back over the fleet (find.ch06-shotg), and the lab's piers are solid, as in chapter 3, so the screens' frames no longer show through them (find.ch03-piers); sound unchanged, -14.4 LUFS. The blank screens land on 'went suddenly blank'; the green rays turn on their line; cuts on cue words."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon), and the screens take each colour on its word (find.ch06-colours-early); sound unchanged, -14.4 LUFS. The blank screens land on 'went suddenly blank'; the green rays turn on their line; cuts on cue words."
   },
   {
    "id": "ch06.sound",
    "area": "film",
    "title": "Chapter 6: the sound",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the Denver screens stay lit until 'blank' and go dark on it (find.ch06-blank), shot G pulls back over the fleet (find.ch06-shotg), and the lab's piers are solid, as in chapter 3, so the screens' frames no longer show through them (find.ch03-piers); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.6, shots -14.4 to -17.8; Whisper lost 17 of 584 ('ten thousand', 'motes', numbers)."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon), and the screens take each colour on its word (find.ch06-colours-early); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.6, shots -14.4 to -17.8; Whisper lost 17 of 584 ('ten thousand', 'motes', numbers)."
   },
   {
    "id": "ch06.story",
    "area": "film",
    "title": "Chapter 6: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: the Denver screens stay lit until 'blank' and go dark on it (find.ch06-blank), shot G pulls back over the fleet (find.ch06-shotg), and the lab's piers are solid, as in chapter 3, so the screens' frames no longer show through them (find.ch03-piers); sound unchanged, -14.4 LUFS. The second war's turn: the giants come in force, the shields fail, and the motes turn the enemy's own death ray, the chapter's hinge, clearly shown; the curtain closes Earth."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon), and the screens take each colour on its word (find.ch06-colours-early); sound unchanged, -14.4 LUFS. The second war's turn: the giants come in force, the shields fail, and the motes turn the enemy's own death ray, the chapter's hinge, clearly shown; the curtain closes Earth."
   },
   {
    "id": "ch06.draft",
    "area": "film",
    "title": "Chapter 6: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch06-draft-3420dabc.mp4, -14.4 LUFS, peak -2.2 dBTP"
+   "note": "ch06-draft-4ce85bb5.mp4, -14.4 LUFS, peak -2.2 dBTP"
   },
   {
    "id": "ch07.acting",
@@ -477,42 +477,42 @@
    "area": "film",
    "title": "Chapter 9: the acting",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: Trest comes out of the sinking dome first and stays ahead, clear of the broken piers, now on the dome's far side (find.ch09-hidden); sound unchanged, -14.4 LUFS. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
+   "note": "On the draft with the fifteenth round's fixes: shot K pushes in on the golden sphere for its golden light and violet halo, to the framing L takes up (find.ch09-sphere-speck); sound unchanged, -14.4 LUFS. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
   },
   {
    "id": "ch09.picture",
    "area": "film",
    "title": "Chapter 9: the picture",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: Trest comes out of the sinking dome first and stays ahead, clear of the broken piers, now on the dome's far side (find.ch09-hidden); sound unchanged, -14.4 LUFS. Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
+   "note": "On the draft with the fifteenth round's fixes: shot K pushes in on the golden sphere for its golden light and violet halo, to the framing L takes up (find.ch09-sphere-speck); sound unchanged, -14.4 LUFS. Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
   },
   {
    "id": "ch09.sync",
    "area": "film",
    "title": "Chapter 9: picture against sound",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: Trest comes out of the sinking dome first and stays ahead, clear of the broken piers, now on the dome's far side (find.ch09-hidden); sound unchanged, -14.4 LUFS. The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
+   "note": "On the draft with the fifteenth round's fixes: shot K pushes in on the golden sphere for its golden light and violet halo, to the framing L takes up (find.ch09-sphere-speck); sound unchanged, -14.4 LUFS. The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
   },
   {
    "id": "ch09.sound",
    "area": "film",
    "title": "Chapter 9: the sound",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: Trest comes out of the sinking dome first and stays ahead, clear of the broken piers, now on the dome's far side (find.ch09-hidden); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
+   "note": "On the draft with the fifteenth round's fixes: shot K pushes in on the golden sphere for its golden light and violet halo, to the framing L takes up (find.ch09-sphere-speck); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
   },
   {
    "id": "ch09.story",
    "area": "film",
    "title": "Chapter 9: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the fourteenth round's fixes: Trest comes out of the sinking dome first and stays ahead, clear of the broken piers, now on the dome's far side (find.ch09-hidden); sound unchanged, -14.4 LUFS. 5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
+   "note": "On the draft with the fifteenth round's fixes: shot K pushes in on the golden sphere for its golden light and violet halo, to the framing L takes up (find.ch09-sphere-speck); sound unchanged, -14.4 LUFS. 5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
   },
   {
    "id": "ch09.draft",
    "area": "film",
    "title": "Chapter 9: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch09-draft-168e5443.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "note": "ch09-draft-04df32bc.mp4, -14.4 LUFS, peak -2.2 dBTP"
   },
   {
    "id": "ch10.acting",
@@ -561,42 +561,42 @@
    "area": "film",
    "title": "Chapter 11: the acting",
    "state": "pass",
-   "note": "On the draft with the tenth round's fixes: the page's excerpt ends in dots; picture unchanged; sound unchanged, -14.4 LUFS. The fleet leaves; F-2 works with the metal sheets; F-2 alone in the dark; the page turns to the narrator's words."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon), in the old-Earth shot and the orbit; sound unchanged, -14.4 LUFS. The fleet leaves; F-2 works with the metal sheets; F-2 alone in the dark; the page turns to the narrator's words."
   },
   {
    "id": "ch11.picture",
    "area": "film",
    "title": "Chapter 11: the picture",
    "state": "pass",
-   "note": "On the draft with the tenth round's fixes: the page's excerpt ends in dots; picture unchanged; sound unchanged, -14.4 LUFS. The fleet leaving, the system of beings among the galaxies, F-2 with its sheets, the tunnel of light, F-2 alone, the page with its drop capitals, THE END. Reads at sheet size."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon), in the old-Earth shot and the orbit; sound unchanged, -14.4 LUFS. The fleet leaving, the system of beings among the galaxies, F-2 with its sheets, the tunnel of light, F-2 alone, the page with its drop capitals, THE END. Reads at sheet size."
   },
   {
    "id": "ch11.sync",
    "area": "film",
    "title": "Chapter 11: picture against sound",
    "state": "pass",
-   "note": "On the draft with the tenth round's fixes: the page's excerpt ends in dots; picture unchanged; sound unchanged, -14.4 LUFS. The page lines appear as they are read; THE END after the last line."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon), in the old-Earth shot and the orbit; sound unchanged, -14.4 LUFS. The page lines appear as they are read; THE END after the last line."
   },
   {
    "id": "ch11.sound",
    "area": "film",
    "title": "Chapter 11: the sound",
    "state": "pass",
-   "note": "On the draft with the tenth round's fixes: the page's excerpt ends in dots; picture unchanged; sound unchanged, -14.4 LUFS, speech still on top and clear. Shot F at -15.0, shot I at -14.7; integrated within the film's -14.4 to -14.5; Whisper lost 0 of 294."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon), in the old-Earth shot and the orbit; sound unchanged, -14.4 LUFS, speech still on top and clear. Shot F at -15.0, shot I at -14.7; integrated within the film's -14.4 to -14.5; Whisper lost 0 of 294."
   },
   {
    "id": "ch11.story",
    "area": "film",
    "title": "Chapter 11: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the tenth round's fixes: the page's excerpt ends in dots; picture unchanged; sound unchanged, -14.4 LUFS. The coda: the machines go out to the stars, F-2 sets down the record on metal, and the narrator's closing words leave the reader to believe as they will. The film ends where the story does."
+   "note": "On the draft with the fifteenth round's fixes: Earth has a slate sea, ochre land and cloud, so it no longer reads as the Moon (find.earth-moon), in the old-Earth shot and the orbit; sound unchanged, -14.4 LUFS. The coda: the machines go out to the stars, F-2 sets down the record on metal, and the narrator's closing words leave the reader to believe as they will. The film ends where the story does."
   },
   {
    "id": "ch11.draft",
    "area": "film",
    "title": "Chapter 11: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch11-draft-7fe8512d.mp4, -14.4 LUFS, peak -2.3 dBTP"
+   "note": "ch11-draft-85fc8c2d.mp4, -14.4 LUFS, peak -2.3 dBTP"
   },
   {
    "id": "work.sheets",
@@ -624,21 +624,21 @@
    "area": "site",
    "title": "The home page: how it looks and works",
    "state": "pass",
-   "note": "Rechecked at 375 after the thirteenth round (out/quality/phone/home.jpg): the masthead and the reworded lines wrap cleanly, no overflow. the reworded lines wrap cleanly, no overflow; the phone check passes. Re-checked at 375 after the second round (out/quality/phone, fonts loaded): no overflow; only wording changed. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-checked at 375 and 1280 after the kicker and stylesheet changes; nav on one line, no overflow."
+   "note": "Rechecked at 375 after the fifteenth round (out/quality/phone): the stylesheet's only change keeps the small-caps kicker ragged-right and unhyphenated, as .story p had overridden it; the page lays out as before, no overflow. the masthead and the reworded lines wrap cleanly, no overflow. the reworded lines wrap cleanly, no overflow; the phone check passes. Re-checked at 375 after the second round (out/quality/phone, fonts loaded): no overflow; only wording changed. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-checked at 375 and 1280 after the kicker and stylesheet changes; nav on one line, no overflow."
   },
   {
    "id": "site.watch.content",
    "area": "site",
    "title": "The film page (annotated): what it says",
    "state": "pass",
-   "note": "Rechecked after the fourteenth round: only the chapter videos' links changed (new drafts of chapters 1, 3, 4, 5, 6, 7 and 9, the same lengths, so every chapter start and note time holds). only the chapter videos' links changed (new drafts of chapters 3, 5, 6, 7, 8, 9 and 10). only the chapter videos' links changed (new drafts of chapters 2, 4, 5, 8 and 9, the same lengths, so every chapter start and note time holds); the phone check passes. the draft box says each chapter has passed its checks and fresh reviews go on until two in a row find none; chapter 3 and the film page say Mercury to Pluto; the new drafts of chapters 1-5, 7 and 8 are linked. Rechecked after the tenth round: the film page and chapter 3's page have the torpedoes right, chapter 5's page no longer calls the draft simple, excerpts end in dots where the sentence goes on, and every chapter page embeds its new draft."
+   "note": "Rechecked after the fifteenth round: only the chapter videos' links changed (new drafts of chapters 1, 3, 4, 5, 6, 9 and 11, the same lengths, so every chapter start and note time holds). only the chapter videos' links changed (new drafts of chapters 1, 3, 4, 5, 6, 7 and 9, the same lengths, so every chapter start and note time holds). only the chapter videos' links changed (new drafts of chapters 3, 5, 6, 7, 8, 9 and 10). only the chapter videos' links changed (new drafts of chapters 2, 4, 5, 8 and 9, the same lengths, so every chapter start and note time holds); the phone check passes. the draft box says each chapter has passed its checks and fresh reviews go on until two in a row find none; chapter 3 and the film page say Mercury to Pluto; the new drafts of chapters 1-5, 7 and 8 are linked. Rechecked after the tenth round: the film page and chapter 3's page have the torpedoes right, chapter 5's page no longer calls the draft simple, excerpts end in dots where the sentence goes on, and every chapter page embeds its new draft."
   },
   {
    "id": "site.watch.look",
    "area": "site",
    "title": "The film page (annotated): how it looks and works",
    "state": "pass",
-   "note": "Rechecked after the fourteenth round: only the chapter videos' links changed (new drafts of chapters 1, 3, 4, 5, 6, 7 and 9); the page lays out as before. only the chapter videos' links changed (new drafts of chapters 3, 5, 6, 7, 8, 9 and 10); the page lays out as before. only the chapter videos' links changed (new drafts of chapters 2, 4, 5, 8 and 9, the same lengths, so every chapter start and note time holds); the phone check passes. the draft box and the new drafts posters and players lay out as before at 375; the phone check passes. Rechecked after the tenth round: the chapter pages and film page show the new drafts' posters and players as before; nothing in the layout changed."
+   "note": "Rechecked after the fifteenth round: only the chapter videos' links changed (new drafts of chapters 1, 3, 4, 5, 6, 9 and 11, the same lengths, so every chapter start and note time holds); the page lays out as before. only the chapter videos' links changed (new drafts of chapters 1, 3, 4, 5, 6, 7 and 9); the page lays out as before. only the chapter videos' links changed (new drafts of chapters 3, 5, 6, 7, 8, 9 and 10); the page lays out as before. only the chapter videos' links changed (new drafts of chapters 2, 4, 5, 8 and 9, the same lengths, so every chapter start and note time holds); the phone check passes. the draft box and the new drafts posters and players lay out as before at 375; the phone check passes. Rechecked after the tenth round: the chapter pages and film page show the new drafts' posters and players as before; nothing in the layout changed."
   },
   {
    "id": "site.read.content",
@@ -652,7 +652,7 @@
    "area": "site",
    "title": "The Read page: how it looks and works",
    "state": "pass",
-   "note": "Re-checked at 375 after the third round (out/quality/phone): no overflow; only wording changed. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
+   "note": "Rechecked at 375 after the fifteenth round (out/quality/phone): the stylesheet's only change keeps the small-caps kicker ragged-right and unhyphenated, as .story p had overridden it; the page lays out as before, no overflow. Re-checked at 375 after the third round (out/quality/phone): no overflow; only wording changed. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
   },
   {
    "id": "site.notes.content",
@@ -666,7 +666,7 @@
    "area": "site",
    "title": "The notes index: how it looks and works",
    "state": "pass",
-   "note": "Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
+   "note": "Rechecked at 375 after the fifteenth round (out/quality/phone): the stylesheet's only change keeps the small-caps kicker ragged-right and unhyphenated, as .story p had overridden it; the page lays out as before, no overflow. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
   },
   {
    "id": "site.science.content",
@@ -680,7 +680,7 @@
    "area": "site",
    "title": "The science notes: how it looks and works",
    "state": "pass",
-   "note": "Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
+   "note": "Rechecked at 375 after the fifteenth round (out/quality/phone): the stylesheet's only change keeps the small-caps kicker ragged-right and unhyphenated, as .story p had overridden it; the page lays out as before, no overflow. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
   },
   {
    "id": "site.succession.content",
@@ -694,7 +694,7 @@
    "area": "site",
    "title": "The succession notes: how it looks and works",
    "state": "pass",
-   "note": "Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
+   "note": "Rechecked at 375 after the fifteenth round (out/quality/phone): the stylesheet's only change keeps the small-caps kicker ragged-right and unhyphenated, as .story p had overridden it; the page lays out as before, no overflow. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
   },
   {
    "id": "site.history.content",
@@ -708,7 +708,7 @@
    "area": "site",
    "title": "The history notes: how it looks and works",
    "state": "pass",
-   "note": "Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
+   "note": "Rechecked at 375 after the fifteenth round (out/quality/phone): the stylesheet's only change keeps the small-caps kicker ragged-right and unhyphenated, as .story p had overridden it; the page lays out as before, no overflow. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
   },
   {
    "id": "site.factcheck.content",
@@ -722,7 +722,7 @@
    "area": "site",
    "title": "The fact-check list: how it looks and works",
    "state": "pass",
-   "note": "Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-checked at 375: source titles wrap within their column, all three columns visible, no sideways scroll."
+   "note": "Rechecked at 375 after the fifteenth round (out/quality/phone): the stylesheet's only change keeps the small-caps kicker ragged-right and unhyphenated, as .story p had overridden it; the page lays out as before, no overflow. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-checked at 375: source titles wrap within their column, all three columns visible, no sideways scroll."
   },
   {
    "id": "site.about.content",
@@ -736,7 +736,7 @@
    "area": "site",
    "title": "The About page: how it looks and works",
    "state": "pass",
-   "note": "Re-checked at 375 after the second round (out/quality/phone, fonts loaded): no overflow; only wording changed. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
+   "note": "Rechecked at 375 after the fifteenth round (out/quality/phone): the stylesheet's only change keeps the small-caps kicker ragged-right and unhyphenated, as .story p had overridden it; the page lays out as before, no overflow. Re-checked at 375 after the second round (out/quality/phone, fonts loaded): no overflow; only wording changed. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
   },
   {
    "id": "site.review.content",
@@ -750,7 +750,7 @@
    "area": "site",
    "title": "The Review page: how it looks and works",
    "state": "pass",
-   "note": "Re-checked at 375 after the second round (out/quality/phone, fonts loaded): no overflow; only wording changed. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
+   "note": "Rechecked at 375 after the fifteenth round (out/quality/phone): the stylesheet's only change keeps the small-caps kicker ragged-right and unhyphenated, as .story p had overridden it; the page lays out as before, no overflow. Re-checked at 375 after the second round (out/quality/phone, fonts loaded): no overflow; only wording changed. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
   },
   {
    "id": "later.qr",
@@ -2102,14 +2102,51 @@
    "title": "The phone screenshots",
    "state": "pass",
    "note": "Retaken after the fourteenth round's re-passes, with the site rebuilt from the current scorecard: out/quality/phone/review_quality.jpg shows 72 of 72 film checks and 20 of 20 site checks, as the built page says."
+  },
+  {
+   "id": "find.earth-moon",
+   "area": "finding",
+   "title": "Chapters 1, 3, 6 and 11: Earth drawn like the Moon",
+   "state": "pass",
+   "note": "Fixed: Earth is drawn with a slate sea, ochre land, cloud and a soft night side in chapters 1, 3, 6 and 11, and stands apart from the grey planets in chapter 3's row; checked on the new drafts (ch03 4:22-4:43 and 1:31-1:47, ch06 4:13-4:41, ch11 1:03-1:08, ch01 1:59-2:11)."
+  },
+  {
+   "id": "find.ch09-sphere-speck",
+   "area": "finding",
+   "title": "Chapter 9: the golden sphere a speck",
+   "state": "pass",
+   "note": "Fixed: shot K pushes in on the golden sphere as the narration gives its golden light and violet halo, to the framing L takes up; checked on the new draft (3:29-4:00)."
+  },
+  {
+   "id": "find.ch04-watchers-cut",
+   "area": "finding",
+   "title": "Chapter 4: the watchers cut by the frame's edges",
+   "state": "pass",
+   "note": "Fixed: the push on the memory-units goes to 1.75, so Roal and Trest are out of frame, not sliced by its edges; checked on the new draft (3:44-4:04)."
+  },
+  {
+   "id": "find.ch05-cru1-name",
+   "area": "finding",
+   "title": "Chapter 5: C-R-U-1's name small at phone size",
+   "state": "pass",
+   "note": "Fixed: the camera goes in on C-R-U-1 as its name glows on, so the name is several times larger and F-2 is wholly out of frame; checked on the new draft (7:46-7:54)."
+  },
+  {
+   "id": "find.ch06-colours-early",
+   "area": "finding",
+   "title": "Chapter 6: the screens' colours ahead of their words",
+   "state": "pass",
+   "note": "Fixed: violet, blue, orange and red each come on their words (blue keyed from 'then blue', since 'blue' alone found the line's 'blue-white' sun); checked on the new draft at 0.5 s steps (1:11-1:16)."
+  },
+  {
+   "id": "find.read-hyphen",
+   "area": "finding",
+   "title": "The Read page: 'read-ings' at phone width",
+   "state": "pass",
+   "note": "The kicker's rule now outranks .story p (whose justify and hyphens won before); at 375 it breaks '16 / readings from 1932 restored', unhyphenated and ragged-right (out/quality/phone/read.jpg, retaken)."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-10 05:17",
-   "found": 7,
-   "note": "Twelfth round: no majors. Minor: ch09 the sphere's attack and F-2's dodge too brief to land; ch02 footnote 1 too small at phone size; ch09 the men show through the ruins' rock; ch08 shot D leaves Roal off to the right with the left half empty. Nits: ch05 F-2 mostly out of frame while C-R-U-1 speaks; figures cut by the frame edge in ch04 and ch02; ch08's first line louder than its neighbours. The makers' text on the quality page stays, inside its 'For the makers' fold."
-  },
   {
    "when": "2026-11-10 11:02",
    "found": 10,
@@ -2119,6 +2156,11 @@
    "when": "2026-11-10 22:28",
    "found": 9,
    "note": "Fourteenth round: 9 found, no majors (2 minor, 7 nits); the foreword's 'Every word of it is spoken, in order' left for Curt (curt.foreword)."
+  },
+  {
+   "when": "2026-11-11 10:51",
+   "found": 6,
+   "note": "Fifteenth round: 6 found, no majors (2 minor: Earth drawn like the Moon; the golden sphere a speck; 4 nits: ch04 watchers cut by the edges, C-R-U-1's name small at phone size, ch06's colours ahead of their words, 'read-ings' on the Read page)."
   }
  ]
 }
