@@ -1359,6 +1359,36 @@ items:
     note: "Retaken after the fourteenth round's re-passes, with the site rebuilt from the current scorecard: out/quality/phone/review_quality.jpg shows 72 of 72 film checks and 20 of 20 site checks, as the built page says."
     title: The phone screenshots
     when: 2026-11-11 10:28
+  find.earth-moon:
+    state: open
+    note: "Fifteenth round, minor: Earth was a plain grey mottled disc, like Luna; in chapter 3 the narration over it never names Earth, so the green points of death could read as on the Moon (ch03 4:22-4:43, ch06 4:13-4:41, ch11 1:03-1:08)."
+    title: "Chapters 1, 3, 6 and 11: Earth drawn like the Moon"
+    when: 2026-11-11 10:51
+  find.ch09-sphere-speck:
+    state: open
+    note: "Fifteenth round, minor: for about 25 s (3:29-3:56) the shot holds wide on the plant with the sphere a 20 px gold dot, while the narration describes its irregular golden light and violet halo; board K asks for the camera to go from the men up to the sphere."
+    title: "Chapter 9: the golden sphere a speck"
+    when: 2026-11-11 10:51
+  find.ch04-watchers-cut:
+    state: open
+    note: "Fifteenth round, nit: during the push on the new dome-case (3:44-4:04) Roal and Trest stand sliced by the left and right edges for about 20 s."
+    title: "Chapter 4: the watchers cut by the frame's edges"
+    when: 2026-11-11 10:51
+  find.ch05-cru1-name:
+    state: open
+    note: "Fifteenth round, nit: the dull-gold C-R-U-1 on the cream cylinder (7:47-7:56) is about 26 px across at 375 wide, and low in contrast."
+    title: "Chapter 5: C-R-U-1's name small at phone size"
+    when: 2026-11-11 10:51
+  find.ch06-colours-early:
+    state: open
+    note: "Fifteenth round, nit: violet, blue, orange and red each come 0.3-0.8 s before their words (1:12-1:16)."
+    title: "Chapter 6: the screens' colours ahead of their words"
+    when: 2026-11-11 10:51
+  find.read-hyphen:
+    state: pass
+    note: The kicker's rule now outranks .story p (whose justify and hyphens won before); at 375 it breaks '16 / readings from 1932 restored', unhyphenated and ragged-right (out/quality/phone/read.jpg, retaken).
+    title: "The Read page: 'read-ings' at phone width"
+    when: 2026-11-11 10:52
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1420,4 +1450,8 @@ fresh:
     found: 9
     note: "Fourteenth round: 9 found, no majors (2 minor, 7 nits); the foreword's 'Every word of it is spoken, in order' left for Curt (curt.foreword)."
     state: 67704b25a130
-since_fresh: 46
+  - when: 2026-11-11 10:51
+    found: 6
+    note: "Fifteenth round: 6 found, no majors (2 minor: Earth drawn like the Moon; the golden sphere a speck; 4 nits: ch04 watchers cut by the edges, C-R-U-1's name small at phone size, ch06's colours ahead of their words, 'read-ings' on the Read page)."
+    state: 15c0910cc1e7
+since_fresh: 1
