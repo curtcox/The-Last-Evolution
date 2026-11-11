@@ -86,10 +86,12 @@
       [C('p122.1:C-R-U-1 joined him') - 2, [PX - 490, RG - 110, 1.7], 2.5],   // in on C-R-U-1 floating in beside F-2, its gold name readable
       [C('p122.1:red glory of the sun') - .5, tt => [lerp(PX - 300, PX + 350, ez(tt, C('p122.1:red glory of the sun') - .5, tK)), lerp(760, 680, ez(tt, C('p122.1:red glory of the sun'), tK)), lerp(1.3, .95, ez(tt, C('p122.1:red glory of the sun') - .5, tK))], 3],   // round, so the red sun rises behind them
       // K: in on the dome as it parts and the two men walk out of it, held while they come; then up to the globe above the
-      // plant, wide, so the glow shows
+      // plant, wide, so the glow shows; then in on it for its golden light and violet halo (held wide, it was a speck), to
+      // the framing L takes up
       [tK, tt => { const tApp = C('p123.1:Roal and Trest appeared'), up = ez(tt, tApp + 3.5, tGold + 2);
-        return [lerp(lerp(350, 215, ez(tt, tK, tApp)), PX, up),   // (at 150 F-2's nose was cut by the right edge as they came out)
-           lerp(800, ORB[1] + 260, up), lerp(lerp(1, 1.3, ez(tt, tK, tApp)), .75, up) * lerp(1, 1.5, ez(tt, tGold + 3, tL))]; }, 3],
+        const inn = ez(tt, tGold + 2, C('p123.1:deep violet') + 1);
+        return [lerp(lerp(lerp(350, 215, ez(tt, tK, tApp)), PX, up), PX, inn),   // (at 150 F-2's nose was cut by the right edge as they came out)
+           lerp(lerp(800, ORB[1] + 260, up), ORB[1], inn), lerp(lerp(lerp(1, 1.3, ez(tt, tK, tApp)), .75, up) * lerp(1, 1.5, ez(tt, tGold + 3, tL)), 2.6, inn)]; }, 3],
       [tL, tt => [PX, ORB[1], lerp(2.6, 3.4, ez(tt, tL, tM))], 2.5], [tM, tt => [PX - 100 * ez(tt, tRuby + 2, tN), lerp(ORB[1], 300, ez(tt, tRuby + 2, tN)), lerp(3.4, .7, ez(tt, tRuby + 2, lerp(tRuby + 2, tN, .5)))], 3],   // close on the sphere, now sized to the words, so its violet halo and the ruby flame read
       // in close on the two men as the warmth shoots through them, their last time on screen (at 25 px they were specks)
       [C('p126.1:there shot through') - .4, tt => [lerp(470, 500, ez(tt, C('p126.1:there shot through'), tN)), 800, lerp(2.2, 2.4, ez(tt, C('p126.1:there shot through'), tN))], 1.6],
