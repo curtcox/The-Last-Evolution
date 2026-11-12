@@ -28,7 +28,7 @@
     const x56 = DES.x5638(lerp(P.x5638, F[1].x, F[1].k), G, F[1].s, t, { lit: lit(t, 'x5638'), hover: hov(F[1], 1.5 + .8 * win(t, T0('B'), T0('D'), 1, 1.5)), face: look('x5638') * .8, reach: 4.2 + 1.2 * win(t, C('p039.1:I noticed'), T0('E'), .5, 1), weave: win(t, C('p039.1:weaving tentacles') - .4, T0('E'), .4, 1) });
     // 'and your force-beams': a pale beam plays out from it
     { const fb = win(t, C('p039.1:force-beams') - .2, T0('E'), .3, .8); if (fb > 0) beam(x56.eye[0] - 10, x56.eye[1] - 10, x56.eye[0] - 120 + 60 * Math.sin(t * 2), x56.eye[1] - 320, 4, 16, FORCE, fb, { washOp: 90, a: .7, splash: false }); }
-    if (F[2].k < 1) DES.x6349(lerp(P.x6349, F[2].x, F[2].k), G, F[2].s, t, { lit: lit(t, 'x6349'), hover: hov(F[2], 1.5 + .3 * x66), face: look('x6349') * .8 });
+    if (F[2].k < 1) DES.x6349(lerp(P.x6349, F[2].x, F[2].k), G, F[2].s, t, { lit: lit(t, 'x6349'), hover: hov(F[2], 1.5 + .3 * x66), face: clamp(look('x6349') * .8, -.5, .5) });   // turned no further than its stencil reads whole (at .8 it showed 'X-634')
     // the chemist on its long speech: it lifts on its clauses, tentacles out and weaving, its nozzles lit
     if (F[3].k < 1) DES.x6621(lerp(P.x6621, F[3].x, F[3].k), G, F[3].s, t, { lit: lit(t, 'x6621'), hover: hov(F[3], 1.5 + .7 * x66), reach: 3.6 + 1.3 * x66, weave: .8 * x66, face: look('x6621') * .8 + .3 * x66 * Math.sin(t * 1.1) });
     if (talk(t, 'x6621') > 0 && t > C('p045.1') && t < C('p045.3')) glow(P.x6621 + look('x6621') * 20, G - 26 * 6.5, 30, NRG.death, .3);
@@ -81,10 +81,12 @@
   function groups(t) {
     const k = ez(t, tShift, tShift + 3); if (k <= 0) return;
     // Roal's group, round an atom plate; Trest's, round a beam on a bench
-    boilSeed('plateR'); wash(rrPts(160, G - 260, 180, 130, 8), 4, { ink: true, sw: .6 }); for (let i = 1; i < 4; i++) inkLine([...Array(25)].map((_, j) => [250 + Math.cos(j / 24 * TAU) * i * 18, G - 195 + Math.sin(j / 24 * TAU) * i * 10]), .4, '#EFE6D2', 'inkfine');
-    glow(250, G - 195, 12, NRG.white, .6); DES.machine(120, G, 16, t, { arms: 3, d: 2, label: null, face: .6 });
-    boilSeed('benchT'); wash(rrPts(1700, G - 90, 260, 30, 6), 3, { ink: true, sw: .6 }); beam(1720, G - 110, 1940, G - 110, 4, 4, NRG.death, 1, { washOp: 40, a: .4, splash: false });
-    DES.machine(1960, G, 16, t, { arms: 3, d: 2, label: null, face: -.6 });
+    // (its plate a lit atom and two machines at it, the bench's beam bright, so each reads as a group at work)
+    boilSeed('plateR'); wash(rrPts(160, G - 260, 180, 130, 8), 4, { ink: true, sw: .6 }); for (let i = 1; i < 4; i++) inkLine([...Array(25)].map((_, j) => [250 + Math.cos(j / 24 * TAU + t * (.6 + .3 * i)) * i * 18, G - 195 + Math.sin(j / 24 * TAU + t * (.6 + .3 * i)) * i * 10]), .8, '#EFE6D2', 'inkfine');
+    glow(250, G - 195, 34, NRG.white, .5 + .2 * Math.sin(t * 3)); glow(250, G - 195, 10, '#FFFFFF', .9); inkLine([[250, G - 130], [250, G]], 1.2, INK);
+    DES.machine(110, G, 16, t, { arms: 3, d: 2, label: null, face: .6 }); DES.machine(-30, G + 20, 15, t, { arms: 2, d: 1, label: null, face: .8 });
+    boilSeed('benchT'); wash(rrPts(1700, G - 90, 260, 30, 6), 3, { ink: true, sw: .6 }); beam(1720, G - 120, 1940, G - 120, 8, 10, NRG.death, 1, { washOp: 90, a: .8, splash: false }); glow(1720, G - 120, 30, NRG.death, .6);
+    DES.machine(1990, G, 16, t, { arms: 3, d: 2, label: null, face: -.6 }); DES.machine(2130, G + 20, 15, t, { arms: 2, d: 1, label: null, face: -.8 });
   }
   function f1Build(t) {
     const tN = T0('N'), tDome = C('p048.1:a vastly greater dome-case'), tTent = C('p048.1:more tentacles'), tMem = C('p048.1:there were stacked the memory-units'), tP = T0('P'), tQ = T0('Q');
@@ -132,7 +134,10 @@
     const at = id => FACE[id], tR = T0('R');
     const c = cam(t, [[0, [1000, 800, 1.1]], [C('p037.2') - .5, at('x5638'), 2.5], [tC, [P.x5638 + 120, 820, 1.6], 2], [T0('D'), [P.roal - 60, 800, 2], 2], [T0('E'), at('x5638'), 1.2], [T0('F'), [P.roal + 60, 800, 1.3], 2.2],
       [T0('G'), at('x6349'), 2], [T0('H'), [P.trest + 80, 800, 2.1], 1.6], [T0('I'), at('kahsh'), 1.4], [T0('J'), at('x6621'), 1.6], [T0('K'), at('cr21'), 2.2], [C('p046.3'), [P.cr21 + 300, 800, 1.4], 3],   // H: Trest, Kahsh, and X-6349 whole beside them (on Trest alone, X-6349 was cut by the right edge and X-5638 left a sliver at the left)
-      [T0('L'), tt => [960, lerp(560, 470, ez(tt, T0('L'), tShift)), lerp(1.1, 1.3, ez(tt, T0('L'), tShift))], 2.5], [tShift, tt => [lerp(600, 1400, ez(tt, tShift, T0('N'))), 760, 1.15], 2.5],   // the screens and the council under them (it was cropped to heads)
+      [T0('L'), tt => [960, lerp(560, 470, ez(tt, T0('L'), tShift)), lerp(1.1, 1.3, ez(tt, T0('L'), tShift))], 2.5], [tShift, [1000, 650, .78], 2.5],   // the screens and the council under them (it was cropped to heads)
+      // M: wide on the floor for 'two small, and one large group', then in on each small group as it's named (one pan
+      // across the floor reached Roal's group after its words were over, and the groups read as men standing alone)
+      [C('p047.1:One small group') - .3, [330, 840, 1.6], 2.2], [C('p047.1:another investigated') - .3, [1800, 840, 1.6], 2.2],
       [T0('N'), tt => [FX, lerp(820, 600, ez(tt, T0('N'), C('p048.1:more tentacles') - 2)), lerp(1.3, 1.5, ez(tt, T0('N'), C('p048.1:more tentacles') - 2))], 3], [C('p048.1:more tentacles') - 1.5, [FX, 770, 1.15], 2],   // down to the framework's foot as the tentacles go on, one by one
       [C('p048.1:there were stacked the memory-units') - 2.5, [FX, 560, 1.75], 2.5], [T0('P'), [FX, 480, 2.2], 2.5],   // in on the memory-units going in, Roal and Trest out of frame (at 1.5 the edges sliced them); then the lens and the dome's crown in the middle of the frame, the lens lowered in from above
       [T0('Q'), tt => [FX, lerp(500, 560, ez(tt, T0('Q'), tR)), lerp(1.8, 1.05, ez(tt, T0('Q'), tR))], 3], [tR, tt => [FX, lerp(620, 480, ez(tt, tR, T0('S'))), lerp(1.4, 2.2, ez(tt, tR, T0('S')))], 3],
