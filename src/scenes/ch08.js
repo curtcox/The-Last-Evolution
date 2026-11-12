@@ -15,7 +15,7 @@
   function dome(t) {
     HALFTONE = .2;
     const tJ = T0('J'), go = ez(t, C('p111.2') - .5, T1('J') - .3);
-    const c = cam(t, [[0, tt => [930, lerp(700, 760, ez(tt, T0('B'), T0('C'))), lerp(1.2, 1.7, ez(tt, T0('B'), T0('C')))]], [T0('C'), [TRESTX, 760, 2.4], 2], [T0('D'), tt => [ROALX + 10, 770, lerp(2.8, 3.4, ez(tt, T0('D'), T0('E')))], 2.5],   // the push on Roal: he's at the centre, Trest at the right, F-2 just out of frame (centred left of Roal, it left the left half of the frame black)
+    const c = cam(t, [[0, tt => [930, lerp(700, 760, ez(tt, T0('B'), T0('C'))), lerp(1.2, 1.7, ez(tt, T0('B'), T0('C')))]], [T0('C'), [TRESTX, 760, 2.4], 2], [T0('D'), tt => [ROALX + 10, 735, lerp(2.8, 3.4, ez(tt, T0('D'), T0('E')))], 2.5],   // the push on Roal: he's at the centre, Trest at the right, F-2 just out of frame (centred left of Roal, it left the left half of the frame black)
       [T0('H') - .5, [ROALX - 20, 770, 2.6], .01],   // close on the two men, F-2 just out of frame (it stood half cut by the edge)
       [T0('I'), tt => [lerp(1040, 1120, ez(tt, T0('I'), C('p109.1'))), 740, 1.6], 2.5],
       [C('p109.1') - .8, tt => [lerp(990, 1030, ez(tt, C('p109.1'), C('p110.1'))), 760, 2.3], 3],   // in on the two men listening, F-2 still in frame
@@ -49,9 +49,9 @@
     // Roal's thought, rising and wandering while he thinks: its sway mixes slow periods that don't repeat together (one
     // 10 s writhe read as a loop over the 28 s), in a pale wash with a faint edge, as dark grey it barely showed on the dark
     { const k = K(t, 'p103.1', 'p103.1$'), op = .7 * (1 - ez(t, T0('E') - 1.5, T0('E'))), x = roal.head[0] + 20, y = roal.head[1] - 40;
-      if (k > 0 && op > 0) { const P = []; for (let i = 0; i <= 14 * k; i++) { const u = i / 14, a = Math.min(1, u * 2.5); P.push([x + u * (130 + 30 * Math.sin(t * .13)) + a * (55 * Math.sin(u * 7 + t * .6) + 28 * Math.sin(u * 3.1 - t * .37)),   // (a: rooted at his head)
-          y - (u * (220 + 30 * Math.sin(t * .21 + 1)) + a * (26 * Math.sin(u * 5 + t * .43) + 14 * Math.sin(u * 9 - t * .29)))]); }
-        if (P.length > 2) { boilSeed('rc'); wash(ribbon(P, 26, 6), 0, { op }); inkLine(P, 1, '#A89C88', 'inkfine', .5 * op); } } }
+      if (k > 0 && op > 0) { const P = []; for (let i = 0; i <= 14 * k; i++) { const u = i / 14, a = Math.min(1, u * 2.5); P.push([x + u * (80 + 20 * Math.sin(t * .13)) + a * (30 * Math.sin(u * 7 + t * .6) + 15 * Math.sin(u * 3.1 - t * .37)),   // (a: rooted at his head)
+          y - (u * (78 + 10 * Math.sin(t * .21 + 1)) + a * (10 * Math.sin(u * 5 + t * .43) + 6 * Math.sin(u * 9 - t * .29)))]); }   // sized to the close shot, inside its top edge (at 220 tall it ran off it)
+        if (P.length > 2) { boilSeed('rc'); wash(ribbon(P, 14, 4), 0, { op }); inkLine(P, 1, '#A89C88', 'inkfine', .5 * op); } } }
     thoughtRings(f2x, f2y, t, T0('I'), C('p111.1$'), { r1: 200, at: F2RINGS });
     camEnd();
   }
