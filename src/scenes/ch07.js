@@ -2,7 +2,8 @@
 // The Denver hall at night; the dome raised on its floor round Roal and Trest; a cut-away of it with F-2's violet
 // beam; and outside, the dead plain under the green.
 (() => {
-  const { D, INK, ez, win, steps, path, talk, clauses, gesture, nod, listen, ground, cam, withCam, dreamCurl, page, stander } = KIT;
+  const { D, INK, ez, win, steps, path, talk, clauses, gesture, nod, listen, ground, cam, withCam, dreamCurl, page, stander, thoughtRings } = KIT;
+  const F2RINGS = (() => { const out = []; for (const l of CHAPTER.lines) if (l.who === 'f2') for (const w of l.words) if (!out.length || w[1] - out.at(-1) > .9) out.push(w[1]); return out; })();   // a ring out at each run of F-2's words, as in chapter 8
   const S = CHAPTER.shots, C = cue, T0 = id => S[id][0], T1 = id => S[id][1];
   const K = (t, a, b) => seg(t, C(a), C(b));
   const GREEN = NRG.death, VIOLET = NRG.support, G = 1000, MID = 1000, FS = 30;
@@ -48,7 +49,8 @@
     for (let i = 0; i < 6; i++) if (t > tSix - 1) { const [x, g] = sixAt(t, i); const m = DES.machine(x, g, 22, t, { arms: 3, d: 1 + (i % 2), hover: 1.5 + .1 * wob(t, .3, i), face: clamp((MID - x) / 300, -1, 1), lit: .3, label: null });
       if (t > tCloud - 1) glow(m.eye[0], m.eye[1], 30, '#E6EEFF', .4); }
     // F-2 in front of the six (drawn before them, one passed over it as they came in)
-    if (t > tF - 1) { push(); translate(fx, fy); scale(-1, 1); translate(-fx, -fy); DES.f2(fx, fy + 2.4 * FS, FS, t, { view: 'side' }); pop(); glow(fx - 50, fy, 30, '#E6EEFF', .3 + .5 * talk(t, 'f2')); }
+    if (t > tF - 1) { push(); translate(fx, fy); scale(-1, 1); translate(-fx, -fy); DES.f2(fx, fy + 2.4 * FS, FS, t, { view: 'side' }); pop(); glow(fx - 50, fy, 55, '#E6EEFF', .3 + .6 * talk(t, 'f2'));
+      thoughtRings(fx, fy, t, tF, DUR, { r1: 200, at: F2RINGS }); }   // its speech shown (a still torpedo, its voice had no source)
     // Roal and Trest before the screens; Roal turns when the machines come. Each gestures on his own clauses (Roal's
     // smaller while his eyes dream) and nods as the other, or F-2, speaks to him
     const turn = t > tF + .3, dream = win(t, C('p085.2'), T1('D'), 1, 1);
