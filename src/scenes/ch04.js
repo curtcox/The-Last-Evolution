@@ -55,12 +55,19 @@
     flinch(tp, .8);
     stander(t, P.trest, G + 10, 46, [[T0('H'), T0('H') + 1, P.trest, P.trest + 50], [T0('I'), T0('I') + 1, P.trest + 50, P.trest], [tShift + .5, tShift + 5, P.trest, 1640]], { who: 'trest', key: 'trest', seed: 7, flip: (sp < P.trest && t < tShift) || t > T0('N') + 1, look: .05 + tl + nod(t, ROALC) + .5 * up + .15 * react, talk: talk(t, 'trest'), pose: tp });
     // Kahsh, when the council breaks up, walks off to the right (he vanished)
-    { const k = win(t, C('p044.2') + .3, C('p044.2') + 5.4, .3, .5); if (k > 0) letter('Kahsh-256799', P.kahsh + 56, 770, 26, INK, { ink: false, align: 'left', font: '700 26px ' + SERIF, spacing: 1, alpha: k }); }   // lettered as he's named
+    { const k = win(t, C('p044.2') + .3, C('p044.2') + 5.4, .3, .5); if (k > 0) letter('Kahsh-256799', P.kahsh, 690, 26, INK, { ink: false, align: 'center', font: '700 26px ' + SERIF, spacing: 1, alpha: k }); }   // lettered as he's named, over his own head (to his right, it sat on X-6349)
     // in profile like the men, turned to whoever speaks, his hand on his own clauses (he stood front-on, as on his
     // model sheet, through the whole council)
     const kp = {}, kl = gesture(t, kp, KAHSH);
     flinch(kp, .8);
-    if (t < tShift + 8) stander(t, P.kahsh, G + 20, 44, [[tShift, tShift + 8, P.kahsh, 2500]], { who: 'kahsh', key: 'kahsh', seed: 5, flip: sp < P.kahsh && t < tShift, look: .05 + kl + .5 * up + .15 * react, talk: talk(t, 'kahsh'), pose: kp });
+    if (t < tShift + 8) { const kf = sp < P.kahsh && t < tShift, kh = stander(t, P.kahsh, G + 20, 44, [[tShift, tShift + 8, P.kahsh, 2500]], { who: 'kahsh', key: 'kahsh', seed: 5, flip: kf, look: .05 + kl + .5 * up + .15 * react, talk: talk(t, 'kahsh'), pose: kp });
+      // the Man-ruler's marks, as on his model sheet (the side view drew him a plain tunic like Trest's): the tall fan of
+      // his collar behind the head, the mantle over his shoulders, and his disc of office
+      if (kh && kh.sh) { const f = kf ? -1 : 1, u = 44 * 6 / 7.4, [sx, sy] = kh.sh, [hx, hy] = kh.head, at = (x, y, a, b) => [x + a * u * f, y + b * u];
+        boilSeed('kmant'); wash([at(hx, hy, -.02, .46), at(hx, hy, -.72, -.3), at(hx, hy, -.58, -.7), at(hx, hy, -.22, -.62), at(hx, hy, .06, .3)], 4, { ink: true, sw: .5, curv: .2 });
+        wash([at(sx, sy, .28, -.32), at(sx, sy, -.6, -.28), at(sx, sy, -.78, 1.05), at(sx, sy, -.1, .78), at(sx, sy, .34, .3)], 4, { ink: true, sw: .5, curv: .2 });
+        paint(ellPts(...at(sx, sy, .3, .5), .16 * u, .16 * u, 12), { wash: '#E8DFC8', washOp: 240, ink: INK, sw: .6 });
+        kh.redrawHead(); } }
   }
   // the council's seats and the hall's floor; the screens, and the ten thousand on them (L)
   function screens(t) {
