@@ -250,7 +250,15 @@
       // wreck and each sat on a standing machine's head, reading as one thing)
       // 'scores of great transports': two near, three smaller on the farther ground, coming down one after another
       if (t >= tP) for (const [i, x, sz, y] of [[0, 790, 150, LG - 205], [1, 1330, 150, LG - 205], [2, 260, 90, LG - 245], [3, 1060, 90, LG - 250], [4, 1780, 90, LG - 240]]) {
-        const k = ez(t, tP + i * 1.5, tP + 4 + i * 1.5); if (k > 0) DES.mote(x, lerp(-300, y, k), sz, t, { ang: Math.PI, drive: k < 1 }); }
+        const k = ez(t, tP + i * 1.5, tP + 4 + i * 1.5); if (k > 0) DES.mote(x, lerp(-300, y, k), sz, t, { ang: Math.PI, drive: k < 1 });
+        if (k >= 1) { boilSeed('tsh' + i); paint(ellPts(x, y + sz * .22, sz * .55, sz * .07, 16), { wash: '#2A231D', washOp: 120, ink: null }); }   // down on the ground: its shadow under it (without, they read as hovering)
+        const dust = win(t, tP + 3.6 + i * 1.5, tP + 6 + i * 1.5, .2, 1.6); if (dust > 0) for (let d = 0; d < 5; d++) { boilSeed('tdu' + i + d); paint(ellPts(x + (d - 2) * sz * .3, y + sz * .18, sz * .25 * (1 + dust), sz * .08, 12), { wash: D[2], washOp: 110 * dust, ink: null, bleed: .4 }); } }
+      // 'From them came the machine-investigators, and human investigators': out of the two near transports and across the
+      // ground to the wreck, the machines first, then the men (none got out, and the study wasn't seen)
+      const tOut = C('p030.1:From them came'), tMen = C('p030.1:and human investigators');
+      if (t > tOut) for (const [tx, sd] of [[790, 1], [1330, -1]]) for (let j = 0; j < 5; j++) { const isMan = j >= 3, t0 = (isMan ? tMen : tOut) + (j % 3) * .7, w = ez(t, t0, t0 + 7 + j * .6); if (t < t0) continue;
+        const gx = lerp(tx + sd * 20, 1060 - sd * (50 + 25 * j), w), gy = lerp(LG - 180, LG - 135, w); if (w > .97) continue;   // in behind the hull, and gone into it
+        if (isMan) DES.person(gx, gy, 16, t, { who: 'citizen', flip: sd < 0 }); else DES.machine(gx, gy, 8, t, { arms: 2, d: 1, label: null, face: sd * .8, hover: 1.2 }); }
       // the ships overhead and their great diffused beams
       const settle = ez(t, tK, tK + 6), tDown = C('p029.1:The last of the Outsiders was down');
       const fall2 = i => { const a = lerp(tO + 2, tDown - 1.4, i / 2); return t > tO ? ez(t, a, a + 1.5) : 0; };   // the last lands on its line
@@ -268,7 +276,8 @@
       // P: the downed ships stay where they fell, the middle one the wreck the machines study (a separate wreck was drawn
       // over them, and two of them vanished at P without a cut); the tiny spheres worm into it
       const tSph = C('p030.1:Tiny investigator spheres');
-      if (t >= tSph) for (let i = 0; i < 14; i++) { const q = frac((t - tSph) * .3 + i / 14); glow(lerp(600 + 60 * i, 1060, q), lerp(LG + 60, LG - 60, q), 7, NRG.white, .8 * (1 - q)); }
+      if (t >= tSph) for (let i = 0; i < 10; i++) { const q = frac((t - tSph) * .25 + i / 10), x = lerp(820 + 50 * i, 1060 + 30 * Math.sin(i), q), y = lerp(LG - 30, LG - 80, q);   // drawn as the spheres they are (7 px glows, they were specks)
+        DES.investigator(x, y, 11 * (1 - .6 * q), t); glow(x, y, 22, NRG.white, .55 * (1 - q)); }
     });
   }
   // N: Earth from above, the green spreading
