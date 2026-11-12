@@ -100,9 +100,9 @@
     // D: the runners cross the plaza; the mock battle beyond them
     const tRun = C('p003.1:But games');
     // a race: five runners leaning in, arms pumping, strung out as they cross (three upright walkers didn't read as games)
-    for (let i = 0; i < 5; i++) { const t0 = tRun - .5 + i * .25, dur = 5.2 + .5 * hash(i * 3), sw = Math.sin(t * 13 + i * 1.7);
-      stander(t, 2300, G + 40 + (i % 3) * 26, 26 + (i % 2) * 2, [[t0, t0 + dur, 2300 - i * 50, 4100 - i * 90]], { seed: 10 + i, key: 'run' + i, pose: { torso: .3, up: .9 + .7 * sw, fore: 2.1, farUp: .9 - .7 * sw, farFore: 2.1 } }); }
-    const tMock = C('p003.1:mock battles') - 3;
+    for (let i = 0; i < 5; i++) { const t0 = tRun - .5 + i * .25, dur = 7.4 + .6 * hash(i * 3), sw = Math.sin(t * 13 + i * 1.7); if (t > t0 + dur) continue;   // on out of the frame (stopped at 4,100 they stood in among the drill, figures inside figures)
+      stander(t, 2300, G + 40 + (i % 3) * 26, 26 + (i % 2) * 2, [[t0, t0 + dur, 2300 - i * 50, 4900 - i * 60]], { seed: 10 + i, key: 'run' + i, pose: { torso: .3, up: .9 + .7 * sw, fore: 2.1, farUp: .9 - .7 * sw, farFore: 2.1 } }); }
+    const tMock = C('p003.1:mock battles') - .3;   // the bolts on 'mock battles' (3 s ahead, they came on 'so their energies')
     for (let sd = -1; sd <= 1; sd += 2) for (let i = 0; i < 3; i++) { const x = 3550 + sd * (260 + i * 60), y = G + 10 + i * 40;
       // drilling while they wait: arms levelled and raised in turn, a little step in place (they stood frozen 25 s)
       const dr = .5 + .5 * Math.sin(t * 1.3 + i * 1.1 + sd); stander(t, x + 6 * Math.sin(t * 2.6 + i), y, 27, [], { seed: 20 + i + sd, key: 'mb' + sd + i, flip: sd > 0, pose: { up: lerp(.5, 1.5, dr), fore: lerp(.6, 1.6, dr), torso: .04 + .06 * dr } }); }
