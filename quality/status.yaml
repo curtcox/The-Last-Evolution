@@ -715,10 +715,10 @@ items:
     title: "Chapter 2: the struck Outsider stays upside down"
     when: 2026-11-06 07:26
   find.ch09-leap:
-    state: pass
-    note: "On the re-rendered draft: 2:26-2:34 the white sphere hangs back up and away while the red beam reaches for its old place; on 'leaped' it springs into the beam, which holds and shrinks it."
-    title: "Chapter 9: the red beam catches the sphere before it leaps"
-    when: 2026-11-06 07:26
+    state: open
+    note: "Seventeenth round, nit: the red beam already reaches the sphere at 2:29.5 and sparks start at 2:33.5, before 'The sphere leaped forward -- the beam caught it' (153.3-156.0) and 'terrific flashing energies sprayed' (158.0)."
+    title: "Chapter 9: the sphere never leaps forward"
+    when: 2026-11-12 08:37
   find.ch09-twice:
     state: pass
     note: "On the re-rendered draft: 4:31-4:35 the golden sphere swells to twice its size on 'twice its former size'."
@@ -1434,6 +1434,36 @@ items:
     note: "Fixed: in shot K the six machines and F-2 stay with the men, dim under the dark with eye glints; checked on the new draft (2:52-3:04), and chapter 8 opens on them as before."
     title: "Chapter 7: the machines gone inside the dome"
     when: 2026-11-12 08:18
+  find.ch01-curve-early:
+    state: open
+    note: "Seventeenth round, minor: at 1:39-1:41 the curve is past its peak and falling while the voice says 'increased rapidly and continuously'; 'a steady decrease' starts at 100.66."
+    title: "Chapter 1: the population curve turns down early"
+    when: 2026-11-12 08:37
+  find.ch02-ships-early:
+    state: open
+    note: "Seventeenth round, minor: the shot settles on the ships about 5 s before 'They sighted ten huge ships' (65.7); about six shown, not ten, two overlapping the big ship's hull like pods."
+    title: "Chapter 2: the Outsiders' ships before they're sighted"
+    when: 2026-11-12 08:37
+  find.note-locked-boil:
+    state: open
+    note: "Seventeenth round, minor: the ch10 note says the flagship 'stops boiling too: the only ship in the film to go still', but the ships don't visibly boil before the lock (frame differences)."
+    title: "Film page: the 'locked' note claims an effect not seen"
+    when: 2026-11-12 08:37
+  find.ch02-footnote-cut2:
+    state: open
+    note: "Seventeenth round, nit: the footnote stays about 4 s into the transport-machine shot after the cut at 0:35.7; the sixteenth round's reason to keep it didn't satisfy a fresh viewer."
+    title: "Chapter 2: the kilad footnote over the next shot (again)"
+    when: 2026-11-12 08:37
+  find.ch09-gold-hold:
+    state: open
+    note: "Seventeenth round, nit: 3:33-3:57, 24 s on a small sphere over the dome while the narration has its impulses come 'into the thought-apparatus of each, man and machine alike'; the listeners aren't seen until 4:19."
+    title: "Chapter 9: a long hold on the golden sphere"
+    when: 2026-11-12 08:37
+  find.models-caption:
+    state: open
+    note: "Seventeenth round, nit: the seventh caption reads 'Roal acting, and the pilot's props', but the sheet is 'Roal and Trest acting...' and shows Trest side-on."
+    title: "Model sheets: a caption leaves out Trest"
+    when: 2026-11-12 08:37
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1503,4 +1533,8 @@ fresh:
     found: 10
     note: "Sixteenth round, on the fifteenth round's drafts: 10 found, none major (3 minor, 7 nits; one of the minor, the live site a deploy behind, cleared once the queued deploy ran)."
     state: 5de9434decfe
-since_fresh: 46
+  - when: 2026-11-12 08:37
+    found: 7
+    note: "Seventeenth round, on the sixteenth round's drafts: 7 found, none major (3 minor, 4 nits)."
+    state: 3254adf50220
+since_fresh: 0

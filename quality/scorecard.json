@@ -1,13 +1,17 @@
 {
  "summary": {
-  "pass": 296,
+  "pass": 291,
   "stale": 0,
-  "open": 0,
+  "open": 11,
   "curt": 9,
   "later": 3
  },
  "satisfied": false,
- "next": [],
+ "next": [
+  "Chapter 9: the sphere never leaps forward",
+  "Chapter 1: the population curve turns down early",
+  "Chapter 2: the Outsiders' ships before they're sighted"
+ ],
  "checks": {
   "verbatim": {
    "state": "pass",
@@ -19,7 +23,7 @@
   },
   "annotated": {
    "state": "pass",
-   "detail": "current"
+   "detail": "had fallen behind; rebuilt now"
   },
   "voice": {
    "state": "pass",
@@ -34,15 +38,15 @@
    "detail": "$0.59 of $10"
   },
   "refs": {
-   "state": "pass",
+   "state": "stale",
    "detail": "refs: 53 sources, all cited, all answering; definitions written into 6 notes"
   },
   "phone": {
-   "state": "pass",
+   "state": "stale",
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
-   "state": "pass",
+   "state": "stale",
    "detail": "33 pages live (not compared: HEAD has changes not pushed)"
   }
  },
@@ -217,8 +221,8 @@
    "id": "ch01.draft",
    "area": "film",
    "title": "Chapter 1: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch01-draft-c0cf3d40.mp4, -14.4 LUFS, peak -2.3 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch01.js"
   },
   {
    "id": "ch02.acting",
@@ -259,8 +263,8 @@
    "id": "ch02.draft",
    "area": "film",
    "title": "Chapter 2: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch02-draft-b92edfc8.mp4, -14.4 LUFS, peak -2 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch02.js"
   },
   {
    "id": "ch03.acting",
@@ -511,8 +515,8 @@
    "id": "ch09.draft",
    "area": "film",
    "title": "Chapter 9: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch09-draft-04df32bc.mp4, -14.4 LUFS, peak -2.2 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch09.js"
   },
   {
    "id": "ch10.acting",
@@ -553,8 +557,8 @@
    "id": "ch10.draft",
    "area": "film",
    "title": "Chapter 10: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch10-draft-05cc286e.mp4, -14.4 LUFS, peak -1.7 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch10.js"
   },
   {
    "id": "ch11.acting",
@@ -1203,9 +1207,9 @@
   {
    "id": "find.ch09-leap",
    "area": "finding",
-   "title": "Chapter 9: the red beam catches the sphere before it leaps",
-   "state": "pass",
-   "note": "On the re-rendered draft: 2:26-2:34 the white sphere hangs back up and away while the red beam reaches for its old place; on 'leaped' it springs into the beam, which holds and shrinks it."
+   "title": "Chapter 9: the sphere never leaps forward",
+   "state": "open",
+   "note": "Seventeenth round, nit: the red beam already reaches the sphere at 2:29.5 and sparks start at 2:33.5, before 'The sphere leaped forward -- the beam caught it' (153.3-156.0) and 'terrific flashing energies sprayed' (158.0)."
   },
   {
    "id": "find.ch09-twice",
@@ -2207,14 +2211,51 @@
    "title": "Chapter 7: the machines gone inside the dome",
    "state": "pass",
    "note": "Fixed: in shot K the six machines and F-2 stay with the men, dim under the dark with eye glints; checked on the new draft (2:52-3:04), and chapter 8 opens on them as before."
+  },
+  {
+   "id": "find.ch01-curve-early",
+   "area": "finding",
+   "title": "Chapter 1: the population curve turns down early",
+   "state": "open",
+   "note": "Seventeenth round, minor: at 1:39-1:41 the curve is past its peak and falling while the voice says 'increased rapidly and continuously'; 'a steady decrease' starts at 100.66."
+  },
+  {
+   "id": "find.ch02-ships-early",
+   "area": "finding",
+   "title": "Chapter 2: the Outsiders' ships before they're sighted",
+   "state": "open",
+   "note": "Seventeenth round, minor: the shot settles on the ships about 5 s before 'They sighted ten huge ships' (65.7); about six shown, not ten, two overlapping the big ship's hull like pods."
+  },
+  {
+   "id": "find.note-locked-boil",
+   "area": "finding",
+   "title": "Film page: the 'locked' note claims an effect not seen",
+   "state": "open",
+   "note": "Seventeenth round, minor: the ch10 note says the flagship 'stops boiling too: the only ship in the film to go still', but the ships don't visibly boil before the lock (frame differences)."
+  },
+  {
+   "id": "find.ch02-footnote-cut2",
+   "area": "finding",
+   "title": "Chapter 2: the kilad footnote over the next shot (again)",
+   "state": "open",
+   "note": "Seventeenth round, nit: the footnote stays about 4 s into the transport-machine shot after the cut at 0:35.7; the sixteenth round's reason to keep it didn't satisfy a fresh viewer."
+  },
+  {
+   "id": "find.ch09-gold-hold",
+   "area": "finding",
+   "title": "Chapter 9: a long hold on the golden sphere",
+   "state": "open",
+   "note": "Seventeenth round, nit: 3:33-3:57, 24 s on a small sphere over the dome while the narration has its impulses come 'into the thought-apparatus of each, man and machine alike'; the listeners aren't seen until 4:19."
+  },
+  {
+   "id": "find.models-caption",
+   "area": "finding",
+   "title": "Model sheets: a caption leaves out Trest",
+   "state": "open",
+   "note": "Seventeenth round, nit: the seventh caption reads 'Roal acting, and the pilot's props', but the sheet is 'Roal and Trest acting...' and shows Trest side-on."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-10 22:28",
-   "found": 9,
-   "note": "Fourteenth round: 9 found, no majors (2 minor, 7 nits); the foreword's 'Every word of it is spoken, in order' left for Curt (curt.foreword)."
-  },
   {
    "when": "2026-11-11 10:51",
    "found": 6,
@@ -2224,6 +2265,11 @@
    "when": "2026-11-11 20:53",
    "found": 10,
    "note": "Sixteenth round, on the fifteenth round's drafts: 10 found, none major (3 minor, 7 nits; one of the minor, the live site a deploy behind, cleared once the queued deploy ran)."
+  },
+  {
+   "when": "2026-11-12 08:37",
+   "found": 7,
+   "note": "Seventeenth round, on the sixteenth round's drafts: 7 found, none major (3 minor, 4 nits)."
   }
  ]
 }
