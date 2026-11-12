@@ -51,7 +51,7 @@
     ground('#1A1612', 255, 'sp10', { fill: '#262019', fillOp: 90 });
     for (let i = 0; i < 160; i++) { const b = hash(i * 1.3); glow((hash(i * 3.1) - .5) * 4200 + 960 - (c[0] - 960) * .3, (hash(i * 7.7) - .5) * 2600 + 540 - (c[1] - 540) * .3, 3 + 8 * b * b, '#F4EEDC', .2 + .45 * b); }
     camBegin(...c);
-    planet(-900, 200, 160, 2, { key: 'mars10' });
+    planet(-110, 90, 140, 2, { key: 'mars10' });   // Mars, far off, in the frame ('headed now for Mars'; at -900 it was out of every shot)
     // the fleet: wheeling; turning its weapons on the sphere; then turning for home
     const leave = ez(t, tG + 2, DUR + 2), rays = win(t, tShower, tD + 1, .4, 1.5);
     const R = ring(t);
