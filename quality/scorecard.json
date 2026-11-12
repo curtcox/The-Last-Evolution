@@ -1,13 +1,17 @@
 {
  "summary": {
-  "pass": 310,
+  "pass": 305,
   "stale": 0,
-  "open": 0,
+  "open": 11,
   "curt": 9,
   "later": 3
  },
  "satisfied": false,
- "next": [],
+ "next": [
+  "Chapter 7: the six machines off screen as F-2 speaks of them",
+  "Chapter 4: the three groups not seen",
+  "Chapter 3's draft page: 'through the screens' untrue"
+ ],
  "checks": {
   "verbatim": {
    "state": "pass",
@@ -42,7 +46,7 @@
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
-   "state": "pass",
+   "state": "stale",
    "detail": "33 pages live, the deploy is this commit"
   }
  },
@@ -301,8 +305,8 @@
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch03-draft-15b4fa80.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "state": "open",
+   "note": "older than script/boards/ch03.yaml"
   },
   {
    "id": "ch04.acting",
@@ -343,8 +347,8 @@
    "id": "ch04.draft",
    "area": "film",
    "title": "Chapter 4: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch04-draft-7ad3edb4.mp4, -14.4 LUFS, peak -2 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch04.js"
   },
   {
    "id": "ch06.acting",
@@ -427,8 +431,8 @@
    "id": "ch07.draft",
    "area": "film",
    "title": "Chapter 7: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch07-draft-fd384ca7.mp4, -14.5 LUFS, peak -1.9 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch07.js"
   },
   {
    "id": "ch08.acting",
@@ -511,8 +515,8 @@
    "id": "ch09.draft",
    "area": "film",
    "title": "Chapter 9: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch09-draft-7d8b6992.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch09.js"
   },
   {
    "id": "ch10.acting",
@@ -553,8 +557,8 @@
    "id": "ch10.draft",
    "area": "film",
    "title": "Chapter 10: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch10-draft-10eff831.mp4, -14.4 LUFS, peak -1.7 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch10.js"
   },
   {
    "id": "ch11.acting",
@@ -2305,14 +2309,51 @@
    "title": "Chapter 1: the mock-battle flashes 3 s early",
    "state": "pass",
    "note": "Fixed: the bolts start .3 s before 'mock battles' (87.5 s); checked on the new draft."
+  },
+  {
+   "id": "find.ch07-six-offscreen",
+   "area": "finding",
+   "title": "Chapter 7: the six machines off screen as F-2 speaks of them",
+   "state": "open",
+   "note": "Nineteenth round, minor: through shot G (1:40-2:01) only F-2 and the men are in frame while F-2 says 'These machines I have made myself'; the six drop in at 2:01.6 and whip round the men in 1.5 s, sliding over Trest and F-2."
+  },
+  {
+   "id": "find.ch04-three-groups",
+   "area": "finding",
+   "title": "Chapter 4: the three groups not seen",
+   "state": "open",
+   "note": "Nineteenth round, minor: shot M (2:58-3:19), 'two small, and one large group ... under Roal ... under Trest', shows Roal alone at the edge, Trest by an empty bench and a row of machines; no groups at work; the bottom quarter empty floor."
+  },
+  {
+   "id": "find.ch03-page-screens",
+   "area": "finding",
+   "title": "Chapter 3's draft page: 'through the screens' untrue",
+   "state": "open",
+   "note": "Nineteenth round, minor: the page says the battle and the settlement are 'reached through the screens, pushed into and pulled back out of'; the film uses cross-dissolves (1:30.5, 3:10, 3:35)."
+  },
+  {
+   "id": "find.ch10-mars",
+   "area": "finding",
+   "title": "Chapter 10: Mars never on screen",
+   "state": "open",
+   "note": "Nineteenth round, nit: 'headed now for Mars' (shot B, 0:06-0:23) and the board's 'Mars far off', but Mars is drawn at x -900, outside every framing."
+  },
+  {
+   "id": "find.ch09-cru1-name",
+   "area": "finding",
+   "title": "Chapter 9: C-R-U-1's name unreadable",
+   "state": "open",
+   "note": "Nineteenth round, nit: on 'C R U one joined him' (3:05-3:10) the name is about 45 px wide at 1280, a glint at phone size."
+  },
+  {
+   "id": "find.ch04-x6349-label",
+   "area": "finding",
+   "title": "Chapter 4: X-6349's label cut to X-634",
+   "state": "open",
+   "note": "Nineteenth round, nit: at about 1:32 the label wraps round the hull and the 9 is lost at the edge."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-11 20:53",
-   "found": 10,
-   "note": "Sixteenth round, on the fifteenth round's drafts: 10 found, none major (3 minor, 7 nits; one of the minor, the live site a deploy behind, cleared once the queued deploy ran)."
-  },
   {
    "when": "2026-11-12 08:37",
    "found": 7,
@@ -2322,6 +2363,11 @@
    "when": "2026-11-12 12:28",
    "found": 8,
    "note": "Eighteenth round, on the seventeenth round's drafts: 8 found, none major (4 minor, 4 nits)."
+  },
+  {
+   "when": "2026-11-12 22:09",
+   "found": 6,
+   "note": "Nineteenth round, on the eighteenth round's drafts: 6 found, none major (3 minor, 3 nits)."
   }
  ]
 }

@@ -1504,6 +1504,36 @@ items:
     note: "Fixed: the bolts start .3 s before 'mock battles' (87.5 s); checked on the new draft."
     title: "Chapter 1: the mock-battle flashes 3 s early"
     when: 2026-11-12 21:47
+  find.ch07-six-offscreen:
+    state: open
+    note: "Nineteenth round, minor: through shot G (1:40-2:01) only F-2 and the men are in frame while F-2 says 'These machines I have made myself'; the six drop in at 2:01.6 and whip round the men in 1.5 s, sliding over Trest and F-2."
+    title: "Chapter 7: the six machines off screen as F-2 speaks of them"
+    when: 2026-11-12 22:09
+  find.ch04-three-groups:
+    state: open
+    note: "Nineteenth round, minor: shot M (2:58-3:19), 'two small, and one large group ... under Roal ... under Trest', shows Roal alone at the edge, Trest by an empty bench and a row of machines; no groups at work; the bottom quarter empty floor."
+    title: "Chapter 4: the three groups not seen"
+    when: 2026-11-12 22:09
+  find.ch03-page-screens:
+    state: open
+    note: "Nineteenth round, minor: the page says the battle and the settlement are 'reached through the screens, pushed into and pulled back out of'; the film uses cross-dissolves (1:30.5, 3:10, 3:35)."
+    title: "Chapter 3's draft page: 'through the screens' untrue"
+    when: 2026-11-12 22:09
+  find.ch10-mars:
+    state: open
+    note: "Nineteenth round, nit: 'headed now for Mars' (shot B, 0:06-0:23) and the board's 'Mars far off', but Mars is drawn at x -900, outside every framing."
+    title: "Chapter 10: Mars never on screen"
+    when: 2026-11-12 22:09
+  find.ch09-cru1-name:
+    state: open
+    note: "Nineteenth round, nit: on 'C R U one joined him' (3:05-3:10) the name is about 45 px wide at 1280, a glint at phone size."
+    title: "Chapter 9: C-R-U-1's name unreadable"
+    when: 2026-11-12 22:09
+  find.ch04-x6349-label:
+    state: open
+    note: "Nineteenth round, nit: at about 1:32 the label wraps round the hull and the 9 is lost at the edge."
+    title: "Chapter 4: X-6349's label cut to X-634"
+    when: 2026-11-12 22:09
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1581,4 +1611,8 @@ fresh:
     found: 8
     note: "Eighteenth round, on the seventeenth round's drafts: 8 found, none major (4 minor, 4 nits)."
     state: 254dc961c393
-since_fresh: 42
+  - when: 2026-11-12 22:09
+    found: 6
+    note: "Nineteenth round, on the eighteenth round's drafts: 6 found, none major (3 minor, 3 nits)."
+    state: 963c86ced75a
+since_fresh: 0
