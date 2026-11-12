@@ -37,6 +37,10 @@
       boilSeed('angl'); inkLine(ang, 1.4 * straight, '#EFE6D2', 'inkfine', 0); }
     const scr = ez(t, tScreen, tScreen + 1.5);
     if (scr > 0) { boilSeed('fscr'); paint([...Array(25)].map((_, i) => { const a = i / 24 * TAU; return [x + Math.cos(a) * len * .62, y + Math.sin(a) * len * .2]; }), { wash: '#0E0B09', washOp: 120 * scr, ink: '#3A3A44', sw: .8 }); }
+    // locked: glazed in the beam's blue-white, held (its lines alone stopping boiling was too fine a change to see)
+    if (locked) { const g = ez(t, tLock, tLock + 1.2); stillSeed('glaze'); const hh = 92, cap = [...Array(17)].map((_, i) => { const a = -Math.PI / 2 + i / 16 * Math.PI; return [x + len * .5 - hh + Math.cos(a) * hh, y + Math.sin(a) * hh]; });
+      paint([...cap, ...cap.map(([px, py]) => [2 * x - px, 2 * y - py])], { wash: '#D6E2F0', washOp: 60 * g, ink: '#E8F0FF', sw: 1.2 * g });   // on the hull, its own round-ended shape
+      glow(x, y, len * .45, '#E8F0FF', .18 * g); }
     if (locked) BOILN = Math.floor(T * BOIL) + BOIL_SHIFT;
   }
   function scene(t) {
