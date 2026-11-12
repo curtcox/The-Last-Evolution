@@ -36,6 +36,7 @@
   // ---------- D, E, K, O: the transport, Deimos, the wreck, the swarm ----------
   const TR = [900, 560], DEIMOS = [-1900, 300];
   const tDead = C('p008.1:ceased to radiate'), tGo = C('p008.1:An investigation machine'), tSight = C('p008.1:They sighted ten huge ships'), tBlast = C('p008.1:The entire fore-section');
+  const fleck = t => Math.pow(seg(t, tGo, tSight - .3), 3);   // the investigator's way from Deimos to the transport, at a thousand gravities
   function transport(t, o = {}) {
     const alive = 1 - seg(t, tDead, tDead + .6), x = TR[0] - 30 * seg(t, T0('D') - 5, tDead) * (alive > 0 ? 1 : 0);
     DES.mote(x, TR[1], 520, t, { ang: Math.PI, drive: alive > .5 });
@@ -51,7 +52,7 @@
     HALFTONE = .2;
     const tK = T0('K');
     const c = cam(t, [[0, tt => [lerp(1100, 950, ez(tt, T0('D'), tDead)), 560, 1.15]], [tGo - .5, [DEIMOS[0] + 300, DEIMOS[1] + 100, 1], 1.4],
-      [tGo + 2.2, tt => [lerp(DEIMOS[0] + 300, TR[0] + 300, ez(tt, tGo + 2.2, tSight)), lerp(400, 520, ez(tt, tGo + 2.2, tSight)), .9], .01], [tSight, [TR[0] + 500, 480, .75], 2.5],
+      [tGo + 2.2, tt => { const g = fleck(tt); return [lerp(DEIMOS[0] + 90, TR[0] - 200, g) + 300, lerp(400, 520, g), 1.2]; }, 1.2], [tSight, [TR[0] + 500, 480, .75], 2.5],   // with the fleck, so the ships come into view as they're sighted (panning ahead of it, they were settled on 2 s early)
       [tOut, [TR[0] + 400, 520, .8], .01], [C('p013.1:The Outsider\'s ship nearest'), [TR[0] + 900, 460, 1.3], 4], [T0('O') - 1, tt => [1700, 520, lerp(1, .65, ez(tt, T0('O'), T1('O')))], .01]]);
     dark('void');
     stars(c[0] * .3, c[1] * .3, 160, 7, 1);
@@ -68,10 +69,12 @@
           const seen = t > tGo + 1, close = ez(t, tGo + 1, tGo + 2.2);
           if (seen) ship(lerp(2600, TR[0] + 640, close), lerp(300, 420, close), 900, t, -1, { d: 2 });
           if (t > tSight - 6) for (let k = 0; k < 3; k++) { boilSeed('grap' + k); inkLine([[TR[0] + 300 + k * 120, 470], [TR[0] + 80 + k * 70, TR[1] - 30 + k * 18]], .9, INK, 'ink', .3); }
-          if (seen) for (let i = 0; i < 9; i++) ship(1700 + i * 260 + 60 * hash(i), 140 + 120 * (i % 3) + 300 * hash(i * 3), 220 + 120 * hash(i * 5), t, -1, { d: 3 });
+          // and the other nine, all in the settled frame and clear of the grappler's hull (strung out to 3,900, four were out of
+          // it, and two drawn over the hull read as pods on it)
+          if (seen) [[380, 110], [820, 50], [1280, 150], [1760, 70], [2240, 160], [2480, 400], [2330, 680], [2020, 850], [560, 860]].forEach(([x, y], i) => ship(x, y, 230 + 110 * hash(i * 5), t, -1, { d: 3 }));
           // Deimos, and the investigator's streak at a thousand gravities
           planet(DEIMOS[0], DEIMOS[1], 90, 2, { key: 'deimos' });
-          const g = seg(t, tGo, tGo + 3.5), gx = lerp(DEIMOS[0] + 90, TR[0] - 200, g * g), gy = lerp(DEIMOS[1] + 20, TR[1] - 20, g * g);
+          const g = seg(t, tGo, tSight - .3), gx = lerp(DEIMOS[0] + 90, TR[0] - 200, fleck(t)), gy = lerp(DEIMOS[1] + 20, TR[1] - 20, fleck(t));
           if (g > 0 && g < 1) { inkLine([[lerp(DEIMOS[0] + 90, gx, .6), lerp(DEIMOS[1] + 20, gy, .6)], [gx, gy]], 1.2, FORCE, 'inkfine', 0); glow(gx, gy, 16, NRG.white, .9); }
           if (g >= 1 && t < T0('F')) glow(TR[0] - 200, TR[1] - 20, 10, NRG.white, .8);
         } else {
@@ -226,10 +229,10 @@
   }
   // the story's own footnotes (PLAN.md §5), lettered at the foot of the frame for 5 s from the word that carries the mark
   const NOTES = [['p007.1:kill-ads', '1', ['Kilad\u2014unit introduced by the machines. Based on the', 'duodecimal system, similarly introduced, as more', 'logical, and more readily used. Thus we would have',
-    'said 1728 kilads, about 1/2 mile.']],
+    'said 1728 kilads, about 1/2 mile.'], () => [T0('C') + .3, T1('C')]],   // up with its sentence, the shot's whole length (from the mark, its 9 s ran 4 s into the next shot)
     ['p008.1:thousand units', '2', ['One unit was equal to one earth-gravity.']]];
   function footnotes(t) {
-    for (const [at, n, lines] of NOTES) { const t0 = C(at) + .5, a = win(t, t0, t0 + 1.8 + .22 * lines.join(' ').split(' ').length, .4, .6); if (a <= 0) continue;   // long enough to read: ~9 s for footnote 1's 33 words
+    for (const [at, n, lines, span] of NOTES) { const t0 = C(at) + .5, [a0, a1] = span ? span() : [t0, t0 + 1.8 + .22 * lines.join(' ').split(' ').length], a = win(t, a0, a1, .4, .5); if (a <= 0) continue;   // long enough to read (footnote 1's 33 words get the 7.4 s of its shot)
       const y = H - 40 - 62 * lines.length;   // 52 px: read in a phone-width player (at 40 it was ~5 px tall at 375 px wide)
       stillSeed('fnband' + n); paint(rectPts(90, y - 60, 1400, 62 * lines.length + 50), { wash: '#141110', washOp: 190 * a, ink: null, bleed: .05 });   // a dark band, so the note reads over a pale hull
       rule(120, y - 36, 260, '#EFE6D2', 1.4);
