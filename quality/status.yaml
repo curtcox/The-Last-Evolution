@@ -1464,6 +1464,46 @@ items:
     note: "Fixed: sheet 7's caption reads 'Roal and Trest acting, and the pilot's props' and names Trest's side-on view, as the sheet does (tools/model_sheets.mjs and the page)."
     title: "Model sheets: a caption leaves out Trest"
     when: 2026-11-12 12:07
+  find.ch07-f2-silent:
+    state: open
+    note: "Eighteenth round, minor: through F-2's 23 s speech (1:37-2:00) and 'The screen will be ready' (2:26) it is a still torpedo; its talk glow doesn't show; in chapters 5 and 8 its speech carries thought rings. Also C-R-U-1 static through its line in ch05 7:33-7:41."
+    title: "Chapter 7: F-2 gives no sign it's speaking"
+    when: 2026-11-12 12:28
+  find.ch03-study:
+    state: open
+    note: "Eighteenth round, minor: shot P (5:06-5:36) holds three capsules hovering over the wrecks; nothing lands, no machine- or human investigators come out, and the investigator spheres that 'wormed their way' are specks."
+    title: "Chapter 3: the study beat isn't shown"
+    when: 2026-11-12 12:28
+  find.ch01-conjoined:
+    state: open
+    note: "Eighteenth round, minor: in shot D (about 1:00-1:30) pairs of figures stand almost on top of each other, arms through bodies, for many seconds (1:11, 1:17)."
+    title: "Chapter 1: crowd figures stand inside each other"
+    when: 2026-11-12 12:28
+  find.ch04-kahsh-sheet:
+    state: open
+    note: "Eighteenth round, minor: sheet 1 gives Kahsh-256799 a ruler's mantle, V collar, disc of office and headband; in the film (1:50-1:57) he's a plain belted tunic like Trest, and his name sits over X-6349."
+    title: "Chapter 4: Kahsh doesn't match his model sheet"
+    when: 2026-11-12 12:28
+  find.ch05-f2-offscreen:
+    state: open
+    note: "Eighteenth round, nit: 7:04-7:10, F-2 drifts off the left edge just as 'A small cylinder, smaller even than its creator' is said, so the comparison can't be seen."
+    title: "Chapter 5: F-2 leaves the frame as C-R-U-1 appears"
+    when: 2026-11-12 12:28
+  find.note-mentatype-metal:
+    state: open
+    note: "Eighteenth round, nit: the 'Words' note (0:54, 56:18) says the record on 'thin sheets of metal' is how the film draws it, but the pages are cream paper."
+    title: "Film page: the mentatype note says the film draws metal"
+    when: 2026-11-12 12:28
+  find.ch08-curl-cut:
+    state: open
+    note: "Eighteenth round, nit: through most of shot D (0:42-1:10) the curl runs off the top of the frame."
+    title: "Chapter 8: Roal's thought-curl cut by the top edge"
+    when: 2026-11-12 12:28
+  find.ch01-mock-early:
+    state: open
+    note: "Eighteenth round, nit: the flashes start on 'so their energies' (about 1:24.5); 'mock battles' is at 87.5 s."
+    title: "Chapter 1: the mock-battle flashes 3 s early"
+    when: 2026-11-12 12:28
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1537,4 +1577,8 @@ fresh:
     found: 7
     note: "Seventeenth round, on the sixteenth round's drafts: 7 found, none major (3 minor, 4 nits)."
     state: 3254adf50220
-since_fresh: 29
+  - when: 2026-11-12 12:28
+    found: 8
+    note: "Eighteenth round, on the seventeenth round's drafts: 8 found, none major (4 minor, 4 nits)."
+    state: 254dc961c393
+since_fresh: 0

@@ -1,13 +1,17 @@
 {
  "summary": {
-  "pass": 302,
+  "pass": 296,
   "stale": 0,
-  "open": 0,
+  "open": 14,
   "curt": 9,
   "later": 3
  },
  "satisfied": false,
- "next": [],
+ "next": [
+  "Chapter 7: F-2 gives no sign it's speaking",
+  "Chapter 3: the study beat isn't shown",
+  "Chapter 1: crowd figures stand inside each other"
+ ],
  "checks": {
   "verbatim": {
    "state": "pass",
@@ -19,7 +23,7 @@
   },
   "annotated": {
    "state": "pass",
-   "detail": "current"
+   "detail": "had fallen behind; rebuilt now"
   },
   "voice": {
    "state": "pass",
@@ -34,7 +38,7 @@
    "detail": "$0.59 of $10"
   },
   "refs": {
-   "state": "pass",
+   "state": "stale",
    "detail": "refs: 53 sources, all cited, all answering; definitions written into 6 notes"
   },
   "phone": {
@@ -42,7 +46,7 @@
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
-   "state": "pass",
+   "state": "stale",
    "detail": "33 pages live, the deploy is this commit"
   }
  },
@@ -133,8 +137,8 @@
    "id": "ch05.draft",
    "area": "film",
    "title": "Chapter 5: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch05-draft-68b6ab91.mp4, -14.5 LUFS, peak -1.9 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch05.js"
   },
   {
    "id": "ch00.acting",
@@ -217,8 +221,8 @@
    "id": "ch01.draft",
    "area": "film",
    "title": "Chapter 1: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch01-draft-21a858ad.mp4, -14.4 LUFS, peak -2.3 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch01.js"
   },
   {
    "id": "ch02.acting",
@@ -301,8 +305,8 @@
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch03-draft-d5d1e922.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch03.js"
   },
   {
    "id": "ch04.acting",
@@ -343,8 +347,8 @@
    "id": "ch04.draft",
    "area": "film",
    "title": "Chapter 4: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch04-draft-287a32dd.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch04.js"
   },
   {
    "id": "ch06.acting",
@@ -427,8 +431,8 @@
    "id": "ch07.draft",
    "area": "film",
    "title": "Chapter 7: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch07-draft-33f8aa31.mp4, -14.5 LUFS, peak -2.1 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch07.js"
   },
   {
    "id": "ch08.acting",
@@ -469,8 +473,8 @@
    "id": "ch08.draft",
    "area": "film",
    "title": "Chapter 8: its draft is current and at the right loudness",
-   "state": "pass",
-   "note": "ch08-draft-b56a4969.mp4, -14.5 LUFS, peak -1.7 dBTP"
+   "state": "open",
+   "note": "older than src/scenes/ch08.js"
   },
   {
    "id": "ch09.acting",
@@ -2249,14 +2253,65 @@
    "title": "Model sheets: a caption leaves out Trest",
    "state": "pass",
    "note": "Fixed: sheet 7's caption reads 'Roal and Trest acting, and the pilot's props' and names Trest's side-on view, as the sheet does (tools/model_sheets.mjs and the page)."
+  },
+  {
+   "id": "find.ch07-f2-silent",
+   "area": "finding",
+   "title": "Chapter 7: F-2 gives no sign it's speaking",
+   "state": "open",
+   "note": "Eighteenth round, minor: through F-2's 23 s speech (1:37-2:00) and 'The screen will be ready' (2:26) it is a still torpedo; its talk glow doesn't show; in chapters 5 and 8 its speech carries thought rings. Also C-R-U-1 static through its line in ch05 7:33-7:41."
+  },
+  {
+   "id": "find.ch03-study",
+   "area": "finding",
+   "title": "Chapter 3: the study beat isn't shown",
+   "state": "open",
+   "note": "Eighteenth round, minor: shot P (5:06-5:36) holds three capsules hovering over the wrecks; nothing lands, no machine- or human investigators come out, and the investigator spheres that 'wormed their way' are specks."
+  },
+  {
+   "id": "find.ch01-conjoined",
+   "area": "finding",
+   "title": "Chapter 1: crowd figures stand inside each other",
+   "state": "open",
+   "note": "Eighteenth round, minor: in shot D (about 1:00-1:30) pairs of figures stand almost on top of each other, arms through bodies, for many seconds (1:11, 1:17)."
+  },
+  {
+   "id": "find.ch04-kahsh-sheet",
+   "area": "finding",
+   "title": "Chapter 4: Kahsh doesn't match his model sheet",
+   "state": "open",
+   "note": "Eighteenth round, minor: sheet 1 gives Kahsh-256799 a ruler's mantle, V collar, disc of office and headband; in the film (1:50-1:57) he's a plain belted tunic like Trest, and his name sits over X-6349."
+  },
+  {
+   "id": "find.ch05-f2-offscreen",
+   "area": "finding",
+   "title": "Chapter 5: F-2 leaves the frame as C-R-U-1 appears",
+   "state": "open",
+   "note": "Eighteenth round, nit: 7:04-7:10, F-2 drifts off the left edge just as 'A small cylinder, smaller even than its creator' is said, so the comparison can't be seen."
+  },
+  {
+   "id": "find.note-mentatype-metal",
+   "area": "finding",
+   "title": "Film page: the mentatype note says the film draws metal",
+   "state": "open",
+   "note": "Eighteenth round, nit: the 'Words' note (0:54, 56:18) says the record on 'thin sheets of metal' is how the film draws it, but the pages are cream paper."
+  },
+  {
+   "id": "find.ch08-curl-cut",
+   "area": "finding",
+   "title": "Chapter 8: Roal's thought-curl cut by the top edge",
+   "state": "open",
+   "note": "Eighteenth round, nit: through most of shot D (0:42-1:10) the curl runs off the top of the frame."
+  },
+  {
+   "id": "find.ch01-mock-early",
+   "area": "finding",
+   "title": "Chapter 1: the mock-battle flashes 3 s early",
+   "state": "open",
+   "note": "Eighteenth round, nit: the flashes start on 'so their energies' (about 1:24.5); 'mock battles' is at 87.5 s."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-11 10:51",
-   "found": 6,
-   "note": "Fifteenth round: 6 found, no majors (2 minor: Earth drawn like the Moon; the golden sphere a speck; 4 nits: ch04 watchers cut by the edges, C-R-U-1's name small at phone size, ch06's colours ahead of their words, 'read-ings' on the Read page)."
-  },
   {
    "when": "2026-11-11 20:53",
    "found": 10,
@@ -2266,6 +2321,11 @@
    "when": "2026-11-12 08:37",
    "found": 7,
    "note": "Seventeenth round, on the sixteenth round's drafts: 7 found, none major (3 minor, 4 nits)."
+  },
+  {
+   "when": "2026-11-12 12:28",
+   "found": 8,
+   "note": "Eighteenth round, on the seventeenth round's drafts: 8 found, none major (4 minor, 4 nits)."
   }
  ]
 }
