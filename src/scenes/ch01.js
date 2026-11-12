@@ -137,10 +137,11 @@
       glow(x, y, 9, '#F4EEDC', .5 + .3 * b); }
     // the years: a ruled curve rising to its peak and falling, drawn as the voice says them
     // over a base line for none: up from the start to the peak, then down to almost nothing (two millions of ten billion), and along it
-    const P = []; for (let k = 0; k <= 40; k++) { const u = k / 40, v = u < .3125 ? lerp(.4, 1, Math.sin(Math.PI / 2 * u / .3125)) : u < .625 ? .5 + .5 * Math.cos(Math.PI * (u - .3125) / .3125) : 0;
+    const P = []; for (let k = 0; k <= 48; k++) { const u = k / 48, v = u < .3125 ? lerp(.4, 1, Math.sin(Math.PI / 2 * u / .3125)) : u < .625 ? .5 + .5 * Math.cos(Math.PI * (u - .3125) / .3125) : 0;
       P.push([240 + u * 1440, 396 - 220 * Math.max(v, .015)]); }
     stillSeed('nbase'); inkLine([[220, 400], [1700, 400]], 1.2, '#7A6E5C', 'inkfine', 0);
-    ruled(P, seg(t, t0, tFew + 1), '#B09C74', 3.2);
+    // up to the peak by 'but from that time on', then down (drawn at one pace, it turned 2 s early, under 'increased rapidly')
+    ruled(P.slice(0, 16), seg(t, t0, tPeak), '#B09C74', 3.2); ruled(P.slice(15), seg(t, tPeak, tFew + 1), '#B09C74', 3.2);
     camEnd();
   }
 
