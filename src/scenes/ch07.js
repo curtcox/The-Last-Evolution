@@ -26,8 +26,10 @@
   // the six machines: in after F-2, then ranged round the men
   // they close round the two men three to a side, clear of them (a half-ring put the middle two in front of Roal and Trest),
   // and inside the dome's edge (at 150 apart the end ones stood half out of it)
-  const sixAt = (t, i) => { const ring = ez(t, T0('H') - .5, T0('H') + 3), enter = ez(t, tSix - 1 + i * .3, tSix + 5 + i * .3), k = i < 3 ? 2 - i : i - 3, side = i < 3 ? -1 : 1;
-    return [lerp(lerp(2500, 1700 + i * 60, enter), MID + side * (230 + k * 110), ring), lerp(lerp(600, 760, enter), G + 30 - 15 * k, ring)]; };
+  // (they wait behind F-2 and above it, in the frame while it speaks of them: held at 1,700-2,000 they were out of shot G
+  // and whipped in from the edge in 1.5 s; now they go round on a rise, over the men's heads, not through them)
+  const sixAt = (t, i) => { const ring = ez(t, T0('H') - .3, T0('H') + 4.5), enter = ez(t, tSix - 1 + i * .3, tSix + 5 + i * .3), k = i < 3 ? 2 - i : i - 3, side = i < 3 ? -1 : 1;
+    return [lerp(lerp(2500, 1370 + i * 58, enter), MID + side * (230 + k * 110), ring), lerp(lerp(600, 715 + 22 * (i % 2), enter), G + 30 - 15 * k, ring) - 270 * Math.sin(Math.PI * ring)]; };
   function inHall(t, o = {}) {
     DES.lab(-300, -150, 2520, 1300, t, { couch: false, ext: 1200 });
     { const x0 = -300, y0 = -150, w = 2520, h = 1300, fy = y0 + h * .78;   // the lab's piers again, solid: its washes let the screens' frames show through them
