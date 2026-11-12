@@ -83,7 +83,7 @@
       [C('p117.1:a howling wind') - .5, tt => [PX - 380, 640, 1.5], 2.5],   // in on the 'tiny rounded hull' the wind tears at; at the wide it was too small to see it held
       [tE, [PX, ORB[1] + 120, 1.1], 3], [tF, [PX - 100, ORB[1] + 200, .9], 3], [tG, [PX - 160, ORB[1] + 60, 1.5], 2.5], [tH, [PX, ORB[1], 2.2], 2.5], [tI, tt => [lerp(PX - 220, PX + 60, ez(tt, tStabEnd, tStabEnd + 2.5)), lerp(ORB[1] + 160, ORB[1] + 100, ez(tt, tStabEnd, tStabEnd + 2.5)), lerp(1.35, 1, ez(tt, tStabEnd, tStabEnd + 2.5))], 2],   // in on the globe and F-2 for the stab and the dodge; then out to hold the plant, the beam and the sphere together through the duel (it went wide 0.5 s after the stab, F-2 cut by the edge)
       [tJ, tt => [lerp(PX - 100, PX + 60, ez(tt, tJ, tJ + 10)), 80, .72], 3],   // J: the storm on the plant again, wide enough for the lightning
-      [C('p122.1:C-R-U-1 joined him') - 2, [PX - 490, RG - 110, 1.7], 2.5],   // in on C-R-U-1 floating in beside F-2, its gold name readable
+      [C('p122.1:C-R-U-1 joined him') - 2, [PX - 500, RG - 95, 3], 2.5],   // in on C-R-U-1 floating in beside F-2, its gold name readable (at 1.7 it was 45 px across, a glint on a phone)
       [C('p122.1:red glory of the sun') - .5, tt => [lerp(PX - 300, PX + 350, ez(tt, C('p122.1:red glory of the sun') - .5, tK)), lerp(760, 680, ez(tt, C('p122.1:red glory of the sun'), tK)), lerp(1.3, .95, ez(tt, C('p122.1:red glory of the sun') - .5, tK))], 3],   // round, so the red sun rises behind them
       // K: in on the dome as it parts and the two men walk out of it, held while they come; then up to the globe above the
       // plant, wide, so the glow shows; then in on it for its golden light and violet halo (held wide, it was a speck), to
