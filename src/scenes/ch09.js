@@ -92,6 +92,10 @@
         const inn = ez(tt, tGold + 2, C('p123.1:deep violet') + 1);
         return [lerp(lerp(lerp(350, 215, ez(tt, tK, tApp)), PX, up), PX, inn),   // (at 150 F-2's nose was cut by the right edge as they came out)
            lerp(lerp(800, ORB[1] + 260, up), ORB[1], inn), lerp(lerp(lerp(1, 1.3, ez(tt, tK, tApp)), .75, up) * lerp(1, 1.5, ez(tt, tGold + 3, tL)), 2.6, inn)]; }, 3],
+      // down to all who hear it, the two men, F-2 and C-R-U-1, as its impulses come down through them 'into the
+      // thought-apparatus of each, man and machine alike' (held in on the sphere, 24 s, the listeners went unseen; framed
+      // wide with the sphere, they were specks)
+      [C('p124.1:Into the thought-apparatus') - .6, tt => [lerp(640, 660, ez(tt, C('p124.1:Into the thought-apparatus'), tL)), 760, lerp(1.65, 1.75, ez(tt, C('p124.1:Into the thought-apparatus'), tL))], 2.5],
       [tL, tt => [PX, ORB[1], lerp(2.6, 3.4, ez(tt, tL, tM))], 2.5], [tM, tt => [PX - 100 * ez(tt, tRuby + 2, tN), lerp(ORB[1], 300, ez(tt, tRuby + 2, tN)), lerp(3.4, .7, ez(tt, tRuby + 2, lerp(tRuby + 2, tN, .5)))], 3],   // close on the sphere, now sized to the words, so its violet halo and the ruby flame read
       // in close on the two men as the warmth shoots through them, their last time on screen (at 25 px they were specks)
       [C('p126.1:there shot through') - .4, tt => [lerp(470, 500, ez(tt, C('p126.1:there shot through'), tN)), 800, lerp(2.2, 2.4, ez(tt, C('p126.1:there shot through'), tN))], 1.6],
@@ -108,10 +112,14 @@
     // F to I: the white globe; F-2's probing; the stab; the red beam, shrinking it through orange and green
     // after its stab the globe draws back, up and away; the red beam reaches for where it was, and on 'The sphere leaped
     // forward' it leaps back into the beam, which catches it (the beam had it 4 s early, sitting on the plant)
-    const tLeap = C('p121.4:The sphere leaped'), back = ez(t, tStabEnd, tStabEnd + 1.3) * (1 - ez(t, tLeap - .1, tLeap + .35)), orb = [ORB[0] + 330 * back, ORB[1] - 150 * back];
-    const g1 = t > tF - 1 && t < tGone + .3, shrink = 1 - .9 * ez(t, tLeap, tGone);
+    // (the beam stops short of it until 'caught', and its sparks wait for 'terrific flashing energies': reaching it at once and
+    // spraying from the leap, it read as caught before it leaped)
+    const tLeap = C('p121.4:The sphere leaped'), tCaught = C('p121.4:the beam caught it'), tSpray = C('p121.4:terrific flashing') - .2;
+    const back = ez(t, tStabEnd, tStabEnd + 1.3) * (1 - ez(t, tLeap - .1, tLeap + .6)), orb = [ORB[0] + 420 * back, ORB[1] - 190 * back];
+    const g1 = t > tF - 1 && t < tGone + .3, shrink = 1 - .9 * ez(t, tCaught, tGone);
     if (g1) { const r = 20 * shrink * (t < tF ? seg(t, tF - 1, tF) : 1); glow(...orb, r * 3, NRG.white, .6); glow(...orb, r * 1.4, '#FFFDF6', .9);
-      if (t > tLeap) for (let i = 0; i < 6; i++) { const a = hash(Math.floor(t * 8) + i) * TAU; boilSeed('spray' + i + Math.floor(t * 12)); lightning(...orb, orb[0] + Math.cos(a) * 300, orb[1] + Math.sin(a) * 300, '#FFE2B0', { amp: .2, r: 30 }); } }
+      if (t > tCaught) { const strain = 1 - ez(t, tSpray, tSpray + .5); orb[0] += 8 * strain * Math.sin(t * 31); orb[1] += 6 * strain * Math.cos(t * 27); }   // 'it seemed to strain'
+      if (t > tSpray) for (let i = 0; i < 6; i++) { const a = hash(Math.floor(t * 8) + i) * TAU; boilSeed('spray' + i + Math.floor(t * 12)); lightning(...orb, orb[0] + Math.cos(a) * 300, orb[1] + Math.sin(a) * 300, '#FFE2B0', { amp: .2, r: 30 }); } }
     if (t > tH && t < tStab + .5) thoughtRings(...ORB, t, tH, C('p121.3$'), { r1: 400, col: '#FFFDF6' });
     const f2 = f2At(t);
     if (t > C('p120.1') && t < tH) for (let i = 0; i < 5; i++) { const k = seg(t, C('p120.1') + i * .8, C('p120.1') + i * .8 + 1.2), d = [ORB[0] - 80, ORB[1] + 40 * (i - 2)], turn = t > C('p120.1:seemed baffled') ? 1 : 0;
@@ -123,11 +131,16 @@
       beam(...ORB, ...end, 50, 80, '#8FB2FF', k, { washOp: 130, a: .85 * fl }); beam(...ORB, ...end, 18, 30, '#F4F8FF', k, { washOp: 150, a: .8 * fl, splash: false }); }
     if (t > tRed - .2 && t < tGone + .4) { const col = t < tOrange ? '#B23A2A' : t < tGreen ? mixCol('#E8641E', NRG.death, ez(t, tGreen - .35, tGreen)) : NRG.death;   // a true orange, held until 'green'
       // the beam reaches out from the plant toward the sphere where it hangs, and has it once it leaps
-      const reach = ez(t, tRed - .2, tRed + 3), end = t < tLeap ? lerpP([PX, TOP], [orb[0] - 40, orb[1] + 30], .25 + .6 * reach) : orb;
+      const reach = ez(t, tRed - .2, tRed + 3), tip = lerpP([PX, TOP], [ORB[0] - 40, ORB[1] + 30], .25 + .5 * reach), end = lerpP(tip, orb, ez(t, tCaught - .35, tCaught + .05));
       beam(PX, TOP + 20, ...end, 90, 40 * shrink + 24, col, ez(t, tRed - .2, tRed + .3), { washOp: 110, a: .85 }); glow(...end, 60, col, .5); }
     // F-2; C-R-U-1 joining it at dawn
     DES.f2(f2[0], f2[1] + 2.4 * FS, FS, t, { view: 'side' });
     if (t > C('p122.1:C-R-U-1 joined him') - 3) { const k = ez(t, C('p122.1:C-R-U-1 joined him') - 3, C('p122.1:C-R-U-1 joined him') + 1); DES.cru1(lerp(-600, f2[0] - 140, k), f2[1] + 60 + 2.2 * 30, 30, t, { glowK: 1 }); }
+    // the impulses arriving in each of them, man and machine alike: a slow gold pulse at each head, deep in tone, in time
+    // with the rings from the sphere
+    { const tInto = C('p124.1:Into the thought-apparatus'), k = win(t, tInto + .3, C('p124.1$') + .8, .8, 1);
+      if (k > 0) { const pulse = .55 + .45 * Math.sin((t - tInto) / 1.8 * TAU), cru = [f2[0] - 140, f2[1] + 50];
+        for (const h of [[420, 752], [540, 748], [f2[0] + 40, f2[1]], cru]) { glow(...h, 50, NRG.gold, .5 * k * pulse); glow(...h, 16, '#FFF2C8', .6 * k * pulse); } } }
     // J: again the lightnings crash on the plant's crown, and titanic forces work and play about it
     if (t > tJ + 1 && t < tK) for (let i = 0; i < 4; i++) glow(ORB[0] + 200 * Math.sin(t * 2 + i), ORB[1] + 120 * Math.cos(t * 1.7 + i), 80, [FORCE, NRG.gold, NRG.violet, FORCE][i], .4 * storm(t));
     const crash = win(t, C('p122.1:the lightnings crashed') - .2, C('p122.1:C-R-U-1 joined him') + 1, .2, 1), play = win(t, C('p122.1:while titanic forces') - .3, C('p122.1:red glory of the sun'), .5, 1.5);
@@ -144,7 +157,8 @@
     if (t > tK) {
       // the dome again, in front: the men are inside it until they walk out
       if (domePart(t) < 1) for (let i = 0; i < 2; i++) DES.blackDome(-300, RG + 60, 320 * (1 - domePart(t) * .9), t); }   // twice: one coat lets the figures show through
-    if (gk > 0) { sphereGold(t, GR * gk * (1 + grow)); thoughtRings(...ORB, t, T0('L'), C('p125.1$'), { r1: 600, col: NRG.gold }); thoughtRings(...ORB, t, T0('O'), C('p128.1$'), { r1: 600, col: NRG.gold });
+    if (gk > 0) { sphereGold(t, GR * gk * (1 + grow)); thoughtRings(...ORB, t, C('p124.1:Into the thought-apparatus'), C('p124.1$'), { r1: 1550, sq: 1, per: 1.8, col: NRG.gold });   // the impulses, deep in tone, down to all who hear
+      thoughtRings(...ORB, t, T0('L'), C('p125.1$'), { r1: 600, col: NRG.gold }); thoughtRings(...ORB, t, T0('O'), C('p128.1$'), { r1: 600, col: NRG.gold });
       const ruby = t > tRuby ? Math.max(0, Math.sin((t - tRuby) * 2.2)) * (1 - ez(t, tN - 1, tN)) : 0; if (ruby > 0 || (t > tRuby && t < tN)) { rubyFlame(t, GR * gk * (1 + grow), ruby); glow(...ORB, 900, '#FFC780', .3 * ruby); glow(480, RG - 120, 260, '#FFC780', .35 * ruby); } }   // and its warmth on the men
     if (t > tVanish - .1 && t < tVanish + .6) { const q = seg(t, tVanish - .1, tVanish + .6); beam(ORB[0], ORB[1], ORB[0] + 400, -3000, 60 * (1 - q), 10, NRG.gold, 1, { washOp: 60 * (1 - q), a: 1 - q, splash: false }); }
     camEnd();
