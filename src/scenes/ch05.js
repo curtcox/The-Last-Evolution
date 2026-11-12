@@ -369,6 +369,7 @@
       const name = K(t, 'p069.2:Force played', 'p069.2:in dully glowing');
       if (t > C('p069.2:Force played')) glow(CRU[0], CRU[1] - 40, 120, FORCE, .3 * (1 - name * .5));
       DES.cru1(CRU[0], G, 34, t, { hover: (G - CRU[1]) / 34 + .12 * wob(t, .25), unlit: name < .05, glowK: name, lit: .7 * talk(t, 'cru1') });
+      for (const l of CHAPTER.lines) if (l.who === 'cru1' && t > l.t0 && t < l.t1 + 2.5) thoughtRings(CRU[0], CRU[1] - 10, t, l.t0, l.t1, { r1: 240 });   // its speech, as F-2's (it hung still and unlit through its line)
     }
     { const k = win(t, C('p067.1') + 1.2, C('p067.1') + 6, .3, .6); if (k > 0) letter('F-2', WORK[0], WORK[1] + 74, 34, '#EFE6D2', { ink: false, font: '700 34px ' + SERIF, spacing: 2, alpha: k }); }   // lettered the first time it's spoken
     // AF to AK: F-2's glow as it speaks
@@ -428,7 +429,7 @@
     [T0('AC'), t => [WORK[0] - 40, WORK[1], 2.2 + .3 * along(t, 'AC')], { mv: 1.8, lead: .3 }],
     [tMake + .5, t => [lerp(1000, 1120, ez(t, tMake, T1('AC'))), 790, 1.45], { mv: 2.5, lead: 0 }],   // to the empty floor
     [T0('AD'), t => [lerp(1150, 1250, along(t, 'AD')), 790, 1.6 + .3 * along(t, 'AD')], { mv: 2.4, lead: .3 }],
-    [T0('AE'), t => [CRU[0] + lerp(40, 10, along(t, 'AE')), CRU[1] - 38, lerp(2.6, 3.9, along(t, 'AE'))], { mv: 2, lead: .3 }],
+    [T0('AE'), t => [lerp(1170, 1250, along(t, 'AE')), CRU[1] - 20, lerp(2.0, 2.7, along(t, 'AE'))], { mv: 2, lead: .3 }],   // F-2 and the cylinder 'smaller even than its creator' side by side (in on it alone, F-2 went off the left edge)
     [T0('AF'), t => [lerp(980, 1000, along(t, 'AF')), 800, 1.4], { mv: 2.4, lead: .3 }],
     [T0('AG'), t => { const k = ez(t, C('p069.2:on its sides appeared'), C('p069.2$')), nm = ez(t, C('p069.2:appeared') + .3, C('p069.2:in dully'));
       return [lerp(lerp(1160, 1190, k), CRU[0], nm), lerp(lerp(CRU[1] - 45, CRU[1] - 55, k), CRU[1] - 40, nm), lerp(2.5 + .5 * k, 5, nm)]; }, { mv: 2, lead: .3 }],   // C-R-U-1 and F-2, whom it speaks to, together; then in on C-R-U-1 as its name glows on, so the name reads at phone size, close enough that F-2 is wholly out (at 3.9 its nose sat at the left edge, for 19 s)
