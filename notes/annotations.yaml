@@ -44,7 +44,8 @@ notes:
     title: Mentatype
     body: >-
       Campbell's word, a machine that records thought as a typewriter records keys. The story's last pages call the
-      record "excerpts from certain records on thin sheets of metal", which is how the film draws it.
+      record "excerpts from certain records on thin sheets of metal"; the film shows those records as pages, as the
+      magazine gave them to its readers.
 
   # 1. 2538
   - id: six-centuries
@@ -433,7 +434,7 @@ notes:
     title: Back to the page
     body: >-
       The record has become the story you've been hearing, set as the magazine's page: the film ends where the
-      story began, in print. Its "thin sheets of metal" are where the film's mentatype comes from.
+      story began, in print. The story calls the record "thin sheets of metal"; the film gives it to you as the page.
   - id: believe
     on: believe as you will
     kind: heirs
