@@ -106,9 +106,10 @@
         for (let k = 0; k < 6; k++) { const px = x0 + w * (.04 + k * .19); stillSeed('spier' + k); paint(rectPts(px, y0, w * .05, fy - y0), { wash: '#8C8170', washOp: 255, fill: '#7C7262', fillOp: 110, bleed: .02, tex: .3, ink: INK, sw: .6 });
           for (let f = 1; f < 4; f++) inkLine([[px + f * w * .0125, y0 + 10], [px + f * w * .0125, fy - 10]], .35, D[4]); wash(rectPts(px - w * .01, fy - h * .03, w * .07, h * .03), 4, { ink: true, sw: .5 }); } }
       hallMachines(t, false);
-      // E: the weapons taking shape on the floor
+      // E: the weapons taking shape on the floor, either side of Roal and Trest (laid every 220 from 400, two lay across
+      // the men at their legs and waists, as if passing through them)
       const ew = win(t, tE - 1, T1('E') + .5, 1, 1);
-      if (ew > 0) { for (let i = 0; i < 6; i++) { const x = 400 + i * 220, made = ez(t, tE + i * .8, tE + i * .8 + 2), up = ez(t, tE + 6 + i * .5, tE + 9 + i * .5);
+      if (ew > 0) { for (let i = 0; i < 6; i++) { const x = [220, 410, 600, 1140, 1330, 1600][i], made = ez(t, tE + i * .8, tE + i * .8 + 2), up = ez(t, tE + 6 + i * .5, tE + 9 + i * .5);
           const off = ez(t, tE + 10 + i * .45, tE + 11.5 + i * .45);   // level as they rise, then away one after another (turned upright, hanging in a row, they read as lamps)
           if (made > 0 && off < 1) { glow(x, G - 80, 60, '#CFE0FF', .4 * (1 - made)); DES.mote(x - 1800 * off * off, G - 70 - 430 * up, 150 * made, t, { ang: 0, drive: up > .1 }); } }
         const hot = K(t, 'p019.1:a highly effective induction-heat ray', 'p019.1:in some small machines');
