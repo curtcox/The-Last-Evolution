@@ -18,8 +18,9 @@
   }); };
   const K = (t, a, b) => seg(t, C(a), C(b));
   const BG = '#2E2620', PALE = '#EFE6D2', FORCE = '#CFE0FF';
-  const plateGround = (key = 'plate') => key !== 'plate' ? ground(BG, 255, key, { fill: '#3B322B', fillOp: 120 })
-    // the history plate runs on to the joined machine at 2500 (ground's sheet ended at 2720, and the move there showed bare paper past it)
+  const plateGround = (key = 'plate') => key === 'numbers' ? ground(BG, 255, key, { fill: '#3B322B', fillOp: 120 })
+    // the history plate runs on to the joined machine at 2500, and the mind plate under J's move to 2900 (ground's sheet ended at 2720,
+    // and the moves there showed bare paper past it, its edge carried over the closing street in the dissolve)
     : steady(() => { stillSeed(key); paint(rectPts(-800, -800, 5600, H + 1600), { wash: BG, washOp: 255, fill: '#3B322B', fillOp: 120, bleed: .2, tex: .4, ink: null }); });
 
   // ---------- B: six centuries of machines, along a ruled line ----------
@@ -99,6 +100,14 @@
           pose: { up: lerp(.12, .8, g), fore: lerp(.3, 1.8, g) }, talk: turn === sd ? .3 * Math.max(0, Math.sin(t * 6 + i)) : 0 }); } }
     // D: the runners cross the plaza; the mock battle beyond them
     const tRun = C('p003.1:But games');
+    // games: two at ball behind the race, between the towers at 2450 and 3000, tossing it back and forth in a high arc, the
+    // thrower's arm up as it leaves and the catcher's rising to meet it (the race alone read as walkers among the standing
+    // groups under 'games, athletic contests'); after 'sought' the catcher keeps it and both walk off left, out of the push-in
+    { const P = 2.2, nEnd = Math.ceil((tRun + 8 + .3) / P), tEnd = nEnd * P - .3, ph = (Math.min(t, tEnd - .001) + .3) / P, n = Math.floor(ph), u = t >= tEnd ? 1 : ph - n, from = n % 2, hands = [];
+      [[2580, G - 4], [2880, G - 10]].forEach(([x, y], j) => { const up = t >= tEnd ? (j === from ? 0 : .4) : j === from ? 1 - ez(u, 0, .3) : ez(u, .55, .92);
+        hands.push(stander(t, x + (t < tEnd ? 4 * Math.sin(t * 1.7 + j) : 0), y, 25, [[tEnd + .4 + .3 * j, tEnd + 6.4 + .3 * j, x, x - 900]], { seed: 80 + j, key: 'ball' + j, flip: j > 0, look: .08, pose: { up: lerp(.35, 1.7, up), fore: lerp(.5, 1.3, up), torso: .03 + .05 * up } }).hand); });
+      const a = hands[from], b = hands[1 - from], bx = lerp(a[0], b[0], u), by = lerp(a[1], b[1], u) - 100 * Math.sin(Math.PI * u);
+      boilSeed('ball'); paint(ellPts(bx, by, 8, 8, 12, 1), { wash: INK, washOp: 210, ink: INK, sw: .7 }); }
     // a race: five runners leaning in, arms pumping, strung out as they cross (three upright walkers didn't read as games)
     for (let i = 0; i < 5; i++) { const t0 = tRun - .5 + i * .25, dur = 7.4 + .6 * hash(i * 3), sw = Math.sin(t * 13 + i * 1.7); if (t > t0 + dur) continue;   // on out of the frame (stopped at 4,100 they stood in among the drill, figures inside figures)
       stander(t, 2300, G + 40 + (i % 3) * 26, 26 + (i % 2) * 2, [[t0, t0 + dur, 2300 - i * 50, 4900 - i * 60]], { seed: 10 + i, key: 'run' + i, pose: { torso: .3, up: .9 + .7 * sw, fore: 2.1, farUp: .9 - .7 * sw, farFore: 2.1 } }); }
@@ -123,7 +132,7 @@
   }
   function city(t) {
     HALFTONE = .3;
-    const c = cam(t, [[0, tt => [lerp(900, 1700, ez(tt, T0('C') - 2, T1('C'))), 600, .85]], [T0('D') - .5, tt => [lerp(2900, 3550, ez(tt, T0('D'), C('p003.1:their pleasure') + .6)), lerp(680, 790, ez(tt, T0('D'), T1('D'))), lerp(1.15, 1.42, ez(tt, T0('D'), T1('D')))], 3],   // in on the runners and the mock battle (centred on its two sides once the race is by: drifting there over the whole shot, the far side stood cut by the frame's edge 20 s)
+    const c = cam(t, [[0, tt => [lerp(900, 1700, ez(tt, T0('C') - 2, T1('C'))), 600, .85]], [T0('D') - .5, tt => [lerp(2650, 3550, ez(tt, T0('D'), C('p003.1:their pleasure') + .6)), lerp(680, 790, ez(tt, T0('D'), T1('D'))), lerp(1.15, 1.42, ez(tt, T0('D'), T1('D')))], 3],   // in on the runners and the mock battle (centred on its two sides once the race is by: drifting there over the whole shot, the far side stood cut by the frame's edge 20 s)
       [T0('K') - 2, tt => [lerp(1100, 2300, ez(tt, T0('K'), DUR + 1)), 850, 1.6], .01]]);
     withCam(c, () => { cityWorld(t); if (t > T0('K') - 2) together(t); });
   }
