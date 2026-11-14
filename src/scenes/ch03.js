@@ -246,7 +246,13 @@
       for (let i = 0; i < 5; i++) { const x = 500 + i * 260, s = 70 + 20 * hash(i); stillSeed('cdome' + i); wash([...Array(17)].map((_, k) => { const a = Math.PI + k / 16 * Math.PI; return [x + Math.cos(a) * s, LG + 60 + Math.sin(a) * s * .8]; }), 1, { ink: true, sw: .6 }); }
       // the people: standing, then falling in the green
       for (let i = 0; i < 9; i++) { const x = 420 + i * 140 + 40 * hash(i), y = LG + 90 + 40 * hash(i * 3), fall = ez(t, tKill - .3 + i * .12, tKill + .2 + i * .12);   // all down within 1.3 s of 'killed instantly' (spread .25 apart, the last fell 2.6 s on)
-        if (fall < 1) { push(); translate(x, y); rotate(fall * Math.PI / 2 * (i % 2 ? 1 : -1)); translate(-x, -y); DES.person(x, y, 25, t, { who: 'citizen', flip: i % 2 }); pop(); }
+        // seen from the side, each his own: they turn up to the ships settling over them, one pointing, one shading his
+        // eyes, one stepping back, and as the green comes down they throw their arms up over their faces (an even row of
+        // the same front-facing figure stood unmoved for 10 s under the ships)
+        const kind = i % 3, h = hash(i * 13), see = ez(t, tK + 1.2 + 1.5 * h, tK + 3 + 1.5 * h), cower = ez(t, tGreenOn + .3 * h, tGreenOn + 1 + .3 * h),
+          up0 = [2.6, 1.9, .5][kind], fore0 = [.2, 2.2, .6][kind], back = kind === 2 ? -.12 * see : 0, sw = .03 * Math.sin(t * 1.3 + i * 2.1);
+        const pose = { torso: lerp(back + sw, -.16, cower), thigh: kind === 2 ? -.1 * see : 0, up: lerp(lerp(.12, up0, see) + .05 * Math.sin(t * 1.7 + i), 2.1, cower), fore: lerp(lerp(.3, fore0, see), 4.5, cower), farUp: lerp(.05, 1.5, cower), farFore: lerp(.15, 2.2, cower) };
+        if (fall < 1) { push(); translate(x, y); rotate(fall * Math.PI / 2 * (i % 2 ? 1 : -1)); translate(-x, -y); DES.personSide(x, y - DES.HIP * 25, 25, t, { who: 'citizen', flip: (x > 1000) !== (h > .8), key: 'col' + i, seed: 40 + i, look: lerp(-.05, .55 + .2 * h, see) * (1 - cower), shieldFace: cower > .5, pose }); pop(); }
         else { boilSeed('fallen' + i); wash(rrPts(x - 75 * (i % 2 ? -1 : 1) - 68, y - 18, 136, 26, 10), 2, { ink: true, sw: .4 }); } }
       // P: the transports come down on the far ground between the downed ships, behind them (at 600-1600 one landed on the
       // wreck and each sat on a standing machine's head, reading as one thing)
