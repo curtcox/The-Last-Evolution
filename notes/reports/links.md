@@ -1,15 +1,13 @@
 # Links
 
-Written by `tools/check_refs.mjs` on 2026-11-14. **1 problem(s).**
-
-- blackgate-best-of: https://www.blackgate.com/?p=226361 → fetch failed
+Written by `tools/check_refs.mjs` on 2026-11-14. **All good.**
 
 | id | status | kind | cited in | title |
 |---|---|---|---|---|
 | archive-1932 | 200 | primary | history.md | [Amazing Stories, August 1932 (scan)](https://archive.org/details/Amazing_Stories_v07n05_1932-08_Missing_ibcbc_cape1736) |
 | archive-1961 | 200 | primary | history.md | [Amazing Stories, March 1961 (scan)](https://archive.org/details/Amazing_Stories_v35n03_1961-03_UnkSc-cape1736) |
 | arxiv-before-bethe | 200 | secondary | science.md, annotations.yaml | [Before Bethe: early ideas of the Sun's generation of energy (arXiv)](https://arxiv.org/abs/2209.00072) |
-| blackgate-best-of | fetch failed | secondary | afterword.md, foreword.md, succession.md | [Black Gate on The Best of John W. Campbell (1976)](https://www.blackgate.com/?p=226361) |
+| blackgate-best-of | 200 | secondary | afterword.md, foreword.md, succession.md | [Black Gate on The Best of John W. Campbell (1976)](https://www.blackgate.com/?p=226361) |
 | cais-statement | 200 | primary | afterword.md, succession.md | [Statement on AI Risk (Center for AI Safety, 2023)](https://www.safe.ai/work/statement-on-ai-risk) |
 | dwarkesh-sutton | 200 | primary | afterword.md, succession.md | [Dwarkesh Podcast: Richard Sutton (26 September 2025)](https://www.dwarkesh.com/p/richard-sutton) |
 | gutenberg | 200 | primary | afterword.md, history.md | [Project Gutenberg eBook #27462: The Last Evolution](https://www.gutenberg.org/ebooks/27462) |
