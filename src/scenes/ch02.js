@@ -145,8 +145,10 @@
       const tLife = C('p010.1:Strange life-forms'), inK = ez(t, tLife - 1, tLife + 3), off = 1100 * (1 - inK);
       // each about its own business: one scuttling along the floor and back, one up a rib of the hull, one along a pipe overhead
       if (t > tLife - 1) { crawler(1015 + 115 * Math.sin((t - tLife) * .45) + off, t, 0, { s: 34, g: FAR, turn: Math.cos((t - tLife) * .45) > 0 ? 0 : .5 });
-        const rib = frac((t - tLife) * .05), ry = lerp(FAR, 330, rib); crawler(650 + off * 1.15, t, 1, { s: 26, g: ry, rot: -Math.PI / 2 });
-        crawler(1170 - 280 * frac((t - tLife) * .06) + off * 1.3, t, 2, { s: 20, g: 500, turn: .5 }); }
+        // the climber goes on up the rib and out of sight above, once (looping, it dropped back to the floor at 20 s); the one
+        // on the wall goes off left along it before the camera closes in (it stayed, cut by the top edge as the frame tightened)
+        const tIn = C('p010.1:Their eyes projected') - 1, ry = lerp(FAR, 120, ez(t, tLife, tLife + 22)); if (ry > 140) crawler(650 + off * 1.15, t, 1, { s: 26, g: ry, rot: -Math.PI / 2 });
+        const wx = lerp(1170, 200, seg(t, tLife + 2, tIn)) + off * 1.3; if (wx > 220) crawler(wx, t, 2, { s: 20, g: 500, turn: .5 }); }
       const tum = seg(t, tTumble - .6, tTumble + 4), struck = t > tHit;
       const sx = (struck ? lerp(1400, 1820, ease(tum)) : 1400) + off * 1.4, rot = struck ? -TAU * easeOut(tum) : 0, lift = struck ? 160 * Math.sin(Math.PI * tum) : 0;   // a whole turn: he lands on his feet, unhurt (a turn and a half left him upside down)
       if (t > tLife - 1) { push(); translate(sx, NEAR - 80 - lift); rotate(rot); translate(-sx, -(NEAR - 80 - lift));

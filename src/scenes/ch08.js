@@ -79,7 +79,8 @@
     if (fk > 0) { const tCh = C('p105.1:Chemicals might mix');
       for (let i = 0; i < 12; i++) { const j = t > tCh + 2 && i % 3 === 0, x = 300 + 200 * hash(i) + 40 * Math.sin(t * .5 + i) + (j ? 20 : 0), y = 380 + 300 * hash(i * 3) + 30 * Math.cos(t * .4 + i); boilSeed('chem' + i); wash(ellPts(x, y, 14, 14, 10), i % 3, { ink: true, sw: .4, op: fk }); }
       const tDup = C('p105.1:as is F-2 here'), dup = ez(t, tDup - 2, tDup + 2);
-      DES.f2(LAD + 520, 640, 20, t, { view: 'side', hover: 1.5 }); if (dup > 0) { boilSeed('dup'); for (let i = 0; i < 5; i++) ruled([[LAD + 560, 600], [LAD + 700, 600 - 30 + i * 15]], dup, FORCE, .6); DES.f2(LAD + 740, 640, 20 * dup, t, { view: 'side', hover: 1.5 }); } }
+      // (at 20 each was about 40 px long, hard to see on a phone at 'as is F-2 here')
+      DES.f2(LAD + 440, 640, 34, t, { view: 'side', hover: 1.5 }); if (dup > 0) { boilSeed('dup'); for (let i = 0; i < 5; i++) ruled([[LAD + 520, 589], [LAD + 640, 589 - 44 + i * 22]], dup, FORCE, .8); DES.f2(LAD + 760, 640, 34 * dup, t, { view: 'side', hover: 1.5 }); } }
     camEnd();
   }
 
