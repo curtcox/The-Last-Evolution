@@ -1584,6 +1584,41 @@ items:
     note: Where it stands now adds no full stop after a call that ends in one; the two 'Whisper hears' questions end in a single question mark.
     title: "Where it stands: two double full stops"
     when: 2026-11-14 16:23
+  find.ch07-f2-tentacles:
+    state: open
+    note: "Twenty-second round, minor: 1:30-2:01 (shots F, G), F-2 speaks as a bare torpedo; its tentacles are dark strokes on the dark floor and pier base; back at 2:24 on light ground. c07_99c.jpg, c07_110.jpg vs c07_144.jpg."
+    title: "Chapter 7: F-2's tentacles lost on the dark floor"
+    when: 2026-11-14 16:43
+  find.ch01-lying-man:
+    state: open
+    note: "Twenty-second round, minor: 0:53-1:33 (shot D), a man flat on his back, arms folded, the whole shot; beside 'mock battles' (1:27.5) he reads as a casualty, against the board's 'nobody falls'. c01_64.jpg, c01_88.jpg."
+    title: "Chapter 1: a man lies flat beside the mock battle"
+    when: 2026-11-14 16:43
+  find.ch03-colonists:
+    state: open
+    note: "Twenty-second round, minor: 3:12-3:31 (shot K), an even row of the same figure facing camera, unmoving for about 10 s as the ships settle and the green comes down; they fall on 'killed instantly' (3:31.7). c03_K.jpg."
+    title: "Chapter 3: the colonists stand like a model sheet"
+    when: 2026-11-14 16:43
+  find.ch05-f1-legs:
+    state: open
+    note: "Twenty-second round, nit: 4:51.9 (shot X), the eight legs go between frames once tip > .05 (src/scenes/ch05.js:99); it falls a bare cylinder. c05_fall2.jpg."
+    title: "Chapter 5: F-1's legs vanish as it tips"
+    when: 2026-11-14 16:43
+  find.ch00-board-reprint:
+    state: open
+    note: "Twenty-second round, nit: script/boards/ch00.yaml shot A's seen, shown on review/round6/ch00-draft.html, calls the masthead 'A Classic Reprint from AMAZING STORIES'; the film letters 'AMAZING STORIES · August, 1932'. c00_12.jpg."
+    title: "Chapter 0: the board says 'A Classic Reprint'"
+    when: 2026-11-14 16:43
+  find.ch09-sphere-gone:
+    state: open
+    note: "Twenty-second round, nit: 5:01.4-5:03.7 (shot P), 'the golden sphere was gone' while it hangs 2.2 s more, streaking off at 'fast as light it vanished'. c09_P.jpg."
+    title: "Chapter 9: the sphere hangs after 'was gone'"
+    when: 2026-11-14 16:43
+  find.ch02-ch08-small:
+    state: open
+    note: "Twenty-second round, nit: ch02 1:30-2:08 (shot G) an Outsider crawling high on the wall cut by the top edge; ch08 2:07-2:12 (shot F) F-2 and its duplicate about 40 px long at 1280, hard to see on a phone at 'as is F-2 here'. c02_GH.jpg, c08_EG.jpg."
+    title: "Chapters 2 and 8: an Outsider cut off; F-2's duplicate too small"
+    when: 2026-11-14 16:43
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1673,4 +1708,8 @@ fresh:
     found: 6
     note: "Round 21: 0 major, 3 minor (ch01 last wipe broken, ch02 footnotes too small/brief, ch03 torpedoes over the men), 3 nits (curl note overpromises, ch01 games unseen, double stops on the quality page)"
     state: 047310addf8c
-since_fresh: 23
+  - when: 2026-11-14 16:43
+    found: 7
+    note: "Round 22: nothing major; three minor (ch07 F-2's tentacles lost on the dark floor in F-G, ch01 a man lying flat beside the mock battle, ch03 the colonists standing in a model-sheet row) and four nits (ch05 F-1's legs vanish as it tips, ch00's board says 'A Classic Reprint', ch09 the sphere hangs after 'was gone', ch02 an Outsider cut by the top edge and ch08 F-2's duplicate too small)."
+    state: 6322e434b750
+since_fresh: 0
