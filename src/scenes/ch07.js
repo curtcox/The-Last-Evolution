@@ -10,6 +10,11 @@
   const ship = (x, y, len, t, dir = -1, o = {}) => { push(); translate(x, y); scale(dir, 1); translate(-x, -y); DES.oShip(x, y, len, t, o); pop(); };
   const tCloud = C('p089.1:Gradually a cloud'), tArch = C('p092.1:it arched over them'), tSolid = C('p092.1:a solid, black dome');
   const tF = T0('F'), tSix = C('p087.1:as six large machines');
+  // F-2's three tentacles as pale bluish ribbons under its own dark strokes (drawn before DES.f2, in its flipped frame):
+  // the dark strokes alone were lost on the dark floor and pier base in F and G, and it spoke there a bare torpedo
+  const f2tents = (x, y0, s, t) => { const len = 4.2 * s, w = .65 * s, y = y0 + 3 * wob(t, .25), L = 1.6 * s, col = mixCol(mixCol(D[1], '#7F9BD0', .62), '#FFFFFF', .25);
+    boilSeed('f2side'); [[.14, -.7], [0, -.95], [-.14, -1.2]].forEach(([k, a], i) => { const sx = x + len * k, sy = y + w * .8, dx = Math.sin(a), dy = Math.cos(a), nx = -dy, ny = dx, sw = wob(t, .5, i * .29), at = (u, v) => [sx + dx * L * u + nx * L * v, sy + dy * L * u + ny * L * v];
+      inkLine(through([[sx, sy], at(.3, .1 + .05 * sw), at(.62, -.06 + .08 * sw), at(.88, .04 + .07 * sw), at(1, .16 + .05 * sw)]), 3.2, col, 'inkfine'); }); };
 
   // ---------- the hall at night ----------
   // the screens: ships falling (B), the machines (D); flickering
@@ -52,7 +57,7 @@
     for (let i = 0; i < 6; i++) if (t > tSix - 1) { const [x, g] = sixAt(t, i); const m = DES.machine(x, g, 22, t, { arms: 3, d: 1 + (i % 2), hover: 1.5 + .1 * wob(t, .3, i), face: clamp((MID - x) / 300, -1, 1), lit: .3, label: null });
       if (t > tCloud - 1) glow(m.eye[0], m.eye[1], 30, '#E6EEFF', .4); }
     // F-2 in front of the six (drawn before them, one passed over it as they came in)
-    if (t > tF - 1) { push(); translate(fx, fy); scale(-1, 1); translate(-fx, -fy); DES.f2(fx, fy + 2.4 * FS, FS, t, { view: 'side' }); pop(); glow(fx - 50, fy, 55, '#E6EEFF', .3 + .6 * talk(t, 'f2'));
+    if (t > tF - 1) { push(); translate(fx, fy); scale(-1, 1); translate(-fx, -fy); f2tents(fx, fy, FS, t); DES.f2(fx, fy + 2.4 * FS, FS, t, { view: 'side' }); pop(); glow(fx - 50, fy, 55, '#E6EEFF', .3 + .6 * talk(t, 'f2'));
       thoughtRings(fx, fy, t, tF, DUR, { r1: 200, at: F2RINGS }); }   // its speech shown (a still torpedo, its voice had no source)
     // Roal and Trest before the screens; Roal turns when the machines come. Each gestures on his own clauses (Roal's
     // smaller while his eyes dream) and nods as the other, or F-2, speaks to him
