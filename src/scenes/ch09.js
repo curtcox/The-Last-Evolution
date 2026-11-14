@@ -14,7 +14,7 @@
   const tD = T0('D'), tDark = C('p117.1:The sky darkened'), tF = T0('F'), tI = T0('I'), tCharge = C('p121.4:A stabbing beam'), tStab = C('p121.4:flashed out'), tStabEnd = C('p121.4:an enormously greater beam') + .3, tRed = C('p121.4:an enormously greater beam');
   const tOrange = C('p121.4:orange'), tGreen = C('p121.4:green'),   // on the colour words themselves (the phrase starts ~1 s early)
     tGone = C('p121.4:Then the sphere had vanished'), tJ = T0('J'), tK = T0('K');
-  const tGold = C('p123.1:an irregular globe'), tRuby = C('p126.1:a tiny ruby flame'), tN = T0('N'), tVanish = C('p129.1:fast as light');
+  const tGold = C('p123.1:an irregular globe'), tRuby = C('p126.1:a tiny ruby flame'), tN = T0('N'), tVanish = C('p129.1:was gone');   // the streak on 'was gone' (on 'fast as light', 2.2 s on, the sphere hung there after it was said gone)
 
   // the storm: 0..1; up from D, gone at F; up again at J, gone at K
   const storm = t => Math.max(win(t, tDark - 1, tF, 3, 2), win(t, tJ, tK + 1, 3, 2));
