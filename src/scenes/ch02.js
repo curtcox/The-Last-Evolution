@@ -228,16 +228,16 @@
     voidWorld(t); closing(t);
   }
   // the story's own footnotes (PLAN.md §5), lettered at the foot of the frame for 5 s from the word that carries the mark
-  const NOTES = [['p007.1:kill-ads', '1', ['Kilad\u2014unit introduced by the machines. Based on the', 'duodecimal system, similarly introduced, as more', 'logical, and more readily used. Thus we would have',
-    'said 1728 kilads, about 1/2 mile.'], () => [T0('C') + .3, T1('C')]],   // up with its sentence, the shot's whole length (from the mark, its 9 s ran 4 s into the next shot)
+  const NOTES = [['p007.1:kill-ads', '1', ['Kilad\u2014unit introduced by the machines. Based', 'on the duodecimal system, similarly introduced,', 'as more logical, and more readily used. Thus we',
+    'would have said 1728 kilads, about 1/2 mile.'], () => [T0('C') + .3, T1('C') + 2.5]],   // up with its sentence, through its shot and 2.5 s into the next (the shot's 7 s alone was too short to read its 30 words)
     ['p008.1:thousand units', '2', ['One unit was equal to one earth-gravity.']]];
   function footnotes(t) {
-    for (const [at, n, lines, span] of NOTES) { const t0 = C(at) + .5, [a0, a1] = span ? span() : [t0, t0 + 1.8 + .22 * lines.join(' ').split(' ').length], a = win(t, a0, a1, .4, .5); if (a <= 0) continue;   // long enough to read (footnote 1's 33 words get the 7.4 s of its shot)
-      const y = H - 40 - 62 * lines.length;   // 52 px: read in a phone-width player (at 40 it was ~5 px tall at 375 px wide)
-      stillSeed('fnband' + n); paint(rectPts(90, y - 60, 1400, 62 * lines.length + 50), { wash: '#141110', washOp: 190 * a, ink: null, bleed: .05 });   // a dark band, so the note reads over a pale hull
-      rule(120, y - 36, 260, '#EFE6D2', 1.4);
-      letter(n, 126, y - 10, 26, '#EFE6D2', { screen: true, align: 'left', font: `700 26px ${SERIF}`, alpha: a });
-      lines.forEach((l, i) => letter(l, 152, y + i * 62, 52, '#EFE6D2', { screen: true, align: 'left', font: `52px ${SERIF}`, alpha: a })); }
+    for (const [at, n, lines, span] of NOTES) { const t0 = C(at) + .5, [a0, a1] = span ? span() : [t0, t0 + Math.max(5.5, 2.5 + .3 * lines.join(' ').split(' ').length)], a = win(t, a0, a1, .4, .5); if (a <= 0) continue;   // long enough to read (footnote 2's 7 words had 3.3 s)
+      const LH = 80, y = H - 40 - LH * lines.length;   // 66 px: read in a phone-width player (at 52 its capitals were ~5 px tall held upright)
+      stillSeed('fnband' + n); paint(rectPts(70, y - 70, 1560, LH * lines.length + 60), { wash: '#141110', washOp: 200 * a, ink: null, bleed: .05 });   // a dark band, so the note reads over a pale hull
+      rule(110, y - 44, 300, '#EFE6D2', 1.6);
+      letter(n, 118, y - 14, 32, '#EFE6D2', { screen: true, align: 'left', font: `700 32px ${SERIF}`, alpha: a });
+      lines.forEach((l, i) => letter(l, 156, y + i * LH, 66, '#EFE6D2', { screen: true, align: 'left', font: `66px ${SERIF}`, alpha: a })); }
   }
   function film(t) { scenes(t); footnotes(t); }
   shots([[0, film]]);
