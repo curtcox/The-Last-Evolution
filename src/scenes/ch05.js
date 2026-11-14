@@ -97,7 +97,8 @@
     const px = x + F1R, py = g - .2 * s, lie = HALF_PI + lieTilt(3.4, 7.5);
     push(); translate(px, py); rotate(lurch + tip * lie - .04 * bounce); if (o.gone) scale(1, 1 - o.gone); translate(-px, -py);
     const named = win(t, C('p052.2:F one') - .1, C('p052.2:F one') + 5, .3, .6);   // lettered the first time it's spoken (DECISIONS.md, 2026-11-01)
-    const reach = reachAt(t, x), m = DES.f1(x, g, s, t, { arms: reach || tip > .05 ? 0 : 8, hover: lerp(f1Hov(t), .2, easeIn(fall)), lit: o.lit, dark: o.dark, face: f1Face(t) });
+    // its legs fold in as it tips, gone by the time it is a third over (cut at the first tip, they vanished between frames)
+    const reach = reachAt(t, x), m = DES.f1(x, g, s, t, { arms: reach || tip >= .4 ? 0 : 8, reach: 6 * Math.max(.04, 1 - tip / .4), hover: lerp(f1Hov(t), .2, easeIn(fall)), lit: o.lit, dark: o.dark, face: f1Face(t) });
     if (named > 0) letter('F-1', x, g - 6.2 * s, 76, INK, { ink: false, font: '700 76px ' + SERIF, spacing: 2, alpha: named });
     if (reach) reach.forEach((p, i) => { const sx = x + (i - 2.5) * s * 1.1, sy = m.arm, w = o.writhe || 0;
       const mx = lerp(sx, p[0], .5) + s * 2.2 * wob(t, .9 + .4 * w, i * .37) * (.3 + w), my = lerp(sy, p[1], .5) + s * 1.5 * wob(t, .7 + .5 * w, i * .21) * (.3 + w);
