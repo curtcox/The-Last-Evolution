@@ -101,14 +101,14 @@ items:
     when: 2026-11-11 20:26
   site.watch.content:
     state: pass
-    note: "Rechecked after the eighteenth round: the chapter videos' links changed (new drafts of chapters 1, 3, 4, 5, 7 and 8, the same lengths, so every chapter start and note time holds), and the two mentatype notes say the film shows the record as pages. the chapter videos' links changed (new drafts of chapters 1, 2, 9 and 10, the same lengths, so every chapter start and note time holds), and the 'Locked' note now says what is seen, the flagship glazed in the beam's light. only the chapter videos' links changed (new drafts of chapters 1, 3, 5, 6, 7, 8 and 11, the same lengths, so every chapter start and note time holds). only the chapter videos' links changed (new drafts of chapters 1, 3, 4, 5, 6, 9 and 11, the same lengths, so every chapter start and note time holds). only the chapter videos' links changed (new drafts of chapters 1, 3, 4, 5, 6, 7 and 9, the same lengths, so every chapter start and note time holds). only the chapter videos' links changed (new drafts of chapters 3, 5, 6, 7, 8, 9 and 10). only the chapter videos' links changed (new drafts of chapters 2, 4, 5, 8 and 9, the same lengths, so every chapter start and note time holds); the phone check passes. the draft box says each chapter has passed its checks and fresh reviews go on until two in a row find none; chapter 3 and the film page say Mercury to Pluto; the new drafts of chapters 1-5, 7 and 8 are linked. Rechecked after the tenth round: the film page and chapter 3's page have the torpedoes right, chapter 5's page no longer calls the draft simple, excerpts end in dots where the sentence goes on, and every chapter page embeds its new draft."
-    at: 202f90f55a2b
-    when: 2026-11-12 21:49
+    note: "Rechecked after the nineteenth round: the chapter videos' links changed (new drafts of chapters 3, 4, 7, 9 and 10, the same lengths, so every chapter start and note time holds; the page is otherwise unchanged, checked by a diff with the links masked): the film page and chapter 3's page have the torpedoes right, chapter 5's page no longer calls the draft simple, excerpts end in dots where the sentence goes on, and every chapter page embeds its new draft."
+    at: 0f627074a8e5
+    when: 2026-11-14 02:34
   site.watch.look:
     state: pass
-    note: "Rechecked after the eighteenth round: the chapter videos' links changed (new drafts of chapters 1, 3, 4, 5, 7 and 8, the same lengths, so every chapter start and note time holds), and the two mentatype notes say the film shows the record as pages; the page lays out as before. the chapter videos' links changed (new drafts of chapters 1, 2, 9 and 10, the same lengths, so every chapter start and note time holds), and the 'Locked' note now says what is seen, the flagship glazed in the beam's light; the page lays out as before. only the chapter videos' links changed (new drafts of chapters 1, 3, 5, 6, 7, 8 and 11, the same lengths, so every chapter start and note time holds); the page lays out as before. only the chapter videos' links changed (new drafts of chapters 1, 3, 4, 5, 6, 9 and 11, the same lengths, so every chapter start and note time holds); the page lays out as before. only the chapter videos' links changed (new drafts of chapters 1, 3, 4, 5, 6, 7 and 9); the page lays out as before. only the chapter videos' links changed (new drafts of chapters 3, 5, 6, 7, 8, 9 and 10); the page lays out as before. only the chapter videos' links changed (new drafts of chapters 2, 4, 5, 8 and 9, the same lengths, so every chapter start and note time holds); the phone check passes. the draft box and the new drafts posters and players lay out as before at 375; the phone check passes. Rechecked after the tenth round: the chapter pages and film page show the new drafts' posters and players as before; nothing in the layout changed."
-    at: c48b6a012688
-    when: 2026-11-12 21:49
+    note: "Rechecked after the nineteenth round: the chapter videos' links changed (new drafts of chapters 3, 4, 7, 9 and 10, the same lengths, so every chapter start and note time holds; the page is otherwise unchanged, checked by a diff with the links masked): the chapter pages and film page show the new drafts' posters and players as before; nothing in the layout changed."
+    at: 4724d17e88b2
+    when: 2026-11-14 02:34
   work.title:
     state: pass
     note: "Re-checked after the fourth round: the title page's masthead (42 px) and byline (52 px) are larger for a phone, the rules widened to match; the title itself unchanged. The header now names the 1932 issue ('AMAZING STORIES · August, 1932') instead of the 1961 reprint's 'A Classic Reprint from…', its rules fitted to it (out/check/ch00_title.jpg)."
@@ -126,9 +126,9 @@ items:
     when: 2026-11-12 12:07
   ch03.picture:
     state: pass
-    note: "On the draft with the eighteenth round's fixes: the study is shown: the transports down with shadows and dust, machine- and human investigators out of them and into the wreck, the tiny spheres drawn as spheres worming in (find.ch03-study); sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
-    at: ch03-draft-15b4fa80.mp4
-    when: 2026-11-12 21:46
+    note: "On the draft with the nineteenth round's fixes: rendered again after the board's wording changed (the battle and the settlement dissolve in from the hall and back, find.ch03-page-screens); the picture the same as the last-passed draft frame for frame; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
+    at: ch03-draft-c28d076a.mp4
+    when: 2026-11-14 02:31
   find.repo-size:
     state: pass
     note: "Curt chose GitHub Release files. Chapter drafts now go to the repo's drafts release (publish_review.mjs uploads them under content-hashed names), and the pages play them from there with a source element typed video/mp4, which Safari needs because GitHub serves release files as octet-stream. Checked in Chromium and Safari: a draft page, and the annotated film jumping to chapter 7. The old videos stay in git history (about 530 MB); removing them would mean rewriting history and a force push."
@@ -401,24 +401,24 @@ items:
     when: 2026-11-12 12:07
   ch03.acting:
     state: pass
-    note: "On the draft with the eighteenth round's fixes: the study is shown: the transports down with shadows and dust, machine- and human investigators out of them and into the wreck, the tiny spheres drawn as spheres worming in (find.ch03-study); sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
-    at: ch03-draft-15b4fa80.mp4
-    when: 2026-11-12 21:46
+    note: "On the draft with the nineteenth round's fixes: rendered again after the board's wording changed (the battle and the settlement dissolve in from the hall and back, find.ch03-page-screens); the picture the same as the last-passed draft frame for frame; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
+    at: ch03-draft-c28d076a.mp4
+    when: 2026-11-14 02:31
   ch03.sync:
     state: pass
-    note: "On the draft with the eighteenth round's fixes: the study is shown: the transports down with shadows and dust, machine- and human investigators out of them and into the wreck, the tiny spheres drawn as spheres worming in (find.ch03-study); sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
-    at: ch03-draft-15b4fa80.mp4
-    when: 2026-11-12 21:46
+    note: "On the draft with the nineteenth round's fixes: rendered again after the board's wording changed (the battle and the settlement dissolve in from the hall and back, find.ch03-page-screens); the picture the same as the last-passed draft frame for frame; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
+    at: ch03-draft-c28d076a.mp4
+    when: 2026-11-14 02:31
   ch03.sound:
     state: pass
-    note: "On the draft with the eighteenth round's fixes: the study is shown: the transports down with shadows and dust, machine- and human investigators out of them and into the wreck, the tiny spheres drawn as spheres worming in (find.ch03-study); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
-    at: ch03-draft-15b4fa80.mp4
-    when: 2026-11-12 21:46
+    note: "On the draft with the nineteenth round's fixes: rendered again after the board's wording changed (the battle and the settlement dissolve in from the hall and back, find.ch03-page-screens); the picture the same as the last-passed draft frame for frame; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
+    at: ch03-draft-c28d076a.mp4
+    when: 2026-11-14 02:31
   ch03.story:
     state: pass
-    note: "On the draft with the eighteenth round's fixes: the study is shown: the transports down with shadows and dust, machine- and human investigators out of them and into the wreck, the tiny spheres drawn as spheres worming in (find.ch03-study); sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
-    at: ch03-draft-15b4fa80.mp4
-    when: 2026-11-12 21:46
+    note: "On the draft with the nineteenth round's fixes: rendered again after the board's wording changed (the battle and the settlement dissolve in from the hall and back, find.ch03-page-screens); the picture the same as the last-passed draft frame for frame; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
+    at: ch03-draft-c28d076a.mp4
+    when: 2026-11-14 02:31
   ch05.acting:
     state: pass
     note: "On the draft with the eighteenth round's fixes: F-2 and the new cylinder side by side as it's called 'smaller even than its creator' (find.ch05-f2-offscreen), and thought rings out from C-R-U-1 as it speaks (find.ch07-f2-silent); sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
@@ -1615,4 +1615,4 @@ fresh:
     found: 6
     note: "Nineteenth round, on the eighteenth round's drafts: 6 found, none major (3 minor, 3 nits)."
     state: 963c86ced75a
-since_fresh: 26
+since_fresh: 35
