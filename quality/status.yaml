@@ -1534,6 +1534,31 @@ items:
     note: "Fixed: X-6349 turns no further than its stencil reads whole (ch04-draft, about 1:32, checked on a sheet)."
     title: "Chapter 4: X-6349's label cut to X-634"
     when: 2026-11-13 22:44
+  find.ch10-fleet-home:
+    state: open
+    note: "Twentieth round, major (borderline): in shot G (2:34-2:39), on 'Go, and do not return', the camera pulls back and the fleet bunches over and around Mars at upper left while the locked flagship slides off right alone; the board has the fleet turn slowly and draw away into the dark with the flagship, sent to its home planet."
+    title: "Chapter 10: the fleet seems to close on Mars, not go home"
+    when: 2026-11-14 02:50
+  find.ch04-p-hold:
+    state: open
+    note: "Twentieth round, minor: 4:12-4:42, the same close of F-1's dome and lenses, only boil and glints, under 'a widely different type of thought-combine ... all science was in it'; nothing shows the new brain filling. The film's longest dead stretch."
+    title: "Chapter 4: shot P holds still about 30 s"
+    when: 2026-11-14 02:50
+  find.ch01-d-drill:
+    state: open
+    note: "Twentieth round, nit: 1:06-1:25, the same two groups standing with small arm moves under 'poorer types ... pleasure and idleness ... emotions'; nothing shows idleness or emotion."
+    title: "Chapter 1: shot D a held drill under the idleness lines"
+    when: 2026-11-14 02:50
+  find.ch03-trees-colonists:
+    state: open
+    note: "Twentieth round, nit: shot K (3:15-3:30), tree crowns and trunks at about x 290 and 880 cover colonists' legs; half-hidden at phone size."
+    title: "Chapter 3: trees drawn over the colonists"
+    when: 2026-11-14 02:50
+  find.ch07-six-clump:
+    state: open
+    note: "Twentieth round, nit: shot F (1:33-1:40), the six in two overlapping rows read as one clump at phone size; 'six' hard to count until later."
+    title: "Chapter 7: the six arrive in one clump"
+    when: 2026-11-14 02:50
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1615,4 +1640,8 @@ fresh:
     found: 6
     note: "Nineteenth round, on the eighteenth round's drafts: 6 found, none major (3 minor, 3 nits)."
     state: 963c86ced75a
-since_fresh: 35
+  - when: 2026-11-14 02:50
+    found: 5
+    note: "Twentieth round: 1 major (borderline), 1 minor, 3 nits; the site clean. Chapter 10's last shot shows the fleet bunching over Mars and the flagship left, not turning for home; chapter 4's shot P holds still about 30 s; chapter 1's shot D a held drill under the idleness lines; chapter 3's trees cover colonists; chapter 7's six arrive in one clump. Not counted: chapter 0's board still says 'A Classic Reprint' for the masthead."
+    state: 2ee7e3e0ed92
+since_fresh: 0
