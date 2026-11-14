@@ -102,6 +102,10 @@
     // a race: five runners leaning in, arms pumping, strung out as they cross (three upright walkers didn't read as games)
     for (let i = 0; i < 5; i++) { const t0 = tRun - .5 + i * .25, dur = 7.4 + .6 * hash(i * 3), sw = Math.sin(t * 13 + i * 1.7); if (t > t0 + dur) continue;   // on out of the frame (stopped at 4,100 they stood in among the drill, figures inside figures)
       stander(t, 2300, G + 40 + (i % 3) * 26, 26 + (i % 2) * 2, [[t0, t0 + dur, 2300 - i * 50, 4900 - i * 60]], { seed: 10 + i, key: 'run' + i, pose: { torso: .3, up: .9 + .7 * sw, fore: 2.1, farUp: .9 - .7 * sw, farFore: 2.1 } }); }
+    // the idle: lounging on the plaza's front, between the two lines and under their play, one lying back, one propped up and one sitting, lazy arms and heads
+    // ('given wholly to pleasure and idleness'; the drill alone stood under those words 20 s)
+    [[3420, G + 120, 'lie', 1], [3560, G + 112, 'sitUp', 1], [3690, G + 118, 'sit', -1]].forEach(([x, y, p, f], i) => { const w = .5 + .5 * Math.sin(t * .7 + i * 2.1), P0 = DES.POSE[p];
+      DES.personSide(x, y - (p === 'lie' ? 10 : p === 'sit' ? 40 : 24), 28, t, { who: 'citizen', flip: f < 0, key: 'idle' + i, seed: 70 + i, look: .15 * w - .05, pose: { ...P0, up: P0.up + .5 * w, fore: P0.fore + .4 * w } }); });
     const tMock = C('p003.1:mock battles') - .3;   // the bolts on 'mock battles' (3 s ahead, they came on 'so their energies')
     for (let sd = -1; sd <= 1; sd += 2) for (let i = 0; i < 3; i++) { const x = 3550 + sd * (260 + i * 60), y = G + 10 + i * 40;
       // drilling while they wait: arms levelled and raised in turn, a little step in place (they stood frozen 25 s)
@@ -119,7 +123,7 @@
   }
   function city(t) {
     HALFTONE = .3;
-    const c = cam(t, [[0, tt => [lerp(900, 1700, ez(tt, T0('C') - 2, T1('C'))), 600, .85]], [T0('D') - .5, tt => [lerp(2900, 3550, ez(tt, T0('D'), C('p003.1:their pleasure') + .6)), lerp(680, 800, ez(tt, T0('D'), T1('D'))), lerp(1.15, 1.6, ez(tt, T0('D'), T1('D')))], 3],   // in on the runners and the mock battle (centred on its two sides once the race is by: drifting there over the whole shot, the far side stood cut by the frame's edge 20 s)
+    const c = cam(t, [[0, tt => [lerp(900, 1700, ez(tt, T0('C') - 2, T1('C'))), 600, .85]], [T0('D') - .5, tt => [lerp(2900, 3550, ez(tt, T0('D'), C('p003.1:their pleasure') + .6)), lerp(680, 790, ez(tt, T0('D'), T1('D'))), lerp(1.15, 1.42, ez(tt, T0('D'), T1('D')))], 3],   // in on the runners and the mock battle (centred on its two sides once the race is by: drifting there over the whole shot, the far side stood cut by the frame's edge 20 s)
       [T0('K') - 2, tt => [lerp(1100, 2300, ez(tt, T0('K'), DUR + 1)), 850, 1.6], .01]]);
     withCam(c, () => { cityWorld(t); if (t > T0('K') - 2) together(t); });
   }
