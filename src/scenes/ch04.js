@@ -122,6 +122,16 @@
       if (t > tFeed) for (let i = 0; i < 12; i++) { const sx = FX + (i - 5.5) * 170, sy = 260 + 30 * (i % 3); ruled([[sx, sy], [sx, (sy + top[1]) / 2], [top[0] + (i - 5.5) * 6, (sy + top[1]) / 2], [top[0] + (i - 5.5) * 6, top[1]]], seg(t, tFeed + i * .2, tFeed + i * .2 + 1.5), '#EFE6D2', .6); } }
     // P: the great lens lowered in on force-beams
     if (m && t > T0('P') && t < T0('P') + 5) { const q = ez(t, T0('P'), T0('P') + 4); if (q < 1) { DES.lens(m.eye[0], lerp(m.eye[1] - 260, m.eye[1], q), 50 * .2 * 3.4); beam(m.eye[0], m.eye[1] - 600, m.eye[0], lerp(m.eye[1] - 260, m.eye[1], q), 6, 30, FORCE, 1, { washOp: 30, a: .3, splash: false }); } }
+    // P: all the knowledge of six centuries going in: the science-machines' lines lit again, and on each 'all ...'
+    // named, a pulse down one bundle of them into the dome-case, its crown flaring as each arrives
+    const tWk = C('p049.1:working with all'), FEEDS = [C('p049.1:all physics'), C('p049.1:all chemistry'), C('p049.1:all life-knowledge'), C('p049.1:all science')];
+    const along = (P, k) => { const L = P.slice(1).map((q, j) => Math.hypot(q[0] - P[j][0], q[1] - P[j][1])); let d = k * L.reduce((a, b) => a + b, 0);
+      for (let j = 0; j < L.length; j++) { if (d <= L[j]) return [lerp(P[j][0], P[j + 1][0], d / L[j]), lerp(P[j][1], P[j + 1][1], d / L[j])]; d -= L[j]; } return P[P.length - 1]; };
+    if (m && t > tWk - .5 && t < tQ + 1) { const top = [m.eye[0], m.eye[1] - 34], on = win(t, tWk - .5, tQ + .5, 1.5, 1);
+      for (let i = 0; i < 12; i++) { const b = Math.floor(i / 3), sx = FX + (i - 5.5) * 170, sy = 200 + 30 * (i % 3), mid = (sy + top[1]) / 2 - 20, path = [[sx, sy], [sx, mid], [top[0] + (i - 5.5) * 5, mid], [top[0] + (i - 5.5) * 5, top[1]]];
+        ruled(path, on, '#EFE6D2', 1.1); const hit = seg(t, FEEDS[b] + (i % 3) * .12, FEEDS[b] + (i % 3) * .12 + 1.4);
+        if (hit > 0 && hit < 1) { ruled(path, hit, FORCE, 4, Math.max(0, hit - .3)); glow(...along(path, hit), 26, FORCE, .8); } }
+      FEEDS.forEach(f => { const k = win(t, f + 1.2, f + 2.6, .2, 1); if (k > 0) { glow(...top, 120, FORCE, .55 * k); glow(...top, 50, '#FFFFFF', .4 * k); } }); }
     // R: the beating drum of intelligence: rings out from the lens, quicker and quicker, then still
     if (m && t > tDrum()) { const t0 = tDrum(), t1 = tCease(); for (let n = 0; n < 8; n++) { const at = t0 + (t1 - t0) * (1 - Math.pow(1 - n / 8, 1.6)), age = t - at; if (age < 0 || age > 1.6 || at > t1) continue;
       const r = 40 + age * 400, a = .5 * (1 - age / 1.6); for (let i = 0; i < 24; i++) { const q = i / 24 * TAU; glow(m.eye[0] + Math.cos(q) * r, m.eye[1] + Math.sin(q) * r * .6, 18, '#E6EEFF', a); } } }
@@ -139,7 +149,7 @@
       // across the floor reached Roal's group after its words were over, and the groups read as men standing alone)
       [C('p047.1:One small group') - .3, [330, 840, 1.6], 2.2], [C('p047.1:another investigated') - .3, [1800, 840, 1.6], 2.2],
       [T0('N'), tt => [FX, lerp(820, 600, ez(tt, T0('N'), C('p048.1:more tentacles') - 2)), lerp(1.3, 1.5, ez(tt, T0('N'), C('p048.1:more tentacles') - 2))], 3], [C('p048.1:more tentacles') - 1.5, [FX, 770, 1.15], 2],   // down to the framework's foot as the tentacles go on, one by one
-      [C('p048.1:there were stacked the memory-units') - 2.5, [FX, 560, 1.75], 2.5], [T0('P'), [FX, 480, 2.2], 2.5],   // in on the memory-units going in, Roal and Trest out of frame (at 1.5 the edges sliced them); then the lens and the dome's crown in the middle of the frame, the lens lowered in from above
+      [C('p048.1:there were stacked the memory-units') - 2.5, [FX, 560, 1.75], 2.5], [T0('P'), [FX, 480, 2.2], 2.5], [C('p049.1:working with all') - 1, tt => [FX, lerp(480, 470, ez(tt, C('p049.1:working with all') - 1, C('p049.1:all physics'))), lerp(2.2, 1.6, ez(tt, C('p049.1:working with all') - 1, C('p049.1:all physics')))], 3],   // back from the lens, slowly, as all man's knowledge goes in (it held still 30 s); in on the memory-units going in, Roal and Trest out of frame (at 1.5 the edges sliced them); then the lens and the dome's crown in the middle of the frame, the lens lowered in from above
       [T0('Q'), tt => [FX, lerp(500, 560, ez(tt, T0('Q'), tR)), lerp(1.8, 1.05, ez(tt, T0('Q'), tR))], 3], [tR, tt => [FX, lerp(620, 480, ez(tt, tR, T0('S'))), lerp(1.4, 2.2, ez(tt, tR, T0('S')))], 3],
       [T0('S'), tt => [FX, lerp(480, 600, ez(tt, T0('S'), DUR)), lerp(2.2, 1.2, ez(tt, T0('S'), DUR))], 2]]);
     withCam(c, () => {
