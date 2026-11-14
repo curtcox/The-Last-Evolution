@@ -236,7 +236,8 @@
       stillSeed('hills'); wash([[-800, LG - 140], [200, LG - 260], [900, LG - 180], [1700, LG - 300], [2600, LG - 160], [3400, LG - 240], [3400, LG + 900], [-800, LG + 900]], 1, { op: .8 });
       paint(rectPts(-800, LG - 20, 4200, 1000), { wash: mixCol(D[1], D[2], .5 * wither), washOp: 220, fill: D[2], fillOp: 50, bleed: .2, ink: null });
       // trees: their crowns full, then thinning and darkening; grass tufts
-      for (let i = 0; i < 26; i++) { const x = -500 + i * 150 + 60 * hash(i), y = LG + 20 + 200 * hash(i * 3), s = 30 + 30 * hash(i * 5), drop = clamp(wither * 1.6 - hash(i * 7) * .6);
+      // (within the colony's span, behind its people: among them, near trees' crowns covered their legs)
+      for (let i = 0; i < 26; i++) { const x = -500 + i * 150 + 60 * hash(i), y0 = LG + 20 + 200 * hash(i * 3), y = x > 330 && x < 1720 ? Math.min(y0, LG + 50) : y0, s = 30 + 30 * hash(i * 5), drop = clamp(wither * 1.6 - hash(i * 7) * .6);
         stillSeed('trunk' + i); wash([[x - 4, y], [x + 4, y], [x + 2, y - s * 2], [x - 2, y - s * 2]], 4, { ink: true, sw: .4 });
         if (drop < 1) { stillSeed('crown' + i); paint(ellPts(x, y - s * 2.4, s * (1 - .7 * drop), s * .9 * (1 - .7 * drop), 14, 8), { wash: mixCol(D[2], D[3], .7 * wither), washOp: 220, ink: INK, sw: .4 }); }
         for (let k = 0; k < 3 && drop > .1; k++) { const q = frac(t * .3 + hash(i * 9 + k)); glow(x + (hash(k + i) - .5) * 60, y - s * 2.4 + q * s * 2.4, 4, mixCol('#F4EEDC', GREEN, .3), .4 * (1 - q) * drop); } }
