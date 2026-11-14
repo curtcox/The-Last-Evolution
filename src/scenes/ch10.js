@@ -53,15 +53,19 @@
     camBegin(...c);
     planet(-110, 90, 140, 2, { key: 'mars10' });   // Mars, far off, in the frame ('headed now for Mars'; at -900 it was out of every shot)
     // the fleet: wheeling; turning its weapons on the sphere; then turning for home
-    const leave = ez(t, tG + 2, DUR + 2), rays = win(t, tShower, tD + 1, .4, 1.5);
+    // home is away from Mars: on 'Go', each ship turns (edge-on, then about) to face right, then the fleet draws away
+    // together into the dark, shrinking as it goes, the locked flagship carried with it (it went left, bunched over Mars)
+    const leave = ez(t, tG + 1.6, DUR + 1.2), rays = win(t, tShower, tD + 1, .4, 1.5), HOME = [3000, -150];
+    const away = (x, y) => { let ax = lerp(x, HOME[0], .62 * leave), ay = lerp(y, HOME[1], .62 * leave); const dx = ax - MID[0], dy = (ay - MID[1]) * 2.2, d = Math.hypot(dx, dy) || 1, push = Math.max(0, 330 - d) * Math.min(1, leave * 8);
+      return [ax + dx / d * push, ay + dy / d * push / 2.2]; }, far = 1 - .6 * leave;   // round the sphere, not through it
     const R = ring(t);
     // the rays first, so each leaves its ship's hull rather than crossing it
-    for (const pass of [0, 1]) R.forEach(s => { const x = s.x + 2600 * leave * Math.cos(s.a * .2 + 2.5), y = s.y - 900 * leave;
-      if (s.i === 0) return; if (pass) return ship(x, y, 380, t, Math.cos(s.a) > 0 ? -1 : 1, { d: 3 });
+    for (const pass of [0, 1]) R.forEach(s => { const [x, y] = away(s.x, s.y), d0 = Math.cos(s.a) > 0 ? -1 : 1, turn = ez(t, tG + .3 + s.i * .15, tG + 1.9 + s.i * .15), dir = lerp(d0, 1, turn);
+      if (s.i === 0) return; if (pass) { if (Math.abs(dir) < .08) return; push(); translate(x, y); scale(far); translate(-x, -y); ship(x, y, 380, t, dir, { d: 3 }); pop(); return; }
       if (rays > 0) { const col = [NRG.death, '#FFB070', NRG.white, NRG.projector][s.i % 4]; beam(x, y, MID[0], MID[1], 16, 44, col, rays, { washOp: 120, a: .9 }); glow(x, y, 50, col, .5 * rays); } });   // each weapon in its own colour: the green death, heat, white, the projectors' blue (at 6-20 wide and washOp 40 they all read as one grey-white line)
     // the flagship: in the ring's near side
-    const fx = FLAG[0] + 2600 * leave * .6, fy = FLAG[1] - 900 * leave;
-    flagship(t, fx, fy);
+    const [fx, fy] = away(...FLAG);
+    push(); translate(fx, fy); scale(far); translate(-fx, -fy); flagship(t, fx, fy); pop();
     if (t > tBeam - .1 && t < tLock + 1) beam(...MID, fx, fy, 8, 20, '#E8F0FF', ez(t, tBeam - .1, tBeam + .4), { washOp: 70, a: .9 });
     if (t > tTwist && t < tRestored + 2) for (let i = 0; i < 6; i++) { const a = i / 6 * TAU + t; glow(fx + Math.cos(a) * 500, fy + Math.sin(a) * 160, 60, NRG.gold, .35); }
     // the sphere: a spark arriving, then steady at the centre
