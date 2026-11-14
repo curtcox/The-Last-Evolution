@@ -325,7 +325,7 @@ ${grid(site.map(k => [esc(by[`site.${k}.content`].title.split(':')[0]), k]), ['c
 <p>Claude judges each item against <a href="${REPO}/blob/main/quality/rubric.yaml">the rubric</a> and keeps working until
 none of its items is open; a judgment goes stale when what was judged changes (<a href="${REPO}/blob/main/QUALITY.md">how
 the loop works</a>).</p>
-${card.curt.length ? `<h3>Curt's calls</h3><ul>${card.curt.map(c => `<li><b>${esc(cap(c.title))}.</b> ${esc(c.ask)}</li>`).join('')}</ul>` : ''}
+${card.curt.length ? `<h3>Curt's calls</h3><ul>${card.curt.map(c => `<li><b>${esc(cap(c.title))}${/[.?!]$/.test(c.title) ? '' : '.'}</b> ${esc(c.ask)}</li>`).join('')}</ul>` : ''}
 ${other.length ? `<h3>Other items</h3><ul>${other.map(i => `<li>${mark(i)} ${esc(cap(i.title))}${i.note ? ` <span class="src">${esc(i.note)}</span>` : ''}</li>`).join('')}</ul>` : ''}
 <h3>The checks: ${checksOk} of ${Object.keys(card.checks).length} pass</h3>
 <ul>${Object.entries(card.checks).map(([n, c]) => `<li>${mark({ state: ['pass', 'fail', 'stale'].includes(c.state) ? c.state : 'open' })} <b>${n}</b>: ${c.state}${c.detail ? ` <span class="src">${esc(c.detail)}</span>` : ''}</li>`).join('')}</ul>

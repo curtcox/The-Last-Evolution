@@ -890,10 +890,10 @@ items:
     title: "Sound: the room tone is too faint to read as a bed"
     when: 2026-11-07 08:16
   find.ch01-games:
-    state: pass
-    note: "In the new ch01 draft, about 0:58-1:04: the games open with runners racing between the pillars, before the mock battle."
-    title: "Chapter 1: the games don't read as games"
-    when: 2026-11-07 08:16
+    state: open
+    note: "Twenty-first round, nit: 1:00-1:06, the same standing groups; no game or contest seen. ch01-mid.jpg."
+    title: "Chapter 1: 'games, athletic contests' not shown"
+    when: 2026-11-14 10:51
   find.small-pic:
     state: pass
     note: "In the new drafts: ch04 2:46-2:58 the screens are full of ships over the council, whose feet are in frame as the shot opens; ch01 2:03-2:05 the large planet's limb is round."
@@ -1559,6 +1559,31 @@ items:
     note: "On ch07-draft-3512f78d: the six arrive in two staggered rows of three, all inside the frame and countable; full-size crop at 1:50, sheet 1:32-2:02. SSIM changes 1:34-2:04 only."
     title: "Chapter 7: the six arrive in one clump"
     when: 2026-11-14 10:31
+  find.ch01-end-wipe:
+    state: open
+    note: "Twenty-first round, minor: 3:28-3:32, the right half bare paper about 3 s with the wipe edge still, then a dark rectangle over the left third of the closing street for about 1 s. ch01-end.jpg, ch01-wipe.jpg."
+    title: "Chapter 1: the last transition leaves bare paper and a dark block"
+    when: 2026-11-14 10:51
+  find.ch02-footnotes:
+    state: open
+    note: "Twenty-first round, minor: 0:28-0:35 footnote 1 (30 words) about 7 s, 0:59.5-1:02.5 footnote 2 about 3 s; capitals about 16 px at 720p, about 5 px on a phone. ch02-fn1*.jpg, ch02-fn2*.jpg."
+    title: "Chapter 2: the lettered footnotes too small and too brief"
+    when: 2026-11-14 10:51
+  find.ch03-torpedoes-men:
+    state: open
+    note: "Twenty-first round, minor/nit: 1:08-1:14, torpedoes rolling at the men's depth; at 1:12.5 one over Trest's legs, another past Roal's waist. ch03-overlap.jpg."
+    title: "Chapter 3: the new torpedoes slide through Roal and Trest"
+    when: 2026-11-14 10:51
+  find.note-curl:
+    state: open
+    note: "Twenty-first round, nit: the note at 37:59; no curl rises at ch05 2:21-2:27 or ch08 2:35-2:38, only in ch03 about 1:00 and ch07 about 0:39."
+    title: "Film page: 'When he dreams, it rises' overpromises"
+    when: 2026-11-14 10:51
+  find.quality-double-stops:
+    state: open
+    note: "Twenty-first round, nit: \"Whisper hears 'fourth'..\" and \"Whisper hears 'blessed'..\" in For the makers."
+    title: "Where it stands: two double full stops"
+    when: 2026-11-14 10:51
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1644,4 +1669,8 @@ fresh:
     found: 5
     note: "Twentieth round: 1 major (borderline), 1 minor, 3 nits; the site clean. Chapter 10's last shot shows the fleet bunching over Mars and the flagship left, not turning for home; chapter 4's shot P holds still about 30 s; chapter 1's shot D a held drill under the idleness lines; chapter 3's trees cover colonists; chapter 7's six arrive in one clump. Not counted: chapter 0's board still says 'A Classic Reprint' for the masthead."
     state: 2ee7e3e0ed92
-since_fresh: 32
+  - when: 2026-11-14 10:51
+    found: 6
+    note: "Round 21: 0 major, 3 minor (ch01 last wipe broken, ch02 footnotes too small/brief, ch03 torpedoes over the men), 3 nits (curl note overpromises, ch01 games unseen, double stops on the quality page)"
+    state: 047310addf8c
+since_fresh: 0
