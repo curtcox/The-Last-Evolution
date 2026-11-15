@@ -70,7 +70,10 @@
     for (let i = 0; i < 4; i++) ruled([[LAD - 200, 920 - i * 230], [LAD + 200, 920 - i * 230]], seg(t, tE + i * .4, tE + 1 + i * .4), D[1], 1.1);
     // a cell and a plant; a man (fading when nature removes him); a machine; pure force
     const a1 = ez(t, tE, tLife), a2 = ez(t, tLife, tLife + 1.5), a3 = ez(t, tMach, tMach + 1.5), a4 = ez(t, tForce, tForce + 2), gone = ez(t, C('p106.1:has removed the parasite'), C('p106.1:has removed the parasite') + 3);
-    if (a1 > .03) { boilSeed('cell'); wash(ellPts(LAD - 60, 880, 30 * a1, 26 * a1, 16), 0, { ink: true, sw: .5, op: .8 }); inkLine([[LAD + 60, 900], [LAD + 60, 900 - 70 * a1]], .8, PALE); wash(ellPts(LAD + 40, 870 - 40 * a1, 20 * a1, 10 * a1, 10), 0, { op: .7 }); wash(ellPts(LAD + 80, 860 - 50 * a1, 20 * a1, 10 * a1, 10), 0, { op: .7 }); }
+    // (pale and inked, so they read on the dark plate: as dim washes they were three blobs)
+    if (a1 > .03) { boilSeed('cell'); paint(ellPts(LAD - 80, 870, 44 * a1, 36 * a1, 18), { wash: '#D8CDB6', washOp: 150, ink: PALE, sw: 1 }); paint(ellPts(LAD - 70, 866, 12 * a1, 10 * a1, 10), { wash: '#4A3E33', washOp: 200, ink: PALE, sw: .6 });
+      boilSeed('plant'); inkLine([[LAD + 70, 912], [LAD + 66, 912 - 60 * a1], [LAD + 72, 912 - 120 * a1]], 1.6, PALE);
+      for (let k = 0; k < 4; k++) { const ly = 900 - k * 28 * a1, sd = k % 2 ? 1 : -1, lx = LAD + 70 + sd * 4; paint([[lx, ly], [lx + sd * 22 * a1, ly - 16 * a1], [lx + sd * 44 * a1, ly - 6 * a1], [lx + sd * 20 * a1, ly + 4 * a1]], { wash: '#B9C2A0', washOp: 150, ink: PALE, sw: .8 }); } }
     if (a2 > .03 && gone < 1) { boilSeed('lman'); push(); translate(LAD, 680); scale(1, 1); translate(-LAD, -680); DES.person(LAD, 680, 27 * a2, t, { who: 'citizen' }); pop(); if (gone > 0) { boilSeed('lmanf'); paint(rectPts(LAD - 110, 472, 220, 212), { wash: BG, washOp: 255 * gone, ink: null }); } }
     if (a3 > .03) DES.machine(LAD, 455, 26 * a3, t, { arms: 3, d: 1, label: null, lit: .4 });
     if (a4 > 0) { glow(LAD, 180, 120 * a4, NRG.white, .6); glow(LAD, 180, 50 * a4, '#FFFDF6', .8); }
@@ -93,7 +96,7 @@
     const tK = T0('K'), tPlane = C('p112.1:he laid a plane of force'), tL = T0('L'), tM = T0('M'), tN = T0('N'), tLivid = C('p114.1:Suddenly, a livid beam');
     const grow = ez(t, tL, tM - 1), night = ez(t, tL + (tM - tL) * .5, tM + 1), smooth = ez(t, tPlane, tPlane + 3);
     const c = cam(t, [[0, tt => [lerp(lerp(500, 900, ez(tt, tK, tPlane)), PX - 80, ez(tt, tPlane - .5, tPlane + 1.5)), lerp(640, PB + 60, ez(tt, tPlane - .5, tPlane + 1.5)), lerp(1.2, 1.7, ez(tt, tPlane - .5, tPlane + 1.5))]], [tL, tt => [PX, lerp(600, 100, ez(tt, tL, tM)), lerp(1.1, .55, ez(tt, tL, tM))], 3],
-      [tM, tt => [PX, lerp(250, -150, ez(tt, tM, tN)), .6], 3], [tN, [PX - 200, 560, .85], 2.5]]);
+      [tM, tt => [PX, lerp(520, -230, ez(tt, tM + 1, tN - 1)), lerp(1, .72, ez(tt, tM + 1, tN - 1))], 3], [tN, [PX - 200, 560, .85], 2.5]]);   // M: a slow tilt up its height from the foot to the dome (at .6 it drifted 400 in 33 s and read as a hold)
     camBegin(...c);
     // the sky: clear day going to night (and on under the ground, or the rock's wash lies on bare paper below y 1000: a bright strip along the foot)
     stillSeed('dsky8'); paint(rectPts(-2000, -2600, 6000, 5000), { wash: mixCol(D[0], '#1E1A16', night), washOp: 255, fill: mixCol(D[1], '#2A231D', night), fillOp: 70, ink: null });
