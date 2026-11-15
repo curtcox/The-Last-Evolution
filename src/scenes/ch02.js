@@ -151,8 +151,10 @@
         const wx = lerp(1170, 200, seg(t, tLife + 2, tIn)) + off * 1.3; if (wx > 220) crawler(wx, t, 2, { s: 20, g: 500, turn: .5 }); }
       const tum = seg(t, tTumble - .6, tTumble + 4), struck = t > tHit;
       const sx = (struck ? lerp(1400, 1820, ease(tum)) : 1400) + off * 1.4, rot = struck ? -TAU * easeOut(tum) : 0, lift = struck ? 160 * Math.sin(Math.PI * tum) : 0;   // a whole turn: he lands on his feet, unhurt (a turn and a half left him upside down)
-      if (t > tLife - 1) { push(); translate(sx, NEAR - 80 - lift); rotate(rot); translate(-sx, -(NEAR - 80 - lift));
-      DES.outsider(sx, NEAR - lift, 66, t, { view: struck && tum < 1 ? 'side' : 'front', turn: steps(t, [[0, 0], [C('p010.1:Their eyes projected'), .33, 1.2], [C('p010.1:capable of movement'), .66, 1.2], [C('p010.1:and there were three'), 1, 1.2]]) });
+      // landed, he turns back to face us through a squash (side to front in one frame, it popped)
+      const land = tTumble + 4, ph = struck ? seg(t, land - .3, land + .3) : 1, sq = Math.max(.1, Math.abs(Math.cos(Math.PI * ph)));
+      if (t > tLife - 1) { push(); translate(sx, NEAR - 80 - lift); rotate(rot); scale(sq, 1); translate(-sx, -(NEAR - 80 - lift));
+      DES.outsider(sx, NEAR - lift, 66, t, { view: struck && ph < .5 ? 'side' : 'front', turn: steps(t, [[0, 0], [C('p010.1:Their eyes projected'), .33, 1.2], [C('p010.1:capable of movement'), .66, 1.2], [C('p010.1:and there were three'), 1, 1.2]]) });
       pop(); }
       if (t > tHit && t < tHit + .3) glow(1360, 720, 120, NRG.white, 1 - seg(t, tHit, tHit + .3));
       // the others clustering round him (I)
