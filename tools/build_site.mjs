@@ -94,7 +94,7 @@ claim with its source.</li>
 <li><a href="review/"><b>See how it's made</b></a>, round by round: every choice, and why.</li>
 </ul>
 <div class="status"><h2>In production</h2>
-<p>The whole film is drafted, and every chapter has been acted and painted to its finished designs. Each draft has met
+<p>The whole film is drafted, and every chapter has been acted and painted to its current designs. Each draft has met
 its bar, and now fresh reviewers watch the whole film round after round, and what they find is fixed, until two rounds in
 a row find nothing; then the film is rendered in full and posted to YouTube with captions.
 <a href="review/quality/">Where it stands</a> shows every chapter and page against the bar it has to meet, and
@@ -302,7 +302,7 @@ const quality = card && (() => {
   return page(2, 'Where it stands: The Last Evolution', `
 <p class="kicker"><a href="../">How it's made</a></p>
 <h1>Where it stands</h1>
-<p class="lede">The whole film is drafted, and every chapter has been acted and painted to its finished designs. Now every
+<p class="lede">The whole film is drafted, and every chapter has been acted and painted to its current designs. Now every
 chapter and every page of this site is checked against a written bar before it's called done.</p>
 <ul>
 <li><b>The film:</b> ${fd} of its ${fn} checks done (six for each of its twelve chapters).</li>
