@@ -144,10 +144,13 @@
     const t0 = T0('E'), tPeak = C('p004.1:but from that time on'), tFew = C('p004.1:a scant two millions'), tEnd = T1('E');
     // how many of the lights are lit: climbing to the peak, then going out to a scatter
     const n = 320, lit = t < tPeak ? lerp(.15, 1, ease(seg(t, t0, tPeak))) : lerp(1, .012, Math.pow(seg(t, tPeak + .5, tFew + 1.5), .6));
-    const z = 1 + .5 * ez(t, tFew, tEnd);
-    camBegin(lerp(W / 2, W / 2 + 200, z - 1), lerp(H / 2 + 60, 430, (z - 1) * 2), z);   // the push in keeps the curve's peak and its fall in frame
+    // a gentle push in, centred, that keeps the whole curve in frame (a deeper one, off to the right, cut its rise to 2100
+    // off the left edge)
+    const z = 1 + .18 * ez(t, tFew, tEnd);
+    camBegin(W / 2, lerp(H / 2 + 60, 500, ez(t, tFew, tEnd)), z);
+    // the lights brighter and bigger, each with a hot core (small and dim, they read on a phone as faint speckle)
     for (let i = 0; i < n; i++) { if (hash(i * 9.1) > lit) continue; const x = 240 + hash(i * 3.3) * 1440, y = 440 + hash(i * 5.7) * 500, b = .5 + .5 * Math.sin(t * 2 + i);
-      glow(x, y, 9, '#F4EEDC', .5 + .3 * b); }
+      glow(x, y, 15, '#F4EEDC', .65 + .3 * b); glow(x, y, 5, '#FFFDF6', .9); }
     // the years: a ruled curve rising to its peak and falling, drawn as the voice says them
     // over a base line for none: up from the start to the peak, then down to almost nothing (two millions of ten billion), and along it
     const P = []; for (let k = 0; k <= 48; k++) { const u = k / 48, v = u < .3125 ? lerp(.4, 1, Math.sin(Math.PI / 2 * u / .3125)) : u < .625 ? .5 + .5 * Math.cos(Math.PI * (u - .3125) / .3125) : 0;
@@ -155,6 +158,10 @@
     stillSeed('nbase'); inkLine([[220, 400], [1700, 400]], 1.2, '#7A6E5C', 'inkfine', 0);
     // up to the peak by 'but from that time on', then down (drawn at one pace, it turned 2 s early, under 'increased rapidly')
     ruled(P.slice(0, 16), seg(t, t0, tPeak), '#B09C74', 3.2); ruled(P.slice(15), seg(t, tPeak, tFew + 1), '#B09C74', 3.2);
+    // the years, lettered under the curve as the voice says them: the peak at 2100, the fall's end at 2500
+    const y21 = C('p004.1:the year twenty-one hundred') + .8, y25 = C('p004.1:By twenty-five hundred') + .3, yk = ez(t, y21, y21 + .8), yk2 = ez(t, y25, y25 + .8);
+    if (yk > 0) { inkLine([[P[15][0], P[15][1] + 8], [P[15][0], 400]], .8, '#7A6E5C', 'inkfine', 0); letter('2100', P[15][0], 432, 34, '#B09C74', { ink: false, font: '700 34px ' + SERIF, spacing: 2, alpha: yk }); }
+    if (yk2 > 0) letter('2500', P[30][0], 432, 34, '#B09C74', { ink: false, font: '700 34px ' + SERIF, spacing: 2, alpha: yk2 });
     camEnd();
   }
 
