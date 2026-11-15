@@ -121,7 +121,12 @@
     for (let i = 4; i < 8; i++) { const k = i % 4, x = -20 + k * 120, h = 140 + 360 * hash(i * 7.3), w = 70, P = [[x - w / 2, RG + 50], [x - w / 2, RG + 50 - h], [x - w / 6, RG + 50 - h - 40 * hash(i)], [x + w / 6, RG + 80 - h], [x + w / 2, RG + 50 - h - 20 * hash(i * 3)], [x + w / 2, RG + 50]]; stillSeed('opier8' + i); wash(P, 3, { ink: true, sw: .6 }); dim(P); }
     // the near rock, twisted and massed, between F-2 and the far plain
     { const P = [[-2000, RG + 40], [6000, RG + 40], [6000, RG + 1600], [-2000, RG + 1600]]; stillSeed('rocks'); wash(P, 3, { op: 1 }); dim(P, false); }
-    for (let i = 0; i < 40; i++) { const x = -1600 + i * 130 + 60 * hash(i), h = 60 + 120 * hash(i * 3);
+    // and the plane sweeps the near rock too, the big jagged crags in front of the plant's ground pressed flat as it passes
+    // (only the far row flattened, too small to read on a phone; the near crags stayed jagged under 'smoothed them')
+    const sweepN = PX - 760 + 1500 * smooth, nearFlat = x => x > PX - 760 && x < PX + 740 ? .88 * ez(sweepN - x, -10, 70) : 0;
+    if (smooth > 0) { stillSeed('planeN'); const e = Math.min(PX + 740, sweepN); if (e > PX - 760) { const P = rectPts(PX - 760, RG + 40, e - (PX - 760), 12); wash(P, 1, { ink: true, sw: .5 }); dim(P); } }
+    if (smooth > 0 && smooth < 1) { const k = Math.sin(Math.PI * smooth); glow(sweepN, RG + 30, 140, FORCE, .75 * k); for (let j = 0; j < 4; j++) glow(sweepN, RG - 60 + j * 40, 60, FORCE, .4 * k); }
+    for (let i = 0; i < 40; i++) { const x = -1600 + i * 130 + 60 * hash(i), h = (60 + 120 * hash(i * 3)) * (1 - nearFlat(x));
       const P = [[x - 70, RG + 50], [x - 30 + 20 * hash(i), RG + 50 - h], [x + 40, RG + 50 - h * .7], [x + 80, RG + 50]]; stillSeed('rk' + i); wash(P, 2 + (i % 2), { ink: true, sw: .5 }); dim(P); }
     // the dome, near, behind at the left
     DES.blackDome(-300, RG + 60, 320, t);
