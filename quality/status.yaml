@@ -1619,6 +1619,31 @@ items:
     note: "On ch02-draft-bdc334b4: the climber goes up the rib and out of sight once, the wall walker goes off left by 1:46, before the camera closes in; nothing is cut by the top edge as the frame tightens (sheet c2.jpg). On ch08-draft-66f3d40d: F-2 and its duplicate about 70 px long at 1280 at 2:06-2:10 (sheet c8.jpg)."
     title: "Chapters 2 and 8: an Outsider cut off; F-2's duplicate too small"
     when: 2026-11-15 01:10
+  find.ch06-beams-still:
+    state: open
+    note: "Twenty-third round, minor: 0:51-1:11 (shot D), about 20 s nearly unchanged; 'Then all the awful power of annihilating matter was thrown against them, and titanic flaming screens reeled back' (59.1-68.0) has no heavier beams, no reeling screen, no close on one giant as the board asks. c06_DE.jpg, f06_s.jpg (53 and 67 s nearly identical)."
+    title: "Chapter 6: the beams against the screens play as a still"
+    when: 2026-11-15 01:33
+  find.ch07-dome-slivers:
+    state: open
+    note: "Twenty-third round, nit: 2:45-2:52, after 'a solid, black dome' (166.6 s), small pale jagged slivers stick up above its crown, like the lighter cloud layer or bare paper. f07_d.jpg, f07_c.jpg."
+    title: "Chapter 7: pale slivers above the closed dome"
+    when: 2026-11-15 01:33
+  find.ch08-smoothing:
+    state: open
+    note: "Twenty-third round, nit: 3:58-4:01, 'he laid a plane of force that smoothed them' (238.5-240.9) flattens a tiny far row; the big near rocks stay jagged, so it doesn't read on a phone. c08_K.jpg."
+    title: "Chapter 8: the plane of force smooths only far rocks"
+    when: 2026-11-15 01:33
+  find.ch01-population-plate:
+    state: open
+    note: "Twenty-third round, nit: 1:44-1:58, the lights (each many millions) are small dim dots on the dark ground; the camera's ease-in crops the curve's rise (to 2100) off the left edge. f01_E.jpg (104, 116 s)."
+    title: "Chapter 1: the population plate's lights faint, its rise cropped"
+    when: 2026-11-15 01:33
+  find.site-finished-designs:
+    state: open
+    note: "Twenty-third round, nit: both say every chapter has been acted and painted to its finished designs, while Where it stands lists gate.look (the model sheets) as Curt's open call; 'current designs' would be accurate."
+    title: "Home and Where it stands: 'finished designs' while the look is open"
+    when: 2026-11-15 01:33
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1712,4 +1737,8 @@ fresh:
     found: 7
     note: "Round 22: nothing major; three minor (ch07 F-2's tentacles lost on the dark floor in F-G, ch01 a man lying flat beside the mock battle, ch03 the colonists standing in a model-sheet row) and four nits (ch05 F-1's legs vanish as it tips, ch00's board says 'A Classic Reprint', ch09 the sphere hangs after 'was gone', ch02 an Outsider cut by the top edge and ch08 F-2's duplicate too small)."
     state: 6322e434b750
-since_fresh: 49
+  - when: 2026-11-15 01:33
+    found: 5
+    note: "Round 23: nothing major; one minor (ch06 0:51-1:11, the beams-against-screens shot held 20 s nearly still under 'all the awful power... reeled back') and four nits (ch07 pale slivers above the closed dome, ch08 the plane of force smoothing only a far row of rocks, ch01 the population plate's lights faint and its rise cropped, the home and Where it stands pages calling the designs finished while gate.look is open)."
+    state: 0e45d48545ae
+since_fresh: 0

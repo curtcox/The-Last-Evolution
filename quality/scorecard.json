@@ -42,7 +42,7 @@
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
-   "state": "pass",
+   "state": "stale",
    "detail": "33 pages live, the deploy is this commit"
   }
  },
