@@ -90,7 +90,7 @@
     const fade = 1 - ez(t, tJ - 1, tJ + .5);
     letter('THE LAST EVOLUTION', W / 2, 150, 28, INK, { ink: false, font: `700 28px ${SERIF}`, spacing: 4, alpha: .8 * fade });
     if (fade > 0) rule(560, 180, 800, INK, fade);   // the head's rule goes with it, not left orphaned
-    dropCapPara(PARAS[para], 460, 380, 1000, { size: 44, lines: 6, screen: false });
+    if (para >= 0) dropCapPara(PARAS[para], 460, 380, 1000, { size: 44, lines: 6, screen: false });   // -1: the page between paragraphs
     const e = ez(t, tJ, tJ + 2);
     letter('THE END', W / 2, 760, 90, INK, { ink: false, font: `700 90px ${SERIF}`, spacing: 10, alpha: e });
     if (e > 0) rule(810, 830, 300, INK, e);
@@ -111,9 +111,12 @@
     if (t < tH + .5) return dissolve(seg(t, tH - 1.5, tH + .5), () => frame(t), () => pageEnd(t, 0));
     const tI = T0('I'), tP = C('p139.1');
     if (t < tP - .8) return pageEnd(t, 0);
-    if (t < tP + .4) return dissolve(seg(t, tP - .8, tP + .4), () => pageEnd(t, 0), () => pageEnd(t, 1));
+    // each paragraph fades off the page before the next fades on (crossfaded in place, the two overprinted for a second)
+    if (t < tP - .2) return dissolve(seg(t, tP - .8, tP - .2), () => pageEnd(t, 0), () => pageEnd(t, -1));
+    if (t < tP + .4) return dissolve(seg(t, tP - .2, tP + .4), () => pageEnd(t, -1), () => pageEnd(t, 1));
     if (t < tI - .8) return pageEnd(t, 1);
-    if (t < tI + .4) return dissolve(seg(t, tI - .8, tI + .4), () => pageEnd(t, 1), () => pageEnd(t));
+    if (t < tI - .2) return dissolve(seg(t, tI - .8, tI - .2), () => pageEnd(t, 1), () => pageEnd(t, -1));
+    if (t < tI + .4) return dissolve(seg(t, tI - .2, tI + .4), () => pageEnd(t, -1), () => pageEnd(t));
     pageEnd(t);
     if (t > DUR - 2) flash(seg(t, DUR - 2, DUR), PULP.paper);
   }
