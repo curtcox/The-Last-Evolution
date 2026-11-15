@@ -131,8 +131,11 @@
       beam(...ORB, ...end, 50, 80, '#8FB2FF', k, { washOp: 130, a: .85 * fl }); beam(...ORB, ...end, 18, 30, '#F4F8FF', k, { washOp: 150, a: .8 * fl, splash: false }); }
     if (t > tRed - .2 && t < tGone + .4) { const col = t < tOrange ? '#B23A2A' : t < tGreen ? mixCol('#E8641E', NRG.death, ez(t, tGreen - .35, tGreen)) : NRG.death;   // a true orange, held until 'green'
       // the beam reaches out from the plant toward the sphere where it hangs, and has it once it leaps
-      const reach = ez(t, tRed - .2, tRed + 3), tip = lerpP([PX, TOP], [ORB[0] - 40, ORB[1] + 30], .25 + .5 * reach), end = lerpP(tip, orb, ez(t, tCaught - .35, tCaught + .05));
-      beam(PX, TOP + 20, ...end, 90, 40 * shrink + 24, col, ez(t, tRed - .2, tRed + .3), { washOp: 110, a: .85 }); glow(...end, 60, col, .5); }
+      // aimed at the globe where it hangs, reaching most of the way and falling short until it leaps; far wider than the
+      // blue-white stab it answers ('an enormously greater beam': at 90 wide it read as a stub, smaller than the stab)
+      const reach = ez(t, tRed - .2, tRed + 2.5), tip = lerpP([PX, TOP], orb, .5 + .35 * reach), end = lerpP(tip, orb, ez(t, tCaught - .35, tCaught + .05)), on = ez(t, tRed - .2, tRed + .3);
+      beam(PX, TOP + 20, ...end, 300, 150 * shrink + 50, col, on, { washOp: 90, a: .7 }); beam(PX, TOP + 20, ...end, 120, 50 * shrink + 20, mixCol(col, '#FFE0C8', .25), on, { washOp: 120, a: .8, splash: false });
+      glow(PX, TOP + 20, 260, col, .45 * on); glow(...end, 140, col, .55); }
     // F-2; C-R-U-1 joining it at dawn
     DES.f2(f2[0], f2[1] + 2.4 * FS, FS, t, { view: 'side' });
     if (t > C('p122.1:C-R-U-1 joined him') - 3) { const k = ez(t, C('p122.1:C-R-U-1 joined him') - 3, C('p122.1:C-R-U-1 joined him') + 1); DES.cru1(lerp(-600, f2[0] - 140, k), f2[1] + 60 + 2.2 * 30, 30, t, { glowK: 1 }); }
