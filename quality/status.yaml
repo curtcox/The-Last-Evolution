@@ -606,9 +606,9 @@ items:
     when: 2026-11-05 07:58
   find.site-wording:
     state: pass
-    note: "On the re-rendered draft: live: home says each draft 'is being watched and fixed until it meets its bar'; the film banner says each chapter is still being watched and fixed; the Read masthead reads 'From Amazing Stories, August 1932, in the text of its March 1961 reprint'. The foreword's wording stays Curt's (curt.foreword)."
+    note: "Fixed: the home page's status line and the film banner no longer describe the drafts as still being watched and fixed, and the Read masthead gives the 1961 reprint as the text's source with the 1932 readings restored. Rechecked after the twenty-fourth round against the built pages. The foreword's wording stays Curt's (curt.foreword)."
     title: "Site: stale status wording and the Read masthead's date"
-    when: 2026-11-05 07:58
+    when: 2026-11-15 07:22
   find.ch11-end:
     state: pass
     note: "On the re-rendered draft: 2:08-2:32 the running head stays in frame and its rule fades with it at J; THE END and its rule sit clear."
@@ -1644,6 +1644,41 @@ items:
     note: "Fixed (8e33261): the home page, Where it stands and the film list now say the chapters are painted to their current designs, not finished ones, since the look is still the producer's call. Checked in the built pages: no 'finished designs' left in site/public."
     title: "Home and Where it stands: 'finished designs' while the look is open"
     when: 2026-11-15 06:55
+  find.ch09-red-beam:
+    state: open
+    note: From fresh-eyes round 24 (minor).
+    title: "Ch09 2:30-2:37: the dull red beam is a short stub on the dome aimed at empty sky, smaller than the blue-white beam it answers; the text says 'enormously greater'"
+    when: 2026-11-15 07:16
+  find.labels-phone:
+    state: open
+    note: From fresh-eyes round 24 (minor).
+    title: "Ch03 0:20-0:26 and ch04 0:12, 1:50: the name labels (Roal 25374, Trest 35429, X-5638, Kahsh-256799) are about 6 px tall at phone width"
+    when: 2026-11-15 07:16
+  find.ch03-dead-benches:
+    state: open
+    note: From fresh-eyes round 24 (nit).
+    title: "Ch03 3:32-4:30: the fallen colonists read as grey benches or logs, not bodies"
+    when: 2026-11-15 07:16
+  find.ch08-plant-hold:
+    state: open
+    note: From fresh-eyes round 24 (nit).
+    title: "Ch08 4:27-4:58: the finished plant holds near-still for about 31 s; the board asks for a slow tilt up its height"
+    when: 2026-11-15 07:16
+  find.ch11-page-overprint:
+    state: open
+    note: From fresh-eyes round 24 (nit).
+    title: "Ch11 about 1:56.5-1:57.5: the page change crossfades in place, two paragraphs overprinting for a second"
+    when: 2026-11-15 07:16
+  find.ch08-ladder-rung:
+    state: open
+    note: From fresh-eyes round 24 (nit).
+    title: "Ch08 1:12-1:20: the ladder plate's bottom rung, a cell and a plant, reads as three dim blobs; ch02 3:35-3:40 corridor very dark, the investigator a few pixels"
+    when: 2026-11-15 07:16
+  find.site-gates-wording:
+    state: open
+    note: From fresh-eyes round 24 (nit).
+    title: Review page says nothing goes ahead until both are satisfied, while Where it stands lists Curt's gates open with every chapter drafted; Where it stands quotes the home page and Read masthead in wording since changed
+    when: 2026-11-15 07:16
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1741,4 +1776,8 @@ fresh:
     found: 5
     note: "Round 23: nothing major; one minor (ch06 0:51-1:11, the beams-against-screens shot held 20 s nearly still under 'all the awful power... reeled back') and four nits (ch07 pale slivers above the closed dome, ch08 the plane of force smoothing only a far row of rocks, ch01 the population plate's lights faint and its rise cropped, the home and Where it stands pages calling the designs finished while gate.look is open)."
     state: 0e45d48545ae
-since_fresh: 31
+  - when: 2026-11-15 07:16
+    found: 7
+    note: "Round 24: two minor (ch09's dull red beam a short stub aimed at empty sky, not 'enormously greater'; name labels in ch03 and ch04 too small at phone size) and five nits (ch03's dead read as benches; ch08's 31 s hold on the finished plant; ch11's page change overprints; ch08's ladder bottom rung and ch02's dark corridor; site wording about gates and stale quotes in Where it stands)."
+    state: 2fc40ef6b74c
+since_fresh: 1
