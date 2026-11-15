@@ -117,7 +117,7 @@
       if (t > T0('P') && t < T0('S') - 1) for (const [x, g] of [[ROAL, G], [TREST, G + 10]]) { stillSeed('stool' + x); wash(rrPts(x - 38, g - 78, 76, 60, 6), 3, { ink: true, sw: .6 }); }
       const roal = people(t);
       // their designations, lettered the first time they're spoken (DECISIONS.md, 2026-11-01)
-      for (const [txt, x, y, a, b] of [['Roal 25374', ROAL, G + 34, C('p018.1:Roal, 25374'), C('p018.1:Trest, 35429') + 2.4], ['Trest 35429', TREST, G + 44, C('p018.1:Trest, 35429'), C('p018.1:Trest, 35429') + 3.2]]) { const k = win(t, a - .1, b, .3, .5); if (k > 0) letter(txt, x, y, 34, INK, { ink: false, font: '700 34px ' + SERIF, spacing: 1, alpha: k }); }
+      for (const [txt, x, y, a, b] of [['Roal 25374', ROAL - 40, G + 16, C('p018.1:Roal, 25374'), C('p018.1:Trest, 35429') + 2.4], ['Trest 35429', TREST + 40, G + 90, C('p018.1:Trest, 35429'), C('p018.1:Trest, 35429') + 3.2]]) { const k = win(t, a - .1, b, .3, .5); if (k > 0) letter(txt, x, y, 62, INK, { ink: false, font: '700 62px ' + SERIF, spacing: 1, alpha: k }); }   // 62 px in two rows, to read at phone size (at 34 they were 6 px tall on a phone)
       // D: his thought, the curl, in the darkest tone (the palest and mid washes vanished against the hall's light wall); S: rings as he speaks
       // it rises up and to the left, over the window's light, not along the pier behind him
       push(); translate(roal.head[0], 0); scale(-1, 1); translate(-roal.head[0], 0);

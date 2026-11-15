@@ -55,7 +55,7 @@
     flinch(tp, .8);
     stander(t, P.trest, G + 10, 46, [[T0('H'), T0('H') + 1, P.trest, P.trest + 50], [T0('I'), T0('I') + 1, P.trest + 50, P.trest], [tShift + .5, tShift + 5, P.trest, 1640]], { who: 'trest', key: 'trest', seed: 7, flip: (sp < P.trest && t < tShift) || t > T0('N') + 1, look: .05 + tl + nod(t, ROALC) + .5 * up + .15 * react, talk: talk(t, 'trest'), pose: tp });
     // Kahsh, when the council breaks up, walks off to the right (he vanished)
-    { const k = win(t, C('p044.2') + .3, C('p044.2') + 5.4, .3, .5); if (k > 0) letter('Kahsh-256799', P.kahsh, 690, 26, INK, { ink: false, align: 'center', font: '700 26px ' + SERIF, spacing: 1, alpha: k }); }   // lettered as he's named, over his own head (to his right, it sat on X-6349)
+    { const k = win(t, C('p044.2') + .3, C('p044.2') + 5.4, .3, .5); if (k > 0) letter('Kahsh-256799', P.kahsh, 670, 44, INK, { ink: false, align: 'center', font: '700 44px ' + SERIF, spacing: 1, alpha: k }); }   // lettered as he's named, over his own head (to his right, it sat on X-6349)
     // in profile like the men, turned to whoever speaks, his hand on his own clauses (he stood front-on, as on his
     // model sheet, through the whole council)
     const kp = {}, kl = gesture(t, kp, KAHSH);
@@ -111,7 +111,7 @@
     for (let i = 0; i < 8; i++) { const a = Math.PI + i / 7 * Math.PI, x = FX + XS[i], g = G - 20 + Math.sin(a) * -40, y = G - 300 - 160 * Math.sin(a + Math.PI);
       const mm = DES.machine(x, G + 10 * (i % 2), 18, t, { arms: 3, d: 1 + (i % 2), hover: (G - y) / 18, face: clamp((FX - x) / 500, -1, 1) * .9, label: null, lit: .3 + .4 * busy });
       // MX-3401, lettered as it's named, under its hull (on it, the seven letters were tiny and wider than the case)
-      if (i === 1) { const k = win(t, C('p048.1:under the direction') - .1, C('p048.1:under the direction') + 6, .3, .6); if (k > 0) letter('MX-3401', x, y + 96, 30, INK, { ink: false, font: '700 30px ' + SERIF, spacing: 1, alpha: k }); }
+      if (i === 1) { const k = win(t, C('p048.1:under the direction') - .1, C('p048.1:under the direction') + 6, .3, .6); if (k > 0) letter('MX-3401', x, y + 100, 44, INK, { ink: false, font: '700 44px ' + SERIF, spacing: 1, alpha: k }); }
       if (busy > 0 && hash(Math.floor(t * 3) + i) > .4) beam(mm.eye[0], mm.eye[1], FX + (hash(i) - .5) * 200, G - 200 - 400 * ez(t, tN, tQ), 3, 8, FORCE, 1, { washOp: 30 * busy, a: .4 * busy, splash: true }); }
     const m = f1Build(t);   // (lettering isn't faded by closing(), so its name goes before the fade)
     // O: the memory-units borne in; the ruled lines from every science-machine converging on the dome-case
@@ -142,7 +142,7 @@
     HALFTONE = .3;
     const tB = T0('B'), tC = T0('C'), tRay = C('p037.3:rose into the air'), tTrain = C('p037.3:trained upon it'), tHarm = C('p037.3:for the ray fell harmless');
     const at = id => FACE[id], tR = T0('R');
-    const c = cam(t, [[0, [1000, 800, 1.1]], [C('p037.2') - .5, at('x5638'), 2.5], [tC, [P.x5638 + 120, 820, 1.6], 2], [T0('D'), [P.roal - 60, 800, 2], 2], [T0('E'), at('x5638'), 1.2], [T0('F'), [P.roal + 60, 800, 1.3], 2.2],
+    const c = cam(t, [[0, [1000, 800, 1.1]], [C('p037.2') - 2.2, at('x5638'), 2.2], [tC, [P.x5638 + 120, 820, 1.6], 2], [T0('D'), [P.roal - 60, 800, 2], 2], [T0('E'), at('x5638'), 1.2], [T0('F'), [P.roal + 60, 800, 1.3], 2.2],
       [T0('G'), at('x6349'), 2], [T0('H'), [P.trest + 80, 800, 2.1], 1.6], [T0('I'), at('kahsh'), 1.4], [T0('J'), at('x6621'), 1.6], [T0('K'), at('cr21'), 2.2], [C('p046.3'), [P.cr21 + 300, 800, 1.4], 3],   // H: Trest, Kahsh, and X-6349 whole beside them (on Trest alone, X-6349 was cut by the right edge and X-5638 left a sliver at the left)
       [T0('L'), tt => [960, lerp(560, 470, ez(tt, T0('L'), tShift)), lerp(1.1, 1.3, ez(tt, T0('L'), tShift))], 2.5], [tShift, [1000, 650, .78], 2.5],   // the screens and the council under them (it was cropped to heads)
       // M: wide on the floor for 'two small, and one large group', then in on each small group as it's named (one pan
