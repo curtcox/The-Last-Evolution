@@ -372,7 +372,7 @@
       DES.cru1(CRU[0], G, 34, t, { hover: (G - CRU[1]) / 34 + .12 * wob(t, .25), unlit: name < .05, glowK: name, lit: .7 * talk(t, 'cru1') });
       for (const l of CHAPTER.lines) if (l.who === 'cru1' && t > l.t0 && t < l.t1 + 2.5) thoughtRings(CRU[0], CRU[1] - 10, t, l.t0, l.t1, { r1: 240 });   // its speech, as F-2's (it hung still and unlit through its line)
     }
-    { const k = win(t, C('p067.1') + 1.2, C('p067.1') + 6, .3, .6); if (k > 0) letter('F-2', WORK[0], WORK[1] + 74, 34, '#EFE6D2', { ink: false, font: '700 34px ' + SERIF, spacing: 2, alpha: k }); }   // lettered the first time it's spoken
+    { const k = win(t, C('p067.1') + 1.2, C('p067.1') + 6, .3, .6); if (k > 0) letter('F-2', WORK[0], WORK[1] + 84, 58, '#EFE6D2', { ink: false, font: '700 58px ' + SERIF, spacing: 2, alpha: k }); }   // lettered the first time it's spoken
     // AF to AK: F-2's glow as it speaks
     if (t > T0('AF')) glow(WORK[0], WORK[1], 60, '#E6EEFF', .2 * talk(t, 'f2'));
 
