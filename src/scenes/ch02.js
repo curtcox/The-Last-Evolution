@@ -173,11 +173,13 @@
     HALFTONE = .3;
     const tL = T0('L'), tM = T0('M'), tN = T0('N'), tBeam = C('p016.1:A bluish beam'), tBlank = C('p016.1:went blank'), HIDE = [2520, 472], FOUND = [2520, 548];   // in among the overhead pipes, then just under them
     const ip = path(t, [[0, [-200, 700]], [tL, [1900, 700], 3.5], [C('p014.1:It was soon seen') - 1, [2150, 640], 2], [tM, HIDE, 2], [tN - 1.5, FOUND, 1.2]]);
-    const c = cam(t, [[0, tt => [lerp(0, 1900, ez(tt, tL, tL + 3.5)), 640, 1.3]], [C('p014.1:It was soon seen') - 1.5, [2150, 620, 1.2], 2], [tM, tt => [lerp(2350, 2900, ez(tt, C('p015.1:And in the meantime'), C('p015.1:disintegrating') + 1)), 620, 1.15], 2.5],
+    const c = cam(t, [[0, tt => [lerp(0, 1900, ez(tt, tL, tL + 3.5)), 670, 1.75]],   // close on it as it flashes along (at 1.3 it was a few pixels in a dark corridor)
+      [C('p014.1:It was soon seen') - 1.5, [2150, 620, 1.2], 2], [tM, tt => [lerp(2350, 2900, ez(tt, C('p015.1:And in the meantime'), C('p015.1:disintegrating') + 1)), 620, 1.15], 2.5],
       [tN, tt => [lerp(2700, 2560, ez(tt, tN, tBeam)), 620, lerp(1.6, 2.6, ez(tt, tBeam, tBlank))], 2]]);
     withCam(c, () => {
       hull(true);
       // speed lines in the corridor as it flashes along
+      if (t < tL + 4.5) { const k = 1 - ez(t, tL + 3.5, tL + 4.5); glow(ip[0], ip[1], 260, '#F4EEDC', .22 * k); glow(ip[0], ip[1], 90, '#F4EEDC', .3 * k); }   // its own light along the dark corridor
       if (t < tL + 4) for (let i = 0; i < 8; i++) { boilSeed('spd' + i); const y = 300 + i * 70; inkLine([[ip[0] - 300 - 200 * hash(i), y], [ip[0] - 60, y]], .5, D[1], 'inkfine', 0); }
       // the apparatus room: a few dim, simple machines
       for (let i = 0; i < 4; i++) { const x = 1950 + i * 150; boilSeed('app' + i); wash(rrPts(x - 50, FL - 160, 100, 160, 8), 3, { ink: true, sw: .6 }); glow(x, FL - 120, 10, '#F4EEDC', .25 + .15 * Math.sin(t + i)); }
