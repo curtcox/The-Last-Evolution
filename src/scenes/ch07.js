@@ -52,6 +52,9 @@
     // (paler smoke, wider and rising as it grows: even at 115 its dark grey barely showed on the dim hall)
     if (cloud > 0) for (let i = 0; i < 24; i++) { const a = i / 24 * TAU + t * .12, r = lerp(170, 560, cloud) + 70 * Math.sin(t * .7 + i), cx = MID + Math.cos(a) * r, cy = G - 150 - 170 * cloud + Math.sin(a) * r * .55, k = cloud * waver * (1 - arch * .6);
       boilSeed('cl' + i + Math.floor(t * 4)); paint(ellPts(cx, cy, 110 + 160 * cloud, 70 + 110 * cloud, 14, 26), { wash: mixCol('#7E766A', '#2E2A26', arch), washOp: (60 + 150 * cloud) * Math.min(1, k * 2), fill: '#2A2520', fillOp: 70 * k, bleed: .45, ink: null }); }   // no edges: thin, they drew a web, and thick, it read as rock
+    // and smoke over the crown as it closes: between the ring's puffs the pale hall screens showed through above the dome
+    // in jagged slivers, as if the solid black dome were torn
+    if (arch > 0) for (let i = 0; i < 3; i++) { boilSeed('crown' + i + Math.floor(t * 4)); paint(ellPts(MID + (i - 1) * 300, G - 470 - 30 * (i % 2), 330, 170, 14, 26), { wash: '#2E2A26', washOp: 230 * arch * cloud, fill: '#2A2520', fillOp: 70 * arch, bleed: .45, ink: null }); }
     // F-2 floats in and stops before the men
     const f2k = ez(t, tF - .5, tF + 5), fx = lerp(2300, MID + 260, f2k), fy = lerp(560, 780, f2k);
     for (let i = 0; i < 6; i++) if (t > tSix - 1) { const [x, g] = sixAt(t, i); const m = DES.machine(x, g, 22, t, { arms: 3, d: 1 + (i % 2), hover: 1.5 + .1 * wob(t, .3, i), face: clamp((MID - x) / 300, -1, 1), lit: .3, label: null });
