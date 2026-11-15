@@ -56,7 +56,7 @@
     // in jagged slivers, as if the solid black dome were torn
     if (arch > 0) for (let i = 0; i < 3; i++) { boilSeed('crown' + i + Math.floor(t * 4)); paint(ellPts(MID + (i - 1) * 300, G - 470 - 30 * (i % 2), 330, 170, 14, 26), { wash: '#2E2A26', washOp: 230 * arch * cloud, fill: '#2A2520', fillOp: 70 * arch, bleed: .45, ink: null }); }
     // F-2 floats in and stops before the men
-    const f2k = ez(t, tF - .5, tF + 5), fx = lerp(2300, MID + 260, f2k), fy = lerp(560, 780, f2k);
+    const f2k = ez(t, tF - .5, tF + 5), fx = lerp(2300, MID + 260, f2k), fy = lerp(560, 780, f2k) - 130 * ez(t, T0('H') - .3, T0('H') + 3);   // rising clear as the six range about the men (it hung over the nearest of them)
     for (let i = 0; i < 6; i++) if (t > tSix - 1) { const [x, g] = sixAt(t, i); const m = DES.machine(x, g, 22, t, { arms: 3, d: 1 + (i % 2), hover: 1.5 + .1 * wob(t, .3, i), face: clamp((MID - x) / 300, -1, 1), lit: .3, label: null });
       if (t > tCloud - 1) glow(m.eye[0], m.eye[1], 30, '#E6EEFF', .4); }
     // F-2 in front of the six (drawn before them, one passed over it as they came in)
@@ -115,7 +115,7 @@
     // F-2 and the six that made the dome, still with them in the dark (gone, they seemed to have left until 3:16): under
     // the shade, dim shapes with the glint of an eye
     const eyes = [[0, 1, 2, 3, 4, 5].map(i => DES.machine([420, 520, 620, 1400, 1500, 1600][i], G - 110, 15, t, { arms: 3, d: 1 + (i % 2), hover: 1.5 + .1 * wob(t, .3, i), face: i < 3 ? 1 : -1, lit: .3, label: null }).eye)];
-    const fx = 1290, fy = 780; push(); translate(fx, fy); scale(-1, 1); translate(-fx, -fy); DES.f2(fx, fy + 2.4 * FS, FS, t, { view: 'side' }); pop();
+    const fx = 1290, fy = 780 - 130 * ez(t, T0('H') - .3, T0('H') + 3); push(); translate(fx, fy); scale(-1, 1); translate(-fx, -fy); DES.f2(fx, fy + 2.4 * FS, FS, t, { view: 'side' }); pop();
     camEnd();
     shade(-100, H + 100, .82, .9, PULP.black);   // black all round; only the screens give light
     camBegin(960, 560, z);
