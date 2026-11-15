@@ -347,7 +347,7 @@
     if (t < tBack - .6) return worlds(t);
     if (t < tBack + .6) return dissolve(seg(t, tBack - .6, tBack + .6), () => worlds(t), () => hall(t));
     hall(t);
-    if (t > DUR - .6) brushWipe(seg(t, DUR - .6, DUR + .6), [PULP.w[3], PULP.w[2]]);
+    if (t > DUR - .7) brushWipe(.5 * seg(t, DUR - .7, DUR - .08), [PULP.paperDk, PULP.paper]);   // paper strokes cover the last image, so the next chapter's opening page follows on (a brown wipe that never revealed anything flickered before the cut)
   }
   shots([[0, film]]);
 })();

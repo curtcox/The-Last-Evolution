@@ -201,7 +201,7 @@
     if (t < tL - .8) return battle(t);
     if (t < tL + .6) return dissolve(seg(t, tL - .8, tL + .6), () => battle(t), () => earth(t));
     earth(t);
-    if (t > DUR - .6) brushWipe(seg(t, DUR - .6, DUR + .6), [PULP.w[3], PULP.w[2]]);
+    if (t > DUR - .7) brushWipe(.5 * seg(t, DUR - .7, DUR - .08), [PULP.paperDk, PULP.paper]);   // paper strokes cover the last image, so the next chapter's opening page follows on (a brown wipe that never revealed anything flickered before the cut)
   }
   shots([[0, film]]);
 })();

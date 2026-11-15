@@ -80,7 +80,7 @@
     if (t < T0('B')) return page(t, 'Go, and Do Not Return', 'Far in space, headed now for Mars, that they might destroy all life there, the golden sphere found the Outsiders...', T0('B'), { soak: '#1A1612' });
     scene(t);
     if (t < T0('B') + .8) flash(1 - seg(t, T0('B'), T0('B') + .8), '#1A1612');
-    if (t > DUR - .6) brushWipe(seg(t, DUR - .6, DUR + .6), [PULP.w[3], PULP.w[2]]);
+    if (t > DUR - .7) brushWipe(.5 * seg(t, DUR - .7, DUR - .08), [PULP.paperDk, PULP.paper]);   // paper strokes cover the last image, so the next chapter's opening page follows on (a brown wipe that never revealed anything flickered before the cut)
   }
   shots([[0, film]]);
 })();
