@@ -1,6 +1,6 @@
 {
  "summary": {
-  "pass": 326,
+  "pass": 333,
   "stale": 0,
   "open": 0,
   "curt": 9,
@@ -42,8 +42,8 @@
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
-   "state": "stale",
-   "detail": "33 pages live, the deploy is this commit"
+   "state": "pass",
+   "detail": "33 pages live (not compared: HEAD has changes not pushed)"
   }
  },
  "curt": [
@@ -99,210 +99,210 @@
    "area": "film",
    "title": "Chapter 5: the acting",
    "state": "pass",
-   "note": "On the draft with the eighteenth round's fixes: F-2 and the new cylinder side by side as it's called 'smaller even than its creator' (find.ch05-f2-offscreen), and thought rings out from C-R-U-1 as it speaks (find.ch07-f2-silent); sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
+   "note": "On the draft with the twenty-second round's fixes: F-1's legs fold in as it tips instead of vanishing (find.ch05-f1-legs); sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
   },
   {
    "id": "ch05.picture",
    "area": "film",
    "title": "Chapter 5: the picture",
    "state": "pass",
-   "note": "On the draft with the eighteenth round's fixes: F-2 and the new cylinder side by side as it's called 'smaller even than its creator' (find.ch05-f2-offscreen), and thought rings out from C-R-U-1 as it speaks (find.ch07-f2-silent); sound unchanged, -14.5 LUFS. The hall at night with F-1 vast; the atom plates (orbits, grid, light); the spiralling air field, arcs and flame, aura and lightning; F-1's hulk; F-2 with rings and memories; the ball of forces, the ruler, the guinea pig cage in the pale beam; dawn on the rock with tiny machines streaming up. Dark but legible."
+   "note": "On the draft with the twenty-second round's fixes: F-1's legs fold in as it tips instead of vanishing (find.ch05-f1-legs); sound unchanged, -14.5 LUFS. The hall at night with F-1 vast; the atom plates (orbits, grid, light); the spiralling air field, arcs and flame, aura and lightning; F-1's hulk; F-2 with rings and memories; the ball of forces, the ruler, the guinea pig cage in the pale beam; dawn on the rock with tiny machines streaming up. Dark but legible."
   },
   {
    "id": "ch05.sync",
    "area": "film",
    "title": "Chapter 5: picture against sound",
    "state": "pass",
-   "note": "On the draft with the eighteenth round's fixes: F-2 and the new cylinder side by side as it's called 'smaller even than its creator' (find.ch05-f2-offscreen), and thought rings out from C-R-U-1 as it speaks (find.ch07-f2-silent); sound unchanged, -14.5 LUFS. Cuts on cue words (F-1 on 'Roal--your thoughts', 'Roal sat up', the plate on 'Hydrogen'); Whisper timing -0.12 s median."
+   "note": "On the draft with the twenty-second round's fixes: F-1's legs fold in as it tips instead of vanishing (find.ch05-f1-legs); sound unchanged, -14.5 LUFS. Cuts on cue words (F-1 on 'Roal--your thoughts', 'Roal sat up', the plate on 'Hydrogen'); Whisper timing -0.12 s median."
   },
   {
    "id": "ch05.sound",
    "area": "film",
    "title": "Chapter 5: the sound",
    "state": "pass",
-   "note": "On the draft with the eighteenth round's fixes: F-2 and the new cylinder side by side as it's called 'smaller even than its creator' (find.ch05-f2-offscreen), and thought rings out from C-R-U-1 as it speaks (find.ch07-f2-silent); sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 3.8; the quiet shots C, D, H, I and AH are pauses, their speech -14.1 to -14.7; Whisper lost 12 of 1107 (names, coinages, 'asked')."
+   "note": "On the draft with the twenty-second round's fixes: F-1's legs fold in as it tips instead of vanishing (find.ch05-f1-legs); sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 3.8; the quiet shots C, D, H, I and AH are pauses, their speech -14.1 to -14.7; Whisper lost 12 of 1107 (names, coinages, 'asked')."
   },
   {
    "id": "ch05.story",
    "area": "film",
    "title": "Chapter 5: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the eighteenth round's fixes: F-2 and the new cylinder side by side as it's called 'smaller even than its creator' (find.ch05-f2-offscreen), and thought rings out from C-R-U-1 as it speaks (find.ch07-f2-silent); sound unchanged, -14.5 LUFS. 9:03: Roal thinks out the hydrogen wall; F-1 builds its successor and is unmade by it; F-2 makes the ruler, tests the green beam on a guinea pig, and the machines build outward. The pilot still holds as the standard."
+   "note": "On the draft with the twenty-second round's fixes: F-1's legs fold in as it tips instead of vanishing (find.ch05-f1-legs); sound unchanged, -14.5 LUFS. 9:03: Roal thinks out the hydrogen wall; F-1 builds its successor and is unmade by it; F-2 makes the ruler, tests the green beam on a guinea pig, and the machines build outward. The pilot still holds as the standard."
   },
   {
    "id": "ch05.draft",
    "area": "film",
    "title": "Chapter 5: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch05-draft-9550ba60.mp4, -14.5 LUFS, peak -2 dBTP"
+   "note": "ch05-draft-c0faa91a.mp4, -14.5 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch00.acting",
    "area": "film",
    "title": "Chapter 0: the acting",
    "state": "pass",
-   "note": "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.997 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. F-2 drifts, then the memory of Roal offering and Trest standing apart (0:26-0:34) holds still, as a memory should; nothing acts against the words."
+   "note": "On the draft with the twenty-second round's fixes: the board's masthead now matches the lettering (find.ch00-board-reprint); the picture unchanged; sound unchanged, -14.4 LUFS. F-2 drifts, then the memory of Roal offering and Trest standing apart (0:26-0:34) holds still, as a memory should; nothing acts against the words."
   },
   {
    "id": "ch00.picture",
    "area": "film",
    "title": "Chapter 0: the picture",
    "state": "pass",
-   "note": "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.997 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. Header now reads AMAZING STORIES · August, 1932. Title page, space, the memory and the mentatype sheets all read; the galaxies over the memory are dimmed to 40% by design (ch00.js: 1 - .6*mem)."
+   "note": "On the draft with the twenty-second round's fixes: the board's masthead now matches the lettering (find.ch00-board-reprint); the picture unchanged; sound unchanged, -14.4 LUFS. Header now reads AMAZING STORIES · August, 1932. Title page, space, the memory and the mentatype sheets all read; the galaxies over the memory are dimmed to 40% by design (ch00.js: 1 - .6*mem)."
   },
   {
    "id": "ch00.sync",
    "area": "film",
    "title": "Chapter 0: picture against sound",
    "state": "pass",
-   "note": "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.997 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. The memory opens on 'in memory I am still close' and the passing light crosses on 'But I will pass soon'; the sheets come in with the record (E). Whisper's words sit 0.14 s from the alignment's (median)."
+   "note": "On the draft with the twenty-second round's fixes: the board's masthead now matches the lettering (find.ch00-board-reprint); the picture unchanged; sound unchanged, -14.4 LUFS. The memory opens on 'in memory I am still close' and the passing light crosses on 'But I will pass soon'; the sheets come in with the record (E). Whisper's words sit 0.14 s from the alignment's (median)."
   },
   {
    "id": "ch00.sound",
    "area": "film",
    "title": "Chapter 0: the sound",
    "state": "pass",
-   "note": "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.997 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 4.2 LU, shots -14.6 to -17.4. Whisper missed 2 of 95 words: 'menta type', which it heard as 'mentatype', the right word."
+   "note": "On the draft with the twenty-second round's fixes: the board's masthead now matches the lettering (find.ch00-board-reprint); the picture unchanged; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 4.2 LU, shots -14.6 to -17.4. Whisper missed 2 of 95 words: 'menta type', which it heard as 'mentatype', the right word."
   },
   {
    "id": "ch00.story",
    "area": "film",
    "title": "Chapter 0: the chapter as a story",
    "state": "pass",
-   "note": "On the draft rendered after the seventh round (the drawing kit gained helpers this chapter doesn't use): no picture change (SSIM 0.997 against the passed draft; the worst frames side by side differ only in grain and brush texture); sound unchanged, -14.4 LUFS. 58 s: the title, the old machine alone in space, the memory of man, and why it sets down its record. Sets up the film without explaining it away."
+   "note": "On the draft with the twenty-second round's fixes: the board's masthead now matches the lettering (find.ch00-board-reprint); the picture unchanged; sound unchanged, -14.4 LUFS. 58 s: the title, the old machine alone in space, the memory of man, and why it sets down its record. Sets up the film without explaining it away."
   },
   {
    "id": "ch00.draft",
    "area": "film",
    "title": "Chapter 0: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch00-draft-d50386ad.mp4, -14.4 LUFS, peak -2.3 dBTP"
+   "note": "ch00-draft-3885e4ee.mp4, -14.4 LUFS, peak -2.3 dBTP"
   },
   {
    "id": "ch01.acting",
    "area": "film",
    "title": "Chapter 1: the acting",
    "state": "pass",
-   "note": "On the draft with the twenty-first round's fixes: the closing move stays on the dark plate and dissolves cleanly to the street (find.ch01-end-wipe), and two toss a ball between the towers on 'games, athletic contests' (find.ch01-games); sound unchanged, -14.4 LUFS. Pairs trade talk on the walkways, the crate hand-off and the hander rising back to work, the runners, the mock battle; at the close the man and the machine walk off together, in step, through clear ground."
+   "note": "On the draft with the twenty-second round's fixes: the idler who lay flat beside the mock battle now sits, so no one reads as its casualty (find.ch01-lying-man); sound unchanged, -14.4 LUFS. Pairs trade talk on the walkways, the crate hand-off and the hander rising back to work, the runners, the mock battle; at the close the man and the machine walk off together, in step, through clear ground."
   },
   {
    "id": "ch01.picture",
    "area": "film",
    "title": "Chapter 1: the picture",
    "state": "pass",
-   "note": "On the draft with the twenty-first round's fixes: the closing move stays on the dark plate and dissolves cleanly to the street (find.ch01-end-wipe), and two toss a ball between the towers on 'games, athletic contests' (find.ch01-games); sound unchanged, -14.4 LUFS. The history hall, the city of towers and walkways, the numbers, the explorers; the two minds as a head and a sphere, the curved leap landing in a soft haze against the machine's stair of steps, the waves; the close on the plain under the towers. Reads at sheet size."
+   "note": "On the draft with the twenty-second round's fixes: the idler who lay flat beside the mock battle now sits, so no one reads as its casualty (find.ch01-lying-man); sound unchanged, -14.4 LUFS. The history hall, the city of towers and walkways, the numbers, the explorers; the two minds as a head and a sphere, the curved leap landing in a soft haze against the machine's stair of steps, the waves; the close on the plain under the towers. Reads at sheet size."
   },
   {
    "id": "ch01.sync",
    "area": "film",
    "title": "Chapter 1: picture against sound",
    "state": "pass",
-   "note": "On the draft with the twenty-first round's fixes: the closing move stays on the dark plate and dissolves cleanly to the street (find.ch01-end-wipe), and two toss a ball between the towers on 'games, athletic contests' (find.ch01-games); sound unchanged, -14.4 LUFS. Ear, Eye and Brain arrive as they are named; cuts and cues land on their words; Whisper timing -0.12 s median."
+   "note": "On the draft with the twenty-second round's fixes: the idler who lay flat beside the mock battle now sits, so no one reads as its casualty (find.ch01-lying-man); sound unchanged, -14.4 LUFS. Ear, Eye and Brain arrive as they are named; cuts and cues land on their words; Whisper timing -0.12 s median."
   },
   {
    "id": "ch01.sound",
    "area": "film",
    "title": "Chapter 1: the sound",
    "state": "pass",
-   "note": "On the draft with the twenty-first round's fixes: the closing move stays on the dark plate and dissolves cleanly to the street (find.ch01-end-wipe), and two toss a ball between the towers on 'games, athletic contests' (find.ch01-games); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS integrated, LRA 3.3, shots -14.1 to -17.2 (the quiet ones are pauses); Whisper lost 6 of 455 words, all 'twenty hundred' heard as digits."
+   "note": "On the draft with the twenty-second round's fixes: the idler who lay flat beside the mock battle now sits, so no one reads as its casualty (find.ch01-lying-man); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS integrated, LRA 3.3, shots -14.1 to -17.2 (the quiet ones are pauses); Whisper lost 6 of 455 words, all 'twenty hundred' heard as digits."
   },
   {
    "id": "ch01.story",
    "area": "film",
    "title": "Chapter 1: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the twenty-first round's fixes: the closing move stays on the dark plate and dissolves cleanly to the street (find.ch01-end-wipe), and two toss a ball between the towers on 'games, athletic contests' (find.ch01-games); sound unchanged, -14.4 LUFS. Man's history to 2,000,000, the city where man and machine live together, the two kinds of mind (the leap of intuition against the logical stair), and the partnership as the chapter's close. Clear setup for what follows."
+   "note": "On the draft with the twenty-second round's fixes: the idler who lay flat beside the mock battle now sits, so no one reads as its casualty (find.ch01-lying-man); sound unchanged, -14.4 LUFS. Man's history to 2,000,000, the city where man and machine live together, the two kinds of mind (the leap of intuition against the logical stair), and the partnership as the chapter's close. Clear setup for what follows."
   },
   {
    "id": "ch01.draft",
    "area": "film",
    "title": "Chapter 1: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch01-draft-fe8486af.mp4, -14.4 LUFS, peak -2.3 dBTP"
+   "note": "ch01-draft-4b518891.mp4, -14.4 LUFS, peak -2.3 dBTP"
   },
   {
    "id": "ch02.acting",
    "area": "film",
    "title": "Chapter 2: the acting",
    "state": "pass",
-   "note": "On the draft with the twenty-first round's fixes: the footnotes lettered larger, footnote 1 held into the next shot and footnote 2 for 5.5 s (find.ch02-footnotes); sound unchanged, -14.4 LUFS. The Outsiders move as a ranked crew: the small ones sway at their posts, the close Outsider stands apart and turns; the falls and the dive read; the crawlers keep their distance."
+   "note": "On the draft with the twenty-second round's fixes: the two Outsiders high on the wall leave the frame once, one up the rib and one off left, before the camera closes in (find.ch02-ch08-small); sound unchanged, -14.4 LUFS. The Outsiders move as a ranked crew: the small ones sway at their posts, the close Outsider stands apart and turns; the falls and the dive read; the crawlers keep their distance."
   },
   {
    "id": "ch02.picture",
    "area": "film",
    "title": "Chapter 2: the picture",
    "state": "pass",
-   "note": "On the draft with the twenty-first round's fixes: the footnotes lettered larger, footnote 1 held into the next shot and footnote 2 for 5.5 s (find.ch02-footnotes); sound unchanged, -14.4 LUFS. Space and the incoming fleet, the hulled ship, the Outsiders' interior with light shells now clear against the darker hull, the plates and rods, the wrecked hulls in the debris field, the dark hall of the masters, the fleet in rows. The earlier contrast note (dark on dark) no longer holds."
+   "note": "On the draft with the twenty-second round's fixes: the two Outsiders high on the wall leave the frame once, one up the rib and one off left, before the camera closes in (find.ch02-ch08-small); sound unchanged, -14.4 LUFS. Space and the incoming fleet, the hulled ship, the Outsiders' interior with light shells now clear against the darker hull, the plates and rods, the wrecked hulls in the debris field, the dark hall of the masters, the fleet in rows. The earlier contrast note (dark on dark) no longer holds."
   },
   {
    "id": "ch02.sync",
    "area": "film",
    "title": "Chapter 2: picture against sound",
    "state": "pass",
-   "note": "On the draft with the twenty-first round's fixes: the footnotes lettered larger, footnote 1 held into the next shot and footnote 2 for 5.5 s (find.ch02-footnotes); sound unchanged, -14.4 LUFS. Shots change on their cue words; Whisper timing -0.12 s median."
+   "note": "On the draft with the twenty-second round's fixes: the two Outsiders high on the wall leave the frame once, one up the rib and one off left, before the camera closes in (find.ch02-ch08-small); sound unchanged, -14.4 LUFS. Shots change on their cue words; Whisper timing -0.12 s median."
   },
   {
    "id": "ch02.sound",
    "area": "film",
    "title": "Chapter 2: the sound",
    "state": "pass",
-   "note": "On the draft with the twenty-first round's fixes: the footnotes lettered larger, footnote 1 held into the next shot and footnote 2 for 5.5 s (find.ch02-footnotes); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.2, shots -14.5 to -16.7; Whisper lost 13 of 640, names (Sirius, Deimos) and numbers."
+   "note": "On the draft with the twenty-second round's fixes: the two Outsiders high on the wall leave the frame once, one up the rib and one off left, before the camera closes in (find.ch02-ch08-small); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.2, shots -14.5 to -16.7; Whisper lost 13 of 640, names (Sirius, Deimos) and numbers."
   },
   {
    "id": "ch02.story",
    "area": "film",
    "title": "Chapter 2: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the twenty-first round's fixes: the footnotes lettered larger, footnote 1 held into the next shot and footnote 2 for 5.5 s (find.ch02-footnotes); sound unchanged, -14.4 LUFS. The Outsiders come from beyond the system, their ships and their masters are shown, and the threat to Earth is set: the chapter does its job as the invader's introduction."
+   "note": "On the draft with the twenty-second round's fixes: the two Outsiders high on the wall leave the frame once, one up the rib and one off left, before the camera closes in (find.ch02-ch08-small); sound unchanged, -14.4 LUFS. The Outsiders come from beyond the system, their ships and their masters are shown, and the threat to Earth is set: the chapter does its job as the invader's introduction."
   },
   {
    "id": "ch02.draft",
    "area": "film",
    "title": "Chapter 2: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch02-draft-97b79416.mp4, -14.4 LUFS, peak -2 dBTP"
+   "note": "ch02-draft-bdc334b4.mp4, -14.4 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch03.acting",
    "area": "film",
    "title": "Chapter 3: the acting",
    "state": "pass",
-   "note": "On the draft with the twenty-first round's fixes: the new torpedoes lie either side of Roal and Trest, clear of them (find.ch03-torpedoes-men); sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
+   "note": "On the draft with the twenty-second round's fixes: the colonists seen from the side, each his own: they turn up to the settling ships, point, shade their eyes, step back, and throw their arms over their faces as the green comes down, then fall on 'killed instantly' (find.ch03-colonists); sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
   },
   {
    "id": "ch03.picture",
    "area": "film",
    "title": "Chapter 3: the picture",
    "state": "pass",
-   "note": "On the draft with the twenty-first round's fixes: the new torpedoes lie either side of Roal and Trest, clear of them (find.ch03-torpedoes-men); sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
+   "note": "On the draft with the twenty-second round's fixes: the colonists seen from the side, each his own: they turn up to the settling ships, point, shade their eyes, step back, and throw their arms over their faces as the green comes down, then fall on 'killed instantly' (find.ch03-colonists); sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
   },
   {
    "id": "ch03.sync",
    "area": "film",
    "title": "Chapter 3: picture against sound",
    "state": "pass",
-   "note": "On the draft with the twenty-first round's fixes: the new torpedoes lie either side of Roal and Trest, clear of them (find.ch03-torpedoes-men); sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
+   "note": "On the draft with the twenty-second round's fixes: the colonists seen from the side, each his own: they turn up to the settling ships, point, shade their eyes, step back, and throw their arms over their faces as the green comes down, then fall on 'killed instantly' (find.ch03-colonists); sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
   },
   {
    "id": "ch03.sound",
    "area": "film",
    "title": "Chapter 3: the sound",
    "state": "pass",
-   "note": "On the draft with the twenty-first round's fixes: the new torpedoes lie either side of Roal and Trest, clear of them (find.ch03-torpedoes-men); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
+   "note": "On the draft with the twenty-second round's fixes: the colonists seen from the side, each his own: they turn up to the settling ships, point, shade their eyes, step back, and throw their arms over their faces as the green comes down, then fall on 'killed instantly' (find.ch03-colonists); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
   },
   {
    "id": "ch03.story",
    "area": "film",
    "title": "Chapter 3: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the twenty-first round's fixes: the new torpedoes lie either side of Roal and Trest, clear of them (find.ch03-torpedoes-men); sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
+   "note": "On the draft with the twenty-second round's fixes: the colonists seen from the side, each his own: they turn up to the settling ships, point, shade their eyes, step back, and throw their arms over their faces as the green comes down, then fall on 'killed instantly' (find.ch03-colonists); sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
   },
   {
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch03-draft-37512f1b.mp4, -14.4 LUFS, peak -2 dBTP"
+   "note": "ch03-draft-14125549.mp4, -14.4 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch04.acting",
@@ -393,126 +393,126 @@
    "area": "film",
    "title": "Chapter 7: the acting",
    "state": "pass",
-   "note": "On the draft with the twentieth round's fixes: the six arrive in two staggered rows of three, all in the frame (find.ch07-six-clump); sound unchanged, -14.5 LUFS. Roal and Trest talk in the hall at night with hands out, Roal's curl rises, F-2 and the six machines gather, the two men stand inside the dome with their faces lit by the screens, the projectors feed the dome."
+   "note": "On the draft with the twenty-second round's fixes: F-2's three tentacles show on the dark floor in F and G, pale bluish under its dark strokes (find.ch07-f2-tentacles); sound unchanged, -14.5 LUFS. Roal and Trest talk in the hall at night with hands out, Roal's curl rises, F-2 and the six machines gather, the two men stand inside the dome with their faces lit by the screens, the projectors feed the dome."
   },
   {
    "id": "ch07.picture",
    "area": "film",
    "title": "Chapter 7: the picture",
    "state": "pass",
-   "note": "On the draft with the twentieth round's fixes: the six arrive in two staggered rows of three, all in the frame (find.ch07-six-clump); sound unchanged, -14.5 LUFS. The hall of screens with falling ships, Roal's curl, F-2 and the six, the ring, the dome rising whole, the inside with five lit screens and the two lit faces, the green beams on the dome, the violet cut-away, the projectors, the dome small on the plain."
+   "note": "On the draft with the twenty-second round's fixes: F-2's three tentacles show on the dark floor in F and G, pale bluish under its dark strokes (find.ch07-f2-tentacles); sound unchanged, -14.5 LUFS. The hall of screens with falling ships, Roal's curl, F-2 and the six, the ring, the dome rising whole, the inside with five lit screens and the two lit faces, the green beams on the dome, the violet cut-away, the projectors, the dome small on the plain."
   },
   {
    "id": "ch07.sync",
    "area": "film",
    "title": "Chapter 7: picture against sound",
    "state": "pass",
-   "note": "On the draft with the twentieth round's fixes: the six arrive in two staggered rows of three, all in the frame (find.ch07-six-clump); sound unchanged, -14.5 LUFS. Cuts on cue words; the faces lit for 'the two faces in their light'; Whisper timing on the narration."
+   "note": "On the draft with the twenty-second round's fixes: F-2's three tentacles show on the dark floor in F and G, pale bluish under its dark strokes (find.ch07-f2-tentacles); sound unchanged, -14.5 LUFS. Cuts on cue words; the faces lit for 'the two faces in their light'; Whisper timing on the narration."
   },
   {
    "id": "ch07.sound",
    "area": "film",
    "title": "Chapter 7: the sound",
    "state": "pass",
-   "note": "On the draft with the twentieth round's fixes: the six arrive in two staggered rows of three, all in the frame (find.ch07-six-clump); sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 4.0; Whisper lost 0 of 527; the quiet shots C and I are pauses, speech -14.2 to -15.3 (Trest's 'the end' soft, as it should be)."
+   "note": "On the draft with the twenty-second round's fixes: F-2's three tentacles show on the dark floor in F and G, pale bluish under its dark strokes (find.ch07-f2-tentacles); sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 4.0; Whisper lost 0 of 527; the quiet shots C and I are pauses, speech -14.2 to -15.3 (Trest's 'the end' soft, as it should be)."
   },
   {
    "id": "ch07.story",
    "area": "film",
    "title": "Chapter 7: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the twentieth round's fixes: the six arrive in two staggered rows of three, all in the frame (find.ch07-six-clump); sound unchanged, -14.5 LUFS. The last men shelter: Roal and Trest decide, the machines build the dome around them, and the outside goes on without them. The chapter's quiet ending reads."
+   "note": "On the draft with the twenty-second round's fixes: F-2's three tentacles show on the dark floor in F and G, pale bluish under its dark strokes (find.ch07-f2-tentacles); sound unchanged, -14.5 LUFS. The last men shelter: Roal and Trest decide, the machines build the dome around them, and the outside goes on without them. The chapter's quiet ending reads."
   },
   {
    "id": "ch07.draft",
    "area": "film",
    "title": "Chapter 7: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch07-draft-3512f78d.mp4, -14.5 LUFS, peak -2.1 dBTP"
+   "note": "ch07-draft-f28b7be6.mp4, -14.5 LUFS, peak -1.9 dBTP"
   },
   {
    "id": "ch08.acting",
    "area": "film",
    "title": "Chapter 8: the acting",
    "state": "pass",
-   "note": "On the draft with the eighteenth round's fixes: Roal's thought-curl sized to the close shot, inside the frame's top edge (find.ch08-curl-cut); sound unchanged, -14.5 LUFS. Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be."
+   "note": "On the draft with the twenty-second round's fixes: F-2 and its duplicate drawn larger at 'as is F-2 here' (find.ch02-ch08-small); sound unchanged, -14.5 LUFS. Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be."
   },
   {
    "id": "ch08.picture",
    "area": "film",
    "title": "Chapter 8: the picture",
    "state": "pass",
-   "note": "On the draft with the eighteenth round's fixes: Roal's thought-curl sized to the close shot, inside the frame's top edge (find.ch08-curl-cut); sound unchanged, -14.5 LUFS. The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light."
+   "note": "On the draft with the twenty-second round's fixes: F-2 and its duplicate drawn larger at 'as is F-2 here' (find.ch02-ch08-small); sound unchanged, -14.5 LUFS. The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light."
   },
   {
    "id": "ch08.sync",
    "area": "film",
    "title": "Chapter 8: picture against sound",
    "state": "pass",
-   "note": "On the draft with the eighteenth round's fixes: Roal's thought-curl sized to the close shot, inside the frame's top edge (find.ch08-curl-cut); sound unchanged, -14.5 LUFS. The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median)."
+   "note": "On the draft with the twenty-second round's fixes: F-2 and its duplicate drawn larger at 'as is F-2 here' (find.ch02-ch08-small); sound unchanged, -14.5 LUFS. The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median)."
   },
   {
    "id": "ch08.sound",
    "area": "film",
    "title": "Chapter 8: the sound",
    "state": "pass",
-   "note": "On the draft with the eighteenth round's fixes: Roal's thought-curl sized to the close shot, inside the frame's top edge (find.ch08-curl-cut); sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
+   "note": "On the draft with the twenty-second round's fixes: F-2 and its duplicate drawn larger at 'as is F-2 here' (find.ch02-ch08-small); sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
   },
   {
    "id": "ch08.story",
    "area": "film",
    "title": "Chapter 8: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the eighteenth round's fixes: Roal's thought-curl sized to the close shot, inside the frame's top edge (find.ch08-curl-cut); sound unchanged, -14.5 LUFS. 5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
+   "note": "On the draft with the twenty-second round's fixes: F-2 and its duplicate drawn larger at 'as is F-2 here' (find.ch02-ch08-small); sound unchanged, -14.5 LUFS. 5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
   },
   {
    "id": "ch08.draft",
    "area": "film",
    "title": "Chapter 8: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch08-draft-bf49e8ae.mp4, -14.5 LUFS, peak -1.7 dBTP"
+   "note": "ch08-draft-66f3d40d.mp4, -14.5 LUFS, peak -1.8 dBTP"
   },
   {
    "id": "ch09.acting",
    "area": "film",
    "title": "Chapter 9: the acting",
    "state": "pass",
-   "note": "On the draft with the nineteenth round's fixes: in on C-R-U-1 as it joins F-2, so its gold name reads (find.ch09-cru1-name); sound unchanged, -14.4 LUFS. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
+   "note": "On the draft with the twenty-second round's fixes: the sphere streaks off on 'was gone' (find.ch09-sphere-gone); sound unchanged, -14.4 LUFS. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
   },
   {
    "id": "ch09.picture",
    "area": "film",
    "title": "Chapter 9: the picture",
    "state": "pass",
-   "note": "On the draft with the nineteenth round's fixes: in on C-R-U-1 as it joins F-2, so its gold name reads (find.ch09-cru1-name); sound unchanged, -14.4 LUFS. Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
+   "note": "On the draft with the twenty-second round's fixes: the sphere streaks off on 'was gone' (find.ch09-sphere-gone); sound unchanged, -14.4 LUFS. Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
   },
   {
    "id": "ch09.sync",
    "area": "film",
    "title": "Chapter 9: picture against sound",
    "state": "pass",
-   "note": "On the draft with the nineteenth round's fixes: in on C-R-U-1 as it joins F-2, so its gold name reads (find.ch09-cru1-name); sound unchanged, -14.4 LUFS. The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
+   "note": "On the draft with the twenty-second round's fixes: the sphere streaks off on 'was gone' (find.ch09-sphere-gone); sound unchanged, -14.4 LUFS. The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
   },
   {
    "id": "ch09.sound",
    "area": "film",
    "title": "Chapter 9: the sound",
    "state": "pass",
-   "note": "On the draft with the nineteenth round's fixes: in on C-R-U-1 as it joins F-2, so its gold name reads (find.ch09-cru1-name); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
+   "note": "On the draft with the twenty-second round's fixes: the sphere streaks off on 'was gone' (find.ch09-sphere-gone); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
   },
   {
    "id": "ch09.story",
    "area": "film",
    "title": "Chapter 9: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the nineteenth round's fixes: in on C-R-U-1 as it joins F-2, so its gold name reads (find.ch09-cru1-name); sound unchanged, -14.4 LUFS. 5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
+   "note": "On the draft with the twenty-second round's fixes: the sphere streaks off on 'was gone' (find.ch09-sphere-gone); sound unchanged, -14.4 LUFS. 5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
   },
   {
    "id": "ch09.draft",
    "area": "film",
    "title": "Chapter 9: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch09-draft-8529c2a5.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "note": "ch09-draft-06c9bb93.mp4, -14.4 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch10.acting",
@@ -631,14 +631,14 @@
    "area": "site",
    "title": "The film page (annotated): what it says",
    "state": "pass",
-   "note": "Rechecked after the twenty-first round: the chapter videos' links changed (new drafts of chapters 1, 2 and 3, the same lengths, so every chapter start and note time holds), and the dreaming note now says the curl rises when Roal dreams aloud, as there and in chapter 3; otherwise the page is unchanged, checked by a diff with the links masked."
+   "note": "Rechecked after the twenty-second round: only the chapter videos' links changed (new drafts of chapters 0, 1, 2, 3, 5, 7, 8 and 9, the same lengths, so every chapter start and note time holds); the page is otherwise unchanged, checked by a diff with the links masked. Chapter 0's page now gives the masthead as the film letters it."
   },
   {
    "id": "site.watch.look",
    "area": "site",
    "title": "The film page (annotated): how it looks and works",
    "state": "pass",
-   "note": "Rechecked after the twenty-first round: only the chapter 1-3 video links and one note's wording changed; the layout is as before at desktop and at 375, the phone check passing on all pages."
+   "note": "Rechecked after the twenty-second round: only the video links changed; the layout is as before at desktop and at 375, the phone check passing on all pages."
   },
   {
    "id": "site.read.content",
@@ -2417,14 +2417,58 @@
    "title": "Where it stands: two double full stops",
    "state": "pass",
    "note": "Where it stands now adds no full stop after a call that ends in one; the two 'Whisper hears' questions end in a single question mark."
+  },
+  {
+   "id": "find.ch07-f2-tentacles",
+   "area": "finding",
+   "title": "Chapter 7: F-2's tentacles lost on the dark floor",
+   "state": "pass",
+   "note": "On ch07-draft-f28b7be6: 1:33-1:55, F-2's three tentacles show on the dark floor and pier base as pale bluish ribbons under its dark strokes, as at 2:24 on the light ground (sheet out/quality/v22d/c7.jpg)."
+  },
+  {
+   "id": "find.ch01-lying-man",
+   "area": "finding",
+   "title": "Chapter 1: a man lies flat beside the mock battle",
+   "state": "pass",
+   "note": "On ch01-draft-4b518891: 1:00-1:30, the three idlers in front all sit or prop themselves up; no one lies flat beside the mock battle (sheet c1.jpg)."
+  },
+  {
+   "id": "find.ch03-colonists",
+   "area": "finding",
+   "title": "Chapter 3: the colonists stand like a model sheet",
+   "state": "pass",
+   "note": "On ch03-draft-14125549: 3:12-3:31, the colonists seen from the side, each posed his own way, turn up to the settling ships (pointing, shading eyes, stepping back), throw their arms over their faces as the green comes down, and fall on 'killed instantly' (sheet c3.jpg)."
+  },
+  {
+   "id": "find.ch05-f1-legs",
+   "area": "finding",
+   "title": "Chapter 5: F-1's legs vanish as it tips",
+   "state": "pass",
+   "note": "On ch05-draft-c0faa91a: 4:51.5-4:53, F-1's legs fold to the ground as it drops and fold in as it tips; nothing vanishes between frames (sheet c5.jpg, 0.25 s apart)."
+  },
+  {
+   "id": "find.ch00-board-reprint",
+   "area": "finding",
+   "title": "Chapter 0: the board says 'A Classic Reprint'",
+   "state": "pass",
+   "note": "The board and review/round6/ch00-draft.html now give the masthead as 'AMAZING STORIES · August, 1932', as the film letters it (sheet c0.jpg; 'Classic Reprint' gone from the page)."
+  },
+  {
+   "id": "find.ch09-sphere-gone",
+   "area": "finding",
+   "title": "Chapter 9: the sphere hangs after 'was gone'",
+   "state": "pass",
+   "note": "On ch09-draft-06c9bb93: the sphere streaks up and away at 5:01.5 on 'was gone'; the sky is empty through 'fast as light it vanished' (sheet c9.jpg, 0.5 s apart)."
+  },
+  {
+   "id": "find.ch02-ch08-small",
+   "area": "finding",
+   "title": "Chapters 2 and 8: an Outsider cut off; F-2's duplicate too small",
+   "state": "pass",
+   "note": "On ch02-draft-bdc334b4: the climber goes up the rib and out of sight once, the wall walker goes off left by 1:46, before the camera closes in; nothing is cut by the top edge as the frame tightens (sheet c2.jpg). On ch08-draft-66f3d40d: F-2 and its duplicate about 70 px long at 1280 at 2:06-2:10 (sheet c8.jpg)."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-12 22:09",
-   "found": 6,
-   "note": "Nineteenth round, on the eighteenth round's drafts: 6 found, none major (3 minor, 3 nits)."
-  },
   {
    "when": "2026-11-14 02:50",
    "found": 5,
@@ -2434,6 +2478,11 @@
    "when": "2026-11-14 10:51",
    "found": 6,
    "note": "Round 21: 0 major, 3 minor (ch01 last wipe broken, ch02 footnotes too small/brief, ch03 torpedoes over the men), 3 nits (curl note overpromises, ch01 games unseen, double stops on the quality page)"
+  },
+  {
+   "when": "2026-11-14 16:43",
+   "found": 7,
+   "note": "Round 22: nothing major; three minor (ch07 F-2's tentacles lost on the dark floor in F-G, ch01 a man lying flat beside the mock battle, ch03 the colonists standing in a model-sheet row) and four nits (ch05 F-1's legs vanish as it tips, ch00's board says 'A Classic Reprint', ch09 the sphere hangs after 'was gone', ch02 an Outsider cut by the top edge and ch08 F-2's duplicate too small)."
   }
  ]
 }
