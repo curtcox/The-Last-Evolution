@@ -71,8 +71,9 @@
   const tFree = C('p078.1:some few free ships'), FREE = [[640, -560, 40], [1260, -640, 20], [1880, -600, 50]], freeAt = (f, t) => [f[0], lerp(f[1], f[2], ez(t, tFree - .3, tFree + 3.5))];
   function battle(t) {
     HALFTONE = .2;
-    const tC = T0('C'), tD = T0('D'), tF = T0('F'), tH = T0('H'), tI = T0('I');
-    const c = cam(t, [[0, tt => [lerp(900, 1200, ez(tt, tC, tD)), 560, lerp(lerp(.6, .75, ez(tt, tC, tD)), 1, ez(tt, C('p075.1:darting') - 2, C('p075.1:darting') + 1.5))]],   // in among the ranks on 'tiny, darting motes', so they show [tD, [HERO.x - 100, HERO.y, 1.1], 3], [tE, tt => [HERO.x, HERO.y, lerp(1.2, 1.35, ez(tt, tE, tF))], 2],
+    const tC = T0('C'), tD = T0('D'), tF = T0('F'), tH = T0('H'), tI = T0('I'), tAw = C('p075.1:Then all the awful power'), tReel = C('p075.1:reeled');
+    const c = cam(t, [[0, tt => [lerp(900, 1200, ez(tt, tC, tD)), 560, lerp(lerp(.6, .75, ez(tt, tC, tD)), 1, ez(tt, C('p075.1:darting') - 2, C('p075.1:darting') + 1.5))]],   // in among the ranks on 'tiny, darting motes', so they show
+      [tD, tt => [lerp(HERO.x - 200, HERO.x - 100, ez(tt, tD, tAw)), HERO.y, lerp(.95, 1.15, ez(tt, tD + 1, tReel + 1))], 3], [tE, tt => [HERO.x, HERO.y, lerp(1.2, 1.35, ez(tt, tE, tF))], 2],   // closing on the one giant through D (these two keys had slipped into the comment above, and D held 20 s on the ranks)
       [tF, [HERO.x - 300, HERO.y - 40, 1.6], 2.5], [T0('G'), tt => [lerp(HERO.x - 60, HERO.x - 160, ez(tt, T0('G') + 9, T0('G') + 24)), HERO.y, lerp(1.35, .85, ez(tt, T0('G') + 9, T0('G') + 24))], 2.5], [tH, tt => [lerp(1200, 900, ez(tt, tH, tI)), 560, .8], 2.5],
       [tI, tt => [lerp(1000, 1100, ez(tt, tGreen + 1, tCurtain)), 560, lerp(lerp(.9, 1.05, ez(tt, tI + 1, tGreen)), .65, ez(tt, tGreen + 3, tJ))], 2], [tJ, tt => [lerp(HERO.x - 380, HERO.x - 330, ez(tt, tDart, tVanish)), HERO.y, lerp(1.0, 2.2, ez(tt, tDart - .5, tVanish))], 1.2], [tK, tt => [lerp(1000, 1600, ez(tt, tK, T1('K'))), 560, .7], 2]]);   // rushing in with them
     ground('#1A1612', 255, 'bat', { fill: '#262019', fillOp: 90 });
@@ -117,10 +118,17 @@
         if (t > tCurtain) { const v = ez(t, tCurtain, tCurtain + 4) * (1 - ez(t, tK + 2, tK + 8)), V = [...Array(21)].map((_, i) => { const a = i / 20 * TAU; return [fx + Math.cos(a) * 272 * (1 + .1 * Math.sin(t * 2 + i)), fy + Math.sin(a) * 119 * (1 + .15 * Math.sin(t * 3 + i * 1.7))]; }); boilSeed('veilf' + f[0]); paint(V, { wash: '#0E0B09', washOp: 190 * v, ink: null }); inkLine(V, 1.4, '#8A8070', 'inkfine', .4 * v); } }
       // the hero giant, close: its screen under fire through every colour
       const hits = t > T0('D') ? [[HERO.x - HERO.len * .55, HERO.y - 40], [HERO.x - HERO.len * .2, HERO.y + 110], [HERO.x + HERO.len * .2, HERO.y - 120]].filter((_, i) => hash(Math.floor(t * 3) + i) > .3) : [];
+      // 'Then all the awful power of annihilating matter was thrown against them, and titanic flaming screens reeled back':
+      // the beams swell white-hot (the screen still colourless: its colours wait for their words), and the giant and its screen are driven back, shuddering, and recover (the shot held
+      // still under the line)
+      const big = ez(t, tAw, tAw + 1.5) * (1 - ez(t, tV - .5, tV + .5)), reel = ez(t, tAw + .6, tReel + .4) * (1 - ez(t, tReel + .8, tReel + 4)), rx = 90 * reel + 8 * reel * Math.sin(t * 23), ry = 6 * reel * Math.sin(t * 17);
+      push(); translate(rx, ry); translate(HERO.x, HERO.y); rotate(.025 * reel); translate(-HERO.x, -HERO.y);
       ship(HERO.x, HERO.y, HERO.len, t, -1, { d: 2 });
-      if (t > T0('D') && t < tGreen + 2) { screen(HERO.x, HERO.y, HERO.len, Math.max(.05, heat), t, hits, 'hero');
-        for (let i = 0; i < 3; i++) if (t < tV) { const sx = 200 + i * 180, sy = 300 + i * 260, k = win(t, T0('D') + i * .5, tV, .3, .5); beam(sx, sy, HERO.x - HERO.len * .62, HERO.y - 60 + i * 60, 4, 20, i ? NRG.white : HEAT, k, { washOp: 40, a: .5 }); }
+      if (t > T0('D') && t < tGreen + 2) { screen(HERO.x, HERO.y, HERO.len, Math.max(.05, heat), t, big > .3 ? [[HERO.x - HERO.len * .6, HERO.y - 50], [HERO.x - HERO.len * .62, HERO.y + 10], [HERO.x - HERO.len * .58, HERO.y + 70]] : hits, 'hero');
+        for (let i = 0; i < 3; i++) if (t < tV) { const sx = 200 + i * 180 - rx, sy = 300 + i * 260, k = win(t, T0('D') + i * .5, tV, .3, .5); beam(sx, sy, HERO.x - HERO.len * .62, HERO.y - 60 + i * 60, 4 + 6 * big, 20 + 28 * big, i ? NRG.white : HEAT, k, { washOp: 40 + 60 * big, a: .5 + .3 * big }); }
+        if (big > 0) glow(HERO.x - HERO.len * .62, HERO.y, 170 * big, NRG.white, .35 * big);
         if (t > tV) for (const [hx, hy] of hits) beam(hx - 500, hy + 200 * (hash(hx) - .5), hx, hy, 6, 30, NRG.livid, 1, { washOp: 40, a: .55, splash: false }); }
+      pop();
       // G: the greenish beam on the mote beside it, harmless
       if (t > T0('G') + 1 && t < tH) { const mx = HERO.x - HERO.len * .78, my = HERO.y + 60; DES.mote(mx, my, 60, t, { ang: 0, drive: true }); beam(HERO.x - HERO.len * .3, HERO.y + 30, mx + 20, my, 4, 16, GREEN, win(t, C('p077.1:The greenish beams'), tH, .4, .5), { washOp: 40, a: .45 }); }
     });
