@@ -117,7 +117,9 @@
   // a pool of light from the hull's lamps, behind and under the Outsiders so their grey wash reads against it
   function lamp(x, r, k = 1) { glow(x, FL - 260, r, '#E8DCC4', .3 * k); glow(x, FL - 40, r * .6, '#E8DCC4', .25 * k); stillSeed('pool' + x); paint(ellPts(x, FL + 10, r * .9, r * .12, 20), { wash: '#C9BCA4', washOp: 70 * k, ink: null, bleed: .3 }); }
   // the investigator, its lens dark once it's blanked
-  function inv(x, y, t, blank = 0) { DES.investigator(x, y, 20, t); if (blank < 1) glow(x + 2, y - 5, 18, NRG.white, .5 * (1 - blank)); }
+  function inv(x, y, t, blank = 0, spin = 0) { push(); translate(x, y); rotate(spin); translate(-x, -y); DES.investigator(x, y, 20, t); if (blank < 1) glow(x + 2, y - 5, 18, NRG.white, .5 * (1 - blank));
+    if (blank > 0) { stillSeed('invdead'); paint(ellPts(x + 2, y - 5, 6.2, 6.2, 14), { wash: '#14110E', washOp: 235 * blank, ink: null }); for (let k = -2; k <= 2; k++) paint(ellPts(x + k * 7.6, y + 6 * Math.sqrt(1 - (k * .38) ** 2), 2, 2, 8), { wash: '#14110E', washOp: 220 * blank, ink: null }); }
+    pop(); }   // blanked: the great lens and the receptor ring go black
   function crawler(x, t, i, o = {}) { const g = o.g ?? FL, bob = 4 * Math.abs(Math.sin(t * 3 + i)); push(); translate(x, g - bob); rotate(o.rot || 0); translate(-x, -(g - bob)); DES.outsider(x, g - bob, (o.s || 34) * 1.6, t, { view: o.view || 'side', turn: o.turn ?? .08 * Math.sin(t * .7 + i) }); pop(); }
   const tJ = T0('J'), tLast = C('p013.1:the last plunger snapped shut'), tBoom = C('p013.1:Instantly the vast energies');
   // out of the white, outside: the transport blowing apart while the narrator says so (the white held 8 s when it
@@ -174,10 +176,12 @@
   function ship2(t) {
     HALFTONE = .3;
     const tL = T0('L'), tM = T0('M'), tN = T0('N'), tBeam = C('p016.1:A bluish beam'), tBlank = C('p016.1:went blank'), HIDE = [2520, 472], FOUND = [2520, 548];   // in among the overhead pipes, then just under them
-    const ip = path(t, [[0, [-200, 700]], [tL, [1900, 700], 3.5], [C('p014.1:It was soon seen') - 1, [2150, 640], 2], [tM, HIDE, 2], [tN - 1.5, FOUND, 1.2]]);
+    const ip0 = path(t, [[0, [-200, 700]], [tL, [1900, 700], 3.5], [C('p014.1:It was soon seen') - 1, [2150, 640], 2], [tM, HIDE, 2], [tN - 1.5, FOUND, 1.2]]);
+    // 'went blank': dead, it drops to the floor (it hovered on, its lens barely dimmer, and the beat didn't land)
+    const fall = seg(t, tBlank + .25, tBlank + .8), ip = [ip0[0] - 30 * fall, ip0[1] + fall * fall * (FL - 24 - ip0[1]) - 22 * Math.sin(Math.PI * seg(t, tBlank + .8, tBlank + 1.1))];
     const c = cam(t, [[0, tt => [lerp(0, 1900, ez(tt, tL, tL + 3.5)), 670, 1.75]],   // close on it as it flashes along (at 1.3 it was a few pixels in a dark corridor)
       [C('p014.1:It was soon seen') - 1.5, [2150, 620, 1.2], 2], [tM, tt => [lerp(2350, 2900, ez(tt, C('p015.1:And in the meantime'), C('p015.1:disintegrating') + 1)), 620, 1.15], 2.5],
-      [tN, tt => [lerp(2700, 2560, ez(tt, tN, tBeam)), 620, lerp(1.6, 2.6, ez(tt, tBeam, tBlank))], 2]]);
+      [tN, tt => [lerp(2700, 2560, ez(tt, tN, tBeam)), lerp(620, 740, ez(tt, tBlank + .3, tBlank + 1.6)), lerp(1.6, 2.6, ez(tt, tBeam, tBlank))], 2]]);   // tipping down after it as it falls
     withCam(c, () => {
       hull(true);
       // speed lines in the corridor as it flashes along
@@ -210,9 +214,10 @@
         // beam was a run of near-white dots from his chest)
         const pa = lerp(-.3, Math.atan2(FL - 110 - FOUND[1], ox - 40 - FOUND[0]), aim), tip = [ox - 40 - 70 * Math.cos(pa), FL - 110 - 70 * Math.sin(pa)];
         DES.outsider(ox, FL, 66, t, { view: 'side', turn: .5 }); boilSeed('proj'); push(); translate(ox - 40, FL - 110); rotate(pa); wash(rrPts(-70, -10, 80, 20, 6), 4, { ink: true, sw: .6 }); pop();
-        const bk = seg(t, tBeam, tBeam + .25) * (1 - seg(t, tBlank + 1, tBlank + 1.5));
+        const bk = seg(t, tBeam, tBeam + .25) * (1 - seg(t, tBlank + .2, tBlank + .45));   // off as it dies and drops (it followed it down)
         if (bk > 0) { beam(tip[0], tip[1], ip[0] + 20, ip[1], 10, 24, NRG.projector, bk, { washOp: 160, a: .9 }); glow(...tip, 40, NRG.projector, .8 * bk); glow(ip[0] + 10, ip[1], 70, NRG.projector, .7 * bk); } }
-      inv(ip[0], ip[1], t, seg(t, tBlank - .2, tBlank + .2));
+      inv(ip[0], ip[1], t, seg(t, tBlank - .2, tBlank + .2), -1.4 * fall);
+      { const sp = win(t, tBlank - .15, tBlank + .35, .08, .3); if (sp > 0) { glow(ip[0], ip[1], 70, NRG.projector, .9 * sp); glow(ip[0], ip[1], 24, NRG.white, sp); } }   // a last spark as it dies
       pipes();
     });
   }
