@@ -151,14 +151,22 @@
         // on the wall goes off left along it before the camera closes in (it stayed, cut by the top edge as the frame tightened)
         const tIn = C('p010.1:Their eyes projected') - 1, ry = lerp(FAR, 120, ez(t, tLife, tLife + 22)); if (ry > 140) crawler(650 + off * 1.15, t, 1, { s: 26, g: ry, rot: -Math.PI / 2 });
         const wx = lerp(1170, 200, seg(t, tLife + 2, tIn)) + off * 1.3; if (wx > 220) crawler(wx, t, 2, { s: 20, g: 500, turn: .5 }); }
-      const tum = seg(t, tTumble - .6, tTumble + 4), struck = t > tHit;
-      const sx = (struck ? lerp(1400, 1820, ease(tum)) : 1400) + off * 1.4, rot = struck ? -TAU * easeOut(tum) : 0, lift = struck ? 160 * Math.sin(Math.PI * tum) : 0;   // a whole turn: he lands on his feet, unhurt (a turn and a half left him upside down)
+      // the blow, on its words: the sphere hits the covering (a shudder), the covering flexes (ripples spread from it), the
+      // sphere drives through onto the being, who's jolted back, and only then is he hurled (it sat pinned on his chest 7 s)
+      const tFlex = C('p011.1:flexing'), tStrike = C('p011.1:striking'), tHurl = C('p011.1:Hurled from his position'), drive = win(t, tStrike - .1, tHurl + .2, .25, .5), jolt = ez(t, tStrike, tStrike + .35);   // held: he's hurled from where the blow left him
+      const shud = t > tHit && t < tHurl ? Math.exp(-(t - tHit) * 2.5) * Math.sin((t - tHit) * 38) + .5 * Math.exp(-Math.max(0, t - tStrike) * 3) * Math.sin((t - tStrike) * 41) * (t > tStrike) : 0;
+      const tum = seg(t, tHurl, tTumble + 4), struck = t > tHit;   // from 'Hurled' (it began 1.3 s after it)
+      const sx = (struck ? lerp(1400 + 40 * jolt, 1820, ease(tum)) : 1400) + off * 1.4 + 9 * shud, rot = (struck ? -TAU * easeOut(tum) : 0) - .14 * jolt * (1 - tum), lift = struck ? 160 * Math.sin(Math.PI * tum) : 0;   // a whole turn: he lands on his feet, unhurt (a turn and a half left him upside down)
       // landed, he turns back to face us through a squash (side to front in one frame, it popped)
       const land = tTumble + 4, ph = struck ? seg(t, land - .3, land + .3) : 1, sq = Math.max(.1, Math.abs(Math.cos(Math.PI * ph)));
       if (t > tLife - 1) { push(); translate(sx, NEAR - 80 - lift); rotate(rot); scale(sq, 1); translate(-sx, -(NEAR - 80 - lift));
       DES.outsider(sx, NEAR - lift, 66, t, { view: struck && ph < .5 ? 'side' : 'front', turn: steps(t, [[0, 0], [C('p010.1:Their eyes projected'), .33, 1.2], [C('p010.1:capable of movement'), .66, 1.2], [C('p010.1:and there were three'), 1, 1.2]]) });
       pop(); }
       if (t > tHit && t < tHit + .3) glow(1360, 720, 120, NRG.white, 1 - seg(t, tHit, tHit + .3));
+      { const fl = win(t, tFlex - .2, tStrike + .8, .2, .5), cx = ip[0] + 26 + 22 * drive, cy = ip[1];
+        if (fl > 0) for (let k = 0; k < 3; k++) { const q = frac((t - tFlex) * 1.1 + k / 3), r = 22 + 70 * q; boilSeed('rip' + k);
+          inkLine([...Array(9)].map((_, j) => { const a = -1.1 + j / 8 * 2.2; return [cx + Math.cos(a) * r * .55, cy + Math.sin(a) * r]; }), 1.1 * fl * (1 - q), '#EFE6D2', 'inkfine', 0); }   // the covering flexing
+        const hit = win(t, C('p011.1:terrific') - .1, C('p011.1:force.') + .4, .1, .5); if (hit > 0) { glow(cx + 10, cy, 110, NRG.white, .55 * hit); glow(cx + 10, cy, 40, NRG.white, .8 * hit); } }
       // the others clustering round him (I)
       for (let i = 0; i < 2; i++) if (t > tI - 1) crawler(lerp(1100, i ? 2080 : 1560, ez(t, tI - 1, tI + 4)), t, 5 + i, { s: 32, g: NEAR - 25 });
       // J: the power room: the plungers over their sockets, the ship-brain shattered; the signals; the plungers shutting
@@ -169,7 +177,7 @@
         boilSeed('pl' + i); wash(rrPts(x - 26, FL - 90, 52, 90, 6), 4, { ink: true, sw: .6 }); wash(rrPts(x - 14, lerp(380, FL - 330, shut), 28, 240, 6), 1, { ink: true, sw: .6, op: 1 });
         wash(rrPts(x - 30, lerp(360, FL - 350, shut), 60, 26, 6), 2, { ink: true, sw: .6 });
         if (t > tSig) ruled([[ip[0], ip[1]], [x, ip[1]], [x, lerp(370, FL - 345, shut)]], seg(t, tSig + i * .3, tSig + i * .3 + .8), FORCE, .6); }
-      inv(ip[0], ip[1], t);
+      inv(ip[0] + 22 * win(t, C('p011.1:striking') - .1, C('p011.1:Hurled from his position') + .2, .25, .5), ip[1], t);   // driving in on 'striking'
     });
     if (t > tBoom - .2) flash(seg(t, tBoom - .2, tBoom + .4), '#FFF6E8');
   }
