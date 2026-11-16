@@ -48,7 +48,8 @@
     for (const p of [roal, trest]) glow(...p.head, 70, '#DDE6F0', .2);
     // Roal's thought, rising and wandering while he thinks: its sway mixes slow periods that don't repeat together (one
     // 10 s writhe read as a loop over the 28 s), in a pale wash with a faint edge, as dark grey it barely showed on the dark
-    { const k = K(t, 'p103.1', 'p103.1$'), op = .7 * (1 - ez(t, T0('E') - 1.5, T0('E'))), x = roal.head[0] + 20, y = roal.head[1] - 40;
+    // (and again at 'said Roal, dreaming again', H: it rose only the first time, though the film's sign for his dreaming)
+    { const hk = K(t, 'p107.1', 'p107.3$'), k = t < T0('H') ? K(t, 'p103.1', 'p103.1$') : hk, op = .7 * (t < T0('H') ? 1 - ez(t, T0('E') - 1.5, T0('E')) : 1 - ez(t, T0('I') - 1.2, T0('I'))), x = roal.head[0] + 20, y = roal.head[1] - 40;
       if (k > 0 && op > 0) { const P = []; for (let i = 0; i <= 14 * k; i++) { const u = i / 14, a = Math.min(1, u * 2.5); P.push([x + u * (80 + 20 * Math.sin(t * .13)) + a * (30 * Math.sin(u * 7 + t * .6) + 15 * Math.sin(u * 3.1 - t * .37)),   // (a: rooted at his head)
           y - (u * (78 + 10 * Math.sin(t * .21 + 1)) + a * (10 * Math.sin(u * 5 + t * .43) + 6 * Math.sin(u * 9 - t * .29)))]); }   // sized to the close shot, inside its top edge (at 220 tall it ran off it)
         if (P.length > 2) { boilSeed('rc'); wash(ribbon(P, 14, 4), 0, { op }); inkLine(P, 1, '#A89C88', 'inkfine', .5 * op); } } }
