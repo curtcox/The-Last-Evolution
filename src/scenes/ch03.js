@@ -30,13 +30,23 @@
   const tGreenOn = C('p024.1:Enormous, diffused beams');
   // what the screens show: the fleet; then green; then the bodies carried off
   function screens(t) {
+    const tPick = win(t, C('p030.1:calling') - .2, C('p030.1:that.') - .3, .3, .5), rPick = win(t, C('p030.1:that.') - .3, T1('Q') + .3, .3, .5);
     for (let r = 0; r < 3; r++) for (let c = 0; c < 7; c++) { const [x, y, w, h] = SCR(c, r), mid = [x + w / 2, y + h / 2];
       if (t > tGreenOn && t < T0('P')) { paint(rectPts(x + 6, y + 6, w - 12, h - 12), { wash: mixCol('#F1E9D3', GREEN, .5), washOp: 200, ink: null }); glow(...mid, 90, GREEN, .5); continue; }
+      // Q: 'the flashing, changing screens': each flicks between pictures, a far world, a ship, a flare, the dark; the
+      // two the men point at flare as they're pointed at (they showed plain panels, nothing to point at)
+      if (t > T0('Q') - 1 && t < T0('R')) { const k = Math.floor(t * 1.1 + hash(c * 7 + r) * 5), ty = Math.floor(hash(k * 13 + c * 3 + r * 5) * 5), sel = (c === 3 && r === 2) ? tPick : (c === 2 && r === 1) ? rPick : 0;
+        boilSeed('qs' + c + r + k); if (ty === 1 || ty === 4) paint(rectPts(x + 6, y + 6, w - 12, h - 12), { wash: ty === 4 ? '#3E372E' : '#F7F0DC', washOp: 210, ink: null });
+        if (ty === 1) glow(...mid, 80, NRG.white, .5); if (ty === 2) { paint(ellPts(...mid, 38, 38, 18), { wash: '#8A7E66', washOp: 220, ink: INK, sw: .6 }); inkLine([[mid[0] - 60, mid[1] + 8], [mid[0] + 60, mid[1] - 8]], .6, INK, 'inkfine', 0); }
+        if (ty === 3) { const [a, b] = SEEN(x, w); ship((a + b) / 2, mid[1], Math.min(90, (b - a) * .55), t, -1, { d: 3 }); }
+        if (sel > 0) { paint(rectPts(x + 6, y + 6, w - 12, h - 12), { wash: '#F7F0DC', washOp: 160 * sel, ink: null }); glow(...mid, 120, NRG.white, .6 * sel); }
+        continue; }
       if ((c + r) % 3 === 0 && t < tGreenOn) { const [a, b] = SEEN(x, w), len = Math.min(110, (b - a) * .62); boilSeed('scr' + c + r); ship((a + b) / 2 + .1 * (b - a) * wob(t, .03, c), mid[1], len, t, -1, { d: 3 }); }   // on the screen, clear of the piers
       // R: on the screens, the bodies carried away as they decay: a machine bearing a dead Outsider across each (a tiny
       // machine and a pale ellipse read as nothing)
       if (t > T0('R') - 1 && r >= 1 && c > 0 && c < 6 && (c + r) % 2 === 0) { const q = frac((t - T0('R')) * .07 + c * .27 + r * .4), bx = lerp(x + 30, x + w - 30, q);
-        paint(rectPts(x + 6, y + 6, w - 12, h - 12), { wash: '#E4DCC6', washOp: 150, ink: null });
+        stillSeed('dk' + c + r); paint(rectPts(x + 6, y + 6, w - 12, h - 12), { wash: '#3E372E', washOp: 235, ink: null }); paint(rectPts(x + 6, y + h - 34, w - 12, 28), { wash: '#6A604F', washOp: 200, ink: null });
+        glow(x + w / 2, y + h / 2, 110, '#F4EEDC', .12);   // a picture on the screen, dark and lit, framed (pale, at the hall's tones, they read as carried through the hall)
         DES.machine(bx, y + h - 16, 10, t, { arms: 2, label: null, hover: 1.4 });
         push(); translate(bx, y + h - 70); rotate(Math.PI / 2); translate(-bx, -(y + h - 70)); DES.outsider(bx, y + h - 70, 21, t, { view: 'side', suit: false }); pop(); }   // (at 16 a dark clump)
     }
@@ -79,12 +89,14 @@
     const ch = win(t, C('p033.4'), C('p033.4') + 2.2, .3, .6); if (ch > 0) pose.torso = (pose.torso ?? 0) - .05 * ch * Math.abs(Math.sin(t * 15));
     // 'Hour after hour they sat watching': on stools the machines have brought, risen again before he speaks
     const sit = t > T0('P') ? 1 - ez(t, T0('S') - 3.2, T0('S') - 2) : 0; seat(pose, sit);
-    const roal = stander(t, ROAL, G + DROP * sit, 44, ROALW, { who: 'roal', key: 'roal', seed: 3, look: lerp((t < T0('S') ? .5 : .15) + gl - .15 * ch, .55, back) - .55 * bow, pose, talk: talk(t, 'roal'), smile: ch, flip: back > .5 });
-    const point = win(t, T0('Q'), T1('Q'), .5, .5), tp = {}, tl = t > T0('S') + 2 ? listen(t, tp, SPEECH, 2) : t > tInv - 1 && t < tBut + 2 ? listen(t, tp, TELL, 1) : 0;   // through the telling and the speech Trest listens
+    // Q: Roal leans to look where Trest points, then points out another ('or that')
+    const rpt = win(t, C('p030.1:that.') - .3, T1('Q') + .2, .35, .5), lean = win(t, C('p030.1:calling'), T1('Q'), .6, .6); if (rpt > 0) { pose.up = lerp(pose.up, 2.6, rpt); pose.fore = lerp(pose.fore, 2.75, rpt); } pose.torso = (pose.torso ?? 0) + .06 * lean;
+    const roal = stander(t, ROAL, G + DROP * sit, 44, ROALW, { who: 'roal', key: 'roal', seed: 3, look: lerp((t < T0('S') ? .5 : .15) + gl - .15 * ch, .55, back) - .55 * bow + .2 * lean, pose, talk: talk(t, 'roal'), smile: ch, flip: back > .5 });
+    const point = win(t, C('p030.1:calling') - .5, C('p030.1:that.') - .2, .4, .5), tp = {}, tl = t > T0('S') + 2 ? listen(t, tp, SPEECH, 2) : t > tInv - 1 && t < tBut + 2 ? listen(t, tp, TELL, 1) : 0;   // through the telling and the speech Trest listens
     // Trest's hand goes to his mouth at 'could not be brought to life again'; his head goes down last
     const mouth = win(t, C('p024.1:could not be brought') - .2, C('p024.1:The complicated system'), .8, 1.8), bow2 = win(t, C('p024.1:utterly destroyed') - 1, T1('L') + .5, 1, 1);
     if (mouth > 0) { tp.up = lerp(tp.up ?? .12, 1.75, mouth); tp.fore = lerp(tp.fore ?? .3, 3.6, mouth); }
-    stander(t, TREST, G + 10 + DROP * sit, 46, TRESTW, { who: 'trest', key: 'trest', seed: 7, look: .45 + tl + nod(t, SPEECH) - .5 * bow2, flip: (t > C('p018.1:Trest, 35429') && t < T0('S') + 2) || t > T0('W'), pose: seat(point > 0 ? { up: lerp(.12, 1.7, point), fore: lerp(.3, 1.2, point) } : tp, sit) });
+    stander(t, TREST, G + 10 + DROP * sit, 46, TRESTW, { who: 'trest', key: 'trest', seed: 7, look: .45 + tl + nod(t, SPEECH) - .5 * bow2, flip: (t > C('p018.1:Trest, 35429') && t < T0('S') + 2) || t > T0('W'), pose: seat(point > 0 ? { up: lerp(.12, 2.6, point), fore: lerp(.3, 2.75, point) } : tp, sit) });   // up at a screen ('this'; he pointed level, at Roal)
     return roal;
   }
   function hall(t) {
