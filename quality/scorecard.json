@@ -1,6 +1,6 @@
 {
  "summary": {
-  "pass": 355,
+  "pass": 357,
   "stale": 0,
   "open": 0,
   "curt": 9,
@@ -35,7 +35,7 @@
   },
   "refs": {
    "state": "fail",
-   "detail": "gutenberg: https://www.gutenberg.org/ebooks/27462 → 503"
+   "detail": "blackgate-best-of: https://www.blackgate.com/?p=226361 → fetch failed"
   },
   "phone": {
    "state": "pass",
@@ -267,42 +267,42 @@
    "area": "film",
    "title": "Chapter 3: the acting",
    "state": "pass",
-   "note": "On the draft with the twenty-eighth round's fixes: draft ch03-draft-785e53fa, the flashing screens, both men pointing up in turn on this and that, and the bodies carried off in dark pictures on the screens; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
+   "note": "On the draft with the twenty-ninth round's fixes: draft ch03-draft-0371c21b, the screens back to the enemy fleet after the decay and glowing in W, each carried body kept inside its screen; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
   },
   {
    "id": "ch03.picture",
    "area": "film",
    "title": "Chapter 3: the picture",
    "state": "pass",
-   "note": "On the draft with the twenty-eighth round's fixes: draft ch03-draft-785e53fa, the flashing screens, both men pointing up in turn on this and that, and the bodies carried off in dark pictures on the screens; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
+   "note": "On the draft with the twenty-ninth round's fixes: draft ch03-draft-0371c21b, the screens back to the enemy fleet after the decay and glowing in W, each carried body kept inside its screen; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
   },
   {
    "id": "ch03.sync",
    "area": "film",
    "title": "Chapter 3: picture against sound",
    "state": "pass",
-   "note": "On the draft with the twenty-eighth round's fixes: draft ch03-draft-785e53fa, the flashing screens, both men pointing up in turn on this and that, and the bodies carried off in dark pictures on the screens; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
+   "note": "On the draft with the twenty-ninth round's fixes: draft ch03-draft-0371c21b, the screens back to the enemy fleet after the decay and glowing in W, each carried body kept inside its screen; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
   },
   {
    "id": "ch03.sound",
    "area": "film",
    "title": "Chapter 3: the sound",
    "state": "pass",
-   "note": "On the draft with the twenty-eighth round's fixes: draft ch03-draft-785e53fa, the flashing screens, both men pointing up in turn on this and that, and the bodies carried off in dark pictures on the screens; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
+   "note": "On the draft with the twenty-ninth round's fixes: draft ch03-draft-0371c21b, the screens back to the enemy fleet after the decay and glowing in W, each carried body kept inside its screen; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
   },
   {
    "id": "ch03.story",
    "area": "film",
    "title": "Chapter 3: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the twenty-eighth round's fixes: draft ch03-draft-785e53fa, the flashing screens, both men pointing up in turn on this and that, and the bodies carried off in dark pictures on the screens; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
+   "note": "On the draft with the twenty-ninth round's fixes: draft ch03-draft-0371c21b, the screens back to the enemy fleet after the decay and glowing in W, each carried body kept inside its screen; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
   },
   {
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch03-draft-785e53fa.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "note": "ch03-draft-0371c21b.mp4, -14.4 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch04.acting",
@@ -631,14 +631,14 @@
    "area": "site",
    "title": "The film page (annotated): what it says",
    "state": "pass",
-   "note": "Rebuilt after round 28 with the new drafts ch03-draft-785e53fa and ch08-draft-e5157113; the page diff against the last build shows only those hashes."
+   "note": "Rebuilt after round 29 with the new draft ch03-draft-0371c21b; the page diff against the last build shows only that hash."
   },
   {
    "id": "site.watch.look",
    "area": "site",
    "title": "The film page (annotated): how it looks and works",
    "state": "pass",
-   "note": "Rebuilt after round 28: no layout or style changes, only new draft hashes; the phone check passes."
+   "note": "Rebuilt after round 29: no layout or style changes, only a new draft hash; the phone check passes."
   },
   {
    "id": "site.read.content",
@@ -2620,14 +2620,23 @@
    "title": "Ch08 2:35-2:38: no thought-curl over Roal at 'said Roal, dreaming again', the film's own sign for his dreaming",
    "state": "pass",
    "note": "Fixed on draft ch08-draft-e5157113: the thought-curl rises over Roal again from 'said Roal, dreaming again' (2:35) and fades before the next shot. Checked on a 1 s draft sheet 2:30-2:42; SSIM finds no span under .93, as the change is a thin curl."
+  },
+  {
+   "id": "find.ch03-decay-lingers",
+   "area": "finding",
+   "title": "Chapter 3, 6:11-8:06: the decay pictures stay on the screens after R; in W the men look up at them, not the enemy",
+   "state": "pass",
+   "note": "Fixed on draft ch03-draft-0371c21b: as the camera leaves R for Roal (6:11-6:13) the screens change one by one back to the enemy fleet, which stays through S, V and W; in W, as the two turn up to it on the force-screen line, the fleet's screens glow. Checked on draft sheets 5:48-6:24 and 7:48-8:06; SSIM shows changes only on the screens from 6:11 on."
+  },
+  {
+   "id": "find.ch03-body-spills",
+   "area": "finding",
+   "title": "Chapter 3, 5:52-6:02: a carried body pokes past its screen's edge",
+   "state": "pass",
+   "note": "Fixed on draft ch03-draft-0371c21b: each carried body crosses its screen once, without wrapping round, and stops short of the right edge by the body's length; on the 2 s draft sheet 5:48-6:24 every body stays inside its frame."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-16 06:27",
-   "found": 3,
-   "note": "Round 26: three finds (two minor, one nit): ch06 carriers walking through each other, ch02 investigator's lens not going blank, ch05 Roal still while F-2 addresses him. Sound, sync, lettering, story and the site checked clean."
-  },
   {
    "when": "2026-11-16 12:21",
    "found": 0,
@@ -2637,6 +2646,11 @@
    "when": "2026-11-16 12:36",
    "found": 2,
    "note": "Round 28: one minor, one nit: ch03 Q/R, the scientists don't point at the screens, which show nothing to point at, and the decaying Outsiders are carried at the hall's scale through the hall rather than on a screen; ch08 H, no thought-curl over Roal at 'said Roal, dreaming again'. Everything else checked clean. This ends the one clean round (27)."
+  },
+  {
+   "when": "2026-11-16 17:30",
+   "found": 2,
+   "note": "Round 29: one minor, one nit, both from round 28's chapter 3 fix. The pictures of the bodies carried off stay on the screens after shot R through S-W, so in W the two look up at them on the line about the enemy's force-screen; and in R a carried body spills past its screen's edge."
   }
  ]
 }
