@@ -50,11 +50,16 @@
       // R: on the screens, the bodies carried away as they decay: a machine bearing a dead Outsider across each (a tiny
       // machine and a pale ellipse read as nothing); each crosses once, never wrapping round, and stops short of the
       // right edge by the body's length (turned on its side it reaches about 60 past its carrier: it ran over the frame)
-      if (decay) { const q = Math.min(1, (t - T0('R') + 1) / 30 * .8 + .2 * hash(c * 3 + r * 7)), bx = lerp(x + 28, x + w - 78, q);
+      if (decay) { const q = Math.min(1, (t - T0('R') + 1) / 30 * .8 + .2 * hash(c * 3 + r * 7)), bx = lerp(x + 36, x + w - 96, q);
         stillSeed('dk' + c + r); paint(rectPts(x + 6, y + 6, w - 12, h - 12), { wash: '#3E372E', washOp: 235, ink: null }); paint(rectPts(x + 6, y + h - 34, w - 12, 28), { wash: '#6A604F', washOp: 200, ink: null });
         glow(x + w / 2, y + h / 2, 110, '#F4EEDC', .12);   // a picture on the screen, dark and lit, framed (pale, at the hall's tones, they read as carried through the hall)
         DES.machine(bx, y + h - 16, 10, t, { arms: 2, label: null, hover: 1.4 });
-        push(); translate(bx, y + h - 70); rotate(Math.PI / 2); translate(-bx, -(y + h - 70)); DES.outsider(bx, y + h - 70, 21, t, { view: 'side', suit: false }); pop(); }   // (at 16 a dark clump)
+        push(); translate(bx, y + h - 70); rotate(Math.PI / 2); translate(-bx, -(y + h - 70)); DES.outsider(bx, y + h - 70, 21, t, { view: 'side', suit: false }); pop();
+        // covered, as the board has it ('the covered forms'): a pale sheet over the body, its shape showing through, the
+        // pale against the dark picture (uncovered, the body read as a lumpy cluster at phone size)
+        { const by = y + h - 70, P = []; for (let i = 0; i <= 16; i++) { const u = i / 16, px = lerp(bx - 26, bx + 86, u); P.push([px, by + 18 - (34 + 6 * Math.sin(u * 9) + 12 * Math.exp(-((u - .8) ** 2) * 50)) * Math.sin(Math.PI * u) ** .55]); }
+          P.push([bx + 86, by + 20], [bx - 26, by + 20]); stillSeed('shroud' + c + r); paint(P, { wash: '#D9D0BC', washOp: 235, ink: INK, sw: .7 });
+          for (let k = 0; k < 4; k++) inkLine([[bx - 12 + k * 26, by - 6], [bx + 2 + k * 26, by + 16]], .4, D[3], 'inkfine', 0); } }   // (at 16 a dark clump)
     }
   }
   // the machines in the hall: floating in tiers at first; gathered in a ring round Roal when he speaks (S), the near
