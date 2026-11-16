@@ -42,7 +42,7 @@
    "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
-   "state": "pass",
+   "state": "stale",
    "detail": "33 pages live, the deploy is this commit"
   }
  },
@@ -2610,11 +2610,6 @@
  ],
  "fresh": [
   {
-   "when": "2026-11-15 07:16",
-   "found": 7,
-   "note": "Round 24: two minor (ch09's dull red beam a short stub aimed at empty sky, not 'enormously greater'; name labels in ch03 and ch04 too small at phone size) and five nits (ch03's dead read as benches; ch08's 31 s hold on the finished plant; ch11's page change overprints; ch08's ladder bottom rung and ch02's dark corridor; site wording about gates and stale quotes in Where it stands)."
-  },
-  {
    "when": "2026-11-15 14:23",
    "found": 6,
    "note": "Round 25: two minor (lettering still small on a phone: ch00's masthead and byline, ch05's F-2 label, ch04's MX-3401; a brown brush-wipe flicker at five chapter ends) and four nits (ch07 F-2 over a machine at 2:03; ch02's struck Outsider turning in one frame at 2:27; ch04's MX-3401 clipped and unclear in what it names; ch06 an Outsider over the generator panel)."
@@ -2623,6 +2618,11 @@
    "when": "2026-11-16 06:27",
    "found": 3,
    "note": "Round 26: three finds (two minor, one nit): ch06 carriers walking through each other, ch02 investigator's lens not going blank, ch05 Roal still while F-2 addresses him. Sound, sync, lettering, story and the site checked clean."
+  },
+  {
+   "when": "2026-11-16 12:21",
+   "found": 0,
+   "note": "Round 27: nothing major or minor. The reviewer raised one doubtful nit and left it to us: ch07 3:15-3:50, the cut-away shows the pale-green beams on the dome's crown although 2:54 says 'Beyond it, nothing was visible'. Declined: the board asks for a cut-away of the dome (ch07 M, O), a narrator's-eye diagram in which the beams on the crown show the dome holding while the narration speaks of them; the 2:54 line is about what the men could see, over the outside shot. Curt may overrule. Sound, sync, lettering, continuity, the site, its facts and the live deploy all checked clean."
   }
  ]
 }

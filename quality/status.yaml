@@ -1828,4 +1828,8 @@ fresh:
     found: 3
     note: "Round 26: three finds (two minor, one nit): ch06 carriers walking through each other, ch02 investigator's lens not going blank, ch05 Roal still while F-2 addresses him. Sound, sync, lettering, story and the site checked clean."
     state: 6e5646c68eb6
-since_fresh: 20
+  - when: 2026-11-16 12:21
+    found: 0
+    note: "Round 27: nothing major or minor. The reviewer raised one doubtful nit and left it to us: ch07 3:15-3:50, the cut-away shows the pale-green beams on the dome's crown although 2:54 says 'Beyond it, nothing was visible'. Declined: the board asks for a cut-away of the dome (ch07 M, O), a narrator's-eye diagram in which the beams on the crown show the dome holding while the narration speaks of them; the 2:54 line is about what the men could see, over the outside shot. Curt may overrule. Sound, sync, lettering, continuity, the site, its facts and the live deploy all checked clean."
+    state: ef6740ea0e57
+since_fresh: 0
