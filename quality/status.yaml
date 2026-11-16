@@ -101,14 +101,14 @@ items:
     when: 2026-11-15 14:03
   site.watch.content:
     state: pass
-    note: "Rebuilt after the twenty-fifth round: chapters 0, 2, 3, 4, 5, 6, 7, 8 and 10 have new drafts (ch00-draft-747111c6, ch02-draft-cd1213a8, ch03-draft-6cf2f4ac, ch04-draft-66f3fc08, ch05-draft-3f00526f, ch06-draft-4f5f2ab5, ch07-draft-eefc7f19, ch08-draft-d53f90b8, ch10-draft-80729f2e) linked from the film page and the annotated page; the page diff against the last build shows only those hashes."
-    at: 5d988fef53d6
-    when: 2026-11-16 06:14
+    note: "Rebuilt after the twenty-sixth round: chapters 2, 5 and 6 have new drafts (ch02-draft-3b821630, ch05-draft-145bc427, ch06-draft-57e894ab) linked from the film page and the annotated page; the page diff against the last build shows only those hashes."
+    at: b10e82969a75
+    when: 2026-11-16 12:04
   site.watch.look:
     state: pass
-    note: "Rebuilt after the twenty-fifth round: no layout or style changes, only new draft hashes; the phone check passes."
-    at: 00d217c40603
-    when: 2026-11-16 06:14
+    note: "Rebuilt after the twenty-sixth round: no layout or style changes, only new draft hashes; the phone check passes."
+    at: acd0a1804ea1
+    when: 2026-11-16 12:04
   work.title:
     state: pass
     note: "Re-checked after the twenty-fifth round: the masthead (62 px, italic) and byline (64 px) are larger again so they read on a phone (find.small-lettering), the title itself unchanged; on ch00-draft-747111c6 all three lines sit inside the frame with clear space between them (sheet of 0:05-0:14). The header names the 1932 issue ('AMAZING STORIES · August, 1932'), not the 1961 reprint."
@@ -121,9 +121,9 @@ items:
     when: 2026-11-02 23:24
   ch02.picture:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the struck Outsider turns to face us through a squash, not a one-frame pop (find.ch02-outsider-pop); sound unchanged, -14.4 LUFS. Space and the incoming fleet, the hulled ship, the Outsiders' interior with light shells now clear against the darker hull, the plates and rods, the wrecked hulls in the debris field, the dark hall of the masters, the fleet in rows. The earlier contrast note (dark on dark) no longer holds."
-    at: ch02-draft-cd1213a8.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the twenty-sixth round's fixes: on went blank the investigator sparks, its lens goes black and it drops dead to the floor (find.ch02-lens-blank); sound unchanged, -14.4 LUFS. Space and the incoming fleet, the hulled ship, the Outsiders' interior with light shells now clear against the darker hull, the plates and rods, the wrecked hulls in the debris field, the dark hall of the masters, the fleet in rows. The earlier contrast note (dark on dark) no longer holds."
+    at: ch02-draft-3b821630.mp4
+    when: 2026-11-16 12:03
   ch03.picture:
     state: pass
     note: "On the draft with the twenty-fifth round's fixes: the last image covered with paper strokes into the next chapter, not a brown flicker (find.end-wipe-flicker); sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
@@ -381,24 +381,24 @@ items:
     when: 2026-11-15 06:54
   ch02.acting:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the struck Outsider turns to face us through a squash, not a one-frame pop (find.ch02-outsider-pop); sound unchanged, -14.4 LUFS. The Outsiders move as a ranked crew: the small ones sway at their posts, the close Outsider stands apart and turns; the falls and the dive read; the crawlers keep their distance."
-    at: ch02-draft-cd1213a8.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the twenty-sixth round's fixes: on went blank the investigator sparks, its lens goes black and it drops dead to the floor (find.ch02-lens-blank); sound unchanged, -14.4 LUFS. The Outsiders move as a ranked crew: the small ones sway at their posts, the close Outsider stands apart and turns; the falls and the dive read; the crawlers keep their distance."
+    at: ch02-draft-3b821630.mp4
+    when: 2026-11-16 12:03
   ch02.sync:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the struck Outsider turns to face us through a squash, not a one-frame pop (find.ch02-outsider-pop); sound unchanged, -14.4 LUFS. Shots change on their cue words; Whisper timing -0.12 s median."
-    at: ch02-draft-cd1213a8.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the twenty-sixth round's fixes: on went blank the investigator sparks, its lens goes black and it drops dead to the floor (find.ch02-lens-blank); sound unchanged, -14.4 LUFS. Shots change on their cue words; Whisper timing -0.12 s median."
+    at: ch02-draft-3b821630.mp4
+    when: 2026-11-16 12:03
   ch02.sound:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the struck Outsider turns to face us through a squash, not a one-frame pop (find.ch02-outsider-pop); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.2, shots -14.5 to -16.7; Whisper lost 13 of 640, names (Sirius, Deimos) and numbers."
-    at: ch02-draft-cd1213a8.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the twenty-sixth round's fixes: on went blank the investigator sparks, its lens goes black and it drops dead to the floor (find.ch02-lens-blank); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.2, shots -14.5 to -16.7; Whisper lost 13 of 640, names (Sirius, Deimos) and numbers."
+    at: ch02-draft-3b821630.mp4
+    when: 2026-11-16 12:03
   ch02.story:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the struck Outsider turns to face us through a squash, not a one-frame pop (find.ch02-outsider-pop); sound unchanged, -14.4 LUFS. The Outsiders come from beyond the system, their ships and their masters are shown, and the threat to Earth is set: the chapter does its job as the invader's introduction."
-    at: ch02-draft-cd1213a8.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the twenty-sixth round's fixes: on went blank the investigator sparks, its lens goes black and it drops dead to the floor (find.ch02-lens-blank); sound unchanged, -14.4 LUFS. The Outsiders come from beyond the system, their ships and their masters are shown, and the threat to Earth is set: the chapter does its job as the invader's introduction."
+    at: ch02-draft-3b821630.mp4
+    when: 2026-11-16 12:03
   ch03.acting:
     state: pass
     note: "On the draft with the twenty-fifth round's fixes: the last image covered with paper strokes into the next chapter, not a brown flicker (find.end-wipe-flicker); sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
@@ -421,54 +421,54 @@ items:
     when: 2026-11-16 03:57
   ch05.acting:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the F-2 label larger, legible at phone size (find.small-lettering); sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
-    at: ch05-draft-3f00526f.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the twenty-sixth round's fixes: Roal leans in as F-2 speaks to him, nods, and his hand goes to his chin at a ruler (find.ch05-roal-listen); sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
+    at: ch05-draft-145bc427.mp4
+    when: 2026-11-16 12:03
   ch05.picture:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the F-2 label larger, legible at phone size (find.small-lettering); sound unchanged, -14.5 LUFS. The hall at night with F-1 vast; the atom plates (orbits, grid, light); the spiralling air field, arcs and flame, aura and lightning; F-1's hulk; F-2 with rings and memories; the ball of forces, the ruler, the guinea pig cage in the pale beam; dawn on the rock with tiny machines streaming up. Dark but legible."
-    at: ch05-draft-3f00526f.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the twenty-sixth round's fixes: Roal leans in as F-2 speaks to him, nods, and his hand goes to his chin at a ruler (find.ch05-roal-listen); sound unchanged, -14.5 LUFS. The hall at night with F-1 vast; the atom plates (orbits, grid, light); the spiralling air field, arcs and flame, aura and lightning; F-1's hulk; F-2 with rings and memories; the ball of forces, the ruler, the guinea pig cage in the pale beam; dawn on the rock with tiny machines streaming up. Dark but legible."
+    at: ch05-draft-145bc427.mp4
+    when: 2026-11-16 12:03
   ch05.sync:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the F-2 label larger, legible at phone size (find.small-lettering); sound unchanged, -14.5 LUFS. Cuts on cue words (F-1 on 'Roal--your thoughts', 'Roal sat up', the plate on 'Hydrogen'); Whisper timing -0.12 s median."
-    at: ch05-draft-3f00526f.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the twenty-sixth round's fixes: Roal leans in as F-2 speaks to him, nods, and his hand goes to his chin at a ruler (find.ch05-roal-listen); sound unchanged, -14.5 LUFS. Cuts on cue words (F-1 on 'Roal--your thoughts', 'Roal sat up', the plate on 'Hydrogen'); Whisper timing -0.12 s median."
+    at: ch05-draft-145bc427.mp4
+    when: 2026-11-16 12:03
   ch05.sound:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the F-2 label larger, legible at phone size (find.small-lettering); sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 3.8; the quiet shots C, D, H, I and AH are pauses, their speech -14.1 to -14.7; Whisper lost 12 of 1107 (names, coinages, 'asked')."
-    at: ch05-draft-3f00526f.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the twenty-sixth round's fixes: Roal leans in as F-2 speaks to him, nods, and his hand goes to his chin at a ruler (find.ch05-roal-listen); sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 3.8; the quiet shots C, D, H, I and AH are pauses, their speech -14.1 to -14.7; Whisper lost 12 of 1107 (names, coinages, 'asked')."
+    at: ch05-draft-145bc427.mp4
+    when: 2026-11-16 12:03
   ch05.story:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the F-2 label larger, legible at phone size (find.small-lettering); sound unchanged, -14.5 LUFS. 9:03: Roal thinks out the hydrogen wall; F-1 builds its successor and is unmade by it; F-2 makes the ruler, tests the green beam on a guinea pig, and the machines build outward. The pilot still holds as the standard."
-    at: ch05-draft-3f00526f.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the twenty-sixth round's fixes: Roal leans in as F-2 speaks to him, nods, and his hand goes to his chin at a ruler (find.ch05-roal-listen); sound unchanged, -14.5 LUFS. 9:03: Roal thinks out the hydrogen wall; F-1 builds its successor and is unmade by it; F-2 makes the ruler, tests the green beam on a guinea pig, and the machines build outward. The pilot still holds as the standard."
+    at: ch05-draft-145bc427.mp4
+    when: 2026-11-16 12:03
   ch06.acting:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the fuel carriers stop beside the generator, not over its panel (find.ch06-outsider-panel), and the end wipes to paper (find.end-wipe-flicker); sound unchanged, -14.4 LUFS. The fleets as actors: the giants advance in ranks, the screens flare violet then red, the generator crews feed their machines, the motes swing their rays back plainly green into the giants, and the dying ships tip and fall away."
-    at: ch06-draft-4f5f2ab5.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the twenty-sixth round's fixes: the fuel carriers work as a relay on each side, none walking through another (find.ch06-carriers-merge); sound unchanged, -14.4 LUFS. The fleets as actors: the giants advance in ranks, the screens flare violet then red, the generator crews feed their machines, the motes swing their rays back plainly green into the giants, and the dying ships tip and fall away."
+    at: ch06-draft-57e894ab.mp4
+    when: 2026-11-16 12:03
   ch06.picture:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the fuel carriers stop beside the generator, not over its panel (find.ch06-outsider-panel), and the end wipes to paper (find.end-wipe-flicker); sound unchanged, -14.4 LUFS. Dawn over the plain with the machines rising, the ranks of giants, shields violet to red, the generator room, the turned green rays, dying ships drifting dark, the curtain, Earth pole to pole, the streak. Reads at sheet size."
-    at: ch06-draft-4f5f2ab5.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the twenty-sixth round's fixes: the fuel carriers work as a relay on each side, none walking through another (find.ch06-carriers-merge); sound unchanged, -14.4 LUFS. Dawn over the plain with the machines rising, the ranks of giants, shields violet to red, the generator room, the turned green rays, dying ships drifting dark, the curtain, Earth pole to pole, the streak. Reads at sheet size."
+    at: ch06-draft-57e894ab.mp4
+    when: 2026-11-16 12:03
   ch06.sync:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the fuel carriers stop beside the generator, not over its panel (find.ch06-outsider-panel), and the end wipes to paper (find.end-wipe-flicker); sound unchanged, -14.4 LUFS. The blank screens land on 'went suddenly blank'; the green rays turn on their line; cuts on cue words."
-    at: ch06-draft-4f5f2ab5.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the twenty-sixth round's fixes: the fuel carriers work as a relay on each side, none walking through another (find.ch06-carriers-merge); sound unchanged, -14.4 LUFS. The blank screens land on 'went suddenly blank'; the green rays turn on their line; cuts on cue words."
+    at: ch06-draft-57e894ab.mp4
+    when: 2026-11-16 12:03
   ch06.sound:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the fuel carriers stop beside the generator, not over its panel (find.ch06-outsider-panel), and the end wipes to paper (find.end-wipe-flicker); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.6, shots -14.4 to -17.8; Whisper lost 17 of 584 ('ten thousand', 'motes', numbers)."
-    at: ch06-draft-4f5f2ab5.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the twenty-sixth round's fixes: the fuel carriers work as a relay on each side, none walking through another (find.ch06-carriers-merge); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.6, shots -14.4 to -17.8; Whisper lost 17 of 584 ('ten thousand', 'motes', numbers)."
+    at: ch06-draft-57e894ab.mp4
+    when: 2026-11-16 12:03
   ch06.story:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the fuel carriers stop beside the generator, not over its panel (find.ch06-outsider-panel), and the end wipes to paper (find.end-wipe-flicker); sound unchanged, -14.4 LUFS. The second war's turn: the giants come in force, the shields fail, and the motes turn the enemy's own death ray, the chapter's hinge, clearly shown; the curtain closes Earth."
-    at: ch06-draft-4f5f2ab5.mp4
-    when: 2026-11-16 03:58
+    note: "On the draft with the twenty-sixth round's fixes: the fuel carriers work as a relay on each side, none walking through another (find.ch06-carriers-merge); sound unchanged, -14.4 LUFS. The second war's turn: the giants come in force, the shields fail, and the motes turn the enemy's own death ray, the chapter's hinge, clearly shown; the curtain closes Earth."
+    at: ch06-draft-57e894ab.mp4
+    when: 2026-11-16 12:04
   ch07.acting:
     state: pass
     note: "On the draft with the twenty-fifth round's fixes: F-2 rises clear of the six machines once they land, and below the far ship in the breach (find.ch07-f2-over-machine), and the end wipes to paper (find.end-wipe-flicker); sound unchanged, -14.5 LUFS. Roal and Trest talk in the hall at night with hands out, Roal's curl rises, F-2 and the six machines gather, the two men stand inside the dome with their faces lit by the screens, the projectors feed the dome."
@@ -1704,6 +1704,21 @@ items:
     note: On ch06-draft-4f5f2ab5, the carriers stop on either side of the generator, and the feeding flare is at its sides; nothing crosses the panel's lower edge between 1:51 and 2:19 (sheet every 4 s, SSIM marks the changed span).
     title: "Ch06 1:51-2:19: an Outsider passes over the generator panel's lower edge"
     when: 2026-11-16 03:57
+  find.ch06-carriers-merge:
+    state: pass
+    note: "On ch06-draft-57e894ab, each side's two carriers work as a relay: the far one walks between the pile and a hand-off point, the near one from there to the generator, 210 apart at the hand-off, so their paths never cross and no two suits merge from 1:51 to 2:18 (1 s sheet of 1:48-2:06, stills at the hand-offs). The cycle is a working round, block in, block on, fed, as the line asks ('worked and slaved')."
+    title: "Ch06 1:52-2:07: the suited Outsiders carrying blocks to the generator walk through each other in one plane (merged at 1:55.5, again about 1:57, 2:00, 2:04), and the back-and-forth reads as a loop"
+    when: 2026-11-16 12:03
+  find.ch02-lens-blank:
+    state: pass
+    note: On ch02-draft-3b821630, at 'went blank' (4:48.7-4:49.4) the investigator gives a last spark, its great lens and receptor ring go black, the beam cuts out, and it drops tumbling to the floor between the searchers' feet as the camera tips down after it (3 fps sheet of 4:47.5-4:51.5).
+    title: "Ch02 4:48-4:52: on 'the tiny machine went blank' the investigator's lens stays lit and it hovers on unchanged; the board says the lens goes dark"
+    when: 2026-11-16 12:03
+  find.ch05-roal-listen:
+    state: pass
+    note: On ch05-draft-145bc427, Roal leans in to F-2's 'It is done, Roal', nods at the ends of its sentences, and from 'It is a coordinator machine' to just after 'a ruler' (7:28.6-7:33) his hand is at his chin, weighing it (1 s sheet of 7:17-7:35).
+    title: "Ch05 7:17-7:31: Roal holds one arms-at-sides pose for 15 s while F-2 addresses him ('It is done, Roal... a ruler'), only small head tilts"
+    when: 2026-11-16 12:03
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -1809,4 +1824,8 @@ fresh:
     found: 6
     note: "Round 25: two minor (lettering still small on a phone: ch00's masthead and byline, ch05's F-2 label, ch04's MX-3401; a brown brush-wipe flicker at five chapter ends) and four nits (ch07 F-2 over a machine at 2:03; ch02's struck Outsider turning in one frame at 2:27; ch04's MX-3401 clipped and unclear in what it names; ch06 an Outsider over the generator panel)."
     state: 12aae69e0c49
-since_fresh: 54
+  - when: 2026-11-16 06:27
+    found: 3
+    note: "Round 26: three finds (two minor, one nit): ch06 carriers walking through each other, ch02 investigator's lens not going blank, ch05 Roal still while F-2 addresses him. Sound, sync, lettering, story and the site checked clean."
+    state: 6e5646c68eb6
+since_fresh: 20
