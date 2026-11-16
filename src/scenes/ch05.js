@@ -109,6 +109,7 @@
   }
   // the science-machine that drifts too close in the birth and is struck (p060); it falls beside F-1
   function stray(t) {
+    const tFell = C('p060.1:him fell') + .25;   // its own fall, on 'and beside him fell the fused, distorted mass' (it fell with F-1, 2 s before its words)
     const k = ez(t, tGen - 3, tGen + 8), fall = easeIn(seg(t, tFell + .1, tFell + .7)), x = lerp(1760, 1210, k), g = lerp(905, 990, k);
     const rx = x - 1.6 * 16 * 1.2;   // it tips over its base disc's near rim and lies on its side, as F-1 does
     // down, it's 'the fused, distorted mass of metal' (p060): a slumped lump with its lens gone blind, runs of metal, a torn side
