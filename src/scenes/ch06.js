@@ -130,7 +130,7 @@
         if (t > tV) for (const [hx, hy] of hits) beam(hx - 500, hy + 200 * (hash(hx) - .5), hx, hy, 6, 30, NRG.livid, 1, { washOp: 40, a: .55, splash: false }); }
       pop();
       // G: the greenish beam on the mote beside it, harmless
-      if (t > T0('G') + 1 && t < tH) { const mx = HERO.x - HERO.len * .78, my = HERO.y + 60; DES.mote(mx, my, 60, t, { ang: 0, drive: true }); beam(HERO.x - HERO.len * .3, HERO.y + 30, mx + 20, my, 4, 16, GREEN, win(t, C('p077.1:The greenish beams'), tH, .4, .5), { washOp: 40, a: .45 }); }
+      if (t > T0('G') + 1 && t < tH) { const mx = HERO.x - HERO.len * .78, my = HERO.y + 60; DES.mote(mx, my, 60, t, { ang: 0, drive: true }); const gk = win(t, C('p077.1:The greenish beams'), tH, .4, .5); beam(HERO.x - HERO.len * .3, HERO.y + 30, mx + 20, my, 14, 44, GREEN, gk, { washOp: 130, a: .9 }); glow(mx + 34, my, 80, GREEN, .35 * gk); }   // wide and green, splashing on the mote's nose (at 4-16 wide and washOp 40 it was a faint pale streak, lost among the white induction beams)
     });
   }
   // F: inside the giant: the men at the generator
