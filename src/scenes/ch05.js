@@ -141,7 +141,7 @@
   // from F-2's stream of light; and when his eyes dream (p057.2) his hand goes to his chin
   function clausesOf(ids) { const out = []; for (const l of CHAPTER.lines) { if (!ids.includes(l.id)) continue; let a = null;
     for (const w of l.words) { a ??= w[1]; if (/([.;?!—]|--)["”]?$/.test(w[0]) || w === l.words.at(-1)) { out.push([a, w[2]]); a = null; } } } return out; }
-  const MINE = clausesOf(['p053.2', 'p056.1', 'p057.1']), TOLD = clausesOf(['p054.1', 'p058.2', 'p064.1', 'p068.1']);
+  const MINE = clausesOf(['p053.2', 'p056.1', 'p057.1']), TOLD = clausesOf(['p054.1', 'p058.2', 'p064.1', 'p068.1', 'p068.3']);
   const GEST = [[.8, 1.9], [1.1, 2.4], [.6, 1.6]];   // the near arm (up, fore): an open hand forward, a lift, a small turn
   const bump = (t, t0, rise = .15, fall = .8) => t < t0 ? 0 : Math.min(1, (t - t0) / rise) * Math.exp(-Math.max(0, t - t0 - rise) / fall);
   const STARTS = [[tSudden, .6], [C('p059.1:sudden crashing arcs'), .8], [C('p059.1:blasting atoms'), .5], [tGen, .7], [tSnap, 1], [tFell, .8], [tDead, 1]];
@@ -158,6 +158,11 @@
     pose.up = lerp(pose.up, 1.7, .8 * shade); pose.fore = lerp(pose.fore, 3.9, .8 * shade); pose.torso -= .06 * shade; lid += .25 * shade;
     look -= .55 * win(t, tDead + .8, C('p072.1') + .5, 1, 1.5);   // down at the little animal, until F-2 speaks
     lid += .2 * ez(t, C('p072.1:Let machines be made'), C('p072.1$'));   // and the war decided, his lids lower
+    // F-2 tells him it is done: he leans in to it, and at 'a coordinator machine — a ruler' his hand goes to his chin,
+    // weighing it (he stood arms at his sides through all fifteen seconds of it)
+    pose.torso += .05 * win(t, C('p068.1'), C('p068.3:It is a coordinator') - .3, .6, .8);
+    const weigh = win(t, C('p068.3:It is a coordinator') - .2, C('p068.3$') + 1.4, .9, .9);
+    pose.up = lerp(pose.up, 1.05, .85 * weigh); pose.fore = lerp(pose.fore, 3.45, .85 * weigh); pose.torso += .08 * weigh; look -= .06 * weigh;
     return { look, lid };
   }
   function roal(t) {
