@@ -41,10 +41,16 @@
         if (ty === 3) { const [a, b] = SEEN(x, w); ship((a + b) / 2, mid[1], Math.min(90, (b - a) * .55), t, -1, { d: 3 }); }
         if (sel > 0) { paint(rectPts(x + 6, y + 6, w - 12, h - 12), { wash: '#F7F0DC', washOp: 160 * sel, ink: null }); glow(...mid, 120, NRG.white, .6 * sel); }
         continue; }
-      if ((c + r) % 3 === 0 && t < tGreenOn) { const [a, b] = SEEN(x, w), len = Math.min(110, (b - a) * .62); boilSeed('scr' + c + r); ship((a + b) / 2 + .1 * (b - a) * wob(t, .03, c), mid[1], len, t, -1, { d: 3 }); }   // on the screen, clear of the piers
+      // as the camera leaves R for Roal, the screens change one by one back to the enemy fleet, where it hangs; in W, as
+      // the two turn back to it, those screens glow (the decay pictures stayed through the speech, so on 'their powerful
+      // force-screen' the men looked up at the bodies being carried off)
+      const tSw = T0('S') + .3 + 1.4 * hash(c * 5 + r * 11), decay = t > T0('R') - 1 && t < tSw && r >= 1 && c > 0 && c < 6 && (c + r) % 2 === 0;
+      if ((c + r) % 3 === 0 && (t < tGreenOn || (t > tSw && !decay))) { const [a, b] = SEEN(x, w), len = Math.min(110, (b - a) * .62); boilSeed('scr' + c + r); ship((a + b) / 2 + .1 * (b - a) * wob(t, .03, c), mid[1], len, t, -1, { d: 3 });
+        if (t > T0('W')) glow(...mid, 120, NRG.white, .4 * ez(t, T0('W'), T0('W') + 1.5)); }   // on the screen, clear of the piers
       // R: on the screens, the bodies carried away as they decay: a machine bearing a dead Outsider across each (a tiny
-      // machine and a pale ellipse read as nothing)
-      if (t > T0('R') - 1 && r >= 1 && c > 0 && c < 6 && (c + r) % 2 === 0) { const q = frac((t - T0('R')) * .07 + c * .27 + r * .4), bx = lerp(x + 30, x + w - 30, q);
+      // machine and a pale ellipse read as nothing); each crosses once, never wrapping round, and stops short of the
+      // right edge by the body's length (turned on its side it reaches about 60 past its carrier: it ran over the frame)
+      if (decay) { const q = Math.min(1, (t - T0('R') + 1) / 30 * .8 + .2 * hash(c * 3 + r * 7)), bx = lerp(x + 28, x + w - 78, q);
         stillSeed('dk' + c + r); paint(rectPts(x + 6, y + 6, w - 12, h - 12), { wash: '#3E372E', washOp: 235, ink: null }); paint(rectPts(x + 6, y + h - 34, w - 12, 28), { wash: '#6A604F', washOp: 200, ink: null });
         glow(x + w / 2, y + h / 2, 110, '#F4EEDC', .12);   // a picture on the screen, dark and lit, framed (pale, at the hall's tones, they read as carried through the hall)
         DES.machine(bx, y + h - 16, 10, t, { arms: 2, label: null, hover: 1.4 });
