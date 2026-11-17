@@ -2,7 +2,7 @@
 // (src/gen/ch10.js). One set: the Outsiders' fleet wheeling round the golden sphere near Mars; the flagship twisted,
 // and locked so still that even its linework stops boiling.
 (() => {
-  const { D, INK, ez, win, steps, ground, cam, page, planet, thoughtRings } = KIT;
+  const { D, INK, ez, win, lerpP, steps, ground, cam, page, planet, thoughtRings } = KIT;
   const S = CHAPTER.shots, C = cue, T0 = id => S[id][0], T1 = id => S[id][1];
   const K = (t, a, b) => seg(t, C(a), C(b));
   const MID = [960, 540], FLAG = [1500, 760];
@@ -66,7 +66,10 @@
     // the flagship: in the ring's near side
     const [fx, fy] = away(...FLAG);
     push(); translate(fx, fy); scale(far); translate(-fx, -fy); flagship(t, fx, fy); pop();
-    if (t > tBeam - .1 && t < tLock + 1) beam(...MID, fx, fy, 8, 20, '#E8F0FF', ez(t, tBeam - .1, tBeam + .4), { washOp: 70, a: .9 });
+    // the beam passes through the screen and the ship and on out the far side ('passed easily through'), blue, with a white core
+    // (it stopped at a bright point mid-hull, and in near-white alone it read as plain white)
+    if (t > tBeam - .1 && t < tLock + 1) { const on = ez(t, tBeam - .1, tBeam + .4), reach = ez(t, tBeam - .1, tBeam + 1.2), e = lerpP(MID, [MID[0] + 1.9 * (fx - MID[0]), MID[1] + 1.9 * (fy - MID[1])], reach);
+      beam(...MID, ...e, 22, 40, '#8FB2FF', on, { washOp: 110, a: .8 }); beam(...MID, ...e, 7, 14, '#F4F8FF', on, { washOp: 140, a: .9, splash: false }); }
     if (t > tTwist && t < tRestored + 2) for (let i = 0; i < 6; i++) { const a = i / 6 * TAU + t; glow(fx + Math.cos(a) * 500, fy + Math.sin(a) * 160, 60, NRG.gold, .35); }
     // the sphere: a spark arriving, then steady at the centre
     const arr = ez(t, tFound - 4, tFound + .5), sx = lerp(-1400, MID[0], arr), sy = lerp(-400, MID[1], arr);
