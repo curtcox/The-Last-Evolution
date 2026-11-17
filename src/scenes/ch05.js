@@ -586,6 +586,11 @@
   function rockSky(t, dawn) {
     stillSeed('sky'); paint(rectPts(-200, -1400, W + 400, 2300), { wash: mixCol(D[2], D[0], dawn), washOp: 255, fill: D[1], fillOp: 80, bleed: .3, ink: null });
     blooms(0, 600, 6, 1, 73, .4);
+    // high above the dawn the night lingers, darkening upward, so the last stars and the rising specks show (on the pale
+    // dawn sky alone the tilt up ended on bare paper)
+    // (as KIT.haze, but thickest at the top: clear at y 250, the night's dark grey at -1150 and above)
+    flushBrush(); push(); noStroke(); for (let i = 0; i < 40; i++) { const y = 250 - (i + 1) * 35; fill(59, 50, 43, 255 * .88 * Math.pow((i + .5) / 40, 1.2)); rect(-400, y, W + 800, 35); }
+    fill(59, 50, 43, 255 * .88); rect(-400, -2000, W + 800, 600); pop();
     stillSeed('mtn'); wash([[-200, 700], [200, 520], [420, 600], [700, 470], [980, 590], [1300, 500], [1600, 610], [2100, 540], [2100, 760], [-200, 760]], 2, { ink: true, sw: .5 });
     stillSeed('rock'); wash([[-200, 720], [2100, 700], [2100, 1300], [-200, 1300]], 3, { op: 1.1 });
     for (let i = 0; i < 18; i++) { stillSeed('crack' + i); const x = hash(i * 3) * W, y = 760 + hash(i * 5) * 300; inkLine([[x, y], [x + 60 + 80 * hash(i), y + 10 * (hash(i * 7) - .5)]], .4, D[4]); }
@@ -608,7 +613,7 @@
       if (y > -1400) DES.machine(x, y + 60, 6, t, { arms: 2, d: 1 }); }
     const tDir = C('p073.1:under the direction');
     if (t > tDir - 2) DES.cru1(lerp(2150, 1400, ez(t, tDir - 2, tDir + 1.5)), 640, 30, t, { hover: 2.5, glowK: 1 });
-    boilSeed('stars'); for (let i = 0; i < 40; i++) glow(hash(i * 3.1) * W, -900 + hash(i * 7.7) * 900, 8, NRG.white, .4 * up);
+    boilSeed('stars'); for (let i = 0; i < 70; i++) { const b = hash(i * 5.3); glow(hash(i * 3.1) * W, -1300 + hash(i * 7.7) * 1250, 5 + 7 * b, NRG.white, (.35 + .45 * b) * up * ez(-1300 + hash(i * 7.7) * 1250, 100, -400)); }   // the last stars, in the dark high sky (they faded as dawn comes up below)
     for (let i = 0; i < 120; i++) { const st = go + i * .07, q = (t - st) / 6; if (q <= 0) continue;
       const x = top[0] + (hash(i) - .5) * 1400 * q, y = top[1] - q * (900 + 600 * hash(i * 3)), sz = 16 * (1 - q * .5);
       if (sz > 3) DES.mote(x, y, sz, t, { ang: -Math.PI / 2 + (hash(i) - .5) * .8, drive: true }); else glow(x, y, 6, NRG.white, .5); }
