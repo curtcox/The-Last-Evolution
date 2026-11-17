@@ -144,7 +144,10 @@
       // D: his thought, the curl, in the darkest tone (the palest and mid washes vanished against the hall's light wall); S: rings as he speaks
       // it rises up and to the left, over the window's light, not along the pier behind him
       push(); translate(roal.head[0], 0); scale(-1, 1); translate(-roal.head[0], 0);
-      dreamCurl(roal.head[0] + 10, roal.head[1] - 40, K(t, 'p018.1:But--life alone', 'p018.1:so Roal was believed'), t, .8 * (1 - ez(t, T0('E') - 1, T0('E'))), 'roalcurl', 4);
+      // (as KIT.dreamCurl, with an ink edge: in the darkest wash alone it was lost where it crossed the grey pier)
+      { const x = roal.head[0] + 10, y = roal.head[1] - 40, k = K(t, 'p018.1:But--life alone', 'p018.1:so Roal was believed'), op = .8 * (1 - ez(t, T0('E') - 1, T0('E'))), P = [];
+        if (k > 0 && op > 0) { for (let i = 0; i <= 14 * k; i++) { const u = i / 14; P.push([x + u * 160 + 70 * Math.sin(u * 7 + t * .6), y - (u * 300 + 30 * Math.sin(u * 5 + t * .4))]); }
+          if (P.length > 2) { boilSeed('roalcurl'); wash(ribbon(P, 26, 6), 4, { op, ink: true, sw: .9 }); } } }
       pop();
       hallMachines(t, true);
     });
