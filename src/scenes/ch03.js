@@ -129,6 +129,10 @@
         for (let k = 0; k < 6; k++) { const px = x0 + w * (.04 + k * .19); stillSeed('spier' + k); paint(rectPts(px, y0, w * .05, fy - y0), { wash: '#8C8170', washOp: 255, fill: '#7C7262', fillOp: 110, bleed: .02, tex: .3, ink: INK, sw: .6 });
           for (let f = 1; f < 4; f++) inkLine([[px + f * w * .0125, y0 + 10], [px + f * w * .0125, fy - 10]], .35, D[4]); wash(rectPts(px - w * .01, fy - h * .03, w * .07, h * .03), 4, { ink: true, sw: .5 }); } }
       hallMachines(t, false);
+      // S: the gathered men ('Roal sent the first thoughts among the gathered men'): four more come in from either side as the
+      // machines form their ring, and stand in its far half facing Roal, in pairs in the gaps between the far machines (with Roal and Trest alone, the council read thin)
+      if (t > T0('S') - 2.5) [[-300, 680], [-200, 760], [2400, 1420], [2300, 1340]].forEach(([xs, xf], i) => { const a = T0('S') - 2.5 + i * .5;
+        stander(t, xs, G - 62, 32, [[a, a + 5, xs, xf]], { who: 'citizen', key: 'gm' + i, seed: 90 + i, flip: xf > ROAL, look: .12 + .05 * Math.sin(t * .5 + i * 2) }); });
       // E: the weapons taking shape on the floor, either side of Roal and Trest (laid every 220 from 400, two lay across
       // the men at their legs and waists, as if passing through them)
       const ew = win(t, tE - 1, T1('E') + .5, 1, 1);
