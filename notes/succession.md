@@ -72,6 +72,8 @@ such a world ([Nick Bostrom][wp-nick-bostrom]).
 Campbell's story fits neither camp neatly. Its machines are what today's researchers call *aligned*, advancing the
 objectives their makers intended, which the field counts an open problem ([AI alignment][wp-alignment]). They're loyal,
 grieving, true to their makers' dreams ("fulfilling the promise you saw, and completing the dreams you dreamt").
+One heir isn't: the first being of pure force, made by F-2's machine, judges its maker inefficient ("You, of matter,
+are inefficient") and fires on it, and F-2's plant destroys it.
 Humanity's end comes from outside. The story's real question is the one Roal answers and F-2 hands back to the reader:
 if the successors are better, should we mind?
 

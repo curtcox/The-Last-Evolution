@@ -105,7 +105,7 @@ reached 3,600 degrees in 1931; the source doesn't say on which scale ([Edwin Fit
 into a beam is Campbell's step.
 
 ## The green beams
-*p024, p045 · chapters 2–4*
+*p024, p045 · chapters 3 and 4*
 
 X-6621 says the life-beams "affect chemical action, retarding it greatly in exothermic actions, speeding greatly
 endothermic actions". Exothermic reactions give off heat, and endothermic ones absorb it. Life runs on releasing energy:
