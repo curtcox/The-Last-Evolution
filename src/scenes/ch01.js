@@ -114,6 +114,8 @@
     // the idle: lounging on the plaza's front, between the two lines and under their play, two sitting and one propped up, lazy arms and heads (one lay flat on his back the whole shot, and beside the mock battle he read as its casualty)
     // ('given wholly to pleasure and idleness'; the drill alone stood under those words 20 s)
     [[3420, G + 120, 'sit', 1], [3560, G + 112, 'sitUp', 1], [3690, G + 118, 'sit', -1]].forEach(([x, y, p, f], i) => { const w = .5 + .5 * Math.sin(t * .7 + i * 2.1), P0 = DES.POSE[p];
+      // the two sitting in chair poses sit on low stone blocks (on nothing, they floated at seat height)
+      if (p === 'sit') { const b = [x - 16 * f, x + 24 * f], top = y - 33; boilSeed('seat' + i); paint([[b[0], top], [b[1], top], [b[1], y - 2], [b[0], y - 2]], { wash: D[2], washOp: 235, ink: INK, sw: .7 }); }
       DES.personSide(x, y - (p === 'lie' ? 10 : p === 'sit' ? 40 : 24), 28, t, { who: 'citizen', flip: f < 0, key: 'idle' + i, seed: 70 + i, look: .15 * w - .05, pose: { ...P0, up: P0.up + .5 * w, fore: P0.fore + .4 * w } }); });
     const tMock = C('p003.1:mock battles') - .3;   // the bolts on 'mock battles' (3 s ahead, they came on 'so their energies')
     for (let sd = -1; sd <= 1; sd += 2) for (let i = 0; i < 3; i++) { const x = 3550 + sd * (260 + i * 60), y = G + 10 + i * 40;
