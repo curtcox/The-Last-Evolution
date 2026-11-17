@@ -116,10 +116,12 @@
     // spraying from the leap, it read as caught before it leaped)
     const tLeap = C('p121.4:The sphere leaped'), tCaught = C('p121.4:the beam caught it'), tSpray = C('p121.4:terrific flashing') - .2;
     const back = ez(t, tStabEnd, tStabEnd + 1.3) * (1 - ez(t, tLeap - .1, tLeap + .6)), orb = [ORB[0] + 420 * back, ORB[1] - 190 * back];
-    const g1 = t > tF - 1 && t < tGone + .3, shrink = 1 - .9 * ez(t, tCaught, tGone);
-    if (g1) { const r = 20 * shrink * (t < tF ? seg(t, tF - 1, tF) : 1); glow(...orb, r * 3, NRG.white, .6); glow(...orb, r * 1.4, '#FFFDF6', .9);
+    const g1 = t > tF - 1 && t < tGone + .3, shrink = 1 - .9 * ez(t, C('p121.4:shrinking swiftly') - .2, tGone), arcs = 1 - .85 * ez(t, C('p121.4:the arcing decreased') - .2, C('p121.4:the arcing decreased') + 1.2);   // it shrinks on 'shrinking swiftly' and its arcs fall away on 'the arcing decreased' (they sprayed at full strength till green)
+    if (g1) { const r = 20 * shrink * (t < tF ? seg(t, tF - 1, tF) : 1);
       if (t > tCaught) { const strain = 1 - ez(t, tSpray, tSpray + .5); orb[0] += 8 * strain * Math.sin(t * 31); orb[1] += 6 * strain * Math.cos(t * 27); }   // 'it seemed to strain'
-      if (t > tSpray) for (let i = 0; i < 6; i++) { const a = hash(Math.floor(t * 8) + i) * TAU; boilSeed('spray' + i + Math.floor(t * 12)); lightning(...orb, orb[0] + Math.cos(a) * 300, orb[1] + Math.sin(a) * 300, '#FFE2B0', { amp: .2, r: 30 }); } }
+      if (t > tSpray) for (let i = 0; i < 6; i++) { if (i >= Math.round(6 * arcs) && hash(Math.floor(t * 8) * 7 + i) > .25) continue; const a = hash(Math.floor(t * 8) + i) * TAU, L = 300 * (.35 + .65 * shrink) * (.5 + .5 * arcs);
+        boilSeed('spray' + i + Math.floor(t * 12)); lightning(...orb, orb[0] + Math.cos(a) * L, orb[1] + Math.sin(a) * L, '#FFE2B0', { amp: .2, r: 30 * (.4 + .6 * arcs) }); }
+      glow(...orb, r * 3, NRG.white, .6); glow(...orb, r * 1.4, '#FFFDF6', .9); }   // the globe over its arcs, so its shrinking shows
     if (t > tH && t < tStab + .5) thoughtRings(...ORB, t, tH, C('p121.3$'), { r1: 400, col: '#FFFDF6' });
     const f2 = f2At(t);
     if (t > C('p120.1') && t < tH) for (let i = 0; i < 5; i++) { const k = seg(t, C('p120.1') + i * .8, C('p120.1') + i * .8 + 1.2), d = [ORB[0] - 80, ORB[1] + 40 * (i - 2)], turn = t > C('p120.1:seemed baffled') ? 1 : 0;
