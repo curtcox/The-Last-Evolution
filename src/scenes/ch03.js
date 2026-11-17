@@ -77,7 +77,12 @@
   }
   // Roal: walks to the middle of the floor when he speaks; Trest beside him
   const ROALW = [[T0('S') - 2, T0('S') + 1.5, ROAL, 960]], TRESTW = [[T0('S') - 1.5, T0('S') + 2, TREST, 1160]];
-  const SPEECH = clauses(['p033.1', 'p033.3', 'p033.5', 'p034.1']);   // his speech to the machines: a gesture to each clause; Trest nods
+  // (kit's clauses() ends a clause at a stop with a closing double quote but not a single one, so "...we can use.'" and the
+  // next sentence ran as one 7 s clause, the arm held out level through it: split it there)
+  const quoteStop = cl => { const W = CHAPTER.lines.flatMap(l => l.words), out = [];
+    for (const [a, b] of cl) { const i = W.findIndex(w => w[1] >= a && w[2] < b - .3 && /[.;?!]['’]$/.test(w[0])); if (i < 0) out.push([a, b]); else out.push([a, W[i][2]], [W[i + 1][1], b]); }
+    return out; };
+  const SPEECH = quoteStop(clauses(['p033.1', 'p033.3', 'p033.5', 'p034.1']));   // his speech to the machines: a gesture to each clause; Trest nods
   // C: his hand out to the fleet on the screens through 'come for invasion', then a gesture to each phrase as he tells them (split at commas too: one sentence runs 21 s)
   const tInv = C('p018.1:There had been no wars'), tBut = C('p018.1:But--life alone');
   const TELL = (() => { const out = []; let a = null; for (const w of CHAPTER.lines.find(l => l.id === 'p018.1').words) { if (w[1] < tInv - .1 || w[1] >= tBut) continue; a ??= w[1]; if (/[,.;?!]$/.test(w[0])) { out.push([a, w[2]]); a = null; } } return out; })();
@@ -146,12 +151,14 @@
       // their designations, lettered the first time they're spoken (DECISIONS.md, 2026-11-01)
       for (const [txt, x, y, a, b] of [['Roal 25374', ROAL - 40, G + 16, C('p018.1:Roal, 25374'), C('p018.1:Trest, 35429') + 2.4], ['Trest 35429', TREST + 40, G + 90, C('p018.1:Trest, 35429'), C('p018.1:Trest, 35429') + 3.2]]) { const k = win(t, a - .1, b, .3, .5); if (k > 0) letter(txt, x, y, 62, INK, { ink: false, font: '700 62px ' + SERIF, spacing: 1, alpha: k }); }   // 62 px in two rows, to read at phone size (at 34 they were 6 px tall on a phone)
       // D: his thought, the curl, in the darkest tone (the palest and mid washes vanished against the hall's light wall); S: rings as he speaks
-      // it rises up and to the left, over the window's light, not along the pier behind him
+      // it rises up and out to the left, over the window's light, not along the pier behind him
       push(); translate(roal.head[0], 0); scale(-1, 1); translate(-roal.head[0], 0);
-      // (as KIT.dreamCurl, with an ink edge: in the darkest wash alone it was lost where it crossed the grey pier)
-      { const x = roal.head[0] + 10, y = roal.head[1] - 40, k = K(t, 'p018.1:But--life alone', 'p018.1:so Roal was believed'), op = .8 * (1 - ez(t, T0('E') - 1, T0('E'))), P = [];
-        if (k > 0 && op > 0) { for (let i = 0; i <= 14 * k; i++) { const u = i / 14; P.push([x + u * 160 + 70 * Math.sin(u * 7 + t * .6), y - (u * 300 + 30 * Math.sin(u * 5 + t * .4))]); }
-          if (P.length > 2) { boilSeed('roalcurl'); wash(ribbon(P, 26, 6), 4, { op, ink: true, sw: .9 }); } } }
+      // (as KIT.dreamCurl, with an ink edge: in the darkest wash alone it was lost where it crossed the grey pier; inked and
+      // dark, it read as a machine's tentacle, so it is a pale tone inside the ink; it rises from his head itself, its sway
+      // growing along it: begun 40 above and swaying 70 off, it first showed as a piece floating over him)
+      { const x = roal.head[0] + 10, y = roal.head[1] - 26, k = K(t, 'p018.1:But--life alone', 'p018.1:so Roal was believed'), op = .8 * (1 - ez(t, T0('E') - 1, T0('E'))), P = [];
+        if (k > 0 && op > 0) { for (let i = 0; i <= 14 * k; i++) { const u = i / 14; const sw = Math.min(1, u * 4); P.push([x + u * 340 + 60 * sw * Math.sin(u * 7 + t * .6), y - (u * 210 + 30 * sw * Math.sin(u * 5 + t * .4))]); }   // (out wide, under the machines hanging above: rising 300 it ran into one, and read as its arm)
+          if (P.length > 2) { boilSeed('roalcurl'); wash(ribbon(P, 26, 6), 1, { op, ink: true, sw: .9 }); } } }
       pop();
       hallMachines(t, true);
     });
