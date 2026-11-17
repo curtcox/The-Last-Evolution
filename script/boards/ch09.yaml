@@ -78,20 +78,23 @@ shots:
   - id: F
     at: p119.1
     title: The globe
-    seen: The storm gone; a small globe of white light floating above the plant.
-    event: It floats.
+    seen: The storm raging on round the plant's crown, then gone on 'it was gone'; a small globe of white light floating above the plant.
+    event: The storm clears; the globe floats.
     camera: holds
     reads:
-      - [0, the globe]
+      - ['p119.1:it was gone', the storm gone]
+      - ['p119.1:only a small globe', the globe]
 
   - id: G
     at: p120.1
     title: Probing
     seen: F-2 before the globe.
-    event: Ruled lines of F-2's thought reach for it and are turned aside.
+    event: Ruled lines of F-2's thought reach for it, are turned aside and drawn back; F-2's order runs down to the plant, whose crown answers; F-2 probes again and is turned aside again.
     camera: on the two of them
     reads:
       - ['p120.1:seemed baffled', the thought turned aside]
+      - ['p120.1:sent an order', the order to the plant]
+      - ['p120.1:Then again', the second probe]
 
   - id: H
     at: p121.1
@@ -129,7 +132,7 @@ shots:
   - id: K
     at: p123.1
     title: The golden sphere
-    seen: The black dome parting; Roal and Trest coming out of it; above the plant, an irregular globe of golden light with a halo of deep violet.
+    seen: The black dome parting down the middle; Roal and Trest standing inside, then walking out of it as its halves sink away; above the plant, an irregular globe of golden light with a halo of deep violet.
     event: The wind dies; the two men walk out and look up.
     camera: from the men up to the sphere
     reads:
