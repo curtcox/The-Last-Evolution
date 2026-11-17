@@ -62,8 +62,12 @@
   function ladder(t) {
     HALFTONE = .3;
     const tE = tLadder - .4, tF = T0('F'), tG = T0('G'), tLife = C('p104.1:man was the product of life'), tMach = C('p104.1:Man built the machine'), tForce = C('p104.1:but of pure, living force');
+    // 'The machine of the last evolution is far ahead, far from us still': the camera rises slowly up the empty rungs above
+    // the machine to the top one, where a faint far light waits (from 'Man built the machine' to 'pure, living force' it held
+    // one still frame for 17 s; held at 560 the machine's top was cut by the frame)
+    const tFar = C('p104.1:The machine of the last evolution');
     // in on each rung as he reaches it (at 1.3, a thin ladder in a dark frame for 37 s, unreadable on a phone); out for chance and the machine that makes itself; the whole climb; then in on the man as nature removes him
-    const c = cam(t, [[0, [LAD, 780, 2.1]], [tMach - 1, [LAD, 560, 2.1], 3], [tForce - 1, [LAD, 330, 2.1], 2.5], [tF, tt => [lerp(LAD - 200, LAD + 300, ez(tt, tF, tG)), 600, 1], 3], [tG, [LAD, 560, 1.2], 2.5], [C('p106.1:has removed the parasite') - 2, [LAD, 590, 2.1], 2.5]]);
+    const c = cam(t, [[0, [LAD, 780, 2.1]], [tMach - 1, [LAD, 500, 2.1], 3], [tFar - .3, tt => [LAD, lerp(500, 330, ez(tt, tFar - .3, tForce - .6)), 2.1], 2], [tF, tt => [lerp(LAD - 200, LAD + 300, ez(tt, tF, tG)), 600, 1], 3], [tG, [LAD, 560, 1.2], 2.5], [C('p106.1:has removed the parasite') - 2, [LAD, 590, 2.1], 2.5]]);
     camBegin(...c);
     stillSeed('lplate'); paint(rectPts(-800, -800, 3600, 2600), { wash: BG, washOp: 255, fill: '#3B322B', fillOp: 120, bleed: .25, tex: .5, ink: null });
     // the ladder's rails and rungs
@@ -76,7 +80,10 @@
       boilSeed('plant'); inkLine([[LAD + 70, 912], [LAD + 66, 912 - 60 * a1], [LAD + 72, 912 - 120 * a1]], 1.6, PALE);
       for (let k = 0; k < 4; k++) { const ly = 900 - k * 28 * a1, sd = k % 2 ? 1 : -1, lx = LAD + 70 + sd * 4; paint([[lx, ly], [lx + sd * 22 * a1, ly - 16 * a1], [lx + sd * 44 * a1, ly - 6 * a1], [lx + sd * 20 * a1, ly + 4 * a1]], { wash: '#B9C2A0', washOp: 150, ink: PALE, sw: .8 }); } }
     if (a2 > .03 && gone < 1) { boilSeed('lman'); push(); translate(LAD, 680); scale(1, 1); translate(-LAD, -680); DES.person(LAD, 680, 27 * a2, t, { who: 'citizen' }); pop(); if (gone > 0) { boilSeed('lmanf'); paint(rectPts(LAD - 110, 472, 220, 212), { wash: BG, washOp: 255 * gone, ink: null }); } }
-    if (a3 > .03) DES.machine(LAD, 455, 26 * a3, t, { arms: 3, d: 1, label: null, lit: .4 });
+    // 'the machine can evolve, change far more swiftly than life': it changes on the rung, an arm more on each word
+    const ev = [C('p104.1:can evolve'), C('p104.1:change far more'), C('p104.1:swiftly than life')].filter(x => t > x).length;
+    if (a3 > .03) DES.machine(LAD, 455, 26 * a3 * (1 + .08 * ev), t, { arms: 3 + ev, d: 1, label: null, lit: .4 + .12 * ev, weave: .25 * ev / 3 });
+    { const far = ez(t, tFar + 1, tFar + 3.5) * (1 - ez(t, tForce + .5, tForce + 2)); if (far > 0) { glow(LAD, 180, 60, NRG.white, .3 * far * (.8 + .2 * Math.sin(t * 2))); glow(LAD, 180, 16, '#FFFDF6', .5 * far); } }
     if (a4 > 0) { glow(LAD, 180, 120 * a4, NRG.white, .6); glow(LAD, 180, 50 * a4, '#FFFDF6', .8); }
     // F: chemicals drifting and joining by chance; F-2 making its duplicate
     const fk = win(t, tF - .5, tG + .5, 1, 1);
