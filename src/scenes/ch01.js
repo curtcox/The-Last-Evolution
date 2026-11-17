@@ -25,9 +25,15 @@
 
   // ---------- B: six centuries of machines, along a ruled line ----------
   const LY = 640, EAR = 700, EYE = 1300, BRAIN = 1900, JOIN = 2500;
+  // the Ear: a flared listening horn, its bell to the left, sound arcs coming into its mouth (a straight-sided triangle with
+  // a disc at its tip read as a play button)
   function ear(x, y, k) { if (k <= 0) return; boilSeed('ear');
-    for (let i = 0; i < 3; i++) { const r = (40 + i * 34) * k; wash([[x - 10, y - 12], [x - 10 - r * 1.4, y - r], [x - 10 - r * 1.4, y + r], [x - 10, y + 12]], 1 + i, { ink: true, sw: .6, op: .9 }); }
-    wash(ellPts(x, y, 26 * k, 26 * k, 14), 0, { ink: true, sw: .6 }); }
+    for (let i = 0; i < 3; i++) { const r = (40 + i * 34) * k, L = r * 1.4, top = [], bot = [];
+      for (let j = 0; j <= 10; j++) { const q = j / 10, f = q * q * q; top.push([x - 10 - L * q, y - (10 * k + (r - 10 * k) * f)]); bot.unshift([x - 10 - L * q, y + (10 * k + (r - 10 * k) * f)]); }
+      wash([...top, ...bot], 1 + i, { ink: true, sw: .6, op: .9 }); }
+    wash(ellPts(x, y, 26 * k, 26 * k, 14), 0, { ink: true, sw: .6 });
+    const m = x - 10 - 108 * k * 1.4;   // the widest bell's mouth
+    for (let i = 0; i < 3; i++) { const R = (60 + i * 34) * k, A = []; for (let j = 0; j <= 12; j++) { const a = Math.PI - .55 + j / 12 * 1.1; A.push([m - 30 * k + Math.cos(a) * R, y + Math.sin(a) * R]); } inkLine(A, .9 * k, PALE); } }
   function eye(x, y, k) { if (k <= 0) return; DES.lens(x, y, 70 * k); for (let i = 0; i < 8; i++) { const a = i / 8 * TAU; inkLine([[x + Math.cos(a) * 80 * k, y + Math.sin(a) * 80 * k], [x + Math.cos(a) * 100 * k, y + Math.sin(a) * 100 * k]], .6, PALE); } }
   function brain(x, y, k) { if (k <= 0) return; boilSeed('brain'); DES.dcase(x, y + 90 * k, 60 * k, 90 * k, 50 * k, 1, { shine: true, rings: [.3, .7] }); }
   function history(t) {
