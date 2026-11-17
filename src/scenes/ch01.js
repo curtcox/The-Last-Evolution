@@ -33,11 +33,12 @@
   function history(t) {
     HALFTONE = .3;
     const tEar = C('p003.1:The Ear-apparatus'), tEye = C('p003.1:The Eye came later'), tBrain = C('p003.1:the Brain'), tJoin = C('p003.1:But by twenty-five hundred'), tUp = C('p003.1:to think, and act');
+    // (in close on each, 1.9: at 1.15 the three were specks in the dark at phone size)
     const j = ez(t, tJoin, tJoin + 1.8), up = ez(t, tUp - 1, tUp + 2);   // (over 3 s they were still apart at the cut, the joined machine standing by them like a fourth)
-    const c = cam(t, [[0, [EAR - 300, LY - 40, 1]], [tEar - 1, [EAR, LY - 40, 1.15], 2], [tEye - .8, [EYE, LY - 40, 1.15], 2], [tBrain - .5, [BRAIN, LY - 40, 1.15], 2], [tJoin, [JOIN - 200, LY - 60, 1.1], 3], [tUp - 1, [JOIN, LY - 120, 2.2], 3]]);
+    const c = cam(t, [[0, [EAR - 300, LY - 40, 1]], [tEar - 1, [EAR - 40, LY - 50, 1.9], 2], [tEye - .8, [EYE, LY - 50, 1.9], 2], [tBrain - .5, [BRAIN, LY - 60, 1.9], 2], [tJoin, [JOIN - 200, LY - 60, 1.1], 3], [tUp - 1, [JOIN, LY - 120, 2.2], 3]]);
     withCam(c, () => {
       plateGround();
-      ruled([[0, LY + 120], [JOIN + 600, LY + 120]], seg(t, T0('B') - 1, T0('B') + 4), D[1], 1.1);
+      for (let q = 0; q < 4; q++) ruled([[q * 775, LY + 120], [(q + 1) * 775, LY + 120]], seg(t, T0('B') - 1 + q * 1.25, T0('B') + .25 + q * 1.25), D[1], 1.1);   // in four rulings (as one stroke 3,100 long it stopped short past the eye)
       for (let i = 0; i < 7; i++) { const x = 200 + i * 400; ruled([[x, LY + 105], [x, LY + 135]], seg(t, T0('B') + i * .5, T0('B') + i * .5 + .4), D[1], .8); }
       // 'six centuries developing machines': a gear-wheel over each tick as the line draws, each with more teeth, turning
       for (let i = 0; i < 6; i++) { const k = backOut(seg(t, T0('B') + i * .5 + .2, T0('B') + i * .5 + .9)) * (1 - ez(t, tEar - 1.5, tEar)); if (k <= 0) continue;
