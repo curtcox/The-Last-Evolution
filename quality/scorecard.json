@@ -1,6 +1,6 @@
 {
  "summary": {
-  "pass": 363,
+  "pass": 368,
   "stale": 0,
   "open": 0,
   "curt": 9,
@@ -35,7 +35,7 @@
   },
   "refs": {
    "state": "fail",
-   "detail": "gutenberg: https://www.gutenberg.org/ebooks/27462 → 503"
+   "detail": "blackgate-best-of: https://www.blackgate.com/?p=226361 → fetch failed"
   },
   "phone": {
    "state": "pass",
@@ -99,42 +99,42 @@
    "area": "film",
    "title": "Chapter 5: the acting",
    "state": "pass",
-   "note": "On the draft with the thirtieth round's fixes: draft ch05-draft-5fd32ec0, the fused machine falling on 'beside him fell the fused, distorted mass', not with F-1 (find.ch05-fused-early); sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
+   "note": "On the draft with the thirty-first round's fixes: draft ch05-draft-e6f54f9f, the night lingering high above the dawn so the tilt up ends on the specks among the last stars (find.ch05-end-paper); sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
   },
   {
    "id": "ch05.picture",
    "area": "film",
    "title": "Chapter 5: the picture",
    "state": "pass",
-   "note": "On the draft with the thirtieth round's fixes: draft ch05-draft-5fd32ec0, the fused machine falling on 'beside him fell the fused, distorted mass', not with F-1 (find.ch05-fused-early); sound unchanged, -14.5 LUFS. The hall at night with F-1 vast; the atom plates (orbits, grid, light); the spiralling air field, arcs and flame, aura and lightning; F-1's hulk; F-2 with rings and memories; the ball of forces, the ruler, the guinea pig cage in the pale beam; dawn on the rock with tiny machines streaming up. Dark but legible."
+   "note": "On the draft with the thirty-first round's fixes: draft ch05-draft-e6f54f9f, the night lingering high above the dawn so the tilt up ends on the specks among the last stars (find.ch05-end-paper); sound unchanged, -14.5 LUFS. The hall at night with F-1 vast; the atom plates (orbits, grid, light); the spiralling air field, arcs and flame, aura and lightning; F-1's hulk; F-2 with rings and memories; the ball of forces, the ruler, the guinea pig cage in the pale beam; dawn on the rock with tiny machines streaming up. Dark but legible."
   },
   {
    "id": "ch05.sync",
    "area": "film",
    "title": "Chapter 5: picture against sound",
    "state": "pass",
-   "note": "On the draft with the thirtieth round's fixes: draft ch05-draft-5fd32ec0, the fused machine falling on 'beside him fell the fused, distorted mass', not with F-1 (find.ch05-fused-early); sound unchanged, -14.5 LUFS. Cuts on cue words (F-1 on 'Roal--your thoughts', 'Roal sat up', the plate on 'Hydrogen'); Whisper timing -0.12 s median."
+   "note": "On the draft with the thirty-first round's fixes: draft ch05-draft-e6f54f9f, the night lingering high above the dawn so the tilt up ends on the specks among the last stars (find.ch05-end-paper); sound unchanged, -14.5 LUFS. Cuts on cue words (F-1 on 'Roal--your thoughts', 'Roal sat up', the plate on 'Hydrogen'); Whisper timing -0.12 s median."
   },
   {
    "id": "ch05.sound",
    "area": "film",
    "title": "Chapter 5: the sound",
    "state": "pass",
-   "note": "On the draft with the thirtieth round's fixes: draft ch05-draft-5fd32ec0, the fused machine falling on 'beside him fell the fused, distorted mass', not with F-1 (find.ch05-fused-early); sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 3.8; the quiet shots C, D, H, I and AH are pauses, their speech -14.1 to -14.7; Whisper lost 12 of 1107 (names, coinages, 'asked')."
+   "note": "On the draft with the thirty-first round's fixes: draft ch05-draft-e6f54f9f, the night lingering high above the dawn so the tilt up ends on the specks among the last stars (find.ch05-end-paper); sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 3.8; the quiet shots C, D, H, I and AH are pauses, their speech -14.1 to -14.7; Whisper lost 12 of 1107 (names, coinages, 'asked')."
   },
   {
    "id": "ch05.story",
    "area": "film",
    "title": "Chapter 5: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the thirtieth round's fixes: draft ch05-draft-5fd32ec0, the fused machine falling on 'beside him fell the fused, distorted mass', not with F-1 (find.ch05-fused-early); sound unchanged, -14.5 LUFS. 9:03: Roal thinks out the hydrogen wall; F-1 builds its successor and is unmade by it; F-2 makes the ruler, tests the green beam on a guinea pig, and the machines build outward. The pilot still holds as the standard."
+   "note": "On the draft with the thirty-first round's fixes: draft ch05-draft-e6f54f9f, the night lingering high above the dawn so the tilt up ends on the specks among the last stars (find.ch05-end-paper); sound unchanged, -14.5 LUFS. 9:03: Roal thinks out the hydrogen wall; F-1 builds its successor and is unmade by it; F-2 makes the ruler, tests the green beam on a guinea pig, and the machines build outward. The pilot still holds as the standard."
   },
   {
    "id": "ch05.draft",
    "area": "film",
    "title": "Chapter 5: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch05-draft-5fd32ec0.mp4, -14.5 LUFS, peak -2 dBTP"
+   "note": "ch05-draft-e6f54f9f.mp4, -14.5 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch00.acting",
@@ -183,42 +183,42 @@
    "area": "film",
    "title": "Chapter 1: the acting",
    "state": "pass",
-   "note": "On the draft with the twenty-third round's fixes: the population plate's lights brighter, 2100 and 2500 lettered on their words, and a gentler centred push that keeps the whole curve in frame (find.ch01-population-plate); sound unchanged, -14.4 LUFS. Pairs trade talk on the walkways, the crate hand-off and the hander rising back to work, the runners, the mock battle; at the close the man and the machine walk off together, in step, through clear ground."
+   "note": "On the draft with the thirty-first round's fixes: draft ch01-draft-c2407774, the two idle figures in chair poses sitting on low stone blocks (find.ch01-seats); sound unchanged, -14.4 LUFS. Pairs trade talk on the walkways, the crate hand-off and the hander rising back to work, the runners, the mock battle; at the close the man and the machine walk off together, in step, through clear ground."
   },
   {
    "id": "ch01.picture",
    "area": "film",
    "title": "Chapter 1: the picture",
    "state": "pass",
-   "note": "On the draft with the twenty-third round's fixes: the population plate's lights brighter, 2100 and 2500 lettered on their words, and a gentler centred push that keeps the whole curve in frame (find.ch01-population-plate); sound unchanged, -14.4 LUFS. The history hall, the city of towers and walkways, the numbers, the explorers; the two minds as a head and a sphere, the curved leap landing in a soft haze against the machine's stair of steps, the waves; the close on the plain under the towers. Reads at sheet size."
+   "note": "On the draft with the thirty-first round's fixes: draft ch01-draft-c2407774, the two idle figures in chair poses sitting on low stone blocks (find.ch01-seats); sound unchanged, -14.4 LUFS. The history hall, the city of towers and walkways, the numbers, the explorers; the two minds as a head and a sphere, the curved leap landing in a soft haze against the machine's stair of steps, the waves; the close on the plain under the towers. Reads at sheet size."
   },
   {
    "id": "ch01.sync",
    "area": "film",
    "title": "Chapter 1: picture against sound",
    "state": "pass",
-   "note": "On the draft with the twenty-third round's fixes: the population plate's lights brighter, 2100 and 2500 lettered on their words, and a gentler centred push that keeps the whole curve in frame (find.ch01-population-plate); sound unchanged, -14.4 LUFS. Ear, Eye and Brain arrive as they are named; cuts and cues land on their words; Whisper timing -0.12 s median."
+   "note": "On the draft with the thirty-first round's fixes: draft ch01-draft-c2407774, the two idle figures in chair poses sitting on low stone blocks (find.ch01-seats); sound unchanged, -14.4 LUFS. Ear, Eye and Brain arrive as they are named; cuts and cues land on their words; Whisper timing -0.12 s median."
   },
   {
    "id": "ch01.sound",
    "area": "film",
    "title": "Chapter 1: the sound",
    "state": "pass",
-   "note": "On the draft with the twenty-third round's fixes: the population plate's lights brighter, 2100 and 2500 lettered on their words, and a gentler centred push that keeps the whole curve in frame (find.ch01-population-plate); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS integrated, LRA 3.3, shots -14.1 to -17.2 (the quiet ones are pauses); Whisper lost 6 of 455 words, all 'twenty hundred' heard as digits."
+   "note": "On the draft with the thirty-first round's fixes: draft ch01-draft-c2407774, the two idle figures in chair poses sitting on low stone blocks (find.ch01-seats); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS integrated, LRA 3.3, shots -14.1 to -17.2 (the quiet ones are pauses); Whisper lost 6 of 455 words, all 'twenty hundred' heard as digits."
   },
   {
    "id": "ch01.story",
    "area": "film",
    "title": "Chapter 1: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the twenty-third round's fixes: the population plate's lights brighter, 2100 and 2500 lettered on their words, and a gentler centred push that keeps the whole curve in frame (find.ch01-population-plate); sound unchanged, -14.4 LUFS. Man's history to 2,000,000, the city where man and machine live together, the two kinds of mind (the leap of intuition against the logical stair), and the partnership as the chapter's close. Clear setup for what follows."
+   "note": "On the draft with the thirty-first round's fixes: draft ch01-draft-c2407774, the two idle figures in chair poses sitting on low stone blocks (find.ch01-seats); sound unchanged, -14.4 LUFS. Man's history to 2,000,000, the city where man and machine live together, the two kinds of mind (the leap of intuition against the logical stair), and the partnership as the chapter's close. Clear setup for what follows."
   },
   {
    "id": "ch01.draft",
    "area": "film",
    "title": "Chapter 1: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch01-draft-7081d50d.mp4, -14.4 LUFS, peak -2.3 dBTP"
+   "note": "ch01-draft-c2407774.mp4, -14.4 LUFS, peak -2.3 dBTP"
   },
   {
    "id": "ch02.acting",
@@ -477,42 +477,42 @@
    "area": "film",
    "title": "Chapter 9: the acting",
    "state": "pass",
-   "note": "On the draft with the twenty-fourth round's fixes: the dull red beam far wider than the blue-white stab and aimed at the globe, falling short until it leaps (find.ch09-red-beam); sound unchanged, -14.4 LUFS. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
+   "note": "On the draft with the thirty-first round's fixes: draft ch09-draft-61e8c8f1, the globe shrinking on 'shrinking swiftly' and its arcs falling away on 'the arcing decreased' (find.ch09-arcing); sound unchanged, -14.4 LUFS. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
   },
   {
    "id": "ch09.picture",
    "area": "film",
    "title": "Chapter 9: the picture",
    "state": "pass",
-   "note": "On the draft with the twenty-fourth round's fixes: the dull red beam far wider than the blue-white stab and aimed at the globe, falling short until it leaps (find.ch09-red-beam); sound unchanged, -14.4 LUFS. Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
+   "note": "On the draft with the thirty-first round's fixes: draft ch09-draft-61e8c8f1, the globe shrinking on 'shrinking swiftly' and its arcs falling away on 'the arcing decreased' (find.ch09-arcing); sound unchanged, -14.4 LUFS. Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
   },
   {
    "id": "ch09.sync",
    "area": "film",
    "title": "Chapter 9: picture against sound",
    "state": "pass",
-   "note": "On the draft with the twenty-fourth round's fixes: the dull red beam far wider than the blue-white stab and aimed at the globe, falling short until it leaps (find.ch09-red-beam); sound unchanged, -14.4 LUFS. The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
+   "note": "On the draft with the thirty-first round's fixes: draft ch09-draft-61e8c8f1, the globe shrinking on 'shrinking swiftly' and its arcs falling away on 'the arcing decreased' (find.ch09-arcing); sound unchanged, -14.4 LUFS. The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
   },
   {
    "id": "ch09.sound",
    "area": "film",
    "title": "Chapter 9: the sound",
    "state": "pass",
-   "note": "On the draft with the twenty-fourth round's fixes: the dull red beam far wider than the blue-white stab and aimed at the globe, falling short until it leaps (find.ch09-red-beam); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
+   "note": "On the draft with the thirty-first round's fixes: draft ch09-draft-61e8c8f1, the globe shrinking on 'shrinking swiftly' and its arcs falling away on 'the arcing decreased' (find.ch09-arcing); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
   },
   {
    "id": "ch09.story",
    "area": "film",
    "title": "Chapter 9: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the twenty-fourth round's fixes: the dull red beam far wider than the blue-white stab and aimed at the globe, falling short until it leaps (find.ch09-red-beam); sound unchanged, -14.4 LUFS. 5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
+   "note": "On the draft with the thirty-first round's fixes: draft ch09-draft-61e8c8f1, the globe shrinking on 'shrinking swiftly' and its arcs falling away on 'the arcing decreased' (find.ch09-arcing); sound unchanged, -14.4 LUFS. 5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
   },
   {
    "id": "ch09.draft",
    "area": "film",
    "title": "Chapter 9: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch09-draft-e576642e.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "note": "ch09-draft-61e8c8f1.mp4, -14.4 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch10.acting",
@@ -631,14 +631,14 @@
    "area": "site",
    "title": "The film page (annotated): what it says",
    "state": "pass",
-   "note": "Rebuilt after round 30 with new drafts for chapters 2 to 6 (ch02-draft-185d9bb2, ch03-draft-aa27a327, ch04-draft-d3d2edac, ch05-draft-5fd32ec0, ch06-draft-7765c4e0); the page diff against the last build shows only those hashes and, on the film page, the note 'The curl' naming chapters 3, 5, 7 and 8."
+   "note": "Rebuilt after round 31 with new drafts for chapters 1, 5 and 9 (ch01-draft-c2407774, ch05-draft-e6f54f9f, ch09-draft-61e8c8f1); the page diff against the last build shows only those hashes and, on the film page, the note 'The curl' saying it rises twice in chapter 8."
   },
   {
    "id": "site.watch.look",
    "area": "site",
    "title": "The film page (annotated): how it looks and works",
    "state": "pass",
-   "note": "Rebuilt after round 30: no layout or style changes, only new draft hashes and one note's wording; the phone check passes."
+   "note": "Rebuilt after round 31: no layout or style changes, only new draft hashes and one note's wording; the phone check passes."
   },
   {
    "id": "site.read.content",
@@ -2676,14 +2676,44 @@
    "title": "Film page, note 'The curl': it names only chapter 3 and here, though the curl rises over Roal in chapters 5 and 8 too",
    "state": "pass",
    "note": "Fixed: the film page's note 'The curl' now names chapters 3, 5, 7 and 8, every chapter where it rises over Roal; checked on the rebuilt film page."
+  },
+  {
+   "id": "find.site-curl-twice",
+   "area": "finding",
+   "title": "The film page's curl note says the curl rises 'once more' in chapter 8; it rises twice there (0:44-1:00 and 2:33-2:40)",
+   "state": "pass",
+   "note": "Fixed: the film page's note 'The curl' now says it rises twice in chapter 8, the second time at 'said Roal, dreaming again'; checked on the rebuilt film page."
+  },
+  {
+   "id": "find.ch01-seats",
+   "area": "finding",
+   "title": "Chapter 1, 0:53-1:31: two of the lounging figures sit in chair poses on nothing",
+   "state": "pass",
+   "note": "Fixed in chapter 1 (draft ch01-draft-c2407774): the two figures in chair poses sit on low stone blocks drawn in ink; checked on a frame at 1:10."
+  },
+  {
+   "id": "find.ch05-end-paper",
+   "area": "finding",
+   "title": "Chapter 5, 8:56-9:03: the tilt up ends on bare paper, not specks among the last stars",
+   "state": "pass",
+   "note": "Fixed in chapter 5 (draft ch05-draft-e6f54f9f): high above the dawn the sky darkens smoothly toward night, and the tilt up ends on the specks rising among the last stars before the chapter's paper fade; checked on a sheet at 8:54-9:03."
+  },
+  {
+   "id": "find.ch02-footnote-linger",
+   "area": "finding",
+   "title": "Chapter 2, 0:35.7-0:38: footnote 1 stays over the transport shot after the cut",
+   "state": "pass",
+   "note": "Declined: an earlier round found the footnote's 30 words could not be read in its own shot's 7 s, and holding it 2.5 s into the next shot was that fix. It is the story's own footnote, lettered at the foot of the frame, and it sits over empty space left of the transport, covering nothing in that shot."
+  },
+  {
+   "id": "find.ch09-arcing",
+   "area": "finding",
+   "title": "Chapter 9, 2:41-2:49: the arcs stay at full strength through 'the arcing decreased', and the globe's shrinking can't be seen",
+   "state": "pass",
+   "note": "Fixed in chapter 9 (draft ch09-draft-61e8c8f1): the arcs' reach draws in from 'shrinking swiftly' (2:41.8) and they fall away on 'the arcing decreased' (2:45.2), nearly gone before orange and green; checked on a sheet at 2:38-2:50."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-16 12:36",
-   "found": 2,
-   "note": "Round 28: one minor, one nit: ch03 Q/R, the scientists don't point at the screens, which show nothing to point at, and the decaying Outsiders are carried at the hall's scale through the hall rather than on a screen; ch08 H, no thought-curl over Roal at 'said Roal, dreaming again'. Everything else checked clean. This ends the one clean round (27)."
-  },
   {
    "when": "2026-11-16 17:30",
    "found": 2,
@@ -2693,6 +2723,11 @@
    "when": "2026-11-16 21:53",
    "found": 6,
    "note": "Round 30: two minor, four nits, all fixed: the green beam on the mote in chapter 6 too faint to see; the blow in chapter 2 frozen for 7 s; the decay pictures in chapter 3 hard to read; the fused machine in chapter 5 falling 2 s before its words; the MX-3401 label in chapter 4 beside Roal's head; the curl note on the film page missing chapters 5 and 8. A seventh, the hall's screens flickering behind the council, declined: DES.lab draws its wall of screens 'some flashing' by design, the story calls them 'flashing, changing' and 'flickering', and the rubric's 'settings hold still' is about their linework not boiling; Curt may overrule."
+  },
+  {
+   "when": "2026-11-17 08:15",
+   "found": 5,
+   "note": "Round 31 found one minor and four nits: the film page's curl note says it rises 'once more' in chapter 8, when it rises twice there; two figures in chapter 1's games sit on nothing; chapter 5 ends on bare paper instead of specks among the last stars; chapter 2's first footnote stays over the next shot; chapter 9's arcs stay at full strength through 'the arcing decreased'."
   }
  ]
 }
