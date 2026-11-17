@@ -112,7 +112,7 @@
     // Trest's hand goes to his mouth at 'could not be brought to life again'; his head goes down last
     const mouth = win(t, C('p024.1:could not be brought') - .2, C('p024.1:The complicated system'), .8, 1.8), bow2 = win(t, C('p024.1:utterly destroyed') - 1, T1('L') + .5, 1, 1);
     if (mouth > 0) { tp.up = lerp(tp.up ?? .12, 1.75, mouth); tp.fore = lerp(tp.fore ?? .3, 3.6, mouth); }
-    stander(t, TREST, G + 10 + DROP * sit, 46, TRESTW, { who: 'trest', key: 'trest', seed: 7, look: .45 + tl + nod(t, SPEECH) - .5 * bow2, flip: (t > C('p018.1:Trest, 35429') && t < T0('S') + 2) || t > T0('W'), pose: seat(point > 0 ? { up: lerp(.12, 2.6, point), fore: lerp(.3, 2.75, point) } : tp, sit) });   // up at a screen ('this'; he pointed level, at Roal)
+    stander(t, TREST, G + 10 + DROP * sit, 46, TRESTW, { who: 'trest', key: 'trest', seed: 7, look: .45 + tl + nod(t, SPEECH) - .5 * bow2, flip: (t > C('p018.1:Trest, 35429') && t < T0('S') + 2) || t > T0('S') + 3, pose: seat(point > 0 ? { up: lerp(.12, 2.6, point), fore: lerp(.3, 2.75, point) } : tp, sit) });   // up at a screen ('this'; he pointed level, at Roal)
     return roal;
   }
   function hall(t) {
@@ -150,15 +150,15 @@
       const roal = people(t);
       // their designations, lettered the first time they're spoken (DECISIONS.md, 2026-11-01)
       for (const [txt, x, y, a, b] of [['Roal 25374', ROAL - 40, G + 16, C('p018.1:Roal, 25374'), C('p018.1:Trest, 35429') + 2.4], ['Trest 35429', TREST + 40, G + 90, C('p018.1:Trest, 35429'), C('p018.1:Trest, 35429') + 3.2]]) { const k = win(t, a - .1, b, .3, .5); if (k > 0) letter(txt, x, y, 62, INK, { ink: false, font: '700 62px ' + SERIF, spacing: 1, alpha: k }); }   // 62 px in two rows, to read at phone size (at 34 they were 6 px tall on a phone)
-      // D: his thought, the curl, in the darkest tone (the palest and mid washes vanished against the hall's light wall); S: rings as he speaks
+      // D: his thought, the curl, in a dark wash (the palest and mid washes vanished against the hall's light wall); S: rings as he speaks
       // it rises up and out to the left, over the window's light, not along the pier behind him
       push(); translate(roal.head[0], 0); scale(-1, 1); translate(-roal.head[0], 0);
-      // (as KIT.dreamCurl, with an ink edge: in the darkest wash alone it was lost where it crossed the grey pier; inked and
-      // dark, it read as a machine's tentacle, so it is a pale tone inside the ink; it rises from his head itself, its sway
+      // (as KIT.dreamCurl, a soft wash with no ink edge, as the curl is drawn in chapters 7 and 8: inked, dark or pale, it read
+      // as a machine's tentacle or a hose plugged into his head; tone 3, as tone 2 vanished on the wall; it rises from his head itself, its sway
       // growing along it: begun 40 above and swaying 70 off, it first showed as a piece floating over him)
       { const x = roal.head[0] + 10, y = roal.head[1] - 26, k = K(t, 'p018.1:But--life alone', 'p018.1:so Roal was believed'), op = .8 * (1 - ez(t, T0('E') - 1, T0('E'))), P = [];
         if (k > 0 && op > 0) { for (let i = 0; i <= 14 * k; i++) { const u = i / 14; const sw = Math.min(1, u * 4); P.push([x + u * 340 + 60 * sw * Math.sin(u * 7 + t * .6), y - (u * 210 + 30 * sw * Math.sin(u * 5 + t * .4))]); }   // (out wide, under the machines hanging above: rising 300 it ran into one, and read as its arm)
-          if (P.length > 2) { boilSeed('roalcurl'); wash(ribbon(P, 26, 6), 1, { op, ink: true, sw: .9 }); } } }
+          if (P.length > 2) { boilSeed('roalcurl'); wash(ribbon(P, 26, 6), 3, { op }); } } }
       pop();
       hallMachines(t, true);
     });

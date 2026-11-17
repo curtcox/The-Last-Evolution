@@ -213,7 +213,7 @@ shots:
   - id: S
     at: p032.1
     title: Roal speaks
-    seen: Roal in the middle of the floor, the machines round him in a ring, Trest at his side.
+    seen: Roal in the middle of the floor, the machines round him in a ring, Trest at his side, turned to him.
     event: He speaks to them; his thought goes out in a curl.
     camera: moves in to Roal among the machines
     reads:
