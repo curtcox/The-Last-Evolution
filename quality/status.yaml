@@ -102,13 +102,13 @@ items:
   site.watch.content:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: 05b9b71837a4
-    when: 2026-11-18 08:01
+    at: 830c958dd938
+    when: 2026-11-18 13:38
   site.watch.look:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: bbc0c2d2675e
-    when: 2026-11-18 08:01
+    at: a045d8fbcc9d
+    when: 2026-11-18 13:38
   work.title:
     state: pass
     note: "Re-checked after the twenty-fifth round: the masthead (62 px, italic) and byline (64 px) are larger again so they read on a phone (find.small-lettering), the title itself unchanged; on ch00-draft-747111c6 all three lines sit inside the frame with clear space between them (sheet of 0:05-0:14). The header names the 1932 issue ('AMAZING STORIES · August, 1932'), not the 1961 reprint."
@@ -126,9 +126,9 @@ items:
     when: 2026-11-18 08:01
   ch03.picture:
     state: pass
-    note: "On the draft with the thirty-fourth round's fixes: draft ch03-draft-baf7b339, Roal's curl a soft wash with no ink edge and Trest turned to Roal through the speech (find.ch03-curl-hose, find.ch03-trest-away); sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
-    at: ch03-draft-baf7b339.mp4
-    when: 2026-11-18 03:05
+    note: "On the draft with the thirty-sixth round's fixes: draft ch03-draft-4e7a02c0, Roal opening both hands forward in his speech where a stiff level arm came back four times (find.ch03-speech-arm); sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
+    at: ch03-draft-4e7a02c0.mp4
+    when: 2026-11-18 13:15
   find.repo-size:
     state: pass
     note: "Curt chose GitHub Release files. Chapter drafts now go to the repo's drafts release (publish_review.mjs uploads them under content-hashed names), and the pages play them from there with a source element typed video/mp4, which Safari needs because GitHub serves release files as octet-stream. Checked in Chromium and Safari: a draft page, and the annotated film jumping to chapter 7. The old videos stay in git history (about 530 MB); removing them would mean rewriting history and a force push."
@@ -276,54 +276,54 @@ items:
     when: 2026-11-04 09:00
   ch08.acting:
     state: pass
-    note: "On the draft with the thirty-fifth round's fixes: draft ch08-draft-f42093f8, Roal's curl in the dome a soft pale wash rising from his head, with no ink line down it (find.ch08-curl-band); sound unchanged, -14.5 LUFS. Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be."
-    at: ch08-draft-f42093f8.mp4
-    when: 2026-11-18 08:01
+    note: "On the draft with the thirty-sixth round's fixes: draft ch08-draft-9ccdea4c, the parasite close shot centred between the two men, the left of the frame no longer empty (find.ch08-parasite-frame); sound unchanged, -14.5 LUFS. Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be."
+    at: ch08-draft-9ccdea4c.mp4
+    when: 2026-11-18 13:16
   ch08.picture:
     state: pass
-    note: "On the draft with the thirty-fifth round's fixes: draft ch08-draft-f42093f8, Roal's curl in the dome a soft pale wash rising from his head, with no ink line down it (find.ch08-curl-band); sound unchanged, -14.5 LUFS. The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light."
-    at: ch08-draft-f42093f8.mp4
-    when: 2026-11-18 08:01
+    note: "On the draft with the thirty-sixth round's fixes: draft ch08-draft-9ccdea4c, the parasite close shot centred between the two men, the left of the frame no longer empty (find.ch08-parasite-frame); sound unchanged, -14.5 LUFS. The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light."
+    at: ch08-draft-9ccdea4c.mp4
+    when: 2026-11-18 13:16
   ch08.sync:
     state: pass
-    note: "On the draft with the thirty-fifth round's fixes: draft ch08-draft-f42093f8, Roal's curl in the dome a soft pale wash rising from his head, with no ink line down it (find.ch08-curl-band); sound unchanged, -14.5 LUFS. The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median)."
-    at: ch08-draft-f42093f8.mp4
-    when: 2026-11-18 08:01
+    note: "On the draft with the thirty-sixth round's fixes: draft ch08-draft-9ccdea4c, the parasite close shot centred between the two men, the left of the frame no longer empty (find.ch08-parasite-frame); sound unchanged, -14.5 LUFS. The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median)."
+    at: ch08-draft-9ccdea4c.mp4
+    when: 2026-11-18 13:16
   ch08.sound:
     state: pass
-    note: "On the draft with the thirty-fifth round's fixes: draft ch08-draft-f42093f8, Roal's curl in the dome a soft pale wash rising from his head, with no ink line down it (find.ch08-curl-band); sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
-    at: ch08-draft-f42093f8.mp4
-    when: 2026-11-18 08:01
+    note: "On the draft with the thirty-sixth round's fixes: draft ch08-draft-9ccdea4c, the parasite close shot centred between the two men, the left of the frame no longer empty (find.ch08-parasite-frame); sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
+    at: ch08-draft-9ccdea4c.mp4
+    when: 2026-11-18 13:16
   ch08.story:
     state: pass
-    note: "On the draft with the thirty-fifth round's fixes: draft ch08-draft-f42093f8, Roal's curl in the dome a soft pale wash rising from his head, with no ink line down it (find.ch08-curl-band); sound unchanged, -14.5 LUFS. 5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
-    at: ch08-draft-f42093f8.mp4
-    when: 2026-11-18 08:01
+    note: "On the draft with the thirty-sixth round's fixes: draft ch08-draft-9ccdea4c, the parasite close shot centred between the two men, the left of the frame no longer empty (find.ch08-parasite-frame); sound unchanged, -14.5 LUFS. 5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
+    at: ch08-draft-9ccdea4c.mp4
+    when: 2026-11-18 13:16
   ch09.acting:
     state: pass
-    note: "On the draft with the thirty-third round's fixes: draft ch09-draft-df56b69e, the storm raging until 'it was gone', F-2's order and second probe, and the dome parting with the men walking out (find.ch09-storm-gone-early, find.ch09-still-order, find.ch09-dome-shrinks); sound unchanged, -14.4 LUFS. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
-    at: ch09-draft-df56b69e.mp4
-    when: 2026-11-17 22:43
+    note: "On the draft with the thirty-sixth round's fixes: draft ch09-draft-b2ed584f, the sphere caught in the red beam drawn over it and gripped at its narrowed tip, the camera in close, so its straining, shrinking and end read (find.ch09-sphere-death); sound unchanged, -14.4 LUFS. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
+    at: ch09-draft-b2ed584f.mp4
+    when: 2026-11-18 13:37
   ch09.picture:
     state: pass
-    note: "On the draft with the thirty-third round's fixes: draft ch09-draft-df56b69e, the storm raging until 'it was gone', F-2's order and second probe, and the dome parting with the men walking out (find.ch09-storm-gone-early, find.ch09-still-order, find.ch09-dome-shrinks); sound unchanged, -14.4 LUFS. Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
-    at: ch09-draft-df56b69e.mp4
-    when: 2026-11-17 22:43
+    note: "On the draft with the thirty-sixth round's fixes: draft ch09-draft-b2ed584f, the sphere caught in the red beam drawn over it and gripped at its narrowed tip, the camera in close, so its straining, shrinking and end read (find.ch09-sphere-death); sound unchanged, -14.4 LUFS. Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
+    at: ch09-draft-b2ed584f.mp4
+    when: 2026-11-18 13:37
   ch09.sync:
     state: pass
-    note: "On the draft with the thirty-third round's fixes: draft ch09-draft-df56b69e, the storm raging until 'it was gone', F-2's order and second probe, and the dome parting with the men walking out (find.ch09-storm-gone-early, find.ch09-still-order, find.ch09-dome-shrinks); sound unchanged, -14.4 LUFS. The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
-    at: ch09-draft-df56b69e.mp4
-    when: 2026-11-17 22:43
+    note: "On the draft with the thirty-sixth round's fixes: draft ch09-draft-b2ed584f, the sphere caught in the red beam drawn over it and gripped at its narrowed tip, the camera in close, so its straining, shrinking and end read (find.ch09-sphere-death); sound unchanged, -14.4 LUFS. The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
+    at: ch09-draft-b2ed584f.mp4
+    when: 2026-11-18 13:38
   ch09.sound:
     state: pass
-    note: "On the draft with the thirty-third round's fixes: draft ch09-draft-df56b69e, the storm raging until 'it was gone', F-2's order and second probe, and the dome parting with the men walking out (find.ch09-storm-gone-early, find.ch09-still-order, find.ch09-dome-shrinks); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
-    at: ch09-draft-df56b69e.mp4
-    when: 2026-11-17 22:43
+    note: "On the draft with the thirty-sixth round's fixes: draft ch09-draft-b2ed584f, the sphere caught in the red beam drawn over it and gripped at its narrowed tip, the camera in close, so its straining, shrinking and end read (find.ch09-sphere-death); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
+    at: ch09-draft-b2ed584f.mp4
+    when: 2026-11-18 13:38
   ch09.story:
     state: pass
-    note: "On the draft with the thirty-third round's fixes: draft ch09-draft-df56b69e, the storm raging until 'it was gone', F-2's order and second probe, and the dome parting with the men walking out (find.ch09-storm-gone-early, find.ch09-still-order, find.ch09-dome-shrinks); sound unchanged, -14.4 LUFS. 5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
-    at: ch09-draft-df56b69e.mp4
-    when: 2026-11-17 22:43
+    note: "On the draft with the thirty-sixth round's fixes: draft ch09-draft-b2ed584f, the sphere caught in the red beam drawn over it and gripped at its narrowed tip, the camera in close, so its straining, shrinking and end read (find.ch09-sphere-death); sound unchanged, -14.4 LUFS. 5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
+    at: ch09-draft-b2ed584f.mp4
+    when: 2026-11-18 13:38
   find.ship-opaque:
     state: pass
     note: "New draft, ch10 2:14-2:22: the flagship's hull hides the ships behind it; no ribs or bands show through."
@@ -401,24 +401,24 @@ items:
     when: 2026-11-18 08:01
   ch03.acting:
     state: pass
-    note: "On the draft with the thirty-fourth round's fixes: draft ch03-draft-baf7b339, Roal's curl a soft wash with no ink edge and Trest turned to Roal through the speech (find.ch03-curl-hose, find.ch03-trest-away); sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
-    at: ch03-draft-baf7b339.mp4
-    when: 2026-11-18 03:05
+    note: "On the draft with the thirty-sixth round's fixes: draft ch03-draft-4e7a02c0, Roal opening both hands forward in his speech where a stiff level arm came back four times (find.ch03-speech-arm); sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
+    at: ch03-draft-4e7a02c0.mp4
+    when: 2026-11-18 13:15
   ch03.sync:
     state: pass
-    note: "On the draft with the thirty-fourth round's fixes: draft ch03-draft-baf7b339, Roal's curl a soft wash with no ink edge and Trest turned to Roal through the speech (find.ch03-curl-hose, find.ch03-trest-away); sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
-    at: ch03-draft-baf7b339.mp4
-    when: 2026-11-18 03:05
+    note: "On the draft with the thirty-sixth round's fixes: draft ch03-draft-4e7a02c0, Roal opening both hands forward in his speech where a stiff level arm came back four times (find.ch03-speech-arm); sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
+    at: ch03-draft-4e7a02c0.mp4
+    when: 2026-11-18 13:15
   ch03.sound:
     state: pass
-    note: "On the draft with the thirty-fourth round's fixes: draft ch03-draft-baf7b339, Roal's curl a soft wash with no ink edge and Trest turned to Roal through the speech (find.ch03-curl-hose, find.ch03-trest-away); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
-    at: ch03-draft-baf7b339.mp4
-    when: 2026-11-18 03:05
+    note: "On the draft with the thirty-sixth round's fixes: draft ch03-draft-4e7a02c0, Roal opening both hands forward in his speech where a stiff level arm came back four times (find.ch03-speech-arm); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
+    at: ch03-draft-4e7a02c0.mp4
+    when: 2026-11-18 13:15
   ch03.story:
     state: pass
-    note: "On the draft with the thirty-fourth round's fixes: draft ch03-draft-baf7b339, Roal's curl a soft wash with no ink edge and Trest turned to Roal through the speech (find.ch03-curl-hose, find.ch03-trest-away); sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
-    at: ch03-draft-baf7b339.mp4
-    when: 2026-11-18 03:05
+    note: "On the draft with the thirty-sixth round's fixes: draft ch03-draft-4e7a02c0, Roal opening both hands forward in his speech where a stiff level arm came back four times (find.ch03-speech-arm); sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
+    at: ch03-draft-4e7a02c0.mp4
+    when: 2026-11-18 13:15
   ch05.acting:
     state: pass
     note: "On the draft with the thirty-first round's fixes: draft ch05-draft-e6f54f9f, the night lingering high above the dawn so the tilt up ends on the specks among the last stars (find.ch05-end-paper); sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
@@ -1904,6 +1904,31 @@ items:
     note: "Fixed: on draft ch06-draft-1fcf4ece eight red-black spots come one after another over each screen from 'flecks and spots' (2:24-2:32) and grow, plain on the pale hulls; no longer black dots lost on black."
     title: "Chapter 6, 2:18-2:28: the 'so dully red that they seemed black' flecks don't show"
     when: 2026-11-18 08:00
+  find.ch09-sphere-death:
+    state: pass
+    note: "Fixed: on draft ch09-draft-b2ed584f the white sphere is drawn over the red beam and stops partway along it, the beam narrowing to grip it, the camera in close from 'The sphere leaped' (2:33-2:51): a clear white ball held at the beam's tip, straining, spraying, shrinking through orange and green to nothing; then out again to the plant and F-2. Orange and green still land on their words."
+    title: "Chapter 9, 2:33-2:50: the sphere caught in the beam is a few white pixels; its shrinking and vanishing don't read"
+    when: 2026-11-18 13:37
+  find.ch03-speech-arm:
+    state: pass
+    note: "Fixed: on draft ch03-draft-4e7a02c0 Roal's speech to the machines takes its gestures from a local table in which the stiff level arm is both hands opening forward (6:21, 7:35, 7:47 checked; the wide at 6:58 has the change too); the 'Attack--therefore!' arm thrown up is unchanged."
+    title: "Chapter 3, 6:16-7:58: Roal's speech repeats one stiff straight arm (6:21, 6:58, 7:35, 7:47)"
+    when: 2026-11-18 13:15
+  find.ch08-parasite-frame:
+    state: pass
+    note: "Fixed: on draft ch08-draft-9ccdea4c the parasite close shot (0:41-1:12) is centred between the two men, Roal left of centre, Trest right, the curl rising between, F-2 out of frame at the right; no empty left half."
+    title: "Chapter 8, 0:41-1:12: the parasite close shot sits right, the left 45% black"
+    when: 2026-11-18 13:15
+  find.site-film-poster:
+    state: pass
+    note: "Fixed: the film page's player has the title page (img/ch00-A, published as ch00-A-505ca1b9.jpg) as its poster, so the player shows the title before it plays."
+    title: "Film page: the player's first frame is bare paper; a poster of the title page"
+    when: 2026-11-18 13:15
+  find.ch02-break-silence:
+    state: pass
+    note: "Declined: the scene break's 2.5 s is set by the timeline (tools/timeline.mjs, 2.5 s at a scene break) as a breath between scenes, and at -54 dB it is no quieter than the film's other held pauses: chapter 2's 2.3 s before p017 (4:50) and five 2.3-2.8 s gaps in chapter 5 measure the same. Chapter 5's break carries sound only because the workshop's 'weird symphony' runs across it from 'Suddenly' to 'softened to a sigh', as the text has it; nothing in chapter 2 sounds across its break."
+    title: "Chapter 2, 3:32.4-3:35.0: 2.5 s of full silence at the scene break"
+    when: 2026-11-18 08:19
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -2049,4 +2074,8 @@ fresh:
     found: 4
     note: "Round 35: one minor (ch08 Roal's curl in the dome a hard-edged grey band hanging detached over his head) and three nits (ch02 Outsiders drawn through each other at 2:31; ch02 kilad footnote held 2 s past the cut; ch06 'dully red, that they seemed black' flecks don't show)."
     state: 08eb2a5dad22
-since_fresh: 21
+  - when: 2026-11-18 08:15
+    found: 5
+    note: "Round 36 found one minor and four nits: in chapter 9 the sphere caught in the plant's beam is a few white pixels, so its shrinking and end don't read; Roal's speech in chapter 3 repeats one stiff straight arm; chapter 8's parasite close shot leaves the left half black; the film page's player opens on bare paper; chapter 2 goes silent 2.5 s at its scene break."
+    state: 62719e3f51de
+since_fresh: 22
