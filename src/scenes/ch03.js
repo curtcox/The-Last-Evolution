@@ -108,12 +108,13 @@
     const rue = win(t, C('p024.1:can be revived') - .3, C('p024.1:had been literally'), .7, 1.6), bow = win(t, C('p024.1:burned out'), T1('L') + .5, 1.2, 1); pose.up = lerp(pose.up, 1.05, rue); pose.fore = lerp(pose.fore, 1.9, rue); pose.torso = .06 * bow;
     const gl = arm ? 0 : t < tBut + 1 ? gesture(t, pose, TELL) : gestureR(t, pose, SPEECH);
     // 'that little chuckle': his head goes back a little, a smile, the shoulders bobbing
-    const ch = win(t, C('p033.4'), C('p033.4') + 2.2, .3, .6); if (ch > 0) pose.torso = (pose.torso ?? 0) - .05 * ch * Math.abs(Math.sin(t * 15));
+    // (at .05 with the arms down it was a head tilt, gone at phone size): now a hand to his middle and the shoulders shaking
+    const ch = win(t, C('p033.4'), C('p033.4') + 2.6, .3, .7); if (ch > 0) { pose.torso = (pose.torso ?? 0) - ch * (.06 + .09 * Math.abs(Math.sin(t * 9))); pose.up = lerp(pose.up, .3, ch); pose.fore = lerp(pose.fore, 2.55, ch); }
     // 'Hour after hour they sat watching': on stools the machines have brought, risen again before he speaks
     const sit = t > T0('P') ? 1 - ez(t, T0('S') - 3.2, T0('S') - 2) : 0; seat(pose, sit);
     // Q: Roal leans to look where Trest points, then points out another ('or that')
     const rpt = win(t, C('p030.1:that.') - .3, T1('Q') + .2, .35, .5), lean = win(t, C('p030.1:calling'), T1('Q'), .6, .6); if (rpt > 0) { pose.up = lerp(pose.up, 2.6, rpt); pose.fore = lerp(pose.fore, 2.75, rpt); } pose.torso = (pose.torso ?? 0) + .06 * lean;
-    const roal = stander(t, ROAL, G + DROP * sit, 44, ROALW, { who: 'roal', key: 'roal', seed: 3, look: lerp((t < T0('S') ? .5 : .15) + gl - .15 * ch, .55, back) - .55 * bow + .2 * lean, pose, talk: talk(t, 'roal'), smile: ch, flip: back > .5 });
+    const roal = stander(t, ROAL, G + DROP * sit, 44, ROALW, { who: 'roal', key: 'roal', seed: 3, look: lerp((t < T0('S') ? .5 : .15) + gl - .3 * ch, .55, back) - .55 * bow + .2 * lean, pose, talk: talk(t, 'roal'), smile: ch, flip: back > .5 });
     const point = win(t, C('p030.1:calling') - .5, C('p030.1:that.') - .2, .4, .5), tp = {}, tl = t > T0('S') + 2 ? listen(t, tp, SPEECH, 2) : t > tInv - 1 && t < tBut + 2 ? listen(t, tp, TELL, 1) : 0;   // through the telling and the speech Trest listens
     // Trest's hand goes to his mouth at 'could not be brought to life again'; his head goes down last
     const mouth = win(t, C('p024.1:could not be brought') - .2, C('p024.1:The complicated system'), .8, 1.8), bow2 = win(t, C('p024.1:utterly destroyed') - 1, T1('L') + .5, 1, 1);
