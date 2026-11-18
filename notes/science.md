@@ -62,7 +62,7 @@ known to exist for six hundred years, and still untapped".
 - **August 2:** Carl Anderson photographs the positron, the electron's antimatter twin ([positron][wp-positron]). It's
   the first real particle that can annihilate an electron.
 
-The story appeared in the August issue, so Campbell was writing it in the months when the atom first came apart.
+The story appeared in the August issue, the year the atom first came apart; when Campbell wrote it isn't recorded.
 
 **What we know now.** Matter can annihilate, but only with its own antimatter: an electron with a positron, a proton
 with an antiproton ([annihilation][wp-annihilation]). A proton and an electron never annihilate, and no one has ever
