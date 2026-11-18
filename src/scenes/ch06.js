@@ -64,7 +64,12 @@
     boilSeed('scr' + key); inkLine([...Array(41)].map((_, i) => { const a = i / 40 * TAU; return [x + Math.cos(a) * rx, y + Math.sin(a) * ry * (1 + .04 * Math.sin(t * 5 + i))]; }), 1.5 * (1 - calm), col, 'inkfine', .5);
     for (let i = 0; i < 10; i++) { const a = i / 10 * TAU; glow(x + Math.cos(a) * rx, y + Math.sin(a) * ry, len * .2, col, (heat > .9 ? .25 : .45) * (1 - calm)); }
     for (const [hx, hy] of hits) { glow(hx, hy, len * .3, col, .6); glow(hx, hy, len * .1, NRG.white, .5); }
-    if (t > tBlack + .1) for (let i = 0; i < 7; i++) { const a = hash(i * 1.7 + (typeof key === 'number' ? key : 99)) * TAU; boilSeed('fleck' + key + i); wash(ellPts(x + Math.cos(a) * rx * .95, y + Math.sin(a) * ry * .95, 16, 10, 12), 4, { op: ez(t, tBlack, tBlack + 4) * (1 - calm) }); }
+    // 'flecks and spots appeared so dully red, that they seemed black': red-black spots coming one after another over the
+    // whole screen and growing, over the hull too (seven small dark-grey dots on the ring alone were lost on the black of space)
+    if (t > tBlack + .1) { const kk = typeof key === 'number' ? key : 99;
+      for (let i = 0; i < 8; i++) { const t0 = tBlack + i * .5, g = ez(t, t0, t0 + 2.5); if (g <= 0) continue;
+        const a = hash(i * 1.7 + kk) * TAU, r = .35 + .6 * hash(i * 3.1 + kk * .7), w = len * (.02 + .02 * hash(i * 5.3 + kk)) * g;
+        boilSeed('fleck' + key + i); paint(ellPts(x + Math.cos(a) * rx * r, y + Math.sin(a) * ry * r, w, w * .65, 12), { wash: '#2A0D09', washOp: 210 * (1 - calm), ink: null }); } }
   }
   // 'some few free ships had turned to the help of their attacked sister-ships': three with no mote on them, coming down
   // over the top rank; their fire is what makes the puffs
