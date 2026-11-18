@@ -167,8 +167,8 @@
         if (fl > 0) for (let k = 0; k < 3; k++) { const q = frac((t - tFlex) * 1.1 + k / 3), r = 22 + 70 * q; boilSeed('rip' + k);
           inkLine([...Array(9)].map((_, j) => { const a = -1.1 + j / 8 * 2.2; return [cx + Math.cos(a) * r * .55, cy + Math.sin(a) * r]; }), 1.1 * fl * (1 - q), '#EFE6D2', 'inkfine', 0); }   // the covering flexing
         const hit = win(t, C('p011.1:terrific') - .1, C('p011.1:force.') + .4, .1, .5); if (hit > 0) { glow(cx + 10, cy, 110, NRG.white, .55 * hit); glow(cx + 10, cy, 40, NRG.white, .8 * hit); } }
-      // the others clustering round him (I)
-      for (let i = 0; i < 2; i++) if (t > tI - 1) crawler(lerp(1100, i ? 2080 : 1560, ez(t, tI - 1, tI + 4)), t, 5 + i, { s: 32, g: NEAR - 25 });
+      // the others clustering round him (I), both coming up on his left (the second, going on to 2080, walked through him)
+      for (let i = 0; i < 2; i++) { const a = i ? tI : tI + 1.3; if (t > a) crawler(lerp(900, i ? 1590 : 1380, ez(t, a, a + 3.2)), t, 5 + i, { s: 32, g: NEAR - 25 }); }   // one after the other, in from off the left as the camera moves on, past the far one pacing (side by side, or in while the camera held, they crossed him and each other)
       // J: the power room: the plungers over their sockets, the ship-brain shattered; the signals; the plungers shutting
       boilSeed('brain'); wash(ellPts(3720, 520, 120, 90, 18, 30), 3, { ink: true, sw: .7 }); for (let k = 0; k < 6; k++) inkLine([[3720, 520], [3720 + Math.cos(k) * 120, 520 + Math.sin(k) * 90]], .6, INK);
       const tSig = C('p013.1:relayed the control signals');
