@@ -92,6 +92,7 @@
     const c = cam(t, [[0, tt => [PX - 100, lerp(560, 420, ez(tt, T0('B'), tC)), lerp(.75, .85, ez(tt, T0('B'), tC))]], [tC, [...LENS, 2.2], 2], [tD, tt => [PX - 200, lerp(500, 200, ez(tt, tD, tDark)), lerp(1.2, .7, ez(tt, tD, tDark))], 3],
       [C('p117.1:a howling wind') - .5, tt => [PX - 380, 640, 1.5], 2.5],   // in on the 'tiny rounded hull' the wind tears at; at the wide it was too small to see it held
       [tE, [PX, ORB[1] + 120, 1.1], 3], [tF, [PX - 100, ORB[1] + 200, .9], 3], [tG, [PX - 160, ORB[1] + 60, 1.5], 2.5], [tH, [PX, ORB[1], 2.2], 2.5], [tI, tt => [lerp(PX - 220, PX + 60, ez(tt, tStabEnd, tStabEnd + 2.5)), lerp(ORB[1] + 160, ORB[1] + 100, ez(tt, tStabEnd, tStabEnd + 2.5)), lerp(1.35, 1, ez(tt, tStabEnd, tStabEnd + 2.5))], 2],   // in on the globe and F-2 for the stab and the dodge; then out to hold the plant, the beam and the sphere together through the duel (it went wide 0.5 s after the stab, F-2 cut by the edge)
+      [C('p121.4:The sphere leaped') - .3, [PX + 130, ORB[1] - 20, 1.5], 2],   // in on the sphere in the beam as it leaps, is caught and shrinks (held out at 1, it was a white dot lost at the beam's tip)
       [tJ, tt => [lerp(PX - 100, PX + 60, ez(tt, tJ, tJ + 10)), 80, .72], 3],   // J: the storm on the plant again, wide enough for the lightning
       [C('p122.1:C-R-U-1 joined him') - 2, [PX - 500, RG - 95, 3], 2.5],   // in on C-R-U-1 floating in beside F-2, its gold name readable (at 1.7 it was 45 px across, a glint on a phone)
       [C('p122.1:red glory of the sun') - .5, tt => [lerp(PX - 300, PX + 350, ez(tt, C('p122.1:red glory of the sun') - .5, tK)), lerp(760, 680, ez(tt, C('p122.1:red glory of the sun'), tK)), lerp(1.3, .95, ez(tt, C('p122.1:red glory of the sun') - .5, tK))], 3],   // round, so the red sun rises behind them
@@ -121,17 +122,17 @@
       beam(PX, TOP + 10, b[0], b[1], 30, 20, FORCE, 1, { washOp: 30, a: .5 * st, splash: false }); }
     // F to I: the white globe; F-2's probing; the stab; the red beam, shrinking it through orange and green
     // after its stab the globe draws back, up and away; the red beam reaches for where it was, and on 'The sphere leaped
-    // forward' it leaps back into the beam, which catches it (the beam had it 4 s early, sitting on the plant)
+    // forward' it leaps partway back into the beam, which catches it (the beam had it 4 s early, sitting on the plant)
     // (the beam stops short of it until 'caught', and its sparks wait for 'terrific flashing energies': reaching it at once and
     // spraying from the leap, it read as caught before it leaped)
     const tLeap = C('p121.4:The sphere leaped'), tCaught = C('p121.4:the beam caught it'), tSpray = C('p121.4:terrific flashing') - .2;
-    const back = ez(t, tStabEnd, tStabEnd + 1.3) * (1 - ez(t, tLeap - .1, tLeap + .6)), orb = [ORB[0] + 420 * back, ORB[1] - 190 * back];
+    const back = ez(t, tStabEnd, tStabEnd + 1.3) * (1 - .55 * ez(t, tLeap - .1, tLeap + .6)), orb = [ORB[0] + 420 * back, ORB[1] - 190 * back];
     const g1 = t > tClr - 1.5 && t < tGone + .3, shrink = 1 - .9 * ez(t, C('p121.4:shrinking swiftly') - .2, tGone), arcs = 1 - .85 * ez(t, C('p121.4:the arcing decreased') - .2, C('p121.4:the arcing decreased') + 1.2);   // it shrinks on 'shrinking swiftly' and its arcs fall away on 'the arcing decreased' (they sprayed at full strength till green)
-    if (g1) { const r = 20 * shrink * (t < tClr ? seg(t, tClr - 1.5, tClr) : 1);   // it forms out of the storm's ball of force as the storm clears
+    const globe = () => { if (g1) { const r = 20 * shrink * (t < tClr ? seg(t, tClr - 1.5, tClr) : 1);   // it forms out of the storm's ball of force as the storm clears
       if (t > tCaught) { const strain = 1 - ez(t, tSpray, tSpray + .5); orb[0] += 8 * strain * Math.sin(t * 31); orb[1] += 6 * strain * Math.cos(t * 27); }   // 'it seemed to strain'
       if (t > tSpray) for (let i = 0; i < 6; i++) { if (i >= Math.round(6 * arcs) && hash(Math.floor(t * 8) * 7 + i) > .25) continue; const a = hash(Math.floor(t * 8) + i) * TAU, L = 300 * (.35 + .65 * shrink) * (.5 + .5 * arcs);
         boilSeed('spray' + i + Math.floor(t * 12)); lightning(...orb, orb[0] + Math.cos(a) * L, orb[1] + Math.sin(a) * L, '#FFE2B0', { amp: .2, r: 30 * (.4 + .6 * arcs) }); }
-      glow(...orb, r * 3, NRG.white, .6); glow(...orb, r * 1.4, '#FFFDF6', .9); }   // the globe over its arcs, so its shrinking shows
+      glow(...orb, r * 3, NRG.white, .6); glow(...orb, r * 1.4, '#FFFDF6', .9); if (t > tRed) { boilSeed('globe'); paint(ellPts(...orb, r * 1.1, r * 1.1, 14), { wash: '#FFFDF6', washOp: 255, ink: null }); } } };   // the globe over its arcs, so its shrinking shows; drawn over the red beam (under it, and leaping back to the crown, it was lost in the beam's glow)
     if (t > tH && t < tStab + .5) thoughtRings(...ORB, t, tH, C('p121.3$'), { r1: 400, col: '#FFFDF6' });
     const f2 = f2At(t);
     // G: F-2's probing lines reach the globe and are turned aside, then drawn back on 'brushed away'; its order goes down
@@ -155,8 +156,10 @@
       // aimed at the globe where it hangs, reaching most of the way and falling short until it leaps; far wider than the
       // blue-white stab it answers ('an enormously greater beam': at 90 wide it read as a stub, smaller than the stab)
       const reach = ez(t, tRed - .2, tRed + 2.5), tip = lerpP([PX, TOP], orb, .5 + .35 * reach), end = lerpP(tip, orb, ez(t, tCaught - .35, tCaught + .05)), on = ez(t, tRed - .2, tRed + .3);
-      beam(PX, TOP + 20, ...end, 300, 150 * shrink + 50, col, on, { washOp: 90, a: .7 }); beam(PX, TOP + 20, ...end, 120, 50 * shrink + 20, mixCol(col, '#FFE0C8', .25), on, { washOp: 120, a: .8, splash: false });
-      glow(PX, TOP + 20, 260, col, .45 * on); glow(...end, 140, col, .55); }
+      const grip = ez(t, tCaught - .35, tCaught + .3), w1 = lerp(150 * shrink + 50, 70 * shrink + 14, grip), w2 = lerp(50 * shrink + 20, 26 * shrink + 6, grip);   // once it has the sphere the beam narrows to grip it (at 200 wide where it held it, the globe was a speck in its end)
+      beam(PX, TOP + 20, ...end, 300, w1, col, on, { washOp: 90, a: .7 }); beam(PX, TOP + 20, ...end, 120, w2, mixCol(col, '#FFE0C8', .25), on, { washOp: 120, a: .8, splash: false });
+      glow(PX, TOP + 20, 260, col, .45 * on); glow(...end, 60, col, .35); }
+    globe();
     // F-2; C-R-U-1 joining it at dawn
     DES.f2(f2[0], f2[1] + 2.4 * FS, FS, t, { view: 'side' });
     if (t > C('p122.1:C-R-U-1 joined him') - 3) { const k = ez(t, C('p122.1:C-R-U-1 joined him') - 3, C('p122.1:C-R-U-1 joined him') + 1); DES.cru1(lerp(-600, f2[0] - 140, k), f2[1] + 60 + 2.2 * 30, 30, t, { glowK: 1 }); }
