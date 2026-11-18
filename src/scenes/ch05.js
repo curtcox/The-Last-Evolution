@@ -436,7 +436,7 @@
     [T0('W'), t => [WORK[0] + 150, 740, 1.12], { mv: 1.2, lead: .4 }],
     [T0('X'), t => [1290, 730, .95], { mv: 1.5, lead: .3 }],   // the fallen F-1 whole in frame (at 1110, 1.1 it lay half out of it)
     [T0('Y'), t => [WORK[0] - 40, WORK[1] + 20, 1.6 + .25 * along(t, 'Y')], { mv: 2.4, lead: .3 }],   // F-1's hulk kept out of frame: cut by the edge to its end disc, it read as an upright ellipse, another thing from the hulk lying in Z
-    [T0('Z'), t => [lerp(1000, 1040, along(t, 'Z')), 700, 1.05], { mv: 2.5, lead: .3 }],
+    [T0('Z'), t => [lerp(1200, 1230, along(t, 'Z')), 700, .95], { mv: 2.5, lead: .3 }],   // wide enough to take in F-1's lens end (at 1000 and 1.05 it was a cropped cylinder at the edge as F-2 spoke of it)
     [T0('AA'), t => [1150, 760, 1.15 + .05 * along(t, 'AA')], { mv: 2, lead: .4 }],
     [T0('AB'), t => { const p = ez(t, C('p064.1:as they are in you'), C('p064.1:nor molecular') + 1); return [lerp(WORK[0] + 120, WORK[0] - 160, p), WORK[1] - 20, 2]; }, { mv: 2.2, lead: .3 }],
     [T0('AC'), t => [WORK[0] - 40, WORK[1], 2.2 + .3 * along(t, 'AC')], { mv: 1.8, lead: .3 }],
