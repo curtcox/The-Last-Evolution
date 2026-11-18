@@ -1,9 +1,9 @@
 {
  "summary": {
-  "pass": 398,
+  "pass": 401,
   "stale": 0,
   "open": 0,
-  "curt": 10,
+  "curt": 11,
   "later": 3
  },
  "satisfied": false,
@@ -43,7 +43,7 @@
   },
   "live": {
    "state": "pass",
-   "detail": "33 pages live, the deploy is this commit"
+   "detail": "33 pages live (not compared: HEAD has changes not pushed)"
   }
  },
  "curt": [
@@ -96,6 +96,11 @@
    "id": "find.site-every-word-spoken",
    "title": "Foreword: 'Every word of it is spoken, in order', but the two footnotes are lettered on screen, not spoken",
    "ask": "From the thirty-third fresh-eyes round. The foreword's wording is yours. 'Every word of it is in the film, in order' would also cover the two lettered footnotes (the draft banner above it already says they are lettered). Change it, or keep it?"
+  },
+  {
+   "id": "find.site-foreword-age",
+   "title": "Foreword: 'Campbell was 22 and finishing a physics degree' puts his age at the writing, which isn't recorded",
+   "ask": "From the thirty-eighth fresh-eyes round. The foreword's wording is yours. Under 'When it was written' it says Campbell was 22. He turned 22 on 8 June 1932, weeks before the August issue, and when he wrote it isn't recorded (the science notes now say so; Moskowitz says Twilight came first). Suggested: 'Campbell was 22 when it appeared, the year he finished a physics degree.' Change it, or keep it?"
   }
  ],
  "items": [
@@ -104,42 +109,42 @@
    "area": "film",
    "title": "Chapter 5: the acting",
    "state": "pass",
-   "note": "On the draft with the thirty-seventh round's fixes: draft ch05-draft-51b6e0ba, Roal leans in, looks down to where F-1 was and draws a hand to his chest through F-2's speech on itself, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
+   "note": "On the draft with the thirty-eighth round's fixes: draft ch05-draft-65a7fcd4, Roal's thought-curl over the couch is wider and solid, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
   },
   {
    "id": "ch05.picture",
    "area": "film",
    "title": "Chapter 5: the picture",
    "state": "pass",
-   "note": "On the draft with the thirty-seventh round's fixes: draft ch05-draft-51b6e0ba, Roal leans in, looks down to where F-1 was and draws a hand to his chest through F-2's speech on itself, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The hall at night with F-1 vast; the atom plates (orbits, grid, light); the spiralling air field, arcs and flame, aura and lightning; F-1's hulk; F-2 with rings and memories; the ball of forces, the ruler, the guinea pig cage in the pale beam; dawn on the rock with tiny machines streaming up. Dark but legible."
+   "note": "On the draft with the thirty-eighth round's fixes: draft ch05-draft-65a7fcd4, Roal's thought-curl over the couch is wider and solid, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The hall at night with F-1 vast; the atom plates (orbits, grid, light); the spiralling air field, arcs and flame, aura and lightning; F-1's hulk; F-2 with rings and memories; the ball of forces, the ruler, the guinea pig cage in the pale beam; dawn on the rock with tiny machines streaming up. Dark but legible."
   },
   {
    "id": "ch05.sync",
    "area": "film",
    "title": "Chapter 5: picture against sound",
    "state": "pass",
-   "note": "On the draft with the thirty-seventh round's fixes: draft ch05-draft-51b6e0ba, Roal leans in, looks down to where F-1 was and draws a hand to his chest through F-2's speech on itself, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Cuts on cue words (F-1 on 'Roal--your thoughts', 'Roal sat up', the plate on 'Hydrogen'); Whisper timing -0.12 s median."
+   "note": "On the draft with the thirty-eighth round's fixes: draft ch05-draft-65a7fcd4, Roal's thought-curl over the couch is wider and solid, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Cuts on cue words (F-1 on 'Roal--your thoughts', 'Roal sat up', the plate on 'Hydrogen'); Whisper timing -0.12 s median."
   },
   {
    "id": "ch05.sound",
    "area": "film",
    "title": "Chapter 5: the sound",
    "state": "pass",
-   "note": "On the draft with the thirty-seventh round's fixes: draft ch05-draft-51b6e0ba, Roal leans in, looks down to where F-1 was and draws a hand to his chest through F-2's speech on itself, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 3.8; the quiet shots C, D, H, I and AH are pauses, their speech -14.1 to -14.7; Whisper lost 12 of 1107 (names, coinages, 'asked')."
+   "note": "On the draft with the thirty-eighth round's fixes: draft ch05-draft-65a7fcd4, Roal's thought-curl over the couch is wider and solid, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 3.8; the quiet shots C, D, H, I and AH are pauses, their speech -14.1 to -14.7; Whisper lost 12 of 1107 (names, coinages, 'asked')."
   },
   {
    "id": "ch05.story",
    "area": "film",
    "title": "Chapter 5: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the thirty-seventh round's fixes: draft ch05-draft-51b6e0ba, Roal leans in, looks down to where F-1 was and draws a hand to his chest through F-2's speech on itself, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. 9:03: Roal thinks out the hydrogen wall; F-1 builds its successor and is unmade by it; F-2 makes the ruler, tests the green beam on a guinea pig, and the machines build outward. The pilot still holds as the standard."
+   "note": "On the draft with the thirty-eighth round's fixes: draft ch05-draft-65a7fcd4, Roal's thought-curl over the couch is wider and solid, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. 9:03: Roal thinks out the hydrogen wall; F-1 builds its successor and is unmade by it; F-2 makes the ruler, tests the green beam on a guinea pig, and the machines build outward. The pilot still holds as the standard."
   },
   {
    "id": "ch05.draft",
    "area": "film",
    "title": "Chapter 5: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch05-draft-51b6e0ba.mp4, -14.5 LUFS, peak -2 dBTP"
+   "note": "ch05-draft-65a7fcd4.mp4, -14.5 LUFS, peak -1.9 dBTP"
   },
   {
    "id": "ch00.acting",
@@ -440,42 +445,42 @@
    "area": "film",
    "title": "Chapter 8: the acting",
    "state": "pass",
-   "note": "On the draft with the thirty-sixth round's fixes: draft ch08-draft-9ccdea4c, the parasite close shot centred between the two men, the left of the frame no longer empty (find.ch08-parasite-frame); sound unchanged, -14.5 LUFS. Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be."
+   "note": "On the draft with the thirty-eighth round's fixes: draft ch08-draft-073bbd31, the camera moves in on F-2 as it makes its duplicate, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be."
   },
   {
    "id": "ch08.picture",
    "area": "film",
    "title": "Chapter 8: the picture",
    "state": "pass",
-   "note": "On the draft with the thirty-sixth round's fixes: draft ch08-draft-9ccdea4c, the parasite close shot centred between the two men, the left of the frame no longer empty (find.ch08-parasite-frame); sound unchanged, -14.5 LUFS. The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light."
+   "note": "On the draft with the thirty-eighth round's fixes: draft ch08-draft-073bbd31, the camera moves in on F-2 as it makes its duplicate, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light."
   },
   {
    "id": "ch08.sync",
    "area": "film",
    "title": "Chapter 8: picture against sound",
    "state": "pass",
-   "note": "On the draft with the thirty-sixth round's fixes: draft ch08-draft-9ccdea4c, the parasite close shot centred between the two men, the left of the frame no longer empty (find.ch08-parasite-frame); sound unchanged, -14.5 LUFS. The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median)."
+   "note": "On the draft with the thirty-eighth round's fixes: draft ch08-draft-073bbd31, the camera moves in on F-2 as it makes its duplicate, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median)."
   },
   {
    "id": "ch08.sound",
    "area": "film",
    "title": "Chapter 8: the sound",
    "state": "pass",
-   "note": "On the draft with the thirty-sixth round's fixes: draft ch08-draft-9ccdea4c, the parasite close shot centred between the two men, the left of the frame no longer empty (find.ch08-parasite-frame); sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
+   "note": "On the draft with the thirty-eighth round's fixes: draft ch08-draft-073bbd31, the camera moves in on F-2 as it makes its duplicate, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
   },
   {
    "id": "ch08.story",
    "area": "film",
    "title": "Chapter 8: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the thirty-sixth round's fixes: draft ch08-draft-9ccdea4c, the parasite close shot centred between the two men, the left of the frame no longer empty (find.ch08-parasite-frame); sound unchanged, -14.5 LUFS. 5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
+   "note": "On the draft with the thirty-eighth round's fixes: draft ch08-draft-073bbd31, the camera moves in on F-2 as it makes its duplicate, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. 5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
   },
   {
    "id": "ch08.draft",
    "area": "film",
    "title": "Chapter 8: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch08-draft-9ccdea4c.mp4, -14.5 LUFS, peak -1.7 dBTP"
+   "note": "ch08-draft-073bbd31.mp4, -14.5 LUFS, peak -1.7 dBTP"
   },
   {
    "id": "ch09.acting",
@@ -2933,14 +2938,37 @@
    "title": "Chapter 5, 5:59-6:12: Roal holds one pose through F-2's memory-stacks speech",
    "state": "pass",
    "note": "Fixed in 61839bb: through F-2's speech on itself Roal leans in and reaches toward it, looks down to where F-1 was, and draws a hand to his chest at 'all memories'. Checked on draft ch05-draft-51b6e0ba at 6:00-6:31: the reach, the look down and the hand to chest all read; SSIM against ch05-draft-e6f54f9f dips there (.97); the other dips (0:45, 4:49, 9:01, about .955) were compared frame by frame and are identical apart from grain; -14.5 LUFS."
+  },
+  {
+   "id": "find.site-afterword-twilight-source",
+   "area": "finding",
+   "title": "Afterword: 'the story he'd written first and couldn't sell' is cited only to Wikipedia's Twilight page, which doesn't say it",
+   "state": "pass",
+   "note": "Fixed: the afterword now cites Moskowitz's 1961 introduction (the archive.org scan, as the fact-check and history page do) beside the Wikipedia page for 'the story he'd written first and couldn't sell'. Checked on the built film page: both links show."
+  },
+  {
+   "id": "find.site-foreword-age",
+   "area": "finding",
+   "title": "Foreword: 'Campbell was 22 and finishing a physics degree' puts his age at the writing, which isn't recorded",
+   "state": "curt",
+   "note": "From the thirty-eighth fresh-eyes round. The foreword's wording is yours. Under 'When it was written' it says Campbell was 22. He turned 22 on 8 June 1932, weeks before the August issue, and when he wrote it isn't recorded (the science notes now say so; Moskowitz says Twilight came first). Suggested: 'Campbell was 22 when it appeared, the year he finished a physics degree.' Change it, or keep it?"
+  },
+  {
+   "id": "find.ch05-curl-faint",
+   "area": "finding",
+   "title": "Chapter 5, 0:12-0:17: Roal's thought-curl is a faint wisp at the edge of the wide shot",
+   "state": "pass",
+   "note": "Fixed in 6a8354a: the curl is 46 wide and fully opaque. Checked on draft ch05-draft-65a7fcd4 at 0:11-0:17: a clear pale ribbon rising over Roal on the couch in the wide shot; SSIM against ch05-draft-51b6e0ba shows only the grain spots seen last round (0:45, 4:49, 9:01, about .955); -14.5 LUFS."
+  },
+  {
+   "id": "find.ch08-dup-speck",
+   "area": "finding",
+   "title": "Chapter 8, 2:04-2:08: F-2 making its duplicate is a speck beside the ladder",
+   "state": "pass",
+   "note": "Fixed in d8181ef: from 'making a duplicate' the camera moves in to 1.9 on F-2 and eases back for the ladder at G. Checked on draft ch08-draft-073bbd31 at 2:04-2:09: F-2 and its duplicate fill the middle of the frame with the force lines between them; SSIM against ch08-draft-9ccdea4c dips only at 2:04-2:13; -14.5 LUFS."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-18 03:20",
-   "found": 4,
-   "note": "Round 35: one minor (ch08 Roal's curl in the dome a hard-edged grey band hanging detached over his head) and three nits (ch02 Outsiders drawn through each other at 2:31; ch02 kilad footnote held 2 s past the cut; ch06 'dully red, that they seemed black' flecks don't show)."
-  },
   {
    "when": "2026-11-18 08:15",
    "found": 5,
@@ -2950,6 +2978,11 @@
    "when": "2026-11-18 13:53",
    "found": 4,
    "note": "Round 37 found two minor and two nits: the poster went on the old whole-film page, not the annotated film page the Watch link opens; the science page infers when the story was written from its issue date; chapter 7's cut-away inside the dome loses the five screens; in chapter 5 Roal holds still through F-2's memory-stacks speech."
+  },
+  {
+   "when": "2026-11-18 16:50",
+   "found": 4,
+   "note": "Round 38: one minor (the foreword's 'Campbell was 22' at writing, contradicting the science notes and fact-check), three nits (afterword's Twilight claim cited to Wikipedia, ch05 thought-curl faint at 0:12-0:17, ch08 F-2 duplicate a speck at 2:04-2:08). Film otherwise clean on sound, sync, acting and story."
   }
  ]
 }
