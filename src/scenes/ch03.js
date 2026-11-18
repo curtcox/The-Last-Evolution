@@ -83,6 +83,12 @@
     for (const [a, b] of cl) { const i = W.findIndex(w => w[1] >= a && w[2] < b - .3 && /[.;?!]['’]$/.test(w[0])); if (i < 0) out.push([a, b]); else out.push([a, W[i][2]], [W[i + 1][1], b]); }
     return out; };
   const SPEECH = quoteStop(clauses(['p033.1', 'p033.3', 'p033.5', 'p034.1']));   // his speech to the machines: a gesture to each clause; Trest nods
+  // the speech's gestures: kit's gesture() with its stiff level arm (up 1.6, fore 1.1) swapped for both hands opening
+  // forward (over 100 s it came back at 6:21, 6:58, 7:35 and 7:47 and read as a loop)
+  const GESTR = [[.8, 1.9], [1.1, 2.4], [.6, 1.6], [.9, 1.95, .7, 1.75], [.35, 2.7]];
+  const gestureR = (t, pose, cl) => { for (let i = 0; i < cl.length; i++) { const [a, b] = cl[i]; if (b - a < .6 || t < a - .3 || t > b + .9) continue;
+    const k = win(t, a - .2, b + .3, .5, .6), g = GESTR[(i * 3 + (i >> 2)) % GESTR.length]; pose.up = lerp(pose.up ?? .12, g[0], k); pose.fore = lerp(pose.fore ?? .3, g[1], k);
+    if (g[2] !== undefined) { pose.farUp = lerp(pose.farUp ?? .05, g[2], k); pose.farFore = lerp(pose.farFore ?? .15, g[3], k); } return .05 * k * Math.sin((t - a) * 1.7); } return 0; };
   // C: his hand out to the fleet on the screens through 'come for invasion', then a gesture to each phrase as he tells them (split at commas too: one sentence runs 21 s)
   const tInv = C('p018.1:There had been no wars'), tBut = C('p018.1:But--life alone');
   const TELL = (() => { const out = []; let a = null; for (const w of CHAPTER.lines.find(l => l.id === 'p018.1').words) { if (w[1] < tInv - .1 || w[1] >= tBut) continue; a ??= w[1]; if (/[,.;?!]$/.test(w[0])) { out.push([a, w[2]]); a = null; } } return out; })();
@@ -100,7 +106,7 @@
     const named = win(t, C('p018.1:Roal, 25374') - .1, C('p018.1:Trest, 35429') - .2, .3, .5); pose.up = lerp(pose.up, .8, named); pose.fore = lerp(pose.fore, 1.5, named);
     // what the beams did: his hand comes up at 'could be revived' and stays; 'burned out', it falls and his head goes down
     const rue = win(t, C('p024.1:can be revived') - .3, C('p024.1:had been literally'), .7, 1.6), bow = win(t, C('p024.1:burned out'), T1('L') + .5, 1.2, 1); pose.up = lerp(pose.up, 1.05, rue); pose.fore = lerp(pose.fore, 1.9, rue); pose.torso = .06 * bow;
-    const gl = arm ? 0 : gesture(t, pose, t < tBut + 1 ? TELL : SPEECH);
+    const gl = arm ? 0 : t < tBut + 1 ? gesture(t, pose, TELL) : gestureR(t, pose, SPEECH);
     // 'that little chuckle': his head goes back a little, a smile, the shoulders bobbing
     const ch = win(t, C('p033.4'), C('p033.4') + 2.2, .3, .6); if (ch > 0) pose.torso = (pose.torso ?? 0) - .05 * ch * Math.abs(Math.sin(t * 15));
     // 'Hour after hour they sat watching': on stools the machines have brought, risen again before he speaks
