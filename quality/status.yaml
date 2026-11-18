@@ -1949,6 +1949,16 @@ items:
     note: "Fixed in 61839bb: through F-2's speech on itself Roal leans in and reaches toward it, looks down to where F-1 was, and draws a hand to his chest at 'all memories'. Checked on draft ch05-draft-51b6e0ba at 6:00-6:31: the reach, the look down and the hand to chest all read; SSIM against ch05-draft-e6f54f9f dips there (.97); the other dips (0:45, 4:49, 9:01, about .955) were compared frame by frame and are identical apart from grain; -14.5 LUFS."
     title: "Chapter 5, 5:59-6:12: Roal holds one pose through F-2's memory-stacks speech"
     when: 2026-11-18 16:37
+  find.site-afterword-twilight-source:
+    state: pass
+    note: "Fixed: the afterword now cites Moskowitz's 1961 introduction (the archive.org scan, as the fact-check and history page do) beside the Wikipedia page for 'the story he'd written first and couldn't sell'. Checked on the built film page: both links show."
+    title: "Afterword: 'the story he'd written first and couldn't sell' is cited only to Wikipedia's Twilight page, which doesn't say it"
+    when: 2026-11-18 16:52
+  find.site-foreword-age:
+    state: curt
+    note: "From the thirty-eighth fresh-eyes round. The foreword's wording is yours. Under 'When it was written' it says Campbell was 22. He turned 22 on 8 June 1932, weeks before the August issue, and when he wrote it isn't recorded (the science notes now say so; Moskowitz says Twilight came first). Suggested: 'Campbell was 22 when it appeared, the year he finished a physics degree.' Change it, or keep it?"
+    title: "Foreword: 'Campbell was 22 and finishing a physics degree' puts his age at the writing, which isn't recorded"
+    when: 2026-11-18 16:51
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -2102,4 +2112,8 @@ fresh:
     found: 4
     note: "Round 37 found two minor and two nits: the poster went on the old whole-film page, not the annotated film page the Watch link opens; the science page infers when the story was written from its issue date; chapter 7's cut-away inside the dome loses the five screens; in chapter 5 Roal holds still through F-2's memory-stacks speech."
     state: 9b08493c7f4a
-since_fresh: 18
+  - when: 2026-11-18 16:50
+    found: 4
+    note: "Round 38: one minor (the foreword's 'Campbell was 22' at writing, contradicting the science notes and fact-check), three nits (afterword's Twilight claim cited to Wikipedia, ch05 thought-curl faint at 0:12-0:17, ch08 F-2 duplicate a speck at 2:04-2:08). Film otherwise clean on sound, sync, acting and story."
+    state: 2cbd2ff0aef3
+since_fresh: 1

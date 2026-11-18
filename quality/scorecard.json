@@ -43,7 +43,7 @@
   },
   "live": {
    "state": "pass",
-   "detail": "33 pages live (not compared: HEAD has changes not pushed)"
+   "detail": "33 pages live, the deploy is this commit"
   }
  },
  "curt": [

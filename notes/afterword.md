@@ -10,7 +10,8 @@ will change your belief." Here's some of what happened after it was written, to 
 
 Two years later, as "Don A. Stuart", Campbell published "Twilight" (*Astounding*, November 1934), the story he'd
 written first and couldn't sell: mankind dwindled and idle, its machines running on perfectly, without purpose
-([Twilight][wp-twilight]). *The Last Evolution* is the triumphant version, and "Twilight" the sad one.
+([Twilight][wp-twilight]; Moskowitz in the 1961 reprint, [scan][archive-1961]).
+*The Last Evolution* is the triumphant version, and "Twilight" the sad one.
 
 In 1937 he became editor of *Astounding*, and he kept the job for 34 years, until he died in 1971. He found and pushed
 writers such as Isaac Asimov and Robert A. Heinlein, and shaped what fans call the Golden Age of science fiction
@@ -69,6 +70,7 @@ printing's copyright was renewed, so the story and Morey's picture are free for 
 
 <!-- refs: written by tools/check_refs.mjs -->
 [wp-twilight]: https://en.wikipedia.org/wiki/Twilight_(short_story)
+[archive-1961]: https://archive.org/details/Amazing_Stories_v35n03_1961-03_UnkSc-cape1736
 [wp-golden-age]: https://en.wikipedia.org/wiki/Golden_Age_of_Science_Fiction
 [sfe-campbell]: https://sf-encyclopedia.com/entry/campbell_john_w_jr
 [wp-astounding-award]: https://en.wikipedia.org/wiki/Astounding_Award_for_Best_New_Writer
