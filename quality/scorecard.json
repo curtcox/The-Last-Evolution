@@ -1,6 +1,6 @@
 {
  "summary": {
-  "pass": 382,
+  "pass": 385,
   "stale": 0,
   "open": 0,
   "curt": 10,
@@ -35,7 +35,7 @@
   },
   "refs": {
    "state": "fail",
-   "detail": "blackgate-best-of: https://www.blackgate.com/?p=226361 → fetch failed"
+   "detail": "gutenberg: https://www.gutenberg.org/ebooks/27462 → 503"
   },
   "phone": {
    "state": "pass",
@@ -272,42 +272,42 @@
    "area": "film",
    "title": "Chapter 3: the acting",
    "state": "pass",
-   "note": "On the draft with the thirty-third round's fixes: draft ch03-draft-2aa733f0, Roal's curl rising pale from his head clear of the machines and his gestures through the quoted sentence (find.ch03-arm-floats, find.ch03-roal-held); sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
+   "note": "On the draft with the thirty-fourth round's fixes: draft ch03-draft-baf7b339, Roal's curl a soft wash with no ink edge and Trest turned to Roal through the speech (find.ch03-curl-hose, find.ch03-trest-away); sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
   },
   {
    "id": "ch03.picture",
    "area": "film",
    "title": "Chapter 3: the picture",
    "state": "pass",
-   "note": "On the draft with the thirty-third round's fixes: draft ch03-draft-2aa733f0, Roal's curl rising pale from his head clear of the machines and his gestures through the quoted sentence (find.ch03-arm-floats, find.ch03-roal-held); sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
+   "note": "On the draft with the thirty-fourth round's fixes: draft ch03-draft-baf7b339, Roal's curl a soft wash with no ink edge and Trest turned to Roal through the speech (find.ch03-curl-hose, find.ch03-trest-away); sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
   },
   {
    "id": "ch03.sync",
    "area": "film",
    "title": "Chapter 3: picture against sound",
    "state": "pass",
-   "note": "On the draft with the thirty-third round's fixes: draft ch03-draft-2aa733f0, Roal's curl rising pale from his head clear of the machines and his gestures through the quoted sentence (find.ch03-arm-floats, find.ch03-roal-held); sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
+   "note": "On the draft with the thirty-fourth round's fixes: draft ch03-draft-baf7b339, Roal's curl a soft wash with no ink edge and Trest turned to Roal through the speech (find.ch03-curl-hose, find.ch03-trest-away); sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
   },
   {
    "id": "ch03.sound",
    "area": "film",
    "title": "Chapter 3: the sound",
    "state": "pass",
-   "note": "On the draft with the thirty-third round's fixes: draft ch03-draft-2aa733f0, Roal's curl rising pale from his head clear of the machines and his gestures through the quoted sentence (find.ch03-arm-floats, find.ch03-roal-held); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
+   "note": "On the draft with the thirty-fourth round's fixes: draft ch03-draft-baf7b339, Roal's curl a soft wash with no ink edge and Trest turned to Roal through the speech (find.ch03-curl-hose, find.ch03-trest-away); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
   },
   {
    "id": "ch03.story",
    "area": "film",
    "title": "Chapter 3: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the thirty-third round's fixes: draft ch03-draft-2aa733f0, Roal's curl rising pale from his head clear of the machines and his gestures through the quoted sentence (find.ch03-arm-floats, find.ch03-roal-held); sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
+   "note": "On the draft with the thirty-fourth round's fixes: draft ch03-draft-baf7b339, Roal's curl a soft wash with no ink edge and Trest turned to Roal through the speech (find.ch03-curl-hose, find.ch03-trest-away); sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
   },
   {
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch03-draft-2aa733f0.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "note": "ch03-draft-baf7b339.mp4, -14.4 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch04.acting",
@@ -636,14 +636,14 @@
    "area": "site",
    "title": "The film page (annotated): what it says",
    "state": "pass",
-   "note": "Rebuilt after round 33 with new drafts for chapters 1, 3, 8 and 9 (ch01-draft-29e0e37d, ch03-draft-2aa733f0, ch08-draft-e03ad45d, ch09-draft-df56b69e); the pages differ only in those hashes and chapter 9's board text for the storm, the order and the dome."
+   "note": "Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal."
   },
   {
    "id": "site.watch.look",
    "area": "site",
    "title": "The film page (annotated): how it looks and works",
    "state": "pass",
-   "note": "Rebuilt after round 33 with new drafts for chapters 1, 3, 8 and 9 (ch01-draft-29e0e37d, ch03-draft-2aa733f0, ch08-draft-e03ad45d, ch09-draft-df56b69e); the pages differ only in those hashes and chapter 9's board text for the storm, the order and the dome."
+   "note": "Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal."
   },
   {
    "id": "site.read.content",
@@ -2821,14 +2821,30 @@
    "title": "Foreword: 'Every word of it is spoken, in order', but the two footnotes are lettered on screen, not spoken",
    "state": "curt",
    "note": "From the thirty-third fresh-eyes round. The foreword's wording is yours. 'Every word of it is in the film, in order' would also cover the two lettered footnotes (the draft banner above it already says they are lettered). Change it, or keep it?"
+  },
+  {
+   "id": "find.ch03-trest-away",
+   "area": "finding",
+   "title": "Chapter 3, 6:19-7:57: Trest faces away from Roal for the whole speech",
+   "state": "pass",
+   "note": "Draft ch03-draft-baf7b339, 6:19-7:57: once at his place Trest turns to face Roal and listens through the speech, his hands moving on Roal's clauses (stills at 400, 455, 470 s); at the force-screen's secret both turn to the screens as before."
+  },
+  {
+   "id": "find.ch03-curl-hose",
+   "area": "finding",
+   "title": "Chapter 3, 0:58-1:04: Roal's curl reads as a hose plugged into his head",
+   "state": "pass",
+   "note": "Draft ch03-draft-baf7b339, 0:58-1:03: the curl is a soft wash in tone 3 with no ink edge, rising from Roal's head out to the upper left, as the curl is drawn in chapters 7 and 8 (stills at 59, 61, 63 s)."
+  },
+  {
+   "id": "find.ch04-kahsh-hyphen",
+   "area": "finding",
+   "title": "Chapter 4, 1:51: 'Kahsh-256799' lettered with a hyphen like a machine name",
+   "state": "pass",
+   "note": "Declined: Campbell's text writes 'asked Kahsh-256799' with the hyphen (text/source/pg27462.txt:328; both printings have 'Kahsh-256,799'), while Roal and Trest are 'Roal, 25374' and 'Trest, 35429'. The lettering follows the text verbatim; nothing changed."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-17 08:15",
-   "found": 5,
-   "note": "Round 31 found one minor and four nits: the film page's curl note says it rises 'once more' in chapter 8, when it rises twice there; two figures in chapter 1's games sit on nothing; chapter 5 ends on bare paper instead of specks among the last stars; chapter 2's first footnote stays over the next shot; chapter 9's arcs stay at full strength through 'the arcing decreased'."
-  },
   {
    "when": "2026-11-17 10:37",
    "found": 7,
@@ -2838,6 +2854,11 @@
    "when": "2026-11-17 17:33",
    "found": 8,
    "note": "Round 33: five minor (ch09 dome shrinks and the men appear over its top; ch09 picture still for 21 s over the order to the plant and the second probe; ch09 storm already gone while the narrator says it continues; ch08 ladder still for 17 s; ch03 the reaching arm appears detached over Roal) and three nits (ch01 Ear reads as a play button; ch03 Roal holds one pose 8 s before 'Attack'; film page says every word is spoken though the footnotes are lettered)."
+  },
+  {
+   "when": "2026-11-17 22:58",
+   "found": 3,
+   "note": "Round 34: two minor (ch03 Trest faces away from Roal through his long speech; ch03 shot D curl still reads as a hose with hard ink edges) and one nit (ch04 'Kahsh-256799' lettered with a machine-style hyphen)."
   }
  ]
 }
