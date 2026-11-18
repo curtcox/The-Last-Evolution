@@ -193,6 +193,9 @@
     const P = [], Q = []; for (let i = 0; i <= 24; i++) { const a = Math.PI + i / 24 * Math.PI; P.push([X + Math.cos(a) * r, Y + Math.sin(a) * r * .8]); Q.push([X + Math.cos(a) * r * .94, Y + Math.sin(a) * r * .8 * .93]); }
     boilSeed('cutin'); paint(Q.slice(), { wash: '#141110', washOp: 255, ink: null });
     boilSeed('cutsh'); paint([...P, ...Q.slice().reverse()], { wash: PULP.black, washOp: 255, fill: PULP.black, fillOp: 230, bleed: .02, ink: INK, sw: .8 });
+    // the five screens still glowing over the men, as within (K) and in chapter 8 (the cut-away had none, and the men stood
+    // lit by nothing)
+    for (let c = 0; c < 5; c++) { const x = X - 330 + c * 150, y = Y - 250 - 40 * Math.cos((c - 2) / 2 * 1.2); boilSeed('cs' + c); paint(rectPts(x - 45, y - 32, 90, 64), { wash: '#BFC8D2', washOp: 150 + 60 * hash(c + Math.floor(t * 3)), ink: INK, sw: .5 }); glow(x, y, 70, '#DDE6F0', .3); }
     // the men, small, in the screens' light; F-2 and its new machine
     // the six that made the dome, ranged along its inner wall (they were there as it closed, and then gone)
     for (let i = 0; i < 6; i++) { const sd = i < 3 ? -1 : 1, k = i % 3; DES.machine(X + sd * (300 + k * 55), Y - 4 * k, 9, t, { arms: 3, d: 2, hover: 1.2, face: -sd * .6, lit: .3, label: null }); }
