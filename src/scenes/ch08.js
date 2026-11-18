@@ -67,8 +67,8 @@
     // the machine to the top one, where a faint far light waits (from 'Man built the machine' to 'pure, living force' it held
     // one still frame for 17 s; held at 560 the machine's top was cut by the frame)
     const tFar = C('p104.1:The machine of the last evolution');
-    // in on each rung as he reaches it (at 1.3, a thin ladder in a dark frame for 37 s, unreadable on a phone); out for chance and the machine that makes itself; the whole climb; then in on the man as nature removes him
-    const c = cam(t, [[0, [LAD, 780, 2.1]], [tMach - 1, [LAD, 500, 2.1], 3], [tFar - .3, tt => [LAD, lerp(500, 330, ez(tt, tFar - .3, tForce - .6)), 2.1], 2], [tF, tt => [lerp(LAD - 200, LAD + 300, ez(tt, tF, tG)), 600, 1], 3], [tG, [LAD, 560, 1.2], 2.5], [C('p106.1:has removed the parasite') - 2, [LAD, 590, 2.1], 2.5]]);
+    // in on F-2 as it makes its duplicate (at 1, F-2 was a speck); in on each rung as he reaches it (at 1.3, a thin ladder in a dark frame for 37 s, unreadable on a phone); out for chance and the machine that makes itself; the whole climb; then in on the man as nature removes him
+    const c = cam(t, [[0, [LAD, 780, 2.1]], [tMach - 1, [LAD, 500, 2.1], 3], [tFar - .3, tt => [LAD, lerp(500, 330, ez(tt, tFar - .3, tForce - .6)), 2.1], 2], [tF, tt => [lerp(LAD - 200, LAD + 300, ez(tt, tF, tG)), 600, 1], 3], [C('p105.1:as is F-2 here') - 2.5, [LAD + 600, 620, 1.9], 2], [tG, [LAD, 560, 1.2], 2.5], [C('p106.1:has removed the parasite') - 2, [LAD, 590, 2.1], 2.5]]);
     camBegin(...c);
     stillSeed('lplate'); paint(rectPts(-800, -800, 3600, 2600), { wash: BG, washOp: 255, fill: '#3B322B', fillOp: 120, bleed: .25, tex: .5, ink: null });
     // the ladder's rails and rungs
