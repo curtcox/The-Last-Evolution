@@ -199,6 +199,11 @@
       const arc = win(t, C('p059.1:sudden crashing arcs') - .1, C('p059.1:sudden crashing arcs') + 7, .25, 2.5); pose.torso -= .07 * arc; pose.up = lerp(pose.up, .95, arc); pose.fore = lerp(pose.fore, 2.1, arc);
       // asking (p067): the near hand opens toward F-2
       const ask = win(t, C('p067.1'), C('p067.1$') + .6, .4, .8); pose.up = lerp(pose.up, .55, ask); pose.fore = lerp(pose.fore, 1.5, ask);
+      // F-2 on itself (p064): he leans in to 'The Ultimate Energy', looks down to where F-1 was on 'F one has done its work',
+      // and draws back, a hand to his chest, as it says it holds all he has done (he stood 13 s in one pose through it)
+      const lean = win(t, C('p064.1:The Ultimate Energy') - .2, C('p064.1:F one has done'), .8, .8), down = win(t, C('p064.1:F one has done') - .1, C('p064.1:the memory-stacks'), .5, .7),
+        mem = win(t, C('p064.1:all memories') - .3, C('p064.1:I shall make') + .6, .7, 1);
+      pose.torso += .1 * lean - .06 * mem; pose.up = lerp(pose.up, .7, .8 * lean); pose.fore = lerp(pose.fore, 1.6, .8 * lean); pose.up = lerp(pose.up, .3, mem); pose.fore = lerp(pose.fore, 2.75, mem); acted += -.35 * down + .08 * mem;
     }
     push(); translate(hip[0], 0); scale(Math.max(.6, Math.abs(f)), 1); translate(-hip[0], 0);
     const r = DES.personSide(hip[0], hip[1], RS, t, { pose, flip, look: flip ? .05 : look + acted, lid, key: 'rs', talk: say });
