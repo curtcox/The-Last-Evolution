@@ -48,7 +48,7 @@ fresh reviews go on looking for faults until two in a row find none, and then th
 <p><b>Notes:</b> pause anywhere, type, and press Enter (or <i>Pin</i>) to pin a note to that moment of the film. They
 stay in this browser. <i>Copy notes</i> puts them on the clipboard as text, with the chapter and the shot, for the
 <a href="https://github.com/curtcox/The-Last-Evolution/blob/main/review/round6.md">decision sheet</a> or a message.</p>
-<div class="player"><video id="v" controls preload="metadata" playsinline></video>
+<div class="player"><video id="v" controls preload="metadata" playsinline poster="img/ch00-A.jpg"></video>
 <div class="bar"><div class="ticks">${chapters.slice(1).map(c => `<span style="left:${(100 * c.at / total).toFixed(2)}%"></span>`).join('')}</div>
 <input id="scrub" type="range" min="0" max="${total.toFixed(1)}" step="0.1" value="0" aria-label="the whole film"></div>
 <div class="time"><span id="tnow">0:00</span><span>${hms(total)}</span></div>
