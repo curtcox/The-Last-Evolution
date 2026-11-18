@@ -211,10 +211,10 @@
     return r;
   }
   // thought, drawn two ways: Roal's as a loose curl of pale wash, the machines' as ruled ink
-  function dreamCurl(x, y, k, t, op = .6) {
+  function dreamCurl(x, y, k, t, op = .6, w = 26) {
     if (k <= 0 || op <= 0) return;
     const P = []; for (let i = 0; i <= 14 * k; i++) { const u = i / 14; P.push([x + u * 160 + 70 * Math.sin(u * 7 + t * .6), y - (u * 300 + 30 * Math.sin(u * 5 + t * .4))]); }
-    if (P.length > 2) { boilSeed('curl'); wash(ribbon(P, 26, 6), 0, { op }); }
+    if (P.length > 2) { boilSeed('curl'); wash(ribbon(P, w, 6), 0, { op }); }
   }
   function ruled(P, k, col = '#EFE6D2', sw = 1, k0 = 0) {   // a ruled ink path, drawn from fraction k0 to k of its length
     if (k <= k0) return;
@@ -285,7 +285,8 @@
 
     // B: his thought rises as a curl; F-1's ruled line follows it, and is wiped when the scene moves on
     const head0 = [COUCH.x - 10, SEAT - 120];
-    dreamCurl(head0[0] + 20, head0[1] - 30, K(t, 'p051.1:not with', 'p051.1$'), t, .6 * (1 - ez(t, T0('C'), T0('C') + 1.5)));
+    // (at .6 and 26 wide it was a faint wisp at the edge of the wide shot, unreadable on a phone)
+    dreamCurl(head0[0] + 20, head0[1] - 30, K(t, 'p051.1:not with', 'p051.1$'), t, 1 - ez(t, T0('C'), T0('C') + 1.5), 46);
     const line1 = [[F1.x - 30, 560], [1080, 560], [1080, 470], [860, 470], [860, 400], [700, 400]];
     ruled(line1, seg(t, C('p051.1:not with') + 1, C('p051.1$') + .5) * .9, D[0], .9, .9 * ez(t, T0('C'), T0('C') + 1.5));
     // N: the steps no logic can ascend, climbing from its lens to a gap; a line from the far side closes it
