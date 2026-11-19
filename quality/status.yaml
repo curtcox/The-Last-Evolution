@@ -51,14 +51,14 @@ items:
     when: 2026-11-18 16:41
   site.succession.content:
     state: pass
-    note: "Re-judged after round 32: one sentence added after the line on heirs completing their makers' dreams, naming the one heir that turns (the first being of pure force, which calls F-2 inefficient and fires on it, and is destroyed by F-2's plant), quoted from the story; it matches the film page. Earlier: read in full, the story's own position quoted, both of today's camps described without taking sides."
-    at: 5b0cd32fd8b4
-    when: 2026-11-17 17:21
+    note: "Re-judged after round 44: the 1934 entry now says Campbell published 'Twilight', which he had written before this story and couldn't sell, agreeing with the history page, the film page's afterword and its note; the duplicate 'See also' link folded into it. Earlier: one sentence names the one heir that turns, quoted from the story; read in full, the story's own position quoted, both of today's camps described without taking sides."
+    at: 4a545de80cf2
+    when: 2026-11-19 18:18
   site.succession.look:
     state: pass
-    note: "Re-checked after round 32: one sentence of text added to a paragraph; no layout or style change, and the phone check passes at 375."
-    at: 8240dd1bd245
-    when: 2026-11-17 17:21
+    note: "Re-checked after round 44: one list entry's wording changed; no layout or style change, and the phone check passes at 375."
+    at: 3f23bcdb5a0a
+    when: 2026-11-19 18:18
   site.history.content:
     state: pass
     note: "Re-judged: 'thirteen smaller typesetting slips' (exact: 16 restorations less the clause and two negatives) and Morey's birth year noted as 1899 in some sources, as the fact-check list records."
@@ -102,13 +102,13 @@ items:
   site.watch.content:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: 32636418b1d5
-    when: 2026-11-19 13:43
+    at: 7816f6c71f2f
+    when: 2026-11-19 18:16
   site.watch.look:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: e424e0fee739
-    when: 2026-11-19 13:43
+    at: 414b536b51ef
+    when: 2026-11-19 18:16
   work.title:
     state: pass
     note: "Re-checked after round 41: chapter 0's source changed only in shot D (the heirs gathering at 0:40-0:48); SSIM against the previous draft is .997 through the title page. the masthead (62 px, italic) and byline (64 px) are larger again so they read on a phone (find.small-lettering), the title itself unchanged; on ch00-draft-747111c6 all three lines sit inside the frame with clear space between them (sheet of 0:05-0:14). The header names the 1932 issue ('AMAZING STORIES · August, 1932'), not the 1961 reprint."
@@ -126,9 +126,9 @@ items:
     when: 2026-11-18 08:01
   ch03.picture:
     state: pass
-    note: "On the draft with the forty-second round's fixes: draft ch03-draft-f584759c, the signal beam and its investigators read at 3:00-3:10, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
-    at: ch03-draft-f584759c.mp4
-    when: 2026-11-19 12:08
+    note: "On the draft with the forty-fourth round's fixes: draft ch03-draft-edc69f44, the Outsider ships settle lower over Colorado and the colony sits clear of the bottom edge, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
+    at: ch03-draft-edc69f44.mp4
+    when: 2026-11-19 18:16
   find.repo-size:
     state: pass
     note: "Curt chose GitHub Release files. Chapter drafts now go to the repo's drafts release (publish_review.mjs uploads them under content-hashed names), and the pages play them from there with a source element typed video/mp4, which Safari needs because GitHub serves release files as octet-stream. Checked in Chromium and Safari: a draft page, and the annotated film jumping to chapter 7. The old videos stay in git history (about 530 MB); removing them would mean rewriting history and a force push."
@@ -301,29 +301,29 @@ items:
     when: 2026-11-18 18:38
   ch09.acting:
     state: pass
-    note: "On the draft with the thirty-sixth round's fixes: draft ch09-draft-b2ed584f, the sphere caught in the red beam drawn over it and gripped at its narrowed tip, the camera in close, so its straining, shrinking and end read (find.ch09-sphere-death); sound unchanged, -14.4 LUFS. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
-    at: ch09-draft-b2ed584f.mp4
-    when: 2026-11-18 13:37
+    note: "On the draft with the forty-fourth round's fixes: draft ch09-draft-35500335, both halves of the dome in frame as it parts, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
+    at: ch09-draft-35500335.mp4
+    when: 2026-11-19 18:16
   ch09.picture:
     state: pass
-    note: "On the draft with the thirty-sixth round's fixes: draft ch09-draft-b2ed584f, the sphere caught in the red beam drawn over it and gripped at its narrowed tip, the camera in close, so its straining, shrinking and end read (find.ch09-sphere-death); sound unchanged, -14.4 LUFS. Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
-    at: ch09-draft-b2ed584f.mp4
-    when: 2026-11-18 13:37
+    note: "On the draft with the forty-fourth round's fixes: draft ch09-draft-35500335, both halves of the dome in frame as it parts, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
+    at: ch09-draft-35500335.mp4
+    when: 2026-11-19 18:16
   ch09.sync:
     state: pass
-    note: "On the draft with the thirty-sixth round's fixes: draft ch09-draft-b2ed584f, the sphere caught in the red beam drawn over it and gripped at its narrowed tip, the camera in close, so its straining, shrinking and end read (find.ch09-sphere-death); sound unchanged, -14.4 LUFS. The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
-    at: ch09-draft-b2ed584f.mp4
-    when: 2026-11-18 13:38
+    note: "On the draft with the forty-fourth round's fixes: draft ch09-draft-35500335, both halves of the dome in frame as it parts, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
+    at: ch09-draft-35500335.mp4
+    when: 2026-11-19 18:16
   ch09.sound:
     state: pass
-    note: "On the draft with the thirty-sixth round's fixes: draft ch09-draft-b2ed584f, the sphere caught in the red beam drawn over it and gripped at its narrowed tip, the camera in close, so its straining, shrinking and end read (find.ch09-sphere-death); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
-    at: ch09-draft-b2ed584f.mp4
-    when: 2026-11-18 13:38
+    note: "On the draft with the forty-fourth round's fixes: draft ch09-draft-35500335, both halves of the dome in frame as it parts, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
+    at: ch09-draft-35500335.mp4
+    when: 2026-11-19 18:16
   ch09.story:
     state: pass
-    note: "On the draft with the thirty-sixth round's fixes: draft ch09-draft-b2ed584f, the sphere caught in the red beam drawn over it and gripped at its narrowed tip, the camera in close, so its straining, shrinking and end read (find.ch09-sphere-death); sound unchanged, -14.4 LUFS. 5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
-    at: ch09-draft-b2ed584f.mp4
-    when: 2026-11-18 13:38
+    note: "On the draft with the forty-fourth round's fixes: draft ch09-draft-35500335, both halves of the dome in frame as it parts, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. 5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
+    at: ch09-draft-35500335.mp4
+    when: 2026-11-19 18:16
   find.ship-opaque:
     state: pass
     note: "New draft, ch10 2:14-2:22: the flagship's hull hides the ships behind it; no ribs or bands show through."
@@ -401,24 +401,24 @@ items:
     when: 2026-11-18 08:01
   ch03.acting:
     state: pass
-    note: "On the draft with the forty-second round's fixes: draft ch03-draft-f584759c, the signal beam and its investigators read at 3:00-3:10, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
-    at: ch03-draft-f584759c.mp4
-    when: 2026-11-19 12:08
+    note: "On the draft with the forty-fourth round's fixes: draft ch03-draft-edc69f44, the Outsider ships settle lower over Colorado and the colony sits clear of the bottom edge, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
+    at: ch03-draft-edc69f44.mp4
+    when: 2026-11-19 18:16
   ch03.sync:
     state: pass
-    note: "On the draft with the forty-second round's fixes: draft ch03-draft-f584759c, the signal beam and its investigators read at 3:00-3:10, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
-    at: ch03-draft-f584759c.mp4
-    when: 2026-11-19 12:08
+    note: "On the draft with the forty-fourth round's fixes: draft ch03-draft-edc69f44, the Outsider ships settle lower over Colorado and the colony sits clear of the bottom edge, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
+    at: ch03-draft-edc69f44.mp4
+    when: 2026-11-19 18:16
   ch03.sound:
     state: pass
-    note: "On the draft with the forty-second round's fixes: draft ch03-draft-f584759c, the signal beam and its investigators read at 3:00-3:10, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
-    at: ch03-draft-f584759c.mp4
-    when: 2026-11-19 12:08
+    note: "On the draft with the forty-fourth round's fixes: draft ch03-draft-edc69f44, the Outsider ships settle lower over Colorado and the colony sits clear of the bottom edge, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
+    at: ch03-draft-edc69f44.mp4
+    when: 2026-11-19 18:16
   ch03.story:
     state: pass
-    note: "On the draft with the forty-second round's fixes: draft ch03-draft-f584759c, the signal beam and its investigators read at 3:00-3:10, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
-    at: ch03-draft-f584759c.mp4
-    when: 2026-11-19 12:08
+    note: "On the draft with the forty-fourth round's fixes: draft ch03-draft-edc69f44, the Outsider ships settle lower over Colorado and the colony sits clear of the bottom edge, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
+    at: ch03-draft-edc69f44.mp4
+    when: 2026-11-19 18:16
   ch05.acting:
     state: pass
     note: "On the draft with the thirty-ninth round's fixes: draft ch05-draft-831de9d8, shot Z takes in the fallen F-1 whole with its lenses, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
@@ -2029,6 +2029,31 @@ items:
     note: "Fixed in 880d1ff: the beam is violet all the way up, and the spread a band of violet along the shell's inside. Checked on draft ch07-draft-41fa7c56 at 3:28 and 3:44-3:48; SSIM against ch07-draft-bd7d996b changes at 3:43-3:51; the 2:20 dip compared frame by frame is grain in the waving blankness; -14.5 LUFS."
     title: "Chapter 7, 3:27-3:50: the 'strange violet beam' reads grey below the crown, and its spread across the canopy barely registers"
     when: 2026-11-19 13:43
+  find.site-factcheck-date:
+    state: pass
+    note: "Declined: the row the reviewer named (Moskowitz's account, archive-1961) went in with f2a559a on 2026-11-01 (git log -S), and notes/factcheck.md was last changed on 2026-11-02. The later commits it saw touch other notes files. The date claim holds."
+    title: "Fact-check list: 'Read' is dated 1 or 2 November, but a row was read later"
+    when: 2026-11-19 13:53
+  find.ch02-fleet-early:
+    state: pass
+    note: "Declined: the camera follows the investigator's streak out from Deimos to what it sighted, so the ships appear as it reaches them and the line names what we've just been shown; a lead of a few seconds into the sentence that names them, settled by 61.5 s, reads as the investigator's discovery, not as a sync miss."
+    title: "Chapter 2, 0:59.7-1:02.7: the ten ships come into frame about 3 s before 'They sighted ten huge ships'"
+    when: 2026-11-19 13:53
+  find.site-succession-returned:
+    state: pass
+    note: "Fixed in a262a39: the 1934 entry now says Campbell published 'Twilight', which he had written before this story and couldn't sell, linking the history page. Checked on the built succession page."
+    title: "Succession notes: Campbell 'returned to the theme in Twilight', but Twilight was written first"
+    when: 2026-11-19 18:16
+  find.ch03-colorado-squeezed:
+    state: pass
+    note: "Fixed in 63d08f1: the ships settle at 230-310 and the hold centres at 640, scale 1. Checked on draft ch03-draft-edc69f44 at 3:19-3:31: the ships whole at the top, the colony and its people clear of the bottom edge; SSIM against ch03-draft-f584759c changes at 3:13-3:28 and, from the ships hanging lower, at 4:05-4:32 and 4:43-4:52, where frames compared side by side show them still whole and the falls unchanged; -14.4 LUFS."
+    title: "Chapter 3, 3:17-3:30: the settled ships hang cut by the top while the colony is squeezed along the bottom"
+    when: 2026-11-19 18:16
+  find.ch09-dome-cropped:
+    state: pass
+    note: "Fixed in 4e85b5e: framed at 120, scale 1.12. Checked on draft ch09-draft-35500335 at 3:25-3:28: both halves in frame as they part, the men walking out, F-2 and C-R-U-1 at the right; SSIM against ch09-draft-b2ed584f changes only at 3:19-3:30; -14.4 LUFS."
+    title: "Chapter 9, 3:25-3:28: the parting dome is half off the left edge"
+    when: 2026-11-19 18:16
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -2206,4 +2231,8 @@ fresh:
     found: 1
     note: "Round 43: nothing major; one minor (ch07 3:27-3:50 the 'strange violet beam' reads grey below the crown and its spread across the canopy barely registers)."
     state: 9e79179fc224
-since_fresh: 8
+  - when: 2026-11-19 13:52
+    found: 5
+    note: "Round 44: three minor (succession page says Campbell 'returned to the theme in Twilight'; the fact-check list dates every reading to 1-2 November; ch03 3:13-3:30 the Colorado settlement squeezed to the bottom edge with ships cut by the top), two nits (ch02 the fleet shown 3 s before 'They sighted'; ch09 3:25-3:28 the dome half off the left edge as it parts)."
+    state: 4a00148e7def
+since_fresh: 19
