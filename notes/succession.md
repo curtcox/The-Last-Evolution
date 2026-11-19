@@ -33,9 +33,10 @@ change your belief." The story makes its case, and then asks the reader to argue
   productive work was necessary", pictures that world.
 
 ## After Campbell
-- **1934.** Campbell himself, as Don A. Stuart, returned to the theme in "Twilight": a far future in which humanity has
-  dwindled into apathy while its machines run on, perfectly, without purpose ([Twilight][wp-twilight]). Where "The Last
-  Evolution" is triumphant, "Twilight" is elegiac. See also [Campbell and the pulps](history.md).
+- **1934.** Campbell himself, as Don A. Stuart, published "Twilight", which he had written before this story and
+  couldn't sell (see [Campbell and the pulps](history.md)): a far future in which humanity has dwindled into apathy
+  while its machines run on, perfectly, without purpose ([Twilight][wp-twilight]). Where "The Last Evolution" is
+  triumphant, "Twilight" is elegiac.
 - **1935.** The Machine stories, also as Stuart: "The Machine", "The Invaders" and "Rebellion" ([SFE][sfe-campbell]). In
   these and "Twilight", collected after "The Last Evolution" in *The Best of John W. Campbell* (1976), machines bring
   peace, plenty and long life, the perfection goes stale, and mankind must go back to an earlier stage of life ([The
