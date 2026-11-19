@@ -102,13 +102,13 @@ items:
   site.watch.content:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: 632c572c4890
-    when: 2026-11-18 18:38
+    at: fc5eaad2e0fe
+    when: 2026-11-19 00:19
   site.watch.look:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: 39a36fb48b60
-    when: 2026-11-18 18:38
+    at: 4bc873a90218
+    when: 2026-11-19 00:19
   work.title:
     state: pass
     note: "Re-checked after the twenty-fifth round: the masthead (62 px, italic) and byline (64 px) are larger again so they read on a phone (find.small-lettering), the title itself unchanged; on ch00-draft-747111c6 all three lines sit inside the frame with clear space between them (sheet of 0:05-0:14). The header names the 1932 issue ('AMAZING STORIES · August, 1932'), not the 1961 reprint."
@@ -126,9 +126,9 @@ items:
     when: 2026-11-18 08:01
   ch03.picture:
     state: pass
-    note: "On the draft with the thirty-sixth round's fixes: draft ch03-draft-4e7a02c0, Roal opening both hands forward in his speech where a stiff level arm came back four times (find.ch03-speech-arm); sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
-    at: ch03-draft-4e7a02c0.mp4
-    when: 2026-11-18 13:15
+    note: "On the draft with the thirty-ninth round's fixes: draft ch03-draft-38f435e9, on the chuckle Roal puts a hand to his chest, head back, shoulders shaking, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
+    at: ch03-draft-38f435e9.mp4
+    when: 2026-11-19 00:18
   find.repo-size:
     state: pass
     note: "Curt chose GitHub Release files. Chapter drafts now go to the repo's drafts release (publish_review.mjs uploads them under content-hashed names), and the pages play them from there with a source element typed video/mp4, which Safari needs because GitHub serves release files as octet-stream. Checked in Chromium and Safari: a draft page, and the annotated film jumping to chapter 7. The old videos stay in git history (about 530 MB); removing them would mean rewriting history and a force push."
@@ -401,49 +401,49 @@ items:
     when: 2026-11-18 08:01
   ch03.acting:
     state: pass
-    note: "On the draft with the thirty-sixth round's fixes: draft ch03-draft-4e7a02c0, Roal opening both hands forward in his speech where a stiff level arm came back four times (find.ch03-speech-arm); sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
-    at: ch03-draft-4e7a02c0.mp4
-    when: 2026-11-18 13:15
+    note: "On the draft with the thirty-ninth round's fixes: draft ch03-draft-38f435e9, on the chuckle Roal puts a hand to his chest, head back, shoulders shaking, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
+    at: ch03-draft-38f435e9.mp4
+    when: 2026-11-19 00:18
   ch03.sync:
     state: pass
-    note: "On the draft with the thirty-sixth round's fixes: draft ch03-draft-4e7a02c0, Roal opening both hands forward in his speech where a stiff level arm came back four times (find.ch03-speech-arm); sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
-    at: ch03-draft-4e7a02c0.mp4
-    when: 2026-11-18 13:15
+    note: "On the draft with the thirty-ninth round's fixes: draft ch03-draft-38f435e9, on the chuckle Roal puts a hand to his chest, head back, shoulders shaking, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
+    at: ch03-draft-38f435e9.mp4
+    when: 2026-11-19 00:18
   ch03.sound:
     state: pass
-    note: "On the draft with the thirty-sixth round's fixes: draft ch03-draft-4e7a02c0, Roal opening both hands forward in his speech where a stiff level arm came back four times (find.ch03-speech-arm); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
-    at: ch03-draft-4e7a02c0.mp4
-    when: 2026-11-18 13:15
+    note: "On the draft with the thirty-ninth round's fixes: draft ch03-draft-38f435e9, on the chuckle Roal puts a hand to his chest, head back, shoulders shaking, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
+    at: ch03-draft-38f435e9.mp4
+    when: 2026-11-19 00:19
   ch03.story:
     state: pass
-    note: "On the draft with the thirty-sixth round's fixes: draft ch03-draft-4e7a02c0, Roal opening both hands forward in his speech where a stiff level arm came back four times (find.ch03-speech-arm); sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
-    at: ch03-draft-4e7a02c0.mp4
-    when: 2026-11-18 13:15
+    note: "On the draft with the thirty-ninth round's fixes: draft ch03-draft-38f435e9, on the chuckle Roal puts a hand to his chest, head back, shoulders shaking, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
+    at: ch03-draft-38f435e9.mp4
+    when: 2026-11-19 00:19
   ch05.acting:
     state: pass
-    note: "On the draft with the thirty-eighth round's fixes: draft ch05-draft-65a7fcd4, Roal's thought-curl over the couch is wider and solid, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
-    at: ch05-draft-65a7fcd4.mp4
-    when: 2026-11-18 18:38
+    note: "On the draft with the thirty-ninth round's fixes: draft ch05-draft-831de9d8, shot Z takes in the fallen F-1 whole with its lenses, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
+    at: ch05-draft-831de9d8.mp4
+    when: 2026-11-19 00:19
   ch05.picture:
     state: pass
-    note: "On the draft with the thirty-eighth round's fixes: draft ch05-draft-65a7fcd4, Roal's thought-curl over the couch is wider and solid, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The hall at night with F-1 vast; the atom plates (orbits, grid, light); the spiralling air field, arcs and flame, aura and lightning; F-1's hulk; F-2 with rings and memories; the ball of forces, the ruler, the guinea pig cage in the pale beam; dawn on the rock with tiny machines streaming up. Dark but legible."
-    at: ch05-draft-65a7fcd4.mp4
-    when: 2026-11-18 18:38
+    note: "On the draft with the thirty-ninth round's fixes: draft ch05-draft-831de9d8, shot Z takes in the fallen F-1 whole with its lenses, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The hall at night with F-1 vast; the atom plates (orbits, grid, light); the spiralling air field, arcs and flame, aura and lightning; F-1's hulk; F-2 with rings and memories; the ball of forces, the ruler, the guinea pig cage in the pale beam; dawn on the rock with tiny machines streaming up. Dark but legible."
+    at: ch05-draft-831de9d8.mp4
+    when: 2026-11-19 00:19
   ch05.sync:
     state: pass
-    note: "On the draft with the thirty-eighth round's fixes: draft ch05-draft-65a7fcd4, Roal's thought-curl over the couch is wider and solid, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Cuts on cue words (F-1 on 'Roal--your thoughts', 'Roal sat up', the plate on 'Hydrogen'); Whisper timing -0.12 s median."
-    at: ch05-draft-65a7fcd4.mp4
-    when: 2026-11-18 18:38
+    note: "On the draft with the thirty-ninth round's fixes: draft ch05-draft-831de9d8, shot Z takes in the fallen F-1 whole with its lenses, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Cuts on cue words (F-1 on 'Roal--your thoughts', 'Roal sat up', the plate on 'Hydrogen'); Whisper timing -0.12 s median."
+    at: ch05-draft-831de9d8.mp4
+    when: 2026-11-19 00:19
   ch05.sound:
     state: pass
-    note: "On the draft with the thirty-eighth round's fixes: draft ch05-draft-65a7fcd4, Roal's thought-curl over the couch is wider and solid, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 3.8; the quiet shots C, D, H, I and AH are pauses, their speech -14.1 to -14.7; Whisper lost 12 of 1107 (names, coinages, 'asked')."
-    at: ch05-draft-65a7fcd4.mp4
-    when: 2026-11-18 18:38
+    note: "On the draft with the thirty-ninth round's fixes: draft ch05-draft-831de9d8, shot Z takes in the fallen F-1 whole with its lenses, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 3.8; the quiet shots C, D, H, I and AH are pauses, their speech -14.1 to -14.7; Whisper lost 12 of 1107 (names, coinages, 'asked')."
+    at: ch05-draft-831de9d8.mp4
+    when: 2026-11-19 00:19
   ch05.story:
     state: pass
-    note: "On the draft with the thirty-eighth round's fixes: draft ch05-draft-65a7fcd4, Roal's thought-curl over the couch is wider and solid, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. 9:03: Roal thinks out the hydrogen wall; F-1 builds its successor and is unmade by it; F-2 makes the ruler, tests the green beam on a guinea pig, and the machines build outward. The pilot still holds as the standard."
-    at: ch05-draft-65a7fcd4.mp4
-    when: 2026-11-18 18:38
+    note: "On the draft with the thirty-ninth round's fixes: draft ch05-draft-831de9d8, shot Z takes in the fallen F-1 whole with its lenses, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. 9:03: Roal thinks out the hydrogen wall; F-1 builds its successor and is unmade by it; F-2 makes the ruler, tests the green beam on a guinea pig, and the machines build outward. The pilot still holds as the standard."
+    at: ch05-draft-831de9d8.mp4
+    when: 2026-11-19 00:19
   ch06.acting:
     state: pass
     note: "On the draft with the thirty-fifth round's fixes: draft ch06-draft-1fcf4ece, red-black spots coming one after another over each screen on 'flecks and spots' and growing, so they show against the hulls (find.ch06-flecks); sound unchanged, -14.4 LUFS. The fleets as actors: the giants advance in ranks, the screens flare violet then red, the generator crews feed their machines, the motes swing their rays back plainly green into the giants, and the dying ships tip and fall away."
@@ -1969,6 +1969,16 @@ items:
     note: "Fixed in d8181ef: from 'making a duplicate' the camera moves in to 1.9 on F-2 and eases back for the ladder at G. Checked on draft ch08-draft-073bbd31 at 2:04-2:09: F-2 and its duplicate fill the middle of the frame with the force lines between them; SSIM against ch08-draft-9ccdea4c dips only at 2:04-2:13; -14.5 LUFS."
     title: "Chapter 8, 2:04-2:08: F-2 making its duplicate is a speck beside the ladder"
     when: 2026-11-18 18:38
+  find.ch05-f1-offframe:
+    state: pass
+    note: "Fixed in ecbaec1: shot Z is at .95, centred 1200-1230. Checked on draft ch05-draft-831de9d8 at 5:13-5:32: the fallen F-1 shows whole with its three lenses (slightly cropped only for the first two seconds as the camera settles); SSIM against ch05-draft-65a7fcd4 dips only at 5:11-5:33, elsewhere the grain spots of earlier rounds; -14.5 LUFS."
+    title: "Chapter 5, 5:11-5:32: F-1 is a cropped cylinder at the frame's edge while F-2 speaks of it"
+    when: 2026-11-19 00:18
+  find.ch03-chuckle-small:
+    state: pass
+    note: "Fixed in b6fd6b2: on 'that little chuckle' Roal's hand comes to his chest, his head goes back and his shoulders shake. Checked on draft ch03-draft-38f435e9 at 6:49-6:51: the hand at the chest and the head back read at phone size; SSIM against ch03-draft-4e7a02c0 dips there (.976, 408.5-410.5); the one lower dip, 4:44 (.93), was compared frame by frame and is grain in the dissolve; -14.4 LUFS."
+    title: "Chapter 3, 6:48-6:54: Roal's 'little chuckle' is only a small head tilt"
+    when: 2026-11-19 00:18
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -2126,4 +2136,8 @@ fresh:
     found: 4
     note: "Round 38: one minor (the foreword's 'Campbell was 22' at writing, contradicting the science notes and fact-check), three nits (afterword's Twilight claim cited to Wikipedia, ch05 thought-curl faint at 0:12-0:17, ch08 F-2 duplicate a speck at 2:04-2:08). Film otherwise clean on sound, sync, acting and story."
     state: 2cbd2ff0aef3
-since_fresh: 15
+  - when: 2026-11-18 18:50
+    found: 2
+    note: "Round 39: two nits (ch05 5:03-5:32 F-1 mostly out of frame while F-2 speaks of it; ch03 6:48-6:54 Roal's chuckle barely visible). Nothing major or minor; the hall-screen flicker was already declined in round 30."
+    state: e6afa082a310
+since_fresh: 14
