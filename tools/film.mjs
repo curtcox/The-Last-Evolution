@@ -6,6 +6,7 @@
 // The chapters stay separate files (no second copy of an hour of video on the release); the page plays them back to back.
 // First: each chapter's npm run draft -- N.
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { readYaml, respeller, storyWords, PATHS } from './script_lib.mjs';
 import { publishReview, publishedVideo } from './publish_review.mjs';
 
@@ -26,6 +27,8 @@ for (let n = 0; n <= 11; n++) {
   at += TL.duration;
 }
 const total = at;
+// the poster: the title page, cut from the current chapter 0 draft (round 6's shot still has the old 'A Classic Reprint' masthead)
+execFileSync('ffmpeg', ['-v', 'error', '-y', '-ss', '8', '-i', `${OUT}/video/ch00-draft.mp4`, '-frames:v', '1', '-q:v', '3', `${OUT}/img/poster.jpg`]);
 writeFileSync(`${OUT}/film.html`, `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Round 6: the whole film</title><link rel="stylesheet" href="../../style.css"><style>
 main{max-width:1100px} .player{position:sticky;top:0;background:var(--paper);padding:.5em 0;z-index:2;border-bottom:1px solid var(--rule)}
@@ -48,7 +51,7 @@ fresh reviews go on looking for faults until two in a row find none, and then th
 <p><b>Notes:</b> pause anywhere, type, and press Enter (or <i>Pin</i>) to pin a note to that moment of the film. They
 stay in this browser. <i>Copy notes</i> puts them on the clipboard as text, with the chapter and the shot, for the
 <a href="https://github.com/curtcox/The-Last-Evolution/blob/main/review/round6.md">decision sheet</a> or a message.</p>
-<div class="player"><video id="v" controls preload="metadata" playsinline poster="img/ch00-A.jpg"></video>
+<div class="player"><video id="v" controls preload="metadata" playsinline poster="img/poster.jpg"></video>
 <div class="bar"><div class="ticks">${chapters.slice(1).map(c => `<span style="left:${(100 * c.at / total).toFixed(2)}%"></span>`).join('')}</div>
 <input id="scrub" type="range" min="0" max="${total.toFixed(1)}" step="0.1" value="0" aria-label="the whole film"></div>
 <div class="time"><span id="tnow">0:00</span><span>${hms(total)}</span></div>

@@ -7,7 +7,8 @@
 //                                      in the page from the voice's word timings) can be turned on in the player.
 //   notes/reports/annotations.md       each note's time, and the gaps that break Round 7's spacing rule
 // Notes are anchored to words, not seconds, so re-timing the voice moves them with it. First: npm run film (Round 6).
-import { readdirSync, readFileSync, writeFileSync, mkdirSync, copyFileSync } from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { readYaml, respeller, storyWords, PATHS } from './script_lib.mjs';
 import { publishReview, publishedVideo } from './publish_review.mjs';
 import { markdown, inline as mdInline, link, esc, REPO } from './notes_md.mjs';
@@ -70,7 +71,9 @@ const DATA = JSON.stringify({ CH: chapters.map(({ shots, ...c }) => ({ ...c, lin
   NOTES: timed.map(x => ({ id: x.id, T: +x.T.toFixed(2), kind: x.kind, ch: x.ch, html: noteHtml(x) })) }).replace(/</g, '\\u003c');
 
 mkdirSync(`${OUT}/img`, { recursive: true });
-copyFileSync('out/review/round6/img/ch00-A.jpg', `${OUT}/img/ch00-A.jpg`);   // the title page, the player's poster (without one it opened on the bare paper of 0:00)
+// the player's poster: the title page, cut from the current chapter 0 draft so it can't go stale (without one it opened
+// on the bare paper of 0:00; a copy of round 6's shot still kept the old 'A Classic Reprint' masthead)
+execFileSync('ffmpeg', ['-v', 'error', '-y', '-ss', '8', '-i', 'out/review/round6/video/ch00-draft.mp4', '-frames:v', '1', '-q:v', '3', `${OUT}/img/poster.jpg`]);
 writeFileSync(`${OUT}/annotated.html`, `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Last Evolution, annotated (draft)</title>
 <meta name="description" content="John W. Campbell, Jr.'s 1932 story The Last Evolution, read in full by a cast of voices over ink-wash paintings, with notes in the margin on its science, its text and its ideas. A draft.">
@@ -122,7 +125,7 @@ ${fore.html}
 <button class="begin" id="begin">Begin the film</button>
 </div>
 <div class="film" id="film"><div>
-<div class="player"><video id="v" controls preload="metadata" playsinline aria-label="the film" poster="img/ch00-A.jpg"></video>
+<div class="player"><video id="v" controls preload="metadata" playsinline aria-label="the film" poster="img/poster.jpg"></video>
 <div class="bar"><div class="ticks">${chapters.slice(1).map(c => `<span style="left:${(100 * c.at / total).toFixed(2)}%"></span>`).join('')}${timed.map(x => `<i data-k="${x.kind}" style="left:${(100 * x.T / total).toFixed(2)}%"></i>`).join('')}</div>
 <input id="scrub" type="range" min="0" max="${total.toFixed(1)}" step="5" value="0" aria-label="the whole film" aria-valuetext="0:00 of ${hms(total)}"></div>
 <div class="time"><span id="tnow">0:00</span><span>of the whole film, ${hms(total)} (the player's own clock counts the chapter)</span></div>
