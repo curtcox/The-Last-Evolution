@@ -190,9 +190,9 @@ notes:
     kind: science
     title: Pluto, the newest planet
     body: >-
-      Clyde Tombaugh found Pluto in February 1930, two years before the story, so it was the outermost planet Roal
-      names. It was counted as one until 2006 ([Pluto][wp-pluto]). The film's insert of the planets is ours, for this
-      line.
+      Clyde Tombaugh found Pluto in February 1930, two years before the story, so when Roal names it it was the newest
+      planet known, and the farthest out. It was counted as one until 2006 ([Pluto][wp-pluto]). The film's insert of
+      the planets is ours, for this line.
 
   # 4. The Council
   - id: designations
