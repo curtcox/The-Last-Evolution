@@ -33,7 +33,9 @@
     HALFTONE = .2;
     const tB = T0('B'), tC = T0('C'), tD = T0('D'), years = ez(t, tC, tD + 2);
     dark('sys'); stars(160, 11);
-    if (t < tC + 1) { const q = ez(t, tB, tC + 1); for (let i = 0; i < 9; i++) { const x = lerp(700 + (i % 3) * 90, 1700, q) + (i % 3) * 10 * (1 - q), y = lerp(420 + Math.floor(i / 3) * 70, 300, q); if (q < .95) DES.oShip(x, y, 300 * (1 - q * .9), t, { d: 3 }); else glow(1700, 300, 4, '#F4EEDC', .6); } return; }
+    if (t < tC + 1) { const q = ez(t, tB, tC + 1); // the fleet, a loose swarm of thirty drawing together as it goes (nine stacked three by three read as three ships)
+      for (let i = 0; i < 30; i++) { const ox = (hash(i * 1.7) - .5) * 1100, oy = (hash(i * 3.3) - .5) * 520, sz = 130 * (.55 + .7 * hash(i * 5.1)), x = lerp(820 + ox, 1700 + ox * .06, q), y = lerp(440 + oy, 300 + oy * .06, q);
+        if (q < .95) DES.oShip(x, y, sz * (1 - q * .9), t, { d: 3 }); else if (i < 6) glow(1700 + ox * .06, 300 + oy * .06, 4, '#F4EEDC', .6); } return; }
     const z = lerp(1, .8, years) * lerp(1, 1.6, ez(t, tD, T1('D')));
     camBegin(960, 540, z);
     glow(960, 540, 90, '#FFF6E8', .9); glow(960, 540, 260, '#FFF6E8', .25);   // the sun
