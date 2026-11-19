@@ -91,7 +91,7 @@
     if (g[2] !== undefined) { pose.farUp = lerp(pose.farUp ?? .05, g[2], k); pose.farFore = lerp(pose.farFore ?? .15, g[3], k); } return .05 * k * Math.sin((t - a) * 1.7); } return 0; };
   // C: his hand out to the fleet on the screens through 'come for invasion', then a gesture to each phrase as he tells them (split at commas too: one sentence runs 21 s)
   const tInv = C('p018.1:There had been no wars'), tBut = C('p018.1:But--life alone');
-  const TELL = (() => { const out = []; let a = null; for (const w of CHAPTER.lines.find(l => l.id === 'p018.1').words) { if (w[1] < tInv - .1 || w[1] >= tBut) continue; a ??= w[1]; if (/[,.;?!]$/.test(w[0])) { out.push([a, w[2]]); a = null; } } return out; })();
+  const TELL = (() => { const out = []; let a = null; for (const w of CHAPTER.lines.find(l => l.id === 'p018.1').words) { if (w[1] < tInv - .1 || w[1] >= tBut) continue; a ??= w[1]; if (/[.;?!]$/.test(w[0])) { out.push([a, w[2]]); a = null; } } return out; })();   // a gesture a sentence (split at commas his arm pumped at Trest every 1.5-3 s for 25 s)
 
   // a pose bent to sit; DROP lowers the hip so the feet stay on the floor
   const DROP = 50, seat = (p, k) => { if (k > 0) for (const f of ['torso', 'thigh', 'shin']) p[f] = lerp(p[f] ?? DES.POSE.stand[f], DES.POSE.sit[f], k); return p; };
