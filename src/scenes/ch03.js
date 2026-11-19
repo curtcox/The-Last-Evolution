@@ -274,7 +274,8 @@
     const tK = T0('K'), tKill = C('p024.1:were being killed instantly'), tM = T0('M'), tTrees = C('p025.1:Trees, grass'), tO = T0('O'), tP = T0('P');
     const green = Math.max(ez(t, tGreenOn - .5, tGreenOn + 2) * (1 - ez(t, tO - 2, tO + 2) * .6), 0), wither = ez(t, tTrees - 1, tTrees + 6) + (t > T0('L') ? ez(t, tKill, tKill + 6) * .3 : 0);
     // on 'we saw', in close on the colonists, so their deaths are seen (they stood in the frame's last 80 px, a few pixels tall on a phone)
-    const c = cam(t, [[0, tt => [960, lerp(300, 560, ez(tt, tK, tK + 6)), lerp(.8, 1.05, ez(tt, tK, tK + 6))]], [C('p024.1:and we saw'), [960, 860, 1.45], 3.5], [tM - .5, tt => [lerp(800, 1400, ez(tt, tM, T1('M'))), 630, .95], 2],   // the ships whole, their green light down to the machines, all in (at 600 and 1.2 the ships were cut by the top, the machines' feet by the bottom, and the sky between was two-thirds of it)
+    const c = cam(t, [[0, tt => [960, lerp(300, 640, ez(tt, tK, tK + 6)), lerp(.8, 1, ez(tt, tK, tK + 6))]],   // settled lower and held between them and the colony (they hung cut by the top, the colony squeezed along the bottom)
+       [C('p024.1:and we saw'), [960, 860, 1.45], 3.5], [tM - .5, tt => [lerp(800, 1400, ez(tt, tM, T1('M'))), 630, .95], 2],   // the ships whole, their green light down to the machines, all in (at 600 and 1.2 the ships were cut by the top, the machines' feet by the bottom, and the sky between was two-thirds of it)
       [tO - .5, [1000, 420, .85], 2.5], [tP - .5, tt => [lerp(900, 1200, ez(tt, tP, T1('P'))), 640, lerp(1.1, 1.3, ez(tt, tP, T1('P')))], 3]]);
     withCam(c, () => {
       ground(D[0], 255, 'landsky', { fill: '#FFFFFF', fillOp: 30 });   // no green in the land itself: colour is only for energy, so the green comes with the beams
@@ -316,7 +317,7 @@
       // the ships overhead and their great diffused beams
       const settle = ez(t, tK, tK + 6), tDown = C('p029.1:The last of the Outsiders was down');
       const fall2 = i => { const a = lerp(tO + 2, tDown - 1.4, i / 2); return t > tO ? ez(t, a, a + 1.5) : 0; };   // the last lands on its line
-      for (let i = 0; i < 3; i++) { const sx = 500 + i * 560, sy = lerp(-400, 120 + 40 * i, settle) + fall2(i) * (LG - 60 - 120 - 40 * i), rot = fall2(i) * (i % 2 ? .4 : -.3);
+      for (let i = 0; i < 3; i++) { const sx = 500 + i * 560, sy = lerp(-400, 230 + 40 * i, settle) + fall2(i) * (LG - 60 - 230 - 40 * i), rot = fall2(i) * (i % 2 ? .4 : -.3);
         push(); translate(sx, sy); rotate(rot); translate(-sx, -sy); if (fall2(i) < 1) ship(sx, sy, 520, t, -1, { d: 2 }); else wreck(sx, sy, 520, i); pop();
         { const a = lerp(tO + 2, tDown - 1.4, i / 2), fl = win(t, a + 1.35, a + 1.7, .1, .5); if (fl > 0) { glow(sx, sy, 260, NRG.white, .8 * fl); glow(sx, sy, 90, '#FFB070', .7 * fl); } }   // the impact
         if (fall2(i) >= 1) for (let k = 0; k < 4; k++) { const q = frac(t * .12 + k / 4 + hash(i)); boilSeed('smoke' + i + k); paint(ellPts(sx + 60 * Math.sin(k + t * .2) + q * 80, sy - 40 - q * 420, 50 + 90 * q, 30 + 50 * q, 12, 20), { wash: D[4], washOp: 170 * (1 - q) * Math.min(1, q * 6), ink: null, bleed: .3 }); }   // the wrecks smoulder
