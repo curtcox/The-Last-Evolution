@@ -352,14 +352,21 @@
   function worlds(t) {
     HALFTONE = .3;
     ground('#2E2620', 255, 'worlds', { fill: '#3B322B', fillOp: 120 });
-    const t0 = T0('U'), tPl = C('p034.1:Pluto'), back = ez(t, t0 + 2, tPl - .3), c = [lerp(760, 1640, back), 560, lerp(1.1, .64, back)];
+    const t0 = T0('U'), tPl = C('p034.1:Pluto'), back = ez(t, t0 + 2, tPl - .3), c = [lerp(760, 1775, back), 560, lerp(1.1, .58, back)];
     const ON = { pluto: tPl, mercury: C('p034.1:Mercury'), earth: C('p034.1:Earth') }, tAny = C('p034.1:Any place');
     withCam(c, () => {
       // spaced by their sizes, 90 apart edge to edge (evenly spaced, Jupiter and Saturn overlapped and showed through each other)
       let x = 260, n = 0;
       [['mercury', 60], ['venus', 90], ['earth', 95], ['mars', 70], ['jupiter', 220], ['saturn', 180], ['uranus', 120], ['neptune', 115], ['pluto', 40]].forEach(([k, r], i, all) => {
-        if (i) x += all[i - 1][1] + 90 + r;
-        const y = 600; if (k === 'earth') earthDisc(x, y, r, 'wearth', { glow: null }); else planet(x, y, r, 1 + (i % 3), { key: 'w' + k, bands: r > 150 });
+        if (i) x += all[i - 1][1] + 90 + r + (k === 'saturn' || all[i - 1][0] === 'saturn' ? r * .75 : 0);   // room for Saturn's rings
+        const y = 600;
+        // Saturn's rings, tilted, the far half behind the disc and the near half in front (nine like grey discs read as moons)
+        const ring = half => { const P = [], tl = -.18; for (let j = 0; j <= 24; j++) { const a = half * Math.PI + j / 24 * Math.PI; P.push([Math.cos(a) * r * 1.85, Math.sin(a) * r * .4]); }
+          for (let j = 24; j >= 0; j--) { const a = half * Math.PI + j / 24 * Math.PI; P.push([Math.cos(a) * r * 1.3, Math.sin(a) * r * .27]); }
+          stillSeed('ring' + half); paint(P.map(([u, v]) => [x + u * Math.cos(tl) - v * Math.sin(tl), y + u * Math.sin(tl) + v * Math.cos(tl)]), { wash: '#CDBFA3', washOp: 215, ink: INK, sw: .8 }); };
+        if (k === 'saturn') { ring(1); stillSeed('satback'); paint(ellPts(x, y, r, r, 48), { wash: '#2E2620', washOp: 255, ink: null }); }   // the disc's wash is see-through: back it so the far ring hides
+        if (k === 'earth') earthDisc(x, y, r, 'wearth', { glow: null }); else planet(x, y, r, 1 + (i % 3), { key: 'w' + k, bands: r > 150 });
+        if (k === 'saturn') ring(0);
         const at = ON[k] ?? tAny + .45 * n++, on = ez(t, at - .2, at + .6);
         if (on > 0) { DES.machine(x, lerp(y - r - 260, y - r + 4, on), 24, t, { arms: 3, d: 1, label: null }); if (on < 1) glow(x, y - r, 50, '#FFFDF6', .5 * (1 - on)); } });
     });
