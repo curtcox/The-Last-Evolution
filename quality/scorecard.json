@@ -1,6 +1,6 @@
 {
  "summary": {
-  "pass": 409,
+  "pass": 412,
   "stale": 0,
   "open": 0,
   "curt": 11,
@@ -277,42 +277,42 @@
    "area": "film",
    "title": "Chapter 3: the acting",
    "state": "pass",
-   "note": "On the draft with the forty-first round's fixes: draft ch03-draft-4d07646a, Saturn ringed in the planets plate, all nine in frame by Pluto, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
+   "note": "On the draft with the forty-second round's fixes: draft ch03-draft-f584759c, the signal beam and its investigators read at 3:00-3:10, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
   },
   {
    "id": "ch03.picture",
    "area": "film",
    "title": "Chapter 3: the picture",
    "state": "pass",
-   "note": "On the draft with the forty-first round's fixes: draft ch03-draft-4d07646a, Saturn ringed in the planets plate, all nine in frame by Pluto, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
+   "note": "On the draft with the forty-second round's fixes: draft ch03-draft-f584759c, the signal beam and its investigators read at 3:00-3:10, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
   },
   {
    "id": "ch03.sync",
    "area": "film",
    "title": "Chapter 3: picture against sound",
    "state": "pass",
-   "note": "On the draft with the forty-first round's fixes: draft ch03-draft-4d07646a, Saturn ringed in the planets plate, all nine in frame by Pluto, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
+   "note": "On the draft with the forty-second round's fixes: draft ch03-draft-f584759c, the signal beam and its investigators read at 3:00-3:10, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
   },
   {
    "id": "ch03.sound",
    "area": "film",
    "title": "Chapter 3: the sound",
    "state": "pass",
-   "note": "On the draft with the forty-first round's fixes: draft ch03-draft-4d07646a, Saturn ringed in the planets plate, all nine in frame by Pluto, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
+   "note": "On the draft with the forty-second round's fixes: draft ch03-draft-f584759c, the signal beam and its investigators read at 3:00-3:10, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
   },
   {
    "id": "ch03.story",
    "area": "film",
    "title": "Chapter 3: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the forty-first round's fixes: draft ch03-draft-4d07646a, Saturn ringed in the planets plate, all nine in frame by Pluto, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
+   "note": "On the draft with the forty-second round's fixes: draft ch03-draft-f584759c, the signal beam and its investigators read at 3:00-3:10, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
   },
   {
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch03-draft-4d07646a.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "note": "ch03-draft-f584759c.mp4, -14.4 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch04.acting",
@@ -3022,14 +3022,30 @@
    "title": "Chapter 2, 0:35.7-0:37.7: the kilad footnote stays up about 2 s into shot D",
    "state": "pass",
    "note": "Declined: the hold is deliberate. An earlier round found footnote 1 up too briefly to read; its 30 words need the time, and the shot is 7 s, so it runs 2.5 s into the next shot by design (src/scenes/ch02.js NOTES). It sits at the frame's foot on its own band and covers nothing in shot D."
+  },
+  {
+   "id": "find.site-poster-reprint",
+   "area": "finding",
+   "title": "Film page: the player's poster is the old title card with 'A Classic Reprint' over 1932's date",
+   "state": "pass",
+   "note": "Fixed: round 37's fix copied round 6's shot still, which predates the title page's 1932 masthead. tools/annotated.mjs and tools/film.mjs now cut the poster from the current chapter 0 draft at 8 s, so it follows the title page. Checked: both pages' poster is img/poster-a33a8257.jpg, showing 'AMAZING STORIES · August, 1932', THE LAST EVOLUTION, the byline."
+  },
+  {
+   "id": "find.site-twilight-came-back",
+   "area": "finding",
+   "title": "Film page note 'A world without work': Campbell 'came back to this world and soured on it' in Twilight, but the afterword says Twilight was written first",
+   "state": "pass",
+   "note": "Fixed: the note now says Campbell 'also imagined this world going sour. In \"Twilight\", written before this story but not published until 1934, and in the Machine stories after it...', which agrees with the afterword, the history page and fact-check row 21. Checked on the built film page."
+  },
+  {
+   "id": "find.ch03-signal-beam-faint",
+   "area": "finding",
+   "title": "Chapter 3, 3:00-3:10: the signal beam and the investigators along it are specks",
+   "state": "pass",
+   "note": "Fixed in 9c52e22: the beam is brighter and wider, the investigators drawn with a white core. Checked on draft ch03-draft-f584759c at 3:02-3:10: the beam runs clear from the transport and the investigators read along it; SSIM against ch03-draft-4d07646a changes only on shot J (179.5-191.5); the other dips (0:59.5, 4:05, 4:44) compared frame by frame are grain; -14.4 LUFS."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-18 18:50",
-   "found": 2,
-   "note": "Round 39: two nits (ch05 5:03-5:32 F-1 mostly out of frame while F-2 speaks of it; ch03 6:48-6:54 Roal's chuckle barely visible). Nothing major or minor; the hall-screen flicker was already declined in round 30."
-  },
   {
    "when": "2026-11-19 00:32",
    "found": 3,
@@ -3039,6 +3055,11 @@
    "when": "2026-11-19 03:42",
    "found": 3,
    "note": "Round 41: nothing major or minor; three nits (ch03 7:12-7:24 the planets plate is nine like grey discs, Saturn without rings; ch02 0:35.7-0:37.7 the kilad footnote hangs into shot D; ch00 0:40-0:50 the line naming the heirs plays over a near-empty frame)."
+  },
+  {
+   "when": "2026-11-19 08:04",
+   "found": 3,
+   "note": "Round 42: two minor (the film page's poster is the old 'A Classic Reprint' title card; the 'world without work' note says Campbell 'came back' and soured in Twilight, against the afterword's Twilight-written-first), one nit (ch03 3:00-3:10 the signal beam and investigators are specks)."
   }
  ]
 }

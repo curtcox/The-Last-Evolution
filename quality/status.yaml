@@ -102,13 +102,13 @@ items:
   site.watch.content:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: 1c9c10d7e179
-    when: 2026-11-19 07:53
+    at: cc97f18de948
+    when: 2026-11-19 12:08
   site.watch.look:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: 23fdc00f5657
-    when: 2026-11-19 07:53
+    at: f87ae709e67b
+    when: 2026-11-19 12:08
   work.title:
     state: pass
     note: "Re-checked after round 41: chapter 0's source changed only in shot D (the heirs gathering at 0:40-0:48); SSIM against the previous draft is .997 through the title page. the masthead (62 px, italic) and byline (64 px) are larger again so they read on a phone (find.small-lettering), the title itself unchanged; on ch00-draft-747111c6 all three lines sit inside the frame with clear space between them (sheet of 0:05-0:14). The header names the 1932 issue ('AMAZING STORIES · August, 1932'), not the 1961 reprint."
@@ -126,9 +126,9 @@ items:
     when: 2026-11-18 08:01
   ch03.picture:
     state: pass
-    note: "On the draft with the forty-first round's fixes: draft ch03-draft-4d07646a, Saturn ringed in the planets plate, all nine in frame by Pluto, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
-    at: ch03-draft-4d07646a.mp4
-    when: 2026-11-19 07:53
+    note: "On the draft with the forty-second round's fixes: draft ch03-draft-f584759c, the signal beam and its investigators read at 3:00-3:10, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
+    at: ch03-draft-f584759c.mp4
+    when: 2026-11-19 12:08
   find.repo-size:
     state: pass
     note: "Curt chose GitHub Release files. Chapter drafts now go to the repo's drafts release (publish_review.mjs uploads them under content-hashed names), and the pages play them from there with a source element typed video/mp4, which Safari needs because GitHub serves release files as octet-stream. Checked in Chromium and Safari: a draft page, and the annotated film jumping to chapter 7. The old videos stay in git history (about 530 MB); removing them would mean rewriting history and a force push."
@@ -401,24 +401,24 @@ items:
     when: 2026-11-18 08:01
   ch03.acting:
     state: pass
-    note: "On the draft with the forty-first round's fixes: draft ch03-draft-4d07646a, Saturn ringed in the planets plate, all nine in frame by Pluto, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
-    at: ch03-draft-4d07646a.mp4
-    when: 2026-11-19 07:53
+    note: "On the draft with the forty-second round's fixes: draft ch03-draft-f584759c, the signal beam and its investigators read at 3:00-3:10, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
+    at: ch03-draft-f584759c.mp4
+    when: 2026-11-19 12:08
   ch03.sync:
     state: pass
-    note: "On the draft with the forty-first round's fixes: draft ch03-draft-4d07646a, Saturn ringed in the planets plate, all nine in frame by Pluto, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
-    at: ch03-draft-4d07646a.mp4
-    when: 2026-11-19 07:53
+    note: "On the draft with the forty-second round's fixes: draft ch03-draft-f584759c, the signal beam and its investigators read at 3:00-3:10, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
+    at: ch03-draft-f584759c.mp4
+    when: 2026-11-19 12:08
   ch03.sound:
     state: pass
-    note: "On the draft with the forty-first round's fixes: draft ch03-draft-4d07646a, Saturn ringed in the planets plate, all nine in frame by Pluto, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
-    at: ch03-draft-4d07646a.mp4
-    when: 2026-11-19 07:53
+    note: "On the draft with the forty-second round's fixes: draft ch03-draft-f584759c, the signal beam and its investigators read at 3:00-3:10, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
+    at: ch03-draft-f584759c.mp4
+    when: 2026-11-19 12:08
   ch03.story:
     state: pass
-    note: "On the draft with the forty-first round's fixes: draft ch03-draft-4d07646a, Saturn ringed in the planets plate, all nine in frame by Pluto, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
-    at: ch03-draft-4d07646a.mp4
-    when: 2026-11-19 07:53
+    note: "On the draft with the forty-second round's fixes: draft ch03-draft-f584759c, the signal beam and its investigators read at 3:00-3:10, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
+    at: ch03-draft-f584759c.mp4
+    when: 2026-11-19 12:08
   ch05.acting:
     state: pass
     note: "On the draft with the thirty-ninth round's fixes: draft ch05-draft-831de9d8, shot Z takes in the fallen F-1 whole with its lenses, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
@@ -2009,6 +2009,21 @@ items:
     note: "Declined: the hold is deliberate. An earlier round found footnote 1 up too briefly to read; its 30 words need the time, and the shot is 7 s, so it runs 2.5 s into the next shot by design (src/scenes/ch02.js NOTES). It sits at the frame's foot on its own band and covers nothing in shot D."
     title: "Chapter 2, 0:35.7-0:37.7: the kilad footnote stays up about 2 s into shot D"
     when: 2026-11-19 03:44
+  find.site-poster-reprint:
+    state: pass
+    note: "Fixed: round 37's fix copied round 6's shot still, which predates the title page's 1932 masthead. tools/annotated.mjs and tools/film.mjs now cut the poster from the current chapter 0 draft at 8 s, so it follows the title page. Checked: both pages' poster is img/poster-a33a8257.jpg, showing 'AMAZING STORIES · August, 1932', THE LAST EVOLUTION, the byline."
+    title: "Film page: the player's poster is the old title card with 'A Classic Reprint' over 1932's date"
+    when: 2026-11-19 08:05
+  find.site-twilight-came-back:
+    state: pass
+    note: "Fixed: the note now says Campbell 'also imagined this world going sour. In \"Twilight\", written before this story but not published until 1934, and in the Machine stories after it...', which agrees with the afterword, the history page and fact-check row 21. Checked on the built film page."
+    title: "Film page note 'A world without work': Campbell 'came back to this world and soured on it' in Twilight, but the afterword says Twilight was written first"
+    when: 2026-11-19 08:05
+  find.ch03-signal-beam-faint:
+    state: pass
+    note: "Fixed in 9c52e22: the beam is brighter and wider, the investigators drawn with a white core. Checked on draft ch03-draft-f584759c at 3:02-3:10: the beam runs clear from the transport and the investigators read along it; SSIM against ch03-draft-4d07646a changes only on shot J (179.5-191.5); the other dips (0:59.5, 4:05, 4:44) compared frame by frame are grain; -14.4 LUFS."
+    title: "Chapter 3, 3:00-3:10: the signal beam and the investigators along it are specks"
+    when: 2026-11-19 12:08
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -2178,4 +2193,8 @@ fresh:
     found: 3
     note: "Round 41: nothing major or minor; three nits (ch03 7:12-7:24 the planets plate is nine like grey discs, Saturn without rings; ch02 0:35.7-0:37.7 the kilad footnote hangs into shot D; ch00 0:40-0:50 the line naming the heirs plays over a near-empty frame)."
     state: 3a67e4141610
-since_fresh: 16
+  - when: 2026-11-19 08:04
+    found: 3
+    note: "Round 42: two minor (the film page's poster is the old 'A Classic Reprint' title card; the 'world without work' note says Campbell 'came back' and soured in Twilight, against the afterword's Twilight-written-first), one nit (ch03 3:00-3:10 the signal beam and investigators are specks)."
+    state: 89544406da30
+since_fresh: 10
