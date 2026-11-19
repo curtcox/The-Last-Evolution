@@ -206,8 +206,13 @@
     if (made < 1) { boilSeed('bolts' + Math.floor(t * 12)); lightning(fx - 30, fy, X, Y - 60, NRG.lightning, { amp: .2 }); lightning(fx - 30, fy + 10, X + 30, Y - 30, NRG.lightning, { amp: .2, br: 1 }); }
     if (made > 0) { boilSeed('vm'); wash(rrPts(X - 40 * made, Y - 70 * made, 80 * made, 70 * made, 8), 2, { ink: true, sw: .6 }); }
     const vk = ez(t, tVio - .3, tVio + .8), spread = ez(t, tO, tO + 4);
-    if (vk > 0) { beam(X, Y - 70, X, Y - r * .72, 12, 30, VIOLET, vk, { splash: false, washOp: 70, a: .7 }); glow(X, Y - r * .74, 160, VIOLET, .6 * vk);
-      for (let i = 0; i <= 16; i++) { const a = Math.PI + (.12 + i / 16 * .76) * Math.PI, d = Math.abs(i - 8) / 8; if (d > spread * 1.05 + .1) continue; glow(X + Math.cos(a) * r * .9, Y + Math.sin(a) * r * .8 * .9, 80, VIOLET, .45 * (1 - d * .4)); } }
+    // (at 12-30 wide and washOp 70 the beam read grey below the crown, and the spread was a faint haze: violet all the way up now,
+    // and the spread a band of violet along the shell's inside)
+    if (vk > 0) { beam(X, Y - 70, X, Y - r * .72, 20, 40, VIOLET, vk, { splash: false, washOp: 150, a: .9 }); glow(X, Y - r * .74, 170, VIOLET, .7 * vk);
+      const top = Y - r * .72, len = (Y - 70) - top; for (let j = 0; j <= 8; j++) { const yy = Y - 70 - len * j / 8 * vk; glow(X, yy, 44, VIOLET, .45 * vk); }
+      for (let i = 0; i <= 32; i++) { const a = Math.PI + (.06 + i / 32 * .88) * Math.PI, d = Math.abs(i - 16) / 16; if (d > spread * 1.05 + .06) continue; glow(X + Math.cos(a) * r * .9, Y + Math.sin(a) * r * .8 * .9, 95, VIOLET, .6 * (1 - d * .3)); }
+      if (spread > 0) { const B = [], C2 = []; for (let i = 0; i <= 32; i++) { const d = Math.abs(i - 16) / 16; if (d > spread) continue; const a = Math.PI + (.06 + i / 32 * .88) * Math.PI; B.push([X + Math.cos(a) * r * .93, Y + Math.sin(a) * r * .8 * .92]); C2.push([X + Math.cos(a) * r * .84, Y + Math.sin(a) * r * .8 * .8]); }
+        if (B.length > 1) { boilSeed('vband'); paint([...B, ...C2.reverse()], { wash: VIOLET, washOp: 110 * spread, ink: null }); } } }
     // the green, pressing from outside on the crown
     for (let i = 0; i < 5; i++) beam(X - 600 + i * 300, -200, X + (i - 2) * 40, Y - r * .8, 6, 30, GREEN, 1, { washOp: 40, a: .4 });
     camEnd();
