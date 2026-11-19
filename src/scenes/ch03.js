@@ -253,8 +253,8 @@
         if (t > tI) for (let i = 0; i < 5; i++) { const st = tI + 1 + i * 1.3, q = seg(t, st, st + 1.4); if (q <= 0) continue; const x = lerp(700 + 50 * i, sx - 200 + 60 * i, q), y = lerp(150 + 60 * i, sy - 70 + 20 * i, q);
           if (q < 1) { glow(x, y, 12, NRG.white, .9); ruled([[700 + 50 * i, 150 + 60 * i], [x, y]], 1, '#CFE0FF', .5); } else if (t < st + 2) glow(x, y, 50, VIOLET, 1 - seg(t, st + 1.4, st + 2)); }
         // J: the signal beam out of the fifty, and investigators racing along it
-        if (t > tJ) { const bk = ez(t, tJ, tJ + 2); beam(sx + 200, sy, sx + 3000, sy - 300, 6, 30, '#CFE0FF', bk, { washOp: 20, a: .3, splash: false });
-          for (let i = 0; i < 6; i++) { const q = frac((t - tJ) * .25 + i / 6); glow(sx + 200 + 2800 * q, sy - 300 * q, 10, NRG.white, .9 * bk); } }
+        if (t > tJ) { const bk = ez(t, tJ, tJ + 2); beam(sx + 200, sy, sx + 3000, sy - 300, 10, 44, '#CFE0FF', bk, { washOp: 70, a: .65, splash: false });   // (at washOp 20, a .3 and glows of 10 the beam and its investigators were specks on a phone)
+          for (let i = 0; i < 6; i++) { const q = frac((t - tJ) * .25 + i / 6); const ix = sx + 200 + 2800 * q, iy = sy - 300 * q; glow(ix, iy, 30, NRG.white, .8 * bk); glow(ix, iy, 9, '#FFFDF6', bk); DES.investigator(ix, iy, 9, t); } }
       }
     });
   }
