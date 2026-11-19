@@ -168,6 +168,13 @@
     DES.lab(-300, -150, 2520, 1300, t, { couch: false, ext: 1200 });
     // lit until 'went suddenly blank', then out all at once
     const out = ez(t, C('p080.1:blank') - .05, C('p080.1:blank') + .15);
+    // before that, each screen shows what its machine sees: an enemy ship close ahead, its own white glow at the edge, until the screen dies with it
+    // (they were a bare pale wash, so 'blank' changed nothing the eye had been shown)
+    if (out < 1) { const near = .7 + .3 * ez(t, T0('J') - .5, C('p080.1:blank')), gone = 0;
+      for (let r = 0; r < 3; r++) for (let c = 0; c < 7; c++) { const x = 103 + c * 252, y = 110 + r * 208, j = hash(c * 3 + r * 7);
+        boilSeed('vw' + c + r); paint(rectPts(x + 6, y + 6, 202, 157), { wash: '#3E372E', washOp: 225, ink: null });
+        ship(x + 135 + 12 * j, y + 70 + 20 * hash(c + r * 5), 70, t, -1);
+        if (gone < 1) { const mx = lerp(x + 30 + 20 * j, x + 92, near), my = y + 95 - 20 * near; glow(mx, my, 16 + 8 * near, NRG.white, .8 * (1 - gone)); glow(mx, my, 5, '#FFFDF6', 1 - gone); } } }
     if (out > 0) for (let r = 0; r < 3; r++) for (let c = 0; c < 7; c++) { const x = 103 + c * 252, y = 110 + r * 208; boilSeed('bl' + c + r); paint(rectPts(x + 6, y + 6, 202, 157), { wash: '#1C1814', washOp: 235 * out, ink: null }); }
     { const x0 = -300, y0 = -150, w = 2520, h = 1300, fy = y0 + h * .78;   // the lab's piers again, solid: its washes let the screens' frames show through them
       for (let k = 0; k < 6; k++) { const px = x0 + w * (.04 + k * .19); stillSeed('spier' + k); paint(rectPts(px, y0, w * .05, fy - y0), { wash: '#8C8170', washOp: 255, fill: '#7C7262', fillOp: 110, bleed: .02, tex: .3, ink: INK, sw: .6 });
