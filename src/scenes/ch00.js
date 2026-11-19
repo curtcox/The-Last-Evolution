@@ -62,6 +62,11 @@
       for (let i = 0; i < 14; i++) { const [x, y, r] = beingAt(t, i); being(x, y, r, HUES[i % HUES.length], t, i, 1 - .6 * mem); }
       // the one that passes close (D), from the lower left to the upper right, past the old machine
       if (passK > 0 && passK < 1) { const q = ease(passK); being(lerp(300, 1800, q), lerp(820, 300, q) + 60 * Math.sin(q * 3), 46, '#FFC766', t, 99, Math.sin(Math.PI * passK)); }
+      // 'a poor inefficient type, but yet the creators of those who are now': three of the heirs gather round the old machine,
+      // the bright beside the dim, and draw off again on 'long after I pass forever' (the line played over an empty frame)
+      { const hk = win(t, C('p001.1:a poor inefficient') - .6, C('p001.1:forever') + .8, 2.2, 2.4);
+        if (hk > 0) for (let j = 0; j < 3; j++) { const a = t * .3 + j * 2.1, rr = lerp(900, 1, hk);
+          being(F2[0] + 60 + Math.cos(a) * (260 + rr), F2[1] - 20 + Math.sin(a) * (130 + .5 * rr), 34, HUES[(j * 2 + 1) % HUES.length], t, 60 + j, hk); } }
       mentatype(t, ez(t, T0('E') - 1, T0('E') + 1.5));
       // F-2: old, oxidised, its lens lit faintly with its words; dimmer once the light has passed
       const dim = steps(t, [[0, .5], [pass + 2, .25, 3], [T0('E'), .4]]);
