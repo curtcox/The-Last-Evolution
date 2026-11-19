@@ -102,18 +102,18 @@ items:
   site.watch.content:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: 5a49a4bc744a
-    when: 2026-11-19 03:33
+    at: 1c9c10d7e179
+    when: 2026-11-19 07:53
   site.watch.look:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: be61c256b81d
-    when: 2026-11-19 03:33
+    at: 23fdc00f5657
+    when: 2026-11-19 07:53
   work.title:
     state: pass
-    note: "Re-checked after the twenty-fifth round: the masthead (62 px, italic) and byline (64 px) are larger again so they read on a phone (find.small-lettering), the title itself unchanged; on ch00-draft-747111c6 all three lines sit inside the frame with clear space between them (sheet of 0:05-0:14). The header names the 1932 issue ('AMAZING STORIES · August, 1932'), not the 1961 reprint."
-    at: 2386c270817f
-    when: 2026-11-16 06:14
+    note: "Re-checked after round 41: chapter 0's source changed only in shot D (the heirs gathering at 0:40-0:48); SSIM against the previous draft is .997 through the title page. the masthead (62 px, italic) and byline (64 px) are larger again so they read on a phone (find.small-lettering), the title itself unchanged; on ch00-draft-747111c6 all three lines sit inside the frame with clear space between them (sheet of 0:05-0:14). The header names the 1932 issue ('AMAZING STORIES · August, 1932'), not the 1961 reprint."
+    at: 4101ddc20da5
+    when: 2026-11-19 07:55
   find.side-tunic:
     state: pass
     note: "DES.personSide now gives everyone but Roal a tunic to mid-thigh over two legs, the far one a little back when standing, as the front view and model sheets have. Checked side-on in ch00 (the memory) and ch08 (Trest talking): tunic, belt, legs and boots read; Roal keeps his robe."
@@ -126,9 +126,9 @@ items:
     when: 2026-11-18 08:01
   ch03.picture:
     state: pass
-    note: "On the draft with the thirty-ninth round's fixes: draft ch03-draft-38f435e9, on the chuckle Roal puts a hand to his chest, head back, shoulders shaking, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
-    at: ch03-draft-38f435e9.mp4
-    when: 2026-11-19 00:18
+    note: "On the draft with the forty-first round's fixes: draft ch03-draft-4d07646a, Saturn ringed in the planets plate, all nine in frame by Pluto, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
+    at: ch03-draft-4d07646a.mp4
+    when: 2026-11-19 07:53
   find.repo-size:
     state: pass
     note: "Curt chose GitHub Release files. Chapter drafts now go to the repo's drafts release (publish_review.mjs uploads them under content-hashed names), and the pages play them from there with a source element typed video/mp4, which Safari needs because GitHub serves release files as octet-stream. Checked in Chromium and Safari: a draft page, and the annotated film jumping to chapter 7. The old videos stay in git history (about 530 MB); removing them would mean rewriting history and a force push."
@@ -201,29 +201,29 @@ items:
     when: 2026-11-04 09:00
   ch00.acting:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the masthead and byline lettered larger, legible at phone size (find.small-lettering); sound unchanged, -14.4 LUFS. F-2 drifts, then the memory of Roal offering and Trest standing apart (0:26-0:34) holds still, as a memory should; nothing acts against the words."
-    at: ch00-draft-747111c6.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the forty-first round's fixes: draft ch00-draft-935ffcee, three of the heirs gather round the old machine on the line that names them, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. F-2 drifts, then the memory of Roal offering and Trest standing apart (0:26-0:34) holds still, as a memory should; nothing acts against the words."
+    at: ch00-draft-935ffcee.mp4
+    when: 2026-11-19 07:53
   ch00.picture:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the masthead and byline lettered larger, legible at phone size (find.small-lettering); sound unchanged, -14.4 LUFS. Header now reads AMAZING STORIES · August, 1932. Title page, space, the memory and the mentatype sheets all read; the galaxies over the memory are dimmed to 40% by design (ch00.js: 1 - .6*mem)."
-    at: ch00-draft-747111c6.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the forty-first round's fixes: draft ch00-draft-935ffcee, three of the heirs gather round the old machine on the line that names them, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Header now reads AMAZING STORIES · August, 1932. Title page, space, the memory and the mentatype sheets all read; the galaxies over the memory are dimmed to 40% by design (ch00.js: 1 - .6*mem)."
+    at: ch00-draft-935ffcee.mp4
+    when: 2026-11-19 07:53
   ch00.sync:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the masthead and byline lettered larger, legible at phone size (find.small-lettering); sound unchanged, -14.4 LUFS. The memory opens on 'in memory I am still close' and the passing light crosses on 'But I will pass soon'; the sheets come in with the record (E). Whisper's words sit 0.14 s from the alignment's (median)."
-    at: ch00-draft-747111c6.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the forty-first round's fixes: draft ch00-draft-935ffcee, three of the heirs gather round the old machine on the line that names them, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The memory opens on 'in memory I am still close' and the passing light crosses on 'But I will pass soon'; the sheets come in with the record (E). Whisper's words sit 0.14 s from the alignment's (median)."
+    at: ch00-draft-935ffcee.mp4
+    when: 2026-11-19 07:53
   ch00.sound:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the masthead and byline lettered larger, legible at phone size (find.small-lettering); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 4.2 LU, shots -14.6 to -17.4. Whisper missed 2 of 95 words: 'menta type', which it heard as 'mentatype', the right word."
-    at: ch00-draft-747111c6.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the forty-first round's fixes: draft ch00-draft-935ffcee, three of the heirs gather round the old machine on the line that names them, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 4.2 LU, shots -14.6 to -17.4. Whisper missed 2 of 95 words: 'menta type', which it heard as 'mentatype', the right word."
+    at: ch00-draft-935ffcee.mp4
+    when: 2026-11-19 07:53
   ch00.story:
     state: pass
-    note: "On the draft with the twenty-fifth round's fixes: the masthead and byline lettered larger, legible at phone size (find.small-lettering); sound unchanged, -14.4 LUFS. 58 s: the title, the old machine alone in space, the memory of man, and why it sets down its record. Sets up the film without explaining it away."
-    at: ch00-draft-747111c6.mp4
-    when: 2026-11-16 03:57
+    note: "On the draft with the forty-first round's fixes: draft ch00-draft-935ffcee, three of the heirs gather round the old machine on the line that names them, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. 58 s: the title, the old machine alone in space, the memory of man, and why it sets down its record. Sets up the film without explaining it away."
+    at: ch00-draft-935ffcee.mp4
+    when: 2026-11-19 07:53
   find.ch01-workers:
     state: pass
     note: "New draft, 0:55-1:11 every 2 s: workers cross now and then but part within a few seconds; no pair flies stacked."
@@ -401,24 +401,24 @@ items:
     when: 2026-11-18 08:01
   ch03.acting:
     state: pass
-    note: "On the draft with the thirty-ninth round's fixes: draft ch03-draft-38f435e9, on the chuckle Roal puts a hand to his chest, head back, shoulders shaking, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
-    at: ch03-draft-38f435e9.mp4
-    when: 2026-11-19 00:18
+    note: "On the draft with the forty-first round's fixes: draft ch03-draft-4d07646a, Saturn ringed in the planets plate, all nine in frame by Pluto, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
+    at: ch03-draft-4d07646a.mp4
+    when: 2026-11-19 07:53
   ch03.sync:
     state: pass
-    note: "On the draft with the thirty-ninth round's fixes: draft ch03-draft-38f435e9, on the chuckle Roal puts a hand to his chest, head back, shoulders shaking, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
-    at: ch03-draft-38f435e9.mp4
-    when: 2026-11-19 00:18
+    note: "On the draft with the forty-first round's fixes: draft ch03-draft-4d07646a, Saturn ringed in the planets plate, all nine in frame by Pluto, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
+    at: ch03-draft-4d07646a.mp4
+    when: 2026-11-19 07:53
   ch03.sound:
     state: pass
-    note: "On the draft with the thirty-ninth round's fixes: draft ch03-draft-38f435e9, on the chuckle Roal puts a hand to his chest, head back, shoulders shaking, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
-    at: ch03-draft-38f435e9.mp4
-    when: 2026-11-19 00:19
+    note: "On the draft with the forty-first round's fixes: draft ch03-draft-4d07646a, Saturn ringed in the planets plate, all nine in frame by Pluto, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
+    at: ch03-draft-4d07646a.mp4
+    when: 2026-11-19 07:53
   ch03.story:
     state: pass
-    note: "On the draft with the thirty-ninth round's fixes: draft ch03-draft-38f435e9, on the chuckle Roal puts a hand to his chest, head back, shoulders shaking, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
-    at: ch03-draft-38f435e9.mp4
-    when: 2026-11-19 00:19
+    note: "On the draft with the forty-first round's fixes: draft ch03-draft-4d07646a, Saturn ringed in the planets plate, all nine in frame by Pluto, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
+    at: ch03-draft-4d07646a.mp4
+    when: 2026-11-19 07:53
   ch05.acting:
     state: pass
     note: "On the draft with the thirty-ninth round's fixes: draft ch05-draft-831de9d8, shot Z takes in the fallen F-1 whole with its lenses, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
@@ -1994,6 +1994,21 @@ items:
     note: "Declined (round 40; the reviewer called it a defensible device): it is the narrator remembering, on 'who, in memory, sees the struggle'; the 0:27 film-page note says so, and chapter 11's 'I, F-2' over the same rusted machine closes it. Showing it there is the point."
     title: "Chapter 0, 0:14-0:27: the rusted narrator hovers in the 2538 lab before F-2 is built"
     when: 2026-11-19 00:33
+  find.ch03-planets-alike:
+    state: pass
+    note: "Fixed in 44fed45: Saturn has its rings (the far half hidden behind the disc), spaced for them, and the pull-back widens to .58. Checked on draft ch03-draft-4d07646a at 7:12-7:25: Saturn reads as Saturn, and all nine show with Pluto's machine landing on 'Pluto'; SSIM against ch03-draft-38f435e9 dips only on the plate (7:08-7:26), elsewhere grain (0:59.5 and 4:44 compared frame by frame); -14.4 LUFS."
+    title: "Chapter 3, 7:12-7:24: the planets plate is nine like grey discs; Saturn has no rings"
+    when: 2026-11-19 07:53
+  find.ch00-heirs-empty:
+    state: pass
+    note: "Fixed in 2db62ab: three beings gather round the old machine from 'a poor inefficient type' and draw off on 'forever'. Checked on draft ch00-draft-935ffcee at 0:41-0:47; SSIM against ch00-draft-747111c6 changes only at 39.5-48 s; -14.4 LUFS."
+    title: "Chapter 0, 0:40-0:50: the line naming the heirs plays over a near-empty frame"
+    when: 2026-11-19 07:53
+  find.ch02-footnote-hangs:
+    state: pass
+    note: "Declined: the hold is deliberate. An earlier round found footnote 1 up too briefly to read; its 30 words need the time, and the shot is 7 s, so it runs 2.5 s into the next shot by design (src/scenes/ch02.js NOTES). It sits at the frame's foot on its own band and covers nothing in shot D."
+    title: "Chapter 2, 0:35.7-0:37.7: the kilad footnote stays up about 2 s into shot D"
+    when: 2026-11-19 03:44
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -2159,4 +2174,8 @@ fresh:
     found: 3
     note: "Round 40: nothing major or minor; three new nits (ch06 4:07-4:10 Earth's screens a bare wash before 'went suddenly blank'; ch00 the rusted narrator in the 2538 memory; the Pluto note's 'outermost planet Roal names'). The foreword's age line is already with Curt."
     state: 753087c6e2a5
-since_fresh: 10
+  - when: 2026-11-19 03:42
+    found: 3
+    note: "Round 41: nothing major or minor; three nits (ch03 7:12-7:24 the planets plate is nine like grey discs, Saturn without rings; ch02 0:35.7-0:37.7 the kilad footnote hangs into shot D; ch00 0:40-0:50 the line naming the heirs plays over a near-empty frame)."
+    state: 3a67e4141610
+since_fresh: 16
