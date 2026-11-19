@@ -102,8 +102,8 @@
       // the framing L takes up
       [tK, tt => { const tApp = C('p123.1:Roal and Trest appeared'), up = ez(tt, tApp + 3.5, tGold + 2);
         const inn = ez(tt, tGold + 2, C('p123.1:deep violet') + 1);
-        return [lerp(lerp(lerp(350, 215, ez(tt, tK, tApp)), PX, up), PX, inn),   // (at 150 F-2's nose was cut by the right edge as they came out)
-           lerp(lerp(800, ORB[1] + 260, up), ORB[1], inn), lerp(lerp(lerp(1, 1.3, ez(tt, tK, tApp)), .75, up) * lerp(1, 1.5, ez(tt, tGold + 3, tL)), 2.6, inn)]; }, 3],
+        return [lerp(lerp(lerp(350, 120, ez(tt, tK, tApp)), PX, up), PX, inn),   // (at 150 F-2's nose was cut by the right edge as they came out; at 215 and 1.3 the dome's left half was off the left edge)
+           lerp(lerp(800, ORB[1] + 260, up), ORB[1], inn), lerp(lerp(lerp(1, 1.12, ez(tt, tK, tApp)), .75, up) * lerp(1, 1.5, ez(tt, tGold + 3, tL)), 2.6, inn)]; }, 3],
       // down to all who hear it, the two men, F-2 and C-R-U-1, as its impulses come down through them 'into the
       // thought-apparatus of each, man and machine alike' (held in on the sphere, 24 s, the listeners went unseen; framed
       // wide with the sphere, they were specks)
