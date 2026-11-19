@@ -102,13 +102,13 @@ items:
   site.watch.content:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: cc97f18de948
-    when: 2026-11-19 12:08
+    at: 32636418b1d5
+    when: 2026-11-19 13:43
   site.watch.look:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: f87ae709e67b
-    when: 2026-11-19 12:08
+    at: e424e0fee739
+    when: 2026-11-19 13:43
   work.title:
     state: pass
     note: "Re-checked after round 41: chapter 0's source changed only in shot D (the heirs gathering at 0:40-0:48); SSIM against the previous draft is .997 through the title page. the masthead (62 px, italic) and byline (64 px) are larger again so they read on a phone (find.small-lettering), the title itself unchanged; on ch00-draft-747111c6 all three lines sit inside the frame with clear space between them (sheet of 0:05-0:14). The header names the 1932 issue ('AMAZING STORIES · August, 1932'), not the 1961 reprint."
@@ -471,29 +471,29 @@ items:
     when: 2026-11-19 03:33
   ch07.acting:
     state: pass
-    note: "On the draft with the thirty-seventh round's fixes: draft ch07-draft-bd7d996b, the cut-away inside the dome keeps the five screens glowing over the men, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal and Trest talk in the hall at night with hands out, Roal's curl rises, F-2 and the six machines gather, the two men stand inside the dome with their faces lit by the screens, the projectors feed the dome."
-    at: ch07-draft-bd7d996b.mp4
-    when: 2026-11-18 16:38
+    note: "On the draft with the forty-third round's fixes: draft ch07-draft-41fa7c56, F-2's beam violet all the way up and its spread a violet band along the canopy, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal and Trest talk in the hall at night with hands out, Roal's curl rises, F-2 and the six machines gather, the two men stand inside the dome with their faces lit by the screens, the projectors feed the dome."
+    at: ch07-draft-41fa7c56.mp4
+    when: 2026-11-19 13:43
   ch07.picture:
     state: pass
-    note: "On the draft with the thirty-seventh round's fixes: draft ch07-draft-bd7d996b, the cut-away inside the dome keeps the five screens glowing over the men, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The hall of screens with falling ships, Roal's curl, F-2 and the six, the ring, the dome rising whole, the inside with five lit screens and the two lit faces, the green beams on the dome, the violet cut-away, the projectors, the dome small on the plain."
-    at: ch07-draft-bd7d996b.mp4
-    when: 2026-11-18 16:38
+    note: "On the draft with the forty-third round's fixes: draft ch07-draft-41fa7c56, F-2's beam violet all the way up and its spread a violet band along the canopy, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The hall of screens with falling ships, Roal's curl, F-2 and the six, the ring, the dome rising whole, the inside with five lit screens and the two lit faces, the green beams on the dome, the violet cut-away, the projectors, the dome small on the plain."
+    at: ch07-draft-41fa7c56.mp4
+    when: 2026-11-19 13:43
   ch07.sync:
     state: pass
-    note: "On the draft with the thirty-seventh round's fixes: draft ch07-draft-bd7d996b, the cut-away inside the dome keeps the five screens glowing over the men, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Cuts on cue words; the faces lit for 'the two faces in their light'; Whisper timing on the narration."
-    at: ch07-draft-bd7d996b.mp4
-    when: 2026-11-18 16:38
+    note: "On the draft with the forty-third round's fixes: draft ch07-draft-41fa7c56, F-2's beam violet all the way up and its spread a violet band along the canopy, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Cuts on cue words; the faces lit for 'the two faces in their light'; Whisper timing on the narration."
+    at: ch07-draft-41fa7c56.mp4
+    when: 2026-11-19 13:43
   ch07.sound:
     state: pass
-    note: "On the draft with the thirty-seventh round's fixes: draft ch07-draft-bd7d996b, the cut-away inside the dome keeps the five screens glowing over the men, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 4.0; Whisper lost 0 of 527; the quiet shots C and I are pauses, speech -14.2 to -15.3 (Trest's 'the end' soft, as it should be)."
-    at: ch07-draft-bd7d996b.mp4
-    when: 2026-11-18 16:38
+    note: "On the draft with the forty-third round's fixes: draft ch07-draft-41fa7c56, F-2's beam violet all the way up and its spread a violet band along the canopy, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 4.0; Whisper lost 0 of 527; the quiet shots C and I are pauses, speech -14.2 to -15.3 (Trest's 'the end' soft, as it should be)."
+    at: ch07-draft-41fa7c56.mp4
+    when: 2026-11-19 13:43
   ch07.story:
     state: pass
-    note: "On the draft with the thirty-seventh round's fixes: draft ch07-draft-bd7d996b, the cut-away inside the dome keeps the five screens glowing over the men, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The last men shelter: Roal and Trest decide, the machines build the dome around them, and the outside goes on without them. The chapter's quiet ending reads."
-    at: ch07-draft-bd7d996b.mp4
-    when: 2026-11-18 16:38
+    note: "On the draft with the forty-third round's fixes: draft ch07-draft-41fa7c56, F-2's beam violet all the way up and its spread a violet band along the canopy, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The last men shelter: Roal and Trest decide, the machines build the dome around them, and the outside goes on without them. The chapter's quiet ending reads."
+    at: ch07-draft-41fa7c56.mp4
+    when: 2026-11-19 13:43
   ch10.acting:
     state: pass
     note: "On the draft with the thirty-second round's fixes: draft ch10-draft-a426e681, the blue-white beam passing through the screen and the ship and out the far side (find.ch10-beam-through); sound unchanged, -14.4 LUFS. The fleet moves as one body; the golden spark gathers its ring, the flagship twists in its grip, and when the lock comes the boil stops, still."
@@ -2024,6 +2024,11 @@ items:
     note: "Fixed in 9c52e22: the beam is brighter and wider, the investigators drawn with a white core. Checked on draft ch03-draft-f584759c at 3:02-3:10: the beam runs clear from the transport and the investigators read along it; SSIM against ch03-draft-4d07646a changes only on shot J (179.5-191.5); the other dips (0:59.5, 4:05, 4:44) compared frame by frame are grain; -14.4 LUFS."
     title: "Chapter 3, 3:00-3:10: the signal beam and the investigators along it are specks"
     when: 2026-11-19 12:08
+  find.ch07-violet-grey:
+    state: pass
+    note: "Fixed in 880d1ff: the beam is violet all the way up, and the spread a band of violet along the shell's inside. Checked on draft ch07-draft-41fa7c56 at 3:28 and 3:44-3:48; SSIM against ch07-draft-bd7d996b changes at 3:43-3:51; the 2:20 dip compared frame by frame is grain in the waving blankness; -14.5 LUFS."
+    title: "Chapter 7, 3:27-3:50: the 'strange violet beam' reads grey below the crown, and its spread across the canopy barely registers"
+    when: 2026-11-19 13:43
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -2197,4 +2202,8 @@ fresh:
     found: 3
     note: "Round 42: two minor (the film page's poster is the old 'A Classic Reprint' title card; the 'world without work' note says Campbell 'came back' and soured in Twilight, against the afterword's Twilight-written-first), one nit (ch03 3:00-3:10 the signal beam and investigators are specks)."
     state: 89544406da30
-since_fresh: 10
+  - when: 2026-11-19 12:19
+    found: 1
+    note: "Round 43: nothing major; one minor (ch07 3:27-3:50 the 'strange violet beam' reads grey below the crown and its spread across the canopy barely registers)."
+    state: 9e79179fc224
+since_fresh: 8
