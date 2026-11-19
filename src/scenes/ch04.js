@@ -49,18 +49,23 @@
     const up = win(t, C('p037.3:rose') - .3, C('p037.3:trained') - .5, .8, 1), react = win(t, C('p037.3:trained'), C('p037.3:trained') + 3, .35, 1.4), watch = win(t, C('p037.3:trained') + 2.6, C('p037.3:harmless') + 1.2, 1, 1.2);
     const flinch = (q, a) => { q.up = (q.up ?? DES.POSE.stand.up) + a * .45 * react; q.fore = (q.fore ?? DES.POSE.stand.fore) + a * 2 * react; q.torso = (q.torso ?? 0) - .08 * a * react + .05 * watch; };
     flinch(rp, 1);
+    // X-6349's bad news, the generators destroyed and nothing known of their system: Trest's hand to his chin, Kahsh's head
+    // bowed, both looking down (they stood straight, arms down, for its 10 s)
+    const dis = win(t, C('p042.1:destroyed'), T0('H') - .2, .8, .8);
     stander(t, P.roal, G, 44, [[tShift, tShift + 4, P.roal, 380]], { who: 'roal', key: 'roal', seed: 3, flip: pt > .1 || sp < P.roal || (t > tShift + 4 && t < T0('N') + 1), look: .1 + gl + nod(t, TO_ROAL) + .5 * up + .15 * react, talk: talk(t, 'roal'), pose: rp });
     const step = ez(t, T0('H'), T0('H') + 1) * (1 - ez(t, T0('I'), T0('I') + 1)), tp = {}, tl = gesture(t, tp, TRESTC);
     if (tp.up) { tp.up = .12 + (tp.up - .12) * .5; tp.fore = .3 + (tp.fore - .3) * .55; }   // he's stepped up close to Kahsh: a small gesture, in his own space
     flinch(tp, .8);
-    stander(t, P.trest, G + 10, 46, [[T0('H'), T0('H') + 1, P.trest, P.trest + 50], [T0('I'), T0('I') + 1, P.trest + 50, P.trest], [tShift + .5, tShift + 5, P.trest, 1640]], { who: 'trest', key: 'trest', seed: 7, flip: (sp < P.trest && t < tShift) || t > T0('N') + 1, look: .05 + tl + nod(t, ROALC) + .5 * up + .15 * react, talk: talk(t, 'trest'), pose: tp });
+    if (dis > 0) { tp.up = lerp(tp.up ?? .12, 1.05, .9 * dis); tp.fore = lerp(tp.fore ?? .3, 3.9, .9 * dis); tp.torso = (tp.torso ?? 0) + .04 * dis; }
+    stander(t, P.trest, G + 10, 46, [[T0('H'), T0('H') + 1, P.trest, P.trest + 50], [T0('I'), T0('I') + 1, P.trest + 50, P.trest], [tShift + .5, tShift + 5, P.trest, 1640]], { who: 'trest', key: 'trest', seed: 7, flip: (sp < P.trest && t < tShift) || t > T0('N') + 1, look: .05 + tl + nod(t, ROALC) + .5 * up + .15 * react - .2 * dis, talk: talk(t, 'trest'), pose: tp });
     // Kahsh, when the council breaks up, walks off to the right (he vanished)
     { const k = win(t, C('p044.2') + .3, C('p044.2') + 5.4, .3, .5); if (k > 0) letter('Kahsh-256799', P.kahsh, 670, 44, INK, { ink: false, align: 'center', font: '700 44px ' + SERIF, spacing: 1, alpha: k }); }   // lettered as he's named, over his own head (to his right, it sat on X-6349)
     // in profile like the men, turned to whoever speaks, his hand on his own clauses (he stood front-on, as on his
     // model sheet, through the whole council)
     const kp = {}, kl = gesture(t, kp, KAHSH);
     flinch(kp, .8);
-    if (t < tShift + 8) { const kf = sp < P.kahsh && t < tShift, kh = stander(t, P.kahsh, G + 20, 44, [[tShift, tShift + 8, P.kahsh, 2500]], { who: 'kahsh', key: 'kahsh', seed: 5, flip: kf, look: .05 + kl + .5 * up + .15 * react, talk: talk(t, 'kahsh'), pose: kp });
+    if (dis > 0) kp.torso = (kp.torso ?? 0) + .08 * dis;
+    if (t < tShift + 8) { const kf = sp < P.kahsh && t < tShift, kh = stander(t, P.kahsh, G + 20, 44, [[tShift, tShift + 8, P.kahsh, 2500]], { who: 'kahsh', key: 'kahsh', seed: 5, flip: kf, look: .05 + kl + .5 * up + .15 * react - .3 * dis, talk: talk(t, 'kahsh'), pose: kp });
       // the Man-ruler's marks, as on his model sheet (the side view drew him a plain tunic like Trest's): the tall fan of
       // his collar behind the head, the mantle over his shoulders, and his disc of office
       if (kh && kh.sh) { const f = kf ? -1 : 1, u = 44 * 6 / 7.4, [sx, sy] = kh.sh, [hx, hy] = kh.head, at = (x, y, a, b) => [x + a * u * f, y + b * u];
