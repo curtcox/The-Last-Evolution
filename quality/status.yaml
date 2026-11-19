@@ -102,13 +102,13 @@ items:
   site.watch.content:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: fc5eaad2e0fe
-    when: 2026-11-19 00:19
+    at: 5a49a4bc744a
+    when: 2026-11-19 03:33
   site.watch.look:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: 4bc873a90218
-    when: 2026-11-19 00:19
+    at: be61c256b81d
+    when: 2026-11-19 03:33
   work.title:
     state: pass
     note: "Re-checked after the twenty-fifth round: the masthead (62 px, italic) and byline (64 px) are larger again so they read on a phone (find.small-lettering), the title itself unchanged; on ch00-draft-747111c6 all three lines sit inside the frame with clear space between them (sheet of 0:05-0:14). The header names the 1932 issue ('AMAZING STORIES · August, 1932'), not the 1961 reprint."
@@ -446,29 +446,29 @@ items:
     when: 2026-11-19 00:19
   ch06.acting:
     state: pass
-    note: "On the draft with the thirty-fifth round's fixes: draft ch06-draft-1fcf4ece, red-black spots coming one after another over each screen on 'flecks and spots' and growing, so they show against the hulls (find.ch06-flecks); sound unchanged, -14.4 LUFS. The fleets as actors: the giants advance in ranks, the screens flare violet then red, the generator crews feed their machines, the motes swing their rays back plainly green into the giants, and the dying ships tip and fall away."
-    at: ch06-draft-1fcf4ece.mp4
-    when: 2026-11-18 08:01
+    note: "On the draft with the fortieth round's fixes: draft ch06-draft-6321bf32, Earth's screens show a ship and its machine's glow before they go blank, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleets as actors: the giants advance in ranks, the screens flare violet then red, the generator crews feed their machines, the motes swing their rays back plainly green into the giants, and the dying ships tip and fall away."
+    at: ch06-draft-6321bf32.mp4
+    when: 2026-11-19 03:32
   ch06.picture:
     state: pass
-    note: "On the draft with the thirty-fifth round's fixes: draft ch06-draft-1fcf4ece, red-black spots coming one after another over each screen on 'flecks and spots' and growing, so they show against the hulls (find.ch06-flecks); sound unchanged, -14.4 LUFS. Dawn over the plain with the machines rising, the ranks of giants, shields violet to red, the generator room, the turned green rays, dying ships drifting dark, the curtain, Earth pole to pole, the streak. Reads at sheet size."
-    at: ch06-draft-1fcf4ece.mp4
-    when: 2026-11-18 08:01
+    note: "On the draft with the fortieth round's fixes: draft ch06-draft-6321bf32, Earth's screens show a ship and its machine's glow before they go blank, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Dawn over the plain with the machines rising, the ranks of giants, shields violet to red, the generator room, the turned green rays, dying ships drifting dark, the curtain, Earth pole to pole, the streak. Reads at sheet size."
+    at: ch06-draft-6321bf32.mp4
+    when: 2026-11-19 03:32
   ch06.sync:
     state: pass
-    note: "On the draft with the thirty-fifth round's fixes: draft ch06-draft-1fcf4ece, red-black spots coming one after another over each screen on 'flecks and spots' and growing, so they show against the hulls (find.ch06-flecks); sound unchanged, -14.4 LUFS. The blank screens land on 'went suddenly blank'; the green rays turn on their line; cuts on cue words."
-    at: ch06-draft-1fcf4ece.mp4
-    when: 2026-11-18 08:01
+    note: "On the draft with the fortieth round's fixes: draft ch06-draft-6321bf32, Earth's screens show a ship and its machine's glow before they go blank, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The blank screens land on 'went suddenly blank'; the green rays turn on their line; cuts on cue words."
+    at: ch06-draft-6321bf32.mp4
+    when: 2026-11-19 03:33
   ch06.sound:
     state: pass
-    note: "On the draft with the thirty-fifth round's fixes: draft ch06-draft-1fcf4ece, red-black spots coming one after another over each screen on 'flecks and spots' and growing, so they show against the hulls (find.ch06-flecks); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.6, shots -14.4 to -17.8; Whisper lost 17 of 584 ('ten thousand', 'motes', numbers)."
-    at: ch06-draft-1fcf4ece.mp4
-    when: 2026-11-18 08:01
+    note: "On the draft with the fortieth round's fixes: draft ch06-draft-6321bf32, Earth's screens show a ship and its machine's glow before they go blank, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.6, shots -14.4 to -17.8; Whisper lost 17 of 584 ('ten thousand', 'motes', numbers)."
+    at: ch06-draft-6321bf32.mp4
+    when: 2026-11-19 03:33
   ch06.story:
     state: pass
-    note: "On the draft with the thirty-fifth round's fixes: draft ch06-draft-1fcf4ece, red-black spots coming one after another over each screen on 'flecks and spots' and growing, so they show against the hulls (find.ch06-flecks); sound unchanged, -14.4 LUFS. The second war's turn: the giants come in force, the shields fail, and the motes turn the enemy's own death ray, the chapter's hinge, clearly shown; the curtain closes Earth."
-    at: ch06-draft-1fcf4ece.mp4
-    when: 2026-11-18 08:01
+    note: "On the draft with the fortieth round's fixes: draft ch06-draft-6321bf32, Earth's screens show a ship and its machine's glow before they go blank, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The second war's turn: the giants come in force, the shields fail, and the motes turn the enemy's own death ray, the chapter's hinge, clearly shown; the curtain closes Earth."
+    at: ch06-draft-6321bf32.mp4
+    when: 2026-11-19 03:33
   ch07.acting:
     state: pass
     note: "On the draft with the thirty-seventh round's fixes: draft ch07-draft-bd7d996b, the cut-away inside the dome keeps the five screens glowing over the men, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal and Trest talk in the hall at night with hands out, Roal's curl rises, F-2 and the six machines gather, the two men stand inside the dome with their faces lit by the screens, the projectors feed the dome."
@@ -1979,6 +1979,21 @@ items:
     note: "Fixed in b6fd6b2: on 'that little chuckle' Roal's hand comes to his chest, his head goes back and his shoulders shake. Checked on draft ch03-draft-38f435e9 at 6:49-6:51: the hand at the chest and the head back read at phone size; SSIM against ch03-draft-4e7a02c0 dips there (.976, 408.5-410.5); the one lower dip, 4:44 (.93), was compared frame by frame and is grain in the dissolve; -14.4 LUFS."
     title: "Chapter 3, 6:48-6:54: Roal's 'little chuckle' is only a small head tilt"
     when: 2026-11-19 00:18
+  find.site-pluto-outermost:
+    state: pass
+    note: "Fixed in 7062978: the note now says that when Roal names it Pluto was the newest planet known and the farthest out. Checked on the built film page."
+    title: "Film page note 'Pluto, the newest planet': 'the outermost planet Roal names' reads as if Roal calls it outermost"
+    when: 2026-11-19 03:32
+  find.ch06-screens-bare:
+    state: pass
+    note: "Fixed in c95acfd: each of Earth's screens shows an enemy ship with its machine's white glow beside it, and all go dark together on 'blank'. Checked on draft ch06-draft-6321bf32 at 4:07-4:10; SSIM against ch06-draft-1fcf4ece dips only at 4:07-4:09.5; -14.4 LUFS."
+    title: "Chapter 6, 4:07-4:10: Earth's screens are a bare pale wash before they 'went suddenly blank'"
+    when: 2026-11-19 03:32
+  find.ch00-narrator-in-memory:
+    state: pass
+    note: "Declined (round 40; the reviewer called it a defensible device): it is the narrator remembering, on 'who, in memory, sees the struggle'; the 0:27 film-page note says so, and chapter 11's 'I, F-2' over the same rusted machine closes it. Showing it there is the point."
+    title: "Chapter 0, 0:14-0:27: the rusted narrator hovers in the 2538 lab before F-2 is built"
+    when: 2026-11-19 00:33
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -2140,4 +2155,8 @@ fresh:
     found: 2
     note: "Round 39: two nits (ch05 5:03-5:32 F-1 mostly out of frame while F-2 speaks of it; ch03 6:48-6:54 Roal's chuckle barely visible). Nothing major or minor; the hall-screen flicker was already declined in round 30."
     state: e6afa082a310
-since_fresh: 14
+  - when: 2026-11-19 00:32
+    found: 3
+    note: "Round 40: nothing major or minor; three new nits (ch06 4:07-4:10 Earth's screens a bare wash before 'went suddenly blank'; ch00 the rusted narrator in the 2538 memory; the Pluto note's 'outermost planet Roal names'). The foreword's age line is already with Curt."
+    state: 753087c6e2a5
+since_fresh: 10
