@@ -58,9 +58,9 @@ shots:
   - id: D
     at: p085.1
     title: Not the end of evolution
-    seen: Roal, close, his eyes dreaming again; a loose curl of thought rising.
+    seen: Roal and Trest in profile, a slow push in on the two as Roal dreams again; a loose curl of thought rising.
     event: He speaks; on the screens behind him, the machines.
-    camera: a slow push on Roal through the speech
+    camera: a slow push on the two through the speech, from full length until their feet leave the frame
     reads:
       - ['p085.2', his eyes dreaming]
       - ['p085.3:But not the end', the speech]
