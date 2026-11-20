@@ -1,6 +1,6 @@
 {
  "summary": {
-  "pass": 421,
+  "pass": 425,
   "stale": 0,
   "open": 0,
   "curt": 11,
@@ -35,7 +35,7 @@
   },
   "refs": {
    "state": "fail",
-   "detail": "gutenberg: https://www.gutenberg.org/ebooks/27462 → 503"
+   "detail": "blackgate-best-of: https://www.blackgate.com/?p=226361 → fetch failed"
   },
   "phone": {
    "state": "pass",
@@ -319,42 +319,42 @@
    "area": "film",
    "title": "Chapter 4: the acting",
    "state": "pass",
-   "note": "On the draft with the forty-fifth round's fixes: draft ch04-draft-227db5c6, Trest and Kahsh take X-6349's bad news, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
+   "note": "On the draft with the forty-sixth round's fixes: draft ch04-draft-6cc94b92, C-R-21 out of shot D, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
   },
   {
    "id": "ch04.picture",
    "area": "film",
    "title": "Chapter 4: the picture",
    "state": "pass",
-   "note": "On the draft with the forty-fifth round's fixes: draft ch04-draft-227db5c6, Trest and Kahsh take X-6349's bad news, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
+   "note": "On the draft with the forty-sixth round's fixes: draft ch04-draft-6cc94b92, C-R-21 out of shot D, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
   },
   {
    "id": "ch04.sync",
    "area": "film",
    "title": "Chapter 4: picture against sound",
    "state": "pass",
-   "note": "On the draft with the forty-fifth round's fixes: draft ch04-draft-227db5c6, Trest and Kahsh take X-6349's bad news, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
+   "note": "On the draft with the forty-sixth round's fixes: draft ch04-draft-6cc94b92, C-R-21 out of shot D, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
   },
   {
    "id": "ch04.sound",
    "area": "film",
    "title": "Chapter 4: the sound",
    "state": "pass",
-   "note": "On the draft with the forty-fifth round's fixes: draft ch04-draft-227db5c6, Trest and Kahsh take X-6349's bad news, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
+   "note": "On the draft with the forty-sixth round's fixes: draft ch04-draft-6cc94b92, C-R-21 out of shot D, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
   },
   {
    "id": "ch04.story",
    "area": "film",
    "title": "Chapter 4: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the forty-fifth round's fixes: draft ch04-draft-227db5c6, Trest and Kahsh take X-6349's bad news, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
+   "note": "On the draft with the forty-sixth round's fixes: draft ch04-draft-6cc94b92, C-R-21 out of shot D, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
   },
   {
    "id": "ch04.draft",
    "area": "film",
    "title": "Chapter 4: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch04-draft-227db5c6.mp4, -14.4 LUFS, peak -2 dBTP"
+   "note": "ch04-draft-6cc94b92.mp4, -14.4 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch06.acting",
@@ -529,84 +529,84 @@
    "area": "film",
    "title": "Chapter 10: the acting",
    "state": "pass",
-   "note": "On the draft with the thirty-second round's fixes: draft ch10-draft-a426e681, the blue-white beam passing through the screen and the ship and out the far side (find.ch10-beam-through); sound unchanged, -14.4 LUFS. The fleet moves as one body; the golden spark gathers its ring, the flagship twists in its grip, and when the lock comes the boil stops, still."
+   "note": "On the draft with the forty-sixth round's fixes: draft ch10-draft-8fc4cd4e, the sphere keeps its violet halo, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet moves as one body; the golden spark gathers its ring, the flagship twists in its grip, and when the lock comes the boil stops, still."
   },
   {
    "id": "ch10.picture",
    "area": "film",
    "title": "Chapter 10: the picture",
    "state": "pass",
-   "note": "On the draft with the thirty-second round's fixes: draft ch10-draft-a426e681, the blue-white beam passing through the screen and the ship and out the far side (find.ch10-beam-through); sound unchanged, -14.4 LUFS. The fleet in formation, the golden spark and its ring of motes, the flagship twisted, the curves drawn as lines, the beam from the spark, the lock (the static flagship is the lock, intended). Reads at sheet size."
+   "note": "On the draft with the forty-sixth round's fixes: draft ch10-draft-8fc4cd4e, the sphere keeps its violet halo, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet in formation, the golden spark and its ring of motes, the flagship twisted, the curves drawn as lines, the beam from the spark, the lock (the static flagship is the lock, intended). Reads at sheet size."
   },
   {
    "id": "ch10.sync",
    "area": "film",
    "title": "Chapter 10: picture against sound",
    "state": "pass",
-   "note": "On the draft with the thirty-second round's fixes: draft ch10-draft-a426e681, the blue-white beam passing through the screen and the ship and out the far side (find.ch10-beam-through); sound unchanged, -14.4 LUFS. The spark, the twist and the lock land on their lines; 'Go' on its cue."
+   "note": "On the draft with the forty-sixth round's fixes: draft ch10-draft-8fc4cd4e, the sphere keeps its violet halo, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The spark, the twist and the lock land on their lines; 'Go' on its cue."
   },
   {
    "id": "ch10.sound",
    "area": "film",
    "title": "Chapter 10: the sound",
    "state": "pass",
-   "note": "On the draft with the thirty-second round's fixes: draft ch10-draft-a426e681, the blue-white beam passing through the screen and the ship and out the far side (find.ch10-beam-through); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS; 'Go' sits at -14.5; Whisper lost 2 of 319."
+   "note": "On the draft with the forty-sixth round's fixes: draft ch10-draft-8fc4cd4e, the sphere keeps its violet halo, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS; 'Go' sits at -14.5; Whisper lost 2 of 319."
   },
   {
    "id": "ch10.story",
    "area": "film",
    "title": "Chapter 10: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the thirty-second round's fixes: draft ch10-draft-a426e681, the blue-white beam passing through the screen and the ship and out the far side (find.ch10-beam-through); sound unchanged, -14.4 LUFS. The being of Force meets the Outsiders' fleet and stops it; the scale of the new mind is shown, not told."
+   "note": "On the draft with the forty-sixth round's fixes: draft ch10-draft-8fc4cd4e, the sphere keeps its violet halo, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The being of Force meets the Outsiders' fleet and stops it; the scale of the new mind is shown, not told."
   },
   {
    "id": "ch10.draft",
    "area": "film",
    "title": "Chapter 10: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch10-draft-a426e681.mp4, -14.4 LUFS, peak -1.7 dBTP"
+   "note": "ch10-draft-8fc4cd4e.mp4, -14.4 LUFS, peak -2.3 dBTP"
   },
   {
    "id": "ch11.acting",
    "area": "film",
    "title": "Chapter 11: the acting",
    "state": "pass",
-   "note": "On the draft with the forty-fifth round's fixes: draft ch11-draft-af8b1f54, the Outsiders leave as a fleet of thirty drawing together, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet leaves; F-2 works with the metal sheets; F-2 alone in the dark; the page turns to the narrator's words."
+   "note": "On the draft with the forty-sixth round's fixes: draft ch11-draft-bd98bc09, the closing pages set larger to read on a phone, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet leaves; F-2 works with the metal sheets; F-2 alone in the dark; the page turns to the narrator's words."
   },
   {
    "id": "ch11.picture",
    "area": "film",
    "title": "Chapter 11: the picture",
    "state": "pass",
-   "note": "On the draft with the forty-fifth round's fixes: draft ch11-draft-af8b1f54, the Outsiders leave as a fleet of thirty drawing together, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet leaving, the system of beings among the galaxies, F-2 with its sheets, the tunnel of light, F-2 alone, the page with its drop capitals, THE END. Reads at sheet size."
+   "note": "On the draft with the forty-sixth round's fixes: draft ch11-draft-bd98bc09, the closing pages set larger to read on a phone, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet leaving, the system of beings among the galaxies, F-2 with its sheets, the tunnel of light, F-2 alone, the page with its drop capitals, THE END. Reads at sheet size."
   },
   {
    "id": "ch11.sync",
    "area": "film",
    "title": "Chapter 11: picture against sound",
    "state": "pass",
-   "note": "On the draft with the forty-fifth round's fixes: draft ch11-draft-af8b1f54, the Outsiders leave as a fleet of thirty drawing together, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The page lines appear as they are read; THE END after the last line."
+   "note": "On the draft with the forty-sixth round's fixes: draft ch11-draft-bd98bc09, the closing pages set larger to read on a phone, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The page lines appear as they are read; THE END after the last line."
   },
   {
    "id": "ch11.sound",
    "area": "film",
    "title": "Chapter 11: the sound",
    "state": "pass",
-   "note": "On the draft with the forty-fifth round's fixes: draft ch11-draft-af8b1f54, the Outsiders leave as a fleet of thirty drawing together, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. Shot F at -15.0, shot I at -14.7; integrated within the film's -14.4 to -14.5; Whisper lost 0 of 294."
+   "note": "On the draft with the forty-sixth round's fixes: draft ch11-draft-bd98bc09, the closing pages set larger to read on a phone, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. Shot F at -15.0, shot I at -14.7; integrated within the film's -14.4 to -14.5; Whisper lost 0 of 294."
   },
   {
    "id": "ch11.story",
    "area": "film",
    "title": "Chapter 11: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the forty-fifth round's fixes: draft ch11-draft-af8b1f54, the Outsiders leave as a fleet of thirty drawing together, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The coda: the machines go out to the stars, F-2 sets down the record on metal, and the narrator's closing words leave the reader to believe as they will. The film ends where the story does."
+   "note": "On the draft with the forty-sixth round's fixes: draft ch11-draft-bd98bc09, the closing pages set larger to read on a phone, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The coda: the machines go out to the stars, F-2 sets down the record on metal, and the narrator's closing words leave the reader to believe as they will. The film ends where the story does."
   },
   {
    "id": "ch11.draft",
    "area": "film",
    "title": "Chapter 11: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch11-draft-af8b1f54.mp4, -14.4 LUFS, peak -2.3 dBTP"
+   "note": "ch11-draft-bd98bc09.mp4, -14.4 LUFS, peak -2.3 dBTP"
   },
   {
    "id": "work.sheets",
@@ -3106,14 +3106,37 @@
    "title": "Chapter 11, 0:06-0:12: the departing fleet reads as three ships",
    "state": "pass",
    "note": "Fixed in 5fed489: thirty ships in a loose swarm drawing together as they go. Checked on draft ch11-draft-af8b1f54 at 0:06-0:12: reads as a fleet leaving; SSIM against ch11-draft-24015500 changes only at 0:06-0:09; -14.4 LUFS."
+  },
+  {
+   "id": "find.ch10-halo-lost",
+   "area": "finding",
+   "title": "Chapter 10: the golden sphere has lost the violet halo chapter 9 gives it",
+   "state": "pass",
+   "note": "Fixed in 6a68a85 and strengthened after the first draft: the halo drawn wide of the gold at .8 and .6, the outer gold glow pulled in. Checked on draft ch10-draft-8fc4cd4e at 0:30 and 1:00: a violet halo round the gold, as in chapter 9; SSIM against ch10-draft-a426e681 never below .98 (a soft glow); -14.4 LUFS."
+  },
+  {
+   "id": "find.ch04-cr21-cut",
+   "area": "finding",
+   "title": "Chapter 4, 0:43-0:50: C-R-21 cut by the left edge, its label reading 'R-21'",
+   "state": "pass",
+   "note": "Fixed in c9cb684: shot D at roal + 60, scale 2.2. Checked on draft ch04-draft-6cc94b92 at 0:40-1:07: C-R-21 wholly out, X-5638, Roal, Trest and Kahsh whole; SSIM against ch04-draft-227db5c6 changes only on shot D; -14.4 LUFS."
+  },
+  {
+   "id": "find.ch11-closing-small",
+   "area": "finding",
+   "title": "Chapter 11, 1:37-2:20: the closing pages' body type is 4-5 px high on a phone",
+   "state": "pass",
+   "note": "Fixed in 49bbab5: the closing pages at 60 px over 1500. Checked on draft ch11-draft-bd98bc09 at 1:45 and 2:30: the body reads at phone size, THE END clear below the last paragraph; SSIM against ch11-draft-af8b1f54 changes only on the closing pages (1:35-2:31); -14.4 LUFS."
+  },
+  {
+   "id": "find.ch02-footnote-again",
+   "area": "finding",
+   "title": "Chapter 2, 0:35.7-0:38.5: footnote 1 stays up across the cut into shot D (raised again)",
+   "state": "pass",
+   "note": "Declined again, as in round 41 (find.ch02-footnote-hangs): footnote 1's 30 words were found too brief to read, so it runs 2.5 s into shot D by design; it sits on its own band at the frame's foot and covers nothing the shot is about. The reviewer notes it is deliberate."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-19 12:19",
-   "found": 1,
-   "note": "Round 43: nothing major; one minor (ch07 3:27-3:50 the 'strange violet beam' reads grey below the crown and its spread across the canopy barely registers)."
-  },
   {
    "when": "2026-11-19 13:52",
    "found": 5,
@@ -3123,6 +3146,11 @@
    "when": "2026-11-19 18:31",
    "found": 4,
    "note": "Round 45: nothing major or minor; four nits (ch03 0:26-0:51 Roal's arm pumps at Trest under narration; ch05 4:52-5:03 F-1 falls against the right edge; ch04 1:33-1:44 Trest and Kahsh don't react to X-6349's bad news; ch11 0:06-0:12 the departing fleet is three ships). The ch05 welding flicker measured under 3 flashes a second."
+  },
+  {
+   "when": "2026-11-20 02:08",
+   "found": 4,
+   "note": "Round 46: one minor (ch10 the golden sphere has lost the violet halo chapter 9 gives it), three nits (ch02 footnote 1 across the cut, again; ch04 0:43-0:50 C-R-21 cut by the left edge, reading 'R-21'; ch11 1:37-2:20 the closing pages' body type small at phone size)."
   }
  ]
 }

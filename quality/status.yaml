@@ -102,13 +102,13 @@ items:
   site.watch.content:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: 1438453204ce
-    when: 2026-11-20 01:57
+    at: 022c59f3712d
+    when: 2026-11-20 05:47
   site.watch.look:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: d9f531d8ecd7
-    when: 2026-11-20 01:57
+    at: f6675706d9b9
+    when: 2026-11-20 05:47
   work.title:
     state: pass
     note: "Re-checked after round 41: chapter 0's source changed only in shot D (the heirs gathering at 0:40-0:48); SSIM against the previous draft is .997 through the title page. the masthead (62 px, italic) and byline (64 px) are larger again so they read on a phone (find.small-lettering), the title itself unchanged; on ch00-draft-747111c6 all three lines sit inside the frame with clear space between them (sheet of 0:05-0:14). The header names the 1932 issue ('AMAZING STORIES · August, 1932'), not the 1961 reprint."
@@ -241,29 +241,29 @@ items:
     when: 2026-11-04 09:00
   ch04.acting:
     state: pass
-    note: "On the draft with the forty-fifth round's fixes: draft ch04-draft-227db5c6, Trest and Kahsh take X-6349's bad news, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
-    at: ch04-draft-227db5c6.mp4
-    when: 2026-11-20 00:17
+    note: "On the draft with the forty-sixth round's fixes: draft ch04-draft-6cc94b92, C-R-21 out of shot D, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
+    at: ch04-draft-6cc94b92.mp4
+    when: 2026-11-20 05:47
   ch04.picture:
     state: pass
-    note: "On the draft with the forty-fifth round's fixes: draft ch04-draft-227db5c6, Trest and Kahsh take X-6349's bad news, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
-    at: ch04-draft-227db5c6.mp4
-    when: 2026-11-20 00:17
+    note: "On the draft with the forty-sixth round's fixes: draft ch04-draft-6cc94b92, C-R-21 out of shot D, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
+    at: ch04-draft-6cc94b92.mp4
+    when: 2026-11-20 05:47
   ch04.sync:
     state: pass
-    note: "On the draft with the forty-fifth round's fixes: draft ch04-draft-227db5c6, Trest and Kahsh take X-6349's bad news, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
-    at: ch04-draft-227db5c6.mp4
-    when: 2026-11-20 00:17
+    note: "On the draft with the forty-sixth round's fixes: draft ch04-draft-6cc94b92, C-R-21 out of shot D, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
+    at: ch04-draft-6cc94b92.mp4
+    when: 2026-11-20 05:47
   ch04.sound:
     state: pass
-    note: "On the draft with the forty-fifth round's fixes: draft ch04-draft-227db5c6, Trest and Kahsh take X-6349's bad news, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
-    at: ch04-draft-227db5c6.mp4
-    when: 2026-11-20 00:17
+    note: "On the draft with the forty-sixth round's fixes: draft ch04-draft-6cc94b92, C-R-21 out of shot D, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
+    at: ch04-draft-6cc94b92.mp4
+    when: 2026-11-20 05:47
   ch04.story:
     state: pass
-    note: "On the draft with the forty-fifth round's fixes: draft ch04-draft-227db5c6, Trest and Kahsh take X-6349's bad news, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
-    at: ch04-draft-227db5c6.mp4
-    when: 2026-11-20 00:17
+    note: "On the draft with the forty-sixth round's fixes: draft ch04-draft-6cc94b92, C-R-21 out of shot D, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
+    at: ch04-draft-6cc94b92.mp4
+    when: 2026-11-20 05:47
   find.ch06-feeders:
     state: pass
     note: "On the re-rendered draft: 1:52-2:06 two each side carry pale blocks from the piles to the generator's mouth, feed them in (the mouth flares) and go back, the far one of each pair smaller and higher."
@@ -496,54 +496,54 @@ items:
     when: 2026-11-19 13:43
   ch10.acting:
     state: pass
-    note: "On the draft with the thirty-second round's fixes: draft ch10-draft-a426e681, the blue-white beam passing through the screen and the ship and out the far side (find.ch10-beam-through); sound unchanged, -14.4 LUFS. The fleet moves as one body; the golden spark gathers its ring, the flagship twists in its grip, and when the lock comes the boil stops, still."
-    at: ch10-draft-a426e681.mp4
-    when: 2026-11-17 17:18
+    note: "On the draft with the forty-sixth round's fixes: draft ch10-draft-8fc4cd4e, the sphere keeps its violet halo, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet moves as one body; the golden spark gathers its ring, the flagship twists in its grip, and when the lock comes the boil stops, still."
+    at: ch10-draft-8fc4cd4e.mp4
+    when: 2026-11-20 05:46
   ch10.picture:
     state: pass
-    note: "On the draft with the thirty-second round's fixes: draft ch10-draft-a426e681, the blue-white beam passing through the screen and the ship and out the far side (find.ch10-beam-through); sound unchanged, -14.4 LUFS. The fleet in formation, the golden spark and its ring of motes, the flagship twisted, the curves drawn as lines, the beam from the spark, the lock (the static flagship is the lock, intended). Reads at sheet size."
-    at: ch10-draft-a426e681.mp4
-    when: 2026-11-17 17:18
+    note: "On the draft with the forty-sixth round's fixes: draft ch10-draft-8fc4cd4e, the sphere keeps its violet halo, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet in formation, the golden spark and its ring of motes, the flagship twisted, the curves drawn as lines, the beam from the spark, the lock (the static flagship is the lock, intended). Reads at sheet size."
+    at: ch10-draft-8fc4cd4e.mp4
+    when: 2026-11-20 05:46
   ch10.sync:
     state: pass
-    note: "On the draft with the thirty-second round's fixes: draft ch10-draft-a426e681, the blue-white beam passing through the screen and the ship and out the far side (find.ch10-beam-through); sound unchanged, -14.4 LUFS. The spark, the twist and the lock land on their lines; 'Go' on its cue."
-    at: ch10-draft-a426e681.mp4
-    when: 2026-11-17 17:18
+    note: "On the draft with the forty-sixth round's fixes: draft ch10-draft-8fc4cd4e, the sphere keeps its violet halo, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The spark, the twist and the lock land on their lines; 'Go' on its cue."
+    at: ch10-draft-8fc4cd4e.mp4
+    when: 2026-11-20 05:47
   ch10.sound:
     state: pass
-    note: "On the draft with the thirty-second round's fixes: draft ch10-draft-a426e681, the blue-white beam passing through the screen and the ship and out the far side (find.ch10-beam-through); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS; 'Go' sits at -14.5; Whisper lost 2 of 319."
-    at: ch10-draft-a426e681.mp4
-    when: 2026-11-17 17:18
+    note: "On the draft with the forty-sixth round's fixes: draft ch10-draft-8fc4cd4e, the sphere keeps its violet halo, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS; 'Go' sits at -14.5; Whisper lost 2 of 319."
+    at: ch10-draft-8fc4cd4e.mp4
+    when: 2026-11-20 05:47
   ch10.story:
     state: pass
-    note: "On the draft with the thirty-second round's fixes: draft ch10-draft-a426e681, the blue-white beam passing through the screen and the ship and out the far side (find.ch10-beam-through); sound unchanged, -14.4 LUFS. The being of Force meets the Outsiders' fleet and stops it; the scale of the new mind is shown, not told."
-    at: ch10-draft-a426e681.mp4
-    when: 2026-11-17 17:18
+    note: "On the draft with the forty-sixth round's fixes: draft ch10-draft-8fc4cd4e, the sphere keeps its violet halo, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The being of Force meets the Outsiders' fleet and stops it; the scale of the new mind is shown, not told."
+    at: ch10-draft-8fc4cd4e.mp4
+    when: 2026-11-20 05:47
   ch11.acting:
     state: pass
-    note: "On the draft with the forty-fifth round's fixes: draft ch11-draft-af8b1f54, the Outsiders leave as a fleet of thirty drawing together, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet leaves; F-2 works with the metal sheets; F-2 alone in the dark; the page turns to the narrator's words."
-    at: ch11-draft-af8b1f54.mp4
-    when: 2026-11-20 01:57
+    note: "On the draft with the forty-sixth round's fixes: draft ch11-draft-bd98bc09, the closing pages set larger to read on a phone, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet leaves; F-2 works with the metal sheets; F-2 alone in the dark; the page turns to the narrator's words."
+    at: ch11-draft-bd98bc09.mp4
+    when: 2026-11-20 05:47
   ch11.picture:
     state: pass
-    note: "On the draft with the forty-fifth round's fixes: draft ch11-draft-af8b1f54, the Outsiders leave as a fleet of thirty drawing together, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet leaving, the system of beings among the galaxies, F-2 with its sheets, the tunnel of light, F-2 alone, the page with its drop capitals, THE END. Reads at sheet size."
-    at: ch11-draft-af8b1f54.mp4
-    when: 2026-11-20 01:57
+    note: "On the draft with the forty-sixth round's fixes: draft ch11-draft-bd98bc09, the closing pages set larger to read on a phone, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet leaving, the system of beings among the galaxies, F-2 with its sheets, the tunnel of light, F-2 alone, the page with its drop capitals, THE END. Reads at sheet size."
+    at: ch11-draft-bd98bc09.mp4
+    when: 2026-11-20 05:47
   ch11.sync:
     state: pass
-    note: "On the draft with the forty-fifth round's fixes: draft ch11-draft-af8b1f54, the Outsiders leave as a fleet of thirty drawing together, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The page lines appear as they are read; THE END after the last line."
-    at: ch11-draft-af8b1f54.mp4
-    when: 2026-11-20 01:57
+    note: "On the draft with the forty-sixth round's fixes: draft ch11-draft-bd98bc09, the closing pages set larger to read on a phone, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The page lines appear as they are read; THE END after the last line."
+    at: ch11-draft-bd98bc09.mp4
+    when: 2026-11-20 05:47
   ch11.sound:
     state: pass
-    note: "On the draft with the forty-fifth round's fixes: draft ch11-draft-af8b1f54, the Outsiders leave as a fleet of thirty drawing together, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. Shot F at -15.0, shot I at -14.7; integrated within the film's -14.4 to -14.5; Whisper lost 0 of 294."
-    at: ch11-draft-af8b1f54.mp4
-    when: 2026-11-20 01:57
+    note: "On the draft with the forty-sixth round's fixes: draft ch11-draft-bd98bc09, the closing pages set larger to read on a phone, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. Shot F at -15.0, shot I at -14.7; integrated within the film's -14.4 to -14.5; Whisper lost 0 of 294."
+    at: ch11-draft-bd98bc09.mp4
+    when: 2026-11-20 05:47
   ch11.story:
     state: pass
-    note: "On the draft with the forty-fifth round's fixes: draft ch11-draft-af8b1f54, the Outsiders leave as a fleet of thirty drawing together, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The coda: the machines go out to the stars, F-2 sets down the record on metal, and the narrator's closing words leave the reader to believe as they will. The film ends where the story does."
-    at: ch11-draft-af8b1f54.mp4
-    when: 2026-11-20 01:57
+    note: "On the draft with the forty-sixth round's fixes: draft ch11-draft-bd98bc09, the closing pages set larger to read on a phone, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The coda: the machines go out to the stars, F-2 sets down the record on metal, and the narrator's closing words leave the reader to believe as they will. The film ends where the story does."
+    at: ch11-draft-bd98bc09.mp4
+    when: 2026-11-20 05:47
   find.ch09-roal-pop:
     state: pass
     note: "On the re-rendered draft: 3:20-3:30 the dome is in frame at the left from the start of K; nobody stands at the edge before 'Roal and Trest appeared'; the two walk out of the dome's edge, solid black (it parts only after they're out), and on across the rock."
@@ -2069,6 +2069,26 @@ items:
     note: "Fixed in 5fed489: thirty ships in a loose swarm drawing together as they go. Checked on draft ch11-draft-af8b1f54 at 0:06-0:12: reads as a fleet leaving; SSIM against ch11-draft-24015500 changes only at 0:06-0:09; -14.4 LUFS."
     title: "Chapter 11, 0:06-0:12: the departing fleet reads as three ships"
     when: 2026-11-20 01:56
+  find.ch10-halo-lost:
+    state: pass
+    note: "Fixed in 6a68a85 and strengthened after the first draft: the halo drawn wide of the gold at .8 and .6, the outer gold glow pulled in. Checked on draft ch10-draft-8fc4cd4e at 0:30 and 1:00: a violet halo round the gold, as in chapter 9; SSIM against ch10-draft-a426e681 never below .98 (a soft glow); -14.4 LUFS."
+    title: "Chapter 10: the golden sphere has lost the violet halo chapter 9 gives it"
+    when: 2026-11-20 05:46
+  find.ch04-cr21-cut:
+    state: pass
+    note: "Fixed in c9cb684: shot D at roal + 60, scale 2.2. Checked on draft ch04-draft-6cc94b92 at 0:40-1:07: C-R-21 wholly out, X-5638, Roal, Trest and Kahsh whole; SSIM against ch04-draft-227db5c6 changes only on shot D; -14.4 LUFS."
+    title: "Chapter 4, 0:43-0:50: C-R-21 cut by the left edge, its label reading 'R-21'"
+    when: 2026-11-20 04:43
+  find.ch11-closing-small:
+    state: pass
+    note: "Fixed in 49bbab5: the closing pages at 60 px over 1500. Checked on draft ch11-draft-bd98bc09 at 1:45 and 2:30: the body reads at phone size, THE END clear below the last paragraph; SSIM against ch11-draft-af8b1f54 changes only on the closing pages (1:35-2:31); -14.4 LUFS."
+    title: "Chapter 11, 1:37-2:20: the closing pages' body type is 4-5 px high on a phone"
+    when: 2026-11-20 04:44
+  find.ch02-footnote-again:
+    state: pass
+    note: "Declined again, as in round 41 (find.ch02-footnote-hangs): footnote 1's 30 words were found too brief to read, so it runs 2.5 s into shot D by design; it sits on its own band at the frame's foot and covers nothing the shot is about. The reviewer notes it is deliberate."
+    title: "Chapter 2, 0:35.7-0:38.5: footnote 1 stays up across the cut into shot D (raised again)"
+    when: 2026-11-20 02:10
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -2254,4 +2274,8 @@ fresh:
     found: 4
     note: "Round 45: nothing major or minor; four nits (ch03 0:26-0:51 Roal's arm pumps at Trest under narration; ch05 4:52-5:03 F-1 falls against the right edge; ch04 1:33-1:44 Trest and Kahsh don't react to X-6349's bad news; ch11 0:06-0:12 the departing fleet is three ships). The ch05 welding flicker measured under 3 flashes a second."
     state: b8cecc97e1d5
-since_fresh: 26
+  - when: 2026-11-20 02:08
+    found: 4
+    note: "Round 46: one minor (ch10 the golden sphere has lost the violet halo chapter 9 gives it), three nits (ch02 footnote 1 across the cut, again; ch04 0:43-0:50 C-R-21 cut by the left edge, reading 'R-21'; ch11 1:37-2:20 the closing pages' body type small at phone size)."
+    state: edd9a9a45d5c
+since_fresh: 21
