@@ -1,6 +1,6 @@
 {
  "summary": {
-  "pass": 418,
+  "pass": 421,
   "stale": 0,
   "open": 0,
   "curt": 11,
@@ -35,7 +35,7 @@
   },
   "refs": {
    "state": "fail",
-   "detail": "blackgate-best-of: https://www.blackgate.com/?p=226361 → fetch failed"
+   "detail": "gutenberg: https://www.gutenberg.org/ebooks/27462 → 503"
   },
   "phone": {
    "state": "pass",
@@ -109,42 +109,42 @@
    "area": "film",
    "title": "Chapter 5: the acting",
    "state": "pass",
-   "note": "On the draft with the thirty-ninth round's fixes: draft ch05-draft-831de9d8, shot Z takes in the fallen F-1 whole with its lenses, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch05-draft-3129c571, F-1 falls and lies clear of the right edge, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
   },
   {
    "id": "ch05.picture",
    "area": "film",
    "title": "Chapter 5: the picture",
    "state": "pass",
-   "note": "On the draft with the thirty-ninth round's fixes: draft ch05-draft-831de9d8, shot Z takes in the fallen F-1 whole with its lenses, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The hall at night with F-1 vast; the atom plates (orbits, grid, light); the spiralling air field, arcs and flame, aura and lightning; F-1's hulk; F-2 with rings and memories; the ball of forces, the ruler, the guinea pig cage in the pale beam; dawn on the rock with tiny machines streaming up. Dark but legible."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch05-draft-3129c571, F-1 falls and lies clear of the right edge, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The hall at night with F-1 vast; the atom plates (orbits, grid, light); the spiralling air field, arcs and flame, aura and lightning; F-1's hulk; F-2 with rings and memories; the ball of forces, the ruler, the guinea pig cage in the pale beam; dawn on the rock with tiny machines streaming up. Dark but legible."
   },
   {
    "id": "ch05.sync",
    "area": "film",
    "title": "Chapter 5: picture against sound",
    "state": "pass",
-   "note": "On the draft with the thirty-ninth round's fixes: draft ch05-draft-831de9d8, shot Z takes in the fallen F-1 whole with its lenses, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Cuts on cue words (F-1 on 'Roal--your thoughts', 'Roal sat up', the plate on 'Hydrogen'); Whisper timing -0.12 s median."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch05-draft-3129c571, F-1 falls and lies clear of the right edge, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Cuts on cue words (F-1 on 'Roal--your thoughts', 'Roal sat up', the plate on 'Hydrogen'); Whisper timing -0.12 s median."
   },
   {
    "id": "ch05.sound",
    "area": "film",
    "title": "Chapter 5: the sound",
    "state": "pass",
-   "note": "On the draft with the thirty-ninth round's fixes: draft ch05-draft-831de9d8, shot Z takes in the fallen F-1 whole with its lenses, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 3.8; the quiet shots C, D, H, I and AH are pauses, their speech -14.1 to -14.7; Whisper lost 12 of 1107 (names, coinages, 'asked')."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch05-draft-3129c571, F-1 falls and lies clear of the right edge, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 3.8; the quiet shots C, D, H, I and AH are pauses, their speech -14.1 to -14.7; Whisper lost 12 of 1107 (names, coinages, 'asked')."
   },
   {
    "id": "ch05.story",
    "area": "film",
    "title": "Chapter 5: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the thirty-ninth round's fixes: draft ch05-draft-831de9d8, shot Z takes in the fallen F-1 whole with its lenses, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. 9:03: Roal thinks out the hydrogen wall; F-1 builds its successor and is unmade by it; F-2 makes the ruler, tests the green beam on a guinea pig, and the machines build outward. The pilot still holds as the standard."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch05-draft-3129c571, F-1 falls and lies clear of the right edge, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. 9:03: Roal thinks out the hydrogen wall; F-1 builds its successor and is unmade by it; F-2 makes the ruler, tests the green beam on a guinea pig, and the machines build outward. The pilot still holds as the standard."
   },
   {
    "id": "ch05.draft",
    "area": "film",
    "title": "Chapter 5: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch05-draft-831de9d8.mp4, -14.5 LUFS, peak -2 dBTP"
+   "note": "ch05-draft-3129c571.mp4, -14.5 LUFS, peak -2.2 dBTP"
   },
   {
    "id": "ch00.acting",
@@ -277,84 +277,84 @@
    "area": "film",
    "title": "Chapter 3: the acting",
    "state": "pass",
-   "note": "On the draft with the forty-fourth round's fixes: draft ch03-draft-edc69f44, the Outsider ships settle lower over Colorado and the colony sits clear of the bottom edge, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch03-draft-ff0f9865, Roal gestures a sentence at a time through the telling, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
   },
   {
    "id": "ch03.picture",
    "area": "film",
    "title": "Chapter 3: the picture",
    "state": "pass",
-   "note": "On the draft with the forty-fourth round's fixes: draft ch03-draft-edc69f44, the Outsider ships settle lower over Colorado and the colony sits clear of the bottom edge, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch03-draft-ff0f9865, Roal gestures a sentence at a time through the telling, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
   },
   {
    "id": "ch03.sync",
    "area": "film",
    "title": "Chapter 3: picture against sound",
    "state": "pass",
-   "note": "On the draft with the forty-fourth round's fixes: draft ch03-draft-edc69f44, the Outsider ships settle lower over Colorado and the colony sits clear of the bottom edge, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch03-draft-ff0f9865, Roal gestures a sentence at a time through the telling, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
   },
   {
    "id": "ch03.sound",
    "area": "film",
    "title": "Chapter 3: the sound",
    "state": "pass",
-   "note": "On the draft with the forty-fourth round's fixes: draft ch03-draft-edc69f44, the Outsider ships settle lower over Colorado and the colony sits clear of the bottom edge, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch03-draft-ff0f9865, Roal gestures a sentence at a time through the telling, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
   },
   {
    "id": "ch03.story",
    "area": "film",
    "title": "Chapter 3: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the forty-fourth round's fixes: draft ch03-draft-edc69f44, the Outsider ships settle lower over Colorado and the colony sits clear of the bottom edge, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch03-draft-ff0f9865, Roal gestures a sentence at a time through the telling, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
   },
   {
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch03-draft-edc69f44.mp4, -14.4 LUFS, peak -2 dBTP"
+   "note": "ch03-draft-ff0f9865.mp4, -14.4 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch04.acting",
    "area": "film",
    "title": "Chapter 4: the acting",
    "state": "pass",
-   "note": "On the draft with the thirtieth round's fixes: draft ch04-draft-d3d2edac, the MX-3401 label on the third machine of the ring, clear of Roal's head (find.ch04-label-roal); sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch04-draft-227db5c6, Trest and Kahsh take X-6349's bad news, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
   },
   {
    "id": "ch04.picture",
    "area": "film",
    "title": "Chapter 4: the picture",
    "state": "pass",
-   "note": "On the draft with the thirtieth round's fixes: draft ch04-draft-d3d2edac, the MX-3401 label on the third machine of the ring, clear of Roal's head (find.ch04-label-roal); sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch04-draft-227db5c6, Trest and Kahsh take X-6349's bad news, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
   },
   {
    "id": "ch04.sync",
    "area": "film",
    "title": "Chapter 4: picture against sound",
    "state": "pass",
-   "note": "On the draft with the thirtieth round's fixes: draft ch04-draft-d3d2edac, the MX-3401 label on the third machine of the ring, clear of Roal's head (find.ch04-label-roal); sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch04-draft-227db5c6, Trest and Kahsh take X-6349's bad news, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
   },
   {
    "id": "ch04.sound",
    "area": "film",
    "title": "Chapter 4: the sound",
    "state": "pass",
-   "note": "On the draft with the thirtieth round's fixes: draft ch04-draft-d3d2edac, the MX-3401 label on the third machine of the ring, clear of Roal's head (find.ch04-label-roal); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch04-draft-227db5c6, Trest and Kahsh take X-6349's bad news, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
   },
   {
    "id": "ch04.story",
    "area": "film",
    "title": "Chapter 4: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the thirtieth round's fixes: draft ch04-draft-d3d2edac, the MX-3401 label on the third machine of the ring, clear of Roal's head (find.ch04-label-roal); sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch04-draft-227db5c6, Trest and Kahsh take X-6349's bad news, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
   },
   {
    "id": "ch04.draft",
    "area": "film",
    "title": "Chapter 4: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch04-draft-d3d2edac.mp4, -14.4 LUFS, peak -2 dBTP"
+   "note": "ch04-draft-227db5c6.mp4, -14.4 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch06.acting",
@@ -571,42 +571,42 @@
    "area": "film",
    "title": "Chapter 11: the acting",
    "state": "pass",
-   "note": "On the draft with the twenty-fourth round's fixes: each paragraph fades off the page before the next fades on, never overprinting (find.ch11-page-overprint); sound unchanged, -14.4 LUFS. The fleet leaves; F-2 works with the metal sheets; F-2 alone in the dark; the page turns to the narrator's words."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch11-draft-af8b1f54, the Outsiders leave as a fleet of thirty drawing together, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet leaves; F-2 works with the metal sheets; F-2 alone in the dark; the page turns to the narrator's words."
   },
   {
    "id": "ch11.picture",
    "area": "film",
    "title": "Chapter 11: the picture",
    "state": "pass",
-   "note": "On the draft with the twenty-fourth round's fixes: each paragraph fades off the page before the next fades on, never overprinting (find.ch11-page-overprint); sound unchanged, -14.4 LUFS. The fleet leaving, the system of beings among the galaxies, F-2 with its sheets, the tunnel of light, F-2 alone, the page with its drop capitals, THE END. Reads at sheet size."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch11-draft-af8b1f54, the Outsiders leave as a fleet of thirty drawing together, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet leaving, the system of beings among the galaxies, F-2 with its sheets, the tunnel of light, F-2 alone, the page with its drop capitals, THE END. Reads at sheet size."
   },
   {
    "id": "ch11.sync",
    "area": "film",
    "title": "Chapter 11: picture against sound",
    "state": "pass",
-   "note": "On the draft with the twenty-fourth round's fixes: each paragraph fades off the page before the next fades on, never overprinting (find.ch11-page-overprint); sound unchanged, -14.4 LUFS. The page lines appear as they are read; THE END after the last line."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch11-draft-af8b1f54, the Outsiders leave as a fleet of thirty drawing together, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The page lines appear as they are read; THE END after the last line."
   },
   {
    "id": "ch11.sound",
    "area": "film",
    "title": "Chapter 11: the sound",
    "state": "pass",
-   "note": "On the draft with the twenty-fourth round's fixes: each paragraph fades off the page before the next fades on, never overprinting (find.ch11-page-overprint); sound unchanged, -14.4 LUFS, speech still on top and clear. Shot F at -15.0, shot I at -14.7; integrated within the film's -14.4 to -14.5; Whisper lost 0 of 294."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch11-draft-af8b1f54, the Outsiders leave as a fleet of thirty drawing together, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. Shot F at -15.0, shot I at -14.7; integrated within the film's -14.4 to -14.5; Whisper lost 0 of 294."
   },
   {
    "id": "ch11.story",
    "area": "film",
    "title": "Chapter 11: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the twenty-fourth round's fixes: each paragraph fades off the page before the next fades on, never overprinting (find.ch11-page-overprint); sound unchanged, -14.4 LUFS. The coda: the machines go out to the stars, F-2 sets down the record on metal, and the narrator's closing words leave the reader to believe as they will. The film ends where the story does."
+   "note": "On the draft with the forty-fifth round's fixes: draft ch11-draft-af8b1f54, the Outsiders leave as a fleet of thirty drawing together, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The coda: the machines go out to the stars, F-2 sets down the record on metal, and the narrator's closing words leave the reader to believe as they will. The film ends where the story does."
   },
   {
    "id": "ch11.draft",
    "area": "film",
    "title": "Chapter 11: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch11-draft-24015500.mp4, -14.4 LUFS, peak -2.3 dBTP"
+   "note": "ch11-draft-af8b1f54.mp4, -14.4 LUFS, peak -2.3 dBTP"
   },
   {
    "id": "work.sheets",
@@ -1381,9 +1381,9 @@
   {
    "id": "find.ch05-f1-edge",
    "area": "finding",
-   "title": "Chapter 5: the fallen F-1 lies half out of frame",
+   "title": "Chapter 5, 4:52-5:03: F-1 falls against the right edge of the frame",
    "state": "pass",
-   "note": "On the re-rendered draft: 4:52-5:02 the fallen F-1 lies whole in frame, Roal and the couch in frame too."
+   "note": "Fixed in e16ffdc: shot X at 1400. Checked on draft ch05-draft-3129c571 at 4:52-5:02: F-1 falls and lies whole in frame, its lens end inside the right edge; SSIM against ch05-draft-831de9d8 changes only through shot X (4:48-5:04), elsewhere the grain spots of earlier rounds; -14.5 LUFS."
   },
   {
    "id": "find.ch02-armed",
@@ -3085,14 +3085,30 @@
    "title": "Chapter 9, 3:25-3:28: the parting dome is half off the left edge",
    "state": "pass",
    "note": "Fixed in 4e85b5e: framed at 120, scale 1.12. Checked on draft ch09-draft-35500335 at 3:25-3:28: both halves in frame as they part, the men walking out, F-2 and C-R-U-1 at the right; SSIM against ch09-draft-b2ed584f changes only at 3:19-3:30; -14.4 LUFS."
+  },
+  {
+   "id": "find.ch03-telling-pumps",
+   "area": "finding",
+   "title": "Chapter 3, 0:26-0:51: Roal's arm pumps out at Trest every 1.5-3 s under the narration",
+   "state": "pass",
+   "note": "Fixed in 5c7790b: Roal gestures a sentence, not a clause, through the telling. Checked on draft ch03-draft-ff0f9865 at 0:26-0:57: one reach on 'assured us', then held, smaller gestures sentence by sentence; SSIM against ch03-draft-edc69f44 changes only gently there (.98), the one dip, 4:44, is the dissolve grain seen before; -14.4 LUFS."
+  },
+  {
+   "id": "find.ch04-listeners-still",
+   "area": "finding",
+   "title": "Chapter 4, 1:33-1:44: Trest and Kahsh don't react to X-6349's bad news",
+   "state": "pass",
+   "note": "Fixed in da50201: through X-6349's bad news Trest's hand comes to his chin and Kahsh bows his head, both looking down. Checked on draft ch04-draft-227db5c6 at 1:36-1:44; SSIM against ch04-draft-d3d2edac dips there; the dips at 2:23 and 2:59-3:22 (about .96) compared frame by frame are grain; -14.4 LUFS."
+  },
+  {
+   "id": "find.ch11-three-ships",
+   "area": "finding",
+   "title": "Chapter 11, 0:06-0:12: the departing fleet reads as three ships",
+   "state": "pass",
+   "note": "Fixed in 5fed489: thirty ships in a loose swarm drawing together as they go. Checked on draft ch11-draft-af8b1f54 at 0:06-0:12: reads as a fleet leaving; SSIM against ch11-draft-24015500 changes only at 0:06-0:09; -14.4 LUFS."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-19 08:04",
-   "found": 3,
-   "note": "Round 42: two minor (the film page's poster is the old 'A Classic Reprint' title card; the 'world without work' note says Campbell 'came back' and soured in Twilight, against the afterword's Twilight-written-first), one nit (ch03 3:00-3:10 the signal beam and investigators are specks)."
-  },
   {
    "when": "2026-11-19 12:19",
    "found": 1,
@@ -3102,6 +3118,11 @@
    "when": "2026-11-19 13:52",
    "found": 5,
    "note": "Round 44: three minor (succession page says Campbell 'returned to the theme in Twilight'; the fact-check list dates every reading to 1-2 November; ch03 3:13-3:30 the Colorado settlement squeezed to the bottom edge with ships cut by the top), two nits (ch02 the fleet shown 3 s before 'They sighted'; ch09 3:25-3:28 the dome half off the left edge as it parts)."
+  },
+  {
+   "when": "2026-11-19 18:31",
+   "found": 4,
+   "note": "Round 45: nothing major or minor; four nits (ch03 0:26-0:51 Roal's arm pumps at Trest under narration; ch05 4:52-5:03 F-1 falls against the right edge; ch04 1:33-1:44 Trest and Kahsh don't react to X-6349's bad news; ch11 0:06-0:12 the departing fleet is three ships). The ch05 welding flicker measured under 3 flashes a second."
   }
  ]
 }
