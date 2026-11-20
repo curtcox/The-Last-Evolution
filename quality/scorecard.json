@@ -1,6 +1,6 @@
 {
  "summary": {
-  "pass": 438,
+  "pass": 439,
   "stale": 0,
   "open": 0,
   "curt": 11,
@@ -35,7 +35,7 @@
   },
   "refs": {
    "state": "fail",
-   "detail": "blackgate-best-of: https://www.blackgate.com/?p=226361 → fetch failed"
+   "detail": "gutenberg: https://www.gutenberg.org/ebooks/27462 → 503"
   },
   "phone": {
    "state": "pass",
@@ -319,42 +319,42 @@
    "area": "film",
    "title": "Chapter 4: the acting",
    "state": "pass",
-   "note": "On the draft with the forty-eighth round's fixes: draft ch04-draft-b175bc33, X-6621's speech framed on the two machines, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
+   "note": "On the draft with the fifty-second round's fixes: draft ch04-draft-26fcb7e9, C-R-21 in frame for its first words, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
   },
   {
    "id": "ch04.picture",
    "area": "film",
    "title": "Chapter 4: the picture",
    "state": "pass",
-   "note": "On the draft with the forty-eighth round's fixes: draft ch04-draft-b175bc33, X-6621's speech framed on the two machines, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
+   "note": "On the draft with the fifty-second round's fixes: draft ch04-draft-26fcb7e9, C-R-21 in frame for its first words, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
   },
   {
    "id": "ch04.sync",
    "area": "film",
    "title": "Chapter 4: picture against sound",
    "state": "pass",
-   "note": "On the draft with the forty-eighth round's fixes: draft ch04-draft-b175bc33, X-6621's speech framed on the two machines, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
+   "note": "On the draft with the fifty-second round's fixes: draft ch04-draft-26fcb7e9, C-R-21 in frame for its first words, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
   },
   {
    "id": "ch04.sound",
    "area": "film",
    "title": "Chapter 4: the sound",
    "state": "pass",
-   "note": "On the draft with the forty-eighth round's fixes: draft ch04-draft-b175bc33, X-6621's speech framed on the two machines, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
+   "note": "On the draft with the fifty-second round's fixes: draft ch04-draft-26fcb7e9, C-R-21 in frame for its first words, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
   },
   {
    "id": "ch04.story",
    "area": "film",
    "title": "Chapter 4: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the forty-eighth round's fixes: draft ch04-draft-b175bc33, X-6621's speech framed on the two machines, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
+   "note": "On the draft with the fifty-second round's fixes: draft ch04-draft-26fcb7e9, C-R-21 in frame for its first words, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
   },
   {
    "id": "ch04.draft",
    "area": "film",
    "title": "Chapter 4: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch04-draft-b175bc33.mp4, -14.4 LUFS, peak -2 dBTP"
+   "note": "ch04-draft-26fcb7e9.mp4, -14.4 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch06.acting",
@@ -3225,14 +3225,16 @@
    "title": "Chapter 9, 3:07-3:10: C-R-U-1 and F-2 float on a flat band beside a sliver of the plant",
    "state": "pass",
    "note": "Fixed in 450c4a2: framed at PX - 640, RG - 40, 2.3. Checked on draft ch09-draft-bddbb2d5 at 3:08: C-R-U-1 and F-2 over the ground and rocks, its name legible, the plant out of frame; SSIM against ch09-draft-35500335 changes only at 3:04-3:12; -14.4 LUFS."
+  },
+  {
+   "id": "find.ch04-cr21-late",
+   "area": "finding",
+   "title": "Chapter 4, 2:22-2:24: the pan reaches C-R-21 about 1.5 s into its first sentence",
+   "state": "pass",
+   "note": "Fixed in a7bce89: the pan starts in the gap after X-6621's line. Checked on draft ch04-draft-26fcb7e9 at 2:22.5: C-R-21 in frame as its line begins; SSIM against ch04-draft-b175bc33 changes only at 2:21.5-2:24; -14.4 LUFS."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-20 14:27",
-   "found": 5,
-   "note": "Round 49: two minor (ch10 the Outsiders never seen through the speech to them and their horror; the figures' costume and scale don't match model sheets 1 and 2), three nits (the curl note's 'dreams aloud'; the round 6 ch07 page's stale shot L and E descriptions; ch08 3:49 two F-2s for half a second in a dissolve)."
-  },
   {
    "when": "2026-11-20 17:15",
    "found": 1,
@@ -3242,6 +3244,11 @@
    "when": "2026-11-20 18:52",
    "found": 3,
    "note": "Round 51: one minor (the film page's sound note says no music plays under the voice, but each chapter's theme-head runs under its first sentence), two nits (ch08 0:29-0:41 the screens' bottoms cut along the top edge; ch09 3:07-3:10 shot J a flat dark band with a sliver of the plant)."
+  },
+  {
+   "when": "2026-11-20 20:51",
+   "found": 1,
+   "note": "Round 52: nothing major or minor; one nit (ch04 2:22-2:24 the pan reaches C-R-21 about 1.5 s into its first sentence). Earlier rulings left alone."
   }
  ]
 }

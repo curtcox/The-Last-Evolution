@@ -102,13 +102,13 @@ items:
   site.watch.content:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: 4fc1355de515
-    when: 2026-11-20 20:41
+    at: afcb89478975
+    when: 2026-11-20 21:49
   site.watch.look:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: 4af0a6631b2a
-    when: 2026-11-20 20:41
+    at: b11842d99c0c
+    when: 2026-11-20 21:49
   work.title:
     state: pass
     note: "Re-checked after round 41: chapter 0's source changed only in shot D (the heirs gathering at 0:40-0:48); SSIM against the previous draft is .997 through the title page. the masthead (62 px, italic) and byline (64 px) are larger again so they read on a phone (find.small-lettering), the title itself unchanged; on ch00-draft-747111c6 all three lines sit inside the frame with clear space between them (sheet of 0:05-0:14). The header names the 1932 issue ('AMAZING STORIES · August, 1932'), not the 1961 reprint."
@@ -241,29 +241,29 @@ items:
     when: 2026-11-04 09:00
   ch04.acting:
     state: pass
-    note: "On the draft with the forty-eighth round's fixes: draft ch04-draft-b175bc33, X-6621's speech framed on the two machines, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
-    at: ch04-draft-b175bc33.mp4
-    when: 2026-11-20 14:11
+    note: "On the draft with the fifty-second round's fixes: draft ch04-draft-26fcb7e9, C-R-21 in frame for its first words, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
+    at: ch04-draft-26fcb7e9.mp4
+    when: 2026-11-20 21:49
   ch04.picture:
     state: pass
-    note: "On the draft with the forty-eighth round's fixes: draft ch04-draft-b175bc33, X-6621's speech framed on the two machines, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
-    at: ch04-draft-b175bc33.mp4
-    when: 2026-11-20 14:11
+    note: "On the draft with the fifty-second round's fixes: draft ch04-draft-26fcb7e9, C-R-21 in frame for its first words, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
+    at: ch04-draft-26fcb7e9.mp4
+    when: 2026-11-20 21:49
   ch04.sync:
     state: pass
-    note: "On the draft with the forty-eighth round's fixes: draft ch04-draft-b175bc33, X-6621's speech framed on the two machines, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
-    at: ch04-draft-b175bc33.mp4
-    when: 2026-11-20 14:12
+    note: "On the draft with the fifty-second round's fixes: draft ch04-draft-26fcb7e9, C-R-21 in frame for its first words, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
+    at: ch04-draft-26fcb7e9.mp4
+    when: 2026-11-20 21:49
   ch04.sound:
     state: pass
-    note: "On the draft with the forty-eighth round's fixes: draft ch04-draft-b175bc33, X-6621's speech framed on the two machines, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
-    at: ch04-draft-b175bc33.mp4
-    when: 2026-11-20 14:12
+    note: "On the draft with the fifty-second round's fixes: draft ch04-draft-26fcb7e9, C-R-21 in frame for its first words, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
+    at: ch04-draft-26fcb7e9.mp4
+    when: 2026-11-20 21:49
   ch04.story:
     state: pass
-    note: "On the draft with the forty-eighth round's fixes: draft ch04-draft-b175bc33, X-6621's speech framed on the two machines, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
-    at: ch04-draft-b175bc33.mp4
-    when: 2026-11-20 14:12
+    note: "On the draft with the fifty-second round's fixes: draft ch04-draft-26fcb7e9, C-R-21 in frame for its first words, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
+    at: ch04-draft-26fcb7e9.mp4
+    when: 2026-11-20 21:49
   find.ch06-feeders:
     state: pass
     note: "On the re-rendered draft: 1:52-2:06 two each side carry pale blocks from the piles to the generator's mouth, feed them in (the mouth flares) and go back, the far one of each pair smaller and higher."
@@ -2154,6 +2154,11 @@ items:
     note: "Fixed in 450c4a2: framed at PX - 640, RG - 40, 2.3. Checked on draft ch09-draft-bddbb2d5 at 3:08: C-R-U-1 and F-2 over the ground and rocks, its name legible, the plant out of frame; SSIM against ch09-draft-35500335 changes only at 3:04-3:12; -14.4 LUFS."
     title: "Chapter 9, 3:07-3:10: C-R-U-1 and F-2 float on a flat band beside a sliver of the plant"
     when: 2026-11-20 20:41
+  find.ch04-cr21-late:
+    state: pass
+    note: "Fixed in a7bce89: the pan starts in the gap after X-6621's line. Checked on draft ch04-draft-26fcb7e9 at 2:22.5: C-R-21 in frame as its line begins; SSIM against ch04-draft-b175bc33 changes only at 2:21.5-2:24; -14.4 LUFS."
+    title: "Chapter 4, 2:22-2:24: the pan reaches C-R-21 about 1.5 s into its first sentence"
+    when: 2026-11-20 21:49
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -2363,4 +2368,8 @@ fresh:
     found: 3
     note: "Round 51: one minor (the film page's sound note says no music plays under the voice, but each chapter's theme-head runs under its first sentence), two nits (ch08 0:29-0:41 the screens' bottoms cut along the top edge; ch09 3:07-3:10 shot J a flat dark band with a sliver of the plant)."
     state: b27d19a08541
-since_fresh: 15
+  - when: 2026-11-20 20:51
+    found: 1
+    note: "Round 52: nothing major or minor; one nit (ch04 2:22-2:24 the pan reaches C-R-21 about 1.5 s into its first sentence). Earlier rulings left alone."
+    state: bf0f781569a0
+since_fresh: 8
