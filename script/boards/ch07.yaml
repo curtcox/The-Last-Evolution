@@ -69,7 +69,7 @@ shots:
   - id: E
     at: p086.1
     title: Silently
-    seen: The two of them from behind, small before the flickering screens.
+    seen: The two of them in profile, small before the flickering screens.
     event: The screens flicker; they don't move.
     camera: pulls back
     reads:
@@ -135,7 +135,7 @@ shots:
   - id: L
     at: p094.1
     title: The beams strike
-    seen: Outside, the dead plain under a day dimmed with smoke; the black dome; the green beams drawing in on it.
+    seen: Outside, the laboratory block standing under the ships' green beams; on 'struck' it falls away, and the black dome stands on the dead plain under a day dimmed with smoke.
     event: The beams strike; the dome quivers and bellies inward.
     camera: from wide in toward the dome
     reads:
