@@ -102,13 +102,13 @@ items:
   site.watch.content:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: 610724f72614
-    when: 2026-11-20 14:12
+    at: d0ce6db91a38
+    when: 2026-11-20 17:03
   site.watch.look:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: 0feb19d985a0
-    when: 2026-11-20 14:12
+    at: 49789cf9929e
+    when: 2026-11-20 17:03
   work.title:
     state: pass
     note: "Re-checked after round 41: chapter 0's source changed only in shot D (the heirs gathering at 0:40-0:48); SSIM against the previous draft is .997 through the title page. the masthead (62 px, italic) and byline (64 px) are larger again so they read on a phone (find.small-lettering), the title itself unchanged; on ch00-draft-747111c6 all three lines sit inside the frame with clear space between them (sheet of 0:05-0:14). The header names the 1932 issue ('AMAZING STORIES · August, 1932'), not the 1961 reprint."
@@ -276,29 +276,29 @@ items:
     when: 2026-11-04 09:00
   ch08.acting:
     state: pass
-    note: "On the draft with the thirty-eighth round's fixes: draft ch08-draft-073bbd31, the camera moves in on F-2 as it makes its duplicate, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be."
-    at: ch08-draft-073bbd31.mp4
-    when: 2026-11-18 18:38
+    note: "On the draft with the forty-ninth round's fixes: draft ch08-draft-43c7c9a5, one F-2 through the dissolve to the plain, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be."
+    at: ch08-draft-43c7c9a5.mp4
+    when: 2026-11-20 17:03
   ch08.picture:
     state: pass
-    note: "On the draft with the thirty-eighth round's fixes: draft ch08-draft-073bbd31, the camera moves in on F-2 as it makes its duplicate, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light."
-    at: ch08-draft-073bbd31.mp4
-    when: 2026-11-18 18:38
+    note: "On the draft with the forty-ninth round's fixes: draft ch08-draft-43c7c9a5, one F-2 through the dissolve to the plain, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light."
+    at: ch08-draft-43c7c9a5.mp4
+    when: 2026-11-20 17:03
   ch08.sync:
     state: pass
-    note: "On the draft with the thirty-eighth round's fixes: draft ch08-draft-073bbd31, the camera moves in on F-2 as it makes its duplicate, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median)."
-    at: ch08-draft-073bbd31.mp4
-    when: 2026-11-18 18:38
+    note: "On the draft with the forty-ninth round's fixes: draft ch08-draft-43c7c9a5, one F-2 through the dissolve to the plain, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median)."
+    at: ch08-draft-43c7c9a5.mp4
+    when: 2026-11-20 17:03
   ch08.sound:
     state: pass
-    note: "On the draft with the thirty-eighth round's fixes: draft ch08-draft-073bbd31, the camera moves in on F-2 as it makes its duplicate, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
-    at: ch08-draft-073bbd31.mp4
-    when: 2026-11-18 18:38
+    note: "On the draft with the forty-ninth round's fixes: draft ch08-draft-43c7c9a5, one F-2 through the dissolve to the plain, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
+    at: ch08-draft-43c7c9a5.mp4
+    when: 2026-11-20 17:03
   ch08.story:
     state: pass
-    note: "On the draft with the thirty-eighth round's fixes: draft ch08-draft-073bbd31, the camera moves in on F-2 as it makes its duplicate, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. 5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
-    at: ch08-draft-073bbd31.mp4
-    when: 2026-11-18 18:38
+    note: "On the draft with the forty-ninth round's fixes: draft ch08-draft-43c7c9a5, one F-2 through the dissolve to the plain, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. 5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
+    at: ch08-draft-43c7c9a5.mp4
+    when: 2026-11-20 17:03
   ch09.acting:
     state: pass
     note: "On the draft with the forty-fourth round's fixes: draft ch09-draft-35500335, both halves of the dome in frame as it parts, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
@@ -471,54 +471,54 @@ items:
     when: 2026-11-19 03:33
   ch07.acting:
     state: pass
-    note: "On the draft with the forty-third round's fixes: draft ch07-draft-41fa7c56, F-2's beam violet all the way up and its spread a violet band along the canopy, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal and Trest talk in the hall at night with hands out, Roal's curl rises, F-2 and the six machines gather, the two men stand inside the dome with their faces lit by the screens, the projectors feed the dome."
-    at: ch07-draft-41fa7c56.mp4
-    when: 2026-11-19 13:43
+    note: "On the draft with the forty-ninth round's fixes: draft ch07-draft-07af7fb6, its board text corrected, picture unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal and Trest talk in the hall at night with hands out, Roal's curl rises, F-2 and the six machines gather, the two men stand inside the dome with their faces lit by the screens, the projectors feed the dome."
+    at: ch07-draft-07af7fb6.mp4
+    when: 2026-11-20 17:03
   ch07.picture:
     state: pass
-    note: "On the draft with the forty-third round's fixes: draft ch07-draft-41fa7c56, F-2's beam violet all the way up and its spread a violet band along the canopy, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The hall of screens with falling ships, Roal's curl, F-2 and the six, the ring, the dome rising whole, the inside with five lit screens and the two lit faces, the green beams on the dome, the violet cut-away, the projectors, the dome small on the plain."
-    at: ch07-draft-41fa7c56.mp4
-    when: 2026-11-19 13:43
+    note: "On the draft with the forty-ninth round's fixes: draft ch07-draft-07af7fb6, its board text corrected, picture unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The hall of screens with falling ships, Roal's curl, F-2 and the six, the ring, the dome rising whole, the inside with five lit screens and the two lit faces, the green beams on the dome, the violet cut-away, the projectors, the dome small on the plain."
+    at: ch07-draft-07af7fb6.mp4
+    when: 2026-11-20 17:03
   ch07.sync:
     state: pass
-    note: "On the draft with the forty-third round's fixes: draft ch07-draft-41fa7c56, F-2's beam violet all the way up and its spread a violet band along the canopy, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Cuts on cue words; the faces lit for 'the two faces in their light'; Whisper timing on the narration."
-    at: ch07-draft-41fa7c56.mp4
-    when: 2026-11-19 13:43
+    note: "On the draft with the forty-ninth round's fixes: draft ch07-draft-07af7fb6, its board text corrected, picture unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Cuts on cue words; the faces lit for 'the two faces in their light'; Whisper timing on the narration."
+    at: ch07-draft-07af7fb6.mp4
+    when: 2026-11-20 17:03
   ch07.sound:
     state: pass
-    note: "On the draft with the forty-third round's fixes: draft ch07-draft-41fa7c56, F-2's beam violet all the way up and its spread a violet band along the canopy, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 4.0; Whisper lost 0 of 527; the quiet shots C and I are pauses, speech -14.2 to -15.3 (Trest's 'the end' soft, as it should be)."
-    at: ch07-draft-41fa7c56.mp4
-    when: 2026-11-19 13:43
+    note: "On the draft with the forty-ninth round's fixes: draft ch07-draft-07af7fb6, its board text corrected, picture unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 4.0; Whisper lost 0 of 527; the quiet shots C and I are pauses, speech -14.2 to -15.3 (Trest's 'the end' soft, as it should be)."
+    at: ch07-draft-07af7fb6.mp4
+    when: 2026-11-20 17:03
   ch07.story:
     state: pass
-    note: "On the draft with the forty-third round's fixes: draft ch07-draft-41fa7c56, F-2's beam violet all the way up and its spread a violet band along the canopy, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The last men shelter: Roal and Trest decide, the machines build the dome around them, and the outside goes on without them. The chapter's quiet ending reads."
-    at: ch07-draft-41fa7c56.mp4
-    when: 2026-11-19 13:43
+    note: "On the draft with the forty-ninth round's fixes: draft ch07-draft-07af7fb6, its board text corrected, picture unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The last men shelter: Roal and Trest decide, the machines build the dome around them, and the outside goes on without them. The chapter's quiet ending reads."
+    at: ch07-draft-07af7fb6.mp4
+    when: 2026-11-20 17:03
   ch10.acting:
     state: pass
-    note: "On the draft with the forty-sixth round's fixes: draft ch10-draft-8fc4cd4e, the sphere keeps its violet halo, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet moves as one body; the golden spark gathers its ring, the flagship twists in its grip, and when the lock comes the boil stops, still."
-    at: ch10-draft-8fc4cd4e.mp4
-    when: 2026-11-20 05:46
+    note: "On the draft with the forty-ninth round's fixes: draft ch10-draft-4d837fbb, the Outsiders seen at a port listening, in wonder and in horror, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet moves as one body; the golden spark gathers its ring, the flagship twists in its grip, and when the lock comes the boil stops, still."
+    at: ch10-draft-4d837fbb.mp4
+    when: 2026-11-20 17:02
   ch10.picture:
     state: pass
-    note: "On the draft with the forty-sixth round's fixes: draft ch10-draft-8fc4cd4e, the sphere keeps its violet halo, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet in formation, the golden spark and its ring of motes, the flagship twisted, the curves drawn as lines, the beam from the spark, the lock (the static flagship is the lock, intended). Reads at sheet size."
-    at: ch10-draft-8fc4cd4e.mp4
-    when: 2026-11-20 05:46
+    note: "On the draft with the forty-ninth round's fixes: draft ch10-draft-4d837fbb, the Outsiders seen at a port listening, in wonder and in horror, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet in formation, the golden spark and its ring of motes, the flagship twisted, the curves drawn as lines, the beam from the spark, the lock (the static flagship is the lock, intended). Reads at sheet size."
+    at: ch10-draft-4d837fbb.mp4
+    when: 2026-11-20 17:02
   ch10.sync:
     state: pass
-    note: "On the draft with the forty-sixth round's fixes: draft ch10-draft-8fc4cd4e, the sphere keeps its violet halo, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The spark, the twist and the lock land on their lines; 'Go' on its cue."
-    at: ch10-draft-8fc4cd4e.mp4
-    when: 2026-11-20 05:47
+    note: "On the draft with the forty-ninth round's fixes: draft ch10-draft-4d837fbb, the Outsiders seen at a port listening, in wonder and in horror, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The spark, the twist and the lock land on their lines; 'Go' on its cue."
+    at: ch10-draft-4d837fbb.mp4
+    when: 2026-11-20 17:02
   ch10.sound:
     state: pass
-    note: "On the draft with the forty-sixth round's fixes: draft ch10-draft-8fc4cd4e, the sphere keeps its violet halo, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS; 'Go' sits at -14.5; Whisper lost 2 of 319."
-    at: ch10-draft-8fc4cd4e.mp4
-    when: 2026-11-20 05:47
+    note: "On the draft with the forty-ninth round's fixes: draft ch10-draft-4d837fbb, the Outsiders seen at a port listening, in wonder and in horror, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS; 'Go' sits at -14.5; Whisper lost 2 of 319."
+    at: ch10-draft-4d837fbb.mp4
+    when: 2026-11-20 17:03
   ch10.story:
     state: pass
-    note: "On the draft with the forty-sixth round's fixes: draft ch10-draft-8fc4cd4e, the sphere keeps its violet halo, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The being of Force meets the Outsiders' fleet and stops it; the scale of the new mind is shown, not told."
-    at: ch10-draft-8fc4cd4e.mp4
-    when: 2026-11-20 05:47
+    note: "On the draft with the forty-ninth round's fixes: draft ch10-draft-4d837fbb, the Outsiders seen at a port listening, in wonder and in horror, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The being of Force meets the Outsiders' fleet and stops it; the scale of the new mind is shown, not told."
+    at: ch10-draft-4d837fbb.mp4
+    when: 2026-11-20 17:03
   ch11.acting:
     state: pass
     note: "On the draft with the forty-sixth round's fixes: draft ch11-draft-bd98bc09, the closing pages set larger to read on a phone, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The fleet leaves; F-2 works with the metal sheets; F-2 alone in the dark; the page turns to the narrator's words."
@@ -2109,6 +2109,31 @@ items:
     note: "Fixed in d9207c6: shot J framed on the pair at 2.8, centred between them. Checked on draft ch04-draft-b175bc33 at 2:05 and 2:19: both machines fill the frame, stencils legible, nobody cut at the edges; SSIM against ch04-draft-6cc94b92 changes only on shot J (1:58-2:24); -14.4 LUFS."
     title: "Chapter 4, 1:58-2:21: X-6621's speech held on two machines low in a frame of bare wall"
     when: 2026-11-20 14:11
+  find.sheets-mismatch:
+    state: curt
+    note: "From the forty-ninth fresh-eyes round. The look is yours. Sheet 1 gives the men a high standing collar and a belt; in profile neither reads (ch04 0:55). Sheet 2 draws X-5638 about 1.07 and C-R-21 about 1.4 times a man's height; in the chapters they stand about 0.67 and 1.08 (ch04 2:30). Either the sheets change to match the film (no re-render) or every chapter's figures change to match the sheets (all chapters re-render). I'd change the sheets: the film's scale has been judged in 48 rounds. Which?"
+    title: "Model sheets vs the film: the men's sheet collar and belt don't show in profile; the machines are drawn smaller beside the men than on sheet 2"
+    when: 2026-11-20 14:29
+  find.ch10-no-outsiders:
+    state: pass
+    note: "Fixed in bbd8e64: three cuts inside the flagship at a port onto the sphere: listening at 0:47-0:50, in wonder at 1:36-1:38, drawing back and turning away in horror at 2:02-2:05. Checked on draft ch10-draft-4d837fbb; SSIM against ch10-draft-8fc4cd4e changes only at those three cuts; -14.4 LUFS."
+    title: "Chapter 10: the Outsiders are never seen, through the speech to them or their horror"
+    when: 2026-11-20 17:02
+  find.ch08-two-f2:
+    state: pass
+    note: "Fixed in 4dee924: F-2 clears the dome frame before the dissolve to K. Checked on draft ch08-draft-43c7c9a5 at 3:47-3:49: one F-2, outside; SSIM against ch08-draft-073bbd31 changes only at 3:44-3:48; -14.5 LUFS."
+    title: "Chapter 8, 3:49: two F-2s for half a second in the dissolve to the plain"
+    when: 2026-11-20 17:02
+  find.site-curl-aloud:
+    state: pass
+    note: "Fixed in 0deb9a4: the note says the curl rises when Roal dreams. Checked on the built film page."
+    title: "Film page note 'The curl': 'rises when he dreams aloud' overstates it"
+    when: 2026-11-20 17:02
+  find.site-r6-ch07-shots:
+    state: pass
+    note: "Fixed in 4a39784: the board's shot E says the men are in profile, shot L that the laboratory block falls away to the dome on 'struck'. Checked on the rebuilt round 6 chapter 7 page; the draft ch07-draft-07af7fb6 is unchanged in picture (SSIM never below .965 against ch07-draft-41fa7c56); -14.5 LUFS."
+    title: "Round 6 chapter 7 page: shot E said 'from behind', shot L 'the black dome' where the film shows profiles and the standing block"
+    when: 2026-11-20 17:02
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -2306,4 +2331,8 @@ fresh:
     found: 2
     note: "Round 48: one minor (ch02 3:19-3:32 the second investigator's arrival and entry are a 3 px dot), one nit (ch04 1:58-2:21 X-6621's speech held on a lopsided frame of two machines and bare wall). Earlier rulings left alone."
     state: ef9640ef0a80
-since_fresh: 14
+  - when: 2026-11-20 14:27
+    found: 5
+    note: "Round 49: two minor (ch10 the Outsiders never seen through the speech to them and their horror; the figures' costume and scale don't match model sheets 1 and 2), three nits (the curl note's 'dreams aloud'; the round 6 ch07 page's stale shot L and E descriptions; ch08 3:49 two F-2s for half a second in a dissolve)."
+    state: 552d7dd9eda5
+since_fresh: 21
