@@ -317,7 +317,7 @@
       // the ships overhead and their great diffused beams
       const settle = ez(t, tK, tK + 6), tDown = C('p029.1:The last of the Outsiders was down');
       const fall2 = i => { const a = lerp(tO + 2, tDown - 1.4, i / 2); return t > tO ? ez(t, a, a + 1.5) : 0; };   // the last lands on its line
-      for (let i = 0; i < 3; i++) { const sx = 500 + i * 560, sy = lerp(-400, 230 + 40 * i, settle) + fall2(i) * (LG - 60 - 230 - 40 * i), rot = fall2(i) * (i % 2 ? .4 : -.3);
+      for (let i = 0; i < 3; i++) { const sx = 500 + i * 560, sy = lerp(-140, 230 + 40 * i, settle) + fall2(i) * (LG - 60 - 230 - 40 * i), rot = fall2(i) * (i % 2 ? .4 : -.3);
         push(); translate(sx, sy); rotate(rot); translate(-sx, -sy); if (fall2(i) < 1) ship(sx, sy, 520, t, -1, { d: 2 }); else wreck(sx, sy, 520, i); pop();
         { const a = lerp(tO + 2, tDown - 1.4, i / 2), fl = win(t, a + 1.35, a + 1.7, .1, .5); if (fl > 0) { glow(sx, sy, 260, NRG.white, .8 * fl); glow(sx, sy, 90, '#FFB070', .7 * fl); } }   // the impact
         if (fall2(i) >= 1) for (let k = 0; k < 4; k++) { const q = frac(t * .12 + k / 4 + hash(i)); boilSeed('smoke' + i + k); paint(ellPts(sx + 60 * Math.sin(k + t * .2) + q * 80, sy - 40 - q * 420, 50 + 90 * q, 30 + 50 * q, 12, 20), { wash: D[4], washOp: 170 * (1 - q) * Math.min(1, q * 6), ink: null, bleed: .3 }); }   // the wrecks smoulder
