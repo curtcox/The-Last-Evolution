@@ -1,6 +1,6 @@
 {
  "summary": {
-  "pass": 427,
+  "pass": 429,
   "stale": 0,
   "open": 0,
   "curt": 11,
@@ -35,7 +35,7 @@
   },
   "refs": {
    "state": "fail",
-   "detail": "blackgate-best-of: https://www.blackgate.com/?p=226361 → fetch failed"
+   "detail": "gutenberg: https://www.gutenberg.org/ebooks/27462 → 503"
   },
   "phone": {
    "state": "pass",
@@ -235,42 +235,42 @@
    "area": "film",
    "title": "Chapter 2: the acting",
    "state": "pass",
-   "note": "On the draft with the forty-seventh round's fixes: draft ch02-draft-4692d92b, the fleet sets off for Earth the way it faces, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The Outsiders move as a ranked crew: the small ones sway at their posts, the close Outsider stands apart and turns; the falls and the dive read; the crawlers keep their distance."
+   "note": "On the draft with the forty-eighth round's fixes: draft ch02-draft-59156eae, the second investigator seen arriving and going in, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The Outsiders move as a ranked crew: the small ones sway at their posts, the close Outsider stands apart and turns; the falls and the dive read; the crawlers keep their distance."
   },
   {
    "id": "ch02.picture",
    "area": "film",
    "title": "Chapter 2: the picture",
    "state": "pass",
-   "note": "On the draft with the forty-seventh round's fixes: draft ch02-draft-4692d92b, the fleet sets off for Earth the way it faces, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Space and the incoming fleet, the hulled ship, the Outsiders' interior with light shells now clear against the darker hull, the plates and rods, the wrecked hulls in the debris field, the dark hall of the masters, the fleet in rows. The earlier contrast note (dark on dark) no longer holds."
+   "note": "On the draft with the forty-eighth round's fixes: draft ch02-draft-59156eae, the second investigator seen arriving and going in, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Space and the incoming fleet, the hulled ship, the Outsiders' interior with light shells now clear against the darker hull, the plates and rods, the wrecked hulls in the debris field, the dark hall of the masters, the fleet in rows. The earlier contrast note (dark on dark) no longer holds."
   },
   {
    "id": "ch02.sync",
    "area": "film",
    "title": "Chapter 2: picture against sound",
    "state": "pass",
-   "note": "On the draft with the forty-seventh round's fixes: draft ch02-draft-4692d92b, the fleet sets off for Earth the way it faces, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Shots change on their cue words; Whisper timing -0.12 s median."
+   "note": "On the draft with the forty-eighth round's fixes: draft ch02-draft-59156eae, the second investigator seen arriving and going in, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Shots change on their cue words; Whisper timing -0.12 s median."
   },
   {
    "id": "ch02.sound",
    "area": "film",
    "title": "Chapter 2: the sound",
    "state": "pass",
-   "note": "On the draft with the forty-seventh round's fixes: draft ch02-draft-4692d92b, the fleet sets off for Earth the way it faces, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.2, shots -14.5 to -16.7; Whisper lost 13 of 640, names (Sirius, Deimos) and numbers."
+   "note": "On the draft with the forty-eighth round's fixes: draft ch02-draft-59156eae, the second investigator seen arriving and going in, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.2, shots -14.5 to -16.7; Whisper lost 13 of 640, names (Sirius, Deimos) and numbers."
   },
   {
    "id": "ch02.story",
    "area": "film",
    "title": "Chapter 2: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the forty-seventh round's fixes: draft ch02-draft-4692d92b, the fleet sets off for Earth the way it faces, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The Outsiders come from beyond the system, their ships and their masters are shown, and the threat to Earth is set: the chapter does its job as the invader's introduction."
+   "note": "On the draft with the forty-eighth round's fixes: draft ch02-draft-59156eae, the second investigator seen arriving and going in, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The Outsiders come from beyond the system, their ships and their masters are shown, and the threat to Earth is set: the chapter does its job as the invader's introduction."
   },
   {
    "id": "ch02.draft",
    "area": "film",
    "title": "Chapter 2: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch02-draft-4692d92b.mp4, -14.4 LUFS, peak -2 dBTP"
+   "note": "ch02-draft-59156eae.mp4, -14.4 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch03.acting",
@@ -319,42 +319,42 @@
    "area": "film",
    "title": "Chapter 4: the acting",
    "state": "pass",
-   "note": "On the draft with the forty-sixth round's fixes: draft ch04-draft-6cc94b92, C-R-21 out of shot D, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
+   "note": "On the draft with the forty-eighth round's fixes: draft ch04-draft-b175bc33, X-6621's speech framed on the two machines, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The council: C-R-21 and X-5638 speak lit and turned to the men; Roal points as he answers; Kahsh walks in and stands apart in his harness. The machines' replies now sit at the people's level, so the exchange reads as an argument, not asides."
   },
   {
    "id": "ch04.picture",
    "area": "film",
    "title": "Chapter 4: the picture",
    "state": "pass",
-   "note": "On the draft with the forty-sixth round's fixes: draft ch04-draft-6cc94b92, C-R-21 out of shot D, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
+   "note": "On the draft with the forty-eighth round's fixes: draft ch04-draft-b175bc33, X-6621's speech framed on the two machines, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Hall, council, the dark screens, the new brain built (P: the lens lowered on its cables, framed from its top as the board asks) and MX-3401 revealed. Nothing stands in front of a speaker."
   },
   {
    "id": "ch04.sync",
    "area": "film",
    "title": "Chapter 4: picture against sound",
    "state": "pass",
-   "note": "On the draft with the forty-sixth round's fixes: draft ch04-draft-6cc94b92, C-R-21 out of shot D, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
+   "note": "On the draft with the forty-eighth round's fixes: draft ch04-draft-b175bc33, X-6621's speech framed on the two machines, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Each speaker lights on his line (the ring on X-5638 at 0:30); the lens settles on p049.1; Whisper's words sit 0.14 s from the alignment's (median)."
   },
   {
    "id": "ch04.sound",
    "area": "film",
    "title": "Chapter 4: the sound",
    "state": "pass",
-   "note": "On the draft with the forty-sixth round's fixes: draft ch04-draft-6cc94b92, C-R-21 out of shot D, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
+   "note": "On the draft with the forty-eighth round's fixes: draft ch04-draft-b175bc33, X-6621's speech framed on the two machines, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.1 LU; every shot within 0.5 LU after the levelling. Whisper missed 10 of 645 words: digits and names ('ten thousand', 'm x oh', 'reenforcements', 'kosh'), and 'asked' opening two-word lines, which the voice pass heard right in the same takes."
   },
   {
    "id": "ch04.story",
    "area": "film",
    "title": "Chapter 4: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the forty-sixth round's fixes: draft ch04-draft-6cc94b92, C-R-21 out of shot D, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
+   "note": "On the draft with the forty-eighth round's fixes: draft ch04-draft-b175bc33, X-6621's speech framed on the two machines, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. 5:17: the council argues, Roal is overruled, the machines turn to MX-3401's plan and build the greater brain. Clear cause and turn."
   },
   {
    "id": "ch04.draft",
    "area": "film",
    "title": "Chapter 4: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch04-draft-6cc94b92.mp4, -14.4 LUFS, peak -2 dBTP"
+   "note": "ch04-draft-b175bc33.mp4, -14.4 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch06.acting",
@@ -3148,14 +3148,23 @@
    "title": "Chapter 3, 3:09-3:16: bare sky with the ships cut by the top as the camera tilts down to Colorado",
    "state": "pass",
    "note": "Fixed in edde4f1: the ships start their descent in frame. Checked on draft ch03-draft-0c2f2ac5 at 3:12-3:16: the three ships whole above the colony from the shot's start; SSIM against ch03-draft-ff0f9865 changes at 3:11-3:16, and at 4:44 the dissolve grain seen before; -14.4 LUFS."
+  },
+  {
+   "id": "find.ch02-second-investigator",
+   "area": "finding",
+   "title": "Chapter 2, 3:19-3:32: the second investigator's arrival and entry are a 3 px dot",
+   "state": "pass",
+   "note": "Fixed in cadc7ef: a lensed sphere like the first, 46 across with its glow, arrives on 'had now arrived', holds off the hull and goes into the hole on 'entered the broken side'. Checked on draft ch02-draft-59156eae at 3:22 and 3:30; SSIM against ch02-draft-4692d92b changes only across shot K (199-211 s); -14.4 LUFS."
+  },
+  {
+   "id": "find.ch04-x6621-frame",
+   "area": "finding",
+   "title": "Chapter 4, 1:58-2:21: X-6621's speech held on two machines low in a frame of bare wall",
+   "state": "pass",
+   "note": "Fixed in d9207c6: shot J framed on the pair at 2.8, centred between them. Checked on draft ch04-draft-b175bc33 at 2:05 and 2:19: both machines fill the frame, stencils legible, nobody cut at the edges; SSIM against ch04-draft-6cc94b92 changes only on shot J (1:58-2:24); -14.4 LUFS."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-19 18:31",
-   "found": 4,
-   "note": "Round 45: nothing major or minor; four nits (ch03 0:26-0:51 Roal's arm pumps at Trest under narration; ch05 4:52-5:03 F-1 falls against the right edge; ch04 1:33-1:44 Trest and Kahsh don't react to X-6349's bad news; ch11 0:06-0:12 the departing fleet is three ships). The ch05 welding flicker measured under 3 flashes a second."
-  },
   {
    "when": "2026-11-20 02:08",
    "found": 4,
@@ -3165,6 +3174,11 @@
    "when": "2026-11-20 05:58",
    "found": 2,
    "note": "Round 47: one minor (ch02 5:03-5:08 the fleet's turn toward Earth reads as ships squashed into crates), one nit (ch03 3:09-3:16 bare sky through the tilt down to Colorado). Earlier rulings left alone."
+  },
+  {
+   "when": "2026-11-20 11:48",
+   "found": 2,
+   "note": "Round 48: one minor (ch02 3:19-3:32 the second investigator's arrival and entry are a 3 px dot), one nit (ch04 1:58-2:21 X-6621's speech held on a lopsided frame of two machines and bare wall). Earlier rulings left alone."
   }
  ]
 }
