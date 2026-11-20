@@ -85,8 +85,11 @@
           glow(TR[0] + 300, TR[1], 300, NRG.white, .3 * (1 - seg(age, 0, 6)));
           const hx = TR[0] + 1100, hy = 380; ship(hx, hy, 1100, t, -1, { d: 2 });
           boilSeed('hole'); paint(ellPts(hx - 60, hy + 40, 90, 60, 16, 14), { wash: '#1C1814', washOp: 255, ink: INK, sw: .6 }); glow(hx - 60, hy + 40, 60, HEAT, .3);
-          const tIn = C('p013.1:entered the broken side'), g = ez(t, tIn - 4, tIn + .5), gx = lerp(-200, hx - 60, g), gy = lerp(900, hy + 40, g);
-          if (g > 0 && g < 1) glow(gx, gy, 14, NRG.white, .9);
+          // the second investigator: a sphere like the first, arriving on 'had now arrived', holding off the hull, then going in
+          // on 'entered the broken side' (as a 3 px fleck it was never seen, and the corridors after seemed the first one's)
+          const tIn = C('p013.1:entered the broken side'), tArr = C('p013.1:A second investigator'), arr = ez(t, tArr, C('p013.1:had now arrived') + .4), go = ez(t, tIn - .9, tIn + .7),
+            hold = [hx - 330, hy + 170], gx = lerp(lerp(TR[0] - 500, hold[0], arr), hx - 60, go) + 8 * Math.sin(t * 2) * (1 - go), gy = lerp(lerp(150, hold[1], arr), hy + 40, go) + 6 * Math.cos(t * 1.7) * (1 - go);
+          if (arr > 0 && go < 1) { const sz = 46 * (1 - .7 * go); glow(gx, gy, 90 * (1 - .5 * go), NRG.white, .7); DES.investigator(gx, gy, sz, t); }
           for (let i = 0; i < 6; i++) ship(2300 + i * 300, 100 + 150 * (i % 3), 260, t, -1, { d: 3 });
         }
       } else {
