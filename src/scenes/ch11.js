@@ -92,7 +92,7 @@
     const fade = 1 - ez(t, tJ - 1, tJ + .5);
     letter('THE LAST EVOLUTION', W / 2, 150, 28, INK, { ink: false, font: `700 28px ${SERIF}`, spacing: 4, alpha: .8 * fade });
     if (fade > 0) rule(560, 180, 800, INK, fade);   // the head's rule goes with it, not left orphaned
-    if (para >= 0) dropCapPara(PARAS[para], 460, 380, 1000, { size: 44, lines: 6, screen: false });   // -1: the page between paragraphs
+    if (para >= 0) dropCapPara(PARAS[para], 210, 290, 1500, { size: 60, lines: 9, screen: false });   // -1: the page between paragraphs (at 44 px over 1000 the body was 4-5 px high on a phone)
     const e = ez(t, tJ, tJ + 2);
     letter('THE END', W / 2, 760, 90, INK, { ink: false, font: `700 90px ${SERIF}`, spacing: 10, alpha: e });
     if (e > 0) rule(810, 830, 300, INK, e);
