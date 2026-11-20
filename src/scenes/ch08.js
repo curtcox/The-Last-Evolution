@@ -14,7 +14,7 @@
   const F2RINGS = (() => { const out = []; for (const l of CHAPTER.lines) if (l.who === 'f2') for (const w of l.words) if (!out.length || w[1] - out.at(-1) > .9) out.push(w[1]); return out; })();
   function dome(t) {
     HALFTONE = .2;
-    const tJ = T0('J'), go = ez(t, C('p111.2') - .5, T1('J') - .3);
+    const tJ = T0('J'), go = ez(t, C('p111.2') - .5, T1('J') - .8);   // out of frame before the dissolve to K (it overlapped the F-2 outside for half a second)
     const c = cam(t, [[0, tt => [930, lerp(700, 760, ez(tt, T0('B'), T0('C'))), lerp(1.2, 1.7, ez(tt, T0('B'), T0('C')))]], [T0('C'), [TRESTX, 760, 2.4], 2], [T0('D'), tt => [(ROALX + TRESTX) / 2 - 20, 735, lerp(3.3, 3.5, ez(tt, T0('D'), T0('E')))], 2.5],   // the push on the two men: centred between them, Roal left and Trest right, F-2 just out of frame (centred on Roal, Trest's side held the men and the left 45% was black)
       [T0('H') - .5, [ROALX - 20, 770, 2.6], .01],   // close on the two men, F-2 just out of frame (it stood half cut by the edge)
       [T0('I'), tt => [lerp(1040, 1120, ez(tt, T0('I'), C('p109.1'))), 740, 1.6], 2.5],
@@ -24,7 +24,7 @@
     // 'a solid, black dome' (chapter 7): black within, the men and the machines dim against it, only the screens and the violet giving light
     ground('#141110', 255, 'dk8', { fill: '#1C1814', fillOp: 90 });
     camBegin(...c);
-    const f2x = lerp(F2P[0], 1900, go * go), f2y = F2P[1] - 40 * go;
+    const f2x = lerp(F2P[0], 2300, go * go), f2y = F2P[1] - 40 * go;
     // each gestures on his own clauses (Roal's smaller while his eyes dream) and nods as the other, or F-2, speaks to him
     const dream = Math.max(win(t, T0('D'), T0('E'), 1, 1), win(t, T0('H'), T0('I'), 1, 1));
     const rp = {}, rh = listen(t, rp, TO_ROAL, 1), rl = rh + gesture(t, rp, ROALC); if (rp.up) { rp.up = lerp(rp.up, .12 + (rp.up - .12) * .55, dream); rp.fore = lerp(rp.fore, .3 + (rp.fore - .3) * .6, dream); }
