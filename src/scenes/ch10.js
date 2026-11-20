@@ -13,7 +13,7 @@
   const ring = t => { const r = []; for (let i = 0; i < 9; i++) { const a = i / 9 * TAU + t * .03, R = 520 + 60 * Math.sin(i * 1.7); r.push({ x: MID[0] + Math.cos(a) * R * 1.3, y: MID[1] + Math.sin(a) * R * .55, i, a }); } return r; };
   function sphere(t, r) {
     // its deep violet halo, as chapter 9 drew it (at .35 and .25, inside a wide gold glow, it was gone and the sphere a bare gold blob)
-    glow(...MID, r * 2.6, NRG.violet, .55); glow(...MID, r * 1.9, '#9A6AE0', .4);
+    glow(...MID, r * 2.6, NRG.violet, .8); glow(...MID, r * 1.9, '#9A6AE0', .6);
     boilSeed('gold10'); paint(ellPts(...MID, r * .8, r * .72, 20, r * .12), { wash: '#E0A030', washOp: 160, ink: null });
     glow(...MID, r * 1.15, '#FFB830', .6); glow(...MID, r * .9, NRG.gold, .7); glow(MID[0] + r * .1 * Math.sin(t), MID[1], r * .35, '#FFE6A0', .5);
   }
