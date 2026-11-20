@@ -80,9 +80,31 @@
     if (rays > 0) glow(...MID, 200, NRG.gold, .5 * rays);
     camEnd();
   }
+  // the Outsiders themselves, inside the flagship at a port onto the sphere: listening as it speaks to them; in awful wonder;
+  // half mad with horror, drawing back (the chapter showed only hulls, so its speech had no listener and their terror, the
+  // reason they go home, no picture)
+  const WATCH = [[T0('D') + 3, T0('D') + 6.6, 0], [C('p134.1:In awful wonder') - .1, C('p134.1:the ship turned inside out'), 1], [C('p134.1:Half mad with horror') - .1, C('p134.1:send out a beam') + .3, 2]];
+  function watchers(t, mood, t0) {
+    HALFTONE = .25;
+    camBegin(960, 560, 1 + .03 * (t - t0));
+    ground('#14110E', 255, 'w10', { fill: '#211B16', fillOp: 90 });
+    stillSeed('w10floor'); paint(rectPts(-200, 905, 2400, 400), { wash: '#2A231D', washOp: 230, ink: null });
+    // the port, and through it the sphere with its violet halo; its light laid across them
+    stillSeed('w10port'); paint(ellPts(1360, 470, 300, 240, 40), { wash: '#0A0907', washOp: 255, ink: INK, sw: 2.5 });
+    glow(1380, 450, 190, NRG.violet, .8); glow(1380, 450, 120, '#9A6AE0', .5); boilSeed('w10gold'); paint(ellPts(1380, 450, 62, 56, 18, 8), { wash: '#E0A030', washOp: 200, ink: null });
+    glow(1380, 450, 90, NRG.gold, .8); glow(1380, 450, 30, '#FFE6A0', .9);
+    glow(900, 760, 520, NRG.gold, .1 + .05 * mood);
+    // in profile, facing the port, without the suits they wore outside; in horror they stumble back from it, shaking
+    for (let i = 0; i < 3; i++) { const back = mood === 2 ? 220 * ez(t, t0 + .15 + .2 * i, t0 + 1.3 + .2 * i) : 0, lean = mood === 1 ? 30 * ez(t, t0, t0 + 1.5) : 0, shake = mood === 2 ? 4 * Math.sin(t * 31 + i * 2) : 0;
+      const x = 640 + i * 200 - back + lean + shake, g = 905 - 12 * i, sz = 54 - 5 * i, face = mood === 2 && back > 120 ? 1 : -1;
+      push(); translate(x, g); scale(face, 1); translate(-x, -g); DES.outsider(x, g, sz, t, { view: 'side', suit: false, turn: .03 * Math.sin(t + i) }); pop();
+      glow(x + 40, g - 2.6 * sz, 120, NRG.gold, .12); }
+    camEnd();
+  }
   function film(t) {
     if (t < T0('B')) return page(t, 'Go, and Do Not Return', 'Far in space, headed now for Mars, that they might destroy all life there, the golden sphere found the Outsiders...', T0('B'), { soak: '#1A1612' });
     scene(t);
+    for (const [a, b, m] of WATCH) if (t >= a && t < b) watchers(t, m, a);
     if (t < T0('B') + .8) flash(1 - seg(t, T0('B'), T0('B') + .8), '#1A1612');
     if (t > DUR - .7) brushWipe(.5 * seg(t, DUR - .7, DUR - .08), [PULP.paperDk, PULP.paper]);   // paper strokes cover the last image, so the next chapter's opening page follows on (a brown wipe that never revealed anything flickered before the cut)
   }
