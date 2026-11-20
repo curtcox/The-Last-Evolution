@@ -95,7 +95,7 @@
       [C('p121.4:The sphere leaped') - .3, [PX + 130, ORB[1] - 20, 1.5], 2],   // in on the sphere in the beam as it leaps, is caught and shrinks (held out at 1, it was a white dot lost at the beam's tip)
       [C('p121.4:Then the sphere had vanished') + .8, [PX + 60, ORB[1] + 100, 1], 2],   // and out again once it is gone, to the plant and F-2 (held in, 3 s on an empty crown)
       [tJ, tt => [lerp(PX - 100, PX + 60, ez(tt, tJ, tJ + 10)), 80, .72], 3],   // J: the storm on the plant again, wide enough for the lightning
-      [C('p122.1:C-R-U-1 joined him') - 2, [PX - 500, RG - 95, 3], 2.5],   // in on C-R-U-1 floating in beside F-2, its gold name readable (at 1.7 it was 45 px across, a glint on a phone)
+      [C('p122.1:C-R-U-1 joined him') - 2, [PX - 640, RG - 40, 2.3], 2.5],   /* down to take in the ground they hover over, the plant's foot out of frame (at 3 they floated on a flat band beside a sliver of it) */   // in on C-R-U-1 floating in beside F-2, its gold name readable (at 1.7 it was 45 px across, a glint on a phone)
       [C('p122.1:red glory of the sun') - .5, tt => [lerp(PX - 300, PX + 350, ez(tt, C('p122.1:red glory of the sun') - .5, tK)), lerp(760, 680, ez(tt, C('p122.1:red glory of the sun'), tK)), lerp(1.3, .95, ez(tt, C('p122.1:red glory of the sun') - .5, tK))], 3],   // round, so the red sun rises behind them
       // K: in on the dome as it parts and the two men walk out of it, held while they come; then up to the globe above the
       // plant, wide, so the glow shows; then in on it for its golden light and violet halo (held wide, it was a speck), to
