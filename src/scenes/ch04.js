@@ -147,7 +147,7 @@
     HALFTONE = .3;
     const tB = T0('B'), tC = T0('C'), tRay = C('p037.3:rose into the air'), tTrain = C('p037.3:trained upon it'), tHarm = C('p037.3:for the ray fell harmless');
     const at = id => FACE[id], tR = T0('R');
-    const c = cam(t, [[0, [1000, 800, 1.1]], [C('p037.2') - 2.2, at('x5638'), 2.2], [tC, [P.x5638 + 120, 820, 1.6], 2], [T0('D'), [P.roal - 60, 800, 2], 2], [T0('E'), at('x5638'), 1.2], [T0('F'), [P.roal + 60, 800, 1.3], 2.2],
+    const c = cam(t, [[0, [1000, 800, 1.1]], [C('p037.2') - 2.2, at('x5638'), 2.2], [tC, [P.x5638 + 120, 820, 1.6], 2], [T0('D'), [P.roal + 60, 800, 2.2], 2],   /* D: C-R-21 kept wholly out (at roal - 60 and 2 its edge cut it to 'R-21') */ [T0('E'), at('x5638'), 1.2], [T0('F'), [P.roal + 60, 800, 1.3], 2.2],
       [T0('G'), at('x6349'), 2], [T0('H'), [P.trest + 80, 800, 2.1], 1.6], [T0('I'), at('kahsh'), 1.4], [T0('J'), at('x6621'), 1.6], [T0('K'), at('cr21'), 2.2], [C('p046.3'), [P.cr21 + 300, 800, 1.4], 3],   // H: Trest, Kahsh, and X-6349 whole beside them (on Trest alone, X-6349 was cut by the right edge and X-5638 left a sliver at the left)
       [T0('L'), tt => [960, lerp(560, 470, ez(tt, T0('L'), tShift)), lerp(1.1, 1.3, ez(tt, T0('L'), tShift))], 2.5], [tShift, [1000, 650, .78], 2.5],   // the screens and the council under them (it was cropped to heads)
       // M: wide on the floor for 'two small, and one large group', then in on each small group as it's named (one pan
