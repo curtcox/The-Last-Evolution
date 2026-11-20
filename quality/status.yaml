@@ -102,13 +102,13 @@ items:
   site.watch.content:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: 2d8eb9a5bc58
-    when: 2026-11-20 18:41
+    at: 4fc1355de515
+    when: 2026-11-20 20:41
   site.watch.look:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: 3d25515ae656
-    when: 2026-11-20 18:41
+    at: 4af0a6631b2a
+    when: 2026-11-20 20:41
   work.title:
     state: pass
     note: "Re-checked after round 41: chapter 0's source changed only in shot D (the heirs gathering at 0:40-0:48); SSIM against the previous draft is .997 through the title page. the masthead (62 px, italic) and byline (64 px) are larger again so they read on a phone (find.small-lettering), the title itself unchanged; on ch00-draft-747111c6 all three lines sit inside the frame with clear space between them (sheet of 0:05-0:14). The header names the 1932 issue ('AMAZING STORIES · August, 1932'), not the 1961 reprint."
@@ -276,54 +276,54 @@ items:
     when: 2026-11-04 09:00
   ch08.acting:
     state: pass
-    note: "On the draft with the forty-ninth round's fixes: draft ch08-draft-43c7c9a5, one F-2 through the dissolve to the plain, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be."
-    at: ch08-draft-43c7c9a5.mp4
-    when: 2026-11-20 17:03
+    note: "On the draft with the fifty-first round's fixes: draft ch08-draft-247a9aef, the two-shot clear of the screens, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Inside the dome the two men face each other, Roal's hand open as he speaks and his thought curling up; F-2's rings widen as it answers. Quiet, as the last men's talk should be."
+    at: ch08-draft-247a9aef.mp4
+    when: 2026-11-20 20:41
   ch08.picture:
     state: pass
-    note: "On the draft with the forty-ninth round's fixes: draft ch08-draft-43c7c9a5, one F-2 through the dissolve to the plain, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light."
-    at: ch08-draft-43c7c9a5.mp4
-    when: 2026-11-20 17:03
+    note: "On the draft with the fifty-first round's fixes: draft ch08-draft-247a9aef, the two-shot clear of the screens, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The dim dome with the screens, the ladder (stone, life, man, machine, light) built rung by rung, then F-2 on the plain raising the tower and lighting it. Dark but legible; F-2 reads as a dark shape against the dome's light."
+    at: ch08-draft-247a9aef.mp4
+    when: 2026-11-20 20:41
   ch08.sync:
     state: pass
-    note: "On the draft with the forty-ninth round's fixes: draft ch08-draft-43c7c9a5, one F-2 through the dissolve to the plain, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median)."
-    at: ch08-draft-43c7c9a5.mp4
-    when: 2026-11-20 17:03
+    note: "On the draft with the fifty-first round's fixes: draft ch08-draft-247a9aef, the two-shot clear of the screens, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The ladder's rungs come in with F-2's words and the tower rises with p112; Whisper's words sit 0.12 s from the alignment's (median)."
+    at: ch08-draft-247a9aef.mp4
+    when: 2026-11-20 20:41
   ch08.sound:
     state: pass
-    note: "On the draft with the forty-ninth round's fixes: draft ch08-draft-43c7c9a5, one F-2 through the dissolve to the plain, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
-    at: ch08-draft-43c7c9a5.mp4
-    when: 2026-11-20 17:03
+    note: "On the draft with the fifty-first round's fixes: draft ch08-draft-247a9aef, the two-shot clear of the screens, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, range 3.3 LU. Whisper missed 5 of 670 words: 'two's' (F-2's), 'massed moulding', 'hundred', 'last'."
+    at: ch08-draft-247a9aef.mp4
+    when: 2026-11-20 20:41
   ch08.story:
     state: pass
-    note: "On the draft with the forty-ninth round's fixes: draft ch08-draft-43c7c9a5, one F-2 through the dissolve to the plain, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. 5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
-    at: ch08-draft-43c7c9a5.mp4
-    when: 2026-11-20 17:03
+    note: "On the draft with the fifty-first round's fixes: draft ch08-draft-247a9aef, the two-shot clear of the screens, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. 5:18: the last men talk with F-2 about what comes after, and F-2 begins the tower. The turn from men to machines is plain."
+    at: ch08-draft-247a9aef.mp4
+    when: 2026-11-20 20:41
   ch09.acting:
     state: pass
-    note: "On the draft with the forty-fourth round's fixes: draft ch09-draft-35500335, both halves of the dome in frame as it parts, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
-    at: ch09-draft-35500335.mp4
-    when: 2026-11-19 18:16
+    note: "On the draft with the fifty-first round's fixes: draft ch09-draft-bddbb2d5, C-R-U-1 and F-2 framed over the ground, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. F-2 tends the tower; the sphere of force wakes, flickers and steadies; F-2's rings answer it. Roal and Trest watch small from the plain's edge."
+    at: ch09-draft-bddbb2d5.mp4
+    when: 2026-11-20 20:41
   ch09.picture:
     state: pass
-    note: "On the draft with the forty-fourth round's fixes: draft ch09-draft-35500335, both halves of the dome in frame as it parts, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
-    at: ch09-draft-35500335.mp4
-    when: 2026-11-19 18:16
+    note: "On the draft with the fifty-first round's fixes: draft ch09-draft-bddbb2d5, C-R-U-1 and F-2 framed over the ground, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Night, rain and lightning round the tower; the spark at its crown grows into the gold sphere of pure force in a red dawn. Legible at every size it's shown."
+    at: ch09-draft-bddbb2d5.mp4
+    when: 2026-11-20 20:41
   ch09.sync:
     state: pass
-    note: "On the draft with the forty-fourth round's fixes: draft ch09-draft-35500335, both halves of the dome in frame as it parts, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
-    at: ch09-draft-35500335.mp4
-    when: 2026-11-19 18:16
+    note: "On the draft with the fifty-first round's fixes: draft ch09-draft-bddbb2d5, C-R-U-1 and F-2 framed over the ground, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hum rises with the spark; the sphere answers on its lines with a ring; Whisper's words sit 0.14 s from the alignment's (median)."
+    at: ch09-draft-bddbb2d5.mp4
+    when: 2026-11-20 20:41
   ch09.sound:
     state: pass
-    note: "On the draft with the forty-fourth round's fixes: draft ch09-draft-35500335, both halves of the dome in frame as it parts, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
-    at: ch09-draft-35500335.mp4
-    when: 2026-11-19 18:16
+    note: "On the draft with the fifty-first round's fixes: draft ch09-draft-bddbb2d5, C-R-U-1 and F-2 framed over the ground, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, range 3.6 LU. Whisper missed 2 of 611 words: 'there' and 'it'."
+    at: ch09-draft-bddbb2d5.mp4
+    when: 2026-11-20 20:41
   ch09.story:
     state: pass
-    note: "On the draft with the forty-fourth round's fixes: draft ch09-draft-35500335, both halves of the dome in frame as it parts, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. 5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
-    at: ch09-draft-35500335.mp4
-    when: 2026-11-19 18:16
+    note: "On the draft with the fifty-first round's fixes: draft ch09-draft-bddbb2d5, C-R-U-1 and F-2 framed over the ground, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. 5:09: F-2 makes a being of pure force, the next step past machine. The birth is the chapter's one event, and it lands."
+    at: ch09-draft-bddbb2d5.mp4
+    when: 2026-11-20 20:41
   find.ship-opaque:
     state: pass
     note: "New draft, ch10 2:14-2:22: the flagship's hull hides the ships behind it; no ribs or bands show through."
@@ -2139,6 +2139,21 @@ items:
     note: "Fixed in cfa37e4: the board's shot D is a slow push in on Roal and Trest in profile, from full length until their feet leave the frame. Checked on the rebuilt round 6 chapter 7 page; draft ch07-draft-5ad91bd1 unchanged in picture (lowest SSIM against ch07-draft-07af7fb6 .957 at 3:31, compared frame by frame: the same dissolve); -14.5 LUFS."
     title: "Chapter 7 board and round 6 page: shot D 'Roal, close, his eyes dreaming' where the film pushes in slowly on the two in profile"
     when: 2026-11-20 18:41
+  find.site-sound-music:
+    state: pass
+    note: "Fixed in 47833f3: the note says no music plays under the voice past each chapter's opening bars. Checked on the built film page."
+    title: "Film page note 'The sound': 'No music plays under the voice', but the theme-head runs under each chapter's first sentence"
+    when: 2026-11-20 20:41
+  find.ch08-screens-edge:
+    state: pass
+    note: "Fixed in 77d5ca9: shot C at 790. Checked on draft ch08-draft-247a9aef at 0:30-0:40: the men and F-2 lit, no screen edge in the top of the frame; SSIM against ch08-draft-43c7c9a5 changes only on shot C (0:29-0:41); -14.5 LUFS."
+    title: "Chapter 8, 0:29-0:41: the screens' feet cut along the top edge of the two-shot"
+    when: 2026-11-20 20:41
+  find.ch09-shotj-float:
+    state: pass
+    note: "Fixed in 450c4a2: framed at PX - 640, RG - 40, 2.3. Checked on draft ch09-draft-bddbb2d5 at 3:08: C-R-U-1 and F-2 over the ground and rocks, its name legible, the plant out of frame; SSIM against ch09-draft-35500335 changes only at 3:04-3:12; -14.4 LUFS."
+    title: "Chapter 9, 3:07-3:10: C-R-U-1 and F-2 float on a flat band beside a sliver of the plant"
+    when: 2026-11-20 20:41
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -2344,4 +2359,8 @@ fresh:
     found: 1
     note: "Round 50: nothing major or minor; one nit (the ch07 board and round 6 page call shot D 'Roal, close, his eyes dreaming' where the film holds a slow push on the two in profile). Earlier rulings left alone."
     state: b8b7c4cb1dfa
-since_fresh: 9
+  - when: 2026-11-20 18:52
+    found: 3
+    note: "Round 51: one minor (the film page's sound note says no music plays under the voice, but each chapter's theme-head runs under its first sentence), two nits (ch08 0:29-0:41 the screens' bottoms cut along the top edge; ch09 3:07-3:10 shot J a flat dark band with a sliver of the plant)."
+    state: b27d19a08541
+since_fresh: 15
