@@ -54,7 +54,7 @@
     label('Roal', '', 1640, 470); label('Trest', '', 1810, 470);
     let y = 540;
     y = words('They were the greatest human science-investigators—Roal, 25374 and Trest, 35429.', 'p018', 1560, y, 300);
-    y = note('Drawn as the pulps drew the future: tunics to the thigh, belted, over close trousers and soft boots, and the high standing collar of the period\'s futures. Roal, the elder, in a long robe and white beard; Kahsh in a ruler\'s mantle with a disc of office. Not caricatures.', 1560, y, 300);
+    y = note('Drawn as the pulps drew the future: tunics to the thigh, belted, over close trousers and soft boots, and the high standing collar of the period\'s futures, as here from the front. In profile, as the film mostly shows them, the tunic reads plain: the belt and collar are the front view\'s. Roal, the elder, in a long robe and white beard; Kahsh in a ruler\'s mantle with a disc of office. Not caricatures.', 1560, y, 300);
   };
 
   // 2. The machines of 2538
@@ -64,9 +64,11 @@
     ground(80, 1880, g);
     DES.person(150, g, s, t, { who: 'citizen' }); label('a man', 'for scale', 150, g + 46);
     const ms = [['x5638', 360, 'X-5638', 'the newest'], ['x6349', 600, 'X-6349', ''], ['x6621', 850, 'X-6621', 'the chemist'], ['cr21', 1120, 'C-R-21', 'chief of the rulers']];
-    for (const [k, x, n, sub] of ms) { DES[k](x, g, s, t); label(n, sub, x, g + 46); }
-    DES.f1(1580, g, s, t); label('F-1', 'the new brain-machine', 1580, g + 46);
-    scale(1840 - 5 * s, 205, 5, s, 'five feet');
+    // at the film's scale beside a man: the men are drawn at 44, C-R-21 at 30, the others at 26 (chapter 4) and F-1 at 50
+    // (chapter 5); all at one size here, the sheet showed the machines half again taller than the film does
+    for (const [k, x, n, sub] of ms) { DES[k](x, g, s * (k === 'cr21' ? 30 : 26) / 44, t); label(n, sub, x, g + 46); }
+    DES.f1(1580, g, s * 50 / 44, t); label('F-1', 'the new brain-machine', 1580, g + 46);
+    scale(L, 640, 5, s, 'five feet');   // clear of F-1, now at its film size
     let y = 205;
     y = words('The usual driving and lifting units were there, but a vastly greater dome-case, far more powerful energy-generators, far greater force-beam controls were used and more tentacles were built on the framework.', 'p048', L, y, 500, 19);
     words('The whirr of air sucked into a transmutation field... the hum of the powerful generators within the shining cylinder of F-1.', 'p058', L, y, 500, 19);
