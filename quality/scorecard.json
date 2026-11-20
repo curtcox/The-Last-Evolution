@@ -1,6 +1,6 @@
 {
  "summary": {
-  "pass": 425,
+  "pass": 427,
   "stale": 0,
   "open": 0,
   "curt": 11,
@@ -235,84 +235,84 @@
    "area": "film",
    "title": "Chapter 2: the acting",
    "state": "pass",
-   "note": "On the draft with the thirty-fifth round's fixes: draft ch02-draft-4eee5549, the two Outsiders coming up one after the other on the struck one's left, so neither walks through him or the other (find.ch02-outsiders-overlap); sound unchanged, -14.4 LUFS. The Outsiders move as a ranked crew: the small ones sway at their posts, the close Outsider stands apart and turns; the falls and the dive read; the crawlers keep their distance."
+   "note": "On the draft with the forty-seventh round's fixes: draft ch02-draft-4692d92b, the fleet sets off for Earth the way it faces, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The Outsiders move as a ranked crew: the small ones sway at their posts, the close Outsider stands apart and turns; the falls and the dive read; the crawlers keep their distance."
   },
   {
    "id": "ch02.picture",
    "area": "film",
    "title": "Chapter 2: the picture",
    "state": "pass",
-   "note": "On the draft with the thirty-fifth round's fixes: draft ch02-draft-4eee5549, the two Outsiders coming up one after the other on the struck one's left, so neither walks through him or the other (find.ch02-outsiders-overlap); sound unchanged, -14.4 LUFS. Space and the incoming fleet, the hulled ship, the Outsiders' interior with light shells now clear against the darker hull, the plates and rods, the wrecked hulls in the debris field, the dark hall of the masters, the fleet in rows. The earlier contrast note (dark on dark) no longer holds."
+   "note": "On the draft with the forty-seventh round's fixes: draft ch02-draft-4692d92b, the fleet sets off for Earth the way it faces, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Space and the incoming fleet, the hulled ship, the Outsiders' interior with light shells now clear against the darker hull, the plates and rods, the wrecked hulls in the debris field, the dark hall of the masters, the fleet in rows. The earlier contrast note (dark on dark) no longer holds."
   },
   {
    "id": "ch02.sync",
    "area": "film",
    "title": "Chapter 2: picture against sound",
    "state": "pass",
-   "note": "On the draft with the thirty-fifth round's fixes: draft ch02-draft-4eee5549, the two Outsiders coming up one after the other on the struck one's left, so neither walks through him or the other (find.ch02-outsiders-overlap); sound unchanged, -14.4 LUFS. Shots change on their cue words; Whisper timing -0.12 s median."
+   "note": "On the draft with the forty-seventh round's fixes: draft ch02-draft-4692d92b, the fleet sets off for Earth the way it faces, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Shots change on their cue words; Whisper timing -0.12 s median."
   },
   {
    "id": "ch02.sound",
    "area": "film",
    "title": "Chapter 2: the sound",
    "state": "pass",
-   "note": "On the draft with the thirty-fifth round's fixes: draft ch02-draft-4eee5549, the two Outsiders coming up one after the other on the struck one's left, so neither walks through him or the other (find.ch02-outsiders-overlap); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.2, shots -14.5 to -16.7; Whisper lost 13 of 640, names (Sirius, Deimos) and numbers."
+   "note": "On the draft with the forty-seventh round's fixes: draft ch02-draft-4692d92b, the fleet sets off for Earth the way it faces, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.2, shots -14.5 to -16.7; Whisper lost 13 of 640, names (Sirius, Deimos) and numbers."
   },
   {
    "id": "ch02.story",
    "area": "film",
    "title": "Chapter 2: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the thirty-fifth round's fixes: draft ch02-draft-4eee5549, the two Outsiders coming up one after the other on the struck one's left, so neither walks through him or the other (find.ch02-outsiders-overlap); sound unchanged, -14.4 LUFS. The Outsiders come from beyond the system, their ships and their masters are shown, and the threat to Earth is set: the chapter does its job as the invader's introduction."
+   "note": "On the draft with the forty-seventh round's fixes: draft ch02-draft-4692d92b, the fleet sets off for Earth the way it faces, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The Outsiders come from beyond the system, their ships and their masters are shown, and the threat to Earth is set: the chapter does its job as the invader's introduction."
   },
   {
    "id": "ch02.draft",
    "area": "film",
    "title": "Chapter 2: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch02-draft-4eee5549.mp4, -14.4 LUFS, peak -2 dBTP"
+   "note": "ch02-draft-4692d92b.mp4, -14.4 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch03.acting",
    "area": "film",
    "title": "Chapter 3: the acting",
    "state": "pass",
-   "note": "On the draft with the forty-fifth round's fixes: draft ch03-draft-ff0f9865, Roal gestures a sentence at a time through the telling, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
+   "note": "On the draft with the forty-seventh round's fixes: draft ch03-draft-0c2f2ac5, the ships in frame as the camera comes down to Colorado, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
   },
   {
    "id": "ch03.picture",
    "area": "film",
    "title": "Chapter 3: the picture",
    "state": "pass",
-   "note": "On the draft with the forty-fifth round's fixes: draft ch03-draft-ff0f9865, Roal gestures a sentence at a time through the telling, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
+   "note": "On the draft with the forty-seventh round's fixes: draft ch03-draft-0c2f2ac5, the ships in frame as the camera comes down to Colorado, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
   },
   {
    "id": "ch03.sync",
    "area": "film",
    "title": "Chapter 3: picture against sound",
    "state": "pass",
-   "note": "On the draft with the forty-fifth round's fixes: draft ch03-draft-ff0f9865, Roal gestures a sentence at a time through the telling, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
+   "note": "On the draft with the forty-seventh round's fixes: draft ch03-draft-0c2f2ac5, the ships in frame as the camera comes down to Colorado, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
   },
   {
    "id": "ch03.sound",
    "area": "film",
    "title": "Chapter 3: the sound",
    "state": "pass",
-   "note": "On the draft with the forty-fifth round's fixes: draft ch03-draft-ff0f9865, Roal gestures a sentence at a time through the telling, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
+   "note": "On the draft with the forty-seventh round's fixes: draft ch03-draft-0c2f2ac5, the ships in frame as the camera comes down to Colorado, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
   },
   {
    "id": "ch03.story",
    "area": "film",
    "title": "Chapter 3: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the forty-fifth round's fixes: draft ch03-draft-ff0f9865, Roal gestures a sentence at a time through the telling, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
+   "note": "On the draft with the forty-seventh round's fixes: draft ch03-draft-0c2f2ac5, the ships in frame as the camera comes down to Colorado, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
   },
   {
    "id": "ch03.draft",
    "area": "film",
    "title": "Chapter 3: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch03-draft-ff0f9865.mp4, -14.4 LUFS, peak -2.1 dBTP"
+   "note": "ch03-draft-0c2f2ac5.mp4, -14.4 LUFS, peak -2 dBTP"
   },
   {
    "id": "ch04.acting",
@@ -3134,14 +3134,23 @@
    "title": "Chapter 2, 0:35.7-0:38.5: footnote 1 stays up across the cut into shot D (raised again)",
    "state": "pass",
    "note": "Declined again, as in round 41 (find.ch02-footnote-hangs): footnote 1's 30 words were found too brief to read, so it runs 2.5 s into shot D by design; it sits on its own band at the frame's foot and covers nothing the shot is about. The reviewer notes it is deliberate."
+  },
+  {
+   "id": "find.ch02-turn-crates",
+   "area": "finding",
+   "title": "Chapter 2, 5:03-5:08: the fleet's turn toward Earth reads as the ships squashed into crates",
+   "state": "pass",
+   "note": "Fixed in d52be5c: the fleet sets off the way it faces, leading column first, gathering speed out of frame. Checked on draft ch02-draft-4692d92b at 5:05-5:10: whole ships drawing away left, no squash, gaps opening; SSIM against ch02-draft-4eee5549 changes only at the shot's end (5:07-5:11); -14.4 LUFS."
+  },
+  {
+   "id": "find.ch03-leadin-sky",
+   "area": "finding",
+   "title": "Chapter 3, 3:09-3:16: bare sky with the ships cut by the top as the camera tilts down to Colorado",
+   "state": "pass",
+   "note": "Fixed in edde4f1: the ships start their descent in frame. Checked on draft ch03-draft-0c2f2ac5 at 3:12-3:16: the three ships whole above the colony from the shot's start; SSIM against ch03-draft-ff0f9865 changes at 3:11-3:16, and at 4:44 the dissolve grain seen before; -14.4 LUFS."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-19 13:52",
-   "found": 5,
-   "note": "Round 44: three minor (succession page says Campbell 'returned to the theme in Twilight'; the fact-check list dates every reading to 1-2 November; ch03 3:13-3:30 the Colorado settlement squeezed to the bottom edge with ships cut by the top), two nits (ch02 the fleet shown 3 s before 'They sighted'; ch09 3:25-3:28 the dome half off the left edge as it parts)."
-  },
   {
    "when": "2026-11-19 18:31",
    "found": 4,
@@ -3151,6 +3160,11 @@
    "when": "2026-11-20 02:08",
    "found": 4,
    "note": "Round 46: one minor (ch10 the golden sphere has lost the violet halo chapter 9 gives it), three nits (ch02 footnote 1 across the cut, again; ch04 0:43-0:50 C-R-21 cut by the left edge, reading 'R-21'; ch11 1:37-2:20 the closing pages' body type small at phone size)."
+  },
+  {
+   "when": "2026-11-20 05:58",
+   "found": 2,
+   "note": "Round 47: one minor (ch02 5:03-5:08 the fleet's turn toward Earth reads as ships squashed into crates), one nit (ch03 3:09-3:16 bare sky through the tilt down to Colorado). Earlier rulings left alone."
   }
  ]
 }

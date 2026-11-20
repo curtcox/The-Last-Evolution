@@ -102,13 +102,13 @@ items:
   site.watch.content:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: 022c59f3712d
-    when: 2026-11-20 05:47
+    at: 8998648f0d70
+    when: 2026-11-20 11:37
   site.watch.look:
     state: pass
     note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: f6675706d9b9
-    when: 2026-11-20 05:47
+    at: d234733242dc
+    when: 2026-11-20 11:37
   work.title:
     state: pass
     note: "Re-checked after round 41: chapter 0's source changed only in shot D (the heirs gathering at 0:40-0:48); SSIM against the previous draft is .997 through the title page. the masthead (62 px, italic) and byline (64 px) are larger again so they read on a phone (find.small-lettering), the title itself unchanged; on ch00-draft-747111c6 all three lines sit inside the frame with clear space between them (sheet of 0:05-0:14). The header names the 1932 issue ('AMAZING STORIES · August, 1932'), not the 1961 reprint."
@@ -121,14 +121,14 @@ items:
     when: 2026-11-02 23:24
   ch02.picture:
     state: pass
-    note: "On the draft with the thirty-fifth round's fixes: draft ch02-draft-4eee5549, the two Outsiders coming up one after the other on the struck one's left, so neither walks through him or the other (find.ch02-outsiders-overlap); sound unchanged, -14.4 LUFS. Space and the incoming fleet, the hulled ship, the Outsiders' interior with light shells now clear against the darker hull, the plates and rods, the wrecked hulls in the debris field, the dark hall of the masters, the fleet in rows. The earlier contrast note (dark on dark) no longer holds."
-    at: ch02-draft-4eee5549.mp4
-    when: 2026-11-18 08:01
+    note: "On the draft with the forty-seventh round's fixes: draft ch02-draft-4692d92b, the fleet sets off for Earth the way it faces, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Space and the incoming fleet, the hulled ship, the Outsiders' interior with light shells now clear against the darker hull, the plates and rods, the wrecked hulls in the debris field, the dark hall of the masters, the fleet in rows. The earlier contrast note (dark on dark) no longer holds."
+    at: ch02-draft-4692d92b.mp4
+    when: 2026-11-20 11:37
   ch03.picture:
     state: pass
-    note: "On the draft with the forty-fifth round's fixes: draft ch03-draft-ff0f9865, Roal gestures a sentence at a time through the telling, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
-    at: ch03-draft-ff0f9865.mp4
-    when: 2026-11-20 00:17
+    note: "On the draft with the forty-seventh round's fixes: draft ch03-draft-0c2f2ac5, the ships in frame as the camera comes down to Colorado, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The hall of screens and hanging machines, Earth and the moon, the battle in space with rays and shielded ships, the green countryside, the green screens, the attack under the green haze, the dark sphere with its glows, the wreck scene with three downed ships, machines in front and transports landing behind, the planets with their machines. All legible."
+    at: ch03-draft-0c2f2ac5.mp4
+    when: 2026-11-20 11:37
   find.repo-size:
     state: pass
     note: "Curt chose GitHub Release files. Chapter drafts now go to the repo's drafts release (publish_review.mjs uploads them under content-hashed names), and the pages play them from there with a source element typed video/mp4, which Safari needs because GitHub serves release files as octet-stream. Checked in Chromium and Safari: a draft page, and the annotated film jumping to chapter 7. The old videos stay in git history (about 530 MB); removing them would mean rewriting history and a force push."
@@ -381,44 +381,44 @@ items:
     when: 2026-11-17 22:43
   ch02.acting:
     state: pass
-    note: "On the draft with the thirty-fifth round's fixes: draft ch02-draft-4eee5549, the two Outsiders coming up one after the other on the struck one's left, so neither walks through him or the other (find.ch02-outsiders-overlap); sound unchanged, -14.4 LUFS. The Outsiders move as a ranked crew: the small ones sway at their posts, the close Outsider stands apart and turns; the falls and the dive read; the crawlers keep their distance."
-    at: ch02-draft-4eee5549.mp4
-    when: 2026-11-18 08:01
+    note: "On the draft with the forty-seventh round's fixes: draft ch02-draft-4692d92b, the fleet sets off for Earth the way it faces, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The Outsiders move as a ranked crew: the small ones sway at their posts, the close Outsider stands apart and turns; the falls and the dive read; the crawlers keep their distance."
+    at: ch02-draft-4692d92b.mp4
+    when: 2026-11-20 11:37
   ch02.sync:
     state: pass
-    note: "On the draft with the thirty-fifth round's fixes: draft ch02-draft-4eee5549, the two Outsiders coming up one after the other on the struck one's left, so neither walks through him or the other (find.ch02-outsiders-overlap); sound unchanged, -14.4 LUFS. Shots change on their cue words; Whisper timing -0.12 s median."
-    at: ch02-draft-4eee5549.mp4
-    when: 2026-11-18 08:01
+    note: "On the draft with the forty-seventh round's fixes: draft ch02-draft-4692d92b, the fleet sets off for Earth the way it faces, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Shots change on their cue words; Whisper timing -0.12 s median."
+    at: ch02-draft-4692d92b.mp4
+    when: 2026-11-20 11:37
   ch02.sound:
     state: pass
-    note: "On the draft with the thirty-fifth round's fixes: draft ch02-draft-4eee5549, the two Outsiders coming up one after the other on the struck one's left, so neither walks through him or the other (find.ch02-outsiders-overlap); sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.2, shots -14.5 to -16.7; Whisper lost 13 of 640, names (Sirius, Deimos) and numbers."
-    at: ch02-draft-4eee5549.mp4
-    when: 2026-11-18 08:01
+    note: "On the draft with the forty-seventh round's fixes: draft ch02-draft-4692d92b, the fleet sets off for Earth the way it faces, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.2, shots -14.5 to -16.7; Whisper lost 13 of 640, names (Sirius, Deimos) and numbers."
+    at: ch02-draft-4692d92b.mp4
+    when: 2026-11-20 11:37
   ch02.story:
     state: pass
-    note: "On the draft with the thirty-fifth round's fixes: draft ch02-draft-4eee5549, the two Outsiders coming up one after the other on the struck one's left, so neither walks through him or the other (find.ch02-outsiders-overlap); sound unchanged, -14.4 LUFS. The Outsiders come from beyond the system, their ships and their masters are shown, and the threat to Earth is set: the chapter does its job as the invader's introduction."
-    at: ch02-draft-4eee5549.mp4
-    when: 2026-11-18 08:01
+    note: "On the draft with the forty-seventh round's fixes: draft ch02-draft-4692d92b, the fleet sets off for Earth the way it faces, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The Outsiders come from beyond the system, their ships and their masters are shown, and the threat to Earth is set: the chapter does its job as the invader's introduction."
+    at: ch02-draft-4692d92b.mp4
+    when: 2026-11-20 11:37
   ch03.acting:
     state: pass
-    note: "On the draft with the forty-fifth round's fixes: draft ch03-draft-ff0f9865, Roal gestures a sentence at a time through the telling, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
-    at: ch03-draft-ff0f9865.mp4
-    when: 2026-11-20 00:17
+    note: "On the draft with the forty-seventh round's fixes: draft ch03-draft-0c2f2ac5, the ships in frame as the camera comes down to Colorado, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Roal and Trest face each other and talk with hands; Roal's thought rises as a curl off his head; through Roal's speech the machines stand beside and behind Trest, not in front of him (the earlier note no longer holds); Roal's 'Attack--therefore!' carries."
+    at: ch03-draft-0c2f2ac5.mp4
+    when: 2026-11-20 11:37
   ch03.sync:
     state: pass
-    note: "On the draft with the forty-fifth round's fixes: draft ch03-draft-ff0f9865, Roal gestures a sentence at a time through the telling, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
-    at: ch03-draft-ff0f9865.mp4
-    when: 2026-11-20 00:17
+    note: "On the draft with the forty-seventh round's fixes: draft ch03-draft-0c2f2ac5, the ships in frame as the camera comes down to Colorado, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. Cuts on cue words; Roal's curl on 'But--life alone'; the investigator spheres on their line; Whisper timing on the narration."
+    at: ch03-draft-0c2f2ac5.mp4
+    when: 2026-11-20 11:37
   ch03.sound:
     state: pass
-    note: "On the draft with the forty-fifth round's fixes: draft ch03-draft-ff0f9865, Roal gestures a sentence at a time through the telling, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
-    at: ch03-draft-ff0f9865.mp4
-    when: 2026-11-20 00:17
+    note: "On the draft with the forty-seventh round's fixes: draft ch03-draft-0c2f2ac5, the ships in frame as the camera comes down to Colorado, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS, speech still on top and clear. -14.4 LUFS, LRA 3.1; quiet shots D, N and V measure their speech at -15.8, the short line and -14.7 (Roal's shout), so the quiet is pauses, not low voices; Whisper lost 9 of 1011."
+    at: ch03-draft-0c2f2ac5.mp4
+    when: 2026-11-20 11:37
   ch03.story:
     state: pass
-    note: "On the draft with the forty-fifth round's fixes: draft ch03-draft-ff0f9865, Roal gestures a sentence at a time through the telling, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
-    at: ch03-draft-ff0f9865.mp4
-    when: 2026-11-20 00:17
+    note: "On the draft with the forty-seventh round's fixes: draft ch03-draft-0c2f2ac5, the ships in frame as the camera comes down to Colorado, the rest unchanged by SSIM, sound unchanged, -14.4 LUFS; sound unchanged, -14.4 LUFS. The first war: the Outsiders strike, Roal and Trest weigh what the machines can do, the counterattack is won and the wrecks studied, and the machines spread to the planets. Cause and effect read."
+    at: ch03-draft-0c2f2ac5.mp4
+    when: 2026-11-20 11:37
   ch05.acting:
     state: pass
     note: "On the draft with the forty-fifth round's fixes: draft ch05-draft-3129c571, F-1 falls and lies clear of the right edge, the rest unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal lies, sits up at F-1's voice, closes his eyes as he thinks (0:48), talks the atom through with his hand, steps back from the birth's light (4:24), watches arm raised as F-1 falls; F-2 works with rings while Roal asks. The turn narrows to 60%."
@@ -2089,6 +2089,16 @@ items:
     note: "Declined again, as in round 41 (find.ch02-footnote-hangs): footnote 1's 30 words were found too brief to read, so it runs 2.5 s into shot D by design; it sits on its own band at the frame's foot and covers nothing the shot is about. The reviewer notes it is deliberate."
     title: "Chapter 2, 0:35.7-0:38.5: footnote 1 stays up across the cut into shot D (raised again)"
     when: 2026-11-20 02:10
+  find.ch02-turn-crates:
+    state: pass
+    note: "Fixed in d52be5c: the fleet sets off the way it faces, leading column first, gathering speed out of frame. Checked on draft ch02-draft-4692d92b at 5:05-5:10: whole ships drawing away left, no squash, gaps opening; SSIM against ch02-draft-4eee5549 changes only at the shot's end (5:07-5:11); -14.4 LUFS."
+    title: "Chapter 2, 5:03-5:08: the fleet's turn toward Earth reads as the ships squashed into crates"
+    when: 2026-11-20 11:37
+  find.ch03-leadin-sky:
+    state: pass
+    note: "Fixed in edde4f1: the ships start their descent in frame. Checked on draft ch03-draft-0c2f2ac5 at 3:12-3:16: the three ships whole above the colony from the shot's start; SSIM against ch03-draft-ff0f9865 changes at 3:11-3:16, and at 4:44 the dissolve grain seen before; -14.4 LUFS."
+    title: "Chapter 3, 3:09-3:16: bare sky with the ships cut by the top as the camera tilts down to Colorado"
+    when: 2026-11-20 11:37
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -2278,4 +2288,8 @@ fresh:
     found: 4
     note: "Round 46: one minor (ch10 the golden sphere has lost the violet halo chapter 9 gives it), three nits (ch02 footnote 1 across the cut, again; ch04 0:43-0:50 C-R-21 cut by the left edge, reading 'R-21'; ch11 1:37-2:20 the closing pages' body type small at phone size)."
     state: edd9a9a45d5c
-since_fresh: 21
+  - when: 2026-11-20 05:58
+    found: 2
+    note: "Round 47: one minor (ch02 5:03-5:08 the fleet's turn toward Earth reads as ships squashed into crates), one nit (ch03 3:09-3:16 bare sky through the tilt down to Colorado). Earlier rulings left alone."
+    state: 115c796cc8fd
+since_fresh: 14
