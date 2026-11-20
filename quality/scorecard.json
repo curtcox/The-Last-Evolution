@@ -1,9 +1,9 @@
 {
  "summary": {
-  "pass": 433,
+  "pass": 435,
   "stale": 0,
   "open": 0,
-  "curt": 12,
+  "curt": 11,
   "later": 3
  },
  "satisfied": false,
@@ -15,7 +15,7 @@
   },
   "links": {
    "state": "pass",
-   "detail": "1232 links in 34 pages, 0 broken"
+   "detail": "1231 links in 34 pages, 0 broken"
   },
   "annotated": {
    "state": "pass",
@@ -101,11 +101,6 @@
    "id": "find.site-foreword-age",
    "title": "Foreword: 'Campbell was 22 and finishing a physics degree' puts his age at the writing, which isn't recorded",
    "ask": "From the thirty-eighth fresh-eyes round. The foreword's wording is yours. Under 'When it was written' it says Campbell was 22. He turned 22 on 8 June 1932, weeks before the August issue, and when he wrote it isn't recorded (the science notes now say so; Moskowitz says Twilight came first). Suggested: 'Campbell was 22 when it appeared, the year he finished a physics degree.' Change it, or keep it?"
-  },
-  {
-   "id": "find.sheets-mismatch",
-   "title": "Model sheets vs the film: the men's sheet collar and belt don't show in profile; the machines are drawn smaller beside the men than on sheet 2",
-   "ask": "From the forty-ninth fresh-eyes round. The look is yours. Sheet 1 gives the men a high standing collar and a belt; in profile neither reads (ch04 0:55). Sheet 2 draws X-5638 about 1.07 and C-R-21 about 1.4 times a man's height; in the chapters they stand about 0.67 and 1.08 (ch04 2:30). Either the sheets change to match the film (no re-render) or every chapter's figures change to match the sheets (all chapters re-render). I'd change the sheets: the film's scale has been judged in 48 rounds. Which?"
   }
  ],
  "items": [
@@ -408,42 +403,42 @@
    "area": "film",
    "title": "Chapter 7: the acting",
    "state": "pass",
-   "note": "On the draft with the forty-ninth round's fixes: draft ch07-draft-07af7fb6, its board text corrected, picture unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal and Trest talk in the hall at night with hands out, Roal's curl rises, F-2 and the six machines gather, the two men stand inside the dome with their faces lit by the screens, the projectors feed the dome."
+   "note": "On the draft with the fiftieth round's fixes: draft ch07-draft-5ad91bd1, its board text corrected again, picture unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Roal and Trest talk in the hall at night with hands out, Roal's curl rises, F-2 and the six machines gather, the two men stand inside the dome with their faces lit by the screens, the projectors feed the dome."
   },
   {
    "id": "ch07.picture",
    "area": "film",
    "title": "Chapter 7: the picture",
    "state": "pass",
-   "note": "On the draft with the forty-ninth round's fixes: draft ch07-draft-07af7fb6, its board text corrected, picture unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The hall of screens with falling ships, Roal's curl, F-2 and the six, the ring, the dome rising whole, the inside with five lit screens and the two lit faces, the green beams on the dome, the violet cut-away, the projectors, the dome small on the plain."
+   "note": "On the draft with the fiftieth round's fixes: draft ch07-draft-5ad91bd1, its board text corrected again, picture unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The hall of screens with falling ships, Roal's curl, F-2 and the six, the ring, the dome rising whole, the inside with five lit screens and the two lit faces, the green beams on the dome, the violet cut-away, the projectors, the dome small on the plain."
   },
   {
    "id": "ch07.sync",
    "area": "film",
    "title": "Chapter 7: picture against sound",
    "state": "pass",
-   "note": "On the draft with the forty-ninth round's fixes: draft ch07-draft-07af7fb6, its board text corrected, picture unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Cuts on cue words; the faces lit for 'the two faces in their light'; Whisper timing on the narration."
+   "note": "On the draft with the fiftieth round's fixes: draft ch07-draft-5ad91bd1, its board text corrected again, picture unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. Cuts on cue words; the faces lit for 'the two faces in their light'; Whisper timing on the narration."
   },
   {
    "id": "ch07.sound",
    "area": "film",
    "title": "Chapter 7: the sound",
    "state": "pass",
-   "note": "On the draft with the forty-ninth round's fixes: draft ch07-draft-07af7fb6, its board text corrected, picture unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 4.0; Whisper lost 0 of 527; the quiet shots C and I are pauses, speech -14.2 to -15.3 (Trest's 'the end' soft, as it should be)."
+   "note": "On the draft with the fiftieth round's fixes: draft ch07-draft-5ad91bd1, its board text corrected again, picture unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS, speech still on top and clear. -14.5 LUFS, LRA 4.0; Whisper lost 0 of 527; the quiet shots C and I are pauses, speech -14.2 to -15.3 (Trest's 'the end' soft, as it should be)."
   },
   {
    "id": "ch07.story",
    "area": "film",
    "title": "Chapter 7: the chapter as a story",
    "state": "pass",
-   "note": "On the draft with the forty-ninth round's fixes: draft ch07-draft-07af7fb6, its board text corrected, picture unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The last men shelter: Roal and Trest decide, the machines build the dome around them, and the outside goes on without them. The chapter's quiet ending reads."
+   "note": "On the draft with the fiftieth round's fixes: draft ch07-draft-5ad91bd1, its board text corrected again, picture unchanged by SSIM, sound unchanged, -14.5 LUFS; sound unchanged, -14.5 LUFS. The last men shelter: Roal and Trest decide, the machines build the dome around them, and the outside goes on without them. The chapter's quiet ending reads."
   },
   {
    "id": "ch07.draft",
    "area": "film",
    "title": "Chapter 7: its draft is current and at the right loudness",
    "state": "pass",
-   "note": "ch07-draft-07af7fb6.mp4, -14.5 LUFS, peak -2.1 dBTP"
+   "note": "ch07-draft-5ad91bd1.mp4, -14.5 LUFS, peak -2.1 dBTP"
   },
   {
    "id": "ch08.acting",
@@ -618,7 +613,7 @@
    "area": "work",
    "title": "the model sheets' second pass",
    "state": "pass",
-   "note": "Re-checked after the fifth round: rebuilt after designs.js gained the machine's weave option; it's off on the sheets (only chapter 4's X-5638 weaves), and all seven sheets match the passed ones (SSIM 0.9998+). Re-checked after the fourth round: rebuilt with C-R-U-1's name back inside its case (0.44 of it); the chapters letter it the same way. Re-checked after the third round: sheets rebuilt with the larger machine names (X-numbers, C-R-21, MX-3401, C-R-U-1); the chapters letter them the same way. Re-checked after the second round: sheets rebuilt with the Outsiders' third eye standing over the ridge (sheet 4, front view shows three) and F-2's bluer metal (sheet 3); the chapters draw them the same way. Re-checked: the only designs.js change since (ad974e4) keeps personSide's head options in a variable and returns redrawHead; nothing it draws changed, so the sheets stand. Seven sheets cover every design in PLAN.md section 5 (people, machines, F-2 and C-R-U-1, the Outsiders, ships, investigators and motes, places, and the pilot's props). Second pass: the Outsiders solid as the film now draws them; sheet 7 adds Roal and Trest side on, in talk, the way the chapters draw them."
+   "note": "Re-checked after round 49, on Curt's 'Change the sheets': sheet 2 draws each machine at its film size beside the man (C-R-21 30, the others 26, F-1 50, to the man's 44), the five-foot bar moved above the man clear of F-1; sheet 1's note says the belt and standing collar are the front view's, the tunic plain in profile. All seven sheets rebuilt and published; nothing overlaps."
   },
   {
    "id": "work.title",
@@ -3172,8 +3167,8 @@
    "id": "find.sheets-mismatch",
    "area": "finding",
    "title": "Model sheets vs the film: the men's sheet collar and belt don't show in profile; the machines are drawn smaller beside the men than on sheet 2",
-   "state": "curt",
-   "note": "From the forty-ninth fresh-eyes round. The look is yours. Sheet 1 gives the men a high standing collar and a belt; in profile neither reads (ch04 0:55). Sheet 2 draws X-5638 about 1.07 and C-R-21 about 1.4 times a man's height; in the chapters they stand about 0.67 and 1.08 (ch04 2:30). Either the sheets change to match the film (no re-render) or every chapter's figures change to match the sheets (all chapters re-render). I'd change the sheets: the film's scale has been judged in 48 rounds. Which?"
+   "state": "pass",
+   "note": "Curt: \"Change the sheets\" (2026-11-20, DECISIONS.md). Sheet 2 now draws each machine at its film size beside the man (C-R-21 30, the others 26, F-1 50, to the man's 44; at one size it showed them half again taller), the five-foot bar moved clear of F-1; sheet 1's note says the belt and standing collar are the front view's and the tunic reads plain in profile, as the film shows it. Checked on the rebuilt sheets."
   },
   {
    "id": "find.ch10-no-outsiders",
@@ -3202,14 +3197,16 @@
    "title": "Round 6 chapter 7 page: shot E said 'from behind', shot L 'the black dome' where the film shows profiles and the standing block",
    "state": "pass",
    "note": "Fixed in 4a39784: the board's shot E says the men are in profile, shot L that the laboratory block falls away to the dome on 'struck'. Checked on the rebuilt round 6 chapter 7 page; the draft ch07-draft-07af7fb6 is unchanged in picture (SSIM never below .965 against ch07-draft-41fa7c56); -14.5 LUFS."
+  },
+  {
+   "id": "find.r6-ch07-shot-d",
+   "area": "finding",
+   "title": "Chapter 7 board and round 6 page: shot D 'Roal, close, his eyes dreaming' where the film pushes in slowly on the two in profile",
+   "state": "pass",
+   "note": "Fixed in cfa37e4: the board's shot D is a slow push in on Roal and Trest in profile, from full length until their feet leave the frame. Checked on the rebuilt round 6 chapter 7 page; draft ch07-draft-5ad91bd1 unchanged in picture (lowest SSIM against ch07-draft-07af7fb6 .957 at 3:31, compared frame by frame: the same dissolve); -14.5 LUFS."
   }
  ],
  "fresh": [
-  {
-   "when": "2026-11-20 05:58",
-   "found": 2,
-   "note": "Round 47: one minor (ch02 5:03-5:08 the fleet's turn toward Earth reads as ships squashed into crates), one nit (ch03 3:09-3:16 bare sky through the tilt down to Colorado). Earlier rulings left alone."
-  },
   {
    "when": "2026-11-20 11:48",
    "found": 2,
@@ -3219,6 +3216,11 @@
    "when": "2026-11-20 14:27",
    "found": 5,
    "note": "Round 49: two minor (ch10 the Outsiders never seen through the speech to them and their horror; the figures' costume and scale don't match model sheets 1 and 2), three nits (the curl note's 'dreams aloud'; the round 6 ch07 page's stale shot L and E descriptions; ch08 3:49 two F-2s for half a second in a dissolve)."
+  },
+  {
+   "when": "2026-11-20 17:15",
+   "found": 1,
+   "note": "Round 50: nothing major or minor; one nit (the ch07 board and round 6 page call shot D 'Roal, close, his eyes dreaming' where the film holds a slow push on the two in profile). Earlier rulings left alone."
   }
  ]
 }
