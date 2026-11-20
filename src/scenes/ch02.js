@@ -91,9 +91,11 @@
         }
       } else {
         // O: the fleet in a swarm of thousands, turning for Earth
-        const turn = ez(t, C('p017.1:they started at once for Earth') - 1, C('p017.1:they started at once for Earth') + 3);
-        for (let i = 0; i < 10; i++) { const x = 700 + (i % 5) * 560 + 80 * hash(i), y = 250 + Math.floor(i / 5) * 420 + 60 * hash(i * 3), d = Math.cos(Math.PI * turn) * -1;
-          ship(x - 300 * turn, y, 480, t, Math.abs(d) < .15 ? .15 * Math.sign(d || 1) : d, { d: 3 }); }
+        // on 'they started at once for Earth' they set off the way they face, one after another, gathering speed out of the
+        // frame (turned about through a squash, each flattened to a crate and the chapter ended on them)
+        const tGo = C('p017.1:they started at once for Earth');
+        for (let i = 0; i < 10; i++) { const x = 700 + (i % 5) * 560 + 80 * hash(i), y = 250 + Math.floor(i / 5) * 420 + 60 * hash(i * 3), st = tGo - .3 + .3 * (i % 5) + .1 * hash(i * 9), go = Math.max(0, t - st), dx = 120 * go * go + 60 * go;   // the leading column first, so the gaps open, not close
+          ship(x - dx, y, 480, t, -1, { d: 3 }); if (go > 0) glow(x - dx + 250, y, 40 + 20 * Math.min(go, 2), '#F4EEDC', .25 * Math.min(1, go)); }
         // the swarm: the far ones flecks, darting round faster than anything in the sky; the near ones drawn as the tiny
         // machines they are, each with its drive lit (as still white flecks alone they read as more stars)
         for (let i = 0; i < 300; i++) { const a = hash(i * 1.7) * TAU + t * (.15 + .25 * hash(i)), r = 300 + 1500 * hash(i * 2.3); glow(1700 + Math.cos(a) * r * 1.3, 520 + Math.sin(a) * r * .55, 7, NRG.white, .5); }
