@@ -1,0 +1,126 @@
+# Helper: Fresh-eyes round 50
+
+Started in [2026-11-20](../parts/2026-11-20.md). [All parts](../README.md)
+
+A helper is another copy of Claude, started with its own instructions for one job. It sees only what it's given.
+
+#### Claude, to the helper · 11:05
+
+Read the file out/quality/fresh50/prompt.txt and follow its instructions exactly. It describes a read-only fresh-eyes quality review of a film and its website; your final message is the report it asks for.
+
+#### The helper did · 11:05
+
+- Read `out/quality/fresh50/prompt.txt`
+- Ran `cd .; mkdir -p out/quality/fresh50; wc -l quality/rubric.yaml QUALITY.md quality/status.yaml; for i in 00 01 02 03 04 06 07 08 09 10 11; do…`
+- Ran `cd .; cat QUALITY.md | head -150; sed -n 1,200p quality/rubric.yaml`
+- Ran `cd .; grep -n "find\." quality/status.yaml | head -150`
+- Ran `cd .; node -e ' const Y=require("yaml");const fs=require("fs");const s=Y.parse(fs.readFileSync("quality/status.yaml","utf8")); const items=…`
+- Ran `cd .; grep -i "declined" out/quality/fresh50/finds.txt | cut -c1-330`
+- Ran `cd .; D=out/quality/fresh50; for i in 00 01 02 03 04 05 06 07 08 09 10 11; do if [ $i = 05 ]; then V=out/review/round5/video/ch05-draft.mp4…`
+- Read `out/quality/fresh50/ch00-all.jpg`
+- Ran `cd .; node -e ' const fs=require("fs"); for(const n of ["00"]){const m=fs.readFileSync("src/gen/ch"+n+".js","utf8");console.log(m.slice(0,1…`
+- Ran `cd .; cat > out/quality/fresh50/lines.cjs <<'EOF' const fs=require("fs");const n=process.argv[2]; const src=fs.readFileSync("src/gen/ch"+n+…`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch00-draft.mp4; ffmpeg -v error -y -ss 26 -i $V -vf "fps=1/1.4,scale=320:-1,tile=6x4…`
+- Read `out/quality/fresh50/ch00-b.jpg`
+- Read `out/quality/fresh50/ch01-all.jpg`
+- Ran `cd .; grep -E "^\s+- id:|^\s+at:|^\s+title:" script/boards/ch01.yaml | paste - - -`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch01-draft.mp4; ffmpeg -v error -y -ss 8 -i $V -vf "fps=1/2,scale=320:-1,tile=6x4" -…`
+- Read `out/quality/fresh50/ch01-b.jpg`
+- Read `out/quality/fresh50/ch02-all.jpg`
+- Ran `cd .; node out/quality/fresh50/lines.cjs 02 | cut -c1-400`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch02-draft.mp4; ffmpeg -v error -y -ss 170 -i $V -vf "fps=1/1.5,scale=320:-1,tile=6x…`
+- Read `out/quality/fresh50/ch02-b.jpg`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch02-draft.mp4; for t in 181 183.5 185.3; do ffmpeg -v error -y -ss $t -i $V -frames…`
+- Read `out/quality/fresh50/ch02-plung.jpg`
+- Read `out/quality/fresh50/ch03-all.jpg`
+- Ran `cd .; node out/quality/fresh50/lines.cjs 03 | cut -c1-300`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch03-draft.mp4; ffmpeg -v error -y -ss 370 -i $V -vf "fps=1/5,scale=320:-1,tile=6x4"…`
+- Read `out/quality/fresh50/ch03-speech.jpg`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch03-draft.mp4; ffmpeg -v error -y -ss 190 -i $V -vf "fps=1/5,scale=320:-1,tile=6x4"…`
+- Read `out/quality/fresh50/ch03-c.jpg`
+- Read `out/quality/fresh50/ch04-all.jpg`
+- Ran `cd .; node out/quality/fresh50/lines.cjs 04 | cut -c1-260`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch04-draft.mp4; ffmpeg -v error -y -ss 10 -i $V -vf "fps=1/2.5,scale=320:-1,tile=6x4…`
+- Read `out/quality/fresh50/ch04-b.jpg`
+- Read `out/quality/fresh50/ch05-all.jpg`
+- Ran `cd .; node out/quality/fresh50/lines.cjs 05 | cut -c1-230`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round5/video/ch05-draft.mp4; ffmpeg -v error -y -ss 425 -i $V -vf "fps=1/3,scale=320:-1,tile=6x4"…`
+- Read `out/quality/fresh50/ch05-b.jpg`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round5/video/ch05-draft.mp4; ffmpeg -v error -y -ss 470 -i $V -frames:v 1 -vf crop=400:300:440:18…`
+- Read `out/quality/fresh50/ch05-cru.jpg`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round5/video/ch05-draft.mp4; ffmpeg -v error -y -ss 476 -i $V -vf "fps=2,scale=320:-1,tile=6x4" -…`
+- Read `out/quality/fresh50/ch05-c.jpg`
+- Read `out/quality/fresh50/ch06-all.jpg`
+- Ran `cd .; node out/quality/fresh50/lines.cjs 06 | cut -c1-260`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch06-draft.mp4; ffmpeg -v error -y -ss 228 -i $V -vf "fps=1/2.2,scale=320:-1,tile=6x…`
+- Read `out/quality/fresh50/ch06-b.jpg`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch06-draft.mp4; grep -n -B2 -A14 "id: J" script/boards/ch06.yaml; ffmpeg -v error -y…`
+- Read `out/quality/fresh50/ch06-j.jpg`
+- Read `out/quality/fresh50/ch07-all.jpg`
+- Ran `cd .; node out/quality/fresh50/lines.cjs 07 | cut -c1-300`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch07-draft.mp4; ffmpeg -v error -y -ss 36 -i $V -vf "fps=1/2,scale=320:-1,tile=6x4" …`
+- Read `out/quality/fresh50/ch07-b.jpg`
+- Read `out/quality/fresh50/ch08-all.jpg`
+- Ran `cd .; node out/quality/fresh50/lines.cjs 08 | cut -c1-300`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch08-draft.mp4; ffmpeg -v error -y -ss 163 -i $V -vf "fps=1/3,scale=320:-1,tile=6x4"…`
+- Read `out/quality/fresh50/ch08-b.jpg`
+- Read `out/quality/fresh50/ch09-all.jpg`
+- Ran `cd .; node out/quality/fresh50/lines.cjs 09 | cut -c1-300`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch09-draft.mp4; ffmpeg -v error -y -ss 282 -i $V -vf "fps=1,scale=320:-1,tile=6x4" -…`
+- Read `out/quality/fresh50/ch09-b.jpg`
+- Ran `cd .; grep -E "ch09|ch10|ch11" out/quality/fresh50/finds.txt | cut -c1-400`
+- Read `out/quality/fresh50/ch10-all.jpg`
+- Ran `cd .; node out/quality/fresh50/lines.cjs 10 | cut -c1-400; node out/quality/fresh50/lines.cjs 11 | cut -c1-400`
+- Read `out/quality/fresh50/ch11-all.jpg`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch11-draft.mp4; ffmpeg -v error -y -ss 55 -i $V -vf "fps=1/1.5,scale=320:-1,tile=6x4…`
+- Read `out/quality/fresh50/ch11-b.jpg`
+- Ran `cd .; for i in 00 01 02 03 04 05 06 07 08 09 10 11; do if [ $i = 05 ]; then V=out/review/round5/video/ch05-draft.mp4; else V=out/review/rou…`
+- Ran `cd .; for i in 00 01 02 03 04 05 06 07 08 09 10 11; do if [ $i = 05 ]; then V=out/review/round5/video/ch05-draft.mp4; else V=out/review/rou…`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch07-draft.mp4; ffmpeg -v error -y -ss 88 -i $V -vf "fps=2,scale=320:-1,tile=6x4" -f…`
+- Read `out/quality/fresh50/ch07-c.jpg`
+- Ran `cd .; ls -la out/quality/phone out/quality/desktop | head -50; ls site/public | head -40`
+- Read `out/quality/phone/home.jpg`
+- Read `out/quality/desktop/watch.jpg`
+- Ran `cd site/public; for f in index.html about/index.html review/index.html notes/index.html read/index.html watch/index.html; do echo "== $f"; …`
+- Ran `cd .; grep -il "morey" src/scenes/*.js script/boards/*.yaml | head; grep -n -i "morey" src/scenes/ch05.js script/boards/ch05.yaml | head`
+- Ran `cd site; python3 -I -c " import sys,re,html s=open(sys.argv[1]).read() s=re.sub(r'(?s)<(script|style).*?</\1>','',s) s=re.sub(r'<[^>]+>',' …`
+- Ran `cd .; tail -c +7000 out/quality/fresh50/annotated.txt | head -c 16000`
+- Ran `cd .; grep -n -i "curl" src/scenes/ch03.js src/scenes/ch05.js src/scenes/ch08.js | head -20`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch08-draft.mp4; ffmpeg -v error -y -ss 140 -i $V -vf "fps=1,scale=320:-1,tile=6x4" -…`
+- Read `out/quality/fresh50/ch08-c.jpg`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch02-draft.mp4; ffmpeg -v error -y -ss 44 -i $V -vf "fps=1/1.5,scale=320:-1,tile=6x4…`
+- Read `out/quality/fresh50/ch02-c.jpg`
+- Ran `cd .; node -e ' const fs=require("fs");const src=fs.readFileSync("src/gen/ch02.js","utf8");const C=JSON.parse(src.match(/const CHAPTER = (\…`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch02-draft.mp4; ffmpeg -v error -y -ss 49 -i $V -frames:v 1 -vf scale=640:-1 $D/a.jp…`
+- Read `out/quality/fresh50/ch02-deimos.jpg`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch02-draft.mp4; for t in 46 51 54 56 59; do ffmpeg -v error -y -ss $t -i $V -frames:…`
+- Read `out/quality/fresh50/ch02-d.jpg`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch02-draft.mp4; for t in 60 62 64 68 72 75; do ffmpeg -v error -y -ss $t -i $V -fram…`
+- Read `out/quality/fresh50/ch02-e.jpg`
+- Read `out/quality/phone/watch.jpg`
+- Read `out/quality/phone/review_quality.jpg`
+- Ran `cd site/public; ls review/quality/; python3 -I -c " import sys,re,html s=open(sys.argv[1]).read() s=re.sub(r'(?s)<(script|style).*?</\1>','…`
+- Ran `cd site/public; grep -o -i -E ".{60}(coming soon|not yet|todo|TBD|will be added|round 6|phase [0-9]|we will|Claude will).{60}" index.html a…`
+- Ran `cd .; curl -s -m 20 -A "Mozilla/5.0" https://curtcox.github.io/The-Last-Evolution/review/quality/ | python3 -I -c " import sys,re,html s=sy…`
+- Ran `cd .; grep -o -E "ch[0-9]{2}-draft-[0-9a-f]{8}\.mp4" site/review/round7/annotated.html | sort -u; ls site/review/round6/video/ 2>/dev/null …`
+- Ran `cd .; for i in 00 01 02 03 04 06 07 08 09 10 11; do echo -n "ch$i "; shasum -a 256 out/review/round6/video/ch$i-draft.mp4 | cut -c1-8; done…`
+- Read `out/quality/phone/read.jpg`
+- Ran `cd .; D=out/quality/fresh50; L=""; for i in 01 02 03 04 05 06 07 08 09 10 11; do if [ $i = 05 ]; then V=out/review/round5/video/ch05-draft.…`
+- Read `out/quality/fresh50/heads.jpg`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch04-draft.mp4; ffmpeg -v error -y -ss 92 -i $V -vf "fps=1/2.5,scale=320:-1,tile=6x4…`
+- Read `out/quality/fresh50/ch04-c.jpg`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch04-draft.mp4; for t in 119 123 127 131 135 139; do ffmpeg -v error -y -ss $t -i $V…`
+- Read `out/quality/fresh50/ch04-x6621.jpg`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch03-draft.mp4; ffmpeg -v error -y -ss 6 -i $V -vf "fps=1/2.5,scale=320:-1,tile=6x4"…`
+- Read `out/quality/fresh50/ch03-a.jpg`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch08-draft.mp4; ffmpeg -v error -y -ss 228 -i $V -vf "fps=1/2.5,scale=320:-1,tile=6x…`
+- Read `out/quality/fresh50/ch08-d.jpg`
+- Ran `cd .; grep -n -i "theremin\|music" DECISIONS.md | head -15; ls assets | head; ls assets/music 2>/dev/null | head`
+- Ran `cd site/public; for f in notes/history/index.html notes/science/index.html notes/succession/index.html; do python3 -I -c " import sys,re,ht…`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round5/video/ch05-draft.mp4; ffmpeg -v error -y -ss 296 -i $V -vf "fps=1/2.5,scale=320:-1,tile=6x…`
+- Read `out/quality/fresh50/ch05-d.jpg`
+- Ran `cd site/public/review; ls round6 | head -20; grep -o -E "ch[0-9]{2}-draft-[0-9a-f]{8}\.mp4" round6/*/index.html round6/*.html 2>/dev/null |…`
+- Ran `cd site/public/review; grep -o -E "ch[0-9]{2}-draft[^\"' ]*\.mp4" round6/*.html round5/*.html | sort -u | head -30; python3 -I -c " import …`
+- Ran `cd .; node -e ' const fs=require("fs");const src=fs.readFileSync("src/gen/ch03.js","utf8");const C=JSON.parse(src.match(/const CHAPTER = (\…`
+- Ran `cd .; D=out/quality/fresh50; V=out/review/round6/video/ch07-draft.mp4; for t in 32 50 80; do ffmpeg -v error -y -ss $t -i $V -frames:v 1 -v…`
+- Read `out/quality/fresh50/ch07-d.jpg`

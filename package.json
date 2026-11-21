@@ -35,7 +35,8 @@
     "film": "node tools/film.mjs",
     "ask": "node tools/ask.mjs",
     "annotated": "node tools/annotated.mjs",
-    "quality": "node tools/quality.mjs"
+    "quality": "node tools/quality.mjs",
+    "making-of": "node tools/making_of.mjs"
   },
   "dependencies": {
     "p5": "^2.3.3",

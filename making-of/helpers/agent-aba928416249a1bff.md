@@ -1,0 +1,175 @@
+# Helper: Fresh-eyes round 24
+
+Started in [2026-11-15](../parts/2026-11-15.md). [All parts](../README.md)
+
+A helper is another copy of Claude, started with its own instructions for one job. It sees only what it's given.
+
+#### Claude, to the helper · 00:59
+
+Read the file out/quality/fresh24/prompt.txt and follow its instructions exactly. It describes a read-only fresh-eyes quality review of a film and its website; your final message is the report it asks for.
+
+#### The helper did · 00:59
+
+- Ran: Read the review prompt and list its folder
+- Ran: Survey sizes, durations and screenshots
+- Ran: Read rubric and quality doc
+- Ran: Read PLAN.md section 5
+- Ran: Read chapter plan and script head
+- Ran: Make whole-chapter frame sheets
+- Ran: Measure integrated loudness per chapter
+- Read `out/quality/fresh24/w00.jpg`
+- Read `out/quality/fresh24/w01.jpg`
+- Read `out/quality/fresh24/w02.jpg`
+- Ran: Show loudness results
+- Read `out/quality/fresh24/w03.jpg`
+- Read `out/quality/fresh24/w04.jpg`
+- Read `out/quality/fresh24/w05.jpg`
+- Read `out/quality/fresh24/w06.jpg`
+- Read `out/quality/fresh24/w07.jpg`
+- Read `out/quality/fresh24/w08.jpg`
+- Read `out/quality/fresh24/w09.jpg`
+- Read `out/quality/fresh24/w10.jpg`
+- Read `out/quality/fresh24/w11.jpg`
+- Ran: Board sizes and F-2 colour notes
+- Ran: Read chapter 0 board and gen format
+- Ran: Write word-timing helper and list ch1-2 lines
+- Ran: Close sheet ch02 170-194s and board shot J
+- Read `out/quality/fresh24/c02a.jpg`
+- Ran: Word times for ch02 blast beat
+- Ran: List lines and shot titles for ch3-6
+- Ran: Make 5-second-step sheets for all chapters
+- Read `out/quality/fresh24/m01_1.jpg`
+- Ran: Chapter 1 board shots
+- Read `out/quality/fresh24/m01_2.jpg`
+- Read `out/quality/fresh24/m02_1.jpg`
+- Ran: Chapter 2 board and text
+- Read `out/quality/fresh24/m02_2.jpg`
+- Ran: Half-second sheet ch02 208-214s
+- Read `out/quality/fresh24/c02b.jpg`
+- Ran: Quarter-second sheet ch02 at 3:35 cut
+- Read `out/quality/fresh24/c02c.jpg`
+- Ran: Measure mean luma in ch02 corridor shots
+- Ran: Measure mean luma in ch02 corridor shots
+- Read `out/quality/fresh24/m03_1.jpg`
+- Ran: Chapter 3 board and opening text
+- Read `out/quality/fresh24/m03_2.jpg`
+- Ran: Chapter 3 text p024-p030 and board K-M
+- Ran: Word times and close sheet for Colorado beat
+- Read `out/quality/fresh24/c03a.jpg`
+- Ran: Crop of people falling, ch03 207-216s
+- Read `out/quality/fresh24/c03b.jpg`
+- Ran: Full frame ch03 3:33
+- Read `out/quality/fresh24/f03_213.jpg`
+- Read `out/quality/fresh24/m03_3.jpg`
+- Read `out/quality/fresh24/m03_4.jpg`
+- Ran: Crop sheet of Roal's speech ch03 7:04-7:52
+- Read `out/quality/fresh24/c03c.jpg`
+- Ran: Full frame ch03 7:32
+- Read `out/quality/fresh24/f03_452.jpg`
+- Read `out/quality/fresh24/m04_1.jpg`
+- Ran: Chapter 4 board and p037.3 text
+- Ran: Check fps filter frame timestamps
+- Ran: Per-second sheet ch04 100-111s
+- Read `out/quality/fresh24/c04a.jpg`
+- Read `out/quality/fresh24/m04_2.jpg`
+- Read `out/quality/fresh24/m04_3.jpg`
+- Read `out/quality/fresh24/m05_1.jpg`
+- Ran: Chapter 5 shots and board
+- Read `out/quality/fresh24/m05_2.jpg`
+- Read `out/quality/fresh24/m05_3.jpg`
+- Ran: Chapter 5 text p060-p063 and board W-AA
+- Read `out/quality/fresh24/m05_4.jpg`
+- Ran: Close sheet ch05 7:46-8:08
+- Read `out/quality/fresh24/c05a.jpg`
+- Read `out/quality/fresh24/m06_1.jpg`
+- Ran: Chapter 6 board and text
+- Ran: Word times and per-second sheet ch06 50-74s
+- Read `out/quality/fresh24/c06a.jpg`
+- Ran: Half-second sheet ch06 72-78s colour sequence
+- Read `out/quality/fresh24/c06b.jpg`
+- Read `out/quality/fresh24/m06_2.jpg`
+- Read `out/quality/fresh24/m07_1.jpg`
+- Ran: Chapter 7 lines and board
+- Read `out/quality/fresh24/m07_2.jpg`
+- Ran: Close sheet ch07 3:00-3:18 and board K-L
+- Read `out/quality/fresh24/c07a.jpg`
+- Read `out/quality/fresh24/m08_1.jpg`
+- Ran: Chapter 8 lines and board
+- Ran: Word times and sheet ch08 1:12-1:48 ladder plate
+- Read `out/quality/fresh24/c08a.jpg`
+- Read `out/quality/fresh24/m08_2.jpg`
+- Ran: Chapter 8 text p112-p114 and board M-N
+- Read `out/quality/fresh24/m08_3.jpg`
+- Ran: Full frame of ch08 livid beam
+- Read `out/quality/fresh24/f08_310.jpg`
+- Read `out/quality/fresh24/m09_1.jpg`
+- Ran: Chapter 9 lines and board
+- Ran: Chapter 9 text p121.4-p127
+- Ran: Sheet ch09 2:19-2:55 red beam beat
+- Read `out/quality/fresh24/c09a.jpg`
+- Read `out/quality/fresh24/m09_2.jpg`
+- Ran: Sheet ch09 3:18-3:36 and board K
+- Read `out/quality/fresh24/c09b.jpg`
+- Ran: Search for decisions about ch09 red sky
+- Read `out/quality/fresh24/m09_3.jpg`
+- Read `out/quality/fresh24/m10_1.jpg`
+- Ran: Chapter 10 lines, board, text
+- Read `out/quality/fresh24/m10_2.jpg`
+- Read `out/quality/fresh24/m11_1.jpg`
+- Ran: Chapter 11 lines, board, text
+- Ran: Title page frames ch00
+- Read `out/quality/fresh24/f00_10.jpg`
+- Ran: Per-second RMS to find level jumps and dropouts
+- Ran: Fine RMS around ch01 paragraph gap; music plan
+- Ran: Measure loudness of each voice line in dialogue chapters
+- Ran: Word times and sheet ch05 4:43-4:55 snap/fall
+- Read `out/quality/fresh24/c05b.jpg`
+- Ran: List site screenshots and sizes
+- Ran: List built site pages
+- Ran: Extract text of home and watch pages
+- Ran: Watch page text and review dirs
+- Ran: List review directories
+- Ran: Extract annotated film page text
+- Ran: Read rest of annotated page text
+- Ran: Read the remaining annotated notes
+- Ran: Check ch04 text for soil transmutation and timings
+- Ran: Combine phone screenshots into one sheet
+- Read `out/quality/fresh24/phone_sheet.jpg`
+- Ran: Read the Where it stands page text
+- Ran: Video sources and durations on film page
+- Ran: Hash local drafts to compare with film page
+- Ran: Check film page for captions
+- Ran: Show caption context on film page
+- Ran: Show caption context on film page
+- Ran: Compare live site pages with local build
+- Ran: Check internal links in built site
+- Ran: Read About page text
+- Ran: Read Review page text
+- Ran: Check round 5/6 draft pages for stale videos and wording
+- Ran: Sheet ch02 2:07-2:31 investigator strike
+- Read `out/quality/fresh24/c02d.jpg`
+- Ran: Check ch03 name label timing
+- Read `out/quality/fresh24/c03d.jpg`
+- Ran: Crop of ch03 name labels at full and phone size
+- Read `out/quality/fresh24/f03_24.jpg`
+- Read `out/quality/fresh24/f03_24p.jpg`
+- Ran: Phone-size frames of ch04 labels
+- Read `out/quality/fresh24/f04_p.jpg`
+- Ran: Verify Kahsh spelling in source text
+- Ran: Search source for Kahsh and Roal number
+- Ran: Show Kahsh line in script
+- Ran: Read science notes text
+- Ran: Read history notes text
+- Ran: Board N-O and text p058.2 for ch05
+- Ran: Frames of ch09 blue-white vs red beam
+- Read `out/quality/fresh24/f09_beams.jpg`
+- Ran: Quarter-second sheet ch11 page change
+- Read `out/quality/fresh24/c11a.jpg`
+- Ran: Sheet ch06 4:00-4:18 and board J
+- Read `out/quality/fresh24/c06c.jpg`
+- Ran: Frame of ch08 ladder plate
+- Read `out/quality/fresh24/f08_76.jpg`
+- Ran: Check ch05 investigator machine overlapping heap
+- Read `out/quality/fresh24/c05c.jpg`
+- Ran: Six-fps sheet ch05 8:02-8:05 cage arrival
+- Read `out/quality/fresh24/c05d.jpg`
