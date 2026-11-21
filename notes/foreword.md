@@ -4,7 +4,7 @@
 [refs.yaml](refs.yaml).*
 
 This is John W. Campbell, Jr.'s *The Last Evolution*, from *Amazing Stories* for August 1932, read in full. Every word
-of it is spoken, in order, by a cast of voices, over paintings in the manner of the magazine's own ink illustrations. It
+of it is in the film, in order, spoken by a cast of voices, over paintings in the manner of the magazine's own ink illustrations. It
 runs about an hour, in twelve chapters.
 
 The story is a machine's memoir. Its first line tells you the machine is the last of its kind; the rest tells you how
@@ -12,7 +12,7 @@ it came to be, and what came after mankind.
 
 ## When it was written
 
-Campbell was 22 and finishing a physics degree ([SFE][sfe-campbell]). 1932 was the year the atom came apart: the neutron
+Campbell was 22 when it appeared, the year he finished a physics degree ([SFE][sfe-campbell]). 1932 was the year the atom came apart: the neutron
 was found in February, the first atom split by a machine in April, and the positron, the first antimatter, photographed
 on 2 August, the month this story was on the stands ([discovery of the neutron][wp-neutron], [positron][wp-positron]).
 There was no electronic computer anywhere. When the story says "machine", it's imagining something no one had built.

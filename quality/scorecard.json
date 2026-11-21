@@ -1,9 +1,9 @@
 {
  "summary": {
-  "pass": 439,
+  "pass": 444,
   "stale": 0,
   "open": 0,
-  "curt": 11,
+  "curt": 6,
   "later": 3
  },
  "satisfied": false,
@@ -23,7 +23,7 @@
   },
   "voice": {
    "state": "pass",
-   "detail": "every flagged line heard; p052.1 put to Curt"
+   "detail": "every flagged line heard and right"
   },
   "captions": {
    "state": "pass",
@@ -76,31 +76,6 @@
    "id": "curt.foreword",
    "title": "the foreword's wording",
    "ask": "The foreword says why this story, in your voice (DECISIONS.md, 2026-11-02). Is its wording yours?"
-  },
-  {
-   "id": "voice.p052.1",
-   "title": "Line p052.1: speech-to-text missed \"roal\"",
-   "ask": "Does F-1 say 'Roal' right in 'Roal--your thoughts' (p052.1, assets/voice/p052.1-t1-4553aff14c.mp3)? Two transcribers hear something extra: ElevenLabs 'Roald', Whisper 'Rohan' (and 'Roal' only when told the name). The narrator's 'Roal' is heard as one syllable, 'Rol', as Round 1 chose. The voice pass kept this as its best take. My recommendation: listen; if it sounds like 'Roald', voice this one line again (a few credits)."
-  },
-  {
-   "id": "find.voice-forcescreen",
-   "title": "Does 'force-screen' sound right in ch04 0:12 (p037.2)? Whisper hears 'fourth'.",
-   "ask": "From the third fresh-eyes round's transcript check. Voicing is yours to judge by ear."
-  },
-  {
-   "id": "find.voice-lastofmen",
-   "title": "Does 'Last of Men' sound right in ch08 2:49 (p108.1)? Whisper hears 'blessed'.",
-   "ask": "From the third fresh-eyes round's transcript check. Voicing is yours to judge by ear."
-  },
-  {
-   "id": "find.site-every-word-spoken",
-   "title": "Foreword: 'Every word of it is spoken, in order', but the two footnotes are lettered on screen, not spoken",
-   "ask": "From the thirty-third fresh-eyes round. The foreword's wording is yours. 'Every word of it is in the film, in order' would also cover the two lettered footnotes (the draft banner above it already says they are lettered). Change it, or keep it?"
-  },
-  {
-   "id": "find.site-foreword-age",
-   "title": "Foreword: 'Campbell was 22 and finishing a physics degree' puts his age at the writing, which isn't recorded",
-   "ask": "From the thirty-eighth fresh-eyes round. The foreword's wording is yours. Under 'When it was written' it says Campbell was 22. He turned 22 on 8 June 1932, weeks before the August issue, and when he wrote it isn't recorded (the science notes now say so; Moskowitz says Twilight came first). Suggested: 'Campbell was 22 when it appeared, the year he finished a physics degree.' Change it, or keep it?"
   }
  ],
  "items": [
@@ -641,14 +616,14 @@
    "area": "site",
    "title": "The film page (annotated): what it says",
    "state": "pass",
-   "note": "Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal."
+   "note": "Rebuilt 2026-11-20 with the foreword's two changes Curt approved: 'Every word of it is in the film, in order, spoken by a cast of voices' and 'Campbell was 22 when it appeared, the year he finished a physics degree'. Checked in the built page; nothing else changed."
   },
   {
    "id": "site.watch.look",
    "area": "site",
    "title": "The film page (annotated): how it looks and works",
    "state": "pass",
-   "note": "Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal."
+   "note": "Rebuilt 2026-11-20 for two foreword sentences only; layout and behaviour unchanged."
   },
   {
    "id": "site.read.content",
@@ -794,8 +769,8 @@
    "id": "voice.p052.1",
    "area": "voice",
    "title": "Line p052.1: speech-to-text missed \"roal\"",
-   "state": "curt",
-   "note": "Does F-1 say 'Roal' right in 'Roal--your thoughts' (p052.1, assets/voice/p052.1-t1-4553aff14c.mp3)? Two transcribers hear something extra: ElevenLabs 'Roald', Whisper 'Rohan' (and 'Roal' only when told the name). The narrator's 'Roal' is heard as one syllable, 'Rol', as Round 1 chose. The voice pass kept this as its best take. My recommendation: listen; if it sounds like 'Roald', voice this one line again (a few credits)."
+   "state": "pass",
+   "note": "Curt listened, 2026-11-20: F-1's 'Roal' is fine. Kept as voiced."
   },
   {
    "id": "find.side-tunic",
@@ -1291,15 +1266,15 @@
    "id": "find.voice-forcescreen",
    "area": "finding",
    "title": "Does 'force-screen' sound right in ch04 0:12 (p037.2)? Whisper hears 'fourth'.",
-   "state": "curt",
-   "note": "From the third fresh-eyes round's transcript check. Voicing is yours to judge by ear."
+   "state": "pass",
+   "note": "Curt listened, 2026-11-20: 'force-screen' is fine. Kept as voiced."
   },
   {
    "id": "find.voice-lastofmen",
    "area": "finding",
    "title": "Does 'Last of Men' sound right in ch08 2:49 (p108.1)? Whisper hears 'blessed'.",
-   "state": "curt",
-   "note": "From the third fresh-eyes round's transcript check. Voicing is yours to judge by ear."
+   "state": "pass",
+   "note": "Curt listened, 2026-11-20: 'Last of Men' is fine. Kept as voiced."
   },
   {
    "id": "find.ch09-duel",
@@ -2824,8 +2799,8 @@
    "id": "find.site-every-word-spoken",
    "area": "finding",
    "title": "Foreword: 'Every word of it is spoken, in order', but the two footnotes are lettered on screen, not spoken",
-   "state": "curt",
-   "note": "From the thirty-third fresh-eyes round. The foreword's wording is yours. 'Every word of it is in the film, in order' would also cover the two lettered footnotes (the draft banner above it already says they are lettered). Change it, or keep it?"
+   "state": "pass",
+   "note": "Curt said yes, 2026-11-20: the foreword now says 'Every word of it is in the film, in order, spoken by a cast of voices', which covers the two lettered footnotes."
   },
   {
    "id": "find.ch03-trest-away",
@@ -2950,8 +2925,8 @@
    "id": "find.site-foreword-age",
    "area": "finding",
    "title": "Foreword: 'Campbell was 22 and finishing a physics degree' puts his age at the writing, which isn't recorded",
-   "state": "curt",
-   "note": "From the thirty-eighth fresh-eyes round. The foreword's wording is yours. Under 'When it was written' it says Campbell was 22. He turned 22 on 8 June 1932, weeks before the August issue, and when he wrote it isn't recorded (the science notes now say so; Moskowitz says Twilight came first). Suggested: 'Campbell was 22 when it appeared, the year he finished a physics degree.' Change it, or keep it?"
+   "state": "pass",
+   "note": "Curt said yes, 2026-11-20: the foreword now says 'Campbell was 22 when it appeared, the year he finished a physics degree'."
   },
   {
    "id": "find.ch05-curl-faint",

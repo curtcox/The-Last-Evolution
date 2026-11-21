@@ -6,9 +6,10 @@ items:
     at: eb2e313b49
     when: 2026-11-02 23:03
   voice.p052.1:
-    state: curt
-    note: "Does F-1 say 'Roal' right in 'Roal--your thoughts' (p052.1, assets/voice/p052.1-t1-4553aff14c.mp3)? Two transcribers hear something extra: ElevenLabs 'Roald', Whisper 'Rohan' (and 'Roal' only when told the name). The narrator's 'Roal' is heard as one syllable, 'Rol', as Round 1 chose. The voice pass kept this as its best take. My recommendation: listen; if it sounds like 'Roald', voice this one line again (a few credits)."
-    when: 2026-11-02 23:03
+    state: pass
+    note: "Curt listened, 2026-11-20: F-1's 'Roal' is fine. Kept as voiced."
+    at: 4553aff14c
+    when: 2026-11-21 03:19
   site.home.content:
     state: pass
     note: "Rechecked after the twenty-third round: the status line now says each chapter is acted and painted to its current designs, not finished ones, since the look is still the producer's call (find.site-finished-designs); the rest is unchanged."
@@ -101,14 +102,14 @@ items:
     when: 2026-11-15 14:03
   site.watch.content:
     state: pass
-    note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: afcb89478975
-    when: 2026-11-20 21:49
+    note: "Rebuilt 2026-11-20 with the foreword's two changes Curt approved: 'Every word of it is in the film, in order, spoken by a cast of voices' and 'Campbell was 22 when it appeared, the year he finished a physics degree'. Checked in the built page; nothing else changed."
+    at: 960cb7330bf6
+    when: 2026-11-21 03:20
   site.watch.look:
     state: pass
-    note: Rebuilt after round 34 with a new draft for chapter 3 (ch03-draft-baf7b339); the pages differ only in that hash and chapter 3's board line for Trest turned to Roal.
-    at: b11842d99c0c
-    when: 2026-11-20 21:49
+    note: Rebuilt 2026-11-20 for two foreword sentences only; layout and behaviour unchanged.
+    at: 14e4f9dbec9d
+    when: 2026-11-21 03:20
   work.title:
     state: pass
     note: "Re-checked after round 41: chapter 0's source changed only in shot D (the heirs gathering at 0:40-0:48); SSIM against the previous draft is .997 through the title page. the masthead (62 px, italic) and byline (64 px) are larger again so they read on a phone (find.small-lettering), the title itself unchanged; on ch00-draft-747111c6 all three lines sit inside the frame with clear space between them (sheet of 0:05-0:14). The header names the 1932 issue ('AMAZING STORIES · August, 1932'), not the 1961 reprint."
@@ -770,15 +771,15 @@ items:
     title: "Read: the kicker calls it the 1961 text, though 16 readings are from 1932"
     when: 2026-11-06 07:26
   find.voice-forcescreen:
-    state: curt
-    note: From the third fresh-eyes round's transcript check. Voicing is yours to judge by ear.
+    state: pass
+    note: "Curt listened, 2026-11-20: 'force-screen' is fine. Kept as voiced."
     title: Does 'force-screen' sound right in ch04 0:12 (p037.2)? Whisper hears 'fourth'.
-    when: 2026-11-05 19:57
+    when: 2026-11-21 03:19
   find.voice-lastofmen:
-    state: curt
-    note: From the third fresh-eyes round's transcript check. Voicing is yours to judge by ear.
+    state: pass
+    note: "Curt listened, 2026-11-20: 'Last of Men' is fine. Kept as voiced."
     title: Does 'Last of Men' sound right in ch08 2:49 (p108.1)? Whisper hears 'blessed'.
-    when: 2026-11-05 19:57
+    when: 2026-11-21 03:19
   find.ch09-duel:
     state: pass
     note: "On the re-rendered draft: 2:20-2:40 the plant's top, the beam and the white sphere are held in one frame; the dull red beam grows out toward the sphere, which leaps into it and struggles, spraying, shrinking."
@@ -1865,10 +1866,10 @@ items:
     title: "Chapter 3, 7:46-7:53: Roal holds one outstretched pose for 8 s"
     when: 2026-11-17 22:42
   find.site-every-word-spoken:
-    state: curt
-    note: From the thirty-third fresh-eyes round. The foreword's wording is yours. 'Every word of it is in the film, in order' would also cover the two lettered footnotes (the draft banner above it already says they are lettered). Change it, or keep it?
+    state: pass
+    note: "Curt said yes, 2026-11-20: the foreword now says 'Every word of it is in the film, in order, spoken by a cast of voices', which covers the two lettered footnotes."
     title: "Foreword: 'Every word of it is spoken, in order', but the two footnotes are lettered on screen, not spoken"
-    when: 2026-11-17 17:34
+    when: 2026-11-21 03:19
   find.ch03-trest-away:
     state: pass
     note: "Draft ch03-draft-baf7b339, 6:19-7:57: once at his place Trest turns to face Roal and listens through the speech, his hands moving on Roal's clauses (stills at 400, 455, 470 s); at the force-screen's secret both turn to the screens as before."
@@ -1955,10 +1956,10 @@ items:
     title: "Afterword: 'the story he'd written first and couldn't sell' is cited only to Wikipedia's Twilight page, which doesn't say it"
     when: 2026-11-18 16:52
   find.site-foreword-age:
-    state: curt
-    note: "From the thirty-eighth fresh-eyes round. The foreword's wording is yours. Under 'When it was written' it says Campbell was 22. He turned 22 on 8 June 1932, weeks before the August issue, and when he wrote it isn't recorded (the science notes now say so; Moskowitz says Twilight came first). Suggested: 'Campbell was 22 when it appeared, the year he finished a physics degree.' Change it, or keep it?"
+    state: pass
+    note: "Curt said yes, 2026-11-20: the foreword now says 'Campbell was 22 when it appeared, the year he finished a physics degree'."
     title: "Foreword: 'Campbell was 22 and finishing a physics degree' puts his age at the writing, which isn't recorded"
-    when: 2026-11-18 16:51
+    when: 2026-11-21 03:19
   find.ch05-curl-faint:
     state: pass
     note: "Fixed in 6a8354a: the curl is 46 wide and fully opaque. Checked on draft ch05-draft-65a7fcd4 at 0:11-0:17: a clear pale ribbon rising over Roal on the couch in the wide shot; SSIM against ch05-draft-51b6e0ba shows only the grain spots seen last round (0:45, 4:49, 9:01, about .955); -14.5 LUFS."
@@ -2372,4 +2373,4 @@ fresh:
     found: 1
     note: "Round 52: nothing major or minor; one nit (ch04 2:22-2:24 the pan reaches C-R-21 about 1.5 s into its first sentence). Earlier rulings left alone."
     state: bf0f781569a0
-since_fresh: 8
+since_fresh: 15
