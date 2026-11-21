@@ -22,24 +22,24 @@ items:
     when: 2026-11-15 06:57
   site.about.content:
     state: pass
-    note: "Re-judged after the second round: the line on original designs now names the one exception, Leo Morey's 1932 illustration shown in chapter 5. Re-judged: 'thirteen smaller slips' instead of 'a dozen'; the rest as judged."
-    at: e460618579c5
-    when: 2026-11-05 19:39
+    note: "Rebuilt 2026-11-20: under The notes, one added paragraph pointing to Claude's choices; the rest unchanged."
+    at: 0afa22f1c36f
+    when: 2026-11-21 03:26
   site.about.look:
     state: pass
-    note: "Rechecked at 375 after the fifteenth round (out/quality/phone): the stylesheet's only change keeps the small-caps kicker ragged-right and unhyphenated, as .story p had overridden it; the page lays out as before, no overflow. Re-checked at 375 after the second round (out/quality/phone, fonts loaded): no overflow; only wording changed. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
-    at: 7e22a74f4d19
-    when: 2026-11-11 20:26
+    note: Rebuilt 2026-11-20 for one added paragraph; phone check passes.
+    at: 950133c07aa1
+    when: 2026-11-21 03:26
   site.notes.content:
     state: pass
-    note: The index says what the short and long notes are and lists the four, each with a true one-line description.
-    at: b4d24ff19350
-    when: 2026-11-02 23:17
+    note: "Rebuilt 2026-11-20: lists five pages now, Claude's choices last with a true one-line description; the lede adds 'and Claude's account of the choices behind the film'."
+    at: f127d78d9547
+    when: 2026-11-21 03:26
   site.notes.look:
     state: pass
-    note: "Rechecked at 375 after the fifteenth round (out/quality/phone): the stylesheet's only change keeps the small-caps kicker ragged-right and unhyphenated, as .story p had overridden it; the page lays out as before, no overflow. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
-    at: 2295418e727c
-    when: 2026-11-11 20:26
+    note: Rebuilt 2026-11-20 with one more list item; phone check passes.
+    at: 5974777e3c3d
+    when: 2026-11-21 03:26
   site.science.content:
     state: pass
     note: "Re-judged after round 37: the only change is the dating line, now 'The story appeared in the August issue, the year the atom first came apart; when Campbell wrote it isn't recorded.' It no longer infers when he wrote it from the issue date. Earlier: the green-beams line says chapters 3 and 4; the 3,600 degrees says its source gives no scale."
@@ -72,14 +72,14 @@ items:
     when: 2026-11-11 20:26
   site.factcheck.content:
     state: pass
-    note: "Re-judged: the intro is plain (who checked, when, what 'computed' means); 'read in Phase 0' is 'read'; the Round 7 heading drops the round; sources show their titles."
-    at: 7b83632c5f5d
-    when: 2026-11-02 23:47
+    note: "Rebuilt 2026-11-20: only its foot changed, 'Next: Claude's choices' in place of 'Back to the film'."
+    at: 540ce6973ecc
+    when: 2026-11-21 03:26
   site.factcheck.look:
     state: pass
-    note: "Rechecked at 375 after the fifteenth round (out/quality/phone): the stylesheet's only change keeps the small-caps kicker ragged-right and unhyphenated, as .story p had overridden it; the page lays out as before, no overflow. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-checked at 375: source titles wrap within their column, all three columns visible, no sideways scroll."
-    at: 83eaf68029c5
-    when: 2026-11-11 20:26
+    note: Rebuilt 2026-11-20 for its foot link only; phone check passes.
+    at: d60082318b39
+    when: 2026-11-21 03:26
   site.read.content:
     state: pass
     note: "Re-judged after the third round: the kicker names the 1961 reprint's text and the 16 readings restored from 1932. Re-judged after the fresh-eyes round: the masthead reads 'From Amazing Stories, August 1932 · the text of its 1961 reprint' instead of the reprint's own header, which paired 1961's words with 1932's date; text/story.json stays verbatim (verbatim check passes). The whole story with its masthead, the 16 restored readings marked in place and listed with scan links, Morey's illustration, and a true colophon (Gutenberg #27462, 1961 reprint, 16 readings from 1932). The verbatim check passes."
@@ -2160,6 +2160,16 @@ items:
     note: "Fixed in a7bce89: the pan starts in the gap after X-6621's line. Checked on draft ch04-draft-26fcb7e9 at 2:22.5: C-R-21 in frame as its line begins; SSIM against ch04-draft-b175bc33 changes only at 2:21.5-2:24; -14.4 LUFS."
     title: "Chapter 4, 2:22-2:24: the pan reaches C-R-21 about 1.5 s into its first sentence"
     when: 2026-11-20 21:49
+  site.choices.content:
+    state: pass
+    note: "New 2026-11-20, at Curt's request: each artistic choice Claude suggested or made, its reason with the round and section it was given in, and two confidences (the choice, and whether the reason is the real one, marking reasons put into words afterwards). Checked against review/round1-7.md, DECISIONS.md and the quality status; claims not on record (Curt's listen to the whole pass, the foreword's approval) are stated as open."
+    at: 416a7ebc30bc
+    when: 2026-11-21 03:26
+  site.choices.look:
+    state: pass
+    note: "Checked at 1280 and 375 (npm run quality -- --check=phone passes): 7 sections, each verdict its own paragraph, no overflow; links to casting.yaml, the review sheets, DECISIONS.md and issues all resolve (check_links: 0 broken)."
+    at: fb18feb82ea3
+    when: 2026-11-21 03:26
 fresh:
   - when: 2026-11-02 23:47
     found: 13
@@ -2373,4 +2383,4 @@ fresh:
     found: 1
     note: "Round 52: nothing major or minor; one nit (ch04 2:22-2:24 the pan reaches C-R-21 about 1.5 s into its first sentence). Earlier rulings left alone."
     state: bf0f781569a0
-since_fresh: 15
+since_fresh: 23

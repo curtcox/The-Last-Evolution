@@ -1,6 +1,6 @@
 {
  "summary": {
-  "pass": 444,
+  "pass": 446,
   "stale": 0,
   "open": 0,
   "curt": 6,
@@ -15,7 +15,7 @@
   },
   "links": {
    "state": "pass",
-   "detail": "1231 links in 34 pages, 0 broken"
+   "detail": "1243 links in 35 pages, 0 broken"
   },
   "annotated": {
    "state": "pass",
@@ -34,12 +34,12 @@
    "detail": "$0.59 of $10"
   },
   "refs": {
-   "state": "fail",
+   "state": "stale",
    "detail": "gutenberg: https://www.gutenberg.org/ebooks/27462 → 503"
   },
   "phone": {
    "state": "pass",
-   "detail": "34 pages fit a phone; screenshots in out/quality/phone and desktop"
+   "detail": "35 pages fit a phone; screenshots in out/quality/phone and desktop"
   },
   "live": {
    "state": "stale",
@@ -644,14 +644,14 @@
    "area": "site",
    "title": "The notes index: what it says",
    "state": "pass",
-   "note": "The index says what the short and long notes are and lists the four, each with a true one-line description."
+   "note": "Rebuilt 2026-11-20: lists five pages now, Claude's choices last with a true one-line description; the lede adds 'and Claude's account of the choices behind the film'."
   },
   {
    "id": "site.notes.look",
    "area": "site",
    "title": "The notes index: how it looks and works",
    "state": "pass",
-   "note": "Rechecked at 375 after the fifteenth round (out/quality/phone): the stylesheet's only change keeps the small-caps kicker ragged-right and unhyphenated, as .story p had overridden it; the page lays out as before, no overflow. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
+   "note": "Rebuilt 2026-11-20 with one more list item; phone check passes."
   },
   {
    "id": "site.science.content",
@@ -700,28 +700,42 @@
    "area": "site",
    "title": "The fact-check list: what it says",
    "state": "pass",
-   "note": "Re-judged: the intro is plain (who checked, when, what 'computed' means); 'read in Phase 0' is 'read'; the Round 7 heading drops the round; sources show their titles."
+   "note": "Rebuilt 2026-11-20: only its foot changed, 'Next: Claude's choices' in place of 'Back to the film'."
   },
   {
    "id": "site.factcheck.look",
    "area": "site",
    "title": "The fact-check list: how it looks and works",
    "state": "pass",
-   "note": "Rechecked at 375 after the fifteenth round (out/quality/phone): the stylesheet's only change keeps the small-caps kicker ragged-right and unhyphenated, as .story p had overridden it; the page lays out as before, no overflow. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-checked at 375: source titles wrap within their column, all three columns visible, no sideways scroll."
+   "note": "Rebuilt 2026-11-20 for its foot link only; phone check passes."
+  },
+  {
+   "id": "site.choices.content",
+   "area": "site",
+   "title": "The choices page: what it says",
+   "state": "pass",
+   "note": "New 2026-11-20, at Curt's request: each artistic choice Claude suggested or made, its reason with the round and section it was given in, and two confidences (the choice, and whether the reason is the real one, marking reasons put into words afterwards). Checked against review/round1-7.md, DECISIONS.md and the quality status; claims not on record (Curt's listen to the whole pass, the foreword's approval) are stated as open."
+  },
+  {
+   "id": "site.choices.look",
+   "area": "site",
+   "title": "The choices page: how it looks and works",
+   "state": "pass",
+   "note": "Checked at 1280 and 375 (npm run quality -- --check=phone passes): 7 sections, each verdict its own paragraph, no overflow; links to casting.yaml, the review sheets, DECISIONS.md and issues all resolve (check_links: 0 broken)."
   },
   {
    "id": "site.about.content",
    "area": "site",
    "title": "The About page: what it says",
    "state": "pass",
-   "note": "Re-judged after the second round: the line on original designs now names the one exception, Leo Morey's 1932 illustration shown in chapter 5. Re-judged: 'thirteen smaller slips' instead of 'a dozen'; the rest as judged."
+   "note": "Rebuilt 2026-11-20: under The notes, one added paragraph pointing to Claude's choices; the rest unchanged."
   },
   {
    "id": "site.about.look",
    "area": "site",
    "title": "The About page: how it looks and works",
    "state": "pass",
-   "note": "Rechecked at 375 after the fifteenth round (out/quality/phone): the stylesheet's only change keeps the small-caps kicker ragged-right and unhyphenated, as .story p had overridden it; the page lays out as before, no overflow. Re-checked at 375 after the second round (out/quality/phone, fonts loaded): no overflow; only wording changed. Re-checked at 375 (out/quality/phone) after the stylesheet change, which only left-aligns the small-caps kicker (it justified into wide gaps when it wrapped); kicker, title and nav read, no overflow. Re-judged after the stylesheet change, which only adds table padding on phones, the hidden .sr labels and the makers' section; this page has none of them and looks as judged."
+   "note": "Rebuilt 2026-11-20 for one added paragraph; phone check passes."
   },
   {
    "id": "site.review.content",

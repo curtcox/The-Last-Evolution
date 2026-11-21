@@ -4,7 +4,7 @@
 //                #t= link, so links shared today still work when the watch page takes its place (Phase 7)
 //   read/        the story in full, from text/story.json: a printable page with an anchor per paragraph (#p001…), each
 //                reading restored from the 1932 printing marked and listed (text/emendations.yaml)
-//   notes/       the longer notes (notes/science.md, succession.md, history.md, factcheck.md), a page each, so the film's
+//   notes/       the longer notes (notes/science.md, succession.md, history.md, factcheck.md, choices.md), a page each, so the film's
 //                "More" links and the About page stay on the site (tools/notes_md.mjs)
 //   about/       sources, credits, licences
 //   review/      each review round: its decision sheet (review/roundN.md, on GitHub) and its decision pages, copied from
@@ -160,6 +160,8 @@ real person's. Every on-screen design is original, except Leo Morey's illustrati
 <a href="../notes/succession/">machines as heirs</a> and <a href="../notes/history/">Campbell and the pulps</a>, cite
 their sources. Each claim was checked in its source, or worked out from the story's own numbers, as
 <a href="../notes/factcheck/">the fact-check list</a> records.</p>
+<p>Many of the film's artistic choices began as Claude's suggestions. <a href="../notes/choices/">Claude's choices</a>
+lists them, with why each was made and how sure Claude is of it.</p>
 <h2>Corrections</h2>
 <p>If you find a mistake in the text, the film or the notes, please <a href="${REPO}/issues">open an issue on
 GitHub</a>.</p>
@@ -171,13 +173,14 @@ GitHub</a>.</p>
 const ABOUT = { science: 'What Campbell knew in 1932, the year the atom came apart, and what became of it.',
   succession: 'The idea at the story\'s heart, that machines might inherit from us: before Campbell, and since.',
   history: 'The magazine, the young writer who became the field\'s great editor, the illustrator, and the text.',
-  factcheck: 'Every claim in the notes, the source it rests on, and how it was checked.' };
+  factcheck: 'Every claim in the notes, the source it rests on, and how it was checked.',
+  choices: 'The artistic choices Claude suggested or made in making the film, why, and how sure it is of each.' };
 const notes = NOTES.map(name => ({ name, ...markdown(`notes/${name}.md`, { up: '../../' }) }));
 const notePages = notes.map((n, i) => [n.name, page(2, `${esc(n.title)}: The Last Evolution`, `
 <p class="kicker"><a href="../">Notes</a></p>
 <h1>${esc(n.title)}</h1>
 <div class="prose">${n.html}</div>
-<p class="src">${n.name === 'factcheck' ? '' : `Each claim's source and check: <a href="../factcheck/">the fact-check list</a>. `}Found a
+<p class="src">${['factcheck', 'choices'].includes(n.name) ? '' : `Each claim's source and check: <a href="../factcheck/">the fact-check list</a>. `}Found a
 mistake? <a href="${REPO}/issues">Say so on GitHub</a>.</p>
 <p class="next">${notes[i + 1] ? `Next: <a href="../${notes[i + 1].name}/">${esc(notes[i + 1].title)}</a>`
   : `Back to <a href="../../watch/">the film</a>`}</p>`, { description: ABOUT[n.name] })]);
@@ -185,7 +188,7 @@ const notesIndex = page(1, 'Notes: The Last Evolution', `
 <p class="kicker">Beside the story</p>
 <h1>Notes</h1>
 <p class="lede">The short notes appear beside <a href="../watch/">the film</a> as it reaches the words they're about.
-These are the longer ones, with their sources.</p>
+These are the longer ones, with their sources, and Claude's account of the choices behind the film.</p>
 <ul class="ways">${notes.map(n => `<li><a href="${n.name}/"><b>${esc(n.title)}</b></a>. ${ABOUT[n.name]}</li>`).join('\n')}</ul>
 `);
 

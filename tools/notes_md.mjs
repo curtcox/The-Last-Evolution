@@ -8,7 +8,7 @@ import { readFileSync } from 'node:fs';
 import YAML from 'yaml';
 
 export const REPO = 'https://github.com/curtcox/The-Last-Evolution', SITE = 'https://curtcox.github.io/The-Last-Evolution/';
-export const NOTES = ['science', 'succession', 'history', 'factcheck'];   // the notes with pages of their own: notes/NAME/
+export const NOTES = ['science', 'succession', 'history', 'factcheck', 'choices'];   // the notes with pages of their own: notes/NAME/
 const refs = YAML.parse(readFileSync('notes/refs.yaml', 'utf8'));
 export const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 // a heading's anchor, as GitHub makes it: lower case, punctuation dropped, spaces as hyphens

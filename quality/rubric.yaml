@@ -48,6 +48,7 @@ site:
     - { key: succession, file: notes/succession/index.html, title: the succession notes }
     - { key: history, file: notes/history/index.html, title: the history notes }
     - { key: factcheck, file: notes/factcheck/index.html, title: the fact-check list }
+    - { key: choices, file: notes/choices/index.html, title: the choices page }
     - { key: about, file: about/index.html, title: the About page }
     - { key: review, file: review/index.html, title: the Review page }
   criteria:
